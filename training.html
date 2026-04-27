@@ -268,7 +268,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 @media(max-width:640px){
   .cta-btns{flex-direction:column;align-items:center}
   .cta-btns .btn{width:100%;max-width:300px;text-align:center}
-  .disc-price-grid{grid-template-columns:1fr}
+  .disc-price-grid{grid-template-columns:1fr!important}
   .pt-tiers{grid-template-columns:1fr}
   .schedule-grid{grid-template-columns:1fr}
 }
@@ -551,9 +551,7 @@ document.addEventListener('click',function(e){
           <div class="slot-overlay"><span class="slot-icon">🥊</span><span class="slot-label">MMA Photo</span></div>
         </div>
       </div>
-      <div class="disc-text">
-        <span class="disc-icon">🥊</span>
-        <span class="disc-tag">Mixed Martial Arts</span>
+      <div class="disc-text">        <span class="disc-tag">Mixed Martial Arts</span>
         <h2 class="sec-h">MMA Training<br><em>In Ballito.</em></h2>
         <p class="body-p" contenteditable="true">Maddog Performance Institute offers the most credible and complete MMA training programme on the KZN North Coast. Under the direct coaching of Amanda "Maddog" Lino — a 2× EFC World Champion and IMMAF Amateur World Champion — you will develop striking, grappling, takedown defence, and the physical and mental conditioning to back it all up.</p>
         <div class="disc-who" contenteditable="true">Our MMA classes cater to complete beginners, intermediate practitioners, and experienced competitors. You do not need to want to fight to train here. But if you do want to compete, Maddog is the only gym in the region with the credentials and fight team infrastructure to take you there.</div>
@@ -573,9 +571,9 @@ document.addEventListener('click',function(e){
         <div class="disc-pricing">
           <div class="disc-pricing-label">Pricing</div>
           <div class="disc-price-grid">
-            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">POA<span> / class</span></div><div class="disc-price-desc" contenteditable="true">Single session, no commitment required</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">POA<span> / month</span></div><div class="disc-price-desc" contenteditable="true">Unlimited classes, monthly membership</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Private</div><div class="disc-price-val">POA<span> / session</span></div><div class="disc-price-desc" contenteditable="true">1-on-1 coaching with Amanda or head coaches</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">R800<span> / month</span></div><div class="disc-price-desc">Single discipline membership</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Unlimited</div><div class="disc-price-val">R1,400<span> / month</span></div><div class="disc-price-desc">All martial arts classes — best value</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">R150<span> / class</span></div><div class="disc-price-desc">Single session, no commitment</div></div>
           </div>
         </div>
         <a href="maddog-contact.html" class="btn btn-g" style="margin-top:24px">Book Your Free MMA Trial</a>
@@ -595,9 +593,7 @@ document.addEventListener('click',function(e){
           <div class="slot-overlay"><span class="slot-icon">🤼</span><span class="slot-label">BJJ Photo</span></div>
         </div>
       </div>
-      <div class="disc-text">
-        <span class="disc-icon">🤼</span>
-        <span class="disc-tag">Brazilian Jiu-Jitsu · Gi &amp; No-Gi</span>
+      <div class="disc-text">        <span class="disc-tag">Brazilian Jiu-Jitsu · Gi &amp; No-Gi</span>
         <h2 class="sec-h">BJJ<br><em>In Ballito.</em></h2>
         <p class="body-p" contenteditable="true">Brazilian Jiu-Jitsu at Maddog Performance Institute is one of the most effective grappling systems in the world. Built on the principle that technique and leverage allow a smaller person to control and submit a larger, stronger opponent — it is both a competitive sport and one of the most effective self-defence disciplines available.</p>
         <div class="disc-who" contenteditable="true">Our BJJ programme covers guard work, passing, sweeps, submissions, and positional control in both Gi and No-Gi formats. Beginner, intermediate, and advanced levels. Competitors are guided through WBJJ, national, regional, and MMA application preparation.</div>
@@ -617,9 +613,9 @@ document.addEventListener('click',function(e){
         <div class="disc-pricing">
           <div class="disc-pricing-label">Pricing</div>
           <div class="disc-price-grid">
-            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">POA<span> / class</span></div><div class="disc-price-desc" contenteditable="true">Single session, no commitment required</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">POA<span> / month</span></div><div class="disc-price-desc" contenteditable="true">Unlimited classes, monthly membership</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Private</div><div class="disc-price-val">POA<span> / session</span></div><div class="disc-price-desc" contenteditable="true">1-on-1 coaching with Amanda or head coaches</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">R800<span> / month</span></div><div class="disc-price-desc">Single discipline membership</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Unlimited</div><div class="disc-price-val">R1,400<span> / month</span></div><div class="disc-price-desc">All martial arts classes — best value</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">R150<span> / class</span></div><div class="disc-price-desc">Single session, no commitment</div></div>
           </div>
         </div>
         <a href="maddog-contact.html" class="btn btn-g" style="margin-top:24px">Book Your Free BJJ Trial</a>
@@ -639,9 +635,7 @@ document.addEventListener('click',function(e){
           <div class="slot-overlay"><span class="slot-icon">🦵</span><span class="slot-label">Kickboxing Photo</span></div>
         </div>
       </div>
-      <div class="disc-text">
-        <span class="disc-icon">🦵</span>
-        <span class="disc-tag">Stand-Up Striking · All Levels</span>
+      <div class="disc-text">        <span class="disc-tag">Stand-Up Striking · All Levels</span>
         <h2 class="sec-h">Kickboxing<br><em>In Ballito.</em></h2>
         <p class="body-p" contenteditable="true">Maddog's kickboxing programme is built on the real striking system tested inside professional MMA cages across Africa. This is not a cardio class dressed up with gloves. Our sessions develop genuine boxing technique, powerful kicks, footwork, timing, and defensive skills — coached by a team with real competitive experience.</p>
         <div class="disc-who" contenteditable="true">Whether you want to compete, use it as your primary stand-up for MMA, or simply want one of the most effective full-body workouts on the KZN North Coast — this programme delivers. Burns serious calories, builds lean muscle, improves cardiovascular capacity, and develops genuine skills.</div>
@@ -661,12 +655,48 @@ document.addEventListener('click',function(e){
         <div class="disc-pricing">
           <div class="disc-pricing-label">Pricing</div>
           <div class="disc-price-grid">
-            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">POA<span> / class</span></div><div class="disc-price-desc" contenteditable="true">Single session, no commitment required</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">POA<span> / month</span></div><div class="disc-price-desc" contenteditable="true">Unlimited classes, monthly membership</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Private</div><div class="disc-price-val">POA<span> / session</span></div><div class="disc-price-desc" contenteditable="true">1-on-1 coaching with Amanda or head coaches</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">R800<span> / month</span></div><div class="disc-price-desc">Single discipline membership</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Unlimited</div><div class="disc-price-val">R1,400<span> / month</span></div><div class="disc-price-desc">All martial arts classes — best value</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">R150<span> / class</span></div><div class="disc-price-desc">Single session, no commitment</div></div>
           </div>
         </div>
         <a href="maddog-contact.html" class="btn btn-g" style="margin-top:24px">Book Your Free Kickboxing Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BOXING FITNESS ══════════ -->
+<section class="disc-block" id="boxing-fitness">
+  <div style="max-width:1200px;margin:0 auto;padding:0 48px">
+    <div class="disc-grid reverse">
+      <div class="disc-photo">
+        <div class="photo-slot" id="bf-p" onclick="swapPhoto('bf-p')" style="height:100%;min-height:480px">
+          <div class="gc tl"></div><div class="gc br"></div>
+          <img id="bf-p-img" src="" style="display:none" alt="Boxing Fitness Ballito">
+          <div class="slot-overlay"><span class="slot-icon">🥊</span><span class="slot-label">Boxing Fitness Photo</span></div>
+        </div>
+      </div>
+      <div class="disc-text">
+        <span class="disc-tag">Boxing Fitness · All Levels</span>
+        <h2 class="sec-h">Boxing <em>Fitness.</em></h2>
+        <p class="body-p">High-energy classes built on the fundamentals of boxing — pad work, bag work, combinations and conditioning drills. No sparring, no contact. Real technique, real sweat and a workout that hits differently.</p>
+        <div class="disc-who" contenteditable="true">Perfect for anyone who wants a full-body workout with purpose. Zero experience required — just show up ready to move.</div>
+        <div class="disc-keywords">
+          <span class="dkw">Boxing Fitness Ballito</span>
+          <span class="dkw">Cardio Boxing KZN</span>
+          <span class="dkw">Fitness Classes North Coast</span>
+          <span class="dkw">All Levels</span>
+        </div>
+        <div class="disc-pricing">
+          <div class="disc-pricing-label">Pricing</div>
+          <div class="disc-price-grid">
+            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">R500<span> / month</span></div><div class="disc-price-desc">Unlimited Boxing Fitness classes</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Unlimited</div><div class="disc-price-val">R1,400<span> / month</span></div><div class="disc-price-desc">All martial arts classes — best value</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">R150<span> / class</span></div><div class="disc-price-desc">Single session, no commitment</div></div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-g" style="margin-top:24px">Book Your Free Boxing Fitness Trial</a>
       </div>
     </div>
   </div>
@@ -682,9 +712,7 @@ document.addEventListener('click',function(e){
           <div class="slot-overlay"><span class="slot-icon">🏋️</span><span class="slot-label">Powerlifting Photo</span></div>
         </div>
       </div>
-      <div class="disc-text">
-        <span class="disc-icon">🏋️</span>
-        <span class="disc-tag">Strength Sport · All Levels</span>
+      <div class="disc-text">        <span class="disc-tag">Strength Sport · All Levels</span>
         <h2 class="sec-h">Powerlifting<br><em>In Ballito.</em></h2>
         <p class="body-p" contenteditable="true">Powerlifting at Maddog Performance Institute is coached with the same precision and discipline that builds world champions. Our powerlifting programme is built around the three competition lifts — squat, bench press, and deadlift — and is structured to develop maximal strength, technical mastery, and competition-ready performance.</p>
         <div class="disc-who" contenteditable="true">Whether you are stepping onto a platform for the first time or chasing a total PB, our coaches provide the technical expertise, periodised programming, and performance environment to take your lifting to the next level.</div>
@@ -728,9 +756,7 @@ document.addEventListener('click',function(e){
           <div class="slot-overlay"><span class="slot-icon">🎯</span><span class="slot-label">Elite Personal Training Photo</span></div>
         </div>
       </div>
-      <div class="disc-text">
-        <span class="disc-icon">🎯</span>
-        <span class="disc-tag">Fully Personalised · Results-Driven</span>
+      <div class="disc-text">        <span class="disc-tag">Fully Personalised · Results-Driven</span>
         <h2 class="sec-h">Elite Personal<br><em>Training.</em></h2>
         <p class="body-p" contenteditable="true">A fully personalised performance system designed for individuals who want measurable, elite-level results. This is not personal training. This is a complete performance system &mdash; medically assessed, precisely programmed, and continuously monitored by the same coaching team that produces professional fighters and world champions.</p>
         <div class="disc-who" contenteditable="true">This is not personal training. This is a complete performance system — medically assessed, precisely programmed, and continuously monitored by the same coaching team that produces professional fighters and world champions.</div>
@@ -750,9 +776,13 @@ document.addEventListener('click',function(e){
         <div class="disc-pricing">
           <div class="disc-pricing-label">Pricing</div>
           <div class="disc-price-grid">
-            <div class="disc-price-card"><div class="disc-price-tier">Assessment</div><div class="disc-price-val">POA</div><div class="disc-price-desc" contenteditable="true">Full medical assessment and protocol design</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">POA<span> / month</span></div><div class="disc-price-desc" contenteditable="true">Full programme with ongoing monitoring</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Sessions</div><div class="disc-price-val">POA<span> / session</span></div><div class="disc-price-desc" contenteditable="true">Individual coached sessions</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">2× / Week</div><div class="disc-price-val">R1,600<span> / month</span></div><div class="disc-price-desc">8 sessions · PT + custom app program</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">3× / Week</div><div class="disc-price-val">R2,400<span> / month</span></div><div class="disc-price-desc">12 sessions · PT + custom app program</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">4× / Week</div><div class="disc-price-val">R3,200<span> / month</span></div><div class="disc-price-desc">16 sessions · PT + custom app program</div></div>
+          </div>
+          <div class="disc-price-grid" style="grid-template-columns:1fr 1fr;margin-top:3px">
+            <div class="disc-price-card"><div class="disc-price-tier">5× / Week</div><div class="disc-price-val">R4,000<span> / month</span></div><div class="disc-price-desc">20 sessions · PT + custom app program</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">R200<span> / session</span></div><div class="disc-price-desc">Single session, no commitment required</div></div>
           </div>
         </div>
         <a href="contact.html" class="btn btn-g" style="margin-top:24px">Enquire Now</a>
@@ -772,9 +802,7 @@ document.addEventListener('click',function(e){
           <div class="slot-overlay"><span class="slot-icon">🤝</span><span class="slot-label">Corporate Training Photo</span></div>
         </div>
       </div>
-      <div class="disc-text">
-        <span class="disc-icon">🤝</span>
-        <span class="disc-tag">Corporate Wellness · Private Group Sessions</span>
+      <div class="disc-text">        <span class="disc-tag">Corporate Wellness · Private Group Sessions</span>
         <h2 class="sec-h">Corporate Team<br><em>Building &amp; Recovery.</em></h2>
         <p class="body-p" contenteditable="true">Build stronger, healthier, and more connected teams through structured training and recovery experiences designed for performance and wellbeing. Private group sessions led by our world-champion coaching team in a premium facility.</p>
         <div class="disc-who" contenteditable="true">Customised corporate packages designed around your team's goals — whether it's a single team-building event or an ongoing wellness programme, we build the experience around you.</div>
@@ -972,6 +1000,8 @@ function swapPhoto(slotId) {
         img.style.cssText = 'position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover;object-position:center;z-index:1;display:block!important;';
       }
       if (slot) slot.classList.add('loaded');
+      var banner = document.getElementById('eb');
+      if (banner) banner.style.display = 'flex';
     };
     reader.readAsDataURL(file);
   };
