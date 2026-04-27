@@ -712,6 +712,15 @@ html { -webkit-text-size-adjust: 100%; }
 .mc-testimonial.expanded{display:block!important;overflow:visible!important;-webkit-line-clamp:unset!important}
 .mc-read-more{display:inline-block;margin-top:10px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;padding:0;transition:opacity .2s}
 .mc-read-more:hover{opacity:.7}
+
+/* ── SPONSOR LOGO UPLOAD SLOTS ── */
+.sponsor-logo-slot{position:relative;width:100%;height:120px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);cursor:pointer;overflow:hidden;display:flex;align-items:center;justify-content:center;transition:border-color .25s;flex-shrink:0}
+.sponsor-logo-slot:hover{border-color:rgba(201,168,76,.45)}
+.sponsor-logo-slot.loaded .logo-hint{display:none}
+.sponsor-logo-slot.loaded img{display:block!important}
+.logo-hint{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;pointer-events:none;text-align:center;padding:8px}
+.sponsors-grid .sponsor-name,.sponsors-sec .sponsor-name{color:var(--white)!important;font-size:13px}
+
 </style>
 
 </head>
@@ -1204,7 +1213,13 @@ document.addEventListener('click',function(e){
 
           <!-- Mozambik -->
           <a href="https://www.mozambik.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Mozambik Restaurant">
-            <div class="sponsor-logo-wrap">🦐</div>
+            <div class="sponsor-logo-slot" id="logo-mozambik" onclick="event.preventDefault();swapLogo('logo-mozambik')" title="Click to upload Mozambik logo">
+            <img id="logo-mozambik-img" src="" alt="Mozambik Logo" style="display:none;width:100%;height:100%;object-fit:contain;padding:6px">
+            <div class="logo-hint">
+              <span style="font-size:20px;opacity:.3">&#128444;</span>
+              <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
+            </div>
+          </div>
             <div class="sponsor-name" contenteditable="true">Mozambik</div>
             <div class="sponsor-desc" contenteditable="true">Ballito's original Afro-Porto dining experience. Famous for flame-grilled prawns, peri-peri chicken, and a menu built on bold Portuguese-inspired flavours. Where it all started — right here on the KZN North Coast.</div>
             <div class="sponsor-link-label">Visit Website →</div>
@@ -1212,7 +1227,13 @@ document.addEventListener('click',function(e){
 
           <!-- Concha Cafe -->
           <a href="https://concha.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Concha Cafe">
-            <div class="sponsor-logo-wrap">☕</div>
+            <div class="sponsor-logo-slot" id="logo-concha" onclick="event.preventDefault();swapLogo('logo-concha')" title="Click to upload Concha Café & Bakery logo">
+            <img id="logo-concha-img" src="" alt="Concha Café & Bakery Logo" style="display:none;width:100%;height:100%;object-fit:contain;padding:6px">
+            <div class="logo-hint">
+              <span style="font-size:20px;opacity:.3">&#128444;</span>
+              <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
+            </div>
+          </div>
             <div class="sponsor-name" contenteditable="true">Concha Café &amp; Bakery</div>
             <div class="sponsor-desc" contenteditable="true">Artisanal coffee shop, bakery and deli in the heart of Ballito. Portuguese-inspired bakes, freshly roasted coffee, and a community atmosphere just steps from the ocean on Compensation Beach Road.</div>
             <div class="sponsor-link-label">Visit Website →</div>
@@ -1220,7 +1241,13 @@ document.addEventListener('click',function(e){
 
           <!-- Conchilla -->
           <a href="https://conchilla.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Conchilla Tapas Lounge">
-            <div class="sponsor-logo-wrap">🍹</div>
+            <div class="sponsor-logo-slot" id="logo-conchilla" onclick="event.preventDefault();swapLogo('logo-conchilla')" title="Click to upload Conchilla logo">
+            <img id="logo-conchilla-img" src="" alt="Conchilla Logo" style="display:none;width:100%;height:100%;object-fit:contain;padding:6px">
+            <div class="logo-hint">
+              <span style="font-size:20px;opacity:.3">&#128444;</span>
+              <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
+            </div>
+          </div>
             <div class="sponsor-name" contenteditable="true">Conchilla</div>
             <div class="sponsor-desc" contenteditable="true">Ballito's premier tapas lounge and bar. A unique lifestyle destination on Compensation Beach Road — crafted cocktails, fresh food, and Ballito's finest ocean views. Where the ordinary gets left at the door.</div>
             <div class="sponsor-link-label">Visit Website →</div>
@@ -1228,7 +1255,13 @@ document.addEventListener('click',function(e){
 
           <!-- Fiamma Grill -->
           <a href="https://www.fiammagrill.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Fiamma Grill">
-            <div class="sponsor-logo-wrap">🔥</div>
+            <div class="sponsor-logo-slot" id="logo-fiamma" onclick="event.preventDefault();swapLogo('logo-fiamma')" title="Click to upload Fiamma Grill logo">
+            <img id="logo-fiamma-img" src="" alt="Fiamma Grill Logo" style="display:none;width:100%;height:100%;object-fit:contain;padding:6px">
+            <div class="logo-hint">
+              <span style="font-size:20px;opacity:.3">&#128444;</span>
+              <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
+            </div>
+          </div>
             <div class="sponsor-name" contenteditable="true">Fiamma Grill</div>
             <div class="sponsor-desc" contenteditable="true">From our family to yours. An authentic Italian grill experience rooted in quality ingredients, generous hospitality, and the kind of food that brings people together.</div>
             <div class="sponsor-link-label">Visit Website →</div>
@@ -1236,10 +1269,58 @@ document.addEventListener('click',function(e){
 
           <!-- ScoutNet -->
           <a href="https://scoutnet.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="ScoutNet">
-            <div class="sponsor-logo-wrap">📡</div>
+            <div class="sponsor-logo-slot" id="logo-scoutnet" onclick="event.preventDefault();swapLogo('logo-scoutnet')" title="Click to upload ScoutNet logo">
+            <img id="logo-scoutnet-img" src="" alt="ScoutNet Logo" style="display:none;width:100%;height:100%;object-fit:contain;padding:6px">
+            <div class="logo-hint">
+              <span style="font-size:20px;opacity:.3">&#128444;</span>
+              <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
+            </div>
+          </div>
             <div class="sponsor-name" contenteditable="true">ScoutNet</div>
             <div class="sponsor-desc" contenteditable="true">A modern marketplace ecosystem for the insurance industry. Cutting-edge virtual distribution technology connecting insurers and agents — built for performance, built for results.</div>
             <div class="sponsor-link-label">Visit Website →</div>
+          </a>
+
+          <!-- Ramessur -->
+          <a href="#" class="sponsor-card" aria-label="Ramessur">
+            <div class="sponsor-logo-slot" id="logo-ramessur" onclick="event.preventDefault();swapLogo('logo-ramessur')" title="Click to upload Ramessur logo">
+            <img id="logo-ramessur-img" src="" alt="Ramessur Logo" style="display:none;width:100%;height:100%;object-fit:contain;padding:6px">
+            <div class="logo-hint">
+              <span style="font-size:20px;opacity:.3">&#128444;</span>
+              <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
+            </div>
+          </div>
+            <div class="sponsor-name" contenteditable="true">Ramessur</div>
+            <div class="sponsor-desc" contenteditable="true">Description coming soon.</div>
+            <div class="sponsor-link-label">Visit Website &rarr;</div>
+          </a>
+
+          <!-- Coco de Mer -->
+          <a href="#" class="sponsor-card" aria-label="Coco de Mer">
+            <div class="sponsor-logo-slot" id="logo-coco" onclick="event.preventDefault();swapLogo('logo-coco')" title="Click to upload Coco de Mer logo">
+            <img id="logo-coco-img" src="" alt="Coco de Mer Logo" style="display:none;width:100%;height:100%;object-fit:contain;padding:6px">
+            <div class="logo-hint">
+              <span style="font-size:20px;opacity:.3">&#128444;</span>
+              <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
+            </div>
+          </div>
+            <div class="sponsor-name" contenteditable="true">Coco de Mer</div>
+            <div class="sponsor-desc" contenteditable="true">Description coming soon.</div>
+            <div class="sponsor-link-label">Visit Website &rarr;</div>
+          </a>
+
+          <!-- ATeam -->
+          <a href="#" class="sponsor-card" aria-label="ATeam">
+            <div class="sponsor-logo-slot" id="logo-ateam" onclick="event.preventDefault();swapLogo('logo-ateam')" title="Click to upload ATeam logo">
+            <img id="logo-ateam-img" src="" alt="ATeam Logo" style="display:none;width:100%;height:100%;object-fit:contain;padding:6px">
+            <div class="logo-hint">
+              <span style="font-size:20px;opacity:.3">&#128444;</span>
+              <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
+            </div>
+          </div>
+            <div class="sponsor-name" contenteditable="true">ATeam</div>
+            <div class="sponsor-desc" contenteditable="true">Description coming soon.</div>
+            <div class="sponsor-link-label">Visit Website &rarr;</div>
           </a>
 
         </div>
@@ -1389,6 +1470,24 @@ function swapPhoto(slotId) {
   };
   inp.click();
 }
+
+function swapLogo(slotId) {
+  var inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = 'image/*';
+  inp.onchange = function(e) {
+    var file = e.target.files[0]; if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      var img = document.getElementById(slotId + '-img');
+      img.src = ev.target.result;
+      img.style.display = 'block';
+      document.getElementById(slotId).classList.add('loaded');
+    };
+    reader.readAsDataURL(file);
+  };
+  inp.click();
+}
+
 function savePage(fname) {
   var banner = document.getElementById('eb');
   if (banner) banner.style.display = 'none';
