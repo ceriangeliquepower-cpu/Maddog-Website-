@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maddog Image Tool</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0F0F0F; color: #F5F0E8; min-height: 100vh; padding: 2rem; }
+  h1 { font-family: Georgia, serif; color: #C9A84C; font-size: 1.8rem; margin-bottom: 0.25rem; }
+  .subtitle { font-size: 13px; color: #888; margin-bottom: 2rem; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; }
+  .tab { padding: 10px 24px; border: 1px solid #333; border-radius: 6px; cursor: pointer; font-size: 14px; background: #1a1a1a; color: #888; transition: all 0.15s; }
+  .tab.active { background: #C9A84C; color: #080808; border-color: #C9A84C; font-weight: 600; }
+  .panel { display: none; } .panel.active { display: block; }
+  .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; }
+  .card h2 { font-size: 12px; font-weight: 600; color: #C9A84C; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+  .drop-zone { border: 2px dashed #333; border-radius: 8px; padding: 2rem; text-align: center; cursor: pointer; transition: all 0.15s; background: #111; margin-bottom: 0.75rem; }
+  .drop-zone:hover, .drop-zone.over { border-color: #C9A84C; background: #1a1a1a; }
+  .drop-zone input { display: none; }
+  .drop-label { font-size: 14px; color: #aaa; margin-bottom: 4px; }
+  .drop-label strong { color: #F5F0E8; }
+  .drop-hint { font-size: 12px; color: #555; }
+  .fname { font-size: 12px; color: #C9A84C; margin-bottom: 1rem; min-height: 18px; word-break: break-all; }
+  .btn { width: 100%; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #C9A84C; color: #080808; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.15s; margin-bottom: 8px; display: block; text-align: center; }
+  .btn:hover:not(:disabled) { background: #d4b45a; }
+  .btn:disabled { background: #2a2a2a; color: #555; border-color: #2a2a2a; cursor: not-allowed; }
+  .btn-secondary { background: #1a1a1a; color: #C9A84C; border-color: #C9A84C; }
+  .btn-secondary:hover:not(:disabled) { background: #252510; }
+  .status { font-size: 13px; padding: 10px 14px; border-radius: 6px; margin-top: 10px; display: none; line-height: 1.6; white-space: pre-line; }
+  .status.ok { background: #0d2e1a; color: #4ade80; border: 1px solid #1a5c30; display: block; }
+  .status.err { background: #2e0d0d; color: #f87171; border: 1px solid #5c1a1a; display: block; }
+  .status.info { background: #1a1a0d; color: #C9A84C; border: 1px solid #3a3010; display: block; }
+  .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+  .step-num { width: 22px; height: 22px; min-width: 22px; border-radius: 50%; background: #C9A84C; color: #080808; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .step-text { font-size: 13px; color: #aaa; line-height: 1.6; }
+  .divider { height: 1px; background: #2a2a2a; margin: 1.25rem 0; }
+</style>
+</head>
+<body>
+
+<h1>Maddog Image Tool</h1>
+<p class="subtitle">Strip images before sending to Claude — restore them after</p>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('strip', this)">Step 1 — Strip images</button>
+  <button class="tab" onclick="showTab('inject', this)">Step 2 — Restore images</button>
+</div>
+
+<div id="panel-strip" class="panel active">
+  <div class="card">
+    <h2>Instructions</h2>
+    <div class="step"><div class="step-num">1</div><div class="step-text">Upload your HTML file</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Click <strong style="color:#F5F0E8">Process file</strong></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Click <strong style="color:#F5F0E8">Download stripped HTML</strong> — upload this to Claude</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">Click <strong style="color:#F5F0E8">Download image pack</strong> — save this for Step 2</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Upload HTML file</h2>
+    <div class="drop-zone" id="dz1" onclick="document.getElementById('f1').click()" ondragover="doDragOver(event,'dz1')" ondragleave="doDragLeave('dz1')" ondrop="doDrop(event,'strip')">
+      <input type="file" id="f1" accept=".html" onchange="handleFile(event,'strip')">
+      <div class="drop-label"><strong>Click to upload</strong> or drag & drop</div>
+      <div class="drop-hint">.html files only</div>
+    </div>
+    <div class="fname" id="fname1"></div>
+    <button class="btn" id="btn-process" onclick="doStrip()" disabled>Process file</button>
+    <button class="btn btn-secondary" id="btn-dl-html" onclick="downloadStrippedHTML()" disabled>Download stripped HTML → send to Claude</button>
+    <button class="btn btn-secondary" id="btn-dl-json" onclick="downloadImagePack()" disabled>Download image pack → save for Step 2</button>
+    <div class="status" id="status-strip"></div>
+  </div>
+</div>
+
+<div id="panel-inject" class="panel">
+  <div class="card">
+    <h2>Instructions</h2>
+    <div class="step"><div class="step-num">1</div><div class="step-text">Upload the HTML file Claude sent back</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Upload your <strong style="color:#F5F0E8">image-pack.json</strong> from Step 1</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Click <strong style="color:#F5F0E8">Restore images & download</strong></div></div>
+  </div>
+
+  <div class="card">
+    <h2>Upload updated HTML (from Claude)</h2>
+    <div class="drop-zone" id="dz2" onclick="document.getElementById('f2').click()" ondragover="doDragOver(event,'dz2')" ondragleave="doDragLeave('dz2')" ondrop="doDrop(event,'inject-html')">
+      <input type="file" id="f2" accept=".html" onchange="handleFile(event,'inject-html')">
+      <div class="drop-label"><strong>Click to upload</strong> or drag & drop</div>
+      <div class="drop-hint">Updated .html from Claude</div>
+    </div>
+    <div class="fname" id="fname2"></div>
+    <div class="divider"></div>
+    <h2>Upload image pack</h2>
+    <div class="drop-zone" id="dz3" onclick="document.getElementById('f3').click()" ondragover="doDragOver(event,'dz3')" ondragleave="doDragLeave('dz3')" ondrop="doDrop(event,'inject-json')">
+      <input type="file" id="f3" accept=".json" onchange="handleFile(event,'inject-json')">
+      <div class="drop-label"><strong>Click to upload</strong> or drag & drop</div>
+      <div class="drop-hint">image-pack.json from Step 1</div>
+    </div>
+    <div class="fname" id="fname3"></div>
+    <button class="btn" id="btn-inject" onclick="doInject()" disabled>Restore images & download final file</button>
+    <div class="status" id="status-inject"></div>
+  </div>
+</div>
+
+<script>
+  let stripHTML = null, strippedHTML = null, imageMapJSON = null;
+  let injectHTML = null, injectJSON = null;
+
+  function showTab(t, el) {
+    document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(e => e.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('panel-' + t).classList.add('active');
+  }
+
+  function doDragOver(e, id) { e.preventDefault(); document.getElementById(id).classList.add('over'); }
+  function doDragLeave(id) { document.getElementById(id).classList.remove('over'); }
+  function doDrop(e, type) {
+    e.preventDefault(); e.currentTarget.classList.remove('over');
+    const file = e.dataTransfer.files[0];
+    if (file) processFile(file, type);
+  }
+  function handleFile(e, type) { const file = e.target.files[0]; if (file) processFile(file, type); }
+
+  function processFile(file, type) {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const c = ev.target.result;
+      if (type === 'strip') {
+        stripHTML = c;
+        document.getElementById('fname1').textContent = '✓ ' + file.name;
+        document.getElementById('btn-process').disabled = false;
+        setStatus('status-strip', 'File loaded — click Process file', 'info');
+      } else if (type === 'inject-html') {
+        injectHTML = c;
+        document.getElementById('fname2').textContent = '✓ ' + file.name;
+        checkInjectReady();
+      } else if (type === 'inject-json') {
+        injectJSON = c;
+        document.getElementById('fname3').textContent = '✓ ' + file.name;
+        checkInjectReady();
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  function checkInjectReady() {
+    if (injectHTML && injectJSON) {
+      document.getElementById('btn-inject').disabled = false;
+      setStatus('status-inject', 'Both files loaded — ready to restore', 'info');
+    }
+  }
+
+  function doStrip() {
+    if (!stripHTML) return;
+    const imageMap = {};
+    let idx = 0;
+    strippedHTML = stripHTML.replace(/data:[a-zA-Z0-9]+\/[a-zA-Z0-9+.\-]+;base64,[A-Za-z0-9+/=]+/g, match => {
+      const key = 'MDPI_IMG_' + String(++idx).padStart(3, '0');
+      imageMap[key] = match;
+      return key;
+    });
+    const count = Object.keys(imageMap).length;
+    if (count === 0) {
+      setStatus('status-strip', 'No base64 images found — upload it to Claude directly.', 'info');
+      return;
+    }
+    imageMapJSON = JSON.stringify(imageMap, null, 2);
+    document.getElementById('btn-dl-html').disabled = false;
+    document.getElementById('btn-dl-json').disabled = false;
+    setStatus('status-strip', '✓ Done — ' + count + ' images removed.\n\nNow click each download button above to save both files.', 'ok');
+  }
+
+  function downloadStrippedHTML() {
+    if (!strippedHTML) return;
+    triggerDownload('stripped-page.html', strippedHTML, 'text/html');
+  }
+
+  function downloadImagePack() {
+    if (!imageMapJSON) return;
+    triggerDownload('image-pack.json', imageMapJSON, 'application/json');
+  }
+
+  function doInject() {
+    if (!injectHTML || !injectJSON) return;
+    let map;
+    try { map = JSON.parse(injectJSON); }
+    catch (e) { setStatus('status-inject', 'Invalid JSON file. Use the image-pack.json from Step 1.', 'err'); return; }
+    let result = injectHTML;
+    let count = 0;
+    for (const [key, val] of Object.entries(map)) {
+      if (result.includes(key)) { result = result.split(key).join(val); count++; }
+    }
+    if (count === 0) {
+      setStatus('status-inject', 'No placeholders found. Make sure Claude kept the MDPI_IMG_XXX tags in the file.', 'err');
+      return;
+    }
+    triggerDownload('final-page.html', result, 'text/html');
+    setStatus('status-inject', '✓ Restored ' + count + ' images. Downloading now.', 'ok');
+  }
+
+  function triggerDownload(filename, content, mime) {
+    const blob = new Blob([content], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function setStatus(id, msg, type) {
+    const el = document.getElementById(id);
+    el.textContent = msg; el.className = 'status ' + type;
+  }
+</script>
+</body>
+</html>
