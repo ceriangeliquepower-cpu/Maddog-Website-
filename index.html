@@ -180,10 +180,10 @@ a{text-decoration:none;color:inherit}
 .hero-right .slot-overlay{position:absolute;inset:0;z-index:0;display:none}
 
 /* ── CREDENTIAL STRIP ── */
-.cred-strip{background:var(--gold);padding:11px 0;overflow:hidden;width:100%}
-.cred-scroll{display:flex;gap:0;animation:credScroll 32s linear infinite;white-space:nowrap;width:max-content}
-.cred-item{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--black);padding:0 28px;white-space:nowrap;position:relative;display:inline-block}
-.cred-item::after{content:'·';position:absolute;right:0;top:50%;transform:translateY(-50%);opacity:.4}
+.cred-strip{background:var(--gold);padding:12px 0;overflow:hidden;width:100%;position:relative;z-index:1;display:block}
+.cred-scroll{display:flex;white-space:nowrap;width:max-content;animation:credScroll 70s linear infinite;will-change:transform}
+.cred-item{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.14em;color:var(--black);padding:0 34px;display:inline-flex;align-items:center;gap:16px;flex-shrink:0}
+.cred-item::after{content:'◆';font-size:7px;opacity:.4}
 @keyframes credScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}100%{transform:translateX(-50%)}}
 
 /* ── WHO SECTION ── */
