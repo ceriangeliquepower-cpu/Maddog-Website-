@@ -228,7 +228,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 
 /* ── PHILOSOPHY STRIP ── */
 .philosophy-strip{padding:60px 0;background:var(--black);overflow:hidden;position:relative}
-.philosophy-strip::before{content:'STANDARD';font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,14vw,180px);color:rgba(201,168,76,.025);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+.philosophy-strip::before{content:none;display:none}
 .phil-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;position:relative;z-index:1}
 .phil-pillar{background:var(--card);padding:36px 28px;transition:background .3s;cursor:default}
 .phil-pillar:hover{background:#1e1e1e}
@@ -240,8 +240,8 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .phil-
 
 /* ── CTA ── */
-.cta-sec{padding:72px 0;background:var(--deep);text-align:center;position:relative;overflow:hidden}
-.cta-sec::before{content:'TRAIN';font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,14vw,180px);color:rgba(201,168,76,.028);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+.cta-sec{padding:72px 0;background:var(--black);text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:none;display:none}
 .cta-sec .si{position:relative;z-index:1}
 .cta-sub{font-family:'Barlow Condensed',sans-serif!important;font-style:normal!important;font-size:15px!important;font-weight:300!important;color:var(--white-dim)!important;margin:0 auto 40px;max-width:480px}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
