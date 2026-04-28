@@ -1174,8 +1174,6 @@ function toggleCoachBio(bioId, btnId) {
   if (btn) btn.textContent = bio.classList.contains('open') ? 'Close' : 'Read Full Bio';
 }
 function savePage(fname) {
-  var banner = document.getElementById('eb');
-  if (banner) banner.style.display = 'none';
   Object.keys(window._photoStore).forEach(function(slotId) {
     var img = document.getElementById(slotId + '-img');
     if (img) { img.setAttribute('src', window._photoStore[slotId]); img.src = window._photoStore[slotId]; }
@@ -1190,7 +1188,7 @@ function savePage(fname) {
       a.href = URL.createObjectURL(blob);
       a.download = fname || 'maddog-coaches.html';
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
-      setTimeout(function() { if (cs) cs.style.transform = ''; if (banner) banner.style.display = 'flex'; }, 500);
+      if (cs) cs.style.transform = '';
     });
   });
 }
