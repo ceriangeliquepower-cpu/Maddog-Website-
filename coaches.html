@@ -1184,19 +1184,38 @@ function savePage(fname) {
   if (cs) cs.style.transform = '';
   setTimeout(function() {
     var html = document.documentElement.outerHTML;
-    var a = document.createElement('a');
-    a.download = fname || 'coaches.html';
-    try {
-      /* data: URI works on file:// protocol where blob: is blocked */
-      a.href = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } catch(e) {
-      alert('Save error: ' + e.message);
+    var filename = fname || 'coaches.html';
+    var blob = new Blob([html], {type: 'text/html;charset=utf-8'});
+    /* showSaveFilePicker opens a native Save As dialog — user picks the folder directly */
+    if (window.showSaveFilePicker) {
+      window.showSaveFilePicker({
+        suggestedName: filename,
+        types: [{ description: 'HTML File', accept: {'text/html': ['.html']} }]
+      }).then(function(handle) {
+        return handle.createWritable().then(function(w) {
+          return w.write(blob).then(function() { return w.close(); });
+        });
+      }).then(function() {
+        alert('Saved successfully!');
+      }).catch(function(e) {
+        if (e.name === 'AbortError') return;
+        /* fallback: blob download */
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 3000);
+      });
+    } else {
+      /* fallback for older browsers */
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = filename;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 3000);
     }
     if (cs) cs.style.transform = '';
-  }, 100);
+  }, 150);
 }
 </script>
 <div class="edit-banner" id="eb" style="display:flex">
