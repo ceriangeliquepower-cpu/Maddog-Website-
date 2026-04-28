@@ -1123,21 +1123,7 @@ document.addEventListener('click',function(e){
   </div>
 </footer>
 <script>
-// ── TICKER
-window.addEventListener('load', function(){
-  var track = document.querySelector('.cred-scroll');
-  if(!track) return;
-  var items = Array.from(track.children);
-  items.forEach(function(item){ track.appendChild(item.cloneNode(true)); });
-  var pos = 0, speed = 0.5;
-  function step(){
-    pos += speed;
-    if(pos >= track.scrollWidth / 2) pos = 0;
-    track.style.transform = 'translateX(-' + pos + 'px)';
-    requestAnimationFrame(step);
-  }
-  setTimeout(function(){ requestAnimationFrame(step); }, 100);
-});
+// ── TICKER (CSS animation only — no JS cloning)
 </script>
 <!-- ── WHATSAPP FLOAT ── -->
 <div class="wa-float">
