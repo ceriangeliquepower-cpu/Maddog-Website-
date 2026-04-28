@@ -1181,17 +1181,21 @@ function savePage(fname) {
   });
   var cs = document.getElementById('credScroll');
   if (cs) cs.style.transform = '';
-  requestAnimationFrame(function() {
-    requestAnimationFrame(function() {
-      var html = document.documentElement.outerHTML;
-      var blob = new Blob([html], {type: 'text/html'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = fname || 'maddog-coaches.html';
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
-      if (cs) cs.style.transform = '';
-    });
-  });
+  setTimeout(function() {
+    var html = document.documentElement.outerHTML;
+    var a = document.createElement('a');
+    a.download = fname || 'coaches.html';
+    try {
+      /* data: URI works on file:// protocol where blob: is blocked */
+      a.href = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } catch(e) {
+      alert('Save error: ' + e.message);
+    }
+    if (cs) cs.style.transform = '';
+  }, 100);
 }
 </script>
 <div class="edit-banner" id="eb" style="display:flex">
