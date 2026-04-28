@@ -1143,18 +1143,29 @@ function swapPhoto(slotId) {
     var file = e.target.files[0]; if (!file) return;
     var reader = new FileReader();
     reader.onload = function(ev) {
-      var dataUrl = ev.target.result;
-      window._photoStore[slotId] = dataUrl;
-      var img  = document.getElementById(slotId + '-img');
-      var slot = document.getElementById(slotId);
-      if (img) {
-        img.setAttribute('src', dataUrl);
-        img.src = dataUrl;
-        img.style.cssText = 'position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover;object-position:center;z-index:1;display:block!important;';
-      }
-      if (slot) slot.classList.add('loaded');
-      var banner = document.getElementById('eb');
-      if (banner) banner.style.display = 'flex';
+      /* Compress via canvas before embedding — target ≤200KB at quality 0.78 */
+      var raw = new Image();
+      raw.onload = function() {
+        var MAX = 1200;
+        var w = raw.width, h = raw.height;
+        if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; }
+        var canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(raw, 0, 0, w, h);
+        var dataUrl = canvas.toDataURL('image/jpeg', 0.78);
+        window._photoStore[slotId] = dataUrl;
+        var img  = document.getElementById(slotId + '-img');
+        var slot = document.getElementById(slotId);
+        if (img) {
+          img.setAttribute('src', dataUrl);
+          img.src = dataUrl;
+          img.style.cssText = 'position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover;object-position:center;z-index:1;display:block!important;';
+        }
+        if (slot) slot.classList.add('loaded');
+        var banner = document.getElementById('eb');
+        if (banner) banner.style.display = 'flex';
+      };
+      raw.src = ev.target.result;
     };
     reader.readAsDataURL(file);
   };
