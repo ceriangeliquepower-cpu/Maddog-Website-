@@ -109,3 +109,118 @@ These bugs have already been fixed. Do not revert them.
 1. Read the existing file's CSS class names and structure before writing new HTML — match exactly.
 2. New sections must use existing CSS classes, not introduce new design patterns.
 3. Deliver complete `.html` files, not partial snippets (unless explicitly asked for a snippet).
+
+---
+
+## Semantic HTML Rules
+
+- Use correct landmark elements: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
+- Every `<section>` must have a heading (`<h2>` or lower) — no headingless sections.
+- Heading hierarchy must be sequential: one `<h1>` per page, then `<h2>`, `<h3>` — never skip levels.
+- Use `<button>` for interactive controls, `<a>` only for navigation. Never use `<div onclick>` for buttons.
+- Use `<ul>` / `<ol>` for lists of items — not `<div>` stacks.
+- Use `<time datetime="...">` for dates and times.
+- Use `<address>` for contact details in the footer.
+
+---
+
+## SEO — Required on Every Page
+
+Every `.html` file must include all of the following in `<head>`:
+
+```html
+<!-- Primary -->
+<title>Page Title | Maddog Performance Institute | Ballito KZN</title>
+<meta name="description" content="150–160 char description with primary keyword.">
+<link rel="canonical" href="https://www.maddogperformance.co.za/page.html">
+
+<!-- Open Graph (Facebook / WhatsApp previews) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Page Title | Maddog Performance Institute">
+<meta property="og:description" content="Same as meta description.">
+<meta property="og:url" content="https://www.maddogperformance.co.za/page.html">
+<meta property="og:image" content="https://www.maddogperformance.co.za/og-image.jpg">
+<meta property="og:site_name" content="Maddog Performance Institute">
+<meta property="og:locale" content="en_ZA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page Title | Maddog Performance Institute">
+<meta name="twitter:description" content="Same as meta description.">
+<meta name="twitter:image" content="https://www.maddogperformance.co.za/og-image.jpg">
+
+<!-- Geo + Robots -->
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="ZA-KZN">
+<meta name="geo.placename" content="Ballito, KwaZulu-Natal">
+```
+
+Every page must also include **LocalBusiness JSON-LD** structured data. Minimum required fields: `@type`, `name`, `url`, `telephone`, `address`, `geo`, `openingHours`, `image`, `priceRange`.
+
+---
+
+## Image Optimisation Rules
+
+- All images are **base64-embedded JPEG** — compress with PIL before embedding (target ≤ 200KB per image at quality 72–82).
+- Never embed a raw uncompressed PNG or high-res JPEG — always run through PIL first.
+- Every `<img>` must have a descriptive `alt` attribute — never `alt=""` for content images. Decorative images only may use `alt=""`.
+- Include `width` and `height` attributes on every `<img>` to prevent layout shift (CLS).
+- Use `loading="lazy"` on all images that are below the fold.
+- Hero / above-the-fold images must NOT have `loading="lazy"` — they must load immediately.
+- Use `object-fit: cover` + explicit dimensions on photo slots to prevent reflow.
+
+---
+
+## Accessibility Rules
+
+- Colour contrast must meet WCAG AA: minimum 4.5:1 for body text, 3:1 for large text (18px+ bold or 24px+ normal).
+- Every interactive element (`<a>`, `<button>`) must have a visible focus state — never `outline: none` without an alternative.
+- All form inputs need a `<label>` associated via `for` / `id`.
+- Every `<img>` needs a meaningful `alt` (see Image rules above).
+- Navigation must be keyboard-accessible — tab order must follow visual order.
+- Use `aria-label` on icon-only buttons (e.g. social media icons, WhatsApp float button).
+- Use `aria-expanded` on toggle buttons (e.g. coach bio expand buttons).
+- Hamburger menu must toggle `aria-expanded` and trap focus when open.
+- Avoid `display:none` or `visibility:hidden` on content that screen readers need — use the visually-hidden pattern instead if required.
+
+---
+
+## Performance Best Practices
+
+- **No render-blocking scripts** — all `<script>` tags go before `</body>`, never in `<head>` (except inline critical CSS).
+- **Google Fonts** — use `rel="preconnect"` to `https://fonts.googleapis.com` and `https://fonts.gstatic.com`.
+- **CSS animations** — use `will-change` only on actively animating elements (`.cred-scroll`). Remove after animation ends if possible.
+- **JS ticker** — driven by CSS animation only, no `requestAnimationFrame` cloning loop (already fixed — do not revert).
+- **savePage()** — uses `showSaveFilePicker` + Blob (not `encodeURIComponent` data URI) to avoid memory issues with large files.
+- Avoid `@import` inside CSS — use `<link>` tags instead.
+- Minimise repaints: prefer `transform` and `opacity` for animations over `top`/`left`/`width`.
+
+---
+
+## Google Crawlability Rules
+
+- Every page must have a unique `<title>` and unique `<meta name="description">`.
+- Internal links must use relative paths (`href="coaches.html"`) — they must all resolve correctly from the same folder.
+- `sitemap.xml` must list all 13 pages + all 5 blog pages. Update it whenever a new page is added.
+- `robots.txt` must allow all crawlers: `User-agent: * / Allow: /`.
+- No `noindex` or `nofollow` on public pages.
+- Use **breadcrumb JSON-LD** on all blog pages for rich results.
+- Use **Article JSON-LD** on blog pages with `datePublished`, `dateModified`, `author`, `image`.
+- Anchor text must be descriptive — never "click here" or "read more" without context.
+- Every page must link back to at least 2 other internal pages (footer nav counts).
+- `<link rel="canonical">` must match the exact live URL to prevent duplicate content issues.
+
+---
+
+## Mobile-First Design Rules
+
+- Write base CSS for mobile (≤ 375px), then use `@media (min-width: …)` to scale up — not the reverse.
+- Touch targets must be at least **44×44px** — applies to buttons, nav links, social icons, and phone numbers.
+- Font sizes: minimum `14px` for body text on mobile, `11px` for labels/captions.
+- Never use `px` for font sizes in media queries — use `clamp()` or relative units.
+- The nav must collapse to a hamburger at ≤ 768px.
+- No horizontal scroll at any viewport width — test at 320px, 375px, 390px, 428px.
+- `overflow-x: hidden` on `body` for mobile — but never on `html` (breaks `position:sticky`).
+- Tap-highlight should be suppressed on interactive elements: `-webkit-tap-highlight-color: transparent`.
+- Use `env(safe-area-inset-bottom)` for bottom padding on pages with fixed bottom bars (save banner, WhatsApp float).
+- Images must be responsive — use `width:100%; height:auto` or explicit `aspect-ratio` to prevent overflow.
