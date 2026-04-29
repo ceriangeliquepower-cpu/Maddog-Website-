@@ -1178,11 +1178,71 @@ document.addEventListener('click',function(e){
       </div>
 
       <!-- MEMBER 6 -->
-      <div class="member-card" id="mc6" style="border:1px dashed rgba(201,168,76,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;gap:12px">
-        <div style="font-size:32px;opacity:.15">👤</div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,232,.3)">Your Story Here</div>
-        <p style="font-size:12px;font-weight:300;color:rgba(245,240,232,.25);text-align:center;padding:0 24px;line-height:1.6">Member profile coming soon. Training at Maddog and want to be featured? Get in touch.</p>
-        <a href="contact.html" style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:8px 16px;transition:border-color .2s">Contact Us</a>
+      
+      <!-- MEMBER 6 — Luke De Beer -->
+      <div class="member-card reveal rd1 visible" id="mc6">
+        <div class="mc-photo-wrap">
+          <div class="mc-photo-thumb" id="mp6" onclick="swapPhoto('mp6')"><img loading="lazy" id="mp6-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Luke De Beer — Maddog Performance Institute" style="display:none"><div class="mc-photo-thumb-hint">📸</div></div>
+          <div class="mc-body-content">
+          <div class="mc-stats-bar">
+          <div class="mc-stat"><div class="mc-stat-val" id="m6s1" contenteditable="true">MMA</div><div class="mc-stat-lbl" id="m6l1" contenteditable="true">Discipline</div></div>
+          <div class="mc-stat"><div class="mc-stat-val" id="m6s2" contenteditable="true">1+</div><div class="mc-stat-lbl" id="m6l2" contenteditable="true">Years Training</div></div>
+          <div class="mc-stat"><div class="mc-stat-val" id="m6s3" contenteditable="true">Ballito</div><div class="mc-stat-lbl" id="m6l3" contenteditable="true">Location</div></div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-quote-mark">"</div>
+          <div class="mc-name" contenteditable="true">Luke De Beer</div>
+          <div class="mc-duration" contenteditable="true">MMA · Training Since 2024</div>
+          <p class="mc-testimonial" contenteditable="true">I have been training with Amanda "Maddog" for around a year, and it has changed the course of my life. I never knew anything about MMA before I joined the gym and now it has become a huge part of my life. I can't imagine my life without Amanda.... OSSS!!!</p>
+          <button class="mc-read-more" onclick="toggleReadMore(this)">Read More ▼</button>
+          <div style="margin-top:16px"><button class="btn btn-o btn-sm" onclick="openMemberEdit('mc6')">Edit Member</button></div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEMBER 7 — Yolanda Smith -->
+      <div class="member-card reveal rd1 visible" id="mc7">
+        <div class="mc-photo-wrap">
+          <div class="mc-photo-thumb" id="mp7" onclick="swapPhoto('mp7')"><img loading="lazy" id="mp7-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Yolanda Smith — Maddog Performance Institute" style="display:none"><div class="mc-photo-thumb-hint">📸</div></div>
+          <div class="mc-body-content">
+          <div class="mc-stats-bar">
+          <div class="mc-stat"><div class="mc-stat-val" id="m7s1" contenteditable="true">Kickboxing</div><div class="mc-stat-lbl" id="m7l1" contenteditable="true">Discipline</div></div>
+          <div class="mc-stat"><div class="mc-stat-val" id="m7s2" contenteditable="true">2+</div><div class="mc-stat-lbl" id="m7l2" contenteditable="true">Years Training</div></div>
+          <div class="mc-stat"><div class="mc-stat-val" id="m7s3" contenteditable="true">Since 2023</div><div class="mc-stat-lbl" id="m7l3" contenteditable="true">Training Since</div></div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-quote-mark">"</div>
+          <div class="mc-name" contenteditable="true">Yolanda Smith</div>
+          <div class="mc-duration" contenteditable="true">Kickboxing · BJJ · Fitness · Since 2023</div>
+          <p class="mc-testimonial" contenteditable="true">Amazing kickboxing, fitness and jujitsu personal trainer! I'm nearly 50 years old and have been training with Amanda since January 2023, and yet to do a class that is repetitive or the same as the previous class. Not only is Amanda a professional training from personal experience, she is also extremely knowledgeable about the techniques and trains you every session to become better at it. She is super inspirational, high energy, a very strong individual physically and emotionally, and always motivational. She makes the sessions challenging, yet enjoyable. Her fitness/strength classes will leave you exhausted, but makes you feel like you have achieved something. What I really like about Amanda is her attention to detail and how she teaches you the proper techniques. I feel more energetic, confident and have gained muscle tone. I have also improved my strength &amp; endurance plus improved my agility! I highly recommend Amanda to anyone young and old who wants to learn kickboxing, jujitsu or improve their fitness. She truly is an amazing trainer who adjusts to each person's needs and personality.</p>
+          <button class="mc-read-more" onclick="toggleReadMore(this)">Read More ▼</button>
+          <div style="margin-top:16px"><button class="btn btn-o btn-sm" onclick="openMemberEdit('mc7')">Edit Member</button></div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEMBER 8 — Lainz Mortzouris -->
+      <div class="member-card reveal rd1 visible" id="mc8">
+        <div class="mc-photo-wrap">
+          <div class="mc-photo-thumb" id="mp8" onclick="swapPhoto('mp8')"><img loading="lazy" id="mp8-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Lainz Mortzouris — Maddog Performance Institute" style="display:none"><div class="mc-photo-thumb-hint">📸</div></div>
+          <div class="mc-body-content">
+          <div class="mc-stats-bar">
+          <div class="mc-stat"><div class="mc-stat-val" id="m8s1" contenteditable="true">MMA</div><div class="mc-stat-lbl" id="m8l1" contenteditable="true">Discipline</div></div>
+          <div class="mc-stat"><div class="mc-stat-val" id="m8s2" contenteditable="true">—</div><div class="mc-stat-lbl" id="m8l2" contenteditable="true">—</div></div>
+          <div class="mc-stat"><div class="mc-stat-val" id="m8s3" contenteditable="true">Ballito</div><div class="mc-stat-lbl" id="m8l3" contenteditable="true">Location</div></div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-quote-mark">"</div>
+          <div class="mc-name" contenteditable="true">Lainz Mortzouris</div>
+          <div class="mc-duration" contenteditable="true">MMA · Personal Training</div>
+          <p class="mc-testimonial" contenteditable="true">Training with Mandz has truly been a life-changing journey. Mandz isn't just a coach; she's a force of nature. Her passion for fitness and her unique training style have ignited a fire in my own fitness journey. What makes Mandz exceptional is her ability to connect with her clients on a profoundly personal level. Every training session with her feels like an adventure of self-discovery — a journey that's strengthened not just my body but also my spirit. Her personalised training programmes reflect her unwavering commitment to my growth, both physically and mentally. Mandz is more than a coach; she's a true friend who cares deeply about my well-being and progress. In Mandz, I've found not only an extraordinary coach but also a mentor and motivator who has inspired me to push past my limits in fitness and in life. Her coaching has been nothing short of transformative, and I'm deeply grateful for the positive impact she's had on my journey.</p>
+          <button class="mc-read-more" onclick="toggleReadMore(this)">Read More ▼</button>
+          <div style="margin-top:16px"><button class="btn btn-o btn-sm" onclick="openMemberEdit('mc8')">Edit Member</button></div>
+        </div>
+          </div>
+        </div>
       </div>
 </div></div></section>
 
