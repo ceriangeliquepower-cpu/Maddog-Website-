@@ -217,15 +217,15 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 /* ── NEWSLETTER ── */
 .newsletter{padding:60px 0;background:var(--gold)}
 .nl-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto;padding:0 48px}
-.nl-left h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,50px);line-height:.95;color:var(--white);margin-bottom:8px}
-.nl-left p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(245,240,232,.65);line-height:1.6;margin-bottom:10px}
+.nl-left h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,50px);line-height:.95;color:var(--black);margin-bottom:8px}
+.nl-left p{font-size:16px;font-weight:400;color:rgba(8,8,8,.65);line-height:1.6;margin-bottom:10px;letter-spacing:.04em}
 .nl-lead{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.55);display:flex;align-items:center;gap:8px}
 .nl-lead::before{content:'+';font-size:14px}
 .nl-form{display:flex;gap:0}
-.nl-form input{flex:1;background:var(--card);border:none;border-bottom:2px solid rgba(8,8,8,.25);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:500;padding:14px 18px;outline:none;transition:border-color .2s}
-.nl-form input::placeholder{color:rgba(245,240,232,.4)}
+.nl-form input{flex:1;background:rgba(8,8,8,.12);border:none;border-bottom:2px solid rgba(8,8,8,.25);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:500;padding:14px 18px;outline:none}
+.nl-form input::placeholder{color:rgba(8,8,8,.4)}
 .nl-form input:focus{border-color:var(--black)}
-.nl-form button{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:14px 26px;cursor:pointer;transition:background .3s;white-space:nowrap}
+.nl-form button{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:var(--black);border:none;padding:14px 26px;cursor:pointer;transition:background .3s;white-space:nowrap}
 .nl-form button:hover{background:#1a1a1a}
 
 /* ── FOOTER ── */
@@ -1050,7 +1050,7 @@ document.addEventListener('click',function(e){
           <input type="email" name="email" placeholder="your@email.com" required>
           <button type="submit" id="nlSubmitBtn">Subscribe</button>
         </div>
-        <div id="nlSuccess" style="display:none;margin-top:12px;font-size:15px;font-weight:600;color:var(--gold);letter-spacing:.04em">✓ You're on the list — welcome to the Maddog community!</div>
+        <div id="nlSuccess" style="display:none;margin-top:12px;font-size:15px;font-weight:600;color:var(--black);letter-spacing:.04em">✓ You're on the list — welcome to the Maddog community!</div>
       </form>
     </div>
   </div>
