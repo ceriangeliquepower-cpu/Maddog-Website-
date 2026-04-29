@@ -582,16 +582,18 @@ document.addEventListener('click',function(e){
           <div class="itab" onclick="setTab(this)">Junior Academy</div>
           <div class="itab" onclick="setTab(this)">General Enquiry</div>
         </div>
-        <div id="contactForm">
+        <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
           <div class="form-row">
-            <div class="form-field"><label>First Name *</label><input type="text" placeholder="Your first name"></div>
-            <div class="form-field"><label>Last Name *</label><input type="text" placeholder="Your last name"></div>
+            <div class="form-field"><label for="cf-fname">First Name *</label><input id="cf-fname" type="text" name="first_name" placeholder="Your first name" required></div>
+            <div class="form-field"><label for="cf-lname">Last Name *</label><input id="cf-lname" type="text" name="last_name" placeholder="Your last name" required></div>
           </div>
-          <div class="form-field"><label>Email Address *</label><input type="email" placeholder="your@email.com"></div>
-          <div class="form-field"><label>Phone / WhatsApp</label><input type="tel" placeholder="+27 63 442 1690"></div>
+          <div class="form-field"><label for="cf-email">Email Address *</label><input id="cf-email" type="email" name="email" placeholder="your@email.com" required></div>
+          <div class="form-field"><label for="cf-phone">Phone / WhatsApp</label><input id="cf-phone" type="tel" name="phone" placeholder="+27 63 442 1690"></div>
           <div class="form-field">
-            <label>I'm Interested In</label>
-            <select>
+            <label for="cf-interest">I'm Interested In</label>
+            <select id="cf-interest" name="interested_in">
               <option>Free Trial Class</option>
               <option>MMA Training</option>
               <option>BJJ Classes</option>
@@ -605,8 +607,8 @@ document.addEventListener('click',function(e){
             </select>
           </div>
           <div class="form-field">
-            <label>Experience Level</label>
-            <select>
+            <label for="cf-level">Experience Level</label>
+            <select id="cf-level" name="experience_level">
               <option>Complete Beginner — never trained before</option>
               <option>Some experience — trained elsewhere</option>
               <option>Intermediate — training regularly</option>
@@ -614,12 +616,15 @@ document.addEventListener('click',function(e){
               <option>Not applicable</option>
             </select>
           </div>
-          <div class="form-field"><label>Message</label><textarea placeholder="Tell us a bit about yourself and what you're looking for..."></textarea></div>
+          <div class="form-field"><label for="cf-message">Message</label><textarea id="cf-message" name="message" placeholder="Tell us a bit about yourself and what you're looking for..."></textarea></div>
           <div class="form-submit">
-            <a href="mailto:info@maddogperformance.co.za" class="btn btn-g">Send Message</a>
+            <button type="submit" class="btn btn-g" id="cfSubmitBtn">Send Message</button>
             <span class="form-note">We reply within 24 hours</span>
           </div>
-        </div>
+          <div class="form-success" id="contactSuccess">
+            <p>✓ Message sent — we'll be in touch within 24 hours!</p>
+          </div>
+        </form>
       </div>
 
       <!-- RIGHT — INFO -->
@@ -791,10 +796,15 @@ document.addEventListener('click',function(e){
       <p contenteditable="true">Fight results, event announcements, new classes and member stories — straight to your inbox.</p>
     </div>
     <div>
-      <div class="nl-form">
-        <input type="email" placeholder="your@email.com">
-        <button>Subscribe</button>
-      </div>
+      <form id="newsletterForm" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field-nl">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p hidden><label>Don't fill this out: <input name="bot-field-nl"></label></p>
+        <div class="nl-form">
+          <input type="email" name="email" placeholder="your@email.com" required>
+          <button type="submit" id="nlSubmitBtn">Subscribe</button>
+        </div>
+        <div id="nlSuccess" style="display:none;margin-top:12px;font-size:15px;font-weight:600;color:var(--black);letter-spacing:.04em">✓ You're on the list — welcome to the Maddog community!</div>
+      </form>
     </div>
   </div>
 </section>
@@ -810,6 +820,66 @@ document.addEventListener('click',function(e){
 </div>
 
 <script>
+/* ── Interest tabs ── */
+function setTab(el) {
+  document.querySelectorAll('.itab').forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+  var sel = document.getElementById('cf-interest');
+  if (sel) {
+    var label = el.textContent.trim().toLowerCase();
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].text.toLowerCase().indexOf(label) >= 0) { sel.selectedIndex = i; break; }
+    }
+  }
+}
+
+/* ── Contact form submission ── */
+document.addEventListener('DOMContentLoaded', function(){
+  var form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('cfSubmitBtn');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function() {
+        form.querySelectorAll('.form-row,.form-field,.form-submit').forEach(function(el){ el.style.display = 'none'; });
+        var ok = document.getElementById('contactSuccess');
+        if (ok) { ok.style.display = 'block'; }
+      }).catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; }
+        alert('Something went wrong. Please WhatsApp us on +27 63 442 1690 or email info@maddogperformance.co.za');
+      });
+    });
+  }
+
+  /* ── Newsletter submission ── */
+  var nlForm = document.getElementById('newsletterForm');
+  if (nlForm) {
+    nlForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('nlSubmitBtn');
+      if (btn) { btn.disabled = true; btn.textContent = 'Subscribing…'; }
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(nlForm)).toString()
+      }).then(function() {
+        var nlFormEl = nlForm.querySelector('.nl-form');
+        if (nlFormEl) nlFormEl.style.display = 'none';
+        var ok = document.getElementById('nlSuccess');
+        if (ok) ok.style.display = 'block';
+      }).catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
+      });
+    });
+  }
+});
+
+/* ── Credential ticker ── */
 window.addEventListener('load', function(){
   var strip = document.querySelector('.cred-strip');
   var track = document.querySelector('.cred-scroll');
