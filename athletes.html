@@ -721,6 +721,22 @@ html { -webkit-text-size-adjust: 100%; }
 .logo-hint{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;pointer-events:none;text-align:center;padding:8px}
 .sponsors-grid .sponsor-name,.sponsors-sec .sponsor-name{color:var(--white)!important;font-size:13px}
 
+/* ── SPONSOR MODAL ── */
+.sp-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:10000;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.sp-modal-overlay.open{display:flex}
+.sp-modal{background:var(--deep);border:1px solid rgba(201,168,76,.3);border-top:3px solid var(--gold);max-width:620px;width:100%;position:relative;padding:40px 44px 44px;max-height:90vh;overflow-y:auto}
+.sp-modal-close{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--white-dim);font-size:22px;cursor:pointer;line-height:1;transition:color .2s}
+.sp-modal-close:hover{color:var(--gold)}
+.sp-modal-eyebrow{font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.sp-modal-eyebrow::after{content:'';flex:1;height:1px;background:rgba(201,168,76,.25)}
+.sp-modal h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4vw,36px);letter-spacing:.04em;color:var(--white);line-height:1.1;margin-bottom:8px}
+.sp-modal-sub{font-size:14px;font-weight:300;color:var(--white-dim);line-height:1.6;margin-bottom:28px;letter-spacing:.04em}
+.sp-success{display:none;text-align:center;padding:32px 0}
+.sp-success-icon{font-size:48px;margin-bottom:16px}
+.sp-success h3{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.04em;color:var(--gold);margin-bottom:8px}
+.sp-success p{font-size:15px;font-weight:300;color:var(--white-dim);line-height:1.6}
+@media(max-width:600px){.sp-modal{padding:28px 20px 32px}}
+
 </style>
 
 </head>
@@ -875,7 +891,7 @@ document.addEventListener('click',function(e){
 <div class="sponsor-cta-bar">
   <div class="si">
     <div class="sponsor-cta-text"><strong>Support the Fight Team.</strong> Partner with Maddog Performance Institute and align your brand with champions.</div>
-    <a href="#sponsors" class="btn btn-g" style="flex-shrink:0">Become a Sponsor</a>
+    <button onclick="openSponsorModal()" class="btn btn-g" style="flex-shrink:0;cursor:pointer">Become a Sponsor</button>
   </div>
 </div>
 
@@ -1506,6 +1522,161 @@ document.addEventListener('click',function(e){
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
   </a>
 </div>
+<!-- ══ SPONSORSHIP MODAL ══ -->
+<div class="sp-modal-overlay" id="sponsorModal" role="dialog" aria-modal="true" aria-labelledby="spModalTitle">
+  <div class="sp-modal">
+    <button class="sp-modal-close" onclick="closeSponsorModal()" aria-label="Close">✕</button>
+
+    <!-- Form view -->
+    <div id="spFormWrap">
+      <div class="sp-modal-eyebrow">Sponsorship Enquiry</div>
+      <h2 id="spModalTitle">Partner With<br>The Maddog Fight Team.</h2>
+      <p class="sp-modal-sub">Align your brand with Maddog Performance Institute and our team of competitive fighters. Fill in your details and we'll be in touch within 48 hours.</p>
+
+      <form id="sponsorForm" name="sponsorship-team" method="POST" data-netlify="true" netlify-honeypot="bot-field-sp">
+        <input type="hidden" name="form-name" value="sponsorship-team">
+        <p hidden><label>Don't fill this out: <input name="bot-field-sp"></label></p>
+
+        <div class="form-row">
+          <div class="form-field"><label for="sp-company">Company / Brand *</label><input id="sp-company" type="text" name="company" placeholder="Your company name" required></div>
+          <div class="form-field"><label for="sp-contact">Contact Person *</label><input id="sp-contact" type="text" name="contact_name" placeholder="Your full name" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label for="sp-email">Email Address *</label><input id="sp-email" type="email" name="email" placeholder="your@email.com" required></div>
+          <div class="form-field"><label for="sp-phone">Phone / WhatsApp</label><input id="sp-phone" type="tel" name="phone" placeholder="+27 63 442 1690"></div>
+        </div>
+        <div class="form-field"><label for="sp-website">Website / Social Media</label><input id="sp-website" type="url" name="website" placeholder="https://yourwebsite.com"></div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="sp-interest">Sponsoring</label>
+            <select id="sp-interest" name="sponsoring">
+              <option>Maddog Fight Team (full team)</option>
+              <option>Amanda "Maddog" Lino</option>
+              <option>A specific athlete</option>
+              <option>Maddog Performance Institute</option>
+              <option>Open to discussion</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="sp-type">Type of Sponsorship</label>
+            <select id="sp-type" name="sponsorship_type">
+              <option>Financial / Monetary</option>
+              <option>Product / Equipment</option>
+              <option>Services / In-Kind</option>
+              <option>Media / Exposure</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="sp-budget">Estimated Budget</label>
+          <select id="sp-budget" name="budget">
+            <option>Prefer not to say</option>
+            <option>Under R5,000 / month</option>
+            <option>R5,000 – R15,000 / month</option>
+            <option>R15,000 – R50,000 / month</option>
+            <option>R50,000+ / month</option>
+            <option>Annual arrangement</option>
+          </select>
+        </div>
+        <div class="form-field"><label for="sp-message">Tell Us About Your Brand *</label><textarea id="sp-message" name="message" placeholder="What does your brand do, and why are you interested in this sponsorship?" required style="min-height:90px"></textarea></div>
+
+        <div class="form-submit" style="margin-top:20px">
+          <button type="submit" class="btn btn-g" id="spSubmitBtn">Submit Sponsorship Enquiry</button>
+        </div>
+        <p style="font-size:10px;font-weight:300;color:var(--white-dim);opacity:.5;margin-top:12px;letter-spacing:.06em">We will respond within 48 hours. A confirmation email will be sent to the address provided.</p>
+      </form>
+    </div>
+
+    <!-- Success view -->
+    <div class="sp-success" id="spSuccess">
+      <div class="sp-success-icon">★</div>
+      <h3>Enquiry Received.</h3>
+      <p>Thank you for your interest in partnering with the Maddog Fight Team.<br>A confirmation has been sent to your email address.<br>We'll be in touch within 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!--
+  ══════════════════════════════════════════════════════════════════
+  EMAIL AUTO-REPLY SETUP (EmailJS — free at emailjs.com)
+  ══════════════════════════════════════════════════════════════════
+  To enable automatic confirmation emails to sponsors:
+
+  1. Go to https://www.emailjs.com and create a free account
+  2. Add an Email Service (Gmail or Outlook recommended)
+  3. Create an Email Template with variables:
+       {{to_name}}  {{to_email}}  {{company}}  {{sponsorship_type}}
+  4. Copy your Public Key, Service ID, and Template ID
+  5. Replace the three placeholder values below:
+       EMAILJS_PUBLIC_KEY   → your Public Key
+       EMAILJS_SERVICE_ID   → your Service ID
+       EMAILJS_TEMPLATE_ID  → your Template ID (confirmation template)
+  ══════════════════════════════════════════════════════════════════
+-->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+/* ── Sponsor Modal ── */
+function openSponsorModal() {
+  document.getElementById('sponsorModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeSponsorModal() {
+  document.getElementById('sponsorModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('sponsorModal').addEventListener('click', function(e) {
+  if (e.target === this) closeSponsorModal();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSponsorModal();
+});
+
+/* ── Sponsor Form Submission ── */
+document.getElementById('sponsorForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('spSubmitBtn');
+  btn.disabled = true; btn.textContent = 'Sending…';
+
+  var formData = new FormData(this);
+
+  /* Step 1 — Netlify Forms (emails Maddog instantly) */
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(function() {
+
+    /* Step 2 — EmailJS confirmation email to the sponsor */
+    /* REPLACE the three values below with your EmailJS account details */
+    var EMAILJS_PUBLIC_KEY  = 'EMAILJS_PUBLIC_KEY';   /* ← replace */
+    var EMAILJS_SERVICE_ID  = 'EMAILJS_SERVICE_ID';   /* ← replace */
+    var EMAILJS_TEMPLATE_ID = 'EMAILJS_TEMPLATE_ID';  /* ← replace */
+
+    if (EMAILJS_PUBLIC_KEY !== 'EMAILJS_PUBLIC_KEY') {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        to_name:          formData.get('contact_name'),
+        to_email:         formData.get('email'),
+        company:          formData.get('company'),
+        sponsorship_type: formData.get('sponsorship_type'),
+        reply_to:         'info@maddogperformance.co.za'
+      });
+    }
+
+    /* Show success */
+    document.getElementById('spFormWrap').style.display = 'none';
+    document.getElementById('spSuccess').style.display  = 'block';
+  })
+  .catch(function() {
+    btn.disabled = false; btn.textContent = 'Submit Sponsorship Enquiry';
+    alert('Something went wrong. Please email us at info@maddogperformance.co.za');
+  });
+});
+</script>
+
 <script>
 window._photoStore = window._photoStore || {};
 function swapPhoto(slotId) {
