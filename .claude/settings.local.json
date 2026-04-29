@@ -7,7 +7,11 @@
       "Bash(git push *)",
       "Bash(python3 update_coaches.py)",
       "mcp__Claude_Preview__preview_start",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(n\\\\\")",
+      "Bash(' 2>&1 | Select-String -Pattern '\\\\''.'\\\\'' | Select-Object -First 50 | ForEach-Object { $_.Line }')",
+      "Bash(powershell -Command ' *)",
+      "Bash(powershell -Command \"Get-Content 'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\recovery.html' -Encoding UTF8 | Select-Object -Skip 1265 -First 32\")"
     ]
   }
 }
