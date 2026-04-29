@@ -215,8 +215,8 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .add-result-btn span{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);opacity:.4}
 
 /* ── NEWSLETTER ── */
-.newsletter{padding:60px 0;background:#0F0F0F !important}
-.nl-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.newsletter{padding:60px 0;background:var(--gold)}
+.nl-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto;padding:0 48px}
 .nl-left h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,50px);line-height:.95;color:var(--white);margin-bottom:8px}
 .nl-left p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(245,240,232,.65);line-height:1.6;margin-bottom:10px}
 .nl-lead{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.55);display:flex;align-items:center;gap:8px}
@@ -258,7 +258,7 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
   .bf-photo .photo-slot{min-height:260px}
   .blog-grid{grid-template-columns:1fr 1fr}
   .results-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px}
-  .nl-inner{grid-template-columns:1fr;gap:32px}
+  
   .event-card{grid-template-columns:100px 1fr}
   .ec-actions{display:none}
 }
@@ -267,8 +267,7 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
   .si,.page-hero-inner{padding:0 20px}
   .page-hero{padding:80px 0 60px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
   .rc-fighter.home{text-align:left}
-  .newsletter{padding:56px 0}
-  .nl-form{flex-direction:column}
+    .nl-form{flex-direction:column}
   .nl-form input,.nl-form button{width:100%}
   .edit-banner{font-size:9px;gap:8px;padding:8px 14px}
   .event-card{grid-template-columns:80px 1fr}
@@ -445,8 +444,7 @@ blockquote, .pull-quote {
 
 
 /* ── EVENTS LAYOUT ALIGNMENT ── */
-.events-sec,.blog-sec,.results-sec,.newsletter{max-width:100%}
-.events-sec .si,.blog-sec .si,.results-sec .si{max-width:1200px;margin:0 auto;padding:0 48px}
+.events-sec,.blog-sec,.results-sec,.events-sec .si,.blog-sec .si,.results-sec .si{max-width:1200px;margin:0 auto;padding:0 48px}
 .event-list{margin-top:36px}
 
 
@@ -549,16 +547,8 @@ blockquote, .pull-quote {
 .bf-body{padding:40px 48px 40px 56px !important}
 @media(max-width:768px){.bf-body{padding:28px 24px !important}}
 
-/* ── NEWSLETTER DARK BG FIXES ── */
-.nl-left h2{color:var(--white) !important}
-.nl-left p, .nl-lead{color:rgba(245,240,232,.6) !important}
-.nl-form input{background:var(--card) !important;color:var(--white) !important;border-color:rgba(201,168,76,.2) !important}
-.nl-form input::placeholder{color:rgba(245,240,232,.35) !important}
-.nl-form button{background:var(--gold) !important;color:var(--black) !important}
-.nl-form button:hover{background:#e8c87a !important}
 
-/* ── FORCE OVERRIDES ── */
-.newsletter{background:#0F0F0F !important}
+
 
 
 /* ── WHATSAPP FLOAT ── */
