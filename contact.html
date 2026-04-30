@@ -490,6 +490,15 @@ function toggleSiteNav(){
   document.getElementById('siteNavHam').classList.toggle('open');
   document.getElementById('siteNavMob').classList.toggle('snm-open');
 }
+
+function toggleFaq(el){
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  // Close all open items first
+  document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+  // Open this one if it was closed
+  if(!isOpen){ item.classList.add('open'); }
+}
 document.addEventListener('click',function(e){
   var h=document.getElementById('siteNavHam'),m=document.getElementById('siteNavMob');
   if(m&&m.classList.contains('snm-open')&&!m.contains(e.target)&&!h.contains(e.target)){
