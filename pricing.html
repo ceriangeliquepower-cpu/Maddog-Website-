@@ -85,7 +85,8 @@ nav:not(.site-nav){display:none!important}
 .page-hero{padding:130px 0 72px;background:var(--deep);position:relative;overflow:hidden}
 .page-hero::before{content:'PRICING';font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,16vw,200px);color:rgba(201,168,76,.025);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:.1em}
 .page-hero .si{position:relative;z-index:1}
-.page-hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block}
+.page-hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.page-hero-eyebrow::before{content:'';display:block;width:30px;height:1px;background:var(--gold);flex-shrink:0}
 .page-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,96px);line-height:.92;letter-spacing:.02em;color:var(--white);margin-bottom:20px}
 .page-h1 em{color:var(--gold);font-style:normal}
 .page-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,1.4vw,19px);font-weight:300;color:var(--white-dim);max-width:560px;line-height:1.65;margin-bottom:28px}
