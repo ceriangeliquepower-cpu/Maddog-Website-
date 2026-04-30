@@ -257,7 +257,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .faq-icon{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold);flex-shrink:0;transition:transform .3s;line-height:1}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
-.faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:20px}
 .faq-a p{font-size:15px;font-weight:400;line-height:1.75;color:var(--white-dim);letter-spacing:.04em}
 .faq-aside-card{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--gold);padding:36px 32px;margin-bottom:20px}
 .faq-aside-card h3{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.04em;color:var(--white);margin-bottom:10px}
@@ -714,28 +714,28 @@ document.addEventListener('click',function(e){
             <span class="faq-q-text" contenteditable="true">Do I need any experience to start?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a"><p contenteditable="true">Absolutely not. We welcome complete beginners across all our programmes. Our coaches will meet you where you are and build from there. Your first class is free — just show up.</p></div>
+          <div class="faq-a"><p contenteditable="true">Not at all. At Maddog Performance Institute in Ballito, we work with everyone &mdash; from complete beginners to professional athletes. Whether it&rsquo;s your first time stepping into a gym or you&rsquo;re looking to level up your performance, our coaches tailor every session to your current fitness level. You&rsquo;ll be guided every step of the way, so you feel confident, safe, and progressing from day one.</p></div>
         </div>
           <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             <span class="faq-q-text" contenteditable="true">What should I bring to my first class?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a"><p contenteditable="true">Comfortable training clothes and a water bottle. For striking classes, hand wraps and gloves are ideal (we have loaners available). Just arrive 10 minutes early and introduce yourself.</p></div>
+          <div class="faq-a"><p contenteditable="true">Keep it simple. Bring comfortable training clothes, a water bottle, and a positive mindset. If you&rsquo;re joining MMA, BJJ, or kickboxing classes, we can guide you on gear as you progress. For your first session at our Ballito facility, just arrive ready to move &mdash; we&rsquo;ll take care of the rest.</p></div>
         </div>
           <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             <span class="faq-q-text" contenteditable="true">How much does membership cost?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a"><p contenteditable="true">Membership pricing varies depending on the programme and frequency. Contact us directly for current rates — we'll find a structure that works for you.</p></div>
+          <div class="faq-a"><p contenteditable="true">Membership at Maddog Performance Institute is designed to be flexible based on your goals. We offer options for group training, elite personal training, and performance packages that include access to our recovery suite and IV drip therapy. The best way to get accurate pricing is to chat with us directly &mdash; we&rsquo;ll recommend the right plan based on your fitness level, schedule, and the results you want to achieve.</p></div>
         </div>
           <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             <span class="faq-q-text" contenteditable="true">Do you have classes for kids?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a"><p contenteditable="true">Yes. Our Junior Academy is open to ages 8–17 and covers the fundamentals of MMA, discipline, confidence, and respect. Contact us to enquire about current session times.</p></div>
+          <div class="faq-a"><p contenteditable="true">Yes, we do. Our kids&rsquo; classes focus on discipline, confidence, fitness, and self-defence in a structured and supportive environment. Whether it&rsquo;s Brazilian Jiu-Jitsu or beginner martial arts, we create a space where kids can grow physically and mentally while having fun.</p></div>
         </div>
         </div>
         <div class="faq-list">
@@ -744,28 +744,39 @@ document.addEventListener('click',function(e){
             <span class="faq-q-text" contenteditable="true">Is the gym open to women?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a"><p contenteditable="true">Absolutely. Our head coach Amanda "Maddog" Lino is a 2× EFC World Champion and IMMAF World Champion. Maddog is built for everyone — female athletes are a core part of our community.</p></div>
+          <div class="faq-a"><p contenteditable="true">Absolutely. Maddog Performance Institute is a welcoming, supportive environment for women of all fitness levels. We offer everything from beginner-friendly classes to elite personal training, as well as self-defence and strength programmes designed to build confidence, strength, and overall wellness.</p></div>
         </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               <span class="faq-q-text" contenteditable="true">What disciplines do you offer at Maddog Performance Institute?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a"><p contenteditable="true">We offer MMA, Brazilian Jiu Jitsu (Gi and No-Gi), Kickboxing, Boxing Fitness, Powerlifting, and Elite Personal Training. We also run a Junior Academy for ages 8–17, Corporate Wellness programmes, and a fully equipped Sports Recovery Suite with IV drip therapy, infrared sauna, and cold plunge.</p></div>
+            <div class="faq-a">
+              <p contenteditable="true">We offer a full range of performance-driven training in Ballito, including:</p>
+              <ul style="margin:10px 0 14px 0;display:flex;flex-direction:column;gap:6px;list-style:none">
+                <li style="font-size:15px;font-weight:400;color:var(--white-dim);display:flex;align-items:flex-start;gap:10px;letter-spacing:.04em"><span style="color:var(--gold);font-size:7px;margin-top:6px;flex-shrink:0">&#9670;</span>MMA (Mixed Martial Arts)</li>
+                <li style="font-size:15px;font-weight:400;color:var(--white-dim);display:flex;align-items:flex-start;gap:10px;letter-spacing:.04em"><span style="color:var(--gold);font-size:7px;margin-top:6px;flex-shrink:0">&#9670;</span>Brazilian Jiu-Jitsu (BJJ)</li>
+                <li style="font-size:15px;font-weight:400;color:var(--white-dim);display:flex;align-items:flex-start;gap:10px;letter-spacing:.04em"><span style="color:var(--gold);font-size:7px;margin-top:6px;flex-shrink:0">&#9670;</span>Kickboxing</li>
+                <li style="font-size:15px;font-weight:400;color:var(--white-dim);display:flex;align-items:flex-start;gap:10px;letter-spacing:.04em"><span style="color:var(--gold);font-size:7px;margin-top:6px;flex-shrink:0">&#9670;</span>Powerlifting &amp; Strength Training</li>
+                <li style="font-size:15px;font-weight:400;color:var(--white-dim);display:flex;align-items:flex-start;gap:10px;letter-spacing:.04em"><span style="color:var(--gold);font-size:7px;margin-top:6px;flex-shrink:0">&#9670;</span>Elite Personal Training</li>
+                <li style="font-size:15px;font-weight:400;color:var(--white-dim);display:flex;align-items:flex-start;gap:10px;letter-spacing:.04em"><span style="color:var(--gold);font-size:7px;margin-top:6px;flex-shrink:0">&#9670;</span>Functional Fitness</li>
+              </ul>
+              <p contenteditable="true">On top of that, we have a dedicated recovery and performance suite, including sauna, ice bath, and IV drip therapy to help you recover faster and perform better.</p>
+            </div>
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               <span class="faq-q-text" contenteditable="true">Where exactly are you located in Ballito?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a"><p contenteditable="true">We are at 22 Sandra Road, Balvista Centre, Ballito, KZN — upstairs in the Balvista Centre, above the Spar. Parking is available on site. We are easily accessible from Durban and all areas along the KZN North Coast.</p></div>
+            <div class="faq-a"><p contenteditable="true">Maddog Performance Institute is based in Ballito, KwaZulu-Natal, conveniently located for residents and surrounding areas on the North Coast. Once you book a session or reach out, we&rsquo;ll send you the exact location details and directions to the facility.</p></div>
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               <span class="faq-q-text" contenteditable="true">Can I book recovery sessions without being a gym member?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a"><p contenteditable="true">Yes. Our Recovery Suite — including IV drip therapy, infrared sauna, and cold plunge — is available to non-members as standalone sessions. Contact us to book or enquire about availability and pricing.</p></div>
+            <div class="faq-a"><p contenteditable="true">Yes &mdash; you don&rsquo;t need to be a member to use our recovery services. Our recovery suite in Ballito is open to anyone looking to improve recovery, boost performance, or support overall wellness. This includes sauna sessions, ice baths, and professional IV drip therapy. It&rsquo;s a standalone service, perfect for athletes, busy professionals, or anyone wanting to feel and perform better.</p></div>
           </div>
         </div>
       </div>
