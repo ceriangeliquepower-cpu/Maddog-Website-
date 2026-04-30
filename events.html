@@ -102,6 +102,9 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .hf-tag{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:3px 10px;display:inline-block;margin-bottom:10px}
 .hf-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.04em;color:var(--white);line-height:1.1;margin-bottom:6px}
 .hf-date{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--white-dim);opacity:.5}
+.hf-excerpt{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:300;line-height:1.65;color:var(--white-dim);margin:8px 0 14px}
+.hf-read-link{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:border-color .2s}
+.hf-read-link:hover{border-color:var(--gold)}
 
 /* ── CREDENTIAL STRIP ── */
 /* ── SECTION COMMON ── */
@@ -737,9 +740,11 @@ document.addEventListener('click',function(e){
         </div>
       </div>
       <div class="hero-feat-body">
-        <span class="hf-tag" contenteditable="true">Latest</span>
-        <div class="hf-title" contenteditable="true">Maddog Fight Team — Latest Event Recap</div>
-        <div class="hf-date" contenteditable="true">March 2026 · Maddog Performance Institute</div>
+        <span class="hf-tag">Community</span>
+        <div class="hf-title">When Ballito Showed Up: Over R53,000 Raised for St Luke&rsquo;s Home of Healing</div>
+        <div class="hf-date"><time datetime="2026-03-25">25 March 2026</time> &middot; Maddog Performance Institute</div>
+        <p class="hf-excerpt">The KZN North Coast community rallied behind St Luke&rsquo;s Home of Healing in Ballito &mdash; and together raised over R53,000 for palliative care. Here is how it happened.</p>
+        <a href="blog-ballito-community-raises-funds-st-lukes.html" class="hf-read-link">Read Article &rarr;</a>
       </div>
     </div>
   </div>
@@ -785,11 +790,11 @@ document.addEventListener('click',function(e){
         </div>
       </div>
       <div class="bf-body">
-        <span class="bf-tag" contenteditable="true">Fighter Spotlight</span>
-        <div class="bf-title" contenteditable="true">Inside The Maddog Fight Camp: How Amanda Prepares Her Athletes For Competition</div>
-        <div class="bf-meta" contenteditable="true">By Amanda Lino &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; 5 min read</div>
-        <p class="bf-excerpt" contenteditable="true">Every fight camp at Maddog starts the same way — with an honest conversation about where the fighter is, where they need to be, and exactly how we're going to get them there in eight weeks. No shortcuts. No guesswork. Just the same system that produced two world titles.</p>
-        <a href="#" class="btn btn-o btn-sm">Read Full Post</a>
+        <span class="bf-tag">Fight News</span>
+        <div class="bf-title">EFC 134: Amanda &lsquo;Maddog&rsquo; Lino Defends Her Crown Against Juliet Chukwu</div>
+        <div class="bf-meta">Maddog Performance Institute &nbsp;&middot;&nbsp; <time datetime="2026-05-01">1 May 2026</time> &nbsp;&middot;&nbsp; 7 min read</div>
+        <p class="bf-excerpt">The belt stays in Ballito. Amanda &ldquo;Maddog&rdquo; Lino puts her EFC Featherweight World Title on the line against undefeated challenger Juliet Chukwu at EFC 134 &mdash; a fight that tests every dimension of a two-time world champion.</p>
+        <a href="blog-efc-134-amanda-lino-vs-juliet-chukwu.html" class="btn btn-o btn-sm">Read Full Post</a>
       </div>
     </div>
 
