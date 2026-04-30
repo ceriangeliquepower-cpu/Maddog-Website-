@@ -87,7 +87,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .slot-hint{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:8px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);opacity:.4;pointer-events:none}
 
 /* ── PAGE HERO ── */
-.page-hero{padding:80px 0 60px;background:var(--deep);position:relative;overflow:hidden}
+.page-hero{padding:80px 0 20px;background:var(--deep);position:relative;overflow:hidden}
 .page-hero::before{content:'NEWS';font-family:'Bebas Neue',sans-serif;font-size:clamp(120px,20vw,260px);color:rgba(201,168,76,.028);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:.1em}
 .page-hero-inner{max-width:1200px;margin:0 auto;padding:0 48px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:flex-start}
 .page-eyebrow{font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
@@ -98,7 +98,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 /* hero right — featured post photo */
 .hero-featured{position:relative;height:360px}
 .hero-featured .photo-slot{height:100%}
-.hero-feat-body{background:var(--black);padding:0 0 44px 0}
+.hero-feat-body{background:var(--black);padding:0 0 16px 0}
 .hf-tag{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:3px 10px;display:inline-block;margin-bottom:10px}
 .hf-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.04em;color:var(--white);line-height:1.1;margin-bottom:6px}
 .hf-date{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--white-dim);opacity:.5}
@@ -124,20 +124,94 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .btn-sm{padding:9px 20px;font-size:10px}
 
 /* ── UPCOMING EVENTS ── */
-.events-sec{padding:72px 0;background:var(--black)}
+.events-sec{background:var(--black)}
 .events-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px}
-.event-list{display:flex;flex-direction:column;gap:3px}
-.event-card{background:var(--card);display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:24px;padding:20px 24px;border-left:2px solid transparent;transition:border-color .2s,background .2s}
-.event-card:hover{background:#1f1f1f}
-.event-card:hover .ec-photo img{transform:scale(1.06)}
-.ec-date-block{background:var(--gold);padding:20px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100px;flex-shrink:0}
-.ec-day{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1;color:var(--black)}
-.ec-month{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(8,8,8,.7)}
-.ec-
-.ec-tag{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.ec-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;color:var(--white);line-height:1.1;margin-bottom:4px}
-.ec-meta{font-size:12px;font-weight:300;color:var(--white-dim)}
-.ec-actions{padding:20px 24px;display:flex;flex-direction:column;gap:8px;align-items:flex-end;flex-shrink:0}
+.event-list{display:flex;flex-direction:column;gap:4px}
+
+/* Event card — calendar tile design */
+.event-card{
+  background:var(--card);
+  display:grid;
+  grid-template-columns:88px 1fr auto;
+  align-items:stretch;
+  gap:0;
+  border-left:3px solid transparent;
+  transition:border-color .25s,background .25s;
+  overflow:hidden;
+}
+.event-card:hover{background:#1e1e1e;border-left-color:var(--gold)}
+
+/* Date tile — bordered calendar page */
+.ec-date-block{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px 12px;
+  border-right:1px solid rgba(201,168,76,.2);
+  flex-shrink:0;
+  gap:2px;
+}
+.ec-month{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:.75;
+  order:1;
+}
+.ec-day{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;
+  line-height:1;
+  color:var(--white);
+  letter-spacing:.01em;
+  order:2;
+}
+
+/* Event body */
+.ec-body{
+  padding:20px 28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:4px;
+}
+.ec-tag{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  display:inline-block;
+}
+.ec-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;
+  letter-spacing:.04em;
+  color:var(--white);
+  line-height:1.05;
+}
+.ec-meta{
+  font-size:12px;
+  font-weight:300;
+  color:var(--white-dim);
+  letter-spacing:.04em;
+  margin-top:2px;
+}
+
+/* Actions */
+.ec-actions{
+  padding:20px 28px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  align-items:flex-end;
+  justify-content:center;
+  flex-shrink:0;
+}
 
 /* add event button */
 .add-event-btn{background:transparent;border:1px dashed var(--border);padding:24px;display:flex;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:all .3s;width:100%;margin-top:3px}
@@ -313,7 +387,7 @@ blockquote, .pull-quote {
   .hero-btns .btn{text-align:center!important;width:100%!important}
 
   /* Page hero (training/events/coaches/contact) */
-  .page-hero{padding:80px 0 60px;line-height:1.05!important}
+  .page-hero{padding:80px 0 16px;line-height:1.05!important}
   .page-sub{font-size:15px!important}
 
   /* Section inner padding */
@@ -421,13 +495,7 @@ blockquote, .pull-quote {
 /* ── EVENTS STANDARDIZED TYPOGRAPHY ── */
 .events-sec .sec-h,.blog-sec .sec-h,.results-sec .sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:.02em}
 .events-header,.blog-header,.results-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px}
-.event-card{background:var(--card);display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:24px;padding:24px 28px;margin-bottom:3px;transition:background .2s}
-.event-card:hover{background:#1a1a1a}
-.ec-date-block{text-align:center;flex-shrink:0}
-.ec-day{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--gold);line-height:1}
-.ec-month{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim)}
-.ec-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.03em;color:var(--white);margin-bottom:4px}
-.ec-meta{font-size:12px;color:var(--white-dim);letter-spacing:.08em}
+/* event-card styles defined in ── UPCOMING EVENTS ── above */
 .blog-card{background:var(--card);overflow:hidden;transition:background .2s;border-bottom:1px solid rgba(201,168,76,.15);display:flex;flex-direction:row;align-items:stretch}
 .blog-card:hover{background:#161616}
 .bc-body{padding:0}
@@ -447,14 +515,22 @@ blockquote, .pull-quote {
 
 
 /* ── EVENTS LAYOUT ALIGNMENT ── */
-.events-sec,.blog-sec,.results-sec,.events-sec .si,.blog-sec .si,.results-sec .si{max-width:1200px;margin:0 auto;padding:0 48px}
+/* Section vertical rhythm — each section gets its own breathing room */
+.blog-sec{padding:48px 0 80px}
+.events-sec{padding:80px 0 80px}
+.results-sec{padding:80px 0 80px}
+/* Horizontal padding only on the inner containers */
+.events-sec .si,.blog-sec .si,.results-sec .si{max-width:1200px;margin:0 auto;padding:0 48px}
 .event-list{margin-top:36px}
-
-
 .result-list{margin-top:36px}
 .add-event-btn,.add-blog-btn,.add-result-btn{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:transparent;border:1px solid rgba(201,168,76,.3);padding:10px 20px;cursor:pointer;transition:all .2s}
 .add-event-btn:hover,.add-blog-btn:hover,.add-result-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.06)}
-@media(max-width:768px){.events-sec .si,.blog-sec .si,.results-sec .si{padding:0 20px}}
+@media(max-width:768px){
+  .blog-sec{padding:40px 0 64px}
+  .events-sec{padding:64px 0 64px}
+  .results-sec{padding:64px 0 64px}
+  .events-sec .si,.blog-sec .si,.results-sec .si{padding:0 20px}
+}
 
 
 
@@ -605,7 +681,7 @@ html { -webkit-text-size-adjust: 100%; }
   .hero h1, .hero-h1 { font-size: clamp(36px,10vw,56px) !important; line-height: 0.95 !important; }
   .hero-stats { gap: 20px !important; flex-wrap: wrap !important; }
   .hs-div { display: none !important; }
-  .page-hero { padding: 90px 0 40px !important; }
+  .page-hero { padding: 80px 0 16px !important; }
   .page-hero-inner { padding: 0 20px !important; grid-template-columns: 1fr !important; gap: 32px !important; }
   .page-hero-inner-wrap { grid-template-columns: 1fr !important; gap: 24px !important; }
   .page-hero-logo { height: 200px !important; order: 1 !important; }
@@ -636,8 +712,11 @@ html { -webkit-text-size-adjust: 100%; }
   .tl-yr { font-size: 28px !important; }
   .fac-grid { grid-template-columns: 1fr 1fr !important; gap: 2px !important; }
   .pillar-grid { grid-template-columns: 1fr !important; }
-  .event-card { grid-template-columns: 80px 1fr !important; gap: 12px !important; padding: 16px !important; }
-  .ec-day { font-size: 28px !important; }
+  .event-card { grid-template-columns: 72px 1fr !important; }
+  .ec-actions { display: none !important; }
+  .ec-date-block { padding: 16px 8px !important; }
+  .ec-day { font-size: 40px !important; }
+  .ec-body { padding: 16px 20px !important; }
   .result-card { grid-template-columns: 1fr !important; gap: 8px !important; text-align: center !important; }
   .hours-grid { flex-direction: column !important; }
   .quick-strip { flex-direction: column !important; gap: 12px !important; }
