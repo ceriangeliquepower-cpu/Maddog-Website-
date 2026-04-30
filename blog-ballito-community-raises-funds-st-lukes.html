@@ -74,14 +74,6 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 .bh-read{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim)}
 .bh-dot{color:var(--gold-dim);font-size:8px}
 
-/* ── HERO PHOTO SLOT ── */
-.bh-photo-slot{width:100%;height:420px;position:relative;overflow:hidden;background:rgba(201,168,76,.04);border:1px solid var(--border);cursor:pointer;margin:32px 0 0}
-.bh-photo-slot img{width:100%;height:100%;object-fit:cover;object-position:center;display:none}
-.bh-photo-slot.loaded img{display:block}
-.bh-photo-hint{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--white-dim);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;pointer-events:none}
-.bh-photo-slot.loaded .bh-photo-hint{display:none}
-.bh-photo-hint-icon{font-size:32px;opacity:.3}
-
 /* ── ARTICLE BODY ── */
 .article-wrap{max-width:860px;margin:0 auto;padding:60px 40px 80px}
 .article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,38px);letter-spacing:.03em;color:var(--white);margin:48px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
@@ -137,7 +129,6 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
   .blog-hero{padding:100px 0 48px}
   .article-wrap{padding:40px 20px 60px}
   .article-cta-box{padding:28px 20px}
-  .bh-photo-slot{height:240px}
   .stats-row{gap:24px;padding:20px}
 }
 </style>
@@ -165,14 +156,6 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
       <time class="bh-date" datetime="2026-03-25">25 March 2026</time>
       <span class="bh-dot">&#9670;</span>
       <span class="bh-read">5 min read</span>
-    </div>
-    <!-- Hero photo slot — click to upload community event photo -->
-    <div class="bh-photo-slot" id="bhPhoto" onclick="swapBlogPhoto('bhPhoto')">
-      <img id="bhPhoto-img" src="" alt="Maddog Performance Institute community fundraiser for St Luke's Home of Healing Ballito" width="860" height="420">
-      <div class="bh-photo-hint">
-        <span class="bh-photo-hint-icon">&#128248;</span>
-        <span>Click to upload event photo</span>
-      </div>
     </div>
   </div>
 </section>
@@ -307,26 +290,6 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 </a>
 
 <script>
-function swapBlogPhoto(slotId) {
-  var input = document.createElement('input');
-  input.type = 'file';
-  input.accept = 'image/*';
-  input.onchange = function(e) {
-    var file = e.target.files[0];
-    if (!file) return;
-    var reader = new FileReader();
-    reader.onload = function(ev) {
-      var img = document.getElementById(slotId + '-img');
-      if (img) {
-        img.src = ev.target.result;
-        document.getElementById(slotId).classList.add('loaded');
-      }
-    };
-    reader.readAsDataURL(file);
-  };
-  input.click();
-}
-
 function toggleSiteNav() {
   var mob = document.getElementById('siteNavMob');
   if (mob) mob.classList.toggle('open');
