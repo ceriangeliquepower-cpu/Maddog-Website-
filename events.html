@@ -267,24 +267,9 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .add-blog-card p{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);opacity:.35}
 
 /* ── FIGHT RESULTS ── */
-.results-sec{padding:72px 0;background:var(--black)}
+.results-sec{background:var(--black)}
 .results-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px}
-.result-list{display:flex;flex-direction:column;gap:3px}
-.result-card{background:var(--card);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0;padding:0;overflow:hidden;border-bottom:1px solid var(--border)}
-.result-card:last-child{border-bottom:none}
-.result-card:hover{background:#1f1f1f}
-.rc-fighter{padding:20px 24px}
-.rc-fighter.home{text-align:right}
-.rc-fighter.opp{text-align:left}
-.rc-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;color:var(--white);line-height:1}
-.rc-name.winner{color:var(--gold)}
-.rc-detail{font-size:11px;font-weight:300;color:var(--white-dim);margin-top:2px}
-.rc-centre{background:var(--deep);padding:16px 20px;text-align:center;min-width:140px}
-.rc-result{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.12em;color:var(--gold);margin-bottom:4px}
-.rc-method{font-size:10px;font-weight:300;color:var(--white-dim)}
-.rc-event{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim);opacity:.4;margin-top:4px}
-.win-badge{display:inline-block;font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:2px 7px;margin-top:4px}
-.loss-badge{display:inline-block;font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--border);color:var(--white-dim);padding:2px 7px;margin-top:4px}
+.result-list{display:flex;flex-direction:column;gap:4px}
 
 /* add result button */
 .add-result-btn{background:transparent;border:1px dashed var(--border);padding:20px;display:flex;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:all .3s;width:100%;margin-top:3px}
@@ -502,23 +487,122 @@ blockquote, .pull-quote {
 .bc-cat{font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .bc-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.03em;margin-bottom:8px}
 .bc-text{font-size:13px;color:var(--white-dim);line-height:1.65}
-.result-card{background:var(--card);padding:20px 24px;margin-bottom:3px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
-.rc-fighter{display:flex;flex-direction:column}
-.rc-fighter.home{text-align:left}
-.rc-fighter.opp{text-align:right;align-items:flex-end}
-.rc-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.03em}
-.rc-corner{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim)}
-.rc-result{text-align:center;flex-shrink:0}
-.win-badge,.loss-badge,.draw-badge{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:6px 12px;display:inline-block}
-.win-badge{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
-.loss-badge{background:rgba(255,60,60,.08);color:rgba(255,100,100,.8);border:1px solid rgba(255,60,60,.2)}
+/* ── RESULT CARD — full design ── */
+.result-card{
+  background:var(--card);
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:stretch;
+  gap:0;
+  overflow:hidden;
+  border-left:3px solid rgba(201,168,76,.12);
+  transition:background .25s,border-color .25s;
+}
+.result-card:hover{background:#1e1e1e;border-left-color:var(--gold)}
+
+/* Fighter columns */
+.rc-fighter{
+  padding:24px 28px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.rc-fighter.home{
+  text-align:left;
+}
+.rc-fighter.opp{
+  text-align:right;
+  align-items:flex-end;
+}
+
+.rc-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px;
+  letter-spacing:.04em;
+  color:var(--white);
+  line-height:1;
+}
+.rc-name.winner{color:var(--gold)}
+
+.rc-detail{
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--white-dim);
+  opacity:.5;
+  margin-top:2px;
+}
+
+.win-badge,.loss-badge,.draw-badge{
+  display:inline-block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  padding:4px 12px;
+  margin-top:10px;
+}
+.win-badge{
+  background:rgba(201,168,76,.1);
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,.35);
+}
+.loss-badge{
+  background:rgba(255,60,60,.07);
+  color:rgba(255,110,110,.75);
+  border:1px solid rgba(255,60,60,.2);
+}
+.draw-badge{
+  background:rgba(245,240,232,.06);
+  color:var(--white-dim);
+  border:1px solid rgba(245,240,232,.18);
+}
+
+/* Centre result column */
+.rc-centre{
+  background:var(--deep);
+  border-left:1px solid var(--border);
+  border-right:1px solid var(--border);
+  padding:24px 32px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-width:170px;
+}
+.rc-result{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;
+  letter-spacing:.14em;
+  color:var(--gold);
+  line-height:1;
+}
+.rc-method{
+  font-size:11px;
+  font-weight:400;
+  letter-spacing:.06em;
+  color:var(--white);
+  opacity:.75;
+}
+.rc-event{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--white-dim);
+  opacity:.38;
+  margin-top:4px;
+}
 
 
 /* ── EVENTS LAYOUT ALIGNMENT ── */
-/* Section vertical rhythm — each section gets its own breathing room */
-.blog-sec{padding:48px 0 80px}
-.events-sec{padding:80px 0 80px}
-.results-sec{padding:80px 0 80px}
+/* Section vertical rhythm */
+.blog-sec{padding:48px 0 40px}
+.events-sec{padding:40px 0 40px}
+.results-sec{padding:40px 0 72px}
 /* Horizontal padding only on the inner containers */
 .events-sec .si,.blog-sec .si,.results-sec .si{max-width:1200px;margin:0 auto;padding:0 48px}
 .event-list{margin-top:36px}
@@ -526,9 +610,9 @@ blockquote, .pull-quote {
 .add-event-btn,.add-blog-btn,.add-result-btn{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:transparent;border:1px solid rgba(201,168,76,.3);padding:10px 20px;cursor:pointer;transition:all .2s}
 .add-event-btn:hover,.add-blog-btn:hover,.add-result-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.06)}
 @media(max-width:768px){
-  .blog-sec{padding:40px 0 64px}
-  .events-sec{padding:64px 0 64px}
-  .results-sec{padding:64px 0 64px}
+  .blog-sec{padding:36px 0 32px}
+  .events-sec{padding:32px 0 32px}
+  .results-sec{padding:32px 0 56px}
   .events-sec .si,.blog-sec .si,.results-sec .si{padding:0 20px}
 }
 
@@ -717,7 +801,12 @@ html { -webkit-text-size-adjust: 100%; }
   .ec-date-block { padding: 16px 8px !important; }
   .ec-day { font-size: 40px !important; }
   .ec-body { padding: 16px 20px !important; }
-  .result-card { grid-template-columns: 1fr !important; gap: 8px !important; text-align: center !important; }
+  .result-card { grid-template-columns: 1fr auto 1fr !important; }
+  .rc-fighter { padding: 16px 16px !important; }
+  .rc-name { font-size: 18px !important; }
+  .rc-centre { padding: 16px 18px !important; min-width: 110px !important; }
+  .rc-result { font-size: 20px !important; }
+  .rc-method { font-size: 10px !important; }
   .hours-grid { flex-direction: column !important; }
   .quick-strip { flex-direction: column !important; gap: 12px !important; }
 }
