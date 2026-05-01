@@ -122,7 +122,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 /* ══════════════════════════════════════
    AMANDA — FEATURED HERO CARD
 ══════════════════════════════════════ */
-.amanda-feature{padding:48px 0;background:var(--black)}
+.amanda-feature{padding:40px 0;background:var(--black)}
 .af-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:640px;align-items:stretch}
 
 /* photo col */
@@ -168,7 +168,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 /* ══════════════════════════════════════
    SUPPORTING COACHES GRID
 ══════════════════════════════════════ */
-.coaches-sec{padding:48px 0;background:var(--black)}
+.coaches-sec{padding:36px 0;background:var(--black)}
 .coaches-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:36px;align-items:stretch}
 
 .coach-card{background:var(--card);overflow:hidden;position:relative;transition:transform .3s;min-width:0;display:flex;flex-direction:column;height:100%}
@@ -283,7 +283,7 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
 @media(max-width:640px){
   nav:not(.site-nav){padding:14px 20px}
   .si,.page-hero-inner{padding:0 20px}
-  .page-hero{padding:80px 0 60px;align-items:center}
+  .page-hero{padding:80px 0 32px;align-items:center}
   .cta-btns .btn{width:100%;max-width:300px;text-align:center}
   footer:not(.site-footer){flex-direction:column;text-align:center;padding:28px 20px}
   .edit-banner{font-size:9px;gap:8px;padding:8px 14px}
@@ -315,7 +315,7 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
   .hero-btns .btn{text-align:center!important;width:100%!important}
 
   /* Page hero (training/events/coaches/contact) */
-  .page-hero{padding:80px 0 60px;line-height:1.05!important}
+  .page-hero{padding:80px 0 32px;line-height:1.05!important}
   .page-sub{font-size:15px!important}
 
   /* Section inner padding */
@@ -528,7 +528,7 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
 /* ── PAGE HERO WITH LOGO ── */
 .page-hero-inner-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-start}
 .page-hero-logo{height:520px;display:flex;align-items:flex-start;justify-content:center}
-.page-hero-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.page-hero-logo img{width:90%;height:auto;max-height:440px;object-fit:contain;display:block}
 .page-hero-text{display:flex;flex-direction:column;justify-content:center}
 @media(max-width:768px){
   .page-hero-inner-wrap{grid-template-columns:1fr;gap:32px}
