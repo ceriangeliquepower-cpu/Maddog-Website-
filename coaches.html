@@ -87,7 +87,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .gc.br{bottom:-1px;right:-1px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
 
 /* ── PAGE HERO ── */
-.page-hero{padding:80px 0 32px;min-height:100svh;background:var(--black);position:relative;overflow:hidden}
+.page-hero{padding:80px 0 32px;height:100svh;max-height:100svh;background:var(--black);position:relative;overflow:hidden}
 .page-hero::before{content:none}
 .page-hero-inner{max-width:1200px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
 .page-eyebrow{font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
@@ -527,7 +527,7 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
 
 /* ── PAGE HERO WITH LOGO ── */
 .page-hero-inner-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-start}
-.page-hero-logo{display:flex;align-items:center;justify-content:center}
+.page-hero-logo{display:flex;align-items:center;justify-content:center;max-height:calc(100svh - 160px)}
 .page-hero-logo img{width:auto;height:100%;max-width:100%;max-height:100%;object-fit:contain;display:block}
 .page-hero-text{display:flex;flex-direction:column;justify-content:flex-start}
 @media(max-width:768px){
