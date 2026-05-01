@@ -87,7 +87,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .gc.br{bottom:-1px;right:-1px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
 
 /* ── PAGE HERO ── */
-.page-hero{padding:80px 0 60px;background:var(--black);position:relative;overflow:hidden}
+.page-hero{padding:80px 0 32px;background:var(--black);position:relative;overflow:hidden}
 .page-hero::before{content:none}
 .page-hero-inner{max-width:1200px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
 .page-eyebrow{font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
@@ -122,7 +122,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 /* ══════════════════════════════════════
    AMANDA — FEATURED HERO CARD
 ══════════════════════════════════════ */
-.amanda-feature{padding:72px 0;background:var(--black)}
+.amanda-feature{padding:48px 0;background:var(--black)}
 .af-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:640px;align-items:stretch}
 
 /* photo col */
@@ -130,7 +130,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .af-photo .photo-slot{height:100%;min-height:580px}
 
 /* text col */
-.af-text{border-left:3px solid var(--gold);padding:64px 60px;display:flex;flex-direction:column;justify-content:center}
+.af-text{border-left:3px solid var(--gold);padding:48px 52px;display:flex;flex-direction:column;justify-content:center}
 .af-role{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:5px 14px;margin-bottom:16px}
 .af-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);line-height:.9;color:var(--white);margin-bottom:6px;letter-spacing:.02em}
 .af-nickname{font-family:'Cormorant Garamond',serif!important;font-style:italic!important;font-size:clamp(18px,2vw,24px)!important;color:var(--gold-light)!important;margin-bottom:28px}
@@ -168,7 +168,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 /* ══════════════════════════════════════
    SUPPORTING COACHES GRID
 ══════════════════════════════════════ */
-.coaches-sec{padding:72px 0;background:var(--black)}
+.coaches-sec{padding:48px 0;background:var(--black)}
 .coaches-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:36px;align-items:stretch}
 
 .coach-card{background:var(--card);overflow:hidden;position:relative;transition:transform .3s;min-width:0;display:flex;flex-direction:column;height:100%}
@@ -227,20 +227,20 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .add-coach-card p{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);opacity:.35}
 
 /* ── PHILOSOPHY STRIP ── */
-.philosophy-strip{padding:60px 0;background:var(--black);overflow:hidden;position:relative}
+.philosophy-strip{padding:48px 0;background:var(--black);overflow:hidden;position:relative}
 .philosophy-strip::before{content:none;display:none}
 .phil-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;position:relative;z-index:1}
-.phil-pillar{background:var(--card);padding:36px 28px;transition:background .3s;cursor:default}
-.phil-pillar:hover{background:#1e1e1e}
-.phil-pillar::before{content:'';display:block;width:100%;height:3px;background:var(--gold);margin-bottom:20px;transform:scaleX(0.3);transform-origin:left;transition:transform .4s}
-.phil-pillar:hover::before{transform:scaleX(1)}
-.phil-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--border);line-height:1;margin-bottom:8px;transition:color .3s}
-.phil-pillar:hover .phil-num{color:rgba(201,168,76,.06)}
+.phil-pillar{background:var(--card);border-left:3px solid rgba(201,168,76,.12);padding:36px 28px;transition:background .25s,border-color .25s;cursor:default;position:relative;overflow:hidden}
+.phil-pillar:hover{background:#1e1e1e;border-left-color:var(--gold)}
+.phil-pillar::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);opacity:.18;transition:opacity .35s}
+.phil-pillar:hover::before{opacity:1}
+.phil-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--gold);opacity:.22;line-height:1;margin-bottom:12px;transition:opacity .3s}
+.phil-pillar:hover .phil-num{opacity:.55}
 .phil-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.05em;color:var(--white);margin-bottom:8px}
-.phil-
+.phil-body{font-size:13px;font-weight:300;line-height:1.65;color:var(--white-dim)}
 
 /* ── CTA ── */
-.cta-sec{padding:72px 0;background:var(--black);text-align:center;position:relative;overflow:hidden}
+.cta-sec{padding:56px 0;background:var(--black);text-align:center;position:relative;overflow:hidden}
 .cta-sec::before{content:none;display:none}
 .cta-sec .si{position:relative;z-index:1}
 .cta-sub{font-family:'Barlow Condensed',sans-serif!important;font-style:normal!important;font-size:15px!important;font-weight:300!important;color:var(--white-dim)!important;margin:0 auto 40px;max-width:480px}
@@ -341,7 +341,7 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
   /* Section padding */
   .who,.pillars,.amanda-block,.facility,.testimonials,
   .news,.amanda-feature,.coaches-sec,.contact-main,
-  .disc-block,.pt-section,.recovery-main,.events-main{padding:56px 0!important}
+  .disc-block,.pt-section,.recovery-main,.events-main{padding:44px 0!important}
 
   /* Text inside sections */
   .amanda-text-col{padding:32px 20px!important;border-left:none!important;border-top:3px solid var(--gold)!important}
@@ -526,8 +526,8 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
 
 
 /* ── PAGE HERO WITH LOGO ── */
-.page-hero-inner-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:flex-start}
-.page-hero-logo{height:480px;display:flex;align-items:center;justify-content:center}
+.page-hero-inner-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-start}
+.page-hero-logo{height:520px;display:flex;align-items:flex-start;justify-content:center}
 .page-hero-logo img{width:100%;height:100%;object-fit:contain;display:block}
 .page-hero-text{display:flex;flex-direction:column;justify-content:center}
 @media(max-width:768px){
@@ -891,9 +891,6 @@ document.addEventListener('click',function(e){
           </div>
         </div>
         <button class="cc-expand" id="c2btn" onclick="toggleCoachBio('c2bio','c2btn')">Read Full Bio</button>
-        <div class="cc-social">
-          <a href="#">📱 Instagram</a>
-        </div>
       </div>
 
       <!-- ── COACH 3 — Recovery / Nurse ── -->
@@ -919,9 +916,6 @@ document.addEventListener('click',function(e){
           </ul>
           <p class="cc-bio" contenteditable="true">Winston is a highly respected boxing and boxing fitness trainer with over a decade of experience delivering results across all fitness levels. His sessions combine boxing, functional training, and weight-based conditioning to build strength, endurance, and athletic performance. Known for his structured approach, high energy, and strong sense of community — training with Winston means committing to hard work and walking out every session stronger than you walked in.</p>
         </div>
-        <div class="cc-social">
-          <a href="#">📱 Instagram</a>
-        </div>
       </div>
 
       <!-- ── COACH 5 ── -->
@@ -946,9 +940,6 @@ document.addEventListener('click',function(e){
             <li contenteditable="true">Hands-on, tailored approach — every session built around the individual</li>
           </ul>
           <p class="cc-bio" contenteditable="true">Tristan is a highly motivated personal trainer who brings energy, passion, and genuine commitment to every session. With an impressive depth of knowledge in training, technique, and performance, he tailors each session to the individual — keeping workouts engaging, effective, and consistently results-driven. Tristan pushes his clients beyond their comfort zones, but always with the right balance of challenge and support. His focus is not just on short-term progress, but on building the sustainable habits, confidence, and stronger mindset that produce lasting change.</p>
-        </div>
-        <div class="cc-social">
-          <a href="#">📱 Instagram</a>
         </div>
       </div>
 
