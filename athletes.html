@@ -96,13 +96,13 @@ nav:not(.site-nav){display:none !important}
 
 /* ── HERO ── */
 .hero{position:relative;padding:90px 0 40px;background:var(--black);overflow:hidden}
-.hero::before{content:'TEAM';font-family:'Bebas Neue',sans-serif;font-size:clamp(140px,22vw,280px);color:rgba(201,168,76,.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;letter-spacing:.1em;pointer-events:none}
+.hero::before{content:none}
 .hero-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .hero-eyebrow::before{content:'';display:block;width:30px;height:1px;background:var(--gold)}
-.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,5.5vw,76px);line-height:.95;letter-spacing:.02em;color:var(--white);margin-bottom:20px}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(46px,6vw,86px);line-height:.95;letter-spacing:.02em;color:var(--white);margin-bottom:16px}
 .hero-h1 em{color:var(--gold);font-style:normal;display:block}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,1.4vw,19px);font-weight:300;color:var(--white-dim);line-height:1.7;margin-bottom:32px;max-width:480px}
+.hero-sub{font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:15px;font-weight:300;color:var(--white-dim);line-height:1.75;margin-bottom:24px;max-width:480px}
 .hero-stats{display:flex;gap:36px;flex-wrap:wrap;align-items:flex-end}
 .hs{display:flex;flex-direction:column}
 .hs-n{font-family:'Bebas Neue',sans-serif;font-size:42px;line-height:1;color:var(--gold)}
@@ -142,7 +142,7 @@ nav:not(.site-nav){display:none !important}
 .team-header{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
 
 /* Fighter grid — 4 columns desktop */
-.fighter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.fighter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
 /* Fighter card */
 .fighter-card{background:var(--card);position:relative;overflow:hidden;cursor:default;transition:transform .3s}
@@ -262,7 +262,7 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
   .hero-inner{grid-template-columns:1fr;gap:40px}
   .hero-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px}
   .team-header,.members-header{grid-template-columns:1fr;gap:20px}
-  .fighter-grid{grid-template-columns:repeat(2,1fr)}
+  .fighter-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   
 }
 @media(max-width:640px){
@@ -1067,7 +1067,6 @@ document.addEventListener('click',function(e){
         <div class="sec-label reveal visible">Members</div>
         <h2 class="sec-h reveal rd1 visible">Real People.<br><em>Real Results.</em></h2>
         <p class="body-p reveal rd2 visible" contenteditable="true">Not everyone trains to compete. But everyone at Maddog trains to be better. These are the stories of members who showed up, put in the work, and changed their lives on the mat. From executives to parents, from beginners to competitors — every member has a story worth telling.</p>
-        <a href="contact.html#form" class="btn btn-g" style="margin-top:20px;display:inline-flex;">Book Your Free Trial</a>
       </div>
     </div>
 
