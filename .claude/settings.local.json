@@ -11,7 +11,21 @@
       "Bash(n\\\\\")",
       "Bash(' 2>&1 | Select-String -Pattern '\\\\''.'\\\\'' | Select-Object -First 50 | ForEach-Object { $_.Line }')",
       "Bash(powershell -Command ' *)",
-      "Bash(powershell -Command \"Get-Content 'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\recovery.html' -Encoding UTF8 | Select-Object -Skip 1265 -First 32\")"
+      "Bash(powershell -Command \"Get-Content 'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\recovery.html' -Encoding UTF8 | Select-Object -Skip 1265 -First 32\")",
+      "Bash(python patch_index_blog.py)",
+      "Bash(python -c ' *)",
+      "Bash(python inject_blog_script.py)",
+      "Bash(python restore_blog_images.py)",
+      "Bash(python -c \"import shutil; shutil.copy2\\('contact.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\contact.html'\\); print\\('Synced'\\)\")",
+      "Bash(python -c \"import shutil; shutil.copy2\\('events.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\events.html'\\); print\\('Synced'\\)\")",
+      "Bash(python seo_round2.py)",
+      "Bash(python sync_seo.py)",
+      "Bash(sed -n '138,148p' \"C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\.claude\\\\worktrees\\\\priceless-bardeen-61b48b\\\\recovery.html\")",
+      "Bash(sed -n '523,530p' \"C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\.claude\\\\worktrees\\\\priceless-bardeen-61b48b\\\\recovery.html\")",
+      "Bash(python sync_eyebrow.py)",
+      "Bash(python -c \"import shutil; shutil.copy2\\('recovery.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\recovery.html'\\); print\\('Synced'\\)\")",
+      "Bash(python -c \"import shutil; shutil.copy2\\('index.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\index.html'\\); print\\('Synced'\\)\")",
+      "Bash(python -c \"import shutil; shutil.copy2\\('training.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\training.html'\\); print\\('Synced'\\)\")"
     ]
   }
 }
