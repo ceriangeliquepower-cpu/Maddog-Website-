@@ -1836,23 +1836,59 @@ function enableReposition(slotId) {
       e.stopPropagation();
       closeModal();
 
-      /* Convert modal coords to slot img transform.
-         The crop box (crW x crH) maps to the slot (slotW x slotH).
-         Ratio = slotW/crW  — scale and pan both multiply by this ratio. */
       var ratio  = slotW / crW;
       var sScale = dScale * ratio;
       var sPanX  = panX  * ratio;
       var sPanY  = panY  * (slotH / crH);
 
-      img.style.cssText =
-        'position:absolute!important;left:50%!important;top:50%!important;' +
-        'right:auto!important;bottom:auto!important;max-width:none!important;' +
-        'object-fit:fill!important;' +
-        'transform-origin:center center;z-index:1;display:block!important;transition:none!important;' +
-        'width:'  + (natW * sScale).toFixed(1) + 'px;' +
-        'height:' + (natH * sScale).toFixed(1) + 'px;' +
-        'transform:translate(calc(-50% + ' + sPanX.toFixed(1) + 'px),' +
-          'calc(-50% + ' + sPanY.toFixed(1) + 'px));';
+      if (!slot.classList.contains('photo-slot')) {
+        /* ── Hero / full-coverage slot ─────────────────────────────────
+           These slots use inset:0 — any pixel gap is visible.
+           Keep object-fit:cover (guaranteed full coverage) and express
+           the user's crop as object-position + optional extra scale.   */
+        var cs   = Math.max(slotW / natW, slotH / natH); /* cover scale */
+        var imgW = natW * cs, imgH = natH * cs;
+
+        /* The image point the user centred in the crop box */
+        var cropCX = natW / 2 - panX / dScale;
+        var cropCY = natH / 2 - panY / dScale;
+
+        /* Convert to object-position percentages.
+           Formula: same as CSS background-position percentage logic.
+           offset = (box - img) * pct  =>  pct = (box/2 - cropC*cs) / (box - img)  */
+        var denomX = slotW - imgW, denomY = slotH - imgH;
+        var ox = Math.abs(denomX) < 1 ? 50 : (slotW / 2 - cropCX * cs) / denomX * 100;
+        var oy = Math.abs(denomY) < 1 ? 50 : (slotH / 2 - cropCY * cs) / denomY * 100;
+        ox = Math.max(0, Math.min(100, ox));
+        oy = Math.max(0, Math.min(100, oy));
+
+        /* Any zoom the user dialled in beyond the default cover scale */
+        var extraZoom = sScale / cs;
+        var tfm = extraZoom > 1.01 ? 'scale(' + extraZoom.toFixed(4) + ')' : 'none';
+
+        img.style.cssText =
+          'position:absolute!important;top:0!important;right:0!important;' +
+          'bottom:0!important;left:0!important;width:100%!important;height:100%!important;' +
+          'object-fit:cover!important;display:block!important;transition:none!important;' +
+          'object-position:' + ox.toFixed(2) + '% ' + oy.toFixed(2) + '%;' +
+          'transform:' + tfm + ';' +
+          'transform-origin:' + ox.toFixed(2) + '% ' + oy.toFixed(2) + '%;';
+
+      } else {
+        /* ── Regular photo slot ─────────────────────────────────────────
+           Fixed-size cards — use explicit pixel dimensions + transform.
+           Allows full pan and zoom range. Small background gaps from
+           deliberate zoom-out are expected and acceptable.              */
+        img.style.cssText =
+          'position:absolute!important;left:50%!important;top:50%!important;' +
+          'right:auto!important;bottom:auto!important;max-width:none!important;' +
+          'object-fit:fill!important;transform-origin:center center;' +
+          'z-index:1;display:block!important;transition:none!important;' +
+          'width:'  + (natW * sScale).toFixed(1) + 'px;' +
+          'height:' + (natH * sScale).toFixed(1) + 'px;' +
+          'transform:translate(calc(-50% + ' + sPanX.toFixed(1) + 'px),' +
+            'calc(-50% + ' + sPanY.toFixed(1) + 'px));';
+      }
     });
   }
 
