@@ -1001,15 +1001,30 @@ function enableReposition(slotId) {
   var slot = document.getElementById(slotId);
   var img  = document.getElementById(slotId + '-img');
   if (!slot || !img) return;
-  var slotW = slot.offsetWidth  || slot.getBoundingClientRect().width;
-  var slotH = slot.offsetHeight || slot.getBoundingClientRect().height;
 
-  function init() {
+  /* Measure slot — retry once after a frame if dimensions are zero */
+  function getSlotSize(cb) {
+    var w = slot.offsetWidth  || slot.getBoundingClientRect().width;
+    var h = slot.offsetHeight || slot.getBoundingClientRect().height;
+    if (w > 0 && h > 0) { cb(w, h); return; }
+    requestAnimationFrame(function() {
+      w = slot.offsetWidth  || slot.getBoundingClientRect().width;
+      h = slot.offsetHeight || slot.getBoundingClientRect().height;
+      cb(w || 300, h || 300);
+    });
+  }
+
+  function init(slotW, slotH) {
     var natW = img.naturalWidth, natH = img.naturalHeight;
-    if (!natW || !natH) return;
+    if (!natW || !natH) { setTimeout(function(){ getSlotSize(init); }, 50); return; }
 
-    var coverScale = Math.max(slotW / natW, slotH / natH);
-    var scale = coverScale;
+    /* containScale = whole image visible (may letterbox)
+       coverScale   = image fills frame (no gaps)          */
+    var containScale = Math.min(slotW / natW, slotH / natH);
+    var coverScale   = Math.max(slotW / natW, slotH / natH);
+    var minScale     = containScale * 0.95;   /* tiny margin so full image is reachable */
+    var maxScale     = coverScale   * 3;
+    var scale        = coverScale;            /* start at cover so frame is filled */
     var panX = 0, panY = 0;
     var dragging = false;
     var startX, startY, startPanX, startPanY;
@@ -1019,6 +1034,7 @@ function enableReposition(slotId) {
 
     function applyTransform() {
       var sw = natW * scale, sh = natH * scale;
+      /* When image is smaller than slot (zoomed out) centre it with no pan limit */
       var maxPX = Math.max(0, (sw - slotW) / 2);
       var maxPY = Math.max(0, (sh - slotH) / 2);
       panX = clamp(panX, -maxPX, maxPX);
@@ -1040,29 +1056,51 @@ function enableReposition(slotId) {
     var origOnclick = slot.getAttribute('onclick');
     slot.removeAttribute('onclick');
 
-    /* Hint badge */
-    var hint = document.createElement('div');
-    hint.id = slotId + '-rphint';
-    hint.style.cssText = 'position:absolute;top:10px;left:0;right:0;text-align:center;z-index:20;pointer-events:none;';
-    hint.innerHTML = '<span style="display:inline-block;background:rgba(0,0,0,.8);color:#c9a84c;' +
-      'font-family:\'Barlow Condensed\',sans-serif;font-size:9px;font-weight:700;' +
-      'letter-spacing:.18em;text-transform:uppercase;padding:5px 14px;">' +
-      'DRAG · SCROLL TO ZOOM</span>';
-    slot.appendChild(hint);
+    /* ── UI overlay ─────────────────────────────────────────────────────── */
+    var ui = document.createElement('div');
+    ui.id = slotId + '-rphint';
+    ui.style.cssText = 'position:absolute;inset:0;z-index:20;pointer-events:none;';
+    ui.innerHTML =
+      /* hint text */
+      '<div style="position:absolute;top:10px;left:0;right:0;text-align:center;pointer-events:none;">' +
+        '<span style="display:inline-block;background:rgba(0,0,0,.82);color:#c9a84c;' +
+          'font-family:\'Barlow Condensed\',sans-serif;font-size:9px;font-weight:700;' +
+          'letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;">' +
+          'DRAG TO REPOSITION</span>' +
+      '</div>' +
+      /* zoom controls + done — bottom bar */
+      '<div style="position:absolute;bottom:10px;left:10px;right:10px;display:flex;' +
+        'align-items:center;justify-content:space-between;pointer-events:auto;gap:6px;">' +
+        '<div style="display:flex;gap:4px;">' +
+          '<button id="' + slotId + '-zmout" style="width:34px;height:34px;background:rgba(0,0,0,.82);' +
+            'color:#c9a84c;border:1px solid #c9a84c;font-size:20px;line-height:1;cursor:pointer;' +
+            'font-family:\'Barlow Condensed\',sans-serif;font-weight:300;padding:0;">&#8722;</button>' +
+          '<button id="' + slotId + '-zmin" style="width:34px;height:34px;background:rgba(0,0,0,.82);' +
+            'color:#c9a84c;border:1px solid #c9a84c;font-size:20px;line-height:1;cursor:pointer;' +
+            'font-family:\'Barlow Condensed\',sans-serif;font-weight:300;padding:0;">&#43;</button>' +
+        '</div>' +
+        '<button id="' + slotId + '-rpdone" style="background:#c9a84c;color:#080808;border:none;' +
+          'font-family:\'Barlow Condensed\',sans-serif;font-size:10px;font-weight:700;' +
+          'letter-spacing:.18em;text-transform:uppercase;padding:9px 20px;cursor:pointer;">' +
+          '&#10003; DONE</button>' +
+      '</div>';
+    slot.appendChild(ui);
 
-    /* Done button */
-    var doneBtn = document.createElement('button');
-    doneBtn.id = slotId + '-rpdone';
-    doneBtn.innerHTML = '✓ DONE';
-    doneBtn.style.cssText = 'position:absolute;bottom:10px;right:10px;z-index:20;' +
-      'background:#c9a84c;color:#080808;border:none;' +
-      'font-family:\'Barlow Condensed\',sans-serif;font-size:10px;font-weight:700;' +
-      'letter-spacing:.18em;text-transform:uppercase;padding:8px 18px;cursor:pointer;';
-    slot.appendChild(doneBtn);
+    var zmOutBtn  = document.getElementById(slotId + '-zmout');
+    var zmInBtn   = document.getElementById(slotId + '-zmin');
+    var doneBtn   = document.getElementById(slotId + '-rpdone');
+
+    /* ── Zoom buttons ── */
+    function zoomBy(factor) {
+      scale = clamp(scale * factor, minScale, maxScale);
+      applyTransform();
+    }
+    zmOutBtn.addEventListener('click', function(e){ e.stopPropagation(); zoomBy(0.88); });
+    zmInBtn.addEventListener('click',  function(e){ e.stopPropagation(); zoomBy(1.14); });
 
     /* ── Mouse drag ── */
     function onMouseDown(e) {
-      if (e.target === doneBtn) return;
+      if (e.target === doneBtn || e.target === zmOutBtn || e.target === zmInBtn) return;
       e.preventDefault();
       dragging = true;
       startX = e.clientX; startY = e.clientY;
@@ -1077,12 +1115,10 @@ function enableReposition(slotId) {
     }
     function onMouseUp() { dragging = false; img.style.cursor = 'grab'; }
 
-    /* ── Scroll to zoom ── */
+    /* ── Scroll to zoom (mouse wheel / trackpad) ── */
     function onWheel(e) {
       e.preventDefault();
-      var factor = e.deltaY < 0 ? 1.06 : 0.94;
-      scale = clamp(scale * factor, coverScale, coverScale * 3);
-      applyTransform();
+      zoomBy(e.deltaY < 0 ? 1.06 : 0.94);
     }
 
     /* ── Pinch to zoom (mobile) ── */
@@ -1107,7 +1143,7 @@ function enableReposition(slotId) {
         applyTransform();
       } else if (e.touches.length === 2 && lastPinchDist) {
         var d = getPinchDist(e);
-        scale = clamp(scale * (d / lastPinchDist), coverScale, coverScale * 3);
+        scale = clamp(scale * (d / lastPinchDist), minScale, maxScale);
         lastPinchDist = d;
         applyTransform();
       }
@@ -1123,12 +1159,9 @@ function enableReposition(slotId) {
     slot.addEventListener('touchend', onTouchEnd);
 
     /* ── Done ── */
-    doneBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      var h = document.getElementById(slotId + '-rphint');
-      var d = document.getElementById(slotId + '-rpdone');
-      if (h && h.parentNode) h.parentNode.removeChild(h);
-      if (d && d.parentNode) d.parentNode.removeChild(d);
+    function cleanup() {
+      var u = document.getElementById(slotId + '-rphint');
+      if (u && u.parentNode) u.parentNode.removeChild(u);
       if (origOnclick) slot.setAttribute('onclick', origOnclick);
       img.style.cursor = '';
       img.removeEventListener('mousedown', onMouseDown);
@@ -1138,11 +1171,14 @@ function enableReposition(slotId) {
       slot.removeEventListener('touchstart', onTouchStart);
       slot.removeEventListener('touchmove', onTouchMove);
       slot.removeEventListener('touchend', onTouchEnd);
-    });
+    }
+    doneBtn.addEventListener('click', function(e){ e.stopPropagation(); cleanup(); });
   }
 
-  if (img.complete && img.naturalWidth > 0) { init(); }
-  else { img.addEventListener('load', function onL(){ img.removeEventListener('load',onL); init(); }); }
+  getSlotSize(function(w, h) {
+    if (img.complete && img.naturalWidth > 0) { init(w, h); }
+    else { img.addEventListener('load', function onL(){ img.removeEventListener('load', onL); init(w, h); }); }
+  });
 }
 
 function savePage(fname) {
