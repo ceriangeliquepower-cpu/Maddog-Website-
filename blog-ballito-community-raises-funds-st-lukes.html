@@ -68,7 +68,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 @keyframes credScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .cred-scroll{display:flex;gap:0;animation:credScroll 70s linear infinite;white-space:nowrap;width:max-content}
 .cred-item{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.14em;color:var(--black);padding:0 34px;display:inline-flex;align-items:center;gap:16px;flex-shrink:0}
-.cred-item::after{content:'&#9670;';font-size:7px;opacity:.4}
+.cred-item::after{content:'◆';font-size:7px;opacity:.4}
 
 /* ── BLOG HERO ── */
 .blog-hero{padding:120px 0 60px;background:var(--deep);position:relative;overflow:hidden}
@@ -92,7 +92,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 .article-body p{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:300;line-height:1.8;color:var(--white-dim);margin-bottom:20px}
 .article-body ul{list-style:none;margin:16px 0 24px;display:flex;flex-direction:column;gap:10px}
 .article-body ul li{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:300;color:var(--white-dim);display:flex;align-items:flex-start;gap:12px;line-height:1.6}
-.article-body ul li::before{content:'&#9670;';font-size:7px;color:var(--gold);margin-top:5px;flex-shrink:0}
+.article-body ul li::before{content:'◆';font-size:7px;color:var(--gold);margin-top:5px;flex-shrink:0}
 .pull-quote{border-left:3px solid var(--gold);padding:16px 24px;margin:32px 0;background:rgba(201,168,76,.04)}
 .pull-quote p{font-family:'Barlow Condensed',sans-serif!important;font-style:italic;font-size:17px!important;color:var(--white)!important;margin:0!important;line-height:1.65!important}
 .stat-highlight{display:inline-block;font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.04em;color:var(--gold);line-height:1;margin-bottom:4px}
@@ -192,7 +192,9 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 
 <!-- CREDENTIAL STRIP -->
 <div class="cred-strip">
-  <div class="cred-scroll"><div class="cred-item">2&times; EFC World Champion &middot; Amanda Lino</div><div class="cred-item">IMMAF Featherweight World Champion 2014</div><div class="cred-item">BJJ Brown Belt &middot; European NAGA Women&rsquo;s Absolute Champion</div><div class="cred-item">MMA &middot; BJJ &middot; Kickboxing &middot; Powerlifting &middot; Recovery Suite</div><div class="cred-item">Nurse Practitioner &middot; Clinical Recovery</div><div class="cred-item">KZN North Coast&rsquo;s Premier Fight &amp; Performance Gym</div><div class="cred-item">2&times; EFC World Champion &middot; Amanda Lino</div><div class="cred-item">IMMAF Featherweight World Champion 2014</div><div class="cred-item">BJJ Brown Belt &middot; European NAGA Women&rsquo;s Absolute Champion</div><div class="cred-item">MMA &middot; BJJ &middot; Kickboxing &middot; Powerlifting &middot; Recovery Suite</div><div class="cred-item">Nurse Practitioner &middot; Clinical Recovery</div><div class="cred-item">KZN North Coast&rsquo;s Premier Fight &amp; Performance Gym</div></div>
+  <div class="cred-scroll"><div class="cred-item">R53,000+ Raised For St Luke&rsquo;s Hospice</div><div class="cred-item">Ballito Community &middot; March 2026</div><div class="cred-item">Maddog Performance Institute</div><div class="cred-item">KZN North Coast &middot; Home Of Healing</div><div class="cred-item">Charity &middot; Community &middot; Heart</div><div class="cred-item">Ballito Showed Up</div><div class="cred-item">R53,000+ Raised For St Luke&rsquo;s Hospice</div><div class="cred-item">Ballito Community &middot; March 2026</div><div class="cred-item">Maddog Performance Institute</div><div class="cred-item">KZN North Coast &middot; Home Of Healing</div><div class="cred-item">Charity &middot; Community &middot; Heart</div><div class="cred-item">Ballito Showed Up</div></div>
+</div>
+</div>
 </div>
 
 <!-- BLOG HERO -->
@@ -692,6 +694,7 @@ function savePage(fname) {
 
 /* Reduce blog-hero top padding — photo section now handles nav clearance */
 .blog-hero{padding-top:20px!important}
+.article-wrap{padding-top:20px!important}
 @media(max-width:768px){.blog-hero{padding-top:14px!important}}
 
 /* Sticky footer */
