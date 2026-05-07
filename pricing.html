@@ -130,7 +130,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .slot-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.6;text-align:center;padding:0 12px}
 
 /* ── PROTO SECTION ── */
-.proto-section{padding:80px 40px}
+.proto-section{padding:52px 40px}
 .proto-inner{max-width:860px;margin:0 auto}
 .proto-header{margin-bottom:40px}
 
@@ -180,7 +180,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .cred-list li::before{content:'◆';color:var(--gold);font-size:7px;margin-top:5px;flex-shrink:0}
 
 /* ── QR SECTION ── */
-.qr-section{background:var(--deep);padding:80px 40px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.qr-section{background:var(--deep);padding:52px 40px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .qr-box{display:inline-flex;flex-direction:column;align-items:center;gap:20px}
 .qr-img{width:180px;height:180px;background:white;padding:12px;display:block}
 .qr-label{font-family:'Bebas Neue';font-size:18px;letter-spacing:.12em;color:var(--white)}
@@ -192,7 +192,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .contrast-col p.contrast-note{font-size:12px;font-weight:300;color:var(--white-dim);margin-bottom:20px;font-style:italic}
 
 /* ── FORM ── */
-.form-section{background:var(--black);padding:100px 40px}
+.form-section{background:var(--black);padding:60px 40px}
 .form-inner{max-width:680px;margin:0 auto}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-field{display:flex;flex-direction:column;gap:6px}
@@ -291,8 +291,27 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <main>
 
 <!-- ══ HERO ══ -->
-<section style="background:var(--black);padding:140px 40px 80px;text-align:center;border-bottom:1px solid var(--border)">
-  <div style="max-width:800px;margin:0 auto">
+<section style="background:var(--black);padding:120px 40px 60px;text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden">
+
+  <!-- FADED HERO BACKGROUND PHOTO -->
+  <div id="heroBg" style="position:absolute;inset:0;z-index:0">
+    <img id="heroBg-img"
+         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+         alt=""
+         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .6s">
+    <!-- Dark overlay — keeps text readable, creates subtle faded photo effect -->
+    <div style="position:absolute;inset:0;background:rgba(8,8,8,0.82);pointer-events:none"></div>
+  </div>
+
+  <!-- Upload hint button (bottom-right of hero) -->
+  <button onclick="swapPhoto('heroBg')" aria-label="Upload background photo"
+          style="position:absolute;bottom:16px;right:16px;z-index:10;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;cursor:pointer;transition:background .2s"
+          onmouseover="this.style.background='rgba(201,168,76,.22)'"
+          onmouseout="this.style.background='rgba(201,168,76,.12)'">
+    &#128247; Upload Background Photo
+  </button>
+  <!-- HERO CONTENT -->
+  <div style="max-width:800px;margin:0 auto;position:relative;z-index:2">
     <div class="sec-label" style="margin-bottom:16px">Maddog Performance Institute · Recovery Suite</div>
     <h1 style="font-family:'Bebas Neue';font-size:clamp(48px,7vw,96px);line-height:.92;letter-spacing:.02em;color:var(--white);margin-bottom:24px">
       Clinical Recovery.<br><em style="color:var(--gold)">Premium Protocols.</em>
