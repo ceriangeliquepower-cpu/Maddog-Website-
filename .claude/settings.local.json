@@ -25,7 +25,21 @@
       "Bash(python sync_eyebrow.py)",
       "Bash(python -c \"import shutil; shutil.copy2\\('recovery.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\recovery.html'\\); print\\('Synced'\\)\")",
       "Bash(python -c \"import shutil; shutil.copy2\\('index.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\index.html'\\); print\\('Synced'\\)\")",
-      "Bash(python -c \"import shutil; shutil.copy2\\('training.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\training.html'\\); print\\('Synced'\\)\")"
+      "Bash(python -c \"import shutil; shutil.copy2\\('training.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\training.html'\\); print\\('Synced'\\)\")",
+      "Bash(python3)",
+      "Bash(2>&1)",
+      "Read(//c/Users/HP/Desktop/**)",
+      "Bash(python fix_blog_efc134.py)",
+      "Bash(python extract_blog.py)",
+      "Bash(python add_reposition.py)",
+      "Bash(python fix_remaining.py)",
+      "Bash(python fix_reposition_v2.py)",
+      "Bash(python fix_objectfit.py)",
+      "Bash(python3 -c \"import qrcode; print\\('qrcode available'\\)\")",
+      "Bash(python -c \"import qrcode; print\\('qrcode available'\\)\")",
+      "Bash(python \"C:\\\\Users\\\\HP\\\\Desktop\\\\fix_recovery_ctas.py\")",
+      "Bash(python -c \"import shutil; shutil.copy2\\(r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\.claude\\\\worktrees\\\\priceless-bardeen-61b48b\\\\training.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\training.html'\\); print\\('Copied.'\\)\")",
+      "Bash(python fix_nav_logo.py)"
     ]
   }
 }
