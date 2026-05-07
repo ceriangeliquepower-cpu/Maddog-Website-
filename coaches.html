@@ -87,7 +87,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .gc.br{bottom:-1px;right:-1px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
 
 /* ── PAGE HERO ── */
-.page-hero{padding:80px 0 32px;height:100svh;max-height:100svh;background:var(--black);position:relative;overflow:hidden}
+.page-hero{padding:80px 0 32px;height:auto;max-height:none;background:var(--black);position:relative;overflow:hidden}
 .page-hero::before{content:none}
 .page-hero-inner{max-width:1200px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
 .page-eyebrow{font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
@@ -668,6 +668,14 @@ html { -webkit-text-size-adjust: 100%; }
 .site-nav-logo{display:flex!important;align-items:center!important;flex-shrink:0!important;text-decoration:none!important;line-height:0!important;padding:3px 0!important;margin-right:8px!important;transition:opacity .2s!important}
 .site-nav-logo:hover{opacity:.75!important}
 .site-nav-logo img{height:54px!important;width:auto!important;display:block!important}
+</style>
+<style>
+@media(max-width:768px){
+  .page-hero{height:auto!important;min-height:auto!important;padding:80px 0 32px!important}
+  .coaches-grid{grid-template-columns:1fr!important}
+  .af-grid{grid-template-columns:1fr!important}
+  .af-photo .photo-slot{min-height:260px!important}
+}
 </style>
 </head>
 <body data-pid="coaches">
