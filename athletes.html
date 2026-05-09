@@ -1612,7 +1612,12 @@ function swapPhoto(slotId) {
         img.src = dataUrl;
       }
       if (slot) slot.classList.add('loaded');
-      enableReposition(slotId);
+      /* mc-avatar slots are tiny circles — skip reposition modal, just centre-crop */
+      if (slot && slot.classList.contains('mc-avatar')) {
+        if (img) img.style.cssText = 'position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important;display:block!important;';
+      } else {
+        enableReposition(slotId);
+      }
     };
     reader.readAsDataURL(file);
   };
