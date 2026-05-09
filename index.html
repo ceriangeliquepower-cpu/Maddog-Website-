@@ -190,7 +190,7 @@ a{text-decoration:none;color:inherit}
 @keyframes credScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}100%{transform:translateX(-50%)}}
 
 /* ── WHO SECTION ── */
-.who{padding:40px 0 32px;background:var(--black)}
+.who{padding:40px 0 16px;background:var(--black)}
 .sec-label{font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:.02em;margin-bottom:24px}
 .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
@@ -203,11 +203,12 @@ a{text-decoration:none;color:inherit}
 .who-photos .photo-slot{height:100%}
 
 /* ── PILLARS ── */
-.pillars{padding:32px 0 48px;background:var(--black)}
+.pillars{padding:16px 0 48px;background:var(--black)}
 .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:36px}
-.pillar{background:var(--card);padding:40px 32px;position:relative;overflow:hidden}
-.pillar::before{content:attr(data-num);font-family:'Bebas Neue',sans-serif;font-size:120px;color:var(--gold);opacity:.04;position:absolute;top:-10px;right:16px;line-height:1}
-.pillar-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.05em;margin-bottom:12px;color:var(--white)}
+.pillar{background:#1A1A1A;padding:40px 32px;position:relative;overflow:hidden;border-top:3px solid var(--gold)}
+.pillar::before{content:attr(data-num);font-family:'Bebas Neue',sans-serif;font-size:120px;color:var(--gold);opacity:.08;position:absolute;top:-10px;right:16px;line-height:1}
+.pillar-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.05em;margin-bottom:0;color:var(--white)}
+.pillar-title::after{content:'';display:block;width:24px;height:2px;background:var(--gold);margin-top:10px;margin-bottom:14px}
 .pillar-text{font-size:14px;color:var(--white-dim);line-height:1.65}
 
 /* ── AMANDA BLOCK ── */
