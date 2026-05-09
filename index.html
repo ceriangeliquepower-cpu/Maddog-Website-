@@ -1333,7 +1333,7 @@ function enableReposition(slotId) {
       var sPanX  = panX  * ratio;
       var sPanY  = panY  * (slotH / crH);
 
-      if (true) { /* always use object-fit:cover — all slots are fluid */
+      if (!slot.classList.contains('photo-slot')) {
         /* ── Hero / full-coverage slot ─────────────────────────────────
            These slots use inset:0 — any pixel gap is visible.
            Keep object-fit:cover (guaranteed full coverage) and express
