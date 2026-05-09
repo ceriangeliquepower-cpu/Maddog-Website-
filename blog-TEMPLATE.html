@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+<!-- ============================================================
+  MADDOG BLOG TEMPLATE
+  ============================================================
+  HOW TO USE THIS FILE:
+  1. Save a copy with a new filename: blog-your-topic-ballito.html
+  2. Find every line marked REPLACE and update it
+  3. Write your article content inside the ARTICLE BODY section
+  4. Add the new blog card to events.html (copy the bp6 card pattern)
+  5. Push to GitHub
+  ============================================================ -->
+
+<!-- REPLACE: Update title (60 chars max, include primary keyword) -->
+<title>Blog Post Title | Maddog Performance Institute | Ballito KZN</title>
+
+<!-- REPLACE: Update description (150-160 chars, include primary keyword) -->
+<meta name="description" content="Your 150-160 character meta description goes here. Include your primary keyword and a compelling reason to click.">
+
+<!-- REPLACE: Update the filename in the canonical URL -->
+<link rel="canonical" href="https://www.maddogperformance.co.za/blog-your-filename-here.html">
+
+<!-- REPLACE: Update og:title, og:description, og:url to match above -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blog Post Title | Maddog Performance Institute">
+<meta property="og:description" content="Your meta description here.">
+<meta property="og:url" content="https://www.maddogperformance.co.za/blog-your-filename-here.html">
+<meta property="og:image" content="https://www.maddogperformance.co.za/og-image.jpg">
+<meta property="og:site_name" content="Maddog Performance Institute">
+<meta property="og:locale" content="en_ZA">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="ZA-KZN">
+<meta name="geo.placename" content="Ballito, KwaZulu-Natal">
+<meta name="twitter:card" content="summary_large_image">
+<!-- REPLACE: Update twitter:title and twitter:description -->
+<meta name="twitter:title" content="Blog Post Title | Maddog Performance Institute">
+<meta name="twitter:description" content="Your meta description here.">
+<meta name="twitter:image" content="https://www.maddogperformance.co.za/og-image.jpg">
+
+<!-- REPLACE: Update headline, description, datePublished, dateModified, url -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Your Full Blog Post Title Here",
+  "description": "Your meta description here.",
+  "author": {"@type":"Organization","name":"Maddog Performance Institute","url":"https://www.maddogperformance.co.za"},
+  "publisher": {"@type":"Organization","name":"Maddog Performance Institute","url":"https://www.maddogperformance.co.za"},
+  "datePublished": "2026-01-01",
+  "dateModified": "2026-01-01",
+  "url": "https://www.maddogperformance.co.za/blog-your-filename-here.html"
+}
+</script>
+
+<!-- REPLACE: Update position 3 name and item URL -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.maddogperformance.co.za/"},
+    {"@type":"ListItem","position":2,"name":"News & Events","item":"https://www.maddogperformance.co.za/events.html"},
+    {"@type":"ListItem","position":3,"name":"Your Blog Post Title","item":"https://www.maddogperformance.co.za/blog-your-filename-here.html"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--black:#080808;--deep:#0f0f0f;--card:#1a1a1a;--border:#2a2a2a;--gold:#c9a84c;--gold-light:#e8c87a;--gold-dim:#7a6030;--gold-glow:rgba(201,168,76,0.13);--white:#f5f0e8;--white-dim:rgba(245,240,232,0.58);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:300;overflow-x:hidden;padding-bottom:60px}
+.site-nav{position:fixed;top:0;left:0;right:0;height:60px;background:rgba(8,8,8,.96);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:9999;backdrop-filter:blur(8px)}
+.site-nav-inner{max-width:1200px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.site-nav-links{display:flex;gap:28px;list-style:none}
+.site-nav-links a{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;transition:color .2s}
+.site-nav-links a:hover,.site-nav-links a.active{color:var(--gold)}
+.site-nav-cta a{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:9px 20px;text-decoration:none;transition:background .2s;white-space:nowrap}
+.site-nav-cta a:hover{background:var(--gold-light)}
+.site-nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.site-nav-hamburger span{display:block;width:22px;height:2px;background:var(--gold);transition:all .3s;transform-origin:center}
+.site-nav-mobile{position:fixed;top:0;right:-100%;width:80%;max-width:300px;height:100vh;background:var(--deep);z-index:9998;display:flex;flex-direction:column;padding:80px 32px 48px;gap:8px;transition:right .4s cubic-bezier(.4,0,.2,1);border-left:1px solid var(--border)}
+.site-nav-mobile.snm-open{right:0}
+.site-nav-mobile a{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.08em;color:var(--white-dim);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.site-nav-mobile a:hover{color:var(--gold)}
+.site-nav-mobile .snm-cta{margin-top:20px;background:var(--gold);color:var(--black);text-align:center;padding:14px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-bottom:none}
+.site-nav-logo{display:flex!important;align-items:center!important;flex-shrink:0!important;text-decoration:none!important;line-height:0!important;padding:3px 0!important;margin-right:8px!important;transition:opacity .2s!important}
+.site-nav-logo:hover{opacity:.75!important}
+.site-nav-logo img{height:54px!important;width:auto!important;display:block!important}
+.cred-strip{background:var(--gold);padding:11px 0;overflow:hidden;width:100%}
+@keyframes credScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.cred-scroll{display:flex;gap:0;animation:credScroll 70s linear infinite;white-space:nowrap;width:max-content}
+.cred-item{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.14em;color:var(--black);padding:0 34px;display:inline-flex;align-items:center;gap:16px;flex-shrink:0}
+.cred-item::after{content:'◆';font-size:7px;opacity:.4}
+.blog-page-hero{height:380px;margin-top:60px;position:relative;overflow:hidden;background:var(--deep)}
+.blog-hero{padding:60px 0;background:var(--deep);position:relative;overflow:hidden}
+.blog-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.05),transparent 60%);pointer-events:none}
+.bh-inner{max-width:860px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+.bh-back{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;margin-bottom:24px;transition:color .2s}
+.bh-back:hover{color:var(--gold)}
+.bh-back::before{content:'←';font-size:12px}
+.bh-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:4px 12px;margin-bottom:20px}
+.bh-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,68px);line-height:.95;letter-spacing:.02em;color:var(--white);margin-bottom:20px}
+.bh-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.bh-author{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.bh-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim)}
+.bh-read{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim)}
+.bh-dot{color:var(--gold-dim);font-size:8px}
+.article-wrap{max-width:860px;margin:0 auto;padding:60px 40px 80px}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,38px);letter-spacing:.03em;color:var(--white);margin:48px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.article-body h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(18px,2vw,24px);letter-spacing:.04em;color:var(--gold);margin:32px 0 12px}
+.article-body p{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:300;line-height:1.8;color:var(--white-dim);margin-bottom:20px}
+.article-body ul{list-style:none;margin:16px 0 24px;display:flex;flex-direction:column;gap:10px}
+.article-body ul li{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:300;color:var(--white-dim);display:flex;align-items:flex-start;gap:12px;line-height:1.6}
+.article-body ul li::before{content:'◆';font-size:7px;color:var(--gold);margin-top:5px;flex-shrink:0}
+.pull-quote{border-left:3px solid var(--gold);padding:16px 24px;margin:32px 0;background:rgba(201,168,76,.04)}
+.pull-quote p{font-family:'Barlow Condensed',sans-serif!important;font-style:italic;font-size:17px!important;color:var(--white)!important;margin:0!important;line-height:1.65!important}
+.article-cta-box{background:var(--deep);border:1px solid var(--gold-dim);padding:40px;margin:48px 0 0;text-align:center}
+.article-cta-box h3{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--white);margin-bottom:10px}
+.article-cta-box p{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:300;color:var(--white-dim);margin-bottom:24px;line-height:1.7}
+.article-cta-box .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;transition:all .3s;cursor:pointer;border:none;padding:13px 30px}
+.btn-g{color:var(--black);background:var(--gold)}
+.btn-g:hover{background:var(--gold-light)}
+.btn-o{color:var(--gold);background:transparent;border:1px solid var(--gold-dim)}
+.btn-o:hover{border-color:var(--gold);background:var(--gold-glow)}
+.site-footer{background:var(--deep);border-top:1px solid var(--border);padding:48px 0 24px}
+.sf-main{max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px}
+.sf-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.12em;color:var(--gold);display:block;margin-bottom:12px}
+.sf-brand p{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:300;color:rgba(245,240,232,.55);line-height:1.65;margin-bottom:16px}
+.sf-social{display:flex;gap:12px}
+.sf-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);transition:border-color .2s}
+.sf-social a:hover{border-color:var(--gold-dim)}
+.sf-social svg{width:14px;height:14px;fill:var(--white-dim)}
+.sf-col h4{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.sf-col a{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:300;color:rgba(245,240,232,.6);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.sf-col a:hover{color:var(--gold)}
+.sf-bottom{max-width:1200px;margin:32px auto 0;padding:20px 40px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.sf-bottom p{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:300;color:rgba(245,240,232,.3);letter-spacing:.06em}
+.wa-float{position:fixed;bottom:28px;right:24px;display:flex;align-items:center;gap:8px;z-index:9990}
+.wa-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:var(--card);padding:6px 10px;border:1px solid var(--border);opacity:.85}
+.wa-btn{width:48px;height:48px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.wa-btn:hover{transform:scale(1.08)}
+.wa-btn svg{width:26px;height:26px;fill:#fff}
+.slot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(8,8,8,.55);gap:8px;transition:opacity .3s}
+.slot-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.6}
+@media(max-width:768px){
+  .site-nav-links,.site-nav-cta{display:none}
+  .site-nav-hamburger{display:flex}
+  .sf-main{grid-template-columns:1fr;gap:28px}
+  .bh-inner{padding:0 20px}
+  .blog-hero{padding:40px 0 48px}
+  .article-wrap{padding:40px 20px 60px}
+  .article-cta-box{padding:28px 20px}
+  .blog-page-hero{height:220px}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-nav-logo" aria-label="Maddog Performance Institute — Home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAACiCAYAAADC8hYbAAARuUlEQVR42u2de7TcVXXHv3vuvXlIQgIJhEdeSiARAgEFJUiAQFOhFAoWLCBZIAhBaKlldclDXYrVYsvDKqWEKkRpobBg6eJRDNAGSkwgJBEFgcibPC6ESEgI5HVn5ts/ft+z3P6YuXdmcm/ITPZnrVl37szvcX7nt2efc/brBwRBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARB0CeQNJJt0RM191f0VR93cIFkIXqi2/6x6Ik+6Fj9/ROSp7vP26N3PtBX7e79n5EcGL3Sy51L8lxm3EFyr9COlUcJknuRvF99Ndr/mIPeEcQvkCypg98heWFoxw9owRnqG5Isk/zTmC/2viBOVwdv4B+4h+SY1Nnb09zIL95IjiL5c9cvm/T3lGb5oTajym4HQAAlACcCWEjyTDMrmRm3h18/yTYzo5mVSJ4BYCGAkwAU1TepD9gs19SscwdTZ5cA7ALgP0jeRnKEbk5LakdpwXZd43CStwK4DcAI9UW7+qbpaPZJbJvTjmdIO57UitrRacEiyRMALAIwXdfutSBCED9c7VgEMArAz0neRHKINEd7M2vHnBYcTPIGAPcCGKNrbmtWLdhqgujnjmW9zgfwJMlpZlZsVu1IsuC04FQACwBc6K6zZawFrWZfKuhVBLAPgIdIXktyYNKOzWQtMLMyyf4krwIwB8DHdW2FVrt3rWro9NrxEgCPkzxMmsW2ZQNvctGprYcAmAfgMs0DW0oLbg+CmNeOkwA8RvJbAArSNO3bqhbU+ysA/BLAJ3UN1sr3q9BkWm5LtGMBwDclkJOkcbYJF2Fqh9q0L4BHAHwXQL9W1oLNKoi2hddp0iyHaaj+OzMrf9jaMWlBteOvtSA50hmntws/8fbmDG9HZncbCOA6krNJjpMm2qpG8OSi07nHkrwPwPUABjW7cToEEXUZwYsAPovMzHPO1jSC51x005G56P68gosOIYitjTntuBOAm0neSXK3vnQR5ozTu5K8DcCtAIZvj1qw1QUxmTnqdRF+HsAikif3hXbMuehOlBY8owEXXTkEsXm0XcHd4HpchHsC+BnJG0kO7g0jeE4LDiL5rwDuATC6Thcd3eo/BHEb14QAsAbAC+4Glxowgl8A4AmSR2yJETzto2McoRXxRQ246MruBzYfwHshiM0hiJ8C8A0A6522q9cIvi+AR0heiQaM4M443Uby27IN7tuAiy5tvwnAxQBOcBqUCLZ6hPY5ijruYmVSGsFykv21z/4kf+m+L7F2Sgq3J8m5MjT3GAmeyx85gOR8F7pf7/nT9otJHqxjjiS53h2zEkX9/cuI0P5wNWNBi4NnABwF4KqctqvXCH64huoZbiHT3oNx+mIAjwOY3ICLzmvN7wP4jJkt0uKJragJCy1snjFpRjOzKwAcC+BVZ7ZhnUbwwQBmkrxLkeBp7tiehFKfjZFx+gcAPuLMMrX+iIrafhmAE83sEgBFpYbadmxya7qheVk3x9pN6aj5IawWym77pWnY8+1UG1e6dpbrOL5vy10k96hyDcNIvt9qQ3MrOtPLJCdqSNxPWuRZAA+Z2WsATiP5KICrkbnTijX2g8+TGQXgbpILkYVpdWgKsJ+2LdXZt6kN6wBcamY3SoBGAzhGi5wCgOcBvNiqtsRW0YiJzXrlWUPySpIdbiHxeIMLmWoLj1KdWjC/INpfbRtI8rsuR7mWcze1RmxFQaTbzr8Sc0jurmMOIPlPuX1YpyCl45fq3LfLCda3SfZTmyaQXFDDdYQgfkiCeFYdwlKu8lnSlEtIfjxXJ+b1Bud29eLnmi+QPNq142g3x9y8Be1Ix/+LZqn00EwrsPIWxi6a5nJFAONlrJ6q1e4DMoLf7QIPSn1wDSU31/wJgEPNbI6E5VwAswHsqu06IgwM20VM4gglV12u1NOVZnYqMhfc+3V6ZGo1y7QBWA1gupl90cxWkxxK8noAP3ZuxqhV0wS1b7p6YXgs5RY0TyaboFvIPNHgQqa7BcnDrpJZO8mjSK7IzQdLvXB9MTT3IcUtTBlI4V4pgqUDwEZkyerXpKFT3pGnAUwB8M8NeGQqeUjKAL5mZtPM7GUJfAnAMwBmAPgpgLXSiAXXVm7F6UxQo0Y8bQuM0Pl9nib5NZJ7dxc1o/fHknzVnbtc54LkWZKf6ameo3zIXyG5qIJ2KzWoEY+LsnS9L4gn1SGIpQpD+O9JziJ5jL8xEo62anGEej9cRZ5qMfP4724iObiaCSXlreTPryH7FpJv54S71hV9EtwpIYi9X7r4oB7cWqUKc6wSyUdJnk9yRAWXXKGeougyIa2qcL5STkhWkDy1nsLqXvBzLsmLnOHda7xiN2aqZP4ZExVjezfPw2R8Xpq7CaUqE/znSX6H5KS8UDWSj5Irijma5O3daKNZzmDeUO5LFS05meQNJDsraOCiWxRt1vtfR2H3PnpUA8mLuxGApSRnaujtyGua3rghOe04RUL3W5LPkPwxycm9+XiJSm0nuZMsCLNdZdhKnBbDct8O0d8juVq//FdI/ojk8SQHNTL0NigchR60mfVRNYi8lpxA8jKS/6uA4Lf1w5jRbEOyNdswraDUXQAMAbDczDZW0EJleUzY3XG6O0+tpi8zK1U4d7f7p/o2ufOZuyepbcy3U9sW9F3ZfT4IWeGA1SklNrUt2Dpa4QPzvh40ltUhbKhV8zXyZKxKC5RaNGwrDrfWZKV7SxIyJs1RSWNIa/Yzs81VjtVhZl1VvusHoH83xmQDsNnMNlXSsCQHIPMXd1QwqLcBKJnZKxXOuweyZP+BADYjM3B3pnaqSFPZXV8HgN2QFWpqd20r6TUIwItmtiFUWO8uVKaT/Fx3YU1u28OVfec/S6vvIQoFG+7ne85m+Lck39Sca4X7m94vl4H7eyQ73P5DSF6v79bpMRz+tVHz2i7VwIaKcF5O8jeKl/TmmPdI/o7kdcn05K7lSyRfdOepFIr2E5I7xMq59w3aX1anT6g0PDmB2JXkWyRvzu2fbuI/6kbdmPs+/f1GHR6Mf08aVsJdq8fjLO33UDfGaM+rJMfrh3NCD+d4nuQFdc53EakCtfM+gAEA7ic5xczecMNVEsKPIKuisAuy/GYvpGXFIF6CLEf4ApJ3mtmjOaEuuqoKVyOr3l/WZ8MAnIIsEasLwHnSvPsAmKrPNgG4BcAret+mfp4E4Cwdp1PmlWnapj+A/0Tmc16hYfWzAC7X/mMB3Gxmh+uJW2lB9GsANwB4S8d9E8BTfpHS3aIsaDxCOw1dCzXs/JGLjOS9zrvwA2fGSd/Pdt+XpT0G6BgpheByp13GV2nT7e44p8mEkjTZhVX2meqOexLJB90+s6rsc3ZOk06SoZokXyO5Y5UF3YEk90tR34h4xD5ZXG0EcDCAO9M1aBEzE1kVhA25RViqO3OytEwZwEp9NwFZVEypSgzgcAlyPwlrfw11/+IWTGORxTYWtMiY7fZp1z7tMjcldgcwzvX/7RKgfvqbUlTvBvC2Kxb1aS1mAGC2mb2bfkgSwlMA/AbAYgC/leaOBPs+Iq1GjwfwIzPrIvl1ZOFU0PDtKWrIvkZC2IksM+4NfX8pyQM0RObteCU3LKfQrDYAq1xYWFvukWPmhnb/Krjj9tdq10+RzJ2nnDuWv/YkVD6Sp4PktQDuAjDRhX+FRuxDNiJLPgeAc0k+AOBK/f8GgHd8XRgzKwK4FMDHdL1XmdlzyJ7FUtTNvVEJ+Qbg906jvq/KDV36W9TxTtB+lFCu1vv+ACaqGkTR76v5Wzrum9J0SWDS07K6VLquLC19iGonpjnhEpfCcIS226jrmKt56vXN+Cy+ZpojflFzo/UkP6F5oqeT5EQlJJHkDzWHHK99iopDHKh53Ykyj6R52sU6z56K1jmd5Mf0/56KF9xX88ENLsL7Ey5ErUvnn6ZyxCP1Gq1jnaN5344kr3ZPWy0qfXQf+ZJ3J3mqErpSUMMbGobnuzb/lOTBekbzMEXrzHJz6cji6wNBPNtF24wiuYduTlk2t0O03XJtlxYr97kbd7aE84qcuWST7Hg7kfy8hHoZyXd17PTKm1ae0pxuqExGzD2qdr1eGyVwKxUXeYSE8eUKkTQr1ZY8M3ILmPy5fNbfJrX1lBDE3hfE81zHH6DPPqUbl375Q3WjKYPzNLfPYmnDgjN6z83d0Nuc5u2OTST/T5rIXDDrcxLYnvJqjnXPWb5VP571FbbbKA17Qa4vLqsg+JU4vllcgtZEgQ67aZVbRlb2d6M+38PMOiVghqzUyAAAL8set7fmcw+a2ZoUNOCCFSbJDlgAsBRZoaYx+t/nkCT32SYA75jZS95g7CqE7a6VbT83B6dzvRHAcgAbnFtwkFbeQ92qeD0yN99SLchSP6S/OyNLix2iualPg6XsrnN9UEjQ96FhVqtQ5x811lvhYA1WlLUao7fbEEEP245mdBqmnLSDD35w25hbkfp9yhWEr5CrwMoa+oW5cyLXnp761rf/j0rpVTqP95K4fazKPp5SeFaCoEU1Yn8AO8Qtq4t11cLdEEEPjS1WNJmfVOPQud1Pn9VHCwC81VNEehAETbpYsZ5yQKr9+lPIWE/5K848UnDPTvbv89v779qcWchUv7tcb85Mo9aDSl81iya0ZjffaCW8D4DjkEWdPAHgy8h8uQ8je8zYSjO7QxE4EwD8EMChAA4CcJ2G/CORPQXgKQDTkcUUHgpgkJk9TPJMDXXLkJWwex3ASDObR/IrAJ4zs4dInofMrjdTxd2nISudPAqZnXIigDkA/gqZvfM+AF9QexcjSxcoADgQWSxkB4B3kRWTLyKLPHoamT1zCoA7zGxZDL/bhtfl70nOI/kLkkcqVu84kp+Tb3aefMKPkfyqfL9zVZn1ZJLfVHzgAyT3llfioyT/m+S9OgdJfl1xkM8qpeA7qo3zK1VjGEfyJXlnUtt+oVjEWSS/JU/K0SQfkb/8GLXv+3Iv3imP0Wr5ke+RS/Jn+n81ycNUlP4m+ZebPh2g0EJTjDnSKrsgewTaPGRehhXIQr+IzFPxvDRRJ4D7AYyUxulEFkVTlLaZDGBnAMsUgNqJzIvRheyZfUdJK+4trXaXVvVLAfyPi5JZq33eBXAqspjFVcg8L7cA+JU08WxFWhfN7EkAz5jZIm2/Tglbi/T5fLVzPhQt1OzasFUEcS2AMyVAT2lYO0+fH4AseLVTgnK6XH/mBKuo4bakG/8qgCN07FXIqvovQBZeNQLAcxLUlHG3I4D/Qua6GwvgMte3BQndWxqyJ+tBRDM1hVirdgxOVgzN+QY6D0r+83467/nI3JHlZq9v0yqCOFha6EsStsVmdi2ydMuHpXUm6qb/jYSiA5k/tgPZg3nulsCMRRbdfKC+f09ac5yEeri06hJkOSyGLCr8GmS+3yVmdpHLG0nekQKABwG0q0xdOs9UaXL7w9rLfEBtamc/93lJP4JLzezl9KzAEERsE/bQdRqeNgP4JMmvStPtoJuWalfvqRu/oxYMCyWI/bVNPw2jS5AlQLVJiO/V0L2XBOFWbbsAWULVMGSBFuNJ/pvym1PbiCyg4TEV51yNLG1hfwCv6fz+WS6Q4BHAS9Kcr7ioa9N1/gPJ/VpBIzb7qjmZWnbVjVuuJKgDpTlecrkiayQsK81svUq2pVXvSAntAAnpTpqXdbihtVP7l7XdKgA7K/JnspLhXyd5kIb++cqV+ai2Hao2DFYG4jgAw83sCbVlrQR8mJm9RnK8mf1Ojz77NIAFZrZBCV0vSEuP1Wr97Vg1b93ydIVKr3ojanJVvdrqjdzJlS5pq3Lc7qrDFro7v4sqKtT6eZVXeKCCoFUDY0dpsRC+5tp9zQvNrCl8zc3k4hugBUYIYu2sqVaIKgiCVijUGbesjpsbq+ggCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCFqT/wdfZSTjHmWCrQAAAABJRU5ErkJggg==" alt="Maddog Performance Institute" width="54" height="54" style="height:54px;width:auto;display:block;"></a>
+    <div class="site-nav-links">
+      <a href="index.html">Home</a>
+      <a href="amanda.html">Amanda</a>
+      <a href="recovery.html">Recovery</a>
+      <a href="training.html">Training</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="athletes.html">Athletes</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="site-nav-cta"><a href="contact.html#form">Book Free Trial</a></div>
+    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="site-nav-mobile" id="siteNavMob">
+  <a href="index.html">Home</a>
+  <a href="amanda.html">Amanda</a>
+  <a href="recovery.html">Recovery</a>
+  <a href="training.html">Training</a>
+  <a href="coaches.html">Coaches</a>
+  <a href="athletes.html">Athletes</a>
+  <a href="events.html">Events</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html#form" class="snm-cta">Book Free Trial</a>
+</div>
+
+<!-- BLOG HERO PHOTO — click to upload once live -->
+<section class="blog-page-hero">
+  <div class="photo-slot" id="blogHero" onclick="swapPhoto('blogHero')" style="cursor:pointer;position:relative;height:100%;overflow:hidden;background:var(--deep)">
+    <img id="blogHero-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="1200" height="380" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0">
+    <div class="slot-overlay" style="opacity:1!important">
+      <span class="slot-label">Click to Upload Hero Photo</span>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIAL STRIP — REPLACE items with topic-relevant text (duplicate each item for seamless loop) -->
+<div class="cred-strip">
+  <div class="cred-scroll">
+    <div class="cred-item">Maddog Performance Institute &middot; Ballito</div>
+    <div class="cred-item">MMA &middot; BJJ &middot; Kickboxing &middot; Powerlifting</div>
+    <div class="cred-item">Amanda Lino &middot; 2&times; EFC World Champion</div>
+    <div class="cred-item">Book A Free Trial &middot; Maddog Ballito</div>
+    <div class="cred-item">KZN North Coast&rsquo;s Premier Fight Gym</div>
+    <div class="cred-item">Sports Recovery Suite &middot; Ballito KZN</div>
+    <div class="cred-item">Maddog Performance Institute &middot; Ballito</div>
+    <div class="cred-item">MMA &middot; BJJ &middot; Kickboxing &middot; Powerlifting</div>
+    <div class="cred-item">Amanda Lino &middot; 2&times; EFC World Champion</div>
+    <div class="cred-item">Book A Free Trial &middot; Maddog Ballito</div>
+    <div class="cred-item">KZN North Coast&rsquo;s Premier Fight Gym</div>
+    <div class="cred-item">Sports Recovery Suite &middot; Ballito KZN</div>
+  </div>
+</div>
+
+<!-- BLOG HERO -->
+<section class="blog-hero">
+  <div class="bh-inner">
+    <a href="events.html" class="bh-back">Back to News &amp; Events</a>
+    <!-- REPLACE: Tag (e.g. MMA, BJJ, Recovery, Youth & Family, Nutrition) -->
+    <div class="bh-tag">TAG HERE</div>
+    <!-- REPLACE: Full blog post title -->
+    <h1 class="bh-title">Your Blog Post Title Goes Here</h1>
+    <div class="bh-meta">
+      <span class="bh-author">Maddog Performance Institute</span>
+      <span class="bh-dot">&#9670;</span>
+      <!-- REPLACE: Month Year -->
+      <span class="bh-date">Month Year</span>
+      <span class="bh-dot">&#9670;</span>
+      <!-- REPLACE: Estimated read time -->
+      <span class="bh-read">X min read</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  ARTICLE BODY
+  ============================================================
+  AVAILABLE ELEMENTS — copy and paste as needed:
+
+  SECTION HEADING (white, full width underline):
+  <h2>Section Title Here</h2>
+
+  SUB-HEADING (gold, smaller):
+  <h3>Sub-heading Here</h3>
+
+  PARAGRAPH:
+  <p>Your paragraph text goes here.</p>
+
+  BULLET LIST:
+  <ul>
+    <li><strong>Bold label.</strong> Supporting detail text goes here.</li>
+    <li>Plain bullet point without bold label.</li>
+  </ul>
+
+  PULL QUOTE (gold left border):
+  <div class="pull-quote"><p>"Quote text goes here."</p></div>
+
+  CTA BOX — place at the end of the article:
+  <div class="article-cta-box">
+    <h3>CTA Heading Here</h3>
+    <p>Supporting CTA text.</p>
+    <div class="btns">
+      <a href="contact.html#form" class="btn btn-g">Book a Free Trial</a>
+      <a href="contact.html" class="btn btn-o">Contact Us</a>
+    </div>
+  </div>
+  ============================================================ -->
+<div class="article-wrap">
+  <div class="article-body">
+
+    <!-- REPLACE: Write your article content below using the elements above -->
+
+    <h2>First Section Heading</h2>
+    <p>Opening paragraph of your article.</p>
+
+    <h2>Second Section Heading</h2>
+    <p>Section content.</p>
+
+    <h3>A Sub-Heading</h3>
+    <ul>
+      <li><strong>Point one.</strong> Detail about point one.</li>
+      <li><strong>Point two.</strong> Detail about point two.</li>
+    </ul>
+
+    <div class="pull-quote"><p>"A compelling quote from the article or from Amanda."</p></div>
+
+    <div class="article-cta-box">
+      <!-- REPLACE: CTA heading and body text -->
+      <h3>Ready to Start?</h3>
+      <p>Maddog Performance Institute is Ballito's home of elite combat sports training and recovery. Book your free trial today.</p>
+      <div class="btns">
+        <a href="contact.html#form" class="btn btn-g">Book a Free Trial</a>
+        <a href="contact.html" class="btn btn-o">Contact Us</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RELATED LINKS — update hrefs and labels to suit each blog -->
+  <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border)">
+    <div style="font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px">Explore More</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="training.html" class="btn btn-o" style="padding:9px 18px;font-size:10px">Training Disciplines</a>
+      <a href="recovery.html" class="btn btn-o" style="padding:9px 18px;font-size:10px">Recovery Suite</a>
+      <a href="events.html" class="btn btn-o" style="padding:9px 18px;font-size:10px">All Articles</a>
+      <a href="contact.html#form" class="btn btn-g" style="padding:9px 18px;font-size:10px">Book Free Trial</a>
+    </div>
+  </div>
+</div>
+
+<!-- SITE FOOTER — do not edit -->
+<footer class="site-footer">
+  <div class="sf-main">
+    <div class="sf-brand">
+      <span class="sf-logo">Maddog Performance Institute</span>
+      <p>World Champion led, training in MMA, BJJ, Kickboxing, and Elite Personal Training with full Recovery facility in KZN North Coast.</p>
+      <div class="sf-social">
+        <a href="https://www.instagram.com/maddogperformanceinstitute?igsh=MXIxOHF2a20yeWptZg==" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a>
+        <a href="https://www.facebook.com/share/1FUJm5Y3mZ/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
+        <a href="https://www.youtube.com/@maddogperformance" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg></a>
+        <a href="https://www.tiktok.com/@madogperformance?_r=1&_t=ZS-95yJGnUYN6K" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg></a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Disciplines</h4>
+      <a href="training.html#mma">MMA</a>
+      <a href="training.html#bjj">BJJ</a>
+      <a href="training.html#kickboxing">Kickboxing</a>
+      <a href="training.html#pt">Elite Personal Training</a>
+      <a href="training.html#powerlifting">Powerlifting</a>
+    </div>
+    <div class="sf-col">
+      <h4>About</h4>
+      <a href="amanda.html">Amanda Lino</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="athletes.html">Athletes</a>
+      <a href="events.html">Events</a>
+      <a href="recovery.html">Recovery</a>
+    </div>
+    <div class="sf-col">
+      <h4>Contact</h4>
+      <a href="tel:+27634421690">+27 63 442 1690</a>
+      <a href="contact.html">22 Sandra Rd, Balvista Centre, Ballito</a>
+      <a href="contact.html">Get in Touch</a>
+    </div>
+  </div>
+  <div class="sf-bottom">
+    <p>&copy; 2026 Maddog Performance Institute &middot; All Rights Reserved</p>
+    <p>www.maddogperformance.co.za</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT — do not edit -->
+<div class="wa-float">
+  <span class="wa-label">Chat with us</span>
+  <a href="https://wa.me/27634421690" class="wa-btn" aria-label="WhatsApp Maddog Performance Institute" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+  </a>
+</div>
+
+<script>
+function toggleSiteNav(){
+  document.getElementById('siteNavHam').classList.toggle('open');
+  document.getElementById('siteNavMob').classList.toggle('snm-open');
+}
+document.addEventListener('click',function(e){
+  var h=document.getElementById('siteNavHam'),m=document.getElementById('siteNavMob');
+  if(m&&m.classList.contains('snm-open')&&!m.contains(e.target)&&!h.contains(e.target)){
+    h.classList.remove('open');m.classList.remove('snm-open');
+  }
+});
+function swapPhoto(slotId){
+  var inp=document.createElement('input');
+  inp.type='file';inp.accept='image/*';
+  inp.onchange=function(e){
+    var file=e.target.files[0];if(!file)return;
+    var reader=new FileReader();
+    reader.onload=function(ev){
+      var img=document.getElementById(slotId+'-img');
+      var slot=document.getElementById(slotId);
+      if(img){img.setAttribute('src',ev.target.result);img.style.opacity='1';}
+      if(slot){slot.classList.add('loaded');var ov=slot.querySelector('.slot-overlay');if(ov)ov.style.display='none';}
+    };
+    reader.readAsDataURL(file);
+  };
+  inp.click();
+}
+</script>
+</body>
+</html>
