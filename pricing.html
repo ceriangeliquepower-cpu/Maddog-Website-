@@ -260,6 +260,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .site-nav-logo:hover{opacity:.75!important}
 .site-nav-logo img{height:54px!important;width:auto!important;display:block!important}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
 <body>
 
@@ -825,8 +826,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         The Recovery Suite does not offer free trials. We begin with a proper assessment — so that every protocol we recommend is right for you specifically.
       </p>
     </div>
-    <!-- FORMSPREE: Replace YOUR_FORM_ID with endpoint from formspree.io -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form id="recoveryForm">
       <input type="hidden" name="_subject" value="Recovery Assessment Request — Maddog Performance Institute">
       <div class="form-grid">
         <div class="form-field">
@@ -1044,6 +1044,46 @@ function savePage(fname) {
     });
   });
 }
+/* ── Recovery form → Supabase CRM ── */
+(function(){
+  var form = document.getElementById('recoveryForm');
+  if (!form) return;
+  var submitBtn = form.querySelector('.form-submit');
+  var _sbc = null;
+  try {
+    var _lib = window.supabase || (typeof supabase !== 'undefined' ? supabase : null);
+    if (_lib) _sbc = _lib.createClient('https://mthjfihctiluqllpegnr.supabase.co','sb_publishable_VjcQHDkyEWXohoVwpDxhMw_Tu6fZBO9');
+  } catch(e){}
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting…'; }
+    var fd = new FormData(form);
+    var protocols = fd.getAll('protocols[]').join(', ');
+    if (_sbc) {
+      _sbc.from('leads').insert({
+        type:               'recovery',
+        first_name:         fd.get('fullName')          || '',
+        phone:              fd.get('cellNumber')         || '',
+        email:              fd.get('emailAddress')       || '',
+        age:                parseInt(fd.get('age'))      || null,
+        primary_goal:       fd.get('primaryGoal')        || '',
+        protocols:          protocols,
+        medical_conditions: fd.get('medicalConditions')  || '',
+        preferred_time:     fd.get('preferredTime')      || '',
+        heard_about_us:     fd.get('hearAboutUs')        || ''
+      }).then(function() {
+        form.innerHTML = '<div style="padding:32px;text-align:center;"><p style="font-family:\'Bebas Neue\',sans-serif;font-size:28px;color:#C9A84C;margin-bottom:8px;">Assessment Request Received</p><p style="font-family:\'Barlow Condensed\',sans-serif;font-size:16px;color:rgba(245,240,232,0.6);">We will contact you within 24 hours to confirm your consultation.</p></div>';
+      }).catch(function() {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Assessment Request'; }
+        alert('Something went wrong. Please WhatsApp us on +27 63 442 1690.');
+      });
+    } else {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Assessment Request'; }
+      alert('Submission unavailable. Please WhatsApp us on +27 63 442 1690.');
+    }
+  });
+})();
 </script>
 
 </body></html>

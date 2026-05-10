@@ -457,6 +457,7 @@ html { -webkit-text-size-adjust: 100%; }
 .site-nav-logo:hover{opacity:.75!important}
 .site-nav-logo img{height:54px!important;width:auto!important;display:block!important}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
 <body>
 <!-- ══ SITE NAV ══ -->
@@ -853,6 +854,13 @@ function setTab(el) {
   }
 }
 
+/* ── Supabase CRM (background, non-blocking) ── */
+var _sbClient = null;
+try {
+  var _sbLib = window.supabase || (typeof supabase !== 'undefined' ? supabase : null);
+  if (_sbLib) _sbClient = _sbLib.createClient('https://mthjfihctiluqllpegnr.supabase.co','sb_publishable_VjcQHDkyEWXohoVwpDxhMw_Tu6fZBO9');
+} catch(e){}
+
 /* ── Contact form submission ── */
 document.addEventListener('DOMContentLoaded', function(){
   var form = document.getElementById('contactForm');
@@ -861,10 +869,22 @@ document.addEventListener('DOMContentLoaded', function(){
       e.preventDefault();
       var btn = document.getElementById('cfSubmitBtn');
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      var fd = new FormData(form);
+      if (_sbClient) {
+        _sbClient.from('leads').insert({
+          type:       'training',
+          first_name: fd.get('first_name')    || '',
+          last_name:  fd.get('last_name')     || '',
+          email:      fd.get('email')         || '',
+          phone:      fd.get('phone')         || '',
+          interest:   fd.get('interested_in') || '',
+          message:    fd.get('message')       || ''
+        }).then(function(){}).catch(function(){});
+      }
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
+        body: new URLSearchParams(fd).toString()
       }).then(function() {
         form.querySelectorAll('.form-row,.form-field,.form-submit').forEach(function(el){ el.style.display = 'none'; });
         var ok = document.getElementById('contactSuccess');
