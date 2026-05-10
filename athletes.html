@@ -1947,4 +1947,36 @@ footer.site-footer{margin-top:auto !important}
 .edit-banner button,.save-banner button{background:var(--black) !important;color:var(--gold) !important;border:1px solid rgba(201,168,76,.4) !important;padding:5px 13px !important;font-size:9px !important;font-weight:700 !important;letter-spacing:.13em !important;text-transform:uppercase !important;cursor:pointer !important;font-family:'Barlow Condensed',sans-serif !important}
 @media(max-width:480px){.edit-banner,.save-banner{font-size:8px !important;padding:7px 12px !important;gap:8px !important}}
 </style>
+<script>
+(async function loadCMSFighters() {
+  const URL = 'https://mthjfihctiluqllpegnr.supabase.co'
+  const KEY = 'sb_publishable_VjcQHDkyEWXohoVwpDxhMw_Tu6fZBO9'
+  try {
+    const res = await fetch(URL + '/rest/v1/fighters?order=display_order.asc,name.asc&select=*', {
+      headers: { 'apikey': KEY, 'Authorization': 'Bearer ' + KEY }
+    })
+    const fighters = await res.json()
+    if (!Array.isArray(fighters) || fighters.length === 0) return
+    const grid = document.getElementById('fighterGrid')
+    if (!grid) return
+    fighters.forEach(f => {
+      if (!f.image || !f.image.startsWith('https://')) return
+      const card = document.createElement('div')
+      card.className = 'fighter-card reveal visible'
+      card.innerHTML =
+        '<div class="fc-photo" style="position:relative;height:320px;overflow:hidden">' +
+          '<img src="' + f.image + '" alt="' + f.name + '" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">' +
+        '</div>' +
+        '<div class="fc-body" style="padding:16px">' +
+          '<div class="fc-name" style="font-family:\'Bebas Neue\',sans-serif;font-size:22px;color:#F5F0E8">' +
+            f.name + (f.nickname ? ' <span style="color:#C9A84C;font-size:16px">&ldquo;' + f.nickname + '&rdquo;</span>' : '') +
+          '</div>' +
+          (f.weight_class ? '<div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C9A84C;margin-top:2px">' + f.weight_class + '</div>' : '') +
+          '<div style="font-size:14px;color:rgba(245,240,232,.7);margin-top:6px">' + f.wins + 'W &ndash; ' + f.losses + 'L' + (f.draws > 0 ? ' &ndash; ' + f.draws + 'D' : '') + '</div>' +
+        '</div>'
+      grid.appendChild(card)
+    })
+  } catch (e) { console.warn('Fighters:', e) }
+})()
+</script>
 </body></html>

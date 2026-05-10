@@ -1644,4 +1644,29 @@ footer.site-footer{margin-top:auto !important}
 @media(max-width:480px){.edit-banner,.save-banner{font-size:8px !important;padding:7px 12px !important;gap:8px !important}}
 </style>
 
+<script>
+(async function loadEvents() {
+  const URL = 'https://mthjfihctiluqllpegnr.supabase.co'
+  const KEY = 'sb_publishable_VjcQHDkyEWXohoVwpDxhMw_Tu6fZBO9'
+  try {
+    const res = await fetch(URL + '/rest/v1/events?status=eq.upcoming&order=event_date.asc&select=*', {
+      headers: { 'apikey': KEY, 'Authorization': 'Bearer ' + KEY }
+    })
+    const events = await res.json()
+    if (!Array.isArray(events) || events.length === 0) return
+    const list = document.getElementById('eventList')
+    if (!list) return
+    list.innerHTML = events.map(ev => {
+      const d = ev.event_date ? new Date(ev.event_date) : null
+      const day = d ? d.getDate() : '-'
+      const mon = d ? d.toLocaleString('en-ZA', { month: 'short' }) : ''
+      const meta = [ev.venue ? '📍 ' + ev.venue : '', ev.location, d ? d.toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' }) : ''].filter(Boolean).join(' · ')
+      const btn = ev.ticket_link
+        ? '<a href="' + ev.ticket_link + '" target="_blank" rel="noopener" class="btn btn-g btn-sm">Get Tickets</a>'
+        : '<a href="contact.html" class="btn btn-o btn-sm">More Info</a>'
+      return '<div class="event-card"><div class="ec-date-block"><div class="ec-day">' + day + '</div><div class="ec-month">' + mon + '</div></div><div class="ec-body"><div class="ec-tag">' + (ev.venue || 'Event') + '</div><div class="ec-title">' + ev.title + '</div><div class="ec-meta">' + meta + '</div></div><div class="ec-actions">' + btn + '</div></div>'
+    }).join('')
+  } catch (e) { console.warn('Events:', e) }
+})()
+</script>
 </body></html>
