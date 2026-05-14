@@ -459,8 +459,8 @@ body.edit-mode [contenteditable="true"]:not(:focus){outline:1px dashed rgba(201,
 /* ── FORCE ALL PRESET IMAGES VISIBLE ── */
 .photo-slot { display: block !important; }
 .photo-slot img { display: block !important; opacity: 1 !important; visibility: visible !important; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.photo-slot .slot-overlay { opacity: 0 !important; pointer-events: none !important; }
-.photo-slot .slot-hint { display: none !important; }
+.photo-slot.loaded .slot-overlay { opacity: 0 !important; pointer-events: none !important; }
+.photo-slot.loaded .slot-hint { display: none !important; }
 .hero-right { display: block !important; }
 .hero-right img { display: block !important; opacity: 1 !important; }
 .hero-photo img { display: block !important; opacity: 1 !important; }
