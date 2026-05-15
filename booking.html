@@ -853,9 +853,35 @@ async function submitBooking(){
     return
   }
 
+  // Send confirmation emails (fire-and-forget — booking is saved regardless)
+  sendConfirmationEmail(payload).catch(()=>{})
+
   // Paid services → payment prototype; free/trial → straight to confirmation
   S.step = S.service?.price_cents > 0 ? 5 : 6
   render()
+}
+
+async function sendConfirmationEmail(payload){
+  // ← Replace this URL with your Vercel project URL once you know it
+  const API = 'https://maddog-control-centre.vercel.app/api/send-booking-confirmation'
+  await fetch(API,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      booking_ref:      payload.booking_ref,
+      client_name:      payload.client_name,
+      client_email:     payload.client_email,
+      client_phone:     payload.client_phone,
+      service_name:     S.service?.name||payload.booking_type||'Session',
+      practitioner_name:S.schedule?.practitioner?.name||null,
+      booking_date:     payload.booking_date,
+      start_time:       payload.start_time,
+      end_time:         payload.end_time,
+      amount_cents:     payload.amount_cents,
+      payment_status:   payload.payment_status,
+      notes:            payload.notes,
+    })
+  })
 }
 
 function resetWizard(){
