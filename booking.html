@@ -877,6 +877,12 @@ document.addEventListener('click',function(e){
 
 // ── Init ──────────────────────────────────────────────────────────────────
 ;(async()=>{
+  // Deep-link support: ?cat=training|recovery|appointments
+  const urlCat = new URLSearchParams(location.search).get('cat')
+  if(urlCat){
+    const map = { training:'training', recovery:'recovery', appointments:'appointments' }
+    if(map[urlCat]){ S.category = map[urlCat]; S.step = 2 }
+  }
   await Promise.all([loadServices(),loadSchedules()])
   render()
 })()
