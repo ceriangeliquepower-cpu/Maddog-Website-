@@ -203,6 +203,26 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+/* ── Payment prototype ── */
+.pay-demo-banner{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);border-left:3px solid var(--gold);padding:10px 16px;margin-bottom:24px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:var(--gold);letter-spacing:.04em}
+.pay-demo-banner span{font-size:16px;flex-shrink:0}
+.pay-amount-display{background:var(--card);border:1px solid var(--border);border-top:2px solid var(--gold);padding:28px;text-align:center;margin-bottom:24px}
+.pay-amount-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);margin-bottom:8px}
+.pay-amount-value{font-family:'Bebas Neue',sans-serif;font-size:56px;letter-spacing:.04em;color:var(--gold);line-height:1}
+.pay-amount-sub{font-size:12px;color:var(--white-dim);margin-top:4px}
+.pay-methods{display:flex;gap:8px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.pay-method-badge{background:var(--card);border:1px solid var(--border);padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white-dim);border-radius:4px}
+.pay-pf-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px;font-size:13px;color:var(--white-dim)}
+.pay-pf-badge{background:#0277BD;color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:4px}
+.pay-card-mock{background:rgba(255,255,255,.03);border:1px solid var(--border);padding:20px;margin-bottom:20px}
+.pay-card-field{margin-bottom:14px}
+.pay-card-field label{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white-dim);margin-bottom:6px}
+.pay-card-input{width:100%;background:var(--card);border:1px solid var(--border);border-bottom:2px solid var(--border);color:rgba(245,240,232,.35);font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:400;padding:11px 14px;outline:none;cursor:not-allowed;letter-spacing:.08em}
+.pay-card-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pay-security-note{font-size:11px;color:var(--white-dim);text-align:center;margin-bottom:20px;line-height:1.5}
+.pay-btn{width:100%;padding:16px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--gold);color:#000;border:none;cursor:pointer;transition:background .2s}
+.pay-btn:hover{background:var(--gold-light)}
+
 /* WA float */
 .wa-float{position:fixed;bottom:28px;right:24px;z-index:8000;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .wa-btn{width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s}
@@ -365,7 +385,7 @@ const MONTH_NAMES= ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct',
 
 // ── State ─────────────────────────────────────────────────────────────────
 const S = {
-  step: 1,          // 1-5
+  step: 1,          // 1-6 (step 5 = payment prototype, only for paid services)
   category: null,   // 'class' | 'recovery' | 'appointment'
   service: null,    // service object
   schedule: null,   // class_schedule object (classes only)
@@ -448,16 +468,22 @@ function render(){
 }
 
 function renderIndicator(){
-  const steps=['Category','Service','Date & Time','Your Details','Confirmed']
+  // Show payment step only for paid services
+  const isPaid = S.service?.price_cents > 0
+  const steps = isPaid
+    ? ['Category','Service','Date & Time','Your Details','Payment','Confirmed']
+    : ['Category','Service','Date & Time','Your Details','Confirmed']
+  // Map display step: if free, step 5 = confirm; if paid, step 5 = payment, 6 = confirm
+  const displayStep = (!isPaid && S.step===6) ? 5 : S.step
   const dots=steps.map((_,i)=>{
     const n=i+1
-    const cls=n<S.step?'done':n===S.step?'active':''
-    const icon=n<S.step?'✓':n
-    return `<div class="step-dot ${cls}">${icon}</div>${i<steps.length-1?`<div class="step-line ${n<S.step?'done':''}"></div>`:''}`
+    const cls=n<displayStep?'done':n===displayStep?'active':''
+    const icon=n<displayStep?'✓':n
+    return `<div class="step-dot ${cls}">${icon}</div>${i<steps.length-1?`<div class="step-line ${n<displayStep?'done':''}"></div>`:''}`
   }).join('')
   const labels=steps.map((l,i)=>{
     const n=i+1
-    const cls=n<S.step?'done':n===S.step?'active':''
+    const cls=n<displayStep?'done':n===displayStep?'active':''
     return `<div class="step-label ${cls}">${l}</div>`
   }).join('')
   document.getElementById('wizard').innerHTML=`
@@ -470,7 +496,7 @@ function renderIndicator(){
 function renderStep(){
   const el=document.getElementById('step-content')
   if(!el) return
-  const fn=[null,step1,step2,step3,step4,step5][S.step]
+  const fn=[null,step1,step2,step3,step4,step5payment,step6confirm][S.step]
   if(fn) el.innerHTML=fn()
   bindEvents()
 }
@@ -613,8 +639,77 @@ function step4(){
     </div>`
 }
 
-// Step 5 — Confirmation
-function step5(){
+// Step 5 — Payment prototype (paid services only)
+function step5payment(){
+  const amount = S.service?.price_cents || 0
+  const rands  = 'R' + (amount/100).toFixed(2)
+  return `
+    <div class="step-section visible">
+      <div class="step-title">Complete Payment</div>
+      <div class="step-sub">Secure online payment powered by PayFast — South Africa's trusted payment gateway.</div>
+
+      <div class="pay-demo-banner">
+        <span>⚠️</span>
+        <div><strong>Demo Mode</strong> — This is a preview of the payment flow. No real payment will be taken. PayFast integration goes live once your account is activated.</div>
+      </div>
+
+      <div class="pay-amount-display">
+        <div class="pay-amount-label">Amount Due</div>
+        <div class="pay-amount-value">${rands}</div>
+        <div class="pay-amount-sub">${S.service?.name} · ${S.name}</div>
+      </div>
+
+      <div class="pay-pf-logo">
+        <span>Secured by</span>
+        <span class="pay-pf-badge">PayFast</span>
+        <span style="font-size:11px">· PCI DSS Compliant</span>
+      </div>
+
+      <div class="pay-card-mock">
+        <div class="pay-card-field">
+          <label>Card Number</label>
+          <input class="pay-card-input" type="text" value="•••• •••• •••• ••••" readonly tabindex="-1">
+        </div>
+        <div class="pay-card-row">
+          <div class="pay-card-field">
+            <label>Expiry Date</label>
+            <input class="pay-card-input" type="text" value="MM / YY" readonly tabindex="-1">
+          </div>
+          <div class="pay-card-field">
+            <label>CVV</label>
+            <input class="pay-card-input" type="text" value="•••" readonly tabindex="-1">
+          </div>
+        </div>
+        <div class="pay-card-field">
+          <label>Name on Card</label>
+          <input class="pay-card-input" type="text" value="${S.name}" readonly tabindex="-1">
+        </div>
+      </div>
+
+      <div class="pay-methods">
+        <span class="pay-method-badge">Visa</span>
+        <span class="pay-method-badge">Mastercard</span>
+        <span class="pay-method-badge">Instant EFT</span>
+        <span class="pay-method-badge">Capitec Pay</span>
+        <span class="pay-method-badge">SnapScan</span>
+      </div>
+
+      <p class="pay-security-note">🔒 Your payment details are encrypted and never stored on our servers.<br>
+      You will receive a confirmation email once payment is processed.</p>
+
+      <button class="pay-btn" id="btn-pay-demo">Pay ${rands} Now</button>
+
+      <div class="step-nav" style="margin-top:16px">
+        <button class="btn-bk btn-bk-outline" id="btn-back-5">← Back</button>
+        <div style="font-size:11px;color:var(--white-dim);text-align:right;letter-spacing:.04em">
+          Ref: ${S.ref}<br>Booking saved ✓
+        </div>
+      </div>
+    </div>`
+}
+
+// Step 6 — Confirmation
+function step6confirm(){
   const d=new Date(S.date+'T00:00:00')
   const dateStr=d.toLocaleDateString('en-ZA',{weekday:'long',day:'numeric',month:'long',year:'numeric'})
   const endTime=addMins(S.time,S.service?.duration_minutes||60)
@@ -688,6 +783,9 @@ function bindEvents(){
   nav('btn-next-3',()=>{ if(S.date&&S.time){ S.step=4; render() }})
   nav('btn-back-4',()=>{ S.step=3; render() })
   nav('btn-submit', submitBooking)
+  // Payment prototype step
+  nav('btn-back-5', ()=>{ S.step=4; render() })
+  nav('btn-pay-demo', ()=>{ S.step=6; render() })
 }
 
 // ── Data loading ──────────────────────────────────────────────────────────
@@ -755,7 +853,8 @@ async function submitBooking(){
     return
   }
 
-  S.step=5
+  // Paid services → payment prototype; free/trial → straight to confirmation
+  S.step = S.service?.price_cents > 0 ? 5 : 6
   render()
 }
 
