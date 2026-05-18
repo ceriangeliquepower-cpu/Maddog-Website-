@@ -518,6 +518,7 @@ document.addEventListener('click',function(e){
       <div class="disc-nav">
         <a href="#mma" class="disc-pill active">MMA</a>
         <a href="#bjj" class="disc-pill">BJJ</a>
+        <a href="#kids-bjj" class="disc-pill">Kids BJJ</a>
         <a href="#kickboxing" class="disc-pill">Kickboxing</a>
         <a href="#powerlifting" class="disc-pill">Powerlifting</a>
         <a href="#pt" class="disc-pill">Elite Personal Training</a>
@@ -627,9 +628,8 @@ document.addEventListener('click',function(e){
         </div>
         <div class="disc-pricing">
           <div class="disc-pricing-label">Pricing</div>
-          <div class="disc-price-grid">
+          <div class="disc-price-grid" style="grid-template-columns:1fr 1fr">
             <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">R800<span> / month</span></div><div class="disc-price-desc">Single discipline membership</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Unlimited</div><div class="disc-price-val">R1,400<span> / month</span></div><div class="disc-price-desc">All martial arts classes — best value</div></div>
             <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">R150<span> / class</span></div><div class="disc-price-desc">Single session, no commitment</div></div>
           </div>
         </div>
@@ -639,10 +639,52 @@ document.addEventListener('click',function(e){
   </div>
 </section>
 
+<!-- ══════════ KIDS BJJ ══════════ -->
+<section class="disc-block" id="kids-bjj">
+  <div style="max-width:1200px;margin:0 auto;padding:0 48px">
+    <div class="disc-grid">
+      <div class="disc-photo">
+        <div class="photo-slot" id="kids-bjj-p" onclick="swapPhoto('kids-bjj-p')" style="height:100%;min-height:480px">
+          <div class="gc tl"></div><div class="gc br"></div>
+          <img id="kids-bjj-p-img" src="" alt="Kids BJJ class at Maddog Performance Institute Ballito" width="600" height="480" style="display:none">
+          <div class="slot-overlay"><span class="slot-icon">🥋</span><span class="slot-label">Kids BJJ Photo</span></div>
+        </div>
+      </div>
+      <div class="disc-text">
+        <span class="disc-tag">Kids Brazilian Jiu-Jitsu · Ages 5–14</span>
+        <h2 class="sec-h">Kids BJJ<br><em>In Ballito.</em></h2>
+        <p class="body-p" contenteditable="true">Maddog Performance Institute's Kids BJJ programme is built on the same technical foundation as our adult classes — adapted specifically for younger grapplers. Children develop coordination, body awareness, problem-solving, and self-confidence in a structured, safe, and encouraging environment.</p>
+        <div class="disc-who" contenteditable="true">Our Kids BJJ classes focus on the fundamentals — movement drills, basic positions, escapes, and partner work. No prior experience needed. The programme builds discipline and respect alongside physical skill, giving kids tools they carry both on and off the mat.</div>
+        <ul class="disc-list">
+          <li contenteditable="true">Fundamentals of BJJ — positions, movement, and escapes</li>
+          <li contenteditable="true">Safe, structured partner drilling and positional work</li>
+          <li contenteditable="true">Builds confidence, discipline, and focus</li>
+          <li contenteditable="true">Gi-based training — all equipment available on-site</li>
+          <li contenteditable="true">Coached by world-champion accredited coaching staff</li>
+        </ul>
+        <div class="disc-keywords">
+          <span class="dkw">Kids BJJ Ballito</span>
+          <span class="dkw">Kids Martial Arts KZN</span>
+          <span class="dkw">Children's BJJ North Coast</span>
+          <span class="dkw">Youth Grappling Ballito</span>
+        </div>
+        <div class="disc-pricing">
+          <div class="disc-pricing-label">Pricing</div>
+          <div class="disc-price-grid" style="grid-template-columns:1fr 1fr">
+            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">R800<span> / month</span></div><div class="disc-price-desc">Kids BJJ membership</div></div>
+            <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">R150<span> / class</span></div><div class="disc-price-desc">Single session, no commitment</div></div>
+          </div>
+        </div>
+        <a href="contact.html#form" class="btn btn-g" style="margin-top:24px">Book Your Child's Free Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════ KICKBOXING ══════════ -->
 <section class="disc-block" id="kickboxing">
   <div style="max-width:1200px;margin:0 auto;padding:0 48px">
-    <div class="disc-grid">
+    <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot" id="kb-p" onclick="swapPhoto('kb-p')" style="height:100%;min-height:480px">
           <div class="gc tl"></div><div class="gc br"></div>
@@ -684,7 +726,7 @@ document.addEventListener('click',function(e){
 <!-- ══════════ BOXING FITNESS ══════════ -->
 <section class="disc-block" id="boxing-fitness">
   <div style="max-width:1200px;margin:0 auto;padding:0 48px">
-    <div class="disc-grid reverse">
+    <div class="disc-grid">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="bf-p" onclick="swapPhoto('bf-p')" style="height:100%;min-height:480px">
           <div class="gc tl"></div><div class="gc br"></div>
@@ -705,9 +747,8 @@ document.addEventListener('click',function(e){
         </div>
         <div class="disc-pricing">
           <div class="disc-pricing-label">Pricing</div>
-          <div class="disc-price-grid">
-            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">R500<span> / month</span></div><div class="disc-price-desc">Unlimited Boxing Fitness classes</div></div>
-            <div class="disc-price-card"><div class="disc-price-tier">Unlimited</div><div class="disc-price-val">R1,400<span> / month</span></div><div class="disc-price-desc">All martial arts classes — best value</div></div>
+          <div class="disc-price-grid" style="grid-template-columns:1fr 1fr">
+            <div class="disc-price-card"><div class="disc-price-tier">Monthly</div><div class="disc-price-val">R800<span> / 2× per week</span></div><div class="disc-price-desc">Boxing Fitness membership</div></div>
             <div class="disc-price-card"><div class="disc-price-tier">Drop-In</div><div class="disc-price-val">R150<span> / class</span></div><div class="disc-price-desc">Single session, no commitment</div></div>
           </div>
         </div>
@@ -719,7 +760,7 @@ document.addEventListener('click',function(e){
 
 <section class="disc-block" id="powerlifting">
   <div style="max-width:1200px;margin:0 auto;padding:0 48px">
-    <div class="disc-grid">
+    <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="pl-p" onclick="swapPhoto('pl-p')" style="height:100%;min-height:480px">
           <div class="gc tl"></div><div class="gc br"></div>
@@ -763,7 +804,7 @@ document.addEventListener('click',function(e){
 <!-- ══════════ FUNCTIONAL TRAINING ══════════ -->
 <section class="disc-block" id="pt">
   <div style="max-width:1200px;margin:0 auto;padding:0 48px">
-    <div class="disc-grid reverse">
+    <div class="disc-grid">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="ept-p" onclick="swapPhoto('ept-p')" style="height:100%;min-height:480px">
           <div class="gc tl"></div><div class="gc br"></div>
@@ -809,7 +850,7 @@ document.addEventListener('click',function(e){
 <!-- ══════════ PERSONAL TRAINING ══════════ -->
 <section class="disc-block" id="corporate">
   <div style="max-width:1200px;margin:0 auto;padding:0 48px">
-    <div class="disc-grid">
+    <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot  loaded" id="corpPhoto" onclick="swapPhoto('corpPhoto')" style="height:100%;min-height:480px">
           <div class="gc tl"></div><div class="gc br"></div>
@@ -859,6 +900,7 @@ document.addEventListener('click',function(e){
           <div class="sched-day">
             <div class="sched-day-name">Monday</div>
             <div class="sched-class"><div class="sched-time" contenteditable="true">10:00</div><div class="sched-name" contenteditable="true">MMA Pro</div><div class="sched-level">Pro / Fight Team</div></div>
+          <div class="sched-class"><div class="sched-time" contenteditable="true">16:00</div><div class="sched-name" contenteditable="true">Kids BJJ</div><div class="sched-level">Kids</div></div>
           <div class="sched-class"><div class="sched-time" contenteditable="true">17:00</div><div class="sched-name" contenteditable="true">Kickboxing</div><div class="sched-level">All Levels</div></div>
           <div class="sched-class"><div class="sched-time" contenteditable="true">18:00</div><div class="sched-name" contenteditable="true">BJJ</div><div class="sched-level">All Levels</div></div>
           
@@ -878,6 +920,7 @@ document.addEventListener('click',function(e){
           <div class="sched-day">
             <div class="sched-day-name">Wednesday</div>
             <div class="sched-class"><div class="sched-time" contenteditable="true">10:00</div><div class="sched-name" contenteditable="true">MMA Pro</div><div class="sched-level">Pro / Fight Team</div></div>
+          <div class="sched-class"><div class="sched-time" contenteditable="true">16:00</div><div class="sched-name" contenteditable="true">Kids BJJ</div><div class="sched-level">Kids</div></div>
           <div class="sched-class"><div class="sched-time" contenteditable="true">17:00</div><div class="sched-name" contenteditable="true">Kickboxing</div><div class="sched-level">All Levels</div></div>
           <div class="sched-class"><div class="sched-time" contenteditable="true">18:00</div><div class="sched-name" contenteditable="true">BJJ</div><div class="sched-level">All Levels</div></div>
           
@@ -904,7 +947,7 @@ document.addEventListener('click',function(e){
           <!-- SATURDAY -->
           <div class="sched-day">
             <div class="sched-day-name">Saturday</div>
-            <div class="sched-class"><div class="sched-time" contenteditable="true">09:00</div><div class="sched-name" contenteditable="true">BJJ Open Mat</div><div class="sched-level">All Levels</div></div>
+            <div class="sched-class"><div class="sched-time" contenteditable="true">09:00</div><div class="sched-name" contenteditable="true">Open Mat</div><div class="sched-level">All Levels</div></div>
           
           </div>
 
