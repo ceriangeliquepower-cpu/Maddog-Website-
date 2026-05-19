@@ -114,7 +114,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .step-sub{font-size:15px;font-weight:300;color:var(--white-dim);margin-bottom:28px;line-height:1.5;letter-spacing:.03em}
 
 /* Category cards */
-.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+/* Service groups */
+.svc-group{margin-bottom:32px}
+.svc-group-label{font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .cat-card{background:var(--card);border:1px solid var(--border);padding:28px 24px;cursor:pointer;transition:all .25s;text-align:center;position:relative;overflow:hidden}
 .cat-card::before{content:'';position:absolute;inset:0;background:var(--gold-glow);opacity:0;transition:opacity .25s}
 .cat-card:hover::before,.cat-card.selected::before{opacity:1}
@@ -248,7 +251,7 @@ footer.site-footer *{box-sizing:border-box!important}
 @media(max-width:768px){
   .bk-wrap{padding:32px 20px 60px}
   .page-hero-inner{padding:0 20px}
-  .cat-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
   .form-row{grid-template-columns:1fr}
   .sf-main{grid-template-columns:1fr!important;gap:32px!important;padding:40px 24px 32px!important}
   .sf-bottom{padding:16px 24px!important;flex-direction:column!important;gap:8px!important;text-align:center!important}
@@ -376,9 +379,101 @@ const OPEN_HOURS = {
   0: null,
 }
 const CATEGORIES = [
-  { id: 'class',       label: 'Training Classes', icon: '🥊', desc: 'MMA, BJJ, Boxing, Kickboxing, Strength & Conditioning and more.' },
-  { id: 'recovery',   label: 'Recovery Suite',    icon: '💧', desc: 'Cold plunge, sauna, contrast therapy, IV drip and aesthetic treatments.' },
-  { id: 'appointment',label: 'Appointments',      icon: '🩺', desc: 'Medical appointments — physiotherapy, nursing and doctor consultations.' },
+  { id: 'combat',     label: 'Combat Sports',              icon: '🥊', desc: 'MMA · BJJ · Kickboxing · Boxing Fitness · Kids BJJ' },
+  { id: 'strength',   label: 'Powerlifting & Strength',    icon: '🏋️', desc: 'Powerlifting & Strength Training in Ballito.' },
+  { id: 'pt',         label: 'Personal Training',          icon: '🎯', desc: 'Elite PT · Couples · Semi-Private · Hybrid Performance Coaching.' },
+  { id: 'recovery',   label: 'Recovery Suite',             icon: '💧', desc: 'IV Drip Therapy · Contrast Therapy · Slimming Clinic · Peptide Protocols.' },
+  { id: 'appointment',label: 'Appointments',               icon: '🩺', desc: 'Medical Suite · Physiotherapy · InBody · Corporate Wellness.' },
+]
+
+// ── Services data (hardcoded — swap loadServices() to fetch from DB when backend is ready) ──
+// To update prices: find the service below and change price_cents (value in cents, e.g. R150 = 15000)
+// billing: 'session' | 'monthly'   enquiry: true = no payment, contact only
+const SERVICES_DATA = [
+  // ── COMBAT SPORTS ──────────────────────────────────────────
+  // Free Trials
+  { id:'cs-trial-mma',   name:'Free Trial — MMA',           category:'combat', group:'Free Trials',          color:'#c9a84c', duration_minutes:60,  price_cents:0,      billing:'session',  allow_trial:true },
+  { id:'cs-trial-bjj',   name:'Free Trial — BJJ',           category:'combat', group:'Free Trials',          color:'#4cc98a', duration_minutes:60,  price_cents:0,      billing:'session',  allow_trial:true },
+  { id:'cs-trial-kb',    name:'Free Trial — Kickboxing',    category:'combat', group:'Free Trials',          color:'#c97a4c', duration_minutes:60,  price_cents:0,      billing:'session',  allow_trial:true },
+  { id:'cs-trial-bf',    name:'Free Trial — Boxing Fitness',category:'combat', group:'Free Trials',          color:'#4c7ac9', duration_minutes:60,  price_cents:0,      billing:'session',  allow_trial:true },
+  // Drop-In
+  { id:'cs-dropin',      name:'Drop-In Class',              category:'combat', group:'Drop-In',              color:'#c9a84c', duration_minutes:60,  price_cents:15000,  billing:'session'  },
+  { id:'cs-dropin-kids', name:'Kids BJJ — Drop-In',         category:'combat', group:'Drop-In',              color:'#9a4cc9', duration_minutes:60,  price_cents:15000,  billing:'session'  },
+  // Monthly
+  { id:'cs-mma-mo',      name:'MMA Monthly',                category:'combat', group:'Monthly Memberships',  color:'#c9a84c', duration_minutes:60,  price_cents:80000,  billing:'monthly'  },
+  { id:'cs-bjj-mo',      name:'BJJ Monthly',                category:'combat', group:'Monthly Memberships',  color:'#4cc98a', duration_minutes:60,  price_cents:80000,  billing:'monthly'  },
+  { id:'cs-kb-mo',       name:'Kickboxing Monthly',         category:'combat', group:'Monthly Memberships',  color:'#c97a4c', duration_minutes:60,  price_cents:80000,  billing:'monthly'  },
+  { id:'cs-bf-mo',       name:'Boxing Fitness Monthly',     category:'combat', group:'Monthly Memberships',  color:'#4c7ac9', duration_minutes:60,  price_cents:80000,  billing:'monthly'  },
+  { id:'cs-kids-mo',     name:'Kids BJJ Monthly',           category:'combat', group:'Monthly Memberships',  color:'#9a4cc9', duration_minutes:60,  price_cents:80000,  billing:'monthly'  },
+  // Unlimited
+  { id:'cs-unlimited',   name:'MMA & Kickboxing Unlimited', category:'combat', group:'Unlimited',            color:'#c9a84c', duration_minutes:60,  price_cents:140000, billing:'monthly'  },
+
+  // ── POWERLIFTING & STRENGTH ─────────────────────────────────
+  { id:'pl-dropin',      name:'Drop-In Session',            category:'strength',group:'Drop-In',             color:'#6a8a9a', duration_minutes:60,  price_cents:15000,  billing:'session'  },
+
+  // ── PERSONAL TRAINING ──────────────────────────────────────
+  // Drop-In
+  { id:'pt-dropin',      name:'Drop-In PT Session',         category:'pt',     group:'Drop-In',              color:'#c9a84c', duration_minutes:60,  price_cents:65000,  billing:'session'  },
+  // PT Packages
+  { id:'pt-8ses',        name:'8 Sessions / Month',         category:'pt',     group:'PT Packages',          color:'#c9a84c', duration_minutes:60,  price_cents:468000, billing:'monthly',  desc:'8 PT sessions per month' },
+  { id:'pt-12ses',       name:'12 Sessions / Month',        category:'pt',     group:'PT Packages',          color:'#c9a84c', duration_minutes:60,  price_cents:663000, billing:'monthly',  desc:'12 PT sessions per month' },
+  // Couples PT
+  { id:'pt-couples-pp',  name:'Couples PT — Per Person',    category:'pt',     group:'Couples Personal Training', color:'#e8a84c', duration_minutes:60, price_cents:30000, billing:'session', desc:'Per person, per session' },
+  { id:'pt-couples-pc',  name:'Couples PT — Per Couple',    category:'pt',     group:'Couples Personal Training', color:'#e8a84c', duration_minutes:60, price_cents:60000, billing:'session', desc:'Both partners, per session' },
+  // Semi-Private
+  { id:'pt-semi-pp',     name:'Semi-Private — Per Person',  category:'pt',     group:'Semi-Private (Groups of 5)', color:'#8ac94c', duration_minutes:60, price_cents:27500, billing:'session', desc:'Per person, per session' },
+  { id:'pt-semi-grp',    name:'Semi-Private — Per Group',   category:'pt',     group:'Semi-Private (Groups of 5)', color:'#8ac94c', duration_minutes:60, price_cents:137500,billing:'session', desc:'Full group of 5, per session' },
+  // Elite PT
+  { id:'pt-elite-2x',    name:'Elite PT — 2× / Week',       category:'pt',     group:'Elite Personal Training',    color:'#c9a84c', duration_minutes:60, price_cents:160000, billing:'monthly', desc:'8 sessions · PT + custom app program' },
+  { id:'pt-elite-3x',    name:'Elite PT — 3× / Week',       category:'pt',     group:'Elite Personal Training',    color:'#c9a84c', duration_minutes:60, price_cents:240000, billing:'monthly', desc:'12 sessions · PT + custom app program' },
+  { id:'pt-elite-4x',    name:'Elite PT — 4× / Week',       category:'pt',     group:'Elite Personal Training',    color:'#c9a84c', duration_minutes:60, price_cents:320000, billing:'monthly', desc:'16 sessions · PT + custom app program' },
+  { id:'pt-elite-5x',    name:'Elite PT — 5× / Week',       category:'pt',     group:'Elite Personal Training',    color:'#c9a84c', duration_minutes:60, price_cents:400000, billing:'monthly', desc:'20 sessions · PT + custom app program' },
+  { id:'pt-elite-di',    name:'Elite PT — Drop-In',         category:'pt',     group:'Elite Personal Training',    color:'#c9a84c', duration_minutes:60, price_cents:20000,  billing:'session', desc:'Single session, no commitment required' },
+  // Hybrid Coaching
+  { id:'pt-hybrid',      name:'Hybrid Performance Coaching',category:'pt',     group:'Hybrid Performance Coaching',color:'#c9584c', duration_minutes:60, price_cents:270000, billing:'monthly' },
+
+  // ── RECOVERY SUITE ─────────────────────────────────────────
+  // Core IV
+  { id:'iv-hydrate',     name:'Hydration IV',               category:'recovery',group:'Core IV Protocols',   color:'#4cc9c9', duration_minutes:60,  price_cents:60000  },
+  { id:'iv-jetfuel',     name:'Jet Fuel IV',                category:'recovery',group:'Core IV Protocols',   color:'#4cc9c9', duration_minutes:60,  price_cents:110000 },
+  { id:'iv-recovery',    name:'Recovery IV',                category:'recovery',group:'Core IV Protocols',   color:'#4cc9c9', duration_minutes:60,  price_cents:130000 },
+  { id:'iv-inflam',      name:'Inflammation IV',            category:'recovery',group:'Core IV Protocols',   color:'#4cc9c9', duration_minutes:60,  price_cents:130000 },
+  { id:'iv-myers',       name:'Myers Cocktail',             category:'recovery',group:'Core IV Protocols',   color:'#4cc9c9', duration_minutes:60,  price_cents:130000 },
+  { id:'iv-energy',      name:'Energy Performance IV',      category:'recovery',group:'Core IV Protocols',   color:'#4cc9c9', duration_minutes:60,  price_cents:140000 },
+  { id:'iv-immunity',    name:'Immunity Boost IV',          category:'recovery',group:'Core IV Protocols',   color:'#4cc9c9', duration_minutes:60,  price_cents:110000 },
+  { id:'iv-detox',       name:'Detox IV',                   category:'recovery',group:'Core IV Protocols',   color:'#4cc9c9', duration_minutes:60,  price_cents:130000 },
+  // Aesthetic & Wellness
+  { id:'iv-gluta',       name:'Glutathione Glow IV',        category:'recovery',group:'Aesthetic & Wellness IV', color:'#c94c9a', duration_minutes:60, price_cents:120000 },
+  { id:'iv-glow',        name:'Glow — Aesthetic & Wellness',category:'recovery',group:'Aesthetic & Wellness IV', color:'#c94c9a', duration_minutes:60, price_cents:144000 },
+  { id:'iv-nad',         name:'NAD+ IV',                    category:'recovery',group:'Aesthetic & Wellness IV', color:'#c94c9a', duration_minutes:90, price_cents:130000 },
+  { id:'iv-cognitive',   name:'Cognitive IV',               category:'recovery',group:'Aesthetic & Wellness IV', color:'#c94c9a', duration_minutes:60, price_cents:190000 },
+  { id:'iv-bespoke',     name:'Bespoke IV Optimisation',    category:'recovery',group:'Aesthetic & Wellness IV', color:'#c94c9a', duration_minutes:60, price_cents:100000, desc:'Designed around your bloodwork' },
+  // Add-Ons
+  { id:'iv-gluta-push',  name:'Glutathione Push (Add-On)',  category:'recovery',group:'IV Add-Ons',          color:'#9a4cc9', duration_minutes:30,  price_cents:65000  },
+  { id:'iv-custom',      name:'Customised IV Protocol',     category:'recovery',group:'IV Add-Ons',          color:'#9a4cc9', duration_minutes:30,  price_cents:70000  },
+  // Contrast Therapy
+  { id:'ct-plunge',      name:'Cold Plunge — Pre/Post Training',   category:'recovery',group:'Contrast Therapy', color:'#4c7ac9', duration_minutes:30, price_cents:15000 },
+  { id:'ct-sauna',       name:'Infrared Sauna — Pre/Post Training',category:'recovery',group:'Contrast Therapy', color:'#c97a4c', duration_minutes:30, price_cents:15000 },
+  { id:'ct-combo',       name:'Contrast Therapy Combo',     category:'recovery',group:'Contrast Therapy',    color:'#4c9ac9', duration_minutes:60,  price_cents:22000  },
+  { id:'ct-unlimited',   name:'Contrast Therapy Unlimited', category:'recovery',group:'Contrast Therapy',    color:'#4c9ac9', duration_minutes:60,  price_cents:90000,  billing:'monthly' },
+  // Slimming Clinic
+  { id:'slim-assess',    name:'Doctor Assessment',          category:'recovery',group:'Slimming Clinic',     color:'#8ac94c', duration_minutes:60,  price_cents:95000  },
+  { id:'slim-consult',   name:'Slimming Protocol Consultation', category:'recovery',group:'Slimming Clinic', color:'#8ac94c', duration_minutes:60,  price_cents:50000  },
+  // InBody
+  { id:'ib-dropin',      name:'InBody Drop-In Assessment',  category:'recovery',group:'InBody Assessments',  color:'#c9a84c', duration_minutes:30,  price_cents:16500  },
+  { id:'ib-consult',     name:'InBody Consultation & Assessment', category:'recovery',group:'InBody Assessments', color:'#c9a84c', duration_minutes:60, price_cents:40000 },
+  { id:'ib-plan',        name:'InBody + Eating Plan + Education', category:'recovery',group:'InBody Assessments', color:'#c9a84c', duration_minutes:90, price_cents:100000 },
+  // Peptide Therapy
+  { id:'pep-therapy',    name:'Peptide Therapy',            category:'recovery',group:'Peptide Therapy',     color:'#9a7ac9', duration_minutes:60,  price_cents:0,      enquiry:true },
+
+  // ── APPOINTMENTS ───────────────────────────────────────────
+  { id:'ap-dr-assess',   name:"Doctor's Assessment",        category:'appointment',group:'Medical Suite',    color:'#8ac94c', duration_minutes:60,  price_cents:95000  },
+  { id:'ap-slim-consult',name:'Slimming Protocol Consultation',category:'appointment',group:'Medical Suite', color:'#8ac94c', duration_minutes:60,  price_cents:50000  },
+  { id:'ap-ib-dropin',   name:'InBody Drop-In Assessment',  category:'appointment',group:'InBody Assessments', color:'#c9a84c', duration_minutes:30, price_cents:16500 },
+  { id:'ap-ib-consult',  name:'InBody Consultation & Assessment',category:'appointment',group:'InBody Assessments', color:'#c9a84c', duration_minutes:60, price_cents:40000 },
+  { id:'ap-ib-plan',     name:'InBody + Eating Plan + Education',category:'appointment',group:'InBody Assessments', color:'#c9a84c', duration_minutes:90, price_cents:100000 },
+  { id:'ap-physio',      name:'Physiotherapy Consultation', category:'appointment',group:'Physiotherapy',    color:'#4cc98a', duration_minutes:60,  price_cents:0,      enquiry:true },
+  { id:'ap-corporate',   name:'Corporate Wellness Enquiry', category:'appointment',group:'Corporate Wellness', color:'#c9a84c', duration_minutes:60, price_cents:0,     enquiry:true },
 ]
 const DAY_NAMES  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
 const MONTH_NAMES= ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -414,13 +509,13 @@ function genRef(){
 function getDateRange(){
   const dates=[]
   const now=new Date()
-  const maxDays = S.category==='class' ? 14 : 30
+  const maxDays = isTrainingCategory(S.category) ? 14 : 30
   for(let i=1;i<=maxDays;i++){
     const d=new Date(now)
     d.setDate(now.getDate()+i)
     // Skip Sundays for all; skip Saturdays for appointments
     if(d.getDay()===0) continue
-    if(S.category==='appointment' && d.getDay()===6) continue
+    if(S.category==='appointment' && d.getDay()===6) continue  // no Saturday appointments
     dates.push(d)
   }
   return dates
@@ -429,7 +524,7 @@ function getDateRange(){
 function getSlotsForDate(dateStr){
   const d=new Date(dateStr)
   const dow=d.getDay()
-  if(S.category==='class'){
+  if(isTrainingCategory(S.category)){
     // Return class_schedules for this day of week
     return S.schedules
       .filter(cs=>cs.day_of_week===dow)
@@ -452,10 +547,10 @@ function getSlotsForDate(dateStr){
 }
 
 function isSlotFull(slot){
-  const cap=S.category==='class' ? (slot.capacity||S.service?.capacity||20) : 1
+  const cap=isTrainingCategory(S.category) ? (slot.capacity||S.service?.capacity||20) : 1
   const count=S.existingBookings.filter(b=>{
     if(b.start_time?.slice(0,5)!==slot.start_time?.slice(0,5)) return false
-    if(S.category==='class') return b.class_schedule_id===slot.id
+    if(isTrainingCategory(S.category)) return b.class_schedule_id===slot.id
     return b.service_id===S.service?.id
   }).length
   return count>=cap
@@ -469,7 +564,7 @@ function render(){
 
 function renderIndicator(){
   // Show payment step only for paid services
-  const isPaid = S.service?.price_cents > 0
+  const isPaid = S.service?.price_cents > 0 && !S.service?.enquiry
   const steps = isPaid
     ? ['Category','Service','Date & Time','Your Details','Payment','Confirmed']
     : ['Category','Service','Date & Time','Your Details','Confirmed']
@@ -523,26 +618,44 @@ function step1(){
 }
 
 // Step 2 — Service
+function renderSvcCard(s){
+  const sel=S.service?.id===s.id
+  const svcData=JSON.stringify({id:s.id,name:s.name,category:s.category,duration_minutes:s.duration_minutes,price_cents:s.price_cents,color:s.color,allow_trial:s.allow_trial,capacity:s.capacity||1,enquiry:s.enquiry,billing:s.billing})
+  return `
+    <div class="svc-card${sel?' selected':''}" data-svc='${svcData}'>
+      <div class="svc-color-bar" style="background:${s.color||'#c9a84c'}"></div>
+      <div class="svc-name">${s.name}</div>
+      <div class="svc-meta">
+        <span>⏱ ${s.duration_minutes}min</span>
+        ${s.capacity&&s.capacity>1?`<span>👥 Max ${s.capacity}</span>`:''}
+      </div>
+      ${s.desc?`<div style="font-size:12px;color:var(--white-dim);margin-bottom:4px">${s.desc}</div>`:''}
+      ${s.allow_trial?'<span class="svc-badge">Free trial</span>':''}
+      ${s.enquiry?'<span class="svc-badge">Enquiry only</span>':''}
+      <div class="svc-price">${formatPrice(s)}</div>
+    </div>`
+}
+
 function step2(){
   const svcs=S.services.filter(s=>s.category===S.category)
   if(svcs.length===0) return `<div class="bk-empty">No services available right now. <a href="contact.html" style="color:var(--gold)">Contact us</a> to book.</div>`
+  // Build groups preserving insertion order
+  const groupOrder=[]; const groups={}
+  svcs.forEach(s=>{
+    const g=s.group||'General'
+    if(!groups[g]){groups[g]=[]; groupOrder.push(g)}
+    groups[g].push(s)
+  })
+  const groupsHtml=groupOrder.map(g=>`
+    <div class="svc-group">
+      <div class="svc-group-label">${g}</div>
+      <div class="svc-grid">${groups[g].map(renderSvcCard).join('')}</div>
+    </div>`).join('')
   return `
     <div class="step-section visible">
       <div class="step-title">Select a service</div>
       <div class="step-sub">Choose what you'd like to book. All prices shown in South African Rand.</div>
-      <div class="svc-grid">
-        ${svcs.map(s=>`
-          <div class="svc-card${S.service?.id===s.id?' selected':''}" data-svc='${JSON.stringify({id:s.id,name:s.name,category:s.category,duration_minutes:s.duration_minutes,price_cents:s.price_cents,color:s.color,allow_trial:s.allow_trial,capacity:s.capacity})}'>
-            <div class="svc-color-bar" style="background:${s.color||'#c9a84c'}"></div>
-            <div class="svc-name">${s.name}</div>
-            <div class="svc-meta">
-              <span>⏱ ${s.duration_minutes}min</span>
-              ${s.capacity?`<span>👥 Max ${s.capacity}</span>`:''}
-            </div>
-            ${s.allow_trial?'<span class="svc-badge">Free trial available</span>':''}
-            <div class="svc-price">${s.price_cents>0?'R'+(s.price_cents/100).toFixed(0):'Free'}</div>
-          </div>`).join('')}
-      </div>
+      ${groupsHtml}
       <div class="step-nav">
         <button class="btn-bk btn-bk-outline" id="btn-back-2">← Back</button>
         <button class="btn-bk btn-bk-gold" id="btn-next-2" ${!S.service?'disabled':''}>Continue →</button>
@@ -611,7 +724,7 @@ function step4(){
         <div class="bs-row"><span class="bs-label">Date</span><span class="bs-val">${dateStr}</span></div>
         <div class="bs-row"><span class="bs-label">Time</span><span class="bs-val">${S.time} – ${endTime}</span></div>
         ${S.schedule?.practitioner?.name?`<div class="bs-row"><span class="bs-label">Coach</span><span class="bs-val">${S.schedule.practitioner.name}</span></div>`:''}
-        <div class="bs-row"><span class="bs-label">Price</span><span class="bs-val" style="color:var(--gold)">${S.service?.price_cents>0?'R'+(S.service.price_cents/100).toFixed(0):'Free'}</span></div>
+        <div class="bs-row"><span class="bs-label">Price</span><span class="bs-val" style="color:var(--gold)">${formatPrice(S.service||{})}</span></div>
       </div>
       <div class="form-field">
         <label>Full Name *</label>
@@ -724,7 +837,7 @@ function step6confirm(){
           <div class="bs-row"><span class="bs-label">Service</span><span class="bs-val">${S.service?.name}</span></div>
           <div class="bs-row"><span class="bs-label">Date</span><span class="bs-val">${dateStr}</span></div>
           <div class="bs-row"><span class="bs-label">Time</span><span class="bs-val">${S.time} – ${endTime}</span></div>
-          <div class="bs-row"><span class="bs-label">Price</span><span class="bs-val" style="color:var(--gold)">${S.service?.price_cents>0?'R'+(S.service.price_cents/100).toFixed(0):'Free'}</span></div>
+          <div class="bs-row"><span class="bs-label">Price</span><span class="bs-val" style="color:var(--gold)">${formatPrice(S.service||{})}</span></div>
         </div>
         <p class="confirm-msg">Please save your reference number. We'll confirm via WhatsApp or email shortly. See you at Maddog!</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -790,9 +903,19 @@ function bindEvents(){
 
 // ── Data loading ──────────────────────────────────────────────────────────
 async function loadServices(){
-  if(S.services.length>0) return
-  const {data}=await sb.from('services').select('*').eq('active',true).order('display_order')
-  S.services=data||[]
+  // Using hardcoded SERVICES_DATA — when backend is ready, remove the line below
+  // and replace with: const {data}=await sb.from('services').select('*').eq('active',true).order('display_order'); S.services=data||[]
+  S.services = SERVICES_DATA
+}
+
+function isTrainingCategory(cat){ return ['combat','strength','pt'].includes(cat) }
+
+function formatPrice(s){
+  if(s.enquiry) return 'Enquiry'
+  if(s.price_cents===0) return 'Free'
+  const r='R'+(s.price_cents/100).toLocaleString('en-ZA',{minimumFractionDigits:0})
+  if(s.billing==='monthly') return r+' / month'
+  return r
 }
 
 async function loadSchedules(){
@@ -830,7 +953,7 @@ async function submitBooking(){
 
   const payload={
     booking_ref:      S.ref,
-    booking_type:     S.category==='class'?'class':S.category==='recovery'?'recovery':'appointment',
+    booking_type:     isTrainingCategory(S.category)?'class':S.category==='recovery'?'recovery':'appointment',
     service_id:       S.service?.id||null,
     class_schedule_id:S.schedule?.id||null,
     practitioner_id:  S.schedule?.practitioner_id||null,
