@@ -903,9 +903,14 @@ function bindEvents(){
 
 // ── Data loading ──────────────────────────────────────────────────────────
 async function loadServices(){
-  // Hardcoded until backend is ready — swap this one line when Supabase services table is populated:
-  // const {data}=await sb.from('services').select('*').eq('active',true).order('display_order'); S.services=data||[]
-  S.services = SERVICES_DATA
+  try {
+    const {data,error}=await sb.from('services').select('*').eq('active',true).order('display_order')
+    if(error) throw error
+    S.services = (data && data.length > 0) ? data : SERVICES_DATA
+  } catch(e) {
+    console.warn('Supabase services load failed — using local data:', e.message)
+    S.services = SERVICES_DATA
+  }
 }
 
 function isTrainingCategory(cat){ return ['combat','strength','pt'].includes(cat) }
