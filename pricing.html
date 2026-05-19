@@ -89,6 +89,13 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 [contenteditable]{outline:none;cursor:text}
 [contenteditable]:focus{background:rgba(201,168,76,.06);outline:1px dashed rgba(201,168,76,.4)}
 
+/* ── BUTTONS ── */
+.btn{display:inline-block;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;transition:all .3s;cursor:pointer;border:none}
+.btn-g{color:var(--black);background:var(--gold);padding:13px 30px}
+.btn-g:hover{background:var(--gold-light)}
+.btn-o{color:var(--gold);background:transparent;padding:13px 30px;border:1px solid var(--gold-dim)}
+.btn-o:hover{border-color:var(--gold);color:var(--gold-light)}
+
 /* ── NAV ── */
 .site-nav{position:fixed;top:0;left:0;right:0;height:60px;background:rgba(8,8,8,.96);border-bottom:1px solid var(--border);z-index:9999;backdrop-filter:blur(8px)}
 .site-nav-inner{max-width:1440px;width:100%;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:100%}
