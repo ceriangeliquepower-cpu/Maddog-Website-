@@ -2,6 +2,13 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "maddog-control-centre",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "C:\\Users\\HP\\Desktop\\maddog-control-centre"],
+      "port": 5173,
+      "autoPort": true
+    },
+    {
       "name": "maddog-static",
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "3000"],

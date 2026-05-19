@@ -2,7 +2,7 @@
 -- Run this in Supabase: Dashboard → SQL Editor → New query → paste → Run
 -- This inserts all missing services. Safe to run multiple times (uses ON CONFLICT DO NOTHING).
 
-INSERT INTO services (name, category, price_cents, billing, "group", allow_trial, enquiry, active, display_order, color, desc)
+INSERT INTO services (name, category, price_cents, billing, "group", allow_trial, enquiry, active, display_order, color, "desc")
 VALUES
 
 -- =====================
