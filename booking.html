@@ -38,6 +38,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ── EmailJS — replace with your credentials from emailjs.com ──
+  // PUBLIC_KEY: Account → API Keys → Public Key
+  (function(){ emailjs.init({ publicKey: 'YOUR_EMAILJS_PUBLIC_KEY' }) })()
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -47,7 +53,7 @@
   --white-dim:rgba(245,240,232,.58);--danger:#c94c4c;--success:#4cc97a;
 }
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:300;overflow-x:hidden;padding-top:72px;padding-bottom:60px;min-height:100vh}
+body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:300;overflow-x:hidden;padding-top:72px;min-height:100vh;display:flex;flex-direction:column}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.35}
 
 /* ── NAV ── */
@@ -91,7 +97,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .page-sub{font-size:16px;font-weight:400;color:var(--white-dim);line-height:1.6;max-width:560px;letter-spacing:.04em}
 
 /* ── BOOKING WIZARD ── */
-.bk-wrap{max-width:860px;margin:0 auto;padding:48px 48px 80px}
+.bk-wrap{max-width:860px;margin:0 auto;padding:48px 48px 80px;flex:1}
 
 /* Step indicator */
 .step-indicator{display:flex;align-items:center;gap:0;margin-bottom:40px}
@@ -114,18 +120,25 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .step-sub{font-size:15px;font-weight:300;color:var(--white-dim);margin-bottom:28px;line-height:1.5;letter-spacing:.03em}
 
 /* Category cards */
-.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cat-card{background:var(--card);border:1px solid var(--border);border-left:3px solid transparent;padding:22px 24px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;display:flex;align-items:center;gap:18px}
+.cat-card::after{content:'';position:absolute;inset:0;background:var(--gold-glow);opacity:0;transition:opacity .25s;pointer-events:none}
+.cat-card:hover::after,.cat-card.selected::after{opacity:1}
+.cat-card:hover,.cat-card.selected{border-color:var(--gold);border-left-color:var(--gold)}
+.cat-card.selected{border-left-width:3px}
+.cat-card-icon{width:52px;height:52px;flex-shrink:0;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:24px;transition:background .25s}
+.cat-card:hover .cat-card-icon,.cat-card.selected .cat-card-icon{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.4)}
+.cat-card-body{flex:1;min-width:0}
+.cat-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--white);margin-bottom:3px;line-height:1}
+.cat-desc{font-size:11px;font-weight:300;color:var(--white-dim);line-height:1.45;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat-arrow{color:var(--gold-dim);font-size:18px;flex-shrink:0;transition:all .25s;opacity:.6}
+.cat-card:hover .cat-arrow,.cat-card.selected .cat-arrow{opacity:1;color:var(--gold);transform:translateX(3px)}
+.cat-card .gc{position:absolute;width:16px;height:16px;pointer-events:none;z-index:1}
+.cat-card .gc.tl{top:8px;left:8px;border-top:1px solid rgba(201,168,76,.25);border-left:1px solid rgba(201,168,76,.25)}
+.cat-card .gc.br{bottom:8px;right:8px;border-bottom:1px solid rgba(201,168,76,.25);border-right:1px solid rgba(201,168,76,.25)}
 /* Service groups */
 .svc-group{margin-bottom:32px}
 .svc-group-label{font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
-.cat-card{background:var(--card);border:1px solid var(--border);padding:28px 24px;cursor:pointer;transition:all .25s;text-align:center;position:relative;overflow:hidden}
-.cat-card::before{content:'';position:absolute;inset:0;background:var(--gold-glow);opacity:0;transition:opacity .25s}
-.cat-card:hover::before,.cat-card.selected::before{opacity:1}
-.cat-card:hover,.cat-card.selected{border-color:var(--gold)}
-.cat-card.selected{border-color:var(--gold);border-width:2px}
-.cat-icon{font-size:36px;margin-bottom:12px;display:block}
-.cat-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;color:var(--white);margin-bottom:4px}
-.cat-desc{font-size:13px;font-weight:300;color:var(--white-dim);line-height:1.5;letter-spacing:.03em}
 
 /* Service cards */
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
@@ -140,26 +153,29 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .svc-price{font-size:15px;font-weight:700;color:var(--gold);margin-top:8px}
 
 /* Date picker */
-.date-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-bottom:28px}
-.date-btn{background:var(--card);border:1px solid var(--border);padding:12px 8px;cursor:pointer;transition:all .2s;text-align:center}
-.date-btn:hover:not(.disabled){border-color:rgba(255,255,255,.25)}
-.date-btn.selected{border-color:var(--gold);border-width:2px;background:var(--gold-glow)}
-.date-btn.disabled{opacity:.3;cursor:not-allowed}
+.date-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px;margin-bottom:32px}
+.date-btn{background:var(--card);border:1px solid var(--border);border-top:2px solid transparent;padding:14px 8px 12px;cursor:pointer;transition:all .2s;text-align:center;position:relative;overflow:hidden}
+.date-btn:hover:not(.disabled){border-color:rgba(201,168,76,.4);border-top-color:rgba(201,168,76,.4)}
+.date-btn.selected{border-color:var(--gold);border-top-color:var(--gold);background:var(--gold-glow)}
+.date-btn.disabled{opacity:.25;cursor:not-allowed}
 .date-btn.today-mark .db-day{color:var(--gold)}
-.db-day{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim);margin-bottom:4px}
-.db-date{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.04em;color:var(--white)}
-.db-month{font-size:10px;color:var(--white-dim);margin-top:2px}
+.date-btn.today-mark::before{content:'TODAY';position:absolute;top:0;left:50%;transform:translateX(-50%);font-size:7px;font-weight:700;letter-spacing:.12em;color:var(--gold);background:rgba(201,168,76,.12);padding:1px 6px;white-space:nowrap}
+.db-day{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--white-dim);margin-bottom:6px}
+.db-date{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.02em;color:var(--white);line-height:1}
+.db-month{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white-dim);margin-top:4px}
+.date-btn.selected .db-date{color:var(--gold)}
 
 /* Time slots */
-.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:28px}
-.time-btn{background:var(--card);border:1px solid var(--border);padding:10px 8px;cursor:pointer;transition:all .2s;text-align:center}
-.time-btn:hover:not(.full){border-color:rgba(255,255,255,.25)}
-.time-btn.selected{border-color:var(--gold);border-width:2px;background:var(--gold-glow)}
-.time-btn.full{opacity:.35;cursor:not-allowed;position:relative}
-.time-btn.full::after{content:'FULL';position:absolute;top:4px;right:6px;font-size:8px;font-weight:700;letter-spacing:.08em;color:var(--danger)}
-.tb-time{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--white)}
-.tb-coach{font-size:11px;color:var(--white-dim);margin-top:2px}
-.tb-class{font-size:11px;color:var(--gold);margin-top:1px;font-weight:600}
+.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:32px}
+.time-btn{background:var(--card);border:1px solid var(--border);border-left:3px solid transparent;padding:14px 14px 12px;cursor:pointer;transition:all .2s;text-align:left;position:relative}
+.time-btn:hover:not(.full){border-color:rgba(201,168,76,.4);border-left-color:rgba(201,168,76,.4)}
+.time-btn.selected{border-color:var(--gold);border-left-color:var(--gold);background:var(--gold-glow)}
+.time-btn.full{opacity:.3;cursor:not-allowed;position:relative}
+.time-btn.full::after{content:'FULL';position:absolute;top:6px;right:8px;font-size:8px;font-weight:700;letter-spacing:.1em;color:var(--danger);background:rgba(201,76,76,.1);padding:1px 5px}
+.tb-time{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:4px}
+.time-btn.selected .tb-time{color:var(--gold)}
+.tb-coach{font-size:11px;color:var(--white-dim);margin-top:2px;letter-spacing:.03em}
+.tb-class{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-top:3px}
 
 /* Details form */
 .form-field{margin-bottom:18px}
@@ -251,14 +267,16 @@ footer.site-footer *{box-sizing:border-box!important}
 @media(max-width:768px){
   .bk-wrap{padding:32px 20px 60px}
   .page-hero-inner{padding:0 20px}
-  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .sf-main{grid-template-columns:1fr!important;gap:32px!important;padding:40px 24px 32px!important}
   .sf-bottom{padding:16px 24px!important;flex-direction:column!important;gap:8px!important;text-align:center!important}
+  .cat-desc{white-space:normal}
 }
 @media(max-width:480px){
   .date-grid{grid-template-columns:repeat(3,1fr)}
   .time-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-card-icon{width:44px;height:44px;font-size:20px}
 }
 </style>
 </head>
@@ -309,7 +327,7 @@ footer.site-footer *{box-sizing:border-box!important}
 </section>
 
 <!-- WIZARD -->
-<main class="bk-wrap" id="wizard"></main>
+<main class="bk-wrap" id="wizard" style="flex:1"></main>
 
 <!-- WA FLOAT -->
 <div class="wa-float">
@@ -607,13 +625,18 @@ function step1(){
   return `
     <div class="step-section visible">
       <div class="step-title">What would you like to book?</div>
-      <div class="step-sub">Choose a category to get started.</div>
+      <div class="step-sub">Select a category to see available services and pricing.</div>
       <div class="cat-grid">
         ${CATEGORIES.map(c=>`
           <div class="cat-card${S.category===c.id?' selected':''}" data-cat="${c.id}">
-            <span class="cat-icon">${c.icon}</span>
-            <div class="cat-name">${c.label}</div>
-            <div class="cat-desc">${c.desc}</div>
+            <div class="gc tl"></div>
+            <div class="gc br"></div>
+            <div class="cat-card-icon">${c.icon}</div>
+            <div class="cat-card-body">
+              <div class="cat-name">${c.label}</div>
+              <div class="cat-desc">${c.desc}</div>
+            </div>
+            <div class="cat-arrow">→</div>
           </div>`).join('')}
       </div>
       <div class="step-nav">
@@ -996,26 +1019,35 @@ async function submitBooking(){
 }
 
 async function sendConfirmationEmail(payload){
-  // ← Replace this URL with your Vercel project URL once you know it
-  const API = 'https://maddog-control-centre.vercel.app/api/send-booking-confirmation'
-  await fetch(API,{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({
-      booking_ref:      payload.booking_ref,
-      client_name:      payload.client_name,
-      client_email:     payload.client_email,
-      client_phone:     payload.client_phone,
-      service_name:     S.service?.name||payload.booking_type||'Session',
-      practitioner_name:S.schedule?.practitioner?.name||null,
-      booking_date:     payload.booking_date,
-      start_time:       payload.start_time,
-      end_time:         payload.end_time,
-      amount_cents:     payload.amount_cents,
-      payment_status:   payload.payment_status,
-      notes:            payload.notes,
-    })
-  })
+  // ── EmailJS notification to gym ───────────────────────────────
+  // Replace SERVICE_ID and TEMPLATE_ID with your values from emailjs.com
+  // Template variables available: {{booking_ref}}, {{service_name}},
+  // {{client_name}}, {{client_email}}, {{client_phone}},
+  // {{booking_date}}, {{booking_time}}, {{price}}, {{notes}}, {{booking_type}}
+  const SERVICE_ID  = 'YOUR_EMAILJS_SERVICE_ID'   // e.g. 'service_abc123'
+  const TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID'   // e.g. 'template_xyz789'
+
+  const isFree = !payload.amount_cents || payload.amount_cents === 0
+  const templateParams = {
+    to_email:     'info@maddogperformance.co.za',
+    booking_ref:  payload.booking_ref,
+    service_name: S.service?.name || payload.booking_type || 'Session',
+    client_name:  payload.client_name,
+    client_email: payload.client_email || '—',
+    client_phone: payload.client_phone || '—',
+    booking_date: payload.booking_date,
+    booking_time: `${payload.start_time} – ${payload.end_time}`,
+    price:        isFree ? 'FREE / ENQUIRY — no payment taken' : 'R'+(payload.amount_cents/100).toLocaleString('en-ZA'),
+    notes:        payload.notes || '—',
+    booking_type: isFree ? '⚠️ FREE / ENQUIRY — confirm manually with client' : '✅ PAID BOOKING',
+  }
+
+  try {
+    await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+  } catch(e) {
+    // Email failed silently — booking is already saved to Supabase
+    console.warn('EmailJS notification failed:', e)
+  }
 }
 
 function resetWizard(){
