@@ -136,46 +136,53 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .cat-card .gc{position:absolute;width:16px;height:16px;pointer-events:none;z-index:1}
 .cat-card .gc.tl{top:8px;left:8px;border-top:1px solid rgba(201,168,76,.25);border-left:1px solid rgba(201,168,76,.25)}
 .cat-card .gc.br{bottom:8px;right:8px;border-bottom:1px solid rgba(201,168,76,.25);border-right:1px solid rgba(201,168,76,.25)}
-/* Service groups */
-.svc-group{margin-bottom:20px}
-.svc-group-label{font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+/* ── Service groups ── */
+.svc-group{margin-bottom:20px;border:1px solid var(--border);overflow:hidden}
+.svc-group-header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(201,168,76,.06);border-bottom:1px solid var(--border)}
+.svc-group-label{font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);flex:1}
+.svc-group-count{font-size:10px;color:var(--white-dim)}
+.svc-group-body{padding:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 
 /* Service cards */
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
-.svc-card{background:var(--card);border:1px solid var(--border);padding:14px 14px;cursor:pointer;transition:all .2s;position:relative}
-.svc-card:hover{border-color:rgba(255,255,255,.25)}
-.svc-card.selected{border-color:var(--gold);border-width:2px}
-.svc-card.selected::after{content:'✓';position:absolute;top:12px;right:14px;font-size:14px;font-weight:700;color:var(--gold)}
-.svc-color-bar{height:3px;width:100%;margin-bottom:10px;border-radius:2px}
-.svc-name{font-size:15px;font-weight:700;letter-spacing:.04em;margin-bottom:3px}
-.svc-meta{font-size:11px;color:var(--white-dim);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-.svc-badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(201,168,76,.12);color:var(--gold);border:1px solid rgba(201,168,76,.25);padding:2px 8px;border-radius:3px;display:inline-block;margin-top:4px}
-.svc-price{font-size:15px;font-weight:700;color:var(--gold);margin-top:8px}
+.svc-card{background:#111;border:1px solid var(--border);border-top:2px solid transparent;padding:14px 14px 12px;cursor:pointer;transition:all .2s;position:relative;display:flex;flex-direction:column}
+.svc-card:hover{border-color:rgba(201,168,76,.35);border-top-color:rgba(201,168,76,.35);background:rgba(201,168,76,.04)}
+.svc-card.selected{border-color:var(--gold);border-top-color:var(--gold);background:rgba(201,168,76,.06)}
+.svc-card.selected::after{content:'✓';position:absolute;top:10px;right:12px;font-size:13px;font-weight:700;color:var(--gold)}
+.svc-color-bar{height:2px;width:32px;margin-bottom:10px;border-radius:2px;flex-shrink:0}
+.svc-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.04em;color:var(--white);margin-bottom:2px;line-height:1.1;padding-right:18px}
+.svc-meta{font-size:11px;color:var(--white-dim);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.svc-desc-text{font-size:11px;font-weight:300;color:var(--white-dim);line-height:1.4;margin-bottom:4px}
+.svc-badge{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(201,168,76,.12);color:var(--gold);border:1px solid rgba(201,168,76,.25);padding:2px 7px;display:inline-block;margin-top:2px}
+.svc-price{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.04em;color:var(--gold);margin-top:auto;padding-top:8px}
+.svc-card.selected .svc-name{color:var(--gold)}
 
-/* Date picker */
-.date-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:8px;margin-bottom:28px}
-.date-btn{background:var(--card);border:1px solid var(--border);border-top:2px solid transparent;padding:10px 6px 8px;cursor:pointer;transition:all .2s;text-align:center;position:relative;overflow:hidden}
-.date-btn:hover:not(.disabled){border-color:rgba(201,168,76,.4);border-top-color:rgba(201,168,76,.4)}
-.date-btn.selected{border-color:var(--gold);border-top-color:var(--gold);background:var(--gold-glow)}
+/* ── Date picker ── */
+.date-strip-wrap{margin-bottom:20px}
+.date-strip-label{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.date-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.date-btn{background:var(--card);border:1px solid var(--border);border-bottom:2px solid transparent;padding:9px 4px 8px;cursor:pointer;transition:all .2s;text-align:center;position:relative;overflow:hidden}
+.date-btn:hover:not(.disabled){border-color:rgba(201,168,76,.4);border-bottom-color:rgba(201,168,76,.4)}
+.date-btn.selected{border-color:var(--gold);border-bottom-color:var(--gold);background:var(--gold-glow)}
 .date-btn.disabled{opacity:.25;cursor:not-allowed}
 .date-btn.today-mark .db-day{color:var(--gold)}
-.date-btn.today-mark::before{content:'TODAY';position:absolute;top:0;left:50%;transform:translateX(-50%);font-size:7px;font-weight:700;letter-spacing:.12em;color:var(--gold);background:rgba(201,168,76,.12);padding:1px 6px;white-space:nowrap}
-.db-day{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--white-dim);margin-bottom:6px}
-.db-date{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.02em;color:var(--white);line-height:1}
-.db-month{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white-dim);margin-top:4px}
-.date-btn.selected .db-date{color:var(--gold)}
+.date-btn.today-mark::before{content:'·';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);font-size:14px;font-weight:900;color:var(--gold);line-height:1}
+.db-day{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white-dim);margin-bottom:4px}
+.db-date{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.02em;color:var(--white);line-height:1}
+.db-month{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--white-dim);margin-top:3px}
+.date-btn.selected .db-date,.date-btn.selected .db-month{color:var(--gold)}
 
-/* Time slots */
-.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-bottom:28px}
-.time-btn{background:var(--card);border:1px solid var(--border);border-left:3px solid transparent;padding:10px 10px 8px;cursor:pointer;transition:all .2s;text-align:left;position:relative}
+/* ── Time slots ── */
+.time-section-label{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.time-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:20px}
+.time-btn{background:var(--card);border:1px solid var(--border);border-left:2px solid transparent;padding:10px 10px 8px;cursor:pointer;transition:all .2s;text-align:center;position:relative}
 .time-btn:hover:not(.full){border-color:rgba(201,168,76,.4);border-left-color:rgba(201,168,76,.4)}
 .time-btn.selected{border-color:var(--gold);border-left-color:var(--gold);background:var(--gold-glow)}
-.time-btn.full{opacity:.3;cursor:not-allowed;position:relative}
-.time-btn.full::after{content:'FULL';position:absolute;top:6px;right:8px;font-size:8px;font-weight:700;letter-spacing:.1em;color:var(--danger);background:rgba(201,76,76,.1);padding:1px 5px}
-.tb-time{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:4px}
+.time-btn.full{opacity:.3;cursor:not-allowed}
+.time-btn.full::after{content:'FULL';position:absolute;top:4px;right:5px;font-size:7px;font-weight:700;letter-spacing:.1em;color:var(--danger)}
+.tb-time{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:2px}
 .time-btn.selected .tb-time{color:var(--gold)}
-.tb-coach{font-size:11px;color:var(--white-dim);margin-top:2px;letter-spacing:.03em}
-.tb-class{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+.tb-coach{font-size:10px;color:var(--white-dim);letter-spacing:.03em}
+.tb-class{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-top:2px}
 
 /* Details form */
 .form-field{margin-bottom:18px}
@@ -264,17 +271,25 @@ footer.site-footer *{box-sizing:border-box!important}
 .sf-bottom{max-width:1280px!important;margin:0 auto!important;padding:20px 48px!important;border-top:1px solid rgba(245,240,232,.08)!important;display:flex!important;justify-content:space-between!important;align-items:center!important}
 .sf-bottom p{font-family:'Barlow Condensed',sans-serif!important;font-size:12px!important;font-weight:300!important;color:rgba(245,240,232,.35)!important;letter-spacing:.05em!important;margin:0!important}
 
+@media(max-width:1024px){
+  .svc-group-body{grid-template-columns:repeat(2,1fr)}
+  .time-grid{grid-template-columns:repeat(4,1fr)}
+}
 @media(max-width:768px){
-  .bk-wrap{padding:32px 20px 60px}
+  .bk-wrap{padding:24px 16px 60px}
   .page-hero-inner{padding:0 20px}
   .cat-grid{grid-template-columns:1fr}
+  .cat-desc{white-space:normal}
+  .svc-group-body{grid-template-columns:repeat(2,1fr)}
+  .date-grid{grid-template-columns:repeat(7,1fr)}
+  .time-grid{grid-template-columns:repeat(3,1fr)}
   .form-row{grid-template-columns:1fr}
   .sf-main{grid-template-columns:1fr!important;gap:32px!important;padding:40px 24px 32px!important}
   .sf-bottom{padding:16px 24px!important;flex-direction:column!important;gap:8px!important;text-align:center!important}
-  .cat-desc{white-space:normal}
 }
 @media(max-width:480px){
-  .date-grid{grid-template-columns:repeat(3,1fr)}
+  .svc-group-body{grid-template-columns:1fr}
+  .date-grid{grid-template-columns:repeat(4,1fr)}
   .time-grid{grid-template-columns:repeat(2,1fr)}
   .cat-card-icon{width:44px;height:44px;font-size:20px}
 }
@@ -658,8 +673,8 @@ function renderSvcCard(s){
         <span>⏱ ${s.duration_minutes}min</span>
         ${s.capacity&&s.capacity>1?`<span>👥 Max ${s.capacity}</span>`:''}
       </div>
-      ${s.desc?`<div style="font-size:12px;color:var(--white-dim);margin-bottom:4px">${s.desc}</div>`:''}
-      ${s.allow_trial?'<span class="svc-badge">Free trial</span>':''}
+      ${s.desc?`<div class="svc-desc-text">${s.desc}</div>`:''}
+      ${s.allow_trial?'<span class="svc-badge">Free trial available</span>':''}
       ${s.enquiry?'<span class="svc-badge">Enquiry only</span>':''}
       <div class="svc-price">${formatPrice(s)}</div>
     </div>`
@@ -677,8 +692,11 @@ function step2(){
   })
   const groupsHtml=groupOrder.map(g=>`
     <div class="svc-group">
-      <div class="svc-group-label">${g}</div>
-      <div class="svc-grid">${groups[g].map(renderSvcCard).join('')}</div>
+      <div class="svc-group-header">
+        <div class="svc-group-label">${g}</div>
+        <div class="svc-group-count">${groups[g].length} option${groups[g].length!==1?'s':''}</div>
+      </div>
+      <div class="svc-group-body">${groups[g].map(renderSvcCard).join('')}</div>
     </div>`).join('')
   return `
     <div class="step-section visible">
@@ -711,26 +729,31 @@ function step3(){
     if(slots.length===0){
       slotHtml=`<div class="bk-empty">No available slots for this date.</div>`
     } else {
-      slotHtml=`<div class="time-grid">${slots.map(sl=>{
-        const full=isSlotFull(sl)
-        const t=sl.start_time?.slice(0,5)
-        const sel=S.time===t && (S.schedule?.id===sl.id || S.category!=='class')
-        return `<button class="time-btn${sel?' selected':''}${full?' full':''}" data-time="${t}" data-slot='${JSON.stringify(sl)}' ${full?'disabled':''}>
-          <div class="tb-time">${t}</div>
-          ${sl.service?.name?`<div class="tb-class">${sl.service.name}</div>`:''}
-          ${sl.practitioner?.name?`<div class="tb-coach">${sl.practitioner.name}</div>`:''}
-        </button>`
-      }).join('')}</div>`
+      slotHtml=`
+        <div class="time-section-label">Available times</div>
+        <div class="time-grid">${slots.map(sl=>{
+          const full=isSlotFull(sl)
+          const t=sl.start_time?.slice(0,5)
+          const sel=S.time===t && (S.schedule?.id===sl.id || S.category!=='class')
+          return `<button class="time-btn${sel?' selected':''}${full?' full':''}" data-time="${t}" data-slot='${JSON.stringify(sl)}' ${full?'disabled':''}>
+            <div class="tb-time">${t}</div>
+            ${sl.service?.name?`<div class="tb-class">${sl.service.name}</div>`:''}
+            ${sl.practitioner?.name?`<div class="tb-coach">${sl.practitioner.name}</div>`:''}
+          </button>`
+        }).join('')}</div>`
     }
   } else {
-    slotHtml=`<div class="bk-notice">← Select a date above to see available times.</div>`
+    slotHtml=`<div class="bk-notice">Select a date above to see available times.</div>`
   }
 
   return `
     <div class="step-section visible">
       <div class="step-title">Pick a date & time</div>
-      <div class="step-sub">${S.service?.name} · ${S.service?.duration_minutes}min · 24-hour notice required.</div>
-      <div class="date-grid">${dateHtml}</div>
+      <div class="step-sub">${S.service?.name} · ${S.service?.duration_minutes}min session · 24-hour notice required.</div>
+      <div class="date-strip-wrap">
+        <div class="date-strip-label">Select a date</div>
+        <div class="date-grid">${dateHtml}</div>
+      </div>
       <div id="slot-container">${slotHtml}</div>
       <div class="step-nav">
         <button class="btn-bk btn-bk-outline" id="btn-back-3">← Back</button>
