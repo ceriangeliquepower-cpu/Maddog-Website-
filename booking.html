@@ -903,9 +903,8 @@ function bindEvents(){
 
 // ── Data loading ──────────────────────────────────────────────────────────
 async function loadServices(){
-  // Using hardcoded SERVICES_DATA — when backend is ready, remove the line below
-  // and replace with: const {data}=await sb.from('services').select('*').eq('active',true).order('display_order'); S.services=data||[]
-  S.services = SERVICES_DATA
+  const {data}=await sb.from('services').select('*').eq('active',true).order('display_order')
+  S.services=data||[]
 }
 
 function isTrainingCategory(cat){ return ['combat','strength','pt'].includes(cat) }
