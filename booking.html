@@ -903,8 +903,9 @@ function bindEvents(){
 
 // ── Data loading ──────────────────────────────────────────────────────────
 async function loadServices(){
-  const {data}=await sb.from('services').select('*').eq('active',true).order('display_order')
-  S.services=data||[]
+  // Hardcoded until backend is ready — swap this one line when Supabase services table is populated:
+  // const {data}=await sb.from('services').select('*').eq('active',true).order('display_order'); S.services=data||[]
+  S.services = SERVICES_DATA
 }
 
 function isTrainingCategory(cat){ return ['combat','strength','pt'].includes(cat) }
