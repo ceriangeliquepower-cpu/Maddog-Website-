@@ -1,62 +1,31 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-<!-- ============================================================
-  MADDOG BLOG TEMPLATE
-  ============================================================
-  HOW TO USE THIS FILE:
-  1. Save a copy with a new filename: blog-your-topic-ballito.html
-  2. Find every line marked REPLACE and update it
-  3. Write your article content inside the ARTICLE BODY section
-  4. Add the new blog card to events.html (copy the bp6 card pattern)
-  5. Push to GitHub
-  ============================================================ -->
-
-<!-- REPLACE: Update title (60 chars max, include primary keyword) -->
-<title>Blog Post Title | Maddog Performance Institute | Ballito KZN</title>
-
-<!-- REPLACE: Update description (150-160 chars, include primary keyword) -->
-<meta name="description" content="Your 150-160 character meta description goes here. Include your primary keyword and a compelling reason to click.">
-
-<!-- REPLACE: Update the filename in the canonical URL -->
-<link rel="canonical" href="https://www.maddogperformance.co.za/blog-your-filename-here.html">
-
-<!-- REPLACE: Update og:title, og:description, og:url to match above -->
+<title>BLOG_TITLE | Maddog Performance Institute | Ballito KZN</title>
+<meta name="description" content="BLOG_META_DESCRIPTION">
+<link rel="canonical" href="https://www.maddogperformance.co.za/BLOG_FILENAME.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Blog Post Title | Maddog Performance Institute">
-<meta property="og:description" content="Your meta description here.">
-<meta property="og:url" content="https://www.maddogperformance.co.za/blog-your-filename-here.html">
-<meta property="og:image" content="https://www.maddogperformance.co.za/og-image.jpg">
+<meta property="og:title" content="BLOG_TITLE | Maddog Performance Institute">
+<meta property="og:description" content="BLOG_META_DESCRIPTION">
+<meta property="og:url" content="https://www.maddogperformance.co.za/BLOG_FILENAME.html">
 <meta property="og:site_name" content="Maddog Performance Institute">
-<meta property="og:locale" content="en_ZA">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="ZA-KZN">
 <meta name="geo.placename" content="Ballito, KwaZulu-Natal">
-<meta name="twitter:card" content="summary_large_image">
-<!-- REPLACE: Update twitter:title and twitter:description -->
-<meta name="twitter:title" content="Blog Post Title | Maddog Performance Institute">
-<meta name="twitter:description" content="Your meta description here.">
-<meta name="twitter:image" content="https://www.maddogperformance.co.za/og-image.jpg">
-
-<!-- REPLACE: Update headline, description, datePublished, dateModified, url -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Your Full Blog Post Title Here",
-  "description": "Your meta description here.",
+  "headline": "BLOG_TITLE",
+  "description": "BLOG_META_DESCRIPTION",
   "author": {"@type":"Organization","name":"Maddog Performance Institute","url":"https://www.maddogperformance.co.za"},
   "publisher": {"@type":"Organization","name":"Maddog Performance Institute","url":"https://www.maddogperformance.co.za"},
-  "datePublished": "2026-01-01",
-  "dateModified": "2026-01-01",
-  "url": "https://www.maddogperformance.co.za/blog-your-filename-here.html"
+  "datePublished": "BLOG_DATE_ISO",
+  "dateModified": "BLOG_DATE_ISO",
+  "mainEntityOfPage": {"@type":"WebPage","@id":"https://www.maddogperformance.co.za/BLOG_FILENAME.html"},
+  "image": "https://www.maddogperformance.co.za/og-image.jpg"
 }
 </script>
-
-<!-- REPLACE: Update position 3 name and item URL -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,42 +33,44 @@
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Home","item":"https://www.maddogperformance.co.za/"},
     {"@type":"ListItem","position":2,"name":"News & Events","item":"https://www.maddogperformance.co.za/events.html"},
-    {"@type":"ListItem","position":3,"name":"Your Blog Post Title","item":"https://www.maddogperformance.co.za/blog-your-filename-here.html"}
+    {"@type":"ListItem","position":3,"name":"How to Start MMA Training in Ballito","item":"https://www.maddogperformance.co.za/blog-mma-training-ballito.html"}
   ]
 }
 </script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&amp;display=swap" rel="stylesheet">
 <style>
+
 :root{--black:#080808;--deep:#0f0f0f;--card:#1a1a1a;--border:#2a2a2a;--gold:#c9a84c;--gold-light:#e8c87a;--gold-dim:#7a6030;--gold-glow:rgba(201,168,76,0.13);--white:#f5f0e8;--white-dim:rgba(245,240,232,0.58);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:300;overflow-x:hidden;padding-bottom:60px}
+
+/* ── SITE NAV ── */
 .site-nav{position:fixed;top:0;left:0;right:0;height:60px;background:rgba(8,8,8,.96);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:9999;backdrop-filter:blur(8px)}
 .site-nav-inner{max-width:1200px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.site-nav-links{display:flex;gap:28px;list-style:none}
+.site-nav-links{display:flex;gap:28px;list-style:none;align-items:center}
 .site-nav-links a{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;transition:color .2s}
-.site-nav-links a:hover,.site-nav-links a.active{color:var(--gold)}
+.site-nav-links a:hover{color:var(--gold)}
 .site-nav-cta a{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:9px 20px;text-decoration:none;transition:background .2s;white-space:nowrap}
 .site-nav-cta a:hover{background:var(--gold-light)}
 .site-nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .site-nav-hamburger span{display:block;width:22px;height:2px;background:var(--gold);transition:all .3s;transform-origin:center}
 .site-nav-mobile{position:fixed;top:0;right:-100%;width:80%;max-width:300px;height:100vh;background:var(--deep);z-index:9998;display:flex;flex-direction:column;padding:80px 32px 48px;gap:8px;transition:right .4s cubic-bezier(.4,0,.2,1);border-left:1px solid var(--border)}
-.site-nav-mobile.snm-open{right:0}
+.site-nav-mobile.open{right:0}
 .site-nav-mobile a{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.08em;color:var(--white-dim);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
 .site-nav-mobile a:hover{color:var(--gold)}
 .site-nav-mobile .snm-cta{margin-top:20px;background:var(--gold);color:var(--black);text-align:center;padding:14px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-bottom:none}
-.site-nav-logo{display:flex!important;align-items:center!important;flex-shrink:0!important;text-decoration:none!important;line-height:0!important;padding:3px 0!important;margin-right:8px!important;transition:opacity .2s!important}
-.site-nav-logo:hover{opacity:.75!important}
-.site-nav-logo img{height:44px!important;width:auto!important;display:block!important}
+
+/* ── CREDENTIAL STRIP ── */
 .cred-strip{background:var(--gold);padding:11px 0;overflow:hidden;width:100%}
 @keyframes credScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .cred-scroll{display:flex;gap:0;animation:credScroll 70s linear infinite;white-space:nowrap;width:max-content}
 .cred-item{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.14em;color:var(--black);padding:0 34px;display:inline-flex;align-items:center;gap:16px;flex-shrink:0}
 .cred-item::after{content:'◆';font-size:7px;opacity:.4}
-.blog-page-hero{height:380px;margin-top:60px;position:relative;overflow:hidden;background:var(--deep)}
-.blog-hero{padding:60px 0;background:var(--deep);position:relative;overflow:hidden}
+
+/* ── BLOG HERO ── */
+.blog-hero{padding:120px 0 60px;background:var(--deep);position:relative;overflow:hidden}
 .blog-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.05),transparent 60%);pointer-events:none}
 .bh-inner{max-width:860px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
 .bh-back{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;margin-bottom:24px;transition:color .2s}
@@ -109,9 +80,11 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 .bh-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,68px);line-height:.95;letter-spacing:.02em;color:var(--white);margin-bottom:20px}
 .bh-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .bh-author{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.bh-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim)}
-.bh-read{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim)}
+.bh-date{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim)}
+.bh-read{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim)}
 .bh-dot{color:var(--gold-dim);font-size:8px}
+
+/* ── ARTICLE BODY ── */
 .article-wrap{max-width:860px;margin:0 auto;padding:60px 40px 80px}
 .article-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,38px);letter-spacing:.03em;color:var(--white);margin:48px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
 .article-body h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(18px,2vw,24px);letter-spacing:.04em;color:var(--gold);margin:32px 0 12px}
@@ -121,6 +94,12 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 .article-body ul li::before{content:'◆';font-size:7px;color:var(--gold);margin-top:5px;flex-shrink:0}
 .pull-quote{border-left:3px solid var(--gold);padding:16px 24px;margin:32px 0;background:rgba(201,168,76,.04)}
 .pull-quote p{font-family:'Barlow Condensed',sans-serif!important;font-style:italic;font-size:17px!important;color:var(--white)!important;margin:0!important;line-height:1.65!important}
+.faq-item{border-top:1px solid var(--border);padding:24px 0}
+.faq-item:last-child{border-bottom:1px solid var(--border)}
+.faq-q{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;color:var(--white);margin-bottom:10px}
+.faq-a{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:300;line-height:1.75;color:var(--white-dim)}
+.internal-link{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:border-color .2s}
+.internal-link:hover{border-color:var(--gold)}
 .article-cta-box{background:var(--deep);border:1px solid var(--gold-dim);padding:40px;margin:48px 0 0;text-align:center}
 .article-cta-box h3{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--white);margin-bottom:10px}
 .article-cta-box p{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:300;color:var(--white-dim);margin-bottom:24px;line-height:1.7}
@@ -130,6 +109,8 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 .btn-g:hover{background:var(--gold-light)}
 .btn-o{color:var(--gold);background:transparent;border:1px solid var(--gold-dim)}
 .btn-o:hover{border-color:var(--gold);background:var(--gold-glow)}
+
+/* ── FOOTER ── */
 .site-footer{background:var(--deep);border-top:1px solid var(--border);padding:48px 0 24px}
 .sf-main{max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px}
 .sf-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.12em;color:var(--gold);display:block;margin-bottom:12px}
@@ -143,30 +124,32 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 .sf-col a:hover{color:var(--gold)}
 .sf-bottom{max-width:1200px;margin:32px auto 0;padding:20px 40px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .sf-bottom p{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:300;color:rgba(245,240,232,.3);letter-spacing:.06em}
+
+/* ── WHATSAPP ── */
 .wa-float{position:fixed;bottom:28px;right:24px;display:flex;align-items:center;gap:8px;z-index:9990}
 .wa-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:var(--card);padding:6px 10px;border:1px solid var(--border);opacity:.85}
 .wa-btn{width:48px;height:48px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s}
 .wa-btn:hover{transform:scale(1.08)}
 .wa-btn svg{width:26px;height:26px;fill:#fff}
-.slot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(8,8,8,.55);gap:8px;transition:opacity .3s}
-.slot-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.6}
+
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
   .site-nav-links,.site-nav-cta{display:none}
   .site-nav-hamburger{display:flex}
   .sf-main{grid-template-columns:1fr;gap:28px}
-  .bh-inner{padding:0 20px}
-  .blog-hero{padding:40px 0 48px}
+  .bh-inner,.article-wrap{padding:0 20px}
+  .blog-hero{padding:100px 0 48px}
   .article-wrap{padding:40px 20px 60px}
   .article-cta-box{padding:28px 20px}
-  .blog-page-hero{height:220px}
 }
+
 
 /* ── Nav dropdowns ── */
 .nav-has-dropdown{position:relative!important;display:inline-flex!important;align-items:center!important}
-.nav-has-dropdown>a{display:inline-flex!important;align-items:center!important;gap:3px!important;line-height:72px!important;padding:0 16px!important;white-space:nowrap!important}
+.nav-has-dropdown>a{display:inline-flex!important;align-items:center!important;gap:3px!important;line-height:60px!important;padding:0 16px!important;white-space:nowrap!important}
 .nav-drop-chevron{font-size:8px!important;color:rgba(201,168,76,.5)!important;transition:transform .2s!important;margin-left:1px!important;font-style:normal!important}
 .nav-has-dropdown:hover .nav-drop-chevron{transform:rotate(180deg)!important;color:#c9a84c!important}
-.nav-drop-menu{display:none;position:absolute!important;top:72px!important;left:0!important;background:rgba(8,8,8,.98)!important;border:1px solid rgba(201,168,76,.2)!important;border-top:2px solid #c9a84c!important;min-width:160px!important;z-index:9001!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important}
+.nav-drop-menu{display:none!important;position:absolute!important;top:60px!important;left:0!important;background:rgba(8,8,8,.98)!important;border:1px solid rgba(201,168,76,.2)!important;border-top:2px solid #c9a84c!important;min-width:160px!important;z-index:9001!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important}
 .nav-has-dropdown:hover .nav-drop-menu{display:block!important}
 .nav-drop-menu a{display:block!important;font-family:'Bebas Neue',sans-serif!important;font-size:14px!important;font-weight:400!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:rgba(245,240,232,.75)!important;padding:13px 20px!important;line-height:1!important;border-bottom:1px solid rgba(245,240,232,.06)!important;white-space:nowrap!important;transition:all .2s!important;text-decoration:none!important;box-shadow:none!important}
 .nav-drop-menu a:last-child{border-bottom:none!important}
@@ -174,21 +157,40 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 .snm-sub{display:block!important;font-family:'Bebas Neue',sans-serif!important;font-size:17px!important;font-weight:400!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:rgba(245,240,232,.42)!important;padding:9px 0 9px 22px!important;border-bottom:1px solid rgba(245,240,232,.06)!important;transition:color .2s!important;text-decoration:none!important}
 .snm-sub:hover{color:#c9a84c!important}
 </style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Start MMA Training Ballito | Maddog KZN">
+<meta name="twitter:description" content="Learn how to start MMA training at Maddog Performance Institute in Ballito, KZN. Beginners guide to MMA fitness, classes, and performance benefits.">
+
+<style>
+.site-nav-logo{display:flex!important;align-items:center!important;flex-shrink:0!important;text-decoration:none!important;line-height:0!important;padding:3px 0!important;margin-right:8px!important;transition:opacity .2s!important}
+.site-nav-logo:hover{opacity:.75!important}
+.site-nav-logo img{height:44px!important;width:auto!important;display:block!important}
+</style>
+<style>
+@media(max-width:768px){
+  .blog-page-hero{height:260px!important;margin-top:60px!important}
+  .blog-page-hero .slot-overlay{align-items:center!important;justify-content:center!important;padding:0 20px!important}
+  .blog-page-hero .slot-hint{text-align:center!important;white-space:normal!important;max-width:100%!important}
+  .bh-inner{padding:16px 20px 32px!important}
+  .bh-title{font-size:clamp(22px,6vw,36px)!important;line-height:1.1!important}
+  .blog-hero{padding-top:0!important}
+  .article-wrap{padding:20px 20px 60px!important}
+}
+</style>
 </head>
 <body>
-
 <nav class="site-nav" id="siteNav">
   <div class="site-nav-inner">
-    <a href="index.html" class="site-nav-logo" aria-label="Maddog Performance Institute — Home"><img src="data:image/png;base64,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" alt="Maddog Performance Institute" width="79" height="54" style="height:54px;width:auto;display:block;"></a>
-    <div style="width:1px;height:28px;background:rgba(201,168,76,.35);flex-shrink:0;margin:0 16px 0 8px;"></div>
+  <a href="index.html" class="site-nav-logo" aria-label="Maddog Performance Institute — Home"><img src="data:image/png;base64,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" alt="Maddog Performance Institute" width="79" height="54" style="height:54px;width:auto;display:block;"></a>
+  <div style="width:1px;height:28px;background:rgba(201,168,76,.35);flex-shrink:0;margin:0 16px 0 8px;"></div>
   <div class="site-nav-links">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="amanda.html">Amanda</a>
       <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="pricing.html">Pricelist</a></div></div>
       <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="training.html#schedule">Class Schedule</a></div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
-      <a href="events.html" class="active">Events</a>
+      <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
     <div class="site-nav-cta"><img src="data:image/png;base64,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" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
@@ -198,7 +200,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
   </div>
 </nav>
 <div class="site-nav-mobile" id="siteNavMob">
-  <a href="index.html">Home</a>
+  <a href="index.html" class="active">Home</a>
   <a href="amanda.html">Amanda</a>
   <a href="recovery.html">Recovery</a>
   <a href="pricing.html" class="snm-sub">&#8627; Pricelist</a>
@@ -210,142 +212,92 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
   <a href="contact.html">Contact</a>
   <a href="booking.html" class="snm-cta">Book Online</a>
 </div>
-
-<!-- BLOG HERO PHOTO — click to upload once live -->
+<!-- BLOG HERO PHOTO -->
 <section class="blog-page-hero">
-  <div class="photo-slot" id="blogHero" onclick="swapPhoto('blogHero')" style="cursor:pointer;position:relative;height:100%;overflow:hidden;background:var(--deep)">
-    <img id="blogHero-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="1200" height="380" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0">
-    <div class="slot-overlay" style="opacity:1!important">
-      <span class="slot-label">Click to Upload Hero Photo</span>
-    </div>
+  <div class="photo-slot blog-hero-slot" id="blogHero" onclick="swapPhoto('blogHero')" style="cursor:pointer">
+    <img id="blogHero-img" src="" alt="" width="1200" height="400" style="display:none">
+    <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Hero Photo</span></div>
+    <div class="slot-hint">Click to upload</div>
   </div>
 </section>
 
-<!-- CREDENTIAL STRIP — REPLACE items with topic-relevant text (duplicate each item for seamless loop) -->
+
+
+
+<!-- CREDENTIAL STRIP -->
 <div class="cred-strip">
-  <div class="cred-scroll">
-    <div class="cred-item">Maddog Performance Institute &middot; Ballito</div>
-    <div class="cred-item">MMA &middot; BJJ &middot; Kickboxing &middot; Powerlifting</div>
-    <div class="cred-item">Amanda Lino &middot; 2&times; EFC World Champion</div>
-    <div class="cred-item">Book A Free Trial &middot; Maddog Ballito</div>
-    <div class="cred-item">KZN North Coast&rsquo;s Premier Fight Gym</div>
-    <div class="cred-item">Sports Recovery Suite &middot; Ballito KZN</div>
-    <div class="cred-item">Maddog Performance Institute &middot; Ballito</div>
-    <div class="cred-item">MMA &middot; BJJ &middot; Kickboxing &middot; Powerlifting</div>
-    <div class="cred-item">Amanda Lino &middot; 2&times; EFC World Champion</div>
-    <div class="cred-item">Book A Free Trial &middot; Maddog Ballito</div>
-    <div class="cred-item">KZN North Coast&rsquo;s Premier Fight Gym</div>
-    <div class="cred-item">Sports Recovery Suite &middot; Ballito KZN</div>
-  </div>
+  <div class="cred-scroll"><div class="cred-item">Maddog Performance Institute &middot; Ballito KZN</div><div class="cred-item">MMA &middot; BJJ &middot; Kickboxing &middot; Powerlifting &middot; Recovery Suite</div><div class="cred-item">Amanda Lino &middot; 2&times; EFC World Champion</div><div class="cred-item">KZN North Coast&rsquo;s Premier Fight &amp; Performance Gym</div><div class="cred-item">Book A Free Trial &middot; Maddog Ballito</div><div class="cred-item">Maddog Performance Institute &middot; Ballito KZN</div><div class="cred-item">MMA &middot; BJJ &middot; Kickboxing &middot; Powerlifting &middot; Recovery Suite</div><div class="cred-item">Amanda Lino &middot; 2&times; EFC World Champion</div><div class="cred-item">KZN North Coast&rsquo;s Premier Fight &amp; Performance Gym</div><div class="cred-item">Book A Free Trial &middot; Maddog Ballito</div></div>
+</div><div class="cred-item">Amanda Lino · 2× EFC World Champion</div><div class="cred-item">MMA · BJJ · Kickboxing · Powerlifting</div><div class="cred-item">Book A Free Trial · Maddog Ballito</div><div class="cred-item">KZN North Coast’s Premier Fight Gym</div><div class="cred-item">MMA Training · Ballito KZN</div><div class="cred-item">Beginners Welcome · All Levels</div><div class="cred-item">Amanda Lino · 2× EFC World Champion</div><div class="cred-item">MMA · BJJ · Kickboxing · Powerlifting</div><div class="cred-item">Book A Free Trial · Maddog Ballito</div><div class="cred-item">KZN North Coast’s Premier Fight Gym</div></div>
 </div>
+
 
 <!-- BLOG HERO -->
 <section class="blog-hero">
   <div class="bh-inner">
     <a href="events.html" class="bh-back">Back to News &amp; Events</a>
-    <!-- REPLACE: Tag (e.g. MMA, BJJ, Recovery, Youth & Family, Nutrition) -->
-    <div class="bh-tag">TAG HERE</div>
-    <!-- REPLACE: Full blog post title -->
-    <h1 class="bh-title">Your Blog Post Title Goes Here</h1>
+    <div class="bh-tag">BLOG_CATEGORY</div>
+    <h1 class="bh-title">BLOG_FULL_TITLE</h1>
     <div class="bh-meta">
       <span class="bh-author">Maddog Performance Institute</span>
-      <span class="bh-dot">&#9670;</span>
-      <!-- REPLACE: Month Year -->
-      <span class="bh-date">Month Year</span>
-      <span class="bh-dot">&#9670;</span>
-      <!-- REPLACE: Estimated read time -->
-      <span class="bh-read">X min read</span>
+      <span class="bh-dot">◆</span>
+      <span class="bh-date">April 2026</span>
+      <span class="bh-dot">◆</span>
+      <span class="bh-read">11 min read</span>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-  ARTICLE BODY
-  ============================================================
-  AVAILABLE ELEMENTS — copy and paste as needed:
-
-  SECTION HEADING (white, full width underline):
-  <h2>Section Title Here</h2>
-
-  SUB-HEADING (gold, smaller):
-  <h3>Sub-heading Here</h3>
-
-  PARAGRAPH:
-  <p>Your paragraph text goes here.</p>
-
-  BULLET LIST:
-  <ul>
-    <li><strong>Bold label.</strong> Supporting detail text goes here.</li>
-    <li>Plain bullet point without bold label.</li>
-  </ul>
-
-  PULL QUOTE (gold left border):
-  <div class="pull-quote"><p>"Quote text goes here."</p></div>
-
-  CTA BOX — place at the end of the article:
-  <div class="article-cta-box">
-    <h3>CTA Heading Here</h3>
-    <p>Supporting CTA text.</p>
-    <div class="btns">
-      <a href="contact.html#form" class="btn btn-g">Book a Free Trial</a>
-      <a href="contact.html" class="btn btn-o">Contact Us</a>
-    </div>
-  </div>
-  ============================================================ -->
+<!-- ARTICLE -->
 <div class="article-wrap">
   <div class="article-body">
 
-    <!-- REPLACE: Write your article content below using the elements above -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         BLOG CONTENT — replace everything between these comments
+         Use <h2> for main sections, <h3> for sub-sections, <p> for paragraphs
+         ═══════════════════════════════════════════════════════════════ -->
 
-    <h2>First Section Heading</h2>
-    <p>Opening paragraph of your article.</p>
+    <h2>SECTION_HEADING_1</h2>
+    <p>PARAGRAPH_TEXT</p>
 
-    <h2>Second Section Heading</h2>
-    <p>Section content.</p>
+    <h2>SECTION_HEADING_2</h2>
+    <p>PARAGRAPH_TEXT</p>
 
-    <h3>A Sub-Heading</h3>
-    <ul>
-      <li><strong>Point one.</strong> Detail about point one.</li>
-      <li><strong>Point two.</strong> Detail about point two.</li>
-    </ul>
+    <h3>SUB_SECTION_HEADING</h3>
+    <p>PARAGRAPH_TEXT</p>
 
-    <div class="pull-quote"><p>"A compelling quote from the article or from Amanda."</p></div>
+    <!-- ═══════════════════════════════════════════════════════════════
+         END BLOG CONTENT
+         ═══════════════════════════════════════════════════════════════ -->
 
-    <div class="article-cta-box">
-      <!-- REPLACE: CTA heading and body text -->
-      <h3>Ready to Start?</h3>
-      <p>Maddog Performance Institute is Ballito's home of elite combat sports training and recovery. Book your free trial today.</p>
-      <div class="btns">
-        <a href="contact.html#form" class="btn btn-g">Book a Free Trial</a>
-        <a href="contact.html" class="btn btn-o">Contact Us</a>
-      </div>
+    <div class="article-cta">
+      <p class="cta-label">Ready to train?</p>
+      <h3 class="cta-title">Join Maddog Performance Institute</h3>
+      <p class="cta-sub">Ballito&rsquo;s premier fight gym and performance centre. Beginner or elite &mdash; there&rsquo;s a place for you here.</p>
+      <a href="booking.html" class="btn btn-g" style="padding:9px 18px;font-size:10px">Book Free Trial</a>
     </div>
 
-  </div>
-
-  <!-- RELATED LINKS — update hrefs and labels to suit each blog -->
-  <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border)">
-    <div style="font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px">Explore More</div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <a href="training.html" class="btn btn-o" style="padding:9px 18px;font-size:10px">Training Disciplines</a>
-      <a href="recovery.html" class="btn btn-o" style="padding:9px 18px;font-size:10px">Recovery Suite</a>
-      <a href="events.html" class="btn btn-o" style="padding:9px 18px;font-size:10px">All Articles</a>
-      <a href="contact.html#form" class="btn btn-g" style="padding:9px 18px;font-size:10px">Book Free Trial</a>
-    </div>
   </div>
 </div>
 
-<!-- SITE FOOTER — do not edit -->
+<!-- ══ SITE FOOTER ══ -->
 <footer class="site-footer">
   <div class="sf-main">
     <div class="sf-brand">
       <span class="sf-logo">Maddog Performance Institute</span>
-      <p>World Champion led, training in MMA, BJJ, Kickboxing, and Elite Personal Training with full Recovery facility in KZN North Coast.</p>
+      <p contenteditable="true">World Champion led, training in MMA, BJJ, Kickboxing, and Elite Personal Training with full Recovery facility in KZN North Coast.</p>
       <div class="sf-social">
-        <a href="https://www.instagram.com/maddogperformanceinstitute?igsh=MXIxOHF2a20yeWptZg==" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a>
-        <a href="https://www.facebook.com/share/1FUJm5Y3mZ/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
-        <a href="https://www.youtube.com/@maddogperformance" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg></a>
-        <a href="https://www.tiktok.com/@madogperformance?_r=1&_t=ZS-95yJGnUYN6K" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg></a>
+        <a href="https://www.instagram.com/maddogperformanceinstitute?igsh=MXIxOHF2a20yeWptZg==" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1FUJm5Y3mZ/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+        </a>
+        <a href="https://www.youtube.com/@maddogperformance" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
+        </a>
+        <a href="https://www.tiktok.com/@madogperformance?_r=1&amp;_t=ZS-95yJGnUYN6K" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+        </a>
       </div>
     </div>
     <div class="sf-col">
@@ -367,25 +319,19 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
     <div class="sf-col">
       <h4>Contact</h4>
       <a href="tel:+27634421690">+27 63 442 1690</a>
+      <a href="/cdn-cgi/l/email-protection#c2abaca4ad82afa3a6a6ada5b2a7b0a4adb0afa3aca1a7eca1adecb8a3"><span class="__cf_email__" data-cfemail="5e373038311e333f3a3a31392e3b2c38312c333f303d3b703d3170243f">[email&nbsp;protected]</span></a>
       <a href="contact.html">22 Sandra Rd, Balvista Centre, Ballito</a>
-      <a href="contact.html">Get in Touch</a>
     </div>
   </div>
   <div class="sf-bottom">
-    <p>&copy; 2026 Maddog Performance Institute &middot; All Rights Reserved</p>
-    <p>www.maddogperformance.co.za</p>
+    <p contenteditable="true">    </p><p contenteditable="true">© 2026 Maddog Performance Institute · All Rights Reserved</p>
+    <p contenteditable="true">www.maddogperformance.co.za</p>
   </div>
 </footer>
 
-<!-- WHATSAPP FLOAT — do not edit -->
-<div class="wa-float">
-  <span class="wa-label">Chat with us</span>
-  <a href="https://wa.me/27634421690" class="wa-btn" aria-label="WhatsApp Maddog Performance Institute" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
-  </a>
-</div>
 
 <script>
+
 function toggleSiteNav(){
   document.getElementById('siteNavHam').classList.toggle('open');
   document.getElementById('siteNavMob').classList.toggle('snm-open');
@@ -396,47 +342,351 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
-window._photoStore = {};
-function swapPhoto(slotId){
-  var inp=document.createElement('input');
-  inp.type='file';inp.accept='image/*';
-  inp.onchange=function(e){
-    var file=e.target.files[0];if(!file)return;
-    var reader=new FileReader();
-    reader.onload=function(ev){
-      var dataUrl=ev.target.result;
-      window._photoStore[slotId]=dataUrl;
-      var img=document.getElementById(slotId+'-img');
-      var slot=document.getElementById(slotId);
-      if(img){img.setAttribute('src',dataUrl);img.style.opacity='1';}
-      if(slot){slot.classList.add('loaded');var ov=slot.querySelector('.slot-overlay');if(ov)ov.style.display='none';}
+
+
+window._photoStore = window._photoStore || {};
+function swapPhoto(slotId) {
+  var inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = 'image/*';
+  inp.onchange = function(e) {
+    var file = e.target.files[0]; if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      var dataUrl = ev.target.result;
+      window._photoStore[slotId] = dataUrl;
+      var img  = document.getElementById(slotId + '-img');
+      var slot = document.getElementById(slotId);
+      if (img) {
+        img.setAttribute('src', dataUrl);
+        img.src = dataUrl;
+      }
+      if (slot) slot.classList.add('loaded');
+      enableReposition(slotId);
     };
     reader.readAsDataURL(file);
   };
   inp.click();
 }
-function savePage(fname){
-  Object.keys(window._photoStore).forEach(function(slotId){
-    var img=document.getElementById(slotId+'-img');
-    if(img){img.setAttribute('src',window._photoStore[slotId]);img.src=window._photoStore[slotId];}
+
+function enableReposition(slotId) {
+  var slot = document.getElementById(slotId);
+  var img  = document.getElementById(slotId + '-img');
+  if (!slot || !img) return;
+
+  function getSlotSize(cb) {
+    var w = slot.offsetWidth  || slot.getBoundingClientRect().width;
+    var h = slot.offsetHeight || slot.getBoundingClientRect().height;
+    if (w > 0 && h > 0) { cb(w, h); return; }
+    requestAnimationFrame(function() {
+      cb(slot.offsetWidth || 300, slot.offsetHeight || 300);
+    });
+  }
+
+  function init(slotW, slotH) {
+    var natW = img.naturalWidth, natH = img.naturalHeight;
+    if (!natW || !natH) { setTimeout(function(){ getSlotSize(init); }, 60); return; }
+
+    var slotAspect = slotW / slotH;
+
+    /* ── Build full-screen modal ─────────────────────────────────────── */
+    var modal = document.createElement('div');
+    modal.id = slotId + '-rpmodal';
+    modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:99999;' +
+      'display:flex;flex-direction:column;align-items:center;justify-content:center;' +
+      'font-family:\'Barlow Condensed\',sans-serif;';
+
+    /* Title */
+    var title = document.createElement('div');
+    title.style.cssText = 'color:#c9a84c;font-size:10px;font-weight:700;letter-spacing:.28em;' +
+      'text-transform:uppercase;margin-bottom:14px;text-align:center;';
+    title.textContent = 'REPOSITION PHOTO  ·  DRAG TO MOVE  ·  USE + / − TO ZOOM';
+    modal.appendChild(title);
+
+    /* Work area */
+    var pad = 80;
+    var areaW = Math.min(window.innerWidth  - pad, 860);
+    var areaH = Math.min(window.innerHeight - 160, 560);
+
+    /* Crop rectangle — same aspect ratio as the slot, fits comfortably in area */
+    var crW, crH;
+    if (slotAspect >= areaW / areaH) {
+      crW = areaW * 0.82; crH = crW / slotAspect;
+    } else {
+      crH = areaH * 0.82; crW = crH * slotAspect;
+    }
+    crW = Math.min(crW, areaW * 0.92);
+    crH = Math.min(crH, areaH * 0.92);
+
+    var area = document.createElement('div');
+    area.style.cssText = 'position:relative;overflow:hidden;background:#0a0a0a;cursor:grab;' +
+      'width:' + areaW + 'px;height:' + areaH + 'px;flex-shrink:0;';
+
+    /* Dark overlay outside crop rect (4 corner pieces via box-shadow trick) */
+    var shade = document.createElement('div');
+    var cropL = (areaW - crW) / 2, cropT = (areaH - crH) / 2;
+    shade.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:3;' +
+      'box-shadow: 0 0 0 ' + Math.max(areaW,areaH)*2 + 'px rgba(0,0,0,.62);' +
+      'left:' + cropL + 'px;top:' + cropT + 'px;' +
+      'width:' + crW + 'px;height:' + crH + 'px;';
+
+    /* Gold crop frame */
+    var frame = document.createElement('div');
+    frame.style.cssText = 'position:absolute;pointer-events:none;z-index:4;box-sizing:border-box;' +
+      'left:' + cropL + 'px;top:' + cropT + 'px;' +
+      'width:' + crW + 'px;height:' + crH + 'px;' +
+      'border:2px solid #c9a84c;';
+    /* Corner L-marks */
+    var cs = 14, ct = 3;
+    ['tl','tr','bl','br'].forEach(function(c) {
+      var mk = document.createElement('div');
+      var s = 'position:absolute;width:'+cs+'px;height:'+cs+'px;';
+      if (c==='tl') s+='top:-'+ct+'px;left:-'+ct+'px;border-top:'+ct+'px solid #c9a84c;border-left:'+ct+'px solid #c9a84c;';
+      if (c==='tr') s+='top:-'+ct+'px;right:-'+ct+'px;border-top:'+ct+'px solid #c9a84c;border-right:'+ct+'px solid #c9a84c;';
+      if (c==='bl') s+='bottom:-'+ct+'px;left:-'+ct+'px;border-bottom:'+ct+'px solid #c9a84c;border-left:'+ct+'px solid #c9a84c;';
+      if (c==='br') s+='bottom:-'+ct+'px;right:-'+ct+'px;border-bottom:'+ct+'px solid #c9a84c;border-right:'+ct+'px solid #c9a84c;';
+      mk.style.cssText = s;
+      frame.appendChild(mk);
+    });
+
+    /* The draggable image */
+    var mImg = document.createElement('img');
+    mImg.src = img.src;
+    mImg.draggable = false;
+    mImg.style.cssText = 'position:absolute;left:50%;top:50%;transform-origin:center center;' +
+      'max-width:none;pointer-events:none;user-select:none;-webkit-user-select:none;display:block;';
+
+    area.appendChild(mImg);
+    area.appendChild(shade);
+    area.appendChild(frame);
+    modal.appendChild(area);
+
+    /* ── State ────────────────────────────────────────────────────────── */
+    /* coverScale: image just covers the crop box (same as object-fit:cover) */
+    var coverScale  = Math.max(crW / natW, crH / natH);
+    var containScale = Math.min(crW / natW, crH / natH);
+    var minScale    = containScale * 0.4;   /* can pull way back to see context */
+    var maxScale    = coverScale * 5;
+    var dScale      = coverScale;           /* start covering the frame */
+    var panX = 0, panY = 0;
+    var dragging = false, startX, startY, startPX, startPY, lastPinch = 0;
+
+    function applyModal() {
+      var sw = natW * dScale, sh = natH * dScale;
+      mImg.style.width  = sw.toFixed(1) + 'px';
+      mImg.style.height = sh.toFixed(1) + 'px';
+      mImg.style.transform = 'translate(calc(-50% + ' + panX.toFixed(1) + 'px),' +
+        'calc(-50% + ' + panY.toFixed(1) + 'px))';
+    }
+    applyModal();
+
+    /* ── Controls ─────────────────────────────────────────────────────── */
+    var ctrl = document.createElement('div');
+    ctrl.style.cssText = 'display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap;justify-content:center;';
+
+    function mkBtn(label, bg, col, bdr) {
+      var b = document.createElement('button');
+      b.innerHTML = label;
+      b.style.cssText = 'background:' + bg + ';color:' + col + ';border:1px solid ' + bdr + ';' +
+        'font-family:\'Barlow Condensed\',sans-serif;font-size:11px;font-weight:700;' +
+        'letter-spacing:.2em;text-transform:uppercase;padding:10px 20px;cursor:pointer;min-width:44px;';
+      return b;
+    }
+
+    var zmOut = mkBtn('&#8722;', 'rgba(255,255,255,.07)', '#c9a84c', '#c9a84c');
+    zmOut.style.fontSize = '20px'; zmOut.style.padding = '6px 0'; zmOut.style.width = '40px';
+    var zmIn  = mkBtn('&#43;',  'rgba(255,255,255,.07)', '#c9a84c', '#c9a84c');
+    zmIn.style.fontSize = '20px';  zmIn.style.padding = '6px 0'; zmIn.style.width = '40px';
+    var zLabel = document.createElement('span');
+    zLabel.textContent = 'ZOOM';
+    zLabel.style.cssText = 'color:rgba(245,240,232,.4);font-size:9px;letter-spacing:.22em;text-transform:uppercase;padding:0 4px;';
+    var sep = document.createElement('div');
+    sep.style.cssText = 'width:1px;height:28px;background:rgba(255,255,255,.12);margin:0 6px;';
+    var cancelBtn = mkBtn('CANCEL', 'transparent', 'rgba(245,240,232,.45)', 'rgba(245,240,232,.2)');
+    var doneBtn   = mkBtn('&#10003; APPLY CROP', '#c9a84c', '#080808', '#c9a84c');
+
+    ctrl.appendChild(zmOut); ctrl.appendChild(zLabel); ctrl.appendChild(zmIn);
+    ctrl.appendChild(sep);
+    ctrl.appendChild(cancelBtn); ctrl.appendChild(doneBtn);
+    modal.appendChild(ctrl);
+    document.body.appendChild(modal);
+
+    /* ── Zoom ─────────────────────────────────────────────────────────── */
+    function zoomBy(f) {
+      dScale = Math.max(minScale, Math.min(maxScale, dScale * f));
+      applyModal();
+    }
+    zmOut.addEventListener('click', function(e){ e.stopPropagation(); zoomBy(0.83); });
+    zmIn.addEventListener('click',  function(e){ e.stopPropagation(); zoomBy(1.20); });
+
+    /* ── Drag ─────────────────────────────────────────────────────────── */
+    function onDown(cx, cy) { dragging=true; startX=cx; startY=cy; startPX=panX; startPY=panY; area.style.cursor='grabbing'; }
+    function onMove(cx, cy) { if(!dragging) return; panX=startPX+(cx-startX); panY=startPY+(cy-startY); applyModal(); }
+    function onUp()         { dragging=false; area.style.cursor='grab'; }
+
+    area.addEventListener('mousedown', function(e){ e.preventDefault(); onDown(e.clientX,e.clientY); });
+    var mmH = function(e){ onMove(e.clientX,e.clientY); };
+    var muH = function()  { onUp(); };
+    document.addEventListener('mousemove', mmH);
+    document.addEventListener('mouseup',   muH);
+
+    area.addEventListener('wheel', function(e){ e.preventDefault(); zoomBy(e.deltaY<0?1.06:0.94); }, {passive:false});
+
+    area.addEventListener('touchstart', function(e){
+      if(e.touches.length===1){ onDown(e.touches[0].clientX,e.touches[0].clientY); }
+      else if(e.touches.length===2){
+        var dx=e.touches[0].clientX-e.touches[1].clientX, dy=e.touches[0].clientY-e.touches[1].clientY;
+        lastPinch=Math.sqrt(dx*dx+dy*dy);
+      }
+    },{passive:true});
+    area.addEventListener('touchmove', function(e){
+      e.preventDefault();
+      if(e.touches.length===1){ onMove(e.touches[0].clientX,e.touches[0].clientY); }
+      else if(e.touches.length===2&&lastPinch){
+        var dx=e.touches[0].clientX-e.touches[1].clientX, dy=e.touches[0].clientY-e.touches[1].clientY;
+        var d=Math.sqrt(dx*dx+dy*dy); zoomBy(d/lastPinch); lastPinch=d;
+      }
+    },{passive:false});
+    area.addEventListener('touchend', function(e){ if(e.touches.length<2)lastPinch=0; if(e.touches.length===0)onUp(); });
+
+    /* ── Cleanup ──────────────────────────────────────────────────────── */
+    function closeModal() {
+      document.removeEventListener('mousemove', mmH);
+      document.removeEventListener('mouseup',   muH);
+      if (modal.parentNode) modal.parentNode.removeChild(modal);
+    }
+
+    /* ── Cancel ───────────────────────────────────────────────────────── */
+    cancelBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      closeModal();
+      /* Revert slot to empty state */
+      img.src = '';
+      img.removeAttribute('src');
+      img.style.cssText = '';
+      slot.classList.remove('loaded');
+      delete window._photoStore[slotId];
+    });
+
+    /* ── Apply crop ───────────────────────────────────────────────────── */
+    doneBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      closeModal();
+
+      var ratio  = slotW / crW;
+      var sScale = dScale * ratio;
+      var sPanX  = panX  * ratio;
+      var sPanY  = panY  * (slotH / crH);
+
+      if (true) { /* always use object-fit:cover — all slots are fluid */
+        /* ── Hero / full-coverage slot ─────────────────────────────────
+           These slots use inset:0 — any pixel gap is visible.
+           Keep object-fit:cover (guaranteed full coverage) and express
+           the user's crop as object-position + optional extra scale.   */
+        var cs   = Math.max(slotW / natW, slotH / natH); /* cover scale */
+        var imgW = natW * cs, imgH = natH * cs;
+
+        /* The image point the user centred in the crop box */
+        var cropCX = natW / 2 - panX / dScale;
+        var cropCY = natH / 2 - panY / dScale;
+
+        /* Convert to object-position percentages.
+           Formula: same as CSS background-position percentage logic.
+           offset = (box - img) * pct  =>  pct = (box/2 - cropC*cs) / (box - img)  */
+        var denomX = slotW - imgW, denomY = slotH - imgH;
+        var ox = Math.abs(denomX) < 1 ? 50 : (slotW / 2 - cropCX * cs) / denomX * 100;
+        var oy = Math.abs(denomY) < 1 ? 50 : (slotH / 2 - cropCY * cs) / denomY * 100;
+        ox = Math.max(0, Math.min(100, ox));
+        oy = Math.max(0, Math.min(100, oy));
+
+        /* Any zoom the user dialled in beyond the default cover scale */
+        var extraZoom = sScale / cs;
+        var tfm = extraZoom > 1.01 ? 'scale(' + extraZoom.toFixed(4) + ')' : 'none';
+
+        img.style.cssText =
+          'position:absolute!important;top:0!important;right:0!important;' +
+          'bottom:0!important;left:0!important;width:100%!important;height:100%!important;' +
+          'object-fit:cover!important;display:block!important;transition:none!important;' +
+          'object-position:' + ox.toFixed(2) + '% ' + oy.toFixed(2) + '%;' +
+          'transform:' + tfm + ';' +
+          'transform-origin:' + ox.toFixed(2) + '% ' + oy.toFixed(2) + '%;';
+
+      } else {
+        /* ── Regular photo slot ─────────────────────────────────────────
+           Fixed-size cards — use explicit pixel dimensions + transform.
+           Allows full pan and zoom range. Small background gaps from
+           deliberate zoom-out are expected and acceptable.              */
+        img.style.cssText =
+          'position:absolute!important;left:50%!important;top:50%!important;' +
+          'right:auto!important;bottom:auto!important;max-width:none!important;' +
+          'object-fit:fill!important;transform-origin:center center;' +
+          'z-index:1;display:block!important;transition:none!important;' +
+          'width:'  + (natW * sScale).toFixed(1) + 'px;' +
+          'height:' + (natH * sScale).toFixed(1) + 'px;' +
+          'transform:translate(calc(-50% + ' + sPanX.toFixed(1) + 'px),' +
+            'calc(-50% + ' + sPanY.toFixed(1) + 'px));';
+      }
+    });
+  }
+
+  getSlotSize(function(w,h){
+    if(img.complete && img.naturalWidth>0){ init(w,h); }
+    else{ img.addEventListener('load', function onL(){ img.removeEventListener('load',onL); init(w,h); }); }
   });
-  var cs=document.getElementById('credScroll');
-  if(cs)cs.style.transform='';
-  requestAnimationFrame(function(){
-    requestAnimationFrame(function(){
-      var html=document.documentElement.outerHTML;
-      var blob=new Blob([html],{type:'text/html'});
-      var a=document.createElement('a');
-      a.href=URL.createObjectURL(blob);
-      /* REPLACE: update filename to match this blog's filename */
-      a.download=fname||'blog-your-filename-here.html';
-      document.body.appendChild(a);a.click();document.body.removeChild(a);
+}
+
+function savePage(fname) {
+  /* Strip any open reposition UI before saving */
+  document.querySelectorAll('[id$="-rphint"],[id$="-rpdone"]').forEach(function(el){if(el.parentNode)el.parentNode.removeChild(el);});
+  Object.keys(window._photoStore).forEach(function(slotId) {
+    var img = document.getElementById(slotId + '-img');
+    if (img) { img.setAttribute('src', window._photoStore[slotId]); img.src = window._photoStore[slotId]; }
+  });
+  var cs = document.getElementById('credScroll');
+  if (cs) cs.style.transform = '';
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      var html = document.documentElement.outerHTML;
+      var blob = new Blob([html], {type: 'text/html'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = fname || location.pathname.split('/').pop() || 'maddog-blog.html';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function() { if (cs) cs.style.transform = ''; if (banner) banner.style.display = 'flex'; }, 500);
     });
   });
 }
 </script>
 
 <style>
+/* ── Blog-page fixes (injected) ── */
+
+/* Nav: remove double padding, fix mobile open state */
+.site-nav{padding:0!important}
+.site-nav-inner{padding:0 40px!important;max-width:1440px!important;width:100%!important;margin:0 auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+.site-nav-mobile.snm-open{right:0}
+
+/* Blog hero photo banner */
+.blog-page-hero{width:100%;height:400px;margin-top:60px;position:relative;overflow:hidden;background:var(--card,#111);display:block}
+.blog-page-hero .photo-slot,
+.blog-page-hero .blog-hero-slot{position:absolute;inset:0;height:100%;width:100%;overflow:hidden;cursor:pointer}
+.blog-page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.blog-page-hero .photo-slot.loaded img,
+.blog-page-hero .blog-hero-slot.loaded img{opacity:1}
+.blog-page-hero .photo-slot.loaded .slot-overlay,
+.blog-page-hero .blog-hero-slot.loaded .slot-overlay{opacity:0!important}
+@media(max-width:768px){.blog-page-hero{height:220px}}
+
+/* Reduce blog-hero top padding — photo section now handles nav clearance */
+.blog-hero{padding-top:20px!important}
+.article-wrap{padding-top:20px!important}
+@media(max-width:768px){.blog-hero{padding-top:14px!important}}
+
+/* Sticky footer */
+body{min-height:100vh;display:flex;flex-direction:column;padding-bottom:44px!important}
+footer.site-footer{margin-top:auto!important}
+section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{flex-shrink:0}
+
+/* Edit banner */
 .edit-banner{position:fixed!important;bottom:0!important;left:0!important;right:0!important;background:var(--gold,#C9A84C)!important;color:#080808!important;padding:9px 20px!important;font-size:10px!important;font-weight:700!important;letter-spacing:.18em!important;text-transform:uppercase!important;z-index:9999!important;display:flex!important;justify-content:center!important;align-items:center!important;gap:16px!important;flex-wrap:wrap!important}
 .edit-banner button{background:#080808!important;color:var(--gold,#C9A84C)!important;border:1px solid rgba(201,168,76,.4)!important;padding:5px 13px!important;font-size:9px!important;font-weight:700!important;letter-spacing:.13em!important;text-transform:uppercase!important;cursor:pointer!important;font-family:'Barlow Condensed',sans-serif!important}
 </style>
@@ -446,5 +696,4 @@ function savePage(fname){
   <button onclick="savePage()">💾 SAVE &amp; DOWNLOAD PAGE</button>
 </div>
 
-</body>
-</html>
+</body></html>
