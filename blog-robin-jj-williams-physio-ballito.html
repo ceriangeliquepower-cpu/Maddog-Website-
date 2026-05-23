@@ -160,11 +160,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
   .stats-strip{grid-template-columns:repeat(2,1fr)}
 }
 
-/* ── BLOG HERO PHOTO ── */
-.blog-page-hero{height:260px;margin-top:60px!important;position:relative;overflow:hidden;background:var(--deep)}
-.slot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(8,8,8,.55);gap:8px;transition:opacity .3s;pointer-events:none}
-.photo-slot.loaded .slot-overlay{display:none}
-.photo-slot:hover .slot-overlay{display:flex!important}
+/* ── BLOG HERO PHOTO — handled by injected block at end of file ── */
 .slot-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.6}
 .slot-icon{font-size:28px;opacity:.7}
 .slot-hint{position:absolute;bottom:10px;right:12px;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.4);background:rgba(0,0,0,.55);padding:4px 8px}
