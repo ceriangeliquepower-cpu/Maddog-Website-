@@ -677,10 +677,6 @@ function step1(){
             <div class="cat-arrow">→</div>
           </div>`).join('')}
       </div>
-      <div class="step-nav">
-        <div></div>
-        <button class="btn-bk btn-bk-gold" id="btn-next-1" ${!S.category?'disabled':''}>Continue →</button>
-      </div>
     </div>`
 }
 
@@ -727,9 +723,8 @@ function step2(){
       <div class="step-title">Select a service</div>
       <div class="step-sub">Choose what you'd like to book. All prices shown in South African Rand.</div>
       ${groupsHtml}
-      <div class="step-nav">
+      <div class="step-nav" style="justify-content:center">
         <button class="btn-bk btn-bk-outline" id="btn-back-2">← Back</button>
-        <button class="btn-bk btn-bk-gold" id="btn-next-2" ${!S.service?'disabled':''}>Continue →</button>
       </div>
     </div>`
 }
@@ -779,9 +774,8 @@ function step3(){
         <div class="date-grid">${dateHtml}</div>
       </div>
       <div id="slot-container">${slotHtml}</div>
-      <div class="step-nav">
+      <div class="step-nav" style="justify-content:center">
         <button class="btn-bk btn-bk-outline" id="btn-back-3">← Back</button>
-        <button class="btn-bk btn-bk-gold" id="btn-next-3" ${!(S.date&&S.time)?'disabled':''}>Continue →</button>
       </div>
     </div>`
 }
