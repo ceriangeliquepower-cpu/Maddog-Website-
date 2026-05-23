@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -159,6 +159,29 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
   .article-cta-box{padding:28px 20px}
   .stats-strip{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ── BLOG HERO PHOTO ── */
+.blog-page-hero{height:380px;margin-top:60px;position:relative;overflow:hidden;background:var(--deep)}
+.slot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(8,8,8,.55);gap:8px;transition:opacity .3s;pointer-events:none}
+.photo-slot.loaded .slot-overlay{display:none}
+.photo-slot:hover .slot-overlay{display:flex!important}
+.slot-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.6}
+.slot-icon{font-size:28px;opacity:.7}
+.slot-hint{position:absolute;bottom:10px;right:12px;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.4);background:rgba(0,0,0,.55);padding:4px 8px}
+@media(max-width:768px){.blog-page-hero{height:220px}}
+
+/* ── Nav dropdowns ── */
+.nav-has-dropdown{position:relative!important;display:inline-flex!important;align-items:center!important}
+.nav-has-dropdown>a{display:inline-flex!important;align-items:center!important;gap:3px!important;line-height:72px!important;padding:0 16px!important;white-space:nowrap!important}
+.nav-drop-chevron{font-size:8px!important;color:rgba(201,168,76,.5)!important;transition:transform .2s!important;margin-left:1px!important;font-style:normal!important}
+.nav-has-dropdown:hover .nav-drop-chevron{transform:rotate(180deg)!important;color:#c9a84c!important}
+.nav-drop-menu{display:none;position:absolute!important;top:60px!important;left:0!important;background:rgba(8,8,8,.98)!important;border:1px solid rgba(201,168,76,.2)!important;border-top:2px solid #c9a84c!important;min-width:160px!important;z-index:9001!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important}
+.nav-has-dropdown:hover .nav-drop-menu{display:block!important}
+.nav-drop-menu a{display:block!important;font-family:'Bebas Neue',sans-serif!important;font-size:14px!important;font-weight:400!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:rgba(245,240,232,.75)!important;padding:13px 20px!important;line-height:1!important;border-bottom:1px solid rgba(245,240,232,.06)!important;white-space:nowrap!important;transition:all .2s!important;text-decoration:none!important;box-shadow:none!important}
+.nav-drop-menu a:last-child{border-bottom:none!important}
+.nav-drop-menu a:hover{color:#c9a84c!important;background:rgba(201,168,76,.06)!important;box-shadow:none!important}
+.snm-sub{display:block!important;font-family:'Bebas Neue',sans-serif!important;font-size:17px!important;font-weight:400!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:rgba(245,240,232,.42)!important;padding:9px 0 9px 22px!important;border-bottom:1px solid rgba(245,240,232,.06)!important;transition:color .2s!important;text-decoration:none!important}
+.snm-sub:hover{color:#c9a84c!important}
 </style>
 </head>
 <body>
@@ -173,8 +196,8 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
     <div class="site-nav-links">
       <a href="index.html">Home</a>
       <a href="amanda.html">Amanda</a>
-      <a href="recovery.html">Recovery</a>
-      <a href="training.html">Training</a>
+      <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="pricing.html">Pricelist</a></div></div>
+      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="training.html#schedule">Class Schedule</a></div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
       <a href="events.html" class="active">Events</a>
@@ -190,7 +213,9 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
   <a href="index.html">Home</a>
   <a href="amanda.html">Amanda</a>
   <a href="recovery.html">Recovery</a>
+  <a href="pricing.html" class="snm-sub">&#8627; Pricelist</a>
   <a href="training.html">Training</a>
+  <a href="training.html#schedule" class="snm-sub">&#8627; Class Schedule</a>
   <a href="coaches.html">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
@@ -216,6 +241,15 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
   </div>
 </div>
 
+
+<!-- BLOG HERO PHOTO -->
+<section class="blog-page-hero">
+  <div class="photo-slot" id="blogHero" onclick="swapPhoto('blogHero')" style="cursor:pointer;position:relative;height:100%;overflow:hidden;background:var(--deep)">
+    <img id="blogHero-img" src="" alt="" width="1200" height="380" style="width:100%;height:100%;object-fit:cover;display:none" loading="eager">
+    <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Hero Photo</span></div>
+    <div class="slot-hint">Click to upload</div>
+  </div>
+</section>
 <!-- BLOG HERO -->
 <section class="blog-hero">
   <div class="bh-inner">
@@ -426,7 +460,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
       <a href="events.html">Events</a>
-      <a href="recovery.html">Recovery</a>
+      <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="pricing.html">Pricelist</a></div></div>
     </div>
     <div class="sf-col">
       <h4>Contact</h4>
@@ -460,5 +494,46 @@ document.addEventListener('click',function(e){
   }
 });
 </script>
+
+<script>
+window._photoStore = {};
+function swapPhoto(slotId){
+  var inp=document.createElement('input');
+  inp.type='file';inp.accept='image/*';
+  inp.onchange=function(){
+    var file=inp.files[0];
+    if(!file)return;
+    var reader=new FileReader();
+    reader.onload=function(e){
+      var slot=document.getElementById(slotId);
+      var img=document.getElementById(slotId+'-img');
+      if(img){img.src=e.target.result;img.style.display='block';}
+      if(slot){slot.classList.add('loaded');window._photoStore[slotId]=e.target.result;}
+    };
+    reader.readAsDataURL(file);
+  };
+  inp.click();
+}
+function savePage(fname){
+  Object.keys(window._photoStore).forEach(function(slotId){
+    var img=document.getElementById(slotId+'-img');
+    if(img)img.setAttribute('src',window._photoStore[slotId]);
+  });
+  var blob=new Blob([document.documentElement.outerHTML],{type:'text/html'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=fname||location.pathname.split('/').pop()||'page.html';
+  a.click();
+}
+</script>
+
+<style>
+.edit-banner{position:fixed!important;bottom:0!important;left:0!important;right:0!important;background:var(--gold,#C9A84C)!important;color:#080808!important;padding:9px 20px!important;font-size:10px!important;font-weight:700!important;letter-spacing:.18em!important;text-transform:uppercase!important;z-index:9999!important;display:flex!important;justify-content:center!important;align-items:center!important;gap:16px!important;flex-wrap:wrap!important}
+.edit-banner button{background:#080808!important;color:var(--gold,#C9A84C)!important;border:1px solid rgba(201,168,76,.4)!important;padding:5px 13px!important;font-size:9px!important;font-weight:700!important;letter-spacing:.13em!important;text-transform:uppercase!important;cursor:pointer!important;font-family:'Barlow Condensed',sans-serif!important}
+</style>
+<div class="edit-banner" id="eb">
+  CLICK ANY IMAGE TO UPLOAD &nbsp;&middot;&nbsp; ALL TEXT IS EDITABLE &mdash; CLICK TO TYPE
+  <button onclick="savePage()">&#128190; SAVE &amp; DOWNLOAD PAGE</button>
+</div>
 </body>
 </html>
