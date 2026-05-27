@@ -56,7 +56,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:300;overflow-x:hidden;padding-bottom:44px}
+body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:300;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.35}
 
 /* ── NAV ── */
@@ -180,8 +180,6 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 /* Event body */
 .ec-body{
   padding:20px 28px;
-  display:flex;
-  flex-direction:column;
   justify-content:center;
   gap:4px;
 }
@@ -698,7 +696,7 @@ blockquote, .pull-quote {
 .bc-img{position:relative;height:220px;overflow:hidden;flex-shrink:0}
 .bc-img .photo-slot{height:220px !important;width:100% !important}
 .bc-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--card));z-index:1;pointer-events:none}
-.bc-body{padding:20px 24px 24px;display:flex;flex-direction:column;flex:1}
+.bc-body{padding:20px 24px 24px;flex:1}
 .bc-cat{font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .bc-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.03em;color:var(--white);line-height:1.05;margin-bottom:10px}
 .bc-text,.bc-excerpt{font-family:'Barlow Condensed',sans-serif!important;font-style:normal!important;font-size:14px;font-weight:300;color:var(--white-dim);line-height:1.65;flex:1}
@@ -761,7 +759,7 @@ footer.site-footer *{box-sizing:border-box !important}
 html { -webkit-text-size-adjust: 100%; }
 
 @media(max-width:768px){
-  body { overflow-x: hidden !important; padding-bottom: env(safe-area-inset-bottom, 44px) !important; }
+  body { overflow-x: hidden !important;  }
   .site-nav-links { display: none !important; }
   .site-nav-cta   { display: none !important; }
   .site-nav-hamburger { display: flex !important; }
@@ -1702,7 +1700,7 @@ function savePage(fname) {
 
 <style>
 /* ── Sticky footer + standardised edit banner ── */
-body{min-height:100vh;display:flex;flex-direction:column;padding-bottom:44px}
+body{min-height:100vh}
 
 .edit-banner,.save-banner{display:none!important}
 
