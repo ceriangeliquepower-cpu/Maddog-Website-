@@ -144,9 +144,6 @@ nav:not(.site-nav){display:none!important}
 .hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block!important}
 .hero-right.loaded img{display:block}
 .hero-right::after{content:'';position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to top,rgba(8,8,8,.4),transparent);pointer-events:none;z-index:1}
-.hero-slot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--card);cursor:pointer;transition:opacity .3s}
-.hero-right.loaded .hero-slot-overlay{opacity:0!important;pointer-events:none!important;display:none!important}
-.hero-slot-hint{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.45}
 .hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .hero-eyebrow::before{content:'';display:block;width:30px;height:1px;background:var(--gold);flex-shrink:0}
 .hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4.5vw,68px);line-height:.92;letter-spacing:.02em;color:var(--white);margin-bottom:10px;font-style:normal;display:block}
@@ -287,8 +284,8 @@ body.edit-mode []:not(:focus){outline:1px dashed rgba(201,168,76,.18);outline-of
   nav:not(.site-nav){padding:16px 24px}
   .si{padding:0 24px}
   .hero{grid-template-columns:1fr;height:auto}
-  .hero-right{display:block;width:100%;height:56vw;min-height:240px;max-height:360px;order:1;position:relative}
-  .hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .hero-right{display:block;width:100%;height:65vw;min-height:260px;max-height:420px;order:1;position:relative}
+  .hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
   .hero-right.loaded img{display:block}
   
   .hero-left::after{display:none}
@@ -302,7 +299,7 @@ body.edit-mode []:not(:focus){outline:1px dashed rgba(201,168,76,.18);outline-of
   .pkg-grid{grid-template-columns:1fr 1fr}
   .safety-photo{height:280px}
   .gallery-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .gm1,.gm5{grid-column:auto;grid-row:auto}
+  .gm1,.gm2,.gm3,.gm4,.gm5,.gm6{grid-column:auto!important;grid-row:auto!important}
   .gallery-mosaic .photo-slot{height:200px}
 }
 @media(max-width:640px){
@@ -394,7 +391,7 @@ blockquote, .pull-quote {
   /* Section padding */
   .who,.pillars,.amanda-block,.facility,.testimonials,
   .news,.amanda-feature,.coaches-sec,.contact-main,
-  .disc-block,.pt-section,.recovery-main,.events-main{padding:56px 0!important}
+  .disc-block,.pt-section,.recovery-main,.events-main{padding:32px 0!important}
 
   /* Text inside sections */
   .amanda-text-col{padding:32px 20px!important;border-left:none!important;border-top:3px solid var(--gold)!important}
@@ -411,6 +408,8 @@ blockquote, .pull-quote {
 
   /* Recovery */
   .rec-grid,.service-grid{grid-template-columns:1fr!important}
+  #slim-p{min-height:260px!important;max-height:260px!important}
+  #slim-p img{object-position:center top!important}
 
   /* Events */
   .events-grid,.result-grid{grid-template-columns:1fr!important}
@@ -590,11 +589,6 @@ blockquote, .pull-quote {
   object-position: center !important;
   display: block !important;
   z-index: 1 !important;
-}
-.hero-right.loaded .hero-slot-overlay,
-.hero-right.loaded .hero-slot-hint {
-  display: none !important;
-  opacity: 0 !important;
 }
 @media(max-width:768px) {
   .hero {
@@ -994,14 +988,8 @@ document.addEventListener('click',function(e){
   </div>
 
   <!-- HERO PHOTO -->
-  <div class="hero-right loaded" id="heroRight" style="cursor:pointer">
-    <img id="heroRight-img" src="images/be351874bee0918d.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-    <div class="hero-slot-overlay">
-      
-      <span style="font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim)">Hero Photo — Recovery Suite</span>
-      <span style="font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--white-dim);opacity:.3">IV drip, cold plunge, or sauna shot works best</span>
-    </div>
-    <div class="hero-slot-hint">Click to upload</div>
+  <div class="hero-right loaded" id="heroRight">
+    <img id="heroRight-img" src="images/be351874bee0918d.png" alt="Maddog Performance Institute recovery suite" style="position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important;display:block!important;">
   </div>
 </section>
 

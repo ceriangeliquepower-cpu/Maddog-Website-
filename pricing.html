@@ -191,7 +191,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .pkg-list li::before{content:'◆';color:var(--gold);font-size:7px;margin-top:5px;flex-shrink:0}
 .pkg-cta{display:block;text-align:center;font-family:'Barlow Condensed';font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:12px;background:var(--gold);color:var(--black);text-decoration:none;transition:background .2s}
 .pkg-cta:hover{background:var(--gold-light)}
-@media(max-width:768px){.pkg-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.pkg-grid{grid-template-columns:1fr;width:100%;overflow-x:hidden}}
 
 /* ── PAYFAST BUTTON ── */
 .payfast-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#080808;font-family:'Barlow Condensed';font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:11px 24px;border:none;cursor:pointer;text-decoration:none;transition:background .2s}
@@ -278,7 +278,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .proto-section{padding:60px 20px}
   .qr-section{padding:60px 20px}
   .contrast-grid{grid-template-columns:1fr;gap:40px}
-  .inbody-grid{grid-template-columns:1fr}
+  .inbody-grid{grid-template-columns:1fr!important}
   .form-section{padding:60px 20px}
 }
 
@@ -626,7 +626,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <div class="menu-price">R500</div>
       </div>
     </div>
-    <div class="inbody-grid" style="grid-template-columns:1fr 1fr 1fr">
+    <div class="inbody-grid" style="grid-template-columns:repeat(3,1fr)">
       <div class="inbody-card">
         <div class="inbody-price">R165</div>
         <div class="inbody-name">InBody Drop-In Assessment</div>
