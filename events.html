@@ -82,7 +82,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .menu-overlay.open{opacity:1;pointer-events:all}
 
 /* ── PHOTO SLOTS ── */
-.photo-slot{position:relative;overflow:hidden;cursor:pointer;background:var(--card);display:block}
+.photo-slot{position:relative;overflow:hidden;cursor:default;background:var(--card);display:block}
 .photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
 .photo-slot.loaded img{display:block}
 .photo-slot:hover img{transform:scale(1.04)}
@@ -867,7 +867,7 @@ html { -webkit-text-size-adjust: 100%; }
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>html{height:100%}body{min-height:100%;display:flex;flex-direction:column}main{flex:1 0 auto}footer.site-footer{flex-shrink:0}</style></head>
 <body data-pid="events">
 <!-- EDIT BANNER -->
 
@@ -937,8 +937,8 @@ document.addEventListener('click',function(e){
       <div class="hero-featured">
         <div class="photo-slot loaded" id="featPhoto" style="height:100%">
           <img id="featPhoto-img" src="images/6029c93fa5223e45.jpg" alt="Maddog Performance Institute" style="object-position: 50% 33.15%; transform: none; transform-origin: 50% 33.15%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Featured Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div>
       </div>
       <div class="hero-feat-body">
@@ -987,8 +987,8 @@ document.addEventListener('click',function(e){
       <div class="bf-photo">
         <div class="photo-slot loaded" id="bf1" style="height:100%;min-height:400px">
           <img loading="lazy" id="bf1-img" src="images/0f43391c0ea8f9cc.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Featured Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div>
       </div>
       <div class="bf-body">
@@ -1007,8 +1007,8 @@ document.addEventListener('click',function(e){
       <div class="blog-card" id="bp1">
         <div class="bc-img"><div class="photo-slot loaded" id="bp1-p" style="height:100%">
           <img loading="lazy" id="bp1-p-img" src="images/dc0febc838c17a34.png" alt="Maddog Performance Institute" style="object-position: 50% 62.05%; transform: none; transform-origin: 50% 62.05%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Recovery</span>
@@ -1024,8 +1024,8 @@ document.addEventListener('click',function(e){
       <div class="blog-card" id="bp2">
         <div class="bc-img"><div class="photo-slot loaded" id="bp2-p" style="height:100%">
           <img loading="lazy" id="bp2-p-img" src="images/7e0ebaca37cb0b0d.jpg" alt="Maddog Performance Institute" style="object-position: 50% 62.56%; transform: none; transform-origin: 50% 62.56%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">BJJ</span>
@@ -1041,8 +1041,8 @@ document.addEventListener('click',function(e){
       <div class="blog-card" id="bp3">
         <div class="bc-img"><div class="photo-slot loaded" id="bp3-p" style="height:100%">
           <img loading="lazy" id="bp3-p-img" src="images/ee726b7eb932fd0f.jpg" alt="Maddog Performance Institute" style="object-position: 50% 34.39%; transform: none; transform-origin: 50% 34.39%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Strength Training</span>
@@ -1058,8 +1058,8 @@ document.addEventListener('click',function(e){
       <div class="blog-card" id="bp4">
         <div class="bc-img"><div class="photo-slot loaded" id="bp4-p" style="height:100%">
           <img loading="lazy" id="bp4-p-img" src="images/7991b5c3daca0ae8.jpg" alt="Maddog Performance Institute" style="object-position: 50% 61.98%; transform: none; transform-origin: 50% 61.98%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Recovery</span>
@@ -1075,8 +1075,8 @@ document.addEventListener('click',function(e){
       <div class="blog-card" id="bp5">
         <div class="bc-img"><div class="photo-slot loaded" id="bp5-p" style="height:100%">
           <img loading="lazy" id="bp5-p-img" src="images/56415a59e45aee3c.jpg" alt="Maddog Performance Institute" style="object-position: 50% 13.09%; transform: none; transform-origin: 50% 13.09%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">MMA</span>
@@ -1092,8 +1092,8 @@ document.addEventListener('click',function(e){
       <div class="blog-card" id="bp7">
         <div class="bc-img"><div class="photo-slot loaded" id="bp7-p" style="height:100%">
           <img id="bp7-p-img" src="images/1d6b750daaadfa1f.png" alt="Amanda Kobus Strength Coach Ballito" width="400" height="240" style="object-position: 50% 17.37%; transform: none; transform-origin: 50% 17.37%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Coach Spotlight</span>
@@ -1110,8 +1110,8 @@ document.addEventListener('click',function(e){
       <div class="blog-card" id="bp8">
         <div class="bc-img"><div class="photo-slot loaded" id="bp8-p" style="height:100%">
           <img id="bp8-p-img" src="images/1cfa230fff6f910e.jpg" alt="Robin JJ Williams Sports Physiotherapist Ballito" width="400" height="240" style="object-position: 50% 32.1%; transform: none; transform-origin: 50% 32.1%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Physiotherapy</span>
@@ -1127,8 +1127,8 @@ document.addEventListener('click',function(e){
       <div class="blog-card" id="bp6">
         <div class="bc-img"><div class="photo-slot loaded" id="bp6-p" style="height:100%">
           <img id="bp6-p-img" alt="Youth MMA and BJJ training at Maddog Performance Institute Ballito" width="400" height="260" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="images/377b1dcdff076e0b.jpg">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Post Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Youth &amp; Family</span>

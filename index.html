@@ -158,7 +158,7 @@ a{text-decoration:none;color:inherit}
 .btn-o:hover{border-color:var(--gold);color:var(--gold)}
 
 /* ── PHOTO SLOTS ── */
-.photo-slot{position:relative;overflow:hidden;cursor:pointer;background:var(--card);display:block}
+.photo-slot{position:relative;overflow:hidden;cursor:default;background:var(--card);display:block}
 .photo-slot img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .6s ease}
 .photo-slot.loaded img{display:block}
 .photo-slot:hover img{transform:scale(1.04)}
@@ -622,7 +622,7 @@ html { -webkit-text-size-adjust: 100%; }
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>html{height:100%}body{min-height:100%;display:flex;flex-direction:column}main{flex:1 0 auto}footer.site-footer{flex-shrink:0}</style></head>
 <body data-pid="home">
 <!-- ══ SITE NAV ══ -->
 <nav class="site-nav" id="siteNav">
@@ -687,9 +687,9 @@ document.addEventListener('click',function(e){
   </div>
   <div class="hero-right photo-slot loaded" id="heroRight">
     <img id="heroRight-img" src="images/a3a25681a529a82a.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
-    <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Hero Photo</span></div>
-    <div class="slot-hint">Click to upload</div>
-    <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+    
+    
+    
   </div>
 </section>
 
@@ -731,16 +731,16 @@ document.addEventListener('click',function(e){
       </div>
       <div class="who-photos">
         <div class="photo-slot wp1 loaded" id="wp1" style="height:100%">
-          <img loading="lazy" id="wp1-img" src="images/939124f829258bf2.png" alt="Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 336px; height: 448px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Photo 1</span></div><div class="slot-hint">Click to upload</div>
-          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+          <img loading="lazy" id="wp1-img" src="images/939124f829258bf2.png" alt="Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 336px; height: 448px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
+          
         </div>
         <div class="photo-slot loaded" id="wp2" style="height:100%">
-          <img loading="lazy" id="wp2-img" src="images/3ead085366334421.png" alt="Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 252px; height: 378.6px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Photo 2</span></div><div class="slot-hint">Click to upload</div>
-          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+          <img loading="lazy" id="wp2-img" src="images/3ead085366334421.png" alt="Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 252px; height: 378.6px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
+          
         </div>
         <div class="photo-slot loaded" id="wp3" style="height:100%">
-          <img loading="lazy" id="wp3-img" src="images/a7955da033cb8e1e.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;"><div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Photo 3</span></div><div class="slot-hint">Click to upload</div>
-          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+          <img loading="lazy" id="wp3-img" src="images/a7955da033cb8e1e.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
+          
         </div>
       </div>
     </div>
@@ -785,9 +785,9 @@ document.addEventListener('click',function(e){
       <div class="amanda-photo-col">
         <div class="photo-slot loaded" id="amandaHome">
           <img loading="lazy" id="amandaHome-img" src="images/a86778b0e1cc3b10.jpg" alt="Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 552px; height: 735.4px; transform: translate(calc(-50% + 0px), calc(-50% - 29.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Amanda Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
-          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+          
+          
+          
         </div>
       </div>
       <div class="amanda-text-col">
@@ -891,10 +891,7 @@ document.addEventListener('click',function(e){
       <div class="mod-photo reveal visible">
         <div class="photo-slot loaded" id="corpPhoto" style="height:100%;min-height:440px">
           <img loading="lazy" id="corpPhoto-img" src="images/d79b065f3e1593b2.png" alt="Corporate Team Building" style="transform-origin: center center; z-index: 1; width: 552px; height: 829.3px; transform: translate(calc(-50% + 0px), calc(-50% - 102.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay">
-            <span class="slot-icon">📷</span>
-            <span style="font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim)">Click to upload photo</span>
-          </div>
+          
         </div>
       </div>
       <div class="mod-text reveal rd1 visible" style="background:var(--card)">
@@ -920,10 +917,7 @@ document.addEventListener('click',function(e){
       <div class="mod-photo reveal visible">
         <div class="photo-slot loaded" id="recoverySuitePhoto" style="height:100%;min-height:440px;background:var(--card)">
           <img loading="lazy" id="recoverySuitePhoto-img" src="images/6ce95be78d2ab9a3.png" alt="Maddog Recovery Suite" style="transform-origin: center center; z-index: 1; width: 552px; height: 829.3px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay">
-            <span class="slot-icon">📷</span>
-            <span style="font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim)">Click to upload photo</span>
-          </div>
+          
         </div>
       </div>
       <div class="mod-text reveal rd1 visible" style="background:var(--deep)">
@@ -990,7 +984,7 @@ document.addEventListener('click',function(e){
         <div class="nc-img">
           <div class="photo-slot loaded" id="blog1">
             <img loading="lazy" id="blog1-img" src="images/0f43391c0ea8f9cc.jpg" alt="Blog post photo" style="transform-origin: center center; z-index: 1; width: 551px; height: 385.7px; transform: translate(calc(-50% + 0px), calc(-50% + 32px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><div class="slot-icon">+</div></div>
+            </div>
           </div>
         </div>
         <div class="nc-body">
@@ -1006,7 +1000,7 @@ document.addEventListener('click',function(e){
         <div class="nc-img">
           <div class="photo-slot loaded" id="blog2">
             <img loading="lazy" id="blog2-img" src="images/6029c93fa5223e45.jpg" alt="Blog post photo" style="transform-origin: center center; z-index: 1; width: 551px; height: 721.5px; transform: translate(calc(-50% + 1.6px), calc(-50% + 125px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><div class="slot-icon">+</div></div>
+            </div>
           </div>
         </div>
         <div class="nc-body">

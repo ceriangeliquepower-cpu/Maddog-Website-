@@ -331,7 +331,7 @@ footer.site-footer *{box-sizing:border-box!important}
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>html{height:100%}body{min-height:100%;display:flex;flex-direction:column}main{flex:1 0 auto}footer.site-footer{flex-shrink:0}</style></head>
 <body>
 
 <!-- NAV -->
@@ -683,8 +683,8 @@ function step1(){
       <div class="cat-grid">
         ${CATEGORIES.map(c=>`
           <div class="cat-card${S.category===c.id?' selected':''}" data-cat="${c.id}">
-            <div class="gc tl"></div>
-            <div class="gc br"></div>
+            
+            
             <div class="cat-card-icon">${c.icon}</div>
             <div class="cat-card-body">
               <div class="cat-name">${c.label}</div>

@@ -120,7 +120,7 @@ nav:not(.site-nav){display:none!important}
 .menu-overlay.open{opacity:1;pointer-events:all}
 
 /* ── PHOTO SLOTS ── */
-.photo-slot{position:relative;overflow:hidden;cursor:pointer;background:var(--card);display:block}
+.photo-slot{position:relative;overflow:hidden;cursor:default;background:var(--card);display:block}
 .photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
 .photo-slot.loaded img{display:block}
 .photo-slot:hover img{transform:scale(1.04)}
@@ -863,7 +863,7 @@ html { -webkit-text-size-adjust: 100%; }
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>html{height:100%}body{min-height:100%;display:flex;flex-direction:column}main{flex:1 0 auto}footer.site-footer{flex-shrink:0}</style></head>
 <body data-pid="recovery">
 <!-- ══ SITE NAV ══ -->
 <nav class="site-nav" id="siteNav">
@@ -1052,10 +1052,10 @@ document.addEventListener('click',function(e){
       </div>
       <div class="safety-photo reveal rd2 visible">
         <div class="photo-slot loaded" id="safety-p" style="height:100%">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="safety-p-img" src="images/9743e36e23c692dd.jpg" alt="Maddog Performance Institute" style="object-position: 50% 19.25%; transform: none; transform-origin: 50% 19.25%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-label">Nurse / Clinical Photo</span></div>
-          <div class="slot-hint">Click to upload</div>
+          
+          
         </div>
       </div>
     </div>
@@ -1071,10 +1071,10 @@ document.addEventListener('click',function(e){
       <!-- PHOTO -->
       <div class="af-photo">
         <div class="photo-slot loaded" id="robin-recovery-p" style="height:100%;min-height:520px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img id="robin-recovery-p-img" src="images/68ae46bbeb5b0faf.jpg" alt="Robin JJ Williams, Sports Physiotherapist at Maddog Performance Institute" width="600" height="520" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-label">Robin Photo</span></div>
-          <div class="slot-hint">Click to upload photo</div>
+          
+          
         </div>
       </div>
 
@@ -1143,10 +1143,10 @@ document.addEventListener('click',function(e){
       <!-- PHOTO -->
       <div class="af-photo">
         <div class="photo-slot loaded" id="doctor-p" style="height:100%;min-height:520px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img id="doctor-p-img" src="images/b8df29a36d819f3f.jpg" alt="Specialist Doctor at Maddog Performance Institute" width="600" height="520" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-label">Doctor Photo</span></div>
-          <div class="slot-hint">Click to upload photo</div>
+          
+          
         </div>
       </div>
 
@@ -1169,20 +1169,20 @@ document.addEventListener('click',function(e){
       <div class="reveal rd2 visible">
         <div class="intro-photo-stack">
           <div class="photo-slot ps1 loaded" id="intro1" style="height:100%">
-            <div class="gc tl"></div><div class="gc br"></div>
+            
             <img loading="lazy" id="intro1-img" src="images/28539ade7406b8c3.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-label">Recovery Suite Photo</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
           <div class="photo-slot loaded" id="intro2" style="height:100%">
             <img loading="lazy" id="intro2-img" src="images/338ca4ed6d28357d.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-label">IV / Nurse Photo</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
           <div class="photo-slot loaded" id="intro3" style="height:100%">
             <img loading="lazy" id="intro3-img" src="images/fa4715beb5e81b54.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-label">Suite Detail</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
         </div>
       </div>
@@ -1199,10 +1199,10 @@ document.addEventListener('click',function(e){
       <div class="mod-grid">
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="iv-p" style="height:100%;min-height:440px">
-            <div class="gc tl"></div><div class="gc br"></div>
+            
             <img loading="lazy" id="iv-p-img" src="images/060c7ff9ee4b77e8.png" alt="Maddog Performance Institute" style="object-position: 18.66% 50%; transform: none; transform-origin: 18.66% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-label">IV Drip Photo</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
         </div>
         <div class="mod-text reveal rd1 visible">          <span class="mod-tag">Medical-Grade Hydration &amp; Recovery</span>
@@ -1268,10 +1268,10 @@ document.addEventListener('click',function(e){
       <div class="mod-grid rev">
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="sauna-p" style="height:100%;min-height:440px">
-            <div class="gc tl"></div><div class="gc br"></div>
+            
             <img loading="lazy" id="sauna-p-img" src="images/17b3af7fce510c6d.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-label">Infrared Sauna Photo</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
         </div>
         <div class="mod-text reveal rd1 visible">          <span class="mod-tag">Deep Tissue Recovery &amp; Detox</span>
@@ -1323,10 +1323,10 @@ document.addEventListener('click',function(e){
       <div class="mod-grid">
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="cp-p" style="height:100%;min-height:440px">
-            <div class="gc tl"></div><div class="gc br"></div>
+            
             <img loading="lazy" id="cp-p-img" src="images/dc0febc838c17a34.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-label">Cold Plunge Photo</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
         </div>
         <div class="mod-text reveal rd1 visible">          <span class="mod-tag">Cold Water Immersion · Inflammation Control</span>
@@ -1378,10 +1378,10 @@ document.addEventListener('click',function(e){
       <div class="mod-grid rev">
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="pep-p" style="height:100%;min-height:440px">
-            <div class="gc tl"></div><div class="gc br"></div>
+            
             <img loading="lazy" id="pep-p-img" src="images/fa4715beb5e81b54.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-label">Peptides / Clinical Photo</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
         </div>
         <div class="mod-text reveal rd1 visible">          <span class="mod-tag">Advanced Performance Medicine</span>
@@ -1409,10 +1409,10 @@ document.addEventListener('click',function(e){
       <div class="mod-grid">
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="slim-p" style="height:100%;min-height:480px">
-            <div class="gc tl"></div><div class="gc br"></div>
+            
             <img loading="lazy" id="slim-p-img" src="images/73bd4cee26153514.png" alt="Slimming Clinic Ballito" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-label">Slimming Clinic Photo</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
         </div>
         <div class="mod-text reveal rd1 visible">
@@ -1459,10 +1459,10 @@ document.addEventListener('click',function(e){
       <div class="mod-grid rev">
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="aes-p" style="height:100%;min-height:480px">
-            <div class="gc tl"></div><div class="gc br"></div>
+            
             <img loading="lazy" id="aes-p-img" alt="Aesthetic Wellness IV Therapy Ballito" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="images/060ab243a30870d5.jpg">
-            <div class="slot-overlay"><span class="slot-label">Aesthetic &amp; Wellness Photo</span></div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
         </div>
         <div class="mod-text reveal rd1 visible">
@@ -1573,35 +1573,35 @@ document.addEventListener('click',function(e){
     <h2 class="sec-h reveal rd1 visible">Inside The<br><em>Recovery Suite.</em></h2>
     <div class="gallery-mosaic reveal visible">
       <div class="photo-slot gm1 loaded" id="g1">
-        <div class="gc tl"></div>
+        
         <img loading="lazy" id="g1-img" src="images/17b3af7fce510c6d.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-        <div class="slot-overlay"><span class="slot-label">Gallery — Tall</span></div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
       <div class="photo-slot gm2 loaded" id="g2">
         <img loading="lazy" id="g2-img" src="images/d9490341556a093d.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-        <div class="slot-overlay"><span class="slot-label">Gallery 2</span></div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
       <div class="photo-slot gm3 loaded" id="g3">
         <img loading="lazy" id="g3-img" src="images/be351874bee0918d.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-        <div class="slot-overlay"><span class="slot-label">Gallery 3</span></div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
       <div class="photo-slot gm4 loaded" id="g4">
         <img loading="lazy" id="g4-img" src="images/2432e1b5fe4ed672.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-        <div class="slot-overlay"><span class="slot-label">Gallery 4</span></div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
       <div class="photo-slot gm5 loaded" id="g5">
         <img loading="lazy" id="g5-img" src="images/02b8a2abefcd96b2.png" alt="Maddog Performance Institute" style="object-position: 50% 72.12%; transform: none; transform-origin: 50% 72.12%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-        <div class="slot-overlay"><span class="slot-label">Gallery — Wide</span></div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
       <div class="photo-slot gm6 loaded" id="g6">
         <img loading="lazy" id="g6-img" src="images/7991b5c3daca0ae8.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-        <div class="slot-overlay"><span class="slot-label">Gallery 6</span></div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
     </div>
   </div>

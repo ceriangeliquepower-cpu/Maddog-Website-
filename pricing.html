@@ -148,7 +148,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .cred-item::after{content:'◆';font-size:7px;opacity:.4}
 
 /* ── PHOTO SLOT ── */
-.photo-slot{position:relative;overflow:hidden;cursor:pointer;background:var(--card)}
+.photo-slot{position:relative;overflow:hidden;cursor:default;background:var(--card)}
 .photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .3s}
 .photo-slot.loaded img{opacity:1}
 #heroBg.loaded img{opacity:1!important}
@@ -412,8 +412,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div class="clinician-grid">
       <div class="clinician-photo photo-slot loaded" id="amandaKobusPhoto" title="Click to upload photo" role="button" aria-label="Upload Sister Amanda Wren Kobus photo">
         <img src="images/9743e36e23c692dd.jpg" alt="Sister Amanda Wren Kobus — Registered Nurse Practitioner at Maddog Performance Institute" width="280" height="340" loading="lazy">
-        <div class="slot-overlay">
-          <div class="slot-icon">+</div>
+        
           <div class="slot-label">Upload Sister Amanda's Photo</div>
         </div>
       </div>

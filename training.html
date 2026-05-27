@@ -118,7 +118,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.35}
 
 /* ── PHOTO SLOTS ── */
-.photo-slot{position:relative;overflow:hidden;cursor:pointer;background:var(--card);display:block}
+.photo-slot{position:relative;overflow:hidden;cursor:default;background:var(--card);display:block}
 .photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;position:absolute;inset:0}
 .photo-slot:hover img{transform:scale(1.04)}
 .slot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;opacity:0;transition:opacity .3s;pointer-events:none;background:rgba(0,0,0,.45)}
@@ -484,7 +484,7 @@ html { -webkit-text-size-adjust: 100%; }
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>html{height:100%}body{min-height:100%;display:flex;flex-direction:column}main{flex:1 0 auto}footer.site-footer{flex-shrink:0}</style></head>
 <body>
 <!-- ══ SITE NAV ══ -->
 <nav class="site-nav" id="siteNav">
@@ -558,9 +558,9 @@ document.addEventListener('click',function(e){
     </div>
     <div class="page-hero-img">
       <div class="photo-slot loaded" id="disc-hero-p">
-        <div class="gc tl"></div><div class="gc br"></div>
+        
         <img loading="lazy" id="disc-hero-p-img" alt="Maddog Training" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="images/a5ce92fb816cc3b6.jpg">
-        <div class="slot-overlay"><span class="slot-icon">🥊</span><span class="slot-label">Header Photo</span></div>
+        
       </div>
     </div>
   </div>
@@ -596,9 +596,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid">
       <div class="disc-photo">
         <div class="photo-slot" id="mma-p" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="mma-p-img" src="images/0bdfdf0f9732e831.jpg" alt="MMA at Maddog">
-          <div class="slot-overlay"><span class="slot-icon">🥊</span><span class="slot-label">MMA Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">        <span class="disc-tag">Mixed Martial Arts</span>
@@ -638,9 +638,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot" id="bjj-p" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="bjj-p-img" src="images/f07c958e252e04db.jpg" alt="BJJ at Maddog">
-          <div class="slot-overlay"><span class="slot-icon">🤼</span><span class="slot-label">BJJ Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">        <span class="disc-tag">Brazilian Jiu-Jitsu · Gi &amp; No-Gi</span>
@@ -679,9 +679,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="kids-bjj-p" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img id="kids-bjj-p-img" src="images/5970bfc118aed2f1.jpg" alt="Kids BJJ class at Maddog Performance Institute Ballito" width="600" height="480" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">🥋</span><span class="slot-label">Kids BJJ Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">
@@ -721,9 +721,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot" id="kb-p" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="kb-p-img" src="images/576a7103e0c60613.jpg" alt="Kickboxing at Maddog">
-          <div class="slot-overlay"><span class="slot-icon">🦵</span><span class="slot-label">Kickboxing Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">        <span class="disc-tag">Stand-Up Striking · All Levels</span>
@@ -763,9 +763,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="bf-p" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="bf-p-img" src="images/854e62f6a51c735b.jpg" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;" alt="Boxing Fitness Ballito">
-          <div class="slot-overlay"><span class="slot-icon">🥊</span><span class="slot-label">Boxing Fitness Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">
@@ -797,9 +797,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="pl-p" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="pl-p-img" src="images/bb9bb5330e1cf0a5.jpg" alt="Powerlifting at Maddog" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">🏋️</span><span class="slot-label">Powerlifting Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">        <span class="disc-tag">Powerlifting &amp; Strength Training · All Levels</span>
@@ -851,9 +851,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="ept-p" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="ept-p-img" src="images/3b02754c701a0c4a.png" alt="Elite Personal Training at Maddog" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">🎯</span><span class="slot-label">Elite Personal Training Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">        <span class="disc-tag">Fully Personalised · Results-Driven</span>
@@ -897,9 +897,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="corpPhoto" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="corpPhoto-img" alt="Corporate Team Building at Maddog" style="object-position: 68.04% 50%; transform: none; transform-origin: 68.04% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="images/73bd4cee26153514.png">
-          <div class="slot-overlay"><span class="slot-icon">🤝</span><span class="slot-label">Corporate Training Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">        <span class="disc-tag">Corporate Wellness · Private Group Sessions</span>
@@ -939,9 +939,9 @@ document.addEventListener('click',function(e){
     <div class="disc-grid">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="pc-p" style="height:100%;min-height:480px">
-          <div class="gc tl"></div><div class="gc br"></div>
+          
           <img id="pc-p-img" src="images/d3d4d9984a9ee173.png" alt="Hybrid Elite Performance Coaching at Maddog Performance Institute" width="600" height="480" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon">📲</span><span class="slot-label">Performance Coaching Photo</span></div>
+          
         </div>
       </div>
       <div class="disc-text">

@@ -102,7 +102,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .nav-cta:hover{background:var(--gold-light)}
 
 /* PHOTO SLOTS — shared base */
-.photo-slot{position:relative;overflow:hidden;cursor:pointer;background:var(--card);display:block}
+.photo-slot{position:relative;overflow:hidden;cursor:default;background:var(--card);display:block}
 .photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
 .photo-slot.loaded img{display:block}
 .photo-slot:hover img{transform:scale(1.04)}
@@ -932,7 +932,7 @@ html { -webkit-text-size-adjust: 100%; }
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>html{height:100%}body{min-height:100%;display:flex;flex-direction:column}main{flex:1 0 auto}footer.site-footer{flex-shrink:0}</style></head>
 <body data-pid="amanda">
 <!-- ══ SITE NAV ══ -->
 <nav class="site-nav" id="siteNav">
@@ -1028,12 +1028,8 @@ document.addEventListener('click',function(e){
   <!-- PHOTO 1 — full-height hero portrait (right side) -->
   <div class="photo-slot hero-photo loaded" id="ps1">
     <img id="ps1-img" src="images/d5c52b691b0c2de5.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-    <div class="slot-overlay">
-      <span class="slot-icon">📸</span>
-      <span class="slot-label">Photo 1 — Hero Portrait</span>
-      <span class="slot-sub">Tall portrait or cage action shot works best</span>
-    </div>
-    <div class="slot-hint">Click to upload</div>
+    
+    
   </div>
 </section>
 
@@ -1233,74 +1229,52 @@ document.addEventListener('click',function(e){
 
       <!-- PHOTO 3 — tall left: fight action -->
       <div class="photo-slot gs1 loaded" id="ps3">
-        <div class="gc tl"></div><div class="gc br"></div>
+        
         <img loading="lazy" id="ps3-img" src="images/48bbdee3d50a2dad.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-        <div class="slot-overlay">
-          <span class="slot-icon">🥊</span>
-          <span class="slot-label">Photo 3 — Fight Action</span>
-          <span class="slot-sub">Tall / vertical works best</span>
-        </div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
 
       <!-- PHOTO 4 -->
       <div class="photo-slot gs2 loaded" id="ps4">
         <img loading="lazy" id="ps4-img" src="images/f487cda1a4a758a9.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-        <div class="slot-overlay">
-          <span class="slot-icon">📸</span>
-          <span class="slot-label">Photo 4</span>
-        </div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
 
       <!-- PHOTO 5 -->
       <div class="photo-slot gs3 loaded" id="ps5">
         <img loading="lazy" id="ps5-img" src="images/6dc7b4763475f400.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-        <div class="slot-overlay">
-          <span class="slot-icon">📸</span>
-          <span class="slot-label">Photo 5</span>
-        </div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
 
       <!-- PHOTO 6 -->
       <div class="photo-slot gs4 loaded" id="ps6">
         <img loading="lazy" id="ps6-img" src="images/f089905f422d843d.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-        <div class="slot-overlay">
-          <span class="slot-icon">📸</span>
-          <span class="slot-label">Photo 6</span>
-        </div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
 
       <!-- PHOTO 7 -->
       <div class="photo-slot gs5 loaded" id="ps7">
         <img loading="lazy" id="ps7-img" src="images/184c9ea8c1d0f282.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-        <div class="slot-overlay">
-          <span class="slot-icon">📸</span>
-          <span class="slot-label">Photo 7</span>
-        </div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
 
       <!-- PHOTO 8 — wide lower left: training / corner -->
       <div class="photo-slot gs6 loaded" id="ps8">
         <img loading="lazy" id="ps8-img" src="images/eac12aa2c1434b95.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-        <div class="slot-overlay">
-          <span class="slot-icon">📸</span>
-          <span class="slot-label">Photo 8 — Wide: Training / Corner</span>
-        </div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
 
       <!-- PHOTO 9 — wide lower right: celebration / belt -->
       <div class="photo-slot gs7 loaded" id="ps9">
         <img loading="lazy" id="ps9-img" src="images/7330eae62f7e80c3.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-        <div class="slot-overlay">
-          <span class="slot-icon">📸</span>
-          <span class="slot-label">Photo 9 — Wide: Celebration / Belt</span>
-        </div>
-        <div class="slot-hint">Click to upload</div>
+        
+        
       </div>
 
     </div>
@@ -1319,14 +1293,10 @@ document.addEventListener('click',function(e){
       <!-- PHOTO 10 — coaching / gym floor -->
       <div class="phil-photo reveal visible">
           <div class="photo-slot loaded" id="ps10" style="height:100%">
-            <div class="gc tl"></div><div class="gc br"></div>
+            
             <img loading="lazy" id="ps10-img" src="images/1dfeb055719465a0.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;width:100%!important;height:100%!important;z-index:1;">
-            <div class="slot-overlay">
-              <span class="slot-icon">🏋️</span>
-              <span class="slot-label">Photo 10 — Coaching / Gym Floor</span>
-              <span class="slot-sub">Amanda coaching or training candid</span>
-            </div>
-            <div class="slot-hint">Click to upload</div>
+            
+            
           </div>
         </div>
 
@@ -1385,13 +1355,9 @@ document.addEventListener('click',function(e){
       <!-- Photo — right column (alternates with origin photo on left) -->
       <div class="timeline-img reveal visible">
         <div class="photo-slot loaded" id="tl-photo" style="height:100%">
-          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+          
           <img loading="lazy" id="tl-photo-img" src="images/f11b8c365e4939b2.jpg" alt="Amanda Lino Road to History" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;">
-          <div class="slot-overlay">
-            <span class="slot-icon">📸</span>
-            <span class="slot-label">Road to History Photo</span>
-            <span class="slot-sub">Click to upload</span>
-          </div>
+          
         </div>
       </div>
     
