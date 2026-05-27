@@ -1,4 +1,4 @@
-﻿<html lang="en"><head>
+<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
@@ -297,7 +297,7 @@ body.edit-mode []:not(:focus){outline:1px dashed rgba(201,168,76,.18);outline-of
   .mod-photo{min-height:300px}
   .mod-photo .photo-slot{min-height:300px}
   .pkg-grid{grid-template-columns:1fr 1fr}
-  .safety-photo{height:280px}
+  .safety-photo{height:440px}
   .gallery-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .gm1,.gm2,.gm3,.gm4,.gm5,.gm6{grid-column:auto!important;grid-row:auto!important}
   .gallery-mosaic .photo-slot{height:200px}
@@ -355,7 +355,7 @@ blockquote, .pull-quote {
 
   /* Hero — full-width stack */
   .hero{display:flex!important;flex-direction:column!important;height:auto!important;min-height:100svh!important;padding-top:0!important}
-  .hero-right,.hero-photo{order:-1!important;width:100%!important;height:72vw!important;min-height:280px!important;max-height:440px!important;position:relative!important}
+  .hero-right,.hero-photo{order:-1!important;width:100%!important;height:88vw!important;min-height:340px!important;max-height:560px!important;position:relative!important}
   .hero-right img,.hero-photo img{object-position:center top!important}
   
   .hero-left::after,.hero-vline,.hero-scroll{display:none!important}
@@ -405,12 +405,13 @@ blockquote, .pull-quote {
 
   /* Coaches grid */
   .coaches-grid,.cc-grid{grid-template-columns:1fr!important}
-  .cc-photo,.af-photo{height:280px!important}
+  .cc-photo,.af-photo{min-height:440px!important}
+  .af-photo .photo-slot,.cc-photo .photo-slot{height:440px!important;min-height:440px!important}
 
   /* Recovery */
   .rec-grid,.service-grid{grid-template-columns:1fr!important}
   #slim-p{min-height:260px!important;max-height:260px!important}
-  #slim-p img{object-position:center top!important}
+  #slim-p img{object-position:50% 20%!important}
 
   /* Events */
   .events-grid,.result-grid{grid-template-columns:1fr!important}
@@ -598,9 +599,10 @@ blockquote, .pull-quote {
     min-height: auto !important;
   }
   .hero-right {
-    height: 56vw !important;
-    min-height: 220px !important;
-    order: 1 !important;
+    height: 88vw !important;
+    min-height: 340px !important;
+    max-height: 560px !important;
+    order: -1 !important;
   }
   .hero-left {
     order: 2 !important;
@@ -636,7 +638,7 @@ blockquote, .pull-quote {
 .site-nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg) !important}
 .site-nav-hamburger.open span:nth-child(2){opacity:0 !important}
 .site-nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg) !important}
-.site-nav-mobile{display:none;position:fixed !important;top:72px !important;left:0 !important;right:0 !important;background:rgba(8,8,8,.98) !important;border-bottom:1px solid rgba(201,168,76,.15) !important;padding:20px 28px 28px !important;z-index:8999 !important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.site-nav-mobile{display:none;position:fixed !important;top:72px !important;left:0 !important;right:0 !important;background:rgba(8,8,8,.98) !important;border-bottom:1px solid rgba(201,168,76,.15) !important;padding:20px 28px 28px !important;z-index:8999 !important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);max-height:calc(100vh - 72px) !important;overflow-y:auto !important}
 .site-nav-mobile.snm-open{display:block !important}
 .site-nav-mobile a{display:block !important;font-family:'Bebas Neue',sans-serif !important;font-size:22px !important;font-weight:400 !important;letter-spacing:.12em !important;text-transform:uppercase !important;color:rgba(245,240,232,.7) !important;padding:14px 0 !important;border-bottom:1px solid rgba(245,240,232,.08) !important;transition:color .2s !important;text-decoration:none !important}
 .site-nav-mobile a:hover{color:#C9A84C !important}
@@ -699,7 +701,7 @@ html { -webkit-text-size-adjust: 100%; }
   .site-nav-inner { padding: 0 20px !important; }
   .hero { display: flex !important; flex-direction: column !important; height: auto !important; min-height: auto !important; max-height: none !important; }
   .hero-left { padding: 40px 20px 40px !important; width: 100% !important; height: auto !important; }
-  .hero-right, .hero-photo { order: -1 !important; width: 100% !important; height: 72vw !important; min-height: 280px !important; max-height: 440px !important; position: relative !important; }
+  .hero-right, .hero-photo { order: -1 !important; width: 100% !important; height: 88vw !important; min-height: 340px !important; max-height: 560px !important; position: relative !important; }
   .hero-right img, .hero-photo img { object-position: center top !important; }
   .hero h1, .hero-h1 { font-size: clamp(36px,10vw,56px) !important; line-height: 0.95 !important; }
   .hero-stats { gap: 20px !important; flex-wrap: wrap !important; }
@@ -763,12 +765,12 @@ html { -webkit-text-size-adjust: 100%; }
 
 @media(max-width:768px){
   .hero{display:flex!important;flex-direction:column!important;height:auto!important;min-height:auto!important;max-height:none!important}
-  .hero-right{order:-1!important;width:100%!important;height:56vw!important;min-height:220px!important;max-height:320px!important;position:relative!important}
+  .hero-right{order:-1!important;width:100%!important;height:88vw!important;min-height:340px!important;max-height:560px!important;position:relative!important}
   .hero-left{padding:80px 20px 40px!important;width:100%!important}
 }
 @media(max-width:768px){
   .hero{display:flex!important;flex-direction:column!important;height:auto!important;min-height:auto!important;max-height:none!important}
-  .hero-right{order:-1!important;width:100%!important;height:55vw!important;min-height:200px!important;max-height:300px!important;position:relative!important}
+  .hero-right{order:-1!important;width:100%!important;height:88vw!important;min-height:340px!important;max-height:560px!important;position:relative!important}
   .hero-left{padding:80px 20px 40px!important;width:100%!important;height:auto!important}
   .hero{border-bottom:none!important}
 }
@@ -2012,7 +2014,7 @@ function savePage(fname) {
 
 <style>
 /* ── Sticky footer + standardised edit banner ── */
-body{min-height:100vh}
+body{min-height:100vh;display:flex;flex-direction:column}footer.site-footer{margin-top:auto!important}
 
 .edit-banner,.save-banner{display:none!important}
 

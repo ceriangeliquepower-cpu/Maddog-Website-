@@ -1,4 +1,4 @@
-﻿<html lang="en"><head>
+<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
@@ -417,7 +417,7 @@ a{text-decoration:none;color:inherit}
 .site-nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg) !important}
 .site-nav-hamburger.open span:nth-child(2){opacity:0 !important}
 .site-nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg) !important}
-.site-nav-mobile{display:none;position:fixed !important;top:72px !important;left:0 !important;right:0 !important;background:rgba(8,8,8,.98) !important;border-bottom:1px solid rgba(201,168,76,.15) !important;padding:20px 28px 28px !important;z-index:8999 !important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.site-nav-mobile{display:none;position:fixed !important;top:72px !important;left:0 !important;right:0 !important;background:rgba(8,8,8,.98) !important;border-bottom:1px solid rgba(201,168,76,.15) !important;padding:20px 28px 28px !important;z-index:8999 !important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);max-height:calc(100vh - 72px) !important;overflow-y:auto !important}
 .site-nav-mobile.snm-open{display:block !important}
 .site-nav-mobile a{display:block !important;font-family:'Bebas Neue',sans-serif !important;font-size:22px !important;font-weight:400 !important;letter-spacing:.12em !important;text-transform:uppercase !important;color:rgba(245,240,232,.7) !important;padding:14px 0 !important;border-bottom:1px solid rgba(245,240,232,.08) !important;transition:color .2s !important;text-decoration:none !important}
 .site-nav-mobile a:hover{color:#C9A84C !important}
@@ -497,7 +497,7 @@ footer.site-footer *{box-sizing:border-box !important}
 
 @media(max-width:900px){
   .pt-grid,.corp-grid{grid-template-columns:1fr;gap:40px}
-  .pt-photo,.corp-photo{height:56vw;min-height:220px;max-height:300px}
+  .pt-photo,.corp-photo{height:72vw;min-height:280px;max-height:480px}
   .corp-grid .corp-photo{order:-1}
   .mod-grid,.mod-grid.rev{grid-template-columns:1fr;direction:ltr}
   .mod-photo{min-height:300px}
@@ -619,6 +619,7 @@ html { -webkit-text-size-adjust: 100%; }
 .edit-banner,.save-banner{display:none!important}
 #save-page-btn{display:none!important}
 .slot-overlay,.slot-hint{display:none!important}
+.corp-photo-overlay,.pt-photo-overlay{display:none!important}
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
@@ -823,7 +824,7 @@ document.addEventListener('click',function(e){
         <div class="ff-item">22 Sandra Road, Balvista Centre, Ballito</div>
       </div>
     </div>
-    <div class="facility-photos" style="display:grid!important;grid-template-columns:repeat(3,1fr)!important;grid-template-rows:repeat(2,200px)!important;gap:6px!important;width:100%!important;"><div class="photo-slot loaded" id="fac1" style="position:relative;overflow:hidden;height:200px;display:block;cursor:pointer;"><img loading="lazy" id="fac1-img" src="images/7991b5c3daca0ae8.jpg" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 1.1px), calc(-50% - 10.2px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div style="position: absolute; inset: 0px; z-index: 2; display: flex; align-items: center; justify-content: center; opacity: 0; background: transparent; transition: opacity 0.2s;" onmouseenter="this.style.opacity='1';this.style.background='rgba(0,0,0,0.45)'" onmouseleave="this.style.opacity='0';this.style.background='transparent'"><span style="color:#C9A84C;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;">📷 Replace</span></div></div><div class="photo-slot loaded" id="fac2" style="position:relative;overflow:hidden;height:200px;display:block;cursor:pointer;"><img loading="lazy" id="fac2-img" src="images/2261b29fcb0cd7e2.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 242.3px; transform: translate(calc(-50% + 1.1px), calc(-50% - 20.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div style="position: absolute; inset: 0px; z-index: 2; display: flex; align-items: center; justify-content: center; opacity: 0; background: transparent; transition: opacity 0.2s;" onmouseenter="this.style.opacity='1';this.style.background='rgba(0,0,0,0.45)'" onmouseleave="this.style.opacity='0';this.style.background='transparent'"><span style="color:#C9A84C;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;">📷 Replace</span></div></div><div class="photo-slot loaded" id="fac3" style="position:relative;overflow:hidden;height:200px;display:block;cursor:pointer;"><img loading="lazy" id="fac3-img" src="images/3c82f12c41b03330.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% - 16.4px), calc(-50% + 37.1px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div style="position: absolute; inset: 0px; z-index: 2; display: flex; align-items: center; justify-content: center; opacity: 0; background: transparent; transition: opacity 0.2s;" onmouseenter="this.style.opacity='1';this.style.background='rgba(0,0,0,0.45)'" onmouseleave="this.style.opacity='0';this.style.background='transparent'"><span style="color:#C9A84C;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;">📷 Replace</span></div></div><div class="photo-slot loaded" id="fac4" style="position:relative;overflow:hidden;height:200px;display:block;cursor:pointer;"><img loading="lazy" id="fac4-img" src="images/dc0febc838c17a34.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 242.3px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div style="position: absolute; inset: 0px; z-index: 2; display: flex; align-items: center; justify-content: center; opacity: 0; background: transparent; transition: opacity 0.2s;" onmouseenter="this.style.opacity='1';this.style.background='rgba(0,0,0,0.45)'" onmouseleave="this.style.opacity='0';this.style.background='transparent'"><span style="color:#C9A84C;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;">📷 Replace</span></div></div><div class="photo-slot loaded" id="fac5" style="position:relative;overflow:hidden;height:200px;display:block;cursor:pointer;"><img loading="lazy" id="fac5-img" src="images/02b8a2abefcd96b2.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 2.8px), calc(-50% - 34.4px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div style="position: absolute; inset: 0px; z-index: 2; display: flex; align-items: center; justify-content: center; opacity: 0; background: transparent; transition: opacity 0.2s;" onmouseenter="this.style.opacity='1';this.style.background='rgba(0,0,0,0.45)'" onmouseleave="this.style.opacity='0';this.style.background='transparent'"><span style="color:#C9A84C;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;">📷 Replace</span></div></div><div class="photo-slot loaded" id="fac6" style="position:relative;overflow:hidden;height:200px;display:block;cursor:pointer;"><img loading="lazy" id="fac6-img" src="images/0a1e2f60ae3e1afc.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 242.7px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div style="position: absolute; inset: 0px; z-index: 2; display: flex; align-items: center; justify-content: center; opacity: 0; background: transparent; transition: opacity 0.2s;" onmouseenter="this.style.opacity='1';this.style.background='rgba(0,0,0,0.45)'" onmouseleave="this.style.opacity='0';this.style.background='transparent'"><span style="color:#C9A84C;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;">📷 Replace</span></div></div></div>
+    <div class="facility-photos" style="display:grid!important;grid-template-columns:repeat(3,1fr)!important;grid-template-rows:repeat(2,200px)!important;gap:6px!important;width:100%!important;"><div class="photo-slot loaded" id="fac1" style="position:relative;overflow:hidden;height:200px;display:block;cursor:default;"><img loading="lazy" id="fac1-img" src="images/7991b5c3daca0ae8.jpg" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 1.1px), calc(-50% - 10.2px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"></div><div class="photo-slot loaded" id="fac2" style="position:relative;overflow:hidden;height:200px;display:block;cursor:default;"><img loading="lazy" id="fac2-img" src="images/2261b29fcb0cd7e2.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 242.3px; transform: translate(calc(-50% + 1.1px), calc(-50% - 20.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"></div><div class="photo-slot loaded" id="fac3" style="position:relative;overflow:hidden;height:200px;display:block;cursor:default;"><img loading="lazy" id="fac3-img" src="images/3c82f12c41b03330.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% - 16.4px), calc(-50% + 37.1px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"></div><div class="photo-slot loaded" id="fac4" style="position:relative;overflow:hidden;height:200px;display:block;cursor:default;"><img loading="lazy" id="fac4-img" src="images/dc0febc838c17a34.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 242.3px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"></div><div class="photo-slot loaded" id="fac5" style="position:relative;overflow:hidden;height:200px;display:block;cursor:default;"><img loading="lazy" id="fac5-img" src="images/02b8a2abefcd96b2.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 2.8px), calc(-50% - 34.4px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"></div><div class="photo-slot loaded" id="fac6" style="position:relative;overflow:hidden;height:200px;display:block;cursor:default;"><img loading="lazy" id="fac6-img" src="images/0a1e2f60ae3e1afc.png" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 242.7px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"></div></div>
   </div>
 </section>
 <!-- ── CUSTOMISED ELITE PERSONAL TRAINING ── -->
@@ -874,7 +875,7 @@ document.addEventListener('click',function(e){
         <a href="pricing.html#assessment" class="btn btn-g">Enquire Now</a>
       </div>
       <div class="pt-photo photo-slot loaded" id="ptPhoto">
-        <img loading="lazy" id="ptPhoto-img" src="images/d304f49742d48bc3.png" alt="Elite Personal Training" style="transform-origin: center center; z-index: 1; width: 781.3px; height: 520px; transform: translate(calc(-50% - 85.8px), calc(-50% - 7.3px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
+        <img loading="lazy" id="ptPhoto-img" src="images/d304f49742d48bc3.png" alt="Elite Personal Training" style="position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;display:block!important;z-index:1;">
         <div class="pt-photo-overlay">
           <span>📸</span>
           <span>Click to upload photo</span>
@@ -890,7 +891,7 @@ document.addEventListener('click',function(e){
     <div class="mod-grid">
       <div class="mod-photo reveal visible">
         <div class="photo-slot loaded" id="corpPhoto" style="height:100%;min-height:440px">
-          <img loading="lazy" id="corpPhoto-img" src="images/d79b065f3e1593b2.png" alt="Corporate Team Building" style="transform-origin: center center; z-index: 1; width: 552px; height: 829.3px; transform: translate(calc(-50% + 0px), calc(-50% - 102.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
+          <img loading="lazy" id="corpPhoto-img" src="images/d79b065f3e1593b2.png" alt="Corporate Team Building" style="position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important;display:block!important;z-index:1;">
           
         </div>
       </div>
@@ -986,7 +987,6 @@ document.addEventListener('click',function(e){
             <img loading="lazy" id="blog1-img" src="images/0f43391c0ea8f9cc.jpg" alt="Blog post photo" style="transform-origin: center center; z-index: 1; width: 551px; height: 385.7px; transform: translate(calc(-50% + 0px), calc(-50% + 32px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
             </div>
           </div>
-        </div>
         <div class="nc-body">
           <div class="nc-cat">Fight News</div>
           <div class="nc-title">EFC 134: Amanda ‘Maddog’ Lino Defends Her Crown Against Juliet Chukwu</div>
@@ -1002,7 +1002,6 @@ document.addEventListener('click',function(e){
             <img loading="lazy" id="blog2-img" src="images/6029c93fa5223e45.jpg" alt="Blog post photo" style="transform-origin: center center; z-index: 1; width: 551px; height: 721.5px; transform: translate(calc(-50% + 1.6px), calc(-50% + 125px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
             </div>
           </div>
-        </div>
         <div class="nc-body">
           <div class="nc-cat">Community</div>
           <div class="nc-title">When Ballito Showed Up: Over R53,000 Raised for St Luke’s Home of Healing</div>
@@ -1511,7 +1510,7 @@ var BLOG_POSTS = [
 
 <style>
 /* ── Sticky footer + standardised edit banner ── */
-body{min-height:100vh}
+body{min-height:100vh;display:flex;flex-direction:column}footer.site-footer{margin-top:auto!important}
 
 .edit-banner,.save-banner{display:none!important}
 
