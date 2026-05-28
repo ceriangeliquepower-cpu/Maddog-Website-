@@ -314,7 +314,7 @@ body.edit-mode []:not(:focus){outline:1px dashed rgba(201,168,76,.18);outline-of
   .intro-photo-stack .ps1{grid-column:1/3!important;grid-row:1!important;height:56vw!important}
   .intro-photo-stack .photo-slot{height:100%!important}
   .mod-block{padding:20px 0}
-  .mod-text{padding:28px 20px}
+  .mod-text{padding:12px 20px}
   .packages{padding:44px 0}
   .pkg-grid{grid-template-columns:1fr}
   .safety{padding:44px 0}
@@ -880,6 +880,12 @@ html { -webkit-text-size-adjust: 100%; }
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
+/* ── RECOVERY MOBILE FIXES ── */
+@media(max-width:768px){
+  /* Hero photo: show full image, no cropping */
+  #heroRight{height:auto!important;max-height:none!important;min-height:0!important;}
+  #heroRight img{position:relative!important;width:100%!important;height:auto!important;object-fit:unset!important;}
+}
 </style></head>
 <body data-pid="recovery">
 <!-- ══ SITE NAV ══ -->
