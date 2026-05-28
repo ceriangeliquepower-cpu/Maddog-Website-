@@ -844,6 +844,9 @@ html { -webkit-text-size-adjust: 100%; }
   .af-photo .photo-slot{min-height:360px}
   .af-text{padding:40px 32px;border-left:none;border-top:3px solid var(--gold)}
   .af-stats{grid-template-columns:repeat(4,1fr)}
+  /* Deo: photo above text on mobile, matching Robin's layout */
+  .af-grid--rev .af-photo{order:-1!important}
+  .af-grid--rev .af-text{border-top:3px solid var(--gold)!important;border-left:none!important}
 }
 @media(max-width:480px){
   .af-stats{grid-template-columns:1fr 1fr!important}
@@ -1050,7 +1053,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 <!-- ── SAFETY ── -->
 <section class="safety">
   <div class="si">
-    <div class="safety-inner">
+    <div class="safety-inner" style="grid-template-columns:1fr">
       <div class="safety-text">
         <div class="sec-label reveal visible">Our Registered Nurse</div>
         <h2 class="sec-h reveal rd1 visible" style="font-size:clamp(32px,4vw,52px)">Clinical Safety.<br><em>At Every Step.</em></h2>
@@ -1060,6 +1063,9 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
           
           <div class="nurse-badge-text">
             <h4>Amanda Wren Kobus · Registered Nurse Practitioner and Professional Strength Athlete</h4>
+            <div class="photo-slot loaded" id="safety-p" style="width:100%;height:280px;margin:14px 0 18px;position:relative;overflow:hidden;">
+              <img loading="lazy" id="safety-p-img" src="images/9743e36e23c692dd.jpg" alt="Amanda Wren Kobus, Registered Nurse Practitioner at Maddog Performance Institute" style="object-position: 50% 19.25%; transform: none; transform-origin: 50% 19.25%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            </div>
             <p>Practice Number: <span style="color:var(--gold)">1196763</span> &nbsp;·&nbsp; SANC Number: <span style="color:var(--gold)">14662043</span> &nbsp;·&nbsp; In-house clinician at Maddog Performance Institute, Ballito</p>
           </div>
         </div>
@@ -1068,14 +1074,6 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
           <div class="sbadge"><div class="sbadge-text"><h4>Individualised Protocols</h4><p>No one-size-fits-all. Every client receives a tailored recovery plan.</p></div></div>
           <div class="sbadge"><div class="sbadge-text"><h4>Evidence-Based</h4><p>Every modality is backed by peer-reviewed sports science research.</p></div></div>
           <div class="sbadge"><div class="sbadge-text"><h4>Ongoing Monitoring</h4><p>Regular check-ins and protocol reviews for all active clients.</p></div></div>
-        </div>
-      </div>
-      <div class="safety-photo reveal rd2 visible">
-        <div class="photo-slot loaded" id="safety-p" style="height:100%">
-          
-          <img loading="lazy" id="safety-p-img" src="images/9743e36e23c692dd.jpg" alt="Maddog Performance Institute" style="object-position: 50% 19.25%; transform: none; transform-origin: 50% 19.25%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          
-          
         </div>
       </div>
     </div>

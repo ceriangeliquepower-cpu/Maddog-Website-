@@ -209,6 +209,7 @@ a{text-decoration:none;color:inherit}
 .who-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 180px;gap:8px}
 .who-photos .wp1{grid-row:span 2}
 .who-photos .photo-slot{height:100%}
+.who-photos .wp4{display:none}
 
 /* ── PILLARS ── */
 .pillars{padding:48px 0 28px;background:var(--black)}
@@ -324,6 +325,7 @@ a{text-decoration:none;color:inherit}
   .pillar-grid,.testi-grid,.news-grid{grid-template-columns:1fr}
   .who-photos{grid-template-columns:1fr 1fr;grid-template-rows:160px 120px}
   .who-photos .wp1{grid-row:auto}
+  .who-photos .wp4{display:block}
   .amanda-text-col{padding:36px 24px;border-left:none;border-top:3px solid var(--gold)}
   
   /* removed corrupt rule */
@@ -750,7 +752,10 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         </div>
         <div class="photo-slot loaded" id="wp3" style="height:100%">
           <img loading="lazy" id="wp3-img" src="images/a7955da033cb8e1e.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
-          
+
+        </div>
+        <div class="photo-slot wp4 loaded" id="wp4" style="height:100%">
+          <img loading="lazy" id="wp4-img" src="images/gym-training.jpg.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
         </div>
       </div>
     </div>
