@@ -882,9 +882,11 @@ html { -webkit-text-size-adjust: 100%; }
 .photo-slot{cursor:default!important}
 /* ── RECOVERY MOBILE FIXES ── */
 @media(max-width:768px){
-  /* Hero photo: show full image, no cropping */
-  #heroRight{height:auto!important;max-height:none!important;min-height:0!important;}
-  #heroRight img{position:relative!important;width:100%!important;height:auto!important;object-fit:unset!important;}
+  /* Hero photo: taller container, no max-height crop */
+  #heroRight{height:151vw!important;max-height:none!important;}
+  /* Service card photos: reduce height so text sits closer */
+  .mod-photo{min-height:220px!important;}
+  .mod-photo .photo-slot{min-height:220px!important;height:220px!important;}
 }
 </style></head>
 <body data-pid="recovery">
