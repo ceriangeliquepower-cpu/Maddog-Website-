@@ -1,4 +1,4 @@
-<html lang="en"><head>
+﻿<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
@@ -442,6 +442,15 @@ html { -webkit-text-size-adjust: 100%; }
   .quick-strip { flex-direction: column !important; gap: 12px !important; }
 }
 
+
+  /* ── Mobile section padding tighten ── */
+  .who,.amanda-block,.facility,.testimonials,.news,.blog,.email-strip,
+  .pillars,.pt-section,.corp-section,.mod-block,.packages,.safety,
+  .rec-gallery,.intro,.disc-block,.amanda-feature,.events-main,
+  .recovery-main,.contact-main,.coaches-main,.training-main,
+  .schedule-strip,.pricing-main,.blog-main { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec,.page-hero { padding-top:48px!important; padding-bottom:48px!important; }
+  .email-strip { padding-top:36px!important; padding-bottom:36px!important; }
 @media(max-width:400px){
   .hero-left { padding: 40px 16px 32px !important; }
   .si { padding: 0 16px !important; }
@@ -543,6 +552,7 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 </script>
 
 

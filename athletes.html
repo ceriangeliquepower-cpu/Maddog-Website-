@@ -1,4 +1,4 @@
-<html lang="en"><head>
+﻿<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
@@ -657,7 +657,7 @@ html { -webkit-text-size-adjust: 100%; }
   .who-grid, .amanda-grid, .pillars-grid, .facility-header, .contact-grid, .coaches-grid, .pt-grid, .corp-grid, .tl-cols { grid-template-columns: 1fr !important; gap: 32px !important; }
   .member-grid, .athlete-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
   .member-card, #memberGrid .member-card { height: auto !important; }
-  .hero-mosaic { display: grid !important; grid-template-columns: 1fr 1fr !important; grid-template-rows: 140px 140px !important; height: auto !important; gap: 4px !important; }
+  .hero-mosaic { display: grid !important; grid-template-columns: 1fr 1fr !important; grid-template-rows: 46vw 46vw !important; height: auto !important; gap: 4px !important; }
   .schedule-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
   .sched-day { padding: 20px 16px !important; }
   .blog-card { flex-direction: column !important; }
@@ -694,7 +694,7 @@ html { -webkit-text-size-adjust: 100%; }
   .page-h1 { font-size: clamp(28px,9vw,42px) !important; }
   .cred-item { font-size: 10px !important; padding: 0 14px !important; }
   .fac-grid, .member-grid, .pillar-grid { grid-template-columns: 1fr !important; }
-  .hero-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: 120px 120px !important; }
+  .hero-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: 46vw 46vw !important; }
   .schedule-grid { grid-template-columns: 1fr !important; }
 
 }
@@ -1103,7 +1103,7 @@ document.addEventListener('click',function(e){
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f7p" style="height:100%">
             
-            <img id="f7p-img" src="images/67a614be4d1ad674.jpg" alt="Amanda Wren Kobus, Powerlifting athlete at Maddog Performance Institute" width="400" height="320" style="object-position: 50% 38.76%; transform: none; transform-origin: 50% 38.76%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img id="f7p-img" src="images/wren-kobus-squat.jpg" alt="Amanda Wren Kobus squatting at KwaZulu-Natal Powerlifting Federation" width="400" height="320" style="object-position: 50% 38.76%; transform: none; transform-origin: 50% 38.76%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
@@ -2000,7 +2000,19 @@ body{min-height:100vh;display:flex;flex-direction:column}footer.site-footer{marg
 
 .edit-banner,.save-banner{display:none!important}
 
-@media(max-width:480px){.edit-banner,.save-banner{display:none!important}}
+@media(max-width:480px){@media(max-width:768px){
+  /* -- Athletes section padding tighten -- */
+  .hero,.fight-team,.members,.join,.sponsors-sec,
+  .who,.pillars,.pt-section,.mod-block,.disc-block { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec { padding-top:48px!important; padding-bottom:48px!important; }
+}
+.edit-banner,.save-banner{display:none!important}}
+@media(max-width:768px){
+  /* -- Sponsor cards compact on mobile -- */
+  .sponsors-sec .sponsor-logo-slot{height:56px!important}
+  .sponsors-sec .sponsor-name{font-size:13px!important;padding:6px 8px 3px!important}
+  .sponsors-sec .sponsor-link,.sponsors-sec .sponsor-link-label{font-size:8px!important;padding:4px 8px 10px!important}
+}
 </style>
 <script>
 (async function loadCMSFighters() {

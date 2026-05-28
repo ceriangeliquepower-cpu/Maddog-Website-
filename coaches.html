@@ -1,4 +1,4 @@
-<html lang="en"><head>
+﻿<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
@@ -424,6 +424,15 @@ body.edit-mode []:not(:focus){outline:1px dashed rgba(201,168,76,.18);outline-of
 }
 
 /* Extra small phones */
+
+  /* ── Mobile section padding tighten ── */
+  .who,.amanda-block,.facility,.testimonials,.news,.blog,.email-strip,
+  .pillars,.pt-section,.corp-section,.mod-block,.packages,.safety,
+  .rec-gallery,.intro,.disc-block,.amanda-feature,.events-main,
+  .recovery-main,.contact-main,.coaches-main,.training-main,
+  .schedule-strip,.pricing-main,.blog-main { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec,.page-hero { padding-top:48px!important; padding-bottom:48px!important; }
+  .email-strip { padding-top:36px!important; padding-bottom:36px!important; }
 @media(max-width:400px){
   .hero-h1,.hero-name{font-size:clamp(32px,10vw,48px)!important}
   .page-h1{font-size:clamp(32px,10vw,52px)!important}
@@ -633,6 +642,15 @@ html { -webkit-text-size-adjust: 100%; }
   .quick-strip { flex-direction: column !important; gap: 12px !important; }
 }
 
+
+  /* ── Mobile section padding tighten ── */
+  .who,.amanda-block,.facility,.testimonials,.news,.blog,.email-strip,
+  .pillars,.pt-section,.corp-section,.mod-block,.packages,.safety,
+  .rec-gallery,.intro,.disc-block,.amanda-feature,.events-main,
+  .recovery-main,.contact-main,.coaches-main,.training-main,
+  .schedule-strip,.pricing-main,.blog-main { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec,.page-hero { padding-top:48px!important; padding-bottom:48px!important; }
+  .email-strip { padding-top:36px!important; padding-bottom:36px!important; }
 @media(max-width:400px){
   .hero-left { padding: 90px 16px 32px !important; }
   .si { padding: 0 16px !important; }
@@ -764,6 +782,7 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 </script>
 
 
@@ -914,7 +933,7 @@ document.addEventListener('click',function(e){
       <div class="af-photo">
         <div class="photo-slot loaded" id="wren-p" style="height:100%;min-height:580px">
           
-          <img loading="lazy" id="wren-p-img" src="images/153e9c1368a1814b.jpg" alt="Wren Kobus" style="display:block">
+          <img loading="lazy" id="wren-p-img" src="images/wren-kobus-deadlift.jpg" alt="Amanda Wren Kobus deadlifting at KwaZulu-Natal Powerlifting Federation" style="object-fit:cover;object-position:center top;width:100%;height:100%;display:block;position:absolute;inset:0">
           
         </div>
       </div>
@@ -1618,6 +1637,14 @@ body{min-height:100vh;display:flex;flex-direction:column}footer.site-footer{marg
 .edit-banner,.save-banner{display:none!important}
 
 @media(max-width:480px){.edit-banner,.save-banner{display:none!important}}
+
+@media(max-width:768px){
+  /* -- Coach stat boxes compact -- */
+  .af-stats{gap:2px!important;margin-bottom:16px!important}
+  .af-stat{padding:8px 10px!important}
+  .af-stat-n{font-size:18px!important}
+  .af-stat-l{font-size:8px!important;margin-top:2px!important}
+}
 </style>
 <script>
 (async function loadCMSCoaches() {

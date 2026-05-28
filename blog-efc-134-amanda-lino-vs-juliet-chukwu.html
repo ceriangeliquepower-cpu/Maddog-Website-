@@ -410,12 +410,14 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 document.addEventListener('click',function(e){
   var h=document.getElementById('siteNavHam'),m=document.getElementById('siteNavMob');
   if(m&&m.classList.contains('snm-open')&&!m.contains(e.target)&&!h.contains(e.target)){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 
 window._photoStore = window._photoStore || {};
 function swapPhoto(slotId) {

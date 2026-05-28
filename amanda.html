@@ -1,4 +1,4 @@
-<html lang="en"><head>
+﻿<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
@@ -519,6 +519,13 @@ blockquote, .pull-quote {
   .tl-cols { grid-template-columns: 1fr !important; }
   .awards-grid, .origin-grid { grid-template-columns: 1fr !important; }
 
+
+  .pillars,.pt-section,.corp-section,.mod-block,.packages,.safety,
+  .rec-gallery,.intro,.disc-block,.amanda-feature,.events-main,
+  .recovery-main,.contact-main,.coaches-main,.training-main,
+  .schedule-strip,.pricing-main,.blog-main { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec,.page-hero { padding-top:48px!important; padding-bottom:48px!important; }
+  .email-strip { padding-top:36px!important; padding-bottom:36px!important; }
 @media(max-width:400px){
   .hero-h1,.hero-name{font-size:clamp(32px,10vw,48px)!important}
   .page-h1{font-size:clamp(32px,10vw,52px)!important}
@@ -820,6 +827,13 @@ html { -webkit-text-size-adjust: 100%; }
   .tl-cols { grid-template-columns: 1fr !important; }
   .awards-grid, .origin-grid { grid-template-columns: 1fr !important; }
 
+
+  .pillars,.pt-section,.corp-section,.mod-block,.packages,.safety,
+  .rec-gallery,.intro,.disc-block,.amanda-feature,.events-main,
+  .recovery-main,.contact-main,.coaches-main,.training-main,
+  .schedule-strip,.pricing-main,.blog-main { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec,.page-hero { padding-top:48px!important; padding-bottom:48px!important; }
+  .email-strip { padding-top:36px!important; padding-bottom:36px!important; }
 @media(max-width:400px){
   .hero-left { padding: 40px 16px 32px !important; }
   .si { padding: 0 16px !important; }
@@ -865,9 +879,17 @@ html { -webkit-text-size-adjust: 100%; }
   /* Hero name */
   .hero-name{font-size:clamp(52px,14vw,80px)!important;line-height:0.95!important}
 }
+
+  .pillars,.pt-section,.corp-section,.mod-block,.packages,.safety,
+  .rec-gallery,.intro,.disc-block,.amanda-feature,.events-main,
+  .recovery-main,.contact-main,.coaches-main,.training-main,
+  .schedule-strip,.pricing-main,.blog-main { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec,.page-hero { padding-top:48px!important; padding-bottom:48px!important; }
+  .email-strip { padding-top:36px!important; padding-bottom:36px!important; }
 @media(max-width:400px){
   .hero-name{font-size:clamp(42px,13vw,64px)!important}
-  .sponsors-grid,.awards-grid{grid-template-columns:1fr!important}
+  .awards-grid{grid-template-columns:1fr!important}
+  .sponsors-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
 }
 
 /* ── SPONSOR LOGO UPLOAD SLOTS ── */
@@ -924,12 +946,14 @@ html { -webkit-text-size-adjust: 100%; }
 <style>
 @media(max-width:768px){
   .hero{height:auto!important;min-height:auto!important}
-  .hero-photo{height:122vw!important;min-height:auto!important;max-height:none!important;width:100%!important}
+  .hero-photo{height:122vw!important;min-height:auto!important;max-height:none!important;width:100%!important;order:-1!important}
   .hero-photo img{object-fit:cover!important;object-position:center top!important}
 }
 </style>
 <style>
 /* â”€â”€ PRODUCTION: hide all edit-mode UI â”€â”€ */
+  .cta-sec { padding-top:48px!important; padding-bottom:48px!important; }
+}
 .edit-banner,.save-banner{display:none!important}
 #save-page-btn{display:none!important}
 .slot-overlay,.slot-hint{display:none!important}
@@ -983,6 +1007,7 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 </script>
 
 
@@ -1352,18 +1377,17 @@ document.addEventListener('click',function(e){
           <div class="tl-item reveal visible"><div class="tl-dot"></div><div class="tl-yr">2020+</div><div class="tl-title">Founds Maddog Performance Institute · Ballito</div><p class="tl-body">Establishes Ballito's only elite MMA and performance facility. Launches the Junior Academy, Women's Self-Defence Programme, and the Recovery Suite.</p></div>
           <div class="tl-item reveal visible"><div class="tl-dot"></div><div class="tl-yr">2026</div><div class="tl-title">Rebrand: Category of One</div><p class="tl-body">Strategic repositioning as the KZN North Coast's definitive premium fight and performance institute. Building the next generation of champions.</p><span class="tl-hl">Maddog Performance Institute · Reborn</span></div>
       </div>
+      <!-- Photo — right column -->
+      <div class="timeline-img reveal visible">
+        <div class="photo-slot loaded" id="tl-photo" style="height:100%">
+
+          <img loading="lazy" id="tl-photo-img" src="images/f11b8c365e4939b2.jpg" alt="Amanda Lino Road to History" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;">
+
+        </div>
+      </div>
     </div>
   </div>
 </section>
-      
-      <!-- Photo — right column (alternates with origin photo on left) -->
-      <div class="timeline-img reveal visible">
-        <div class="photo-slot loaded" id="tl-photo" style="height:100%">
-          
-          <img loading="lazy" id="tl-photo-img" src="images/f11b8c365e4939b2.jpg" alt="Amanda Lino Road to History" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;">
-          
-        </div>
-      </div>
     
   
 
@@ -2117,8 +2141,18 @@ function savePage(fname) {
 body{min-height:100vh;display:flex;flex-direction:column}footer.site-footer{margin-top:auto!important}
 
 .edit-banner,.save-banner{display:none!important}
-
-@media(max-width:480px){.edit-banner,.save-banner{display:none!important}}
+@media(max-width:768px){
+  /* -- Amanda section padding tighten -- */
+  .origin,.career,.champ,.record-sec,.gallery,.philosophy,.timeline,
+  .fight-videos,.amanda-sponsors,.sponsor-cta-bar,
+  .who,.pillars,.pt-section,.mod-block,.disc-block,.amanda-feature { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec { padding-top:48px!important; padding-bottom:48px!important; }
+  /* -- Sponsor cards compact on mobile -- */
+  .amanda-sponsors .sponsor-logo-slot{height:56px!important}
+  .amanda-sponsors .sponsor-name{font-size:13px!important;padding:8px 8px 3px!important}
+  .amanda-sponsors .sponsor-desc{font-size:10px!important;padding:0 8px 6px!important}
+  .amanda-sponsors .sponsor-link-label{font-size:8px!important;padding:4px 8px 10px!important}
+}
 </style>
 <script>
 function loadYT(el, videoId, params) {

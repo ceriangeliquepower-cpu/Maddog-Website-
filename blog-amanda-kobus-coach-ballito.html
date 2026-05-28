@@ -222,7 +222,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 <!-- BLOG HERO PHOTO -->
 <section class="blog-page-hero">
   <div class="photo-slot blog-hero-slot loaded" id="blogHero" style="cursor:pointer">
-    <img id="blogHero-img" src="images/1d6b750daaadfa1f.png" alt="" width="1200" height="260" style="object-position: 50% 9.25%; transform: none; transform-origin: 50% 9.25%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+    <img id="blogHero-img" src="images/wren-kobus-squat.jpg" alt="Amanda Wren Kobus competing at KwaZulu-Natal Powerlifting Federation" width="1200" height="260" style="object-position: 50% 20%; transform: none; transform-origin: 50% 20%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
     
     
   </div>
@@ -438,6 +438,7 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 </script>
 
 <script>

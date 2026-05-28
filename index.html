@@ -1,4 +1,4 @@
-<html lang="en"><head>
+﻿<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
@@ -499,8 +499,8 @@ footer.site-footer *{box-sizing:border-box !important}
   .pt-grid,.corp-grid{grid-template-columns:1fr;gap:40px}
   .pt-photo,.corp-photo{height:72vw;min-height:280px;max-height:480px}
   .corp-grid .corp-photo{order:-1}
-  .mod-grid,.mod-grid.rev{grid-template-columns:1fr;direction:ltr}
-  .mod-photo{min-height:300px}
+  .mod-grid,.mod-grid.rev{grid-template-columns:1fr!important;direction:ltr}
+  .mod-photo{min-height:300px;order:-1!important;width:100%!important}
   .mod-photo .photo-slot{min-height:300px}
   .mod-text{padding:40px 28px;border-left:3px solid var(--gold)!important;border-right:none!important}
 }
@@ -561,6 +561,14 @@ html { -webkit-text-size-adjust: 100%; }
   .result-card { grid-template-columns: 1fr !important; gap: 8px !important; text-align: center !important; }
   .hours-grid { flex-direction: column !important; }
   .quick-strip { flex-direction: column !important; gap: 12px !important; }
+  /* ── Mobile section padding tighten ── */
+  .who,.amanda-block,.facility,.testimonials,.news,.blog,.email-strip,
+  .pillars,.pt-section,.corp-section,.mod-block,.packages,.safety,
+  .rec-gallery,.intro,.disc-block,.amanda-feature,.events-main,
+  .recovery-main,.contact-main,.coaches-main,.training-main,
+  .schedule-strip,.pricing-main,.blog-main { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec,.page-hero { padding-top:48px!important; padding-bottom:48px!important; }
+  .email-strip { padding-top:36px!important; padding-bottom:36px!important; }
 }
 
 @media(max-width:400px){
@@ -591,7 +599,7 @@ html { -webkit-text-size-adjust: 100%; }
 .mod-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:4px 12px;margin-bottom:14px}
 .mod-list{list-style:none;margin:14px 0 22px;display:flex;flex-direction:column;gap:7px}
 .mod-list li{font-size:13px;font-weight:300;color:var(--white-dim);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
-.mod-list li::before{content:'C6';font-size:6px;color:var(--gold);margin-top:4px;flex-shrink:0}
+.mod-list li::before{content:'◆';font-size:6px;color:var(--gold);margin-top:4px;flex-shrink:0}
 
 
 /* ── Nav dropdowns ── */
@@ -670,6 +678,7 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 </script>
 
 

@@ -1,4 +1,4 @@
-<html lang="en"><head>
+﻿<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
@@ -264,9 +264,19 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .page-hero-with-img{grid-template-columns:1fr}
   .page-hero-img{min-height:260px;order:-1}
   .disc-grid,.disc-grid.reverse{grid-template-columns:1fr;direction:ltr}
-  .disc-photo{height:72vw;min-height:280px;max-height:480px}
-  .disc-photo .photo-slot{height:100%!important;min-height:280px!important}
-  .disc-text{padding:32px 24px;border-left:3px solid var(--gold)!important;border-right:none!important}
+  .disc-photo{height:auto!important;min-height:0!important;max-height:none!important}
+  .disc-photo .photo-slot{height:auto!important;min-height:0!important}
+  .disc-photo .photo-slot img{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;object-fit:unset!important;transform:none!important}
+  .disc-text{padding:20px 16px;border-left:3px solid var(--gold)!important;border-right:none!important}
+  .disc-block>div{padding-left:12px!important;padding-right:12px!important}
+  /* -- Pricing cards compact -- */
+  .disc-pricing{margin-top:16px!important;padding-top:14px!important}
+  .disc-pricing-label{margin-bottom:8px!important}
+  .disc-price-card{padding:10px 12px!important}
+  .disc-price-val{font-size:20px!important}
+  .disc-price-val span{font-size:10px!important}
+  .disc-price-tier{margin-bottom:4px!important}
+  .disc-price-desc{font-size:10px!important;margin-top:4px!important}
   .pt-header{grid-template-columns:1fr;gap:36px}
   .pt-tiers{grid-template-columns:1fr 1fr}
   .exec-block{grid-template-columns:1fr}
@@ -410,6 +420,15 @@ html { -webkit-text-size-adjust: 100%; }
   .quick-strip { flex-direction: column !important; gap: 12px !important; }
 }
 
+
+  /* ── Mobile section padding tighten ── */
+  .who,.amanda-block,.facility,.testimonials,.news,.blog,.email-strip,
+  .pillars,.pt-section,.corp-section,.mod-block,.packages,.safety,
+  .rec-gallery,.intro,.disc-block,.amanda-feature,.events-main,
+  .recovery-main,.contact-main,.coaches-main,.training-main,
+  .schedule-strip,.pricing-main,.blog-main { padding-top:28px!important; padding-bottom:28px!important; }
+  .cta-sec,.page-hero { padding-top:48px!important; padding-bottom:48px!important; }
+  .email-strip { padding-top:36px!important; padding-bottom:36px!important; }
 @media(max-width:400px){
   .hero-left { padding: 90px 16px 32px !important; }
   .si { padding: 0 16px !important; }
@@ -531,6 +550,7 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 </script>
 
 
@@ -1467,4 +1487,13 @@ body{min-height:100vh;display:flex;flex-direction:column}footer.site-footer{marg
 
 @media(max-width:480px){.edit-banner,.save-banner{display:none!important}}
 </style>
+<script>
+/* Mobile: free disc-photo images from absolute positioning so full photo shows */
+(function(){
+  if(window.innerWidth>1024)return;
+  document.querySelectorAll('.disc-photo .photo-slot img').forEach(function(img){
+    ['position','inset','top','right','bottom','left','width','height','object-fit','object-position','transform','transition'].forEach(function(p){img.style.removeProperty(p);});
+  });
+})();
+</script>
 </body></html>

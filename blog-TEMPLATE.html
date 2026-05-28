@@ -1,4 +1,4 @@
-<html lang="en"><head>
+﻿<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>BLOG_TITLE | Maddog Performance Institute | Ballito KZN</title>
@@ -319,12 +319,12 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
     <div class="sf-col">
       <h4>Contact</h4>
       <a href="tel:+27634421690">+27 63 442 1690</a>
-      <a href="/cdn-cgi/l/email-protection#c2abaca4ad82afa3a6a6ada5b2a7b0a4adb0afa3aca1a7eca1adecb8a3"><span class="__cf_email__" data-cfemail="5e373038311e333f3a3a31392e3b2c38312c333f303d3b703d3170243f">[email&nbsp;protected]</span></a>
+      <a href="mailto:info@maddogperformance.co.za">info@maddogperformance.co.za</a>
       <a href="contact.html">22 Sandra Rd, Balvista Centre, Ballito</a>
     </div>
   </div>
   <div class="sf-bottom">
-    <p contenteditable="true">    </p><p contenteditable="true">© 2026 Maddog Performance Institute · All Rights Reserved</p>
+    <p>© 2026 Maddog Performance Institute · All Rights Reserved</p>
     <p contenteditable="true">www.maddogperformance.co.za</p>
   </div>
 </footer>
@@ -342,6 +342,7 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 
 
 window._photoStore = window._photoStore || {};

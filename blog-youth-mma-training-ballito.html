@@ -379,8 +379,8 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
     <div class="sf-col">
       <h4>Contact</h4>
       <a href="tel:+27634421690">+27 63 442 1690</a>
+      <a href="mailto:info@maddogperformance.co.za">info@maddogperformance.co.za</a>
       <a href="contact.html">22 Sandra Rd, Balvista Centre, Ballito</a>
-      <a href="contact.html">Get in Touch</a>
     </div>
   </div>
   <div class="sf-bottom">
@@ -408,6 +408,7 @@ document.addEventListener('click',function(e){
     h.classList.remove('open');m.classList.remove('snm-open');
   }
 });
+document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('siteNavHam').classList.remove('open');document.getElementById('siteNavMob').classList.remove('snm-open');}});
 window._photoStore = {};
 function swapPhoto(slotId){
   var inp=document.createElement('input');
