@@ -230,7 +230,7 @@ nav:not(.site-nav){display:none!important}
 
 /* ── SAFETY BLOCK ── */
 .safety{padding:48px 0;background:var(--black)}
-.safety-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.safety-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}
 .safety-text h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,52px);line-height:.95;color:var(--white);margin-bottom:16px}
 .safety-text h2 em{color:var(--gold);font-style:normal}
 .safety-badges{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
@@ -239,8 +239,11 @@ nav:not(.site-nav){display:none!important}
 .sbadge-icon{font-size:24px;flex-shrink:0}
 .sbadge-text h4{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--white);margin-bottom:3px}
 .sbadge-text p{font-size:11px;font-weight:300;color:var(--white-dim);line-height:1.5}
-.safety-photo{position:relative;height:440px}
-.safety-photo .photo-slot{height:100%}
+.safety-photo{position:relative;height:100%;min-height:440px}
+.safety-photo .photo-slot{height:100%;min-height:440px}
+/* Desktop: show right-column photo, hide mobile photo */
+#safety-p{display:none!important}
+.safety-p-desktop{display:block}
 
 /* ── GALLERY ── */
 .rec-gallery{padding:48px 0;background:var(--deep)}
@@ -298,6 +301,8 @@ body.edit-mode []:not(:focus){outline:1px dashed rgba(201,168,76,.18);outline-of
   .mod-photo .photo-slot{min-height:300px}
   .pkg-grid{grid-template-columns:1fr 1fr}
   .safety-photo{height:440px}
+  #safety-p{display:block!important}
+  .safety-p-desktop{display:none!important}
   .gallery-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .gm1,.gm2,.gm3,.gm4,.gm5,.gm6{grid-column:auto!important;grid-row:auto!important}
   .gallery-mosaic .photo-slot{height:200px}
@@ -1053,17 +1058,18 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 <!-- ── SAFETY ── -->
 <section class="safety">
   <div class="si">
-    <div class="safety-inner" style="grid-template-columns:1fr">
+    <div class="safety-inner">
       <div class="safety-text">
         <div class="sec-label reveal visible">Our Registered Nurse</div>
         <h2 class="sec-h reveal rd1 visible" style="font-size:clamp(32px,4vw,52px)">Clinical Safety.<br><em>At Every Step.</em></h2>
         <p class="body-p reveal rd2 visible">What sets Maddog apart from every other training environment on the KZN North Coast is the depth of clinical expertise behind the recovery facility. This partnership between world-champion athletic coaching and registered medical expertise is what makes Maddog genuinely unique.</p>
 
         <div class="nurse-badge reveal rd3 visible" style="margin:20px 0;">
-          
+
           <div class="nurse-badge-text">
             <h4>Amanda Wren Kobus · Registered Nurse Practitioner and Professional Strength Athlete</h4>
-            <div class="photo-slot loaded" id="safety-p" style="width:100%;height:280px;margin:14px 0 18px;position:relative;overflow:hidden;">
+            <!-- MOBILE ONLY PHOTO — hidden on desktop -->
+            <div class="photo-slot loaded safety-p-mobile" id="safety-p" style="width:100%;height:280px;margin:14px 0 18px;position:relative;overflow:hidden;">
               <img loading="lazy" id="safety-p-img" src="images/9743e36e23c692dd.jpg" alt="Amanda Wren Kobus, Registered Nurse Practitioner at Maddog Performance Institute" style="object-position: 50% 19.25%; transform: none; transform-origin: 50% 19.25%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             </div>
             <p>Practice Number: <span style="color:var(--gold)">1196763</span> &nbsp;·&nbsp; SANC Number: <span style="color:var(--gold)">14662043</span> &nbsp;·&nbsp; In-house clinician at Maddog Performance Institute, Ballito</p>
@@ -1074,6 +1080,12 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
           <div class="sbadge"><div class="sbadge-text"><h4>Individualised Protocols</h4><p>No one-size-fits-all. Every client receives a tailored recovery plan.</p></div></div>
           <div class="sbadge"><div class="sbadge-text"><h4>Evidence-Based</h4><p>Every modality is backed by peer-reviewed sports science research.</p></div></div>
           <div class="sbadge"><div class="sbadge-text"><h4>Ongoing Monitoring</h4><p>Regular check-ins and protocol reviews for all active clients.</p></div></div>
+        </div>
+      </div>
+      <!-- DESKTOP ONLY PHOTO — hidden on mobile -->
+      <div class="safety-photo safety-p-desktop">
+        <div class="photo-slot loaded" id="safety-p-desk" style="height:100%">
+          <img loading="lazy" src="images/9743e36e23c692dd.jpg" alt="Amanda Wren Kobus, Registered Nurse Practitioner at Maddog Performance Institute" style="object-position:50% 19.25%;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;">
         </div>
       </div>
     </div>
