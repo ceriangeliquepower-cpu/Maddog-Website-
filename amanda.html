@@ -242,6 +242,13 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .gallery-grid .photo-slot{height:100%}
 .gallery-grid .gs8{display:none}
 
+/* MOBILE PHOTO BREAK — hidden on desktop, full-width on mobile */
+.amanda-mobile-break{display:none}
+@media(max-width:768px){
+  .amanda-mobile-break{display:block;width:100%;line-height:0}
+  .amanda-mobile-break img{width:100%;height:auto;display:block}
+}
+
 /* PHILOSOPHY */
 .philosophy{padding:48px 0;background:var(--black)}
 .phil-top-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:32px;align-items:stretch}
@@ -1191,6 +1198,11 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     </div>
   </div>
 </section>
+
+<!-- MOBILE PHOTO BREAK -->
+<div class="amanda-mobile-break">
+  <img src="images/amanda-profile.jpg.jpeg" alt="Amanda Maddog Lino — EFC Champion" loading="lazy">
+</div>
 
 <!-- CHAMPIONSHIP WALL -->
 <section class="champ">
