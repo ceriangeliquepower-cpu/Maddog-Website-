@@ -1329,9 +1329,11 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <p>Fight results, event announcements, new classes and member stories — straight to your inbox.</p>
     </div>
     <div>
-      <form id="newsletterForm" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field-nl">
-        <input type="hidden" name="form-name" value="newsletter">
-        <p hidden=""><label>Don't fill this out: <input name="bot-field-nl"></label></p>
+      <form id="newsletterForm" name="newsletter" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="e31ffa59-f2d9-41b8-b746-3766965e968f">
+        <input type="hidden" name="subject" value="Newsletter Signup — Maddog Performance Institute">
+        <input type="hidden" name="from_name" value="Maddog Website">
+        <input type="hidden" name="botcheck" value="">
         <div class="nl-form">
           <input type="email" name="email" placeholder="your@email.com" required="">
           <button type="submit" id="nlSubmitBtn">Subscribe</button>
@@ -1411,14 +1413,17 @@ document.addEventListener('DOMContentLoaded', function(){
       e.preventDefault();
       var btn = document.getElementById('nlSubmitBtn');
       if (btn) { btn.disabled = true; btn.textContent = 'Subscribing…'; }
-      fetch('/', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(nlForm)).toString()
-      }).then(function() {
-        nlForm.querySelector('.nl-form').style.display = 'none';
-        var ok = document.getElementById('nlSuccess');
-        if (ok) ok.style.display = 'block';
+        body: new FormData(nlForm)
+      }).then(function(res){ return res.json(); }).then(function(data){
+        if (data.success) {
+          nlForm.querySelector('.nl-form').style.display = 'none';
+          var ok = document.getElementById('nlSuccess');
+          if (ok) ok.style.display = 'block';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
+        }
       }).catch(function() {
         if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
       });

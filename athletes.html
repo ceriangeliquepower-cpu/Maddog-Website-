@@ -1511,9 +1511,11 @@ document.addEventListener('click',function(e){
       <h2 id="spModalTitle">Partner With<br>The Maddog Fight Team.</h2>
       <p class="sp-modal-sub">Align your brand with Maddog Performance Institute and our team of competitive fighters. Fill in your details and we'll be in touch within 48 hours.</p>
 
-      <form id="sponsorForm" name="sponsorship-team" method="POST" data-netlify="true" netlify-honeypot="bot-field-sp">
-        <input type="hidden" name="form-name" value="sponsorship-team">
-        <p hidden=""><label>Don't fill this out: <input name="bot-field-sp"></label></p>
+      <form id="sponsorForm" name="sponsorship-team" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="e31ffa59-f2d9-41b8-b746-3766965e968f">
+        <input type="hidden" name="subject" value="Team Sponsorship Enquiry — Maddog Performance Institute">
+        <input type="hidden" name="from_name" value="Maddog Website">
+        <input type="hidden" name="botcheck" value="">
 
         <div class="form-row">
           <div class="form-field"><label for="sp-company">Company / Brand *</label><input id="sp-company" type="text" name="company" placeholder="Your company name" required=""></div>
@@ -1619,34 +1621,19 @@ document.getElementById('sponsorForm').addEventListener('submit', function(e) {
 
   var formData = new FormData(this);
 
-  /* Step 1 — Netlify Forms (emails Maddog instantly) */
-  fetch('/', {
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(formData).toString()
+    body: formData
   })
-  .then(function() {
-
-    /* Step 2 — EmailJS confirmation email to the sponsor */
-    /* REPLACE the three values below with your EmailJS account details */
-    var EMAILJS_PUBLIC_KEY  = 'EMAILJS_PUBLIC_KEY';   /* ← replace */
-    var EMAILJS_SERVICE_ID  = 'EMAILJS_SERVICE_ID';   /* ← replace */
-    var EMAILJS_TEMPLATE_ID = 'EMAILJS_TEMPLATE_ID';  /* ← replace */
-
-    if (EMAILJS_PUBLIC_KEY !== 'EMAILJS_PUBLIC_KEY') {
-      emailjs.init(EMAILJS_PUBLIC_KEY);
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-        to_name:          formData.get('contact_name'),
-        to_email:         formData.get('email'),
-        company:          formData.get('company'),
-        sponsorship_type: formData.get('sponsorship_type'),
-        reply_to:         'info@maddogperformance.co.za'
-      });
+  .then(function(res){ return res.json(); })
+  .then(function(data) {
+    if (data.success) {
+      document.getElementById('spFormWrap').style.display = 'none';
+      document.getElementById('spSuccess').style.display  = 'block';
+    } else {
+      btn.disabled = false; btn.textContent = 'Submit Sponsorship Enquiry';
+      alert('Something went wrong. Please email us at info@maddogperformance.co.za');
     }
-
-    /* Show success */
-    document.getElementById('spFormWrap').style.display = 'none';
-    document.getElementById('spSuccess').style.display  = 'block';
   })
   .catch(function() {
     btn.disabled = false; btn.textContent = 'Submit Sponsorship Enquiry';

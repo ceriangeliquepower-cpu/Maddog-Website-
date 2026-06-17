@@ -664,9 +664,11 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
           <div class="itab" onclick="setTab(this)">Junior Academy</div>
           <div class="itab" onclick="setTab(this)">General Enquiry</div>
         </div>
-        <form id="contactForm" name="contact" method="POST" netlify netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
-          <p hidden=""><label>Don't fill this out: <input name="bot-field"></label></p>
+        <form id="contactForm" name="contact" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="e31ffa59-f2d9-41b8-b746-3766965e968f">
+          <input type="hidden" name="subject" value="New Enquiry — Maddog Performance Institute">
+          <input type="hidden" name="from_name" value="Maddog Website">
+          <input type="hidden" name="botcheck" value="">
           <div class="form-row">
             <div class="form-field"><label for="cf-fname">First Name *</label><input id="cf-fname" type="text" name="first_name" placeholder="Your first name" required=""></div>
             <div class="form-field"><label for="cf-lname">Last Name *</label><input id="cf-lname" type="text" name="last_name" placeholder="Your last name" required=""></div>
@@ -884,9 +886,11 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <p>Fight results, event announcements, new classes and member stories — straight to your inbox.</p>
     </div>
     <div>
-      <form id="newsletterForm" name="newsletter" method="POST" netlify netlify-honeypot="bot-field-nl">
-        <input type="hidden" name="form-name" value="newsletter">
-        <p hidden=""><label>Don't fill this out: <input name="bot-field-nl"></label></p>
+      <form id="newsletterForm" name="newsletter" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="e31ffa59-f2d9-41b8-b746-3766965e968f">
+        <input type="hidden" name="subject" value="Newsletter Signup — Maddog Performance Institute">
+        <input type="hidden" name="from_name" value="Maddog Website">
+        <input type="hidden" name="botcheck" value="">
         <div class="nl-form">
           <input type="email" name="email" placeholder="your@email.com" required="">
           <button type="submit" id="nlSubmitBtn">Subscribe</button>
@@ -945,14 +949,18 @@ document.addEventListener('DOMContentLoaded', function(){
           message:    fd.get('message')       || ''
         }).then(function(){}).catch(function(){});
       }
-      fetch('/', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(fd).toString()
-      }).then(function() {
-        form.querySelectorAll('.form-row,.form-field,.form-submit').forEach(function(el){ el.style.display = 'none'; });
-        var ok = document.getElementById('contactSuccess');
-        if (ok) { ok.style.display = 'block'; }
+        body: fd
+      }).then(function(res){ return res.json(); }).then(function(data){
+        if (data.success) {
+          form.querySelectorAll('.form-row,.form-field,.form-submit').forEach(function(el){ el.style.display = 'none'; });
+          var ok = document.getElementById('contactSuccess');
+          if (ok) { ok.style.display = 'block'; }
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; }
+          alert('Something went wrong. Please WhatsApp us on +27 63 442 1690 or email info@maddogperformance.co.za');
+        }
       }).catch(function() {
         if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; }
         alert('Something went wrong. Please WhatsApp us on +27 63 442 1690 or email info@maddogperformance.co.za');
@@ -967,15 +975,19 @@ document.addEventListener('DOMContentLoaded', function(){
       e.preventDefault();
       var btn = document.getElementById('nlSubmitBtn');
       if (btn) { btn.disabled = true; btn.textContent = 'Subscribing…'; }
-      fetch('/', {
+      var nlFd = new FormData(nlForm);
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(nlForm)).toString()
-      }).then(function() {
-        var nlFormEl = nlForm.querySelector('.nl-form');
-        if (nlFormEl) nlFormEl.style.display = 'none';
-        var ok = document.getElementById('nlSuccess');
-        if (ok) ok.style.display = 'block';
+        body: nlFd
+      }).then(function(res){ return res.json(); }).then(function(data){
+        if (data.success) {
+          var nlFormEl = nlForm.querySelector('.nl-form');
+          if (nlFormEl) nlFormEl.style.display = 'none';
+          var ok = document.getElementById('nlSuccess');
+          if (ok) ok.style.display = 'block';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
+        }
       }).catch(function() {
         if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
       });
