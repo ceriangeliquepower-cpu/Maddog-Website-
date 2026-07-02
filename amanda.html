@@ -713,6 +713,9 @@ blockquote, .pull-quote {
 .site-nav-cta{flex-shrink:0 !important}
 .site-nav-cta a{font-family:'Bebas Neue',sans-serif !important;font-size:16px !important;font-weight:400 !important;letter-spacing:.12em !important;text-transform:uppercase !important;background:#C9A84C !important;color:#080808 !important;padding:10px 28px !important;display:inline-block !important;transition:background .2s !important;text-decoration:none !important;white-space:nowrap !important;line-height:1.4 !important;border-radius:2px !important}
 .site-nav-cta a:hover{background:#e8c87a !important}
+.snl-wellness{border:1px solid rgba(201,168,76,.55)!important;padding:6px 16px!important;line-height:1.4!important;margin-left:8px!important;border-radius:2px!important;color:#C9A84C!important;font-size:14px!important}
+.snl-wellness:hover{background:rgba(201,168,76,.1)!important;box-shadow:none!important;color:#C9A84C!important}
+.snm-wellness{color:#8BAFC7!important;border-color:rgba(139,175,199,.2)!important}
 .site-nav-hamburger{display:none !important;flex-direction:column !important;gap:5px !important;cursor:pointer !important;padding:8px !important;background:none !important;border:none !important;flex-shrink:0 !important}
 .site-nav-hamburger span{display:block !important;width:22px !important;height:1.5px !important;background:#F5F0E8 !important;transition:all .3s !important}
 .site-nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg) !important}
@@ -990,6 +993,7 @@ html { -webkit-text-size-adjust: 100%; }
       <a href="athletes.html">Athletes</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
+      <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="images/7cc08b5eef15abca.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
@@ -1008,6 +1012,7 @@ html { -webkit-text-size-adjust: 100%; }
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
+  <a href="wellness.html" class="snm-wellness">&#10022; Wellness &amp; Recovery</a>
   <a href="booking.html" class="snm-cta">Book Online</a>
 </div>
 <script>
@@ -1060,7 +1065,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <div class="hstat-div"></div>
       <div class="hstat"><span class="hstat-n">6–0</span><span class="hstat-l">Amateur</span></div>
       <div class="hstat-div"></div>
-      <div class="hstat"><span class="hstat-n">6–2</span><span class="hstat-l">Pro Record</span></div>
+      <div class="hstat"><span class="hstat-n">7–2</span><span class="hstat-l">Pro Record</span></div>
     </div>
     <div class="hero-btns">
       <a href="pricing.html#assessment" class="btn btn-g">Train With Amanda</a>
@@ -1083,7 +1088,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="cred-item">2× EFC World Champion</div>
     <div class="cred-item">IMMAF Featherweight World Champion</div>
     <div class="cred-item">6-0 Amateur Record</div>
-    <div class="cred-item">6-2 Professional Record</div>
+    <div class="cred-item">7-2 Professional Record</div>
     <div class="cred-item">Africa's First Female Double-Division Champion</div>
     <div class="cred-item">EFC Flyweight Champion</div>
     <div class="cred-item">EFC Bantamweight Champion</div>
@@ -1092,7 +1097,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="cred-item">2× EFC World Champion</div>
     <div class="cred-item">IMMAF Featherweight World Champion</div>
     <div class="cred-item">6-0 Amateur Record</div>
-    <div class="cred-item">6-2 Professional Record</div>
+    <div class="cred-item">7-2 Professional Record</div>
     <div class="cred-item">Africa's First Female Double-Division Champion</div>
     <div class="cred-item">EFC Flyweight Champion</div>
     <div class="cred-item">EFC Bantamweight Champion</div>
@@ -1240,26 +1245,47 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
   </div>
 </section>
 
+
+<!-- EFC 134 FULL FIGHT -->
+<section class="promo-video-sec" id="full-fight-efc134">
+  <div class="promo-video-wrap">
+    <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/t9shAxH-G5I?rel=0"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        title="Amanda Maddog Lino vs Juliet Chukwu — Full Fight — EFC 134 Flyweight Title"
+        loading="lazy"
+      ></iframe>
+    </div>
+    <div class="promo-video-cap">
+      <span class="promo-video-tag">Full Fight</span>
+      <span class="promo-video-ttl">EFC 134 &mdash; Amanda &ldquo;Maddog&rdquo; Lino vs Juliet Chukwu &mdash; Flyweight Title Defence</span>
+    </div>
+  </div>
+</section>
 <!-- FIGHT RECORD -->
 <section class="record-sec" id="record">
   <div class="si">
     <div class="sec-label reveal visible">Full Fight Record</div>
     <h2 class="sec-h reveal rd1 visible">Professional <em>Record.</em></h2>
     <div class="rec-summary reveal rd2 visible">
-      <div><div class="rec-sum-n w">6</div><div class="rec-sum-lbl">Wins</div></div>
+      <div><div class="rec-sum-n w">7</div><div class="rec-sum-lbl">Wins</div></div>
       <div><div class="rec-sum-n l">2</div><div class="rec-sum-lbl">Losses</div></div>
       <div><div class="rec-sum-n nc">0</div><div class="rec-sum-lbl">No Contest</div></div>
     </div>
     <div class="rec-board reveal visible">
       <div class="rec-head"><span>#</span><span>Opponent</span><span>Event</span><span>Method</span><span>Round</span><span>Result</span></div>
-      <div class="rec-row"><span class="r-num">1</span><span class="r-opp">Mariana Salles</span><span class="r-event">EFC 123 · Women's Flyweight Title · 08/05/2025</span><span class="r-method">Unanimous Decision</span><span class="r-round">5 Rds</span><span class="rwin">WIN ★</span></div>
-      <div class="rec-row"><span class="r-num">2</span><span class="r-opp">Mannon Fiorot</span><span class="r-event">EFC 83 · Flyweight Title · 14/12/2019</span><span class="r-method">Decision</span><span class="r-round">5 Rds</span><span class="rloss">LOSS</span></div>
-      <div class="rec-row"><span class="r-num">3</span><span class="r-opp">Rizlen Zouak</span><span class="r-event">EFC 70 · Bantamweight Title · 26/05/2018</span><span class="r-method">TKO (strikes)</span><span class="r-round">Rd 3</span><span class="rwin">WIN ★</span></div>
-      <div class="rec-row"><span class="r-num">4</span><span class="r-opp">Jacqueline Trosee</span><span class="r-event">EFC 60 · Flyweight Title · 10/06/2017</span><span class="r-method">Submission (armbar)</span><span class="r-round">Rd 2</span><span class="rwin">WIN ★</span></div>
-      <div class="rec-row"><span class="r-num">5</span><span class="r-opp">Jacqueline Trosee</span><span class="r-event">EFC 47 · Flyweight Title · 03/03/2016</span><span class="r-method">TKO (strikes)</span><span class="r-round">Rd 1</span><span class="rwin">WIN</span></div>
-      <div class="rec-row"><span class="r-num">6</span><span class="r-opp">Isabella Pare</span><span class="r-event">EFC 43 · Flyweight Title · 27/08/2016</span><span class="r-method">Submission</span><span class="r-round">Rd 1</span><span class="rloss">LOSS</span></div>
-      <div class="rec-row"><span class="r-num">7</span><span class="r-opp">Stephanie Qualie</span><span class="r-event">EFC 38 · Flyweight Pro · 04/04/2015</span><span class="r-method">TKO (strikes)</span><span class="r-round">Rd 1</span><span class="rwin">WIN</span></div>
-      <div class="rec-row"><span class="r-num">8</span><span class="r-opp">Nqobile Hadebe</span><span class="r-event">Africa Fight League 22 · 31/10/2014</span><span class="r-method">TKO (strikes)</span><span class="r-round">—</span><span class="rwin">WIN</span></div>
+      <div class="rec-row"><span class="r-num">1</span><span class="r-opp">Juliet Chukwu</span><span class="r-event">EFC 134 &middot; Flyweight Title Defence &middot; 04/06/2026</span><span class="r-method">Submission (armbar)</span><span class="r-round">Rd 3</span><span class="rwin">WIN ★</span></div>
+      <div class="rec-row"><span class="r-num">2</span><span class="r-opp">Mariana Salles</span><span class="r-event">EFC 123 · Women's Flyweight Title · 08/05/2025</span><span class="r-method">Unanimous Decision</span><span class="r-round">5 Rds</span><span class="rwin">WIN ★</span></div>
+      <div class="rec-row"><span class="r-num">3</span><span class="r-opp">Mannon Fiorot</span><span class="r-event">EFC 83 · Flyweight Title · 14/12/2019</span><span class="r-method">Decision</span><span class="r-round">5 Rds</span><span class="rloss">LOSS</span></div>
+      <div class="rec-row"><span class="r-num">4</span><span class="r-opp">Rizlen Zouak</span><span class="r-event">EFC 70 · Bantamweight Title · 26/05/2018</span><span class="r-method">TKO (strikes)</span><span class="r-round">Rd 3</span><span class="rwin">WIN ★</span></div>
+      <div class="rec-row"><span class="r-num">5</span><span class="r-opp">Jacqueline Trosee</span><span class="r-event">EFC 60 · Flyweight Title · 10/06/2017</span><span class="r-method">Submission (armbar)</span><span class="r-round">Rd 2</span><span class="rwin">WIN ★</span></div>
+      <div class="rec-row"><span class="r-num">6</span><span class="r-opp">Jacqueline Trosee</span><span class="r-event">EFC 47 · Flyweight Title · 03/03/2016</span><span class="r-method">TKO (strikes)</span><span class="r-round">Rd 1</span><span class="rwin">WIN</span></div>
+      <div class="rec-row"><span class="r-num">7</span><span class="r-opp">Isabella Pare</span><span class="r-event">EFC 43 · Flyweight Title · 27/08/2016</span><span class="r-method">Submission</span><span class="r-round">Rd 1</span><span class="rloss">LOSS</span></div>
+      <div class="rec-row"><span class="r-num">8</span><span class="r-opp">Stephanie Qualie</span><span class="r-event">EFC 38 · Flyweight Pro · 04/04/2015</span><span class="r-method">TKO (strikes)</span><span class="r-round">Rd 1</span><span class="rwin">WIN</span></div>
+      <div class="rec-row"><span class="r-num">9</span><span class="r-opp">Nqobile Hadebe</span><span class="r-event">Africa Fight League 22 · 31/10/2014</span><span class="r-method">TKO (strikes)</span><span class="r-round">—</span><span class="rwin">WIN</span></div>
       <div class="rec-row"><span class="r-num">9</span><span class="r-opp">Jill Holstrom</span><span class="r-event">IMMAF World Championship · 05/07/2014</span><span class="r-method">TKO (strikes)</span><span class="r-round">—</span><span class="rwin">WIN</span></div>
       <div class="rec-row"><span class="r-num">10</span><span class="r-opp">Andrea Whitney</span><span class="r-event">IMMAF World Championship · 30/06/2014</span><span class="r-method">TKO (strikes)</span><span class="r-round">—</span><span class="rwin">WIN</span></div>
       <div class="rec-row"><span class="r-num">11</span><span class="r-opp">Ntombi Shabalala</span><span class="r-event">Africa Fight League 20 · 25/04/2014</span><span class="r-method">KO/TKO</span><span class="r-round">—</span><span class="rwin">WIN</span></div>
