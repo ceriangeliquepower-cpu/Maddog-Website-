@@ -1,1 +1,8 @@
+# Force all non-www to www
+https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301!
+
+# Serve homepage
 / /index.html 200
+
+# Redirect /index.html to / to avoid duplicate homepage
+/index.html / 301
