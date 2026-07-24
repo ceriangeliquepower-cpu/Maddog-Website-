@@ -6,3 +6,11 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 
 # Redirect /index.html to / to avoid duplicate homepage
 /index.html / 301
+
+# Fix broken meet-the-team link (from Google Business Profile)
+/meet-the-team /coaches.html 301
+/meet-the-team/ /coaches.html 301
+
+# Redirect old pricing page to wellness pricing
+/pricing /wellness-pricing 301
+/pricing.html /wellness-pricing 301
