@@ -1,6 +1,6 @@
-﻿<html lang="en"><head>
+<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -47,6 +47,32 @@
     "name": "Amanda Lino",
     "url": "https://www.maddogperformance.co.za/amanda"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Maddog Performance Institute",
+  "url": "https://www.maddogperformance.co.za",
+  "telephone": "+27634421690",
+  "email": "info@maddogperformance.co.za",
+  "priceRange": "$$",
+  "image": "https://www.maddogperformance.co.za/og-image.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "22 Sandra Road, Balvista Centre",
+    "addressLocality": "Ballito",
+    "addressRegion": "KwaZulu-Natal",
+    "postalCode": "4420",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -29.5393,
+    "longitude": 31.2154
+  },
+  "openingHours": "Mo-Th 06:00-20:00 Fr 06:00-18:00 Sa 08:00-13:00"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -910,7 +936,7 @@ html { -webkit-text-size-adjust: 100%; }
       <a href="athletes.html">Athletes</a>
       <a href="events.html" class="active">Events</a>
       <a href="contact.html">Contact</a>
-      <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
+      <a href="wellness.html" class="snl-wellness">✦ Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="images/7cc08b5eef15abca.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
@@ -929,7 +955,7 @@ html { -webkit-text-size-adjust: 100%; }
   <a href="athletes.html">Athletes</a>
   <a href="events.html" class="active">Events</a>
   <a href="contact.html">Contact</a>
-  <a href="wellness.html" class="snm-wellness">&#10022; Wellness &amp; Recovery</a>
+  <a href="wellness.html" class="snm-wellness">✦ Wellness &amp; Recovery</a>
   <a href="booking.html" class="snm-cta">Book Online</a>
 </div>
 <script>
@@ -963,18 +989,16 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <!-- Featured post preview -->
     <div>
       <div class="hero-featured">
-        <div class="photo-slot loaded" id="featPhoto" style="height:100%">
-          <img id="featPhoto-img" src="images/6029c93fa5223e45.jpg" alt="Maddog Performance Institute" style="object-position: 50% 33.15%; transform: none; transform-origin: 50% 33.15%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          
-          
+        <div class="photo-slot loaded" id="featPhoto" onclick="swapPhoto('featPhoto')" style="height:100%">
+          <img id="featPhoto-img" src="images/7d9133fcf33f16c7.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         </div>
       </div>
       <div class="hero-feat-body">
-        <span class="hf-tag">Community</span>
-        <div class="hf-title">When Ballito Showed Up: Over R53,000 Raised for St Luke’s Home of Healing</div>
-        <div class="hf-date"><time datetime="2026-03-25">25 March 2026</time> · Maddog Performance Institute</div>
-        <p class="hf-excerpt">The KZN North Coast community rallied behind St Luke’s Home of Healing in Ballito — and together raised over R53,000 for palliative care. Here is how it happened.</p>
-        <a href="blog-ballito-community-raises-funds-st-lukes.html" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>
+        <span class="hf-tag">Women's Safety</span>
+        <div class="hf-title">Women's Self-Defence Workshop in Ballito: Real Skills, Real Confidence, Real Protection</div>
+        <div class="hf-date"><time datetime="2026-08-22">22 August 2026</time> · Maddog Performance Institute</div>
+        <p class="hf-excerpt">A full day of self-defence, situational awareness and first-aid training for women in Ballito — led by Amanda "Maddog" Lino and Amanda Wren Kobus. Limited to 25 women.</p>
+        <a href="blog-womens-self-defence-workshop-ballito.html" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>
       </div>
     </div>
   </div>
@@ -1030,6 +1054,25 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
     <!-- BLOG GRID -->
     <div class="blog-grid" id="blogGrid" style="margin-top:6px">
+      <!-- POST GENESIS RECOVERY -->
+      <div class="blog-card" id="bp-genesis">
+        <div class="bc-img"><div class="photo-slot loaded" id="bp-genesis-p" onclick="swapPhoto('bp-genesis-p')" style="height:100%;cursor:pointer">
+          <div style="position:absolute;inset:0;background-image:url('images/4515533a96a857d5.jpg');background-size:cover;background-position:center;filter:blur(20px) brightness(.65);transform:scale(1.15);z-index:0"></div>
+          <img id="bp-genesis-p-img" src="images/4515533a96a857d5.jpg" alt="GENESIS neuro-metabolic performance restoration protocol" style="position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:contain!important;z-index:1;display:block!important">
+          <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Photo</span></div>
+          <div class="slot-hint">Click to upload</div>
+        </div></div>
+        <div class="bc-body">
+          <span class="bc-tag">Performance &amp; Recovery</span>
+          <div class="bc-title">Inside GENESIS™: The Recovery Programme Behind Maddog's Athletes</div>
+          <p class="bc-excerpt">NAD+ and peptide therapy for clinical recovery, built by our own nurse practitioner and strength coach, Sister Wren Kobus.</p>
+          <div class="bc-date">August 2026 · 7 min read</div>
+          <div class="bc-edit-row">
+            <a href="blog-genesis-athlete-recovery-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>
+          </div>
+        </div>
+      </div>
+
       <!-- POST PRE-FIGHT EFC134 -->
       <div class="blog-card" id="bp-efc134-prefight">
         <div class="bc-img"><div class="photo-slot loaded" id="bp-efc134-prefight-p" style="height:100%">
@@ -1037,8 +1080,8 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Fight Preview</span>
-          <div class="bc-title">EFC 134: Amanda &lsquo;Maddog&rsquo; Lino Defends Her Crown Against Juliet Chukwu</div>
-          <p class="bc-excerpt">The belt stays in Ballito. Amanda &ldquo;Maddog&rdquo; Lino puts her EFC Flyweight Title on the line against undefeated challenger Juliet Chukwu at EFC 134.</p>
+          <div class="bc-title">EFC 134: Amanda ‘Maddog’ Lino Defends Her Crown Against Juliet Chukwu</div>
+          <p class="bc-excerpt">The belt stays in Ballito. Amanda “Maddog” Lino puts her EFC Flyweight Title on the line against undefeated challenger Juliet Chukwu at EFC 134.</p>
           <div class="bc-date">May 2026 · 7 min read</div>
           <div class="bc-edit-row">
             <a href="blog-efc-134-amanda-lino-vs-juliet-chukwu.html" class="btn btn-o btn-sm">Read Full Article</a>
@@ -1183,6 +1226,21 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         </div>
       </div>
 
+      <!-- POST COMMUNITY ST LUKES -->
+      <div class="blog-card" id="bp-community-stlukes">
+        <div class="bc-img"><div class="photo-slot loaded" id="bp-community-stlukes-p" style="height:100%">
+          <img loading="lazy" id="bp-community-stlukes-p-img" src="images/6029c93fa5223e45.jpg" alt="Ballito community fundraiser for St Luke's Home of Healing" style="object-position: 50% 33.15%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        </div></div>
+        <div class="bc-body">
+          <span class="bc-tag">Community</span>
+          <div class="bc-title">When Ballito Showed Up: Over R53,000 Raised for St Luke’s Home of Healing</div>
+          <p class="bc-excerpt">The KZN North Coast community rallied behind St Luke’s Home of Healing in Ballito — and together raised over R53,000 for palliative care.</p>
+          <div class="bc-date">25 March 2026</div>
+          <div class="bc-edit-row">
+            <a href="blog-ballito-community-raises-funds-st-lukes.html" class="btn btn-o btn-sm">Read Full Article</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1198,39 +1256,23 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
     <div class="event-list" id="eventList">
 
-      <!-- EVENT 1 — 9 Aug -->
-      <div class="event-card" id="ev-aug9">
-        <div class="ec-date-block">
-          <div class="ec-day">9</div>
-          <div class="ec-month">Aug</div>
-        </div>
-        <div class="ec-body">
-          <div class="ec-tag">Community Event</div>
-          <div class="ec-title">Beautifully Broken</div>
-          <div class="ec-meta">📍 Ballito Lakes Estate &nbsp;·&nbsp; 9 August 2026</div>
-        </div>
-        <div class="ec-actions">
-          <a href="contact.html" class="btn btn-g btn-sm">More Info</a>
-        </div>
-      </div>
-
-      <!-- EVENT 2 — 22 Aug -->
+      <!-- EVENT 1 — 22 Aug -->
       <div class="event-card" id="ev-aug22">
         <div class="ec-date-block">
           <div class="ec-day">22</div>
           <div class="ec-month">Aug</div>
         </div>
         <div class="ec-body">
-          <div class="ec-tag">Women's Day</div>
-          <div class="ec-title">Maddog Women's Day Self Defence</div>
+          <div class="ec-tag">Women's Safety</div>
+          <div class="ec-title">Women's Month Safety Experience</div>
           <div class="ec-meta">📍 Maddog Performance Institute, Ballito &nbsp;·&nbsp; 22 August 2026</div>
         </div>
         <div class="ec-actions">
-          <a href="contact.html" class="btn btn-g btn-sm">More Info</a>
+          <a href="blog-womens-self-defence-workshop-ballito.html" class="btn btn-g btn-sm">More Info</a>
         </div>
       </div>
 
-      <!-- EVENT 3 — 29 Aug -->
+      <!-- EVENT 2 — 29 Aug -->
       <div class="event-card" id="ev-aug29">
         <div class="ec-date-block">
           <div class="ec-day">29</div>
@@ -1246,16 +1288,16 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         </div>
       </div>
 
-      <!-- EVENT 4 — 30 Aug -->
-      <div class="event-card" id="ev-aug30">
+      <!-- EVENT 3 — 5 Sep -->
+      <div class="event-card" id="ev-sep5">
         <div class="ec-date-block">
-          <div class="ec-day">30</div>
-          <div class="ec-month">Aug</div>
+          <div class="ec-day">5</div>
+          <div class="ec-month">Sep</div>
         </div>
         <div class="ec-body">
-          <div class="ec-tag">Women's Day</div>
-          <div class="ec-title">Maddog Women's Day Firearms Training</div>
-          <div class="ec-meta">📍 Ballito Firearms Range &nbsp;·&nbsp; 30 August 2026</div>
+          <div class="ec-tag">BJJ</div>
+          <div class="ec-title">Ground Quest BJJ</div>
+          <div class="ec-meta">📍 Durban, KZN &nbsp;·&nbsp; 5 September 2026</div>
         </div>
         <div class="ec-actions">
           <a href="contact.html" class="btn btn-g btn-sm">More Info</a>
@@ -1392,7 +1434,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <a href="training.html#mma">MMA</a>
       <a href="training.html#bjj">BJJ</a>
       <a href="training.html#kickboxing">Kickboxing</a>
-      <a href="training.html#pt">Elite Personal Training</a>
+      <a href="elite-personal-training.html">Elite Personal Training</a>
       <a href="training.html#powerlifting">Powerlifting</a>
     </div>
     <div class="sf-col">
@@ -1797,4 +1839,5 @@ body{min-height:100vh;display:flex;flex-direction:column}footer.site-footer{marg
   } catch (e) { console.warn('Events:', e) }
 })()
 </script>
+
 </body></html>

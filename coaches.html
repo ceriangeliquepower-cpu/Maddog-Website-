@@ -1,6 +1,6 @@
-﻿<html lang="en"><head>
+<html lang="en"><head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -41,7 +41,7 @@
     {"@type":"Person","name":"Amanda Lino","jobTitle":"Head Coach and Founder","description":"2x EFC World Champion, IMMAF World Champion, Africa's first female double-division MMA champion. BJJ Purple Belt, Brown Belt in MMA &amp; Kickboxing. MMA, Kickboxing &amp; Self Defense Instructor. KZN &amp; SA Youth Coach."},
     {"@type":"Person","name":"Amanda Wren Kobus","jobTitle":"Strength and Conditioning Coach / Nurse Practitioner"},
     {"@type":"Person","name":"Luckymore Hamadziripi","jobTitle":"MMA and Kickboxing Coach"},
-    {"@type":"Person","name":"Winston Ngilazi","jobTitle":"Boxing Coach"},
+    {"@type":"Person","name":"Coach Marcele","jobTitle":"Boxing Coach and High-Performance Trainer","description":"20+ years in boxing coaching, from amateur development through elite and professional fighters. Head Chairman, KZN Professional Boxing Trainers and Managers Association."},
     {"@type":"Person","name":"Tristan","jobTitle":"Personal Trainer"},
     {"@type":"Person","name":"Robin JJ Williams","jobTitle":"Sports Physiotherapist","description":"10+ years in professional sport. Teams: Stormers, Zebre Parma, SARU U17/U18, The Sharks. Currently completing MSc at UCT in concussion prevention in adolescent rugby."}
   ],
@@ -217,7 +217,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 .cc-creds li{font-family:'Barlow Condensed',sans-serif!important;font-size:14px!important;font-weight:300!important;color:var(--white-dim)!important;display:flex;align-items:flex-start;gap:8px;line-height:1.6}
 .cc-creds li::before{content:'◆';font-size:6px;color:var(--gold);margin-top:4px;flex-shrink:0}
 
-/* plain bio paragraph — used on Winston & Tristan cards */
+/* plain bio paragraph — used on Tristan's card */
 .cc-bio{font-family:'Barlow Condensed',sans-serif!important;font-size:14px!important;font-weight:300!important;line-height:1.75!important;color:var(--white-dim)!important;margin-bottom:0}
 
 /* specs */
@@ -229,7 +229,7 @@ nav:not(.site-nav){position:fixed;top:0;left:0;right:0;z-index:900;display:flex;
 
 /* expandable full bio */
 .cc-bio-full{max-height:0;overflow:hidden;transition:max-height .5s ease}
-.cc-bio-full.open{max-height:600px}
+.cc-bio-full.open{max-height:1400px}
 .cc-bio-full p{font-family:'Barlow Condensed',sans-serif!important;font-size:14px!important;font-weight:300!important;line-height:1.75!important;color:var(--white-dim)!important;padding:0 0 16px}
 
 /* expand toggle */
@@ -761,13 +761,13 @@ html { -webkit-text-size-adjust: 100%; }
   <div class="site-nav-links">
       <a href="index.html">Home</a>
       <a href="amanda.html">Amanda</a>
-      <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
-      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="training.html#schedule">Class Schedule</a></div></div>
+      <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
+      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="training.html#schedule">Class Schedule</a></div></div>
       <a href="coaches.html" class="active">Coaches</a>
       <a href="athletes.html">Athletes</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
-      <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
+      <a href="wellness.html" class="snl-wellness">✦ Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="images/7cc08b5eef15abca.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
@@ -779,14 +779,14 @@ html { -webkit-text-size-adjust: 100%; }
   <a href="index.html">Home</a>
   <a href="amanda.html">Amanda</a>
   <a href="recovery.html">Recovery</a>
-  <a href="wellness-pricing.html" class="snm-sub">&#8627; Pricelist</a>
+  <a href="wellness-pricing.html" class="snm-sub">↳ Pricelist</a>
   <a href="training.html">Training</a>
-  <a href="training.html#schedule" class="snm-sub">&#8627; Class Schedule</a>
+  <a href="training.html#schedule" class="snm-sub">↳ Class Schedule</a>
   <a href="coaches.html" class="active">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
-  <a href="wellness.html" class="snm-wellness">&#10022; Wellness &amp; Recovery</a>
+  <a href="wellness.html" class="snm-wellness">✦ Wellness &amp; Recovery</a>
   <a href="booking.html" class="snm-cta">Book Online</a>
 </div>
 <script>
@@ -830,8 +830,8 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="cred-item">Amanda Wren Kobus · Registered Nurse &amp; Powerlifting Coach</div>
     <div class="cred-item">Robin JJ Williams · Sports Physiotherapist</div>
     <div class="cred-item">Luckymore Hamadziripi · MMA &amp; Kickboxing</div>
-    <div class="cred-item">York Lawrence · Head Coach · Dolphin Coast BJJ</div>
-    <div class="cred-item">Winston Ngilazi · Boxing &amp; Boxing Fitness</div>
+    <div class="cred-item">York Lawrence · Head Coach · Brazilian Jiu-Jitsu</div>
+    <div class="cred-item">Coach Marcele · Boxing &amp; High-Performance</div>
     <div class="cred-item">Amanda Wren Kobus · KZN Powerlifting Director</div>
     <div class="cred-item">Tristan · Personal Trainer</div>
     <div class="cred-item">MMA · BJJ · Kickboxing · Boxing · S&amp;C</div>
@@ -842,8 +842,8 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="cred-item">IMMAF World Champion 2014</div>
     <div class="cred-item">Amanda Wren Kobus · Registered Nurse &amp; Powerlifting Coach</div>
     <div class="cred-item">Luckymore Hamadziripi · MMA &amp; Kickboxing</div>
-    <div class="cred-item">York Lawrence · Head Coach · Dolphin Coast BJJ</div>
-    <div class="cred-item">Winston Ngilazi · Boxing &amp; Boxing Fitness</div>
+    <div class="cred-item">York Lawrence · Head Coach · Brazilian Jiu-Jitsu</div>
+    <div class="cred-item">Coach Marcele · Boxing &amp; High-Performance</div>
     <div class="cred-item">Amanda Wren Kobus · KZN Powerlifting Director</div>
     <div class="cred-item">Tristan · Personal Trainer</div>
     <div class="cred-item">MMA · BJJ · Kickboxing · Boxing · S&amp;C</div>
@@ -1090,29 +1090,35 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <button class="cc-expand" id="c2btn" onclick="toggleCoachBio('c2bio','c2btn')">Read Full Bio</button>
       </div>
 
-      <!-- ── COACH 3 — Recovery / Nurse ── -->
+      <!-- ── COACH 3 — Boxing / High-Performance ── -->
       <div class="coach-card" id="coach4">
         <div class="cc-photo">
-          <div class="photo-slot loaded" id="c4-p" style="height:100%">
-            <img loading="lazy" id="c4-p-img" src="images/f8bf2f350d5ce638.jpg" alt="Maddog Performance Institute" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;">
-            
-            
+          <div class="photo-slot blog-hero-slot loaded" id="c4-p" style="height:100%">
+            <img id="c4-p-img" src="images/20f1b66a7320adef.jpg" alt="Coach Marcele" style="object-position: 50% 0%; transform: none; transform-origin: 50% 0%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
           </div>
           <div class="cc-badge">
-            <div class="cc-badge-disc">Boxing &amp; Boxing Fitness Coach</div>
-            <div class="cc-badge-name">Winston Ngilazi</div>
+            <div class="cc-badge-disc">Boxing Coach &amp; High-Performance Trainer</div>
+            <div class="cc-badge-name">Coach Marcele</div>
           </div>
         </div>
         <div class="cc-body">
-          <div class="cc-title">Boxing &amp; Boxing Fitness Trainer</div>
-          <div class="cc-years">10+ Years Coaching Experience</div>
+          <div class="cc-title">Boxing Coach &amp; High-Performance Trainer</div>
+          <div class="cc-years">20+ Years Coaching Experience</div>
           <ul class="cc-creds">
-            <li>10+ Years Boxing &amp; Boxing Fitness Training</li>
-            <li>Boxing, Functional Training &amp; Weight-Based Conditioning</li>
-            <li>All fitness levels — beginner through to competitive</li>
+            <li>20+ Years Boxing Coaching — Amateur Through Professional</li>
+            <li>Head Chairman, KZN Professional Boxing Trainers &amp; Managers Association</li>
+            <li>Developed National-Level Champions &amp; Elite Youth Athletes</li>
+            <li>Full Fight Preparation — Technical, Tactical &amp; Conditioning</li>
           </ul>
-          <p class="cc-bio">Winston is a highly respected boxing and boxing fitness trainer with over a decade of experience delivering results across all fitness levels. His sessions combine boxing, functional training, and weight-based conditioning to build strength, endurance, and athletic performance. Known for his structured approach, high energy, and strong sense of community — training with Winston means committing to hard work and walking out every session stronger than you walked in.</p>
+          <div class="cc-quote">“His vision is to build athletes with character as well as champions with ability.”</div>
+          <div class="cc-bio-full" id="c4bio">
+            <p>Coach Marcele is a highly experienced boxing coach, trainer and mentor with more than two decades of involvement in the sport. His career has been built around developing fighters from the foundations of boxing through to elite amateur and professional competition. His approach combines traditional boxing fundamentals with modern conditioning, tactical preparation, discipline and fight intelligence, with a strong emphasis on developing the complete athlete rather than simply preparing someone to compete.</p>
+            <p>Throughout his coaching career, Coach Marcele has worked with athletes across multiple levels, from developing young boxers and aspiring amateurs to high-level competitive fighters and professional athletes. His training methodology places particular emphasis on technical development, ring craft, movement, distance management, conditioning, defensive responsibility and tactical decision-making. He is known for preparing fighters to understand why they are doing something in the ring, allowing them to adapt under pressure rather than relying solely on rehearsed combinations.</p>
+            <p>One of Coach Marcele's greatest achievements has been his development of exceptional young talent. Through his coaching and mentorship, he has helped produce national-level champions and elite youth athletes, including Anton, a standout youth heavyweight who has remained undefeated, defeated national champions and gained valuable experience working alongside professional fighters. Coach Marcele has been instrumental in preparing Anton for the highest level of amateur boxing and the Olympic pathway, while continuing to develop a stable of fighters competing from lightweight through heavyweight.</p>
+            <p>Beyond competition, Coach Marcele believes boxing is a vehicle for discipline, confidence, personal development and opportunity. His work extends beyond the ring through youth development, community initiatives and providing access to boxing for people who may otherwise not have the opportunity. His vision is to build athletes with character as well as champions with ability. With extensive practical experience, a proven record of athlete development and a commitment to high-performance boxing, Coach Marcele represents a coaching philosophy centred on discipline, technical excellence, strategic intelligence and the relentless pursuit of greatness. Marcele is also the Head Chairman for the KZN Professional Boxing Trainers and Managers Association.</p>
+          </div>
         </div>
+        <button class="cc-expand" id="c4btn" onclick="toggleCoachBio('c4bio','c4btn')">Read Full Bio</button>
       </div>
 
       <!-- ── COACH 5 ── -->
@@ -1156,18 +1162,18 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
           </div>
         </div>
         <div class="cc-body">
-          <div class="cc-title">Head Coach — Dolphin Coast BJJ</div>
+          <div class="cc-title">Head Coach — Brazilian Jiu-Jitsu</div>
           <div class="cc-years">BJJ Black Belt · 20+ Years Martial Arts</div>
           <ul class="cc-creds">
             <li>BJJ Black Belt — awarded 2023 by world champion Penny Thomas</li>
-            <li>Head Coach, Dolphin Coast Brazilian Jiu Jitsu at Maddog Performance Institute</li>
+            <li>Head Coach, Brazilian Jiu-Jitsu at Maddog Performance Institute</li>
             <li>Martial arts background in Karate &amp; Kickboxing; BJJ since 2005 at Novagen BJJ</li>
             <li>Kids BJJ Programme — launched 2025</li>
           </ul>
           <div class="cc-quote">“Jiu Jitsu offers essential everyday skills and profound lifestyle benefits — for students of all ages.”</div>
           <div class="cc-bio-full" id="c6bio">
-            <p>York Lawrence is the Head Coach of Dolphin Coast Brazilian Jiu Jitsu, based at Maddog Performance Institute. With a lifelong foundation in martial arts, York transitioned from Karate and Kickboxing to the “gentle art” in 2005, beginning his journey at Novagen BJJ — one of South Africa’s pioneering academies.</p>
-            <p>In 2023, York reached a major milestone by receiving his Black Belt from multiple-time world champion Penny Thomas. His transition into coaching began during the COVID-19 pandemic, where a dedicated small group of students evolved into what is now Dolphin Coast BJJ. Driven by the belief that Jiu Jitsu offers essential everyday skills and profound lifestyle benefits, York expanded his reach in 2025 by launching an engaging Kids Program — fostering a community where students of all ages can experience the discipline, resilience, and technical depth of Brazilian Jiu Jitsu.</p>
+            <p>York Lawrence is the Head Coach of Brazilian Jiu-Jitsu at Maddog Performance Institute. With a lifelong foundation in martial arts, York transitioned from Karate and Kickboxing to the “gentle art” in 2005, beginning his journey at Novagen BJJ — one of South Africa’s pioneering academies.</p>
+            <p>In 2023, York reached a major milestone by receiving his Black Belt from multiple-time world champion Penny Thomas. His transition into coaching began during the COVID-19 pandemic, where a dedicated small group of students evolved into what is now Maddog's BJJ programme. Driven by the belief that Jiu Jitsu offers essential everyday skills and profound lifestyle benefits, York expanded his reach in 2025 by launching an engaging Kids Program — fostering a community where students of all ages can experience the discipline, resilience, and technical depth of Brazilian Jiu Jitsu.</p>
           </div>
         </div>
         <button class="cc-expand" id="c6btn" onclick="toggleCoachBio('c6bio','c6btn')">Read Full Bio</button>
@@ -1247,7 +1253,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <a href="training.html#mma">MMA</a>
       <a href="training.html#bjj">BJJ</a>
       <a href="training.html#kickboxing">Kickboxing</a>
-      <a href="training.html#pt">Elite Personal Training</a>
+      <a href="elite-personal-training.html">Elite Personal Training</a>
       <a href="training.html#powerlifting">Powerlifting</a>
     </div>
     <div class="sf-col">
@@ -1695,4 +1701,5 @@ body{min-height:100vh;display:flex;flex-direction:column}footer.site-footer{marg
   } catch (e) { console.warn('Coaches:', e) }
 })()
 </script>
+
 </body></html>
