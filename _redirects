@@ -14,3 +14,6 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 # Redirect old pricing page to wellness pricing
 /pricing /wellness-pricing 301
 /pricing.html /wellness-pricing 301
+
+# Block public access to internal editing working copies (still tracked in git for backup)
+/stripped/* /404.html 404

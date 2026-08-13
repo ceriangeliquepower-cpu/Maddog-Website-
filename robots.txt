@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /stripped/
 
 Sitemap: https://www.maddogperformance.co.za/sitemap.xml
