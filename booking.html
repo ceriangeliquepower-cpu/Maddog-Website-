@@ -86,6 +86,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .site-nav-links{display:flex!important;align-items:center!important;gap:0!important;flex:1!important;justify-content:center!important}
 .site-nav-links a{font-family:'Bebas Neue',sans-serif!important;font-size:16px!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:rgba(245,240,232,.75)!important;padding:0 16px!important;line-height:72px!important;transition:color .2s!important;white-space:nowrap!important;text-decoration:none!important;display:inline-block!important}
 .site-nav-links a:hover,.site-nav-links a.sn-active{color:#c9a84c!important;box-shadow:inset 0 -2px 0 #c9a84c!important}
+.snl-wellness{border:1px solid rgba(201,168,76,.55)!important;padding:6px 16px!important;line-height:1.4!important;margin-left:8px!important;border-radius:2px!important;color:#C9A84C!important;font-size:14px!important}
+.snl-wellness:hover{background:rgba(201,168,76,.1)!important;box-shadow:none!important;color:#C9A84C!important}
+.snm-wellness{color:#8BAFC7!important;border-color:rgba(139,175,199,.2)!important}
 .site-nav-cta{flex-shrink:0!important}
 .site-nav-cta a{font-family:'Bebas Neue',sans-serif!important;font-size:16px!important;letter-spacing:.12em!important;text-transform:uppercase!important;background:#c9a84c!important;color:#080808!important;padding:10px 28px!important;display:inline-block!important;transition:background .2s!important;text-decoration:none!important;white-space:nowrap!important;line-height:1.4!important;border-radius:2px!important}
 .site-nav-cta a:hover{background:#e8c87a!important}
@@ -396,7 +399,7 @@ footer.site-footer *{box-sizing:border-box!important}
       </a>
     </div>
     <div class="cs-qr-wrap">
-      <div class="cs-qr-img"><img src="images/29435dc7de1d6809.png" alt="WhatsApp QR Code — scan to chat with Maddog Performance Institute" width="140" height="140" style="display:block;width:140px;height:140px"></div>
+      <div class="cs-qr-img"><img src="data:image/png;base64,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" alt="WhatsApp QR Code — scan to chat with Maddog Performance Institute" width="140" height="140" style="display:block;width:140px;height:140px"></div>
       <div class="cs-qr-label">Scan to Chat on WhatsApp</div>
       <div class="cs-qr-sub">+27 63 442 1690</div>
     </div>
@@ -416,11 +419,12 @@ footer.site-footer *{box-sizing:border-box!important}
       <a href="index.html">Home</a>
       <a href="amanda.html">Amanda</a>
       <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
-      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="training.html#schedule">Class Schedule</a></div></div>
+      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="training-mma-ballito.html">MMA</a><a href="training-bjj-ballito.html">BJJ</a><a href="training-kids-bjj-ballito.html">Kids BJJ</a><a href="training-kickboxing-ballito.html">Kickboxing</a><a href="training-boxing-ballito.html">Boxing</a><a href="training-womens-boxing-ballito.html">Women's Boxing</a><a href="training-kids-boxing-ballito.html">Kids Boxing</a><a href="training-olympic-boxing-ballito.html">Olympic Boxing</a><a href="training-bootcamp-ballito.html">Bootcamp</a><a href="training-powerlifting-ballito.html">Powerlifting</a><a href="training-personal-training-ballito.html">Personal Training</a></div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
+      <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
     </div>
     <div class="site-nav-cta"><a href="booking.html" class="sn-active">Book Now</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleNav()" aria-label="Menu">
@@ -434,11 +438,12 @@ footer.site-footer *{box-sizing:border-box!important}
   <a href="recovery.html">Recovery</a>
   <a href="wellness-pricing.html" class="snm-sub">&#8627; Pricelist</a>
   <a href="training.html">Training</a>
-  <a href="training.html#schedule" class="snm-sub">&#8627; Class Schedule</a>
+  <a href="training-mma-ballito.html" class="snm-sub">&#8627; MMA</a><a href="training-bjj-ballito.html" class="snm-sub">&#8627; BJJ</a><a href="training-kids-bjj-ballito.html" class="snm-sub">&#8627; Kids BJJ</a><a href="training-kickboxing-ballito.html" class="snm-sub">&#8627; Kickboxing</a><a href="training-boxing-ballito.html" class="snm-sub">&#8627; Boxing</a><a href="training-womens-boxing-ballito.html" class="snm-sub">&#8627; Women's Boxing</a><a href="training-kids-boxing-ballito.html" class="snm-sub">&#8627; Kids Boxing</a><a href="training-olympic-boxing-ballito.html" class="snm-sub">&#8627; Olympic Boxing</a><a href="training-bootcamp-ballito.html" class="snm-sub">&#8627; Bootcamp</a><a href="training-powerlifting-ballito.html" class="snm-sub">&#8627; Powerlifting</a><a href="training-personal-training-ballito.html" class="snm-sub">&#8627; Personal Training</a>
   <a href="coaches.html">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
+  <a href="wellness.html" class="snm-wellness">&#10022; Wellness &amp; Recovery</a>
   <a href="booking.html" class="snm-cta">Book Now</a>
 </div>
 

@@ -10,8 +10,8 @@
     },
     {
       "name": "maddog-static",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "3000"],
+      "runtimeExecutable": "C:\\Users\\HP\\AppData\\Local\\Python\\bin\\python.exe",
+      "runtimeArgs": ["C:\\Users\\HP\\Desktop\\Maddog Web design pages\\serve.py"],
       "port": 3000
     }
   ]

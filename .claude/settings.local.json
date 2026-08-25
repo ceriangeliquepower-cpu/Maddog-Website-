@@ -39,7 +39,8 @@
       "Bash(python -c \"import qrcode; print\\('qrcode available'\\)\")",
       "Bash(python \"C:\\\\Users\\\\HP\\\\Desktop\\\\fix_recovery_ctas.py\")",
       "Bash(python -c \"import shutil; shutil.copy2\\(r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\.claude\\\\worktrees\\\\priceless-bardeen-61b48b\\\\training.html', r'C:\\\\Users\\\\HP\\\\Desktop\\\\Maddog Web design pages\\\\training.html'\\); print\\('Copied.'\\)\")",
-      "Bash(python fix_nav_logo.py)"
+      "Bash(python fix_nav_logo.py)",
+      "Bash(/c/Users/HP/AppData/Local/Python/bin/python.exe -c ' *)"
     ]
   }
 }

@@ -15,5 +15,18 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /pricing /wellness-pricing 301
 /pricing.html /wellness-pricing 301
 
+# Training discipline pages — serve flat files at their pretty /training/... URLs
+/training/mma-ballito /training-mma-ballito.html 200
+/training/bjj-ballito /training-bjj-ballito.html 200
+/training/kids-bjj-ballito /training-kids-bjj-ballito.html 200
+/training/kickboxing-ballito /training-kickboxing-ballito.html 200
+/training/boxing-ballito /training-boxing-ballito.html 200
+/training/womens-boxing-ballito /training-womens-boxing-ballito.html 200
+/training/kids-boxing-ballito /training-kids-boxing-ballito.html 200
+/training/olympic-boxing-ballito /training-olympic-boxing-ballito.html 200
+/training/bootcamp-ballito /training-bootcamp-ballito.html 200
+/training/powerlifting-ballito /training-powerlifting-ballito.html 200
+/training/personal-training-ballito /training-personal-training-ballito.html 200
+
 # Block public access to internal editing working copies (still tracked in git for backup)
 /stripped/* /404.html 404

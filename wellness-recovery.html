@@ -240,7 +240,15 @@ body::before{display:none}
 
 @media(max-width:768px){img[aria-hidden='true'][style*='position:absolute']{top:25%!important}}
 </style>
-</head>
+<style>
+/* -- PRODUCTION: hide all edit-mode UI -- */
+.edit-banner,.save-banner{display:none!important}
+#save-page-btn{display:none!important}
+.slot-overlay,.slot-hint{display:none!important}
+.gc{display:none!important}
+[role="button"].photo-slot{cursor:default!important}
+.photo-slot{cursor:default!important}
+</style></head>
 <body>
 
 <nav class="w-nav" id="wNav">
@@ -484,30 +492,6 @@ body::before{display:none}
   </div>
 </section>
 
-<!-- Ã¢â€¢ÂÃ¢â€¢Â PHYSIO SECTION Ã¢â€¢ÂÃ¢â€¢Â -->
-<!-- TREATMENTS -->
-<section class="physio-section" id="treatments" style="background:var(--black)">
-  <div class="si">
-    <div class="physio-header">
-      <div>
-        <span class="sec-label">Treatments &middot; Saadiya</span>
-        <h2 class="sec-h">Lymphatic Drainage <em>&amp; Cupping.</em></h2>
-        <p class="body-p">Experience deep relaxation and relief with this specialised treatment combining lymphatic drainage and cupping. Promoting detoxification, enhanced circulation and muscle tension relief &mdash; leaving you feeling refreshed and revitalised.</p>
-      </div>
-    </div>
-    <div style="margin-top:32px">
-      <div class="physio-card" style="max-width:680px">
-        <div class="physio-card-name">90 Min Lymphatic Drainage + Cupping</div>
-        <div class="physio-card-sub">1 hr 30 min &middot; Full Treatment &middot; Saadiya</div>
-        <p class="physio-card-desc">A deep-relaxation session combining manual lymphatic drainage to support detoxification and reduce fluid retention, with cupping therapy to enhance circulation, release muscle tension and ease chronic pain.</p>
-        <div style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-          <span style="font-family:'Playfair Display',serif;font-size:28px;color:var(--blue);font-weight:600">R850</span>
-          <a href="wellness-pricing.html#treatments-pricing" class="btn btn-b">View Pricing &amp; Book</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <section class="physio-section" id="physio">
   <div class="si">
     <div class="physio-header">
