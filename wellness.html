@@ -1390,6 +1390,9 @@ function fallbackDl(blob,fname){
   document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(url);},3000);
 }
 document.addEventListener('DOMContentLoaded',function(){
+  if(matchMedia('(max-width:768px)').matches){
+    document.querySelectorAll('.wp-banner-item:nth-child(n+11)').forEach(function(el){el.remove();});
+  }
   document.querySelectorAll('.photo-slot').forEach(function(slot,i){
     var id='ws'+i;if(!slot.id)slot.id=id;
     var img=slot.querySelector('img');if(img&&!img.id)img.id=id+'-img';
