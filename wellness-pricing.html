@@ -4,22 +4,22 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PR35V75DZH');</script>
 <meta charset="UTF-8">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-wellness-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-wellness-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-wellness.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Wellness Pricing Ballito | IV Therapy &middot; Slimming Clinic &middot; Recovery | Maddog Performance Health & Wellness</title>
+<title>Wellness Pricing Ballito | IV Therapy &amp; Recovery</title>
 <meta name="description" content="Wellness pricing in Ballito — IV drips from R600, contrast therapy from R150, InBody scans, sports physio and slimming clinic. Book online.">
 <link rel="canonical" href="https://www.maddogperformance.co.za/wellness-pricing">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Wellness Pricing Ballito | Maddog Performance Health & Wellness">
+<meta property="og:title" content="Wellness Pricing Ballito | Maddog Health & Wellness">
 <meta property="og:description" content="IV therapy from R600, contrast therapy from R150, physio, InBody scanning and slimming clinic. Ballito's premium wellness facility.">
 <meta property="og:url" content="https://www.maddogperformance.co.za/wellness-pricing">
 <meta property="og:image" content="https://www.maddogperformance.co.za/og-image.jpg">
-<meta property="og:site_name" content="Maddog Performance Institute">
+<meta property="og:site_name" content="Maddog Health &amp; Wellness">
 <meta property="og:locale" content="en_ZA">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wellness Pricing Ballito | Maddog Performance Health & Wellness">
+<meta name="twitter:title" content="Wellness Pricing Ballito | Maddog Health & Wellness">
 <meta name="twitter:description" content="IV therapy from R600, contrast therapy from R150, physio, InBody and slimming clinic in Ballito.">
 <meta name="twitter:image" content="https://www.maddogperformance.co.za/og-image.jpg">
 <meta name="robots" content="index, follow">
@@ -29,14 +29,28 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "name": "Maddog Performance Health & Wellness — Pricing",
+  "name": "Maddog Health & Wellness — Pricing",
   "url": "https://www.maddogperformance.co.za/wellness-pricing",
   "description": "Complete pricing for IV drip therapy, contrast therapy, slimming clinic, InBody scanning, sports physiotherapy and wellness memberships in Ballito.",
   "telephone": "+27634421690",
   "email": "info@maddogperformance.co.za",
   "priceRange": "R80–R2700",
-  "address": {"@type":"PostalAddress","streetAddress":"22 Sandra Road, Balvista Centre","addressLocality":"Ballito","addressRegion":"KwaZulu-Natal","postalCode":"4420","addressCountry":"ZA"},
-  "medicalSpecialty": "PhysicalMedicine"
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "22 Sandra Road, Balvista Centre",
+    "addressLocality": "Ballito",
+    "addressRegion": "KwaZulu-Natal",
+    "postalCode": "4420",
+    "addressCountry": "ZA"
+  },
+  "medicalSpecialty": "PhysicalMedicine",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "41",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,9 +79,20 @@ body::before{display:none}
 .w-nav-logo-sub{font-size:8px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-top:2px}
 .w-nav-sep{width:1px;height:28px;background:rgba(139,175,199,0.25);flex-shrink:0}
 .w-nav-links{display:flex;align-items:center;flex:1;justify-content:center}
-.w-nav-links a{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim);padding:0 14px;line-height:72px;transition:color .2s;white-space:nowrap;text-decoration:none;display:inline-block}
+.w-nav-links a{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim);padding:0 9px;line-height:72px;transition:color .2s;white-space:nowrap;text-decoration:none;display:inline-block}
 .w-nav-links a:hover,.w-nav-links a.wn-active{color:var(--blue);box-shadow:inset 0 -2px 0 var(--blue)}
-.w-nav-cta{flex-shrink:0}
+.w-nav-has-dropdown{position:relative;display:inline-flex;align-items:center}
+.w-nav-has-dropdown>a{display:inline-flex;align-items:center;gap:3px;line-height:72px;padding:0 9px;white-space:nowrap}
+.w-nav-drop-chevron{font-size:8px;color:rgba(184,145,42,.5);transition:transform .2s;margin-left:1px;font-style:normal}
+.w-nav-has-dropdown:hover .w-nav-drop-chevron{transform:rotate(180deg);color:var(--gold)}
+.w-nav-drop-menu{display:none;position:absolute;top:72px;left:0;background:var(--card);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:210px;z-index:9001;backdrop-filter:blur(14px)}
+.w-nav-has-dropdown:hover .w-nav-drop-menu{display:block}
+.w-nav-drop-menu a{display:block;font-family:'Bebas Neue',sans-serif;font-size:14px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--white-dim);padding:13px 20px;line-height:1;border-bottom:1px solid var(--border);white-space:nowrap;transition:all .2s;text-decoration:none}
+.w-nav-drop-menu a:last-child{border-bottom:none}
+.w-nav-drop-menu a:hover{color:var(--gold);background:var(--gold-glow)}
+.w-mob-sub{display:block;font-family:'Bebas Neue',sans-serif;font-size:14px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--white-faint);padding:9px 0 9px 22px;border-bottom:1px solid rgba(28,24,20,.08);text-decoration:none;transition:color .2s}
+.w-mob-sub:hover{color:var(--gold)}
+.w-nav-cta{flex-shrink:0;min-width:185px;text-align:right;padding-right:16px}
 .w-nav-cta a{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.1em;text-transform:uppercase;background:var(--blue);color:var(--black);padding:10px 26px;display:inline-block;transition:background .2s;text-decoration:none;white-space:nowrap;border-radius:2px}
 .w-nav-cta a:hover{background:#A8C8DC}
 .w-nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0}
@@ -141,11 +166,19 @@ body::before{display:none}
 .pt-badge.popular{color:var(--black);background:var(--blue)}
 .section-note{font-size:12px;font-weight:300;color:var(--white-faint);margin-top:20px;font-style:italic;line-height:1.65;border-top:1px solid var(--border);padding-top:16px}
 
+.pcard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.pcard{background:var(--card);padding:26px 24px;display:flex;flex-direction:column;position:relative;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .3s,background .3s,transform .3s,box-shadow .3s}
+.pcard:hover{border-color:var(--blue);background:var(--blue-soft);transform:translateY(-6px);box-shadow:0 16px 40px rgba(46,112,152,.35)}
+.pcard-price{position:absolute;top:0;right:0;font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold);letter-spacing:.02em;background:rgba(184,145,42,0.08);padding:10px 16px 8px;border-bottom:2px solid var(--gold);line-height:1;white-space:nowrap;border-top-right-radius:14px;border-bottom-left-radius:10px}
+.pcard-name{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.03em;color:var(--white);line-height:1.15;margin-bottom:8px;padding-right:100px}
+.pcard-desc{font-size:12px;font-weight:300;color:var(--white-dim);line-height:1.6;margin-top:auto}
+.pcard-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--white-faint);display:block;margin-top:8px;font-weight:300}
+
 /* Ã¢â€â‚¬Ã¢â€â‚¬ COMPARISON Ã¢â€â‚¬Ã¢â€â‚¬ */
-.membership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:28px}
-.mem-card{background:var(--card);padding:36px 28px;display:flex;flex-direction:column;border-top:3px solid var(--border);transition:border-color .3s}
-.mem-card:hover{border-top-color:var(--blue)}
-.mem-card.featured{border-top-color:var(--gold)}
+.membership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.mem-card{background:var(--card);padding:36px 28px;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .3s,background .3s,transform .3s,box-shadow .3s}
+.mem-card:hover{border-color:var(--blue);background:var(--blue-soft);transform:translateY(-6px);box-shadow:0 16px 40px rgba(46,112,152,.35)}
+.mem-card.featured{border-color:var(--gold)}
 .mem-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;color:var(--white);margin-bottom:6px}
 .mem-price{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--gold);line-height:1;margin-bottom:4px}
 .mem-price span{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:var(--white-dim);font-weight:300;margin-left:4px}
@@ -202,7 +235,10 @@ body::before{display:none}
 .w-footer-bottom{max-width:1200px;margin:32px auto 0;padding:20px 48px 0;border-top:1px solid rgba(28,24,20,.10);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .w-footer-bottom p{font-size:11px;font-weight:300;color:var(--white-faint);letter-spacing:.05em}
 .wa-float{position:fixed;bottom:28px;right:24px;z-index:8000}
-.wa-btn{width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s}
+.wa-btn{position:relative;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s}
+.wa-btn::before{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.55;animation:waPulse 2.4s ease-out infinite;z-index:-1}
+@keyframes waPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.9);opacity:0}}
+@media(prefers-reduced-motion:reduce){.wa-btn::before{animation:none;display:none}}
 .wa-btn:hover{transform:scale(1.1)}
 .wa-btn svg{width:26px;height:26px;fill:white}
 .reveal,.reveal.rd1,.reveal.rd2,.reveal.rd3{opacity:1 !important;transform:none !important}
@@ -242,14 +278,16 @@ body::before{display:none}
     </div>
     <div class="w-nav-links">
       <a href="wellness.html">Home</a>
-      <a href="wellness-iv.html">IV Therapy</a>
-      <a href="wellness-body.html">Body &amp; Weight</a>
-      <a href="wellness-recovery.html">Recovery &amp; Physio</a>
+      <div class="w-nav-has-dropdown"><a href="wellness-iv.html">IV Therapy <span class="w-nav-drop-chevron">&#9660;</span></a><div class="w-nav-drop-menu"><a href="wellness-iv.html">All IV Drips</a><a href="wellness-nad-iv-ballito.html">NAD+ &amp; Longevity</a></div></div>
+      <div class="w-nav-has-dropdown"><a href="wellness-body.html">Body &amp; Weight <span class="w-nav-drop-chevron">▼</span></a><div class="w-nav-drop-menu"><a href="wellness-body.html#slimming">Slimming Clinic</a><a href="wellness-inbody-scan-ballito.html">InBody Scan</a><a href="wellness-body.html#peptides">Peptide Therapy</a></div></div>
+      <div class="w-nav-has-dropdown"><a href="wellness-recovery.html">Recovery <span class="w-nav-drop-chevron">&#9660;</span></a><div class="w-nav-drop-menu"><a href="wellness-recovery.html">Contrast Therapy</a><a href="wellness-cold-plunge-ballito.html">Ice Bath</a><a href="wellness-infrared-sauna-ballito.html">Infrared Sauna</a></div></div>
+      <a href="wellness-physiotherapy-ballito.html">Physio</a>
+      <a href="wellness-personal-training-ballito.html">PT &amp; Nutrition</a>
       <a href="wellness-pricing.html" class="wn-active">Pricing</a>
       <a href="wellness-blog.html">Insights</a>
       <a href="wellness-contact.html">Contact</a>
     </div>
-    <div class="w-nav-cta"><a href="#book">Book Now</a></div>
+    <div class="w-nav-cta"><a href="https://www.fresha.com/a/maddog-performance-institute-ballito-22-sandra-road-du13ywob" target="_blank" rel="noopener">Book Now</a></div>
     <button class="w-nav-ham" id="wNavHam" onclick="toggleWNav()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -258,13 +296,23 @@ body::before{display:none}
 <div class="w-mob-menu" id="wMobMenu">
   <a href="index.html" class="w-mob-back">&larr; Back to Maddog Performance</a>
   <a href="wellness.html">Wellness Home</a>
-  <a href="wellness-iv.html">IV Therapy</a>
+<a href="wellness-iv.html">IV Therapy</a>
+  <a href="wellness-iv.html" class="w-mob-sub">&#8618; All IV Drips</a>
+  <a href="wellness-nad-iv-ballito.html" class="w-mob-sub">&#8618; NAD+ &amp; Longevity</a>
   <a href="wellness-body.html">Body &amp; Weight</a>
-  <a href="wellness-recovery.html">Recovery &amp; Physio</a>
+  <a href="wellness-body.html#slimming" class="w-mob-sub">&#8618; Slimming Clinic</a>
+  <a href="wellness-inbody-scan-ballito.html" class="w-mob-sub">&#8618; InBody Scan</a>
+  <a href="wellness-body.html#peptides" class="w-mob-sub">&#8618; Peptide Therapy</a>
+<a href="wellness-recovery.html">Recovery</a>
+  <a href="wellness-recovery.html" class="w-mob-sub">&#8618; Contrast Therapy</a>
+  <a href="wellness-cold-plunge-ballito.html" class="w-mob-sub">&#8618; Ice Bath</a>
+  <a href="wellness-infrared-sauna-ballito.html" class="w-mob-sub">&#8618; Infrared Sauna</a>
+      <a href="wellness-physiotherapy-ballito.html">Physio</a>
+  <a href="wellness-personal-training-ballito.html">PT &amp; Nutrition</a>
   <a href="wellness-pricing.html">Pricing</a>
   <a href="wellness-blog.html">Insights</a>
   <a href="wellness-contact.html">Contact</a>
-  <a href="#book" class="w-mob-cta">Book Now</a>
+  <a href="https://www.fresha.com/a/maddog-performance-institute-ballito-22-sandra-road-du13ywob" target="_blank" rel="noopener" class="w-mob-cta">Book Now</a>
 </div>
 
 <main>
@@ -273,7 +321,7 @@ body::before{display:none}
 <section class="page-hero">
   <img src="data:image/png;base64,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" alt="" aria-hidden="true" style="position:absolute;right:8%;top:50%;transform:translateY(-50%);width:320px;opacity:0.10;filter:invert(0.6);pointer-events:none">
   <div class="si">
-    <span class="sec-label">Complete Pricing &middot; Maddog Performance Health &amp; Wellness</span>
+    <span class="sec-label">Complete Pricing &middot; Maddog Health &amp; Wellness</span>
     <h1 class="sec-h" style="font-size:clamp(40px,5.5vw,72px)">All services.<br><em>Transparent</em> pricing.</h1>
     <p class="body-p" style="max-width:540px">Every price, every service &mdash; no surprises. Browse by category below or scroll down to book your first consultation. All protocols are medically supervised and tailored to your individual needs.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
@@ -293,7 +341,7 @@ body::before{display:none}
     <span class="cred-item">Slimming Clinic &middot; Doctor Assessment R950</span>
     <span class="cred-item">Unlimited Recovery Membership from R900/month</span>
     <span class="cred-item">No Hidden Fees &middot; Transparent Pricing</span>
-    <span class="cred-item">Maddog Performance Health &amp; Wellness &middot; Ballito KZN</span>
+    <span class="cred-item">Maddog Health &amp; Wellness &middot; Ballito KZN</span>
     <span class="cred-item">IV Therapy from R600</span>
     <span class="cred-item">Cold Plunge from R150</span>
     <span class="cred-item">InBody Scan from R165</span>
@@ -301,7 +349,7 @@ body::before{display:none}
     <span class="cred-item">Slimming Clinic &middot; Doctor Assessment R950</span>
     <span class="cred-item">Unlimited Recovery Membership from R900/month</span>
     <span class="cred-item">No Hidden Fees &middot; Transparent Pricing</span>
-    <span class="cred-item">Maddog Performance Health &amp; Wellness &middot; Ballito KZN</span>
+    <span class="cred-item">Maddog Health &amp; Wellness &middot; Ballito KZN</span>
   </div>
 </div>
 
@@ -329,112 +377,100 @@ body::before{display:none}
     </div>
 
     <p style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px">Core Protocols</p>
-    <table class="pricing-table">
-      <thead><tr><th>Drip</th><th>Description</th><th>Price</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><div class="pt-name">Hydration IV</div><div class="pt-desc">1000ml Saline + Electrolytes &mdash; rehydration, fatigue, hangover recovery</div></td>
-          <td></td>
-          <td><div class="pt-price">R600</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Jet Fuel IV</div><div class="pt-desc">Rapid energy restoration &mdash; pre-event, travel fatigue, demanding periods</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,100</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Recovery IV</div><div class="pt-desc">Post-training muscle repair &mdash; amino acids, electrolytes, vitamins</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,300</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Inflammation IV</div><div class="pt-desc">Anti-inflammatory support &mdash; chronic pain, post-surgery, flare-ups</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,300</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Myers Cocktail</div><span class="pt-badge featured">Classic</span><div class="pt-desc">The gold standard &mdash; B vitamins, vitamin C, magnesium, calcium</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,300</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="pcard-grid">
+      <div class="pcard">
+        <span class="pcard-price">R600</span>
+        <div class="pcard-name">Hydration IV</div>
+        <p class="pcard-desc">1000ml Saline + Electrolytes &mdash; rehydration, fatigue, hangover recovery</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,100</span>
+        <div class="pcard-name">Jet Fuel IV</div>
+        <p class="pcard-desc">Rapid energy restoration &mdash; pre-event, travel fatigue, demanding periods</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,300</span>
+        <div class="pcard-name">Recovery IV</div>
+        <p class="pcard-desc">Post-training muscle repair &mdash; amino acids, electrolytes, vitamins</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,300</span>
+        <div class="pcard-name">Inflammation IV</div>
+        <p class="pcard-desc">Anti-inflammatory support &mdash; chronic pain, post-surgery, flare-ups</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,300</span>
+        <div class="pcard-name">Myers Cocktail <span class="pt-badge featured">Classic</span></div>
+        <p class="pcard-desc">The gold standard &mdash; B vitamins, vitamin C, magnesium, calcium</p>
+      </div>
+    </div>
 
     <p style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin:28px 0 12px">Performance &amp; Immunity</p>
-    <table class="pricing-table">
-      <thead><tr><th>Drip</th><th>Description</th><th>Price</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><div class="pt-name">Energy Performance IV</div><div class="pt-desc">Athletic power &mdash; mitochondrial support, B vitamins, amino acids</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,400</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Immunity Boost IV</div><div class="pt-desc">High-dose Vitamin C + zinc &mdash; illness prevention and recovery</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,100</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Detox IV</div><div class="pt-desc">Liver support, glutathione, antioxidants &mdash; cellular clean-up</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,300</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="pcard-grid">
+      <div class="pcard">
+        <span class="pcard-price">R1,400</span>
+        <div class="pcard-name">Energy Performance IV</div>
+        <p class="pcard-desc">Athletic power &mdash; mitochondrial support, B vitamins, amino acids</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,100</span>
+        <div class="pcard-name">Immunity Boost IV</div>
+        <p class="pcard-desc">High-dose Vitamin C + zinc &mdash; illness prevention and recovery</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,300</span>
+        <div class="pcard-name">Detox IV</div>
+        <p class="pcard-desc">Liver support, glutathione, antioxidants &mdash; cellular clean-up</p>
+      </div>
+    </div>
 
     <p style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin:28px 0 12px">Aesthetic &amp; Wellness</p>
-    <table class="pricing-table">
-      <thead><tr><th>Drip</th><th>Description</th><th>Price</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><div class="pt-name">Glutathione Glow IV</div><div class="pt-desc">Skin brightening, detox, anti-aging &mdash; the master antioxidant</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,200</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">NAD+ Protocols</div><span class="pt-badge popular">Most Popular</span><div class="pt-desc">Cellular energy &mdash; the foundational NAD+ infusion</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,300</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">NAD+ Energy IV</div><div class="pt-desc">NAD+ + mitochondrial support &mdash; energy, metabolism, anti-fatigue</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,600</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Cognitive IV</div><div class="pt-desc">Nootropic stack &mdash; focus, mental clarity, cognitive performance</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,900</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">NAD+ Anti-Aging IV</div><div class="pt-desc">Longevity protocol &mdash; cellular repair, telomere support, aging reversal</div></td>
-          <td></td>
-          <td><div class="pt-price">R1,900</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Bespoke / Custom IV</div><div class="pt-desc">Custom formulation &mdash; designed for your specific needs in consultation</div></td>
-          <td></td>
-          <td><div class="pt-price">From R600</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="pcard-grid">
+      <div class="pcard">
+        <span class="pcard-price">R1,200</span>
+        <div class="pcard-name">Glutathione Glow IV</div>
+        <p class="pcard-desc">Skin brightening, detox, anti-aging &mdash; the master antioxidant</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,300</span>
+        <div class="pcard-name">NAD+ Protocols <span class="pt-badge popular">Most Popular</span></div>
+        <p class="pcard-desc">Cellular energy &mdash; the foundational NAD+ infusion</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,600</span>
+        <div class="pcard-name">NAD+ Energy IV</div>
+        <p class="pcard-desc">NAD+ + mitochondrial support &mdash; energy, metabolism, anti-fatigue</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,900</span>
+        <div class="pcard-name">Cognitive IV</div>
+        <p class="pcard-desc">Nootropic stack &mdash; focus, mental clarity, cognitive performance</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">R1,900</span>
+        <div class="pcard-name">NAD+ Anti-Aging IV</div>
+        <p class="pcard-desc">Longevity protocol &mdash; cellular repair, telomere support, aging reversal</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">From R600</span>
+        <div class="pcard-name">Bespoke / Custom IV</div>
+        <p class="pcard-desc">Custom formulation &mdash; designed for your specific needs in consultation</p>
+      </div>
+    </div>
 
     <p style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin:28px 0 12px">Add-Ons</p>
-    <table class="pricing-table">
-      <thead><tr><th>Add-On</th><th>Description</th><th>Price</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><div class="pt-name">Glutathione Protocols</div><div class="pt-desc">Standalone glutathione infusion or added to any IV protocol</div></td>
-          <td></td>
-          <td><div class="pt-price">From R800</div></td>
-        </tr>
-        <tr>
-          <td><div class="pt-name">Bespoke / Custom</div><div class="pt-desc">Additional vitamins, minerals or compounds &mdash; by consultation</div></td>
-          <td></td>
-          <td><div class="pt-price">From R600</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="pcard-grid">
+      <div class="pcard">
+        <span class="pcard-price">From R800</span>
+        <div class="pcard-name">Glutathione Protocols</div>
+        <p class="pcard-desc">Standalone glutathione infusion or added to any IV protocol</p>
+      </div>
+      <div class="pcard">
+        <span class="pcard-price">From R600</span>
+        <div class="pcard-name">Bespoke / Custom</div>
+        <p class="pcard-desc">Additional vitamins, minerals or compounds &mdash; by consultation</p>
+      </div>
+    </div>
     <p style="font-size:13px;font-weight:300;color:var(--white-dim);line-height:1.8;margin:20px 0 8px">We specialise in <strong style="color:var(--white)">individualised and niche IV protocols</strong> tailored to your specific health profile. All protocols are designed in consultation with Dr. Du Plessis.</p>
     <p class="section-note">All IV protocols require an initial health screening. First-time clients will complete a brief medical intake form before treatment. Drips take 20&ndash;45 minutes depending on protocol.</p>
   </div>
@@ -750,7 +786,7 @@ body::before{display:none}
         <p class="form-sub">Complete this form and we'll confirm your booking within one business day.</p>
         <form id="bookingForm" onsubmit="submitBooking(event)">
           <input type="hidden" name="access_key" value="fcc5d1ec-7a28-4e62-917c-b1e2f9c1c1f8">
-          <input type="hidden" name="subject" value="Wellness Booking Request &mdash; Maddog Performance Health & Wellness">
+          <input type="hidden" name="subject" value="Wellness Booking Request &mdash; Maddog Health & Wellness">
           <input type="hidden" name="from_name" value="Maddog Wellness Website">
           <div class="form-row">
             <div class="form-group">
@@ -940,7 +976,7 @@ body::before{display:none}
   <div class="si">
     <div class="disclaimer-box">
       <h3>Medical Disclaimer</h3>
-      <p>All protocols at Maddog Performance Health &amp; Wellness are medically supervised by our Medical Doctor, Dr. Deo Du Plessis, and administered by our Professional Registered Nurse, Sister Amanda Wren Kobus (SANC Practice No. 1196763). Treatments are individually assessed and prescribed based on each client's health history and goals. Pricing indicated is a guide and may vary based on individual protocol requirements. Certain treatments require medical clearance before commencement. Maddog Performance Health &amp; Wellness is not a registered medical facility and does not diagnose, treat or cure medical conditions. Always consult your primary healthcare provider before beginning any new health programme.</p>
+      <p>All protocols at Maddog Health &amp; Wellness are medically supervised by our Medical Doctor, Dr. Deo Du Plessis, and administered by our Professional Registered Nurse, Sister Amanda Wren Kobus (SANC Practice No. 1196763). Treatments are individually assessed and prescribed based on each client's health history and goals. Pricing indicated is a guide and may vary based on individual protocol requirements. Certain treatments require medical clearance before commencement. Maddog Health &amp; Wellness is not a registered medical facility and does not diagnose, treat or cure medical conditions. Always consult your primary healthcare provider before beginning any new health programme.</p>
     </div>
   </div>
 </section>
@@ -990,7 +1026,7 @@ body::before{display:none}
 <footer class="w-footer">
   <div class="w-footer-main">
     <div class="w-footer-brand">
-      <span class="w-footer-brand-name">Maddog Performance</span>
+      <span class="w-footer-brand-name">Maddog</span>
       <span class="w-footer-brand-sub">Health &amp; Wellness</span>
       <p>Medical-grade wellness protocols in Ballito, KZN. IV therapy, body composition, contrast recovery and sports physiotherapy &mdash; supervised by qualified practitioners.</p>
       <address style="font-style:normal;font-size:13px;color:var(--white-faint);line-height:1.8;margin-bottom:14px">22 Sandra Road, Balvista Centre, Ballito &middot; +27 63 442 1690</address>
@@ -1009,7 +1045,8 @@ body::before{display:none}
       <a href="wellness.html">Wellness Home</a>
       <a href="wellness-iv.html">IV Therapy</a>
       <a href="wellness-body.html">Body &amp; Weight</a>
-      <a href="wellness-recovery.html">Recovery &amp; Physio</a>
+      <a href="wellness-recovery.html">Recovery</a>
+      <a href="wellness-physiotherapy-ballito.html">Physio</a>
     </div>
     <div class="w-footer-col">
       <h4>Contact</h4>
@@ -1017,6 +1054,7 @@ body::before{display:none}
       <a href="https://wa.me/27634421690" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:+27634421690">+27 63 442 1690</a>
       <a href="mailto:info@maddogperformance.co.za">Email Us</a>
+      <a href="https://www.google.com/maps/place/Maddog+Performance+Health+%26+Wellness/data=!4m2!3m1!1s0x0:0x5940a9ffd7bfff40" target="_blank" rel="noopener">Find Us on Google</a>
     </div>
   </div>
   <div class="w-footer-bottom">

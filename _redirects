@@ -15,6 +15,28 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /pricing /wellness-pricing 301
 /pricing.html /wellness-pricing 301
 
+# Wellness microsite — canonicalize .html requests to their clean URLs
+# (Netlify's Pretty URLs already rewrites every internal link to the clean form;
+# these close the duplicate-URL gap for anyone requesting the .html path directly)
+/wellness.html /wellness 301
+/wellness-iv.html /wellness-iv 301
+/wellness-body.html /wellness-body 301
+/wellness-recovery.html /wellness-recovery 301
+/wellness-pricing.html /wellness-pricing 301
+/wellness-contact.html /wellness-contact 301
+/wellness-blog.html /wellness-blog 301
+/wellness-blog-womens-self-defence.html /wellness-blog-womens-self-defence 301
+/wellness-blog-cold-plunge.html /wellness-blog-cold-plunge 301
+/wellness-blog-iv-therapy.html /wellness-blog-iv-therapy 301
+/wellness-blog-physiotherapy.html /wellness-blog-physiotherapy 301
+/wellness-blog-genesis-longevity.html /wellness-blog-genesis-longevity 301
+/wellness-physiotherapy-ballito.html /wellness-physiotherapy-ballito 301
+/wellness-inbody-scan-ballito.html /wellness-inbody-scan-ballito 301
+/wellness-nad-iv-ballito.html /wellness-nad-iv-ballito 301
+/wellness-cold-plunge-ballito.html /wellness-cold-plunge-ballito 301
+/wellness-infrared-sauna-ballito.html /wellness-infrared-sauna-ballito 301
+/wellness-personal-training-ballito.html /wellness-personal-training-ballito 301
+
 # Training discipline pages — serve flat files at their pretty /training/... URLs
 /training/mma-ballito /training-mma-ballito.html 200
 /training/bjj-ballito /training-bjj-ballito.html 200
