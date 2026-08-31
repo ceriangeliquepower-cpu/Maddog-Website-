@@ -1,1 +1,5 @@
 .claude/worktrees/
+raw-photos/
+__pycache__/
+*.pyc
+*.bak

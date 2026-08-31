@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Maddog Performance Health & Wellness",
+  "url": "https://www.maddogperformance.co.za/wellness",
+  "telephone": "+27634421690",
+  "email": "info@maddogperformance.co.za",
+  "priceRange": "R150-R2016",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "22 Sandra Road, Balvista Centre",
+    "addressLocality": "Ballito",
+    "addressRegion": "KwaZulu-Natal",
+    "postalCode": "4420",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -29.539,
+    "longitude": 31.2148
+  },
+  "openingHours": "Mo-Fr 06:00-20:00 Sa 07:00-14:00",
+  "image": "https://www.maddogperformance.co.za/og-image.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "41",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}

@@ -52,3 +52,13 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 
 # Block public access to internal editing working copies (still tracked in git for backup)
 /stripped/* /404.html 404
+
+# Block public access to internal tooling/templates/reports — kept in git for backup
+# and workflow portability, but never meant to be live site content
+/blog-TEMPLATE.html /404.html 404
+/wellness-blog-TEMPLATE.html /404.html 404
+/optimize_photo.py /404.html 404
+/serve.py /404.html 404
+/serve.bat /404.html 404
+/seo-audit-report.md /404.html 404
+/.claude/* /404.html 404
