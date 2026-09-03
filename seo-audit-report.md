@@ -1,7 +1,7 @@
-# SEO Audit Report — 2026-08-31
+# SEO Audit Report — 2026-09-03
 
 Pages scanned: 53 (34 gym, 19 wellness)
-Findings: **0 critical**, **69 warning**, 23 info
+Findings: **0 critical**, **53 warning**, 23 info
 
 ## Site-wide
 
@@ -21,18 +21,14 @@ Findings: **0 critical**, **69 warning**, 23 info
 - **WARNING**: 1 of 32 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - **WARNING**: Page is 4161.3KB — likely base64-embedded images bloating load time; consider migrating to images/ file-based references
 
-### blog-amanda-kobus-coach-ballito.html (gym, 391.0KB)
-*Title: Meet Amanda Kobus: Strength Coach &amp; Nurse Practitioner Ballito | Maddog KZN*
+### blog-amanda-kobus-coach-ballito.html (gym, 390.8KB)
+*Title: Amanda Kobus: Strength Coach and Nurse Practitioner | Maddog*
 
-- **WARNING**: <title> is 79 chars (target ~60) — "Meet Amanda Kobus: Strength Coach &amp; Nurse Practitioner Ballito | M..."
-- **WARNING**: Meta description is 191 chars (target 150-160)
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-ballito-community-raises-funds-st-lukes.html (gym, 374.5KB)
-*Title: When Ballito Showed Up: R53,000 Raised for St Luke’s Home of Healing | Maddog*
+### blog-ballito-community-raises-funds-st-lukes.html (gym, 374.9KB)
+*Title: When Ballito Showed Up: R53,000 for St Luke’s | Maddog*
 
-- **WARNING**: <title> is 77 chars (target ~60) — "When Ballito Showed Up: R53,000 Raised for St Luke’s Home of Healing |..."
-- **WARNING**: Meta description is 168 chars (target 150-160)
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
 ### blog-bjj-beginners-ballito.html (gym, 299.2KB)
@@ -45,17 +41,14 @@ Findings: **0 critical**, **69 warning**, 23 info
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-efc-134-amanda-lino-title-defence.html (gym, 255.2KB)
-*Title: Amanda “Maddog” Lino Defends EFC Flyweight Title at EFC 134 | Maddog Performance Institute | Ballito KZN*
+### blog-efc-134-amanda-lino-title-defence.html (gym, 254.8KB)
+*Title: Amanda Lino Defends EFC Flyweight Title at EFC 134 | Maddog*
 
-- **WARNING**: <title> is 104 chars (target ~60) — "Amanda “Maddog” Lino Defends EFC Flyweight Title at EFC 134 | Maddog P..."
-- **WARNING**: Meta description is 218 chars (target 150-160)
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-efc-134-amanda-lino-vs-juliet-chukwu.html (gym, 356.8KB)
-*Title: EFC 134: Amanda Lino vs Juliet Chukwu — Champion vs Champion | Maddog Performance Institute*
+### blog-efc-134-amanda-lino-vs-juliet-chukwu.html (gym, 357.2KB)
+*Title: EFC 134: Amanda Lino vs Juliet Chukwu | Maddog*
 
-- **WARNING**: <title> is 91 chars (target ~60) — "EFC 134: Amanda Lino vs Juliet Chukwu — Champion vs Champion | Maddog ..."
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
 ### blog-genesis-athlete-recovery-ballito.html (gym, 329.6KB)
@@ -78,12 +71,10 @@ Findings: **0 critical**, **69 warning**, 23 info
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-robin-jj-williams-physio-ballito.html (gym, 170.6KB)
-*Title: Sports Physiotherapy Ballito | Robin JJ Williams | Maddog Performance Institute KZN*
+### blog-robin-jj-williams-physio-ballito.html (gym, 170.5KB)
+*Title: Sports Physiotherapy Ballito | Robin JJ Williams | Maddog*
 
-- **WARNING**: <title> is 83 chars (target ~60) — "Sports Physiotherapy Ballito | Robin JJ Williams | Maddog Performance ..."
-- **WARNING**: Meta description is 185 chars (target 150-160)
-- **WARNING**: 2 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
+- **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
 ### blog-womens-self-defence-workshop-ballito.html (gym, 254.9KB)
 *Title: Women's Self-Defence Workshop Ballito | Maddog Safety Event*
@@ -95,11 +86,9 @@ Findings: **0 critical**, **69 warning**, 23 info
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-youth-mma-training-ballito.html (gym, 154.8KB)
-*Title: Youth MMA, BJJ, Kickboxing &amp; Powerlifting Training Ballito | Maddog KZN*
+### blog-youth-mma-training-ballito.html (gym, 154.7KB)
+*Title: Youth MMA, BJJ, Kickboxing &amp; Powerlifting Ballito | Maddog*
 
-- **WARNING**: <title> is 75 chars (target ~60) — "Youth MMA, BJJ, Kickboxing &amp; Powerlifting Training Ballito | Maddo..."
-- **WARNING**: Meta description is 175 chars (target 150-160)
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
 ### booking.html (gym, 89.5KB)
@@ -179,12 +168,11 @@ Findings: **0 critical**, **69 warning**, 23 info
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-personal-training-ballito.html (gym, 2068.8KB)
+### training-personal-training-ballito.html (gym, 2068.7KB)
 *Title: Personal Training Ballito | Maddog Performance Institute*
 
-- **WARNING**: Meta description is 182 chars (target 150-160)
 - **WARNING**: 1 of 7 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
-- **WARNING**: Page is 2068.8KB — likely base64-embedded images bloating load time; consider migrating to images/ file-based references
+- **WARNING**: Page is 2068.7KB — likely base64-embedded images bloating load time; consider migrating to images/ file-based references
 
 ### training-powerlifting-ballito.html (gym, 753.4KB)
 *Title: Powerlifting Training Ballito | Maddog Performance Institute*
@@ -239,20 +227,17 @@ Findings: **0 critical**, **69 warning**, 23 info
 ### wellness-contact.html (wellness, 48.1KB)
 *Title: Contact Us | Maddog Health &amp; Wellness | Ballito KZN*
 
-- **WARNING**: Meta description is 137 chars (target 150-160)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
 ### wellness-inbody-scan-ballito.html (wellness, 223.8KB)
 *Title: InBody Scan Ballito | Body Composition Testing*
 
-- **WARNING**: Meta description is 138 chars (target 150-160)
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
 ### wellness-infrared-sauna-ballito.html (wellness, 346.4KB)
 *Title: Infrared Sauna Ballito | Recovery &amp; Wellness*
 
-- **WARNING**: Meta description is 129 chars (target 150-160)
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
@@ -284,7 +269,6 @@ Findings: **0 critical**, **69 warning**, 23 info
 ### wellness-pricing.html (wellness, 127.2KB)
 *Title: Wellness Pricing Ballito | IV Therapy &amp; Recovery*
 
-- **WARNING**: Meta description is 139 chars (target 150-160)
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 

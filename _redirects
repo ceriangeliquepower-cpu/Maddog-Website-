@@ -8,17 +8,44 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /index.html / 301
 
 # Fix broken meet-the-team link (from Google Business Profile)
-/meet-the-team /coaches.html 301
-/meet-the-team/ /coaches.html 301
+/meet-the-team /coaches 301
+/meet-the-team/ /coaches 301
 
 # Redirect old pricing page to wellness pricing
 /pricing /wellness-pricing 301
 /pricing.html /wellness-pricing 301
 
+# Gym site — canonicalize .html requests to their clean URLs
+# (every page's <link rel="canonical"> already declares the clean form;
+# these close the duplicate-URL gap causing Search Console indexing issues)
+/amanda.html /amanda 301
+/athletes.html /athletes 301
+/coaches.html /coaches 301
+/events.html /events 301
+/contact.html /contact 301
+/booking.html /booking 301
+/recovery.html /recovery 301
+/training.html /training 301
+/blog-amanda-kobus-coach-ballito.html /blog-amanda-kobus-coach-ballito 301
+/blog-ballito-community-raises-funds-st-lukes.html /blog-ballito-community-raises-funds-st-lukes 301
+/blog-bjj-beginners-ballito.html /blog-bjj-beginners-ballito 301
+/blog-cold-plunge-sauna-ballito.html /blog-cold-plunge-sauna-ballito 301
+/blog-efc-134-amanda-lino-title-defence.html /blog-efc-134-amanda-lino-title-defence 301
+/blog-efc-134-amanda-lino-vs-juliet-chukwu.html /blog-efc-134-amanda-lino-vs-juliet-chukwu 301
+/blog-genesis-athlete-recovery-ballito.html /blog-genesis-athlete-recovery-ballito 301
+/blog-iv-drip-therapy-ballito.html /blog-iv-drip-therapy-ballito 301
+/blog-mma-training-ballito.html /blog-mma-training-ballito 301
+/blog-powerlifting-women-ballito.html /blog-powerlifting-women-ballito 301
+/blog-robin-jj-williams-physio-ballito.html /blog-robin-jj-williams-physio-ballito 301
+/blog-womens-self-defence-workshop-ballito.html /blog-womens-self-defence-workshop-ballito 301
+/blog-womens-self-defence-workshop-recap-ballito.html /blog-womens-self-defence-workshop-recap-ballito 301
+/blog-youth-mma-training-ballito.html /blog-youth-mma-training-ballito 301
+
 # Wellness microsite — canonicalize .html requests to their clean URLs
 # (Netlify's Pretty URLs already rewrites every internal link to the clean form;
 # these close the duplicate-URL gap for anyone requesting the .html path directly)
 /wellness.html /wellness 301
+/wellness-blog-womens-wellness-day-recap.html /wellness-blog-womens-wellness-day-recap 301
 /wellness-iv.html /wellness-iv 301
 /wellness-body.html /wellness-body 301
 /wellness-recovery.html /wellness-recovery 301
