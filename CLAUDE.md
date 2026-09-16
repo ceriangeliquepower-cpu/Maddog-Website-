@@ -8,10 +8,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Static HTML website for **Maddog Performance Institute** — MMA gym + recovery/wellness centre in Ballito, KZN, South Africa.
 
-- **Live domain:** maddogperformance.co.za (DNS not yet pointed to Netlify)
-- **Netlify preview:** https://69d75b86a9622c318e399025--stellar-biscochitos-7f6a1c.netlify.app/
-- **Hosting:** Netlify — all 13 HTML files drop into the same folder, all relative links work as-is
-- **Redirects:** `_redirects.txt` maps `/` → `/index.html 200`
+- **Live domain:** maddogperformance.co.za — DNS is live on Netlify DNS (nameservers point to Netlify, not the registrar/cPanel)
+- **Hosting:** Netlify — all HTML files drop into the same folder, all relative links work as-is
+- **Redirects:** `_redirects` (no extension — `_redirects.txt` is a stale unused file, do not edit it) maps clean URLs, `.html → clean-URL` canonicalization (every such rule needs the force flag — see Hard-Won Rule #9), and a few one-off 301s. Verify any change live — see Hard-Won Rule #9.
 
 ---
 
@@ -66,6 +65,7 @@ These bugs have already been fixed. Do not revert them.
 6. **Credential strip: no `position` or `z-index`** — plain block flow only.
 7. **`.cred-scroll` must have `width:max-content`** — never override this in media queries.
 8. **All images must be base64-embedded** — no `<img src="path/to/file.jpg">` ever. Use PIL-compressed JPEG data URIs.
+9. **Every `_redirects` rule whose source path matches a real file in this repo needs the force flag (`!`)** — e.g. `/amanda.html /amanda 301!`, not `301`. Netlify silently skips an unforced redirect rule when a file exists at that exact path, and every `.html` page here IS such a file. This caused a 13-day incident (Sept 2026) where 30 committed, deployed redirect rules did nothing, stalling 41 pages out of Google's index — see `_redirects` for the current state and [[project_redirect_indexing_fix]] in memory for the full story. **Never trust a redirect rule because it's committed or deployed — verify it live** with `curl -I <url>` (expect `301`/`302`, not `200`) or run `py .claude/skills/maddog-seo-audit/scripts/audit_pages.py`, which live-tests every rule automatically. Do this after touching `_redirects` for any reason, and after adding any new page.
 
 ---
 
@@ -109,6 +109,17 @@ These bugs have already been fixed. Do not revert them.
 1. Read the existing file's CSS class names and structure before writing new HTML — match exactly.
 2. New sections must use existing CSS classes, not introduce new design patterns.
 3. Deliver complete `.html` files, not partial snippets (unless explicitly asked for a snippet).
+
+## After Adding Any New Page, or Touching `_redirects`
+
+Do this before considering the work done — not optional, not "if there's time":
+
+1. Add the new URL to `sitemap.xml`.
+2. If the page needs a `.html → clean-URL` redirect, add the rule to `_redirects` **with the force flag** (see Hard-Won Rule #9 above).
+3. Run `py .claude/skills/maddog-seo-audit/scripts/audit_pages.py` — it live-tests every redirect rule against the real production domain and flags sitemap gaps. Zero critical findings before moving on.
+4. Once the page is live, manually submit it in Search Console (Inspect URL → Request Indexing) rather than waiting on natural crawl — see [[project_gsc_indexing_queue]] in memory for the exact click-path.
+
+This whole loop is what `maddog-seo-audit` exists to make automatic — run it, don't just assume a committed change works. A `hooks/pre-push` git hook also runs the critical-findings check automatically on every push and blocks it if anything's broken (one-time setup per clone: `git config core.hooksPath hooks`) — this is a backstop, not a substitute for running the audit yourself during the work.
 
 ---
 

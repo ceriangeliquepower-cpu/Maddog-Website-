@@ -1,0 +1,33 @@
+#!/bin/sh
+# Blocks a push if the site has any CRITICAL-severity finding: broken redirect
+# rules (live-tested against production), missing title/meta/canonical/schema,
+# pages missing from sitemap.xml, or robots.txt blocking the site. Runs on
+# EVERY push, not just when _redirects changes — the point is nothing slips
+# through, not just this one bug class.
+#
+# Exists because of a real incident (Sept 2026): 30 _redirects rules were
+# committed, pushed, deployed, and silently did nothing for 13 days — Netlify
+# skips an unforced redirect rule when a file exists at that exact path, and
+# nobody tested the live behavior before calling it done. 41 pages fell out
+# of Google's index as a result. See CLAUDE.md Hard-Won Technical Rule #9.
+#
+# Only blocks on CRITICAL findings (objectively broken, not judgment calls) —
+# warnings/info still need a human read via the full `maddog-seo-audit` skill,
+# a hook shouldn't block on those or people start using --no-verify out of habit.
+#
+# One-time setup (per clone): git config core.hooksPath hooks
+
+echo ""
+echo "Running SEO/indexing critical-findings check before push (pages, sitemap, redirects)..."
+if ! py .claude/skills/maddog-seo-audit/scripts/audit_pages.py --check-critical; then
+  echo ""
+  echo "BLOCKED: one or more critical findings above (see CLAUDE.md Hard-Won Technical"
+  echo "Rule #9 and the 'After Adding Any New Page' section for what these mean)."
+  echo "Fix them, re-run 'py .claude/skills/maddog-seo-audit/scripts/audit_pages.py' to"
+  echo "confirm, then push again."
+  echo "(Not recommended, but to push anyway: git push --no-verify)"
+  exit 1
+fi
+
+echo "No critical findings. Continuing push."
+exit 0

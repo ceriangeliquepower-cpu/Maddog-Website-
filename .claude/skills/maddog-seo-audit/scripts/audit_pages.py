@@ -22,13 +22,17 @@ Usage:
 import os
 import re
 import sys
+import urllib.error
+import urllib.request
 from datetime import date
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PAGES_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..', '..'))
 SITEMAP_PATH = os.path.join(PAGES_DIR, 'sitemap.xml')
 ROBOTS_PATH = os.path.join(PAGES_DIR, 'robots.txt')
+REDIRECTS_PATH = os.path.join(PAGES_DIR, '_redirects')
 REPORT_PATH = os.path.join(PAGES_DIR, 'seo-audit-report.md')
+LIVE_DOMAIN = 'https://www.maddogperformance.co.za'
 
 TEMPLATE_FILES = {'blog-TEMPLATE.html', 'wellness-blog-TEMPLATE.html'}
 GYM_NAME = 'Maddog Performance Institute'
@@ -160,10 +164,15 @@ def audit_one_page(path, business):
         warning.append(f'{empty_alt + missing_alt} of {len(img_tags)} <img> tags have empty/missing alt text '
                         f'(some empty alt may be intentionally decorative — verify)')
 
-    # ---- File size (performance/SEO signal) ----
+    # ---- File size (Core Web Vitals / ranking risk, not just "large") ----
     if size_kb > 2000:
-        warning.append(f'Page is {size_kb}KB — likely base64-embedded images bloating load time; '
-                        f'consider migrating to images/ file-based references')
+        warning.append(f'Page is {size_kb}KB ({round(size_kb/1024, 1)}MB) — this is a real Core Web '
+                        f'Vitals (LCP) risk, which is a confirmed Google ranking factor, not just a '
+                        f'"nice to have" performance note. A page this size is very likely failing '
+                        f'Google\'s "good" LCP threshold (<2.5s) on mobile. Base64-embedded images can\'t '
+                        f'be cached separately from the HTML, so every visit re-downloads everything. '
+                        f'See the aggregate "Performance / Core Web Vitals risk" section at the top of '
+                        f'this report — this is not something to leave sitting as a routine warning.')
     elif size_kb > 800:
         info.append(f'Page is {size_kb}KB — on the larger side, worth checking for embedded base64 images')
 
@@ -205,7 +214,164 @@ def audit_robots():
     return findings
 
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """Makes urlopen raise HTTPError on a 301/302 instead of silently following it,
+    so we can inspect the actual status code the live site returned."""
+    def redirect_request(self, *args, **kwargs):
+        return None
+
+
+def _live_check_one(opener, source, dest, code):
+    """One rule's live HTTP check, run in a worker thread. Returns a finding
+    string, or None if the rule is working correctly."""
+    try:
+        req = urllib.request.Request(LIVE_DOMAIN + source, method='HEAD')
+        resp = opener.open(req, timeout=10)
+        return (f'CRITICAL: `{source} {dest} {code}` is not firing on the live site — '
+                f'requesting {LIVE_DOMAIN}{source} returned {resp.status} instead of a redirect.')
+    except urllib.error.HTTPError as e:
+        if e.code not in (301, 302, 308):
+            return (f'WARNING: `{source} {dest} {code}` returned unexpected live status {e.code} '
+                    f'(expected a redirect)')
+        return None
+    except Exception as e:
+        return f'INFO: could not live-test {source} — {e} (check network/domain)'
+
+
+def audit_redirects(skip_live=False):
+    """_redirects rules are useless if Netlify silently ignores them. This caught
+    a real incident (2026-09-16): 30 `.html -> clean-URL` rules were committed and
+    deployed for 13 days doing nothing, because Netlify skips a redirect rule
+    whenever the source path matches a real file in the deploy — unless the rule
+    carries a force flag (!). Every .html file in this repo IS such a file, so
+    every unforced rule here is a silent no-op. Checks two things per rule:
+      1. (static, always) source file exists + rule isn't forced -> guaranteed broken
+      2. (live, unless skip_live) actually requests the real URL and checks the
+         real status code -> catches this AND any other way a rule could be dead
+    Live checks run in parallel (thread pool) — sequential HTTP round-trips for
+    ~30 rules is too slow for a pre-push hook to be usable.
+    """
+    findings = []
+    if not os.path.isfile(REDIRECTS_PATH):
+        findings.append('CRITICAL: _redirects file not found')
+        return findings
+
+    with open(REDIRECTS_PATH, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+
+    existing_files = set(os.listdir(PAGES_DIR))
+    opener = urllib.request.build_opener(_NoRedirect())
+    to_live_check = []
+
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        parts = line.split()
+        if len(parts) < 3:
+            continue
+        source, dest, code = parts[0], parts[1], parts[2]
+        if '*' in source or not re.match(r'^30[128]!?$', code):
+            continue  # only checking single-path redirect rules, not rewrites/wildcards
+
+        source_file = source.lstrip('/')
+        forced = code.endswith('!')
+        file_exists_at_source_path = source_file in existing_files
+
+        if file_exists_at_source_path and not forced:
+            findings.append(
+                f'CRITICAL: `{source} {dest} {code}` will be silently skipped by Netlify — '
+                f'a real file exists at that exact path and the rule has no force flag. '
+                f'Add "!" (e.g. "{code}!") or this redirect does nothing live.'
+            )
+            continue  # already known-broken, no need to also live-test it
+
+        if not skip_live:
+            to_live_check.append((source, dest, code))
+
+    if to_live_check:
+        import concurrent.futures
+        with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+            for result in pool.map(lambda r: _live_check_one(opener, *r), to_live_check):
+                if result:
+                    findings.append(result)
+
+    return findings
+
+
+INTERNAL_HREF_RE = re.compile(r'href="((?:/[^"#?]*|https://(?:www\.)?maddogperformance\.co\.za/[^"#?]*))"')
+SKIP_LINK_PREFIXES = ('mailto:', 'tel:', 'javascript:')
+
+
+def audit_broken_links(skip_live=False):
+    """No prior check has ever verified internal <a href> links actually
+    resolve — every audit so far only checked page-level metadata, never
+    the link graph. Collects every unique internal link target across all
+    live pages, then live-tests each one (following redirects, since a
+    legitimate link may legitimately go through a 301) and flags anything
+    that doesn't end in a 200."""
+    findings = []
+    html_files = sorted(f for f in os.listdir(PAGES_DIR) if f.endswith('.html') and f not in TEMPLATE_FILES)
+
+    target_to_sources = {}
+    for filename in html_files:
+        path = os.path.join(PAGES_DIR, filename)
+        with open(path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        for match in INTERNAL_HREF_RE.findall(content):
+            target = match
+            if target.startswith(SKIP_LINK_PREFIXES):
+                continue
+            if target.startswith('https://'):
+                target = '/' + target.split('.co.za/', 1)[1]
+            if not target.startswith('/'):
+                target = '/' + target
+            target_to_sources.setdefault(target, set()).add(filename)
+
+    if skip_live or not target_to_sources:
+        return findings
+
+    opener = urllib.request.build_opener()  # default opener DOES follow redirects here — that's correct for this check
+    import concurrent.futures
+
+    def _check(target):
+        try:
+            req = urllib.request.Request(LIVE_DOMAIN + target, method='HEAD')
+            resp = opener.open(req, timeout=10)
+            return target, resp.status
+        except urllib.error.HTTPError as e:
+            return target, e.code
+        except Exception as e:
+            return target, f'ERROR:{e}'
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+        for target, status in pool.map(_check, target_to_sources.keys()):
+            if status != 200:
+                sources = ', '.join(sorted(target_to_sources[target])[:5])
+                more = len(target_to_sources[target]) - 5
+                if more > 0:
+                    sources += f' (+{more} more)'
+                findings.append(
+                    f'CRITICAL: internal link to `{target}` returns {status}, not 200 — '
+                    f'linked from: {sources}'
+                )
+    return findings
+
+
 def main():
+    if '--check-redirects' in sys.argv:
+        # Fast path for the pre-push hook: only the live redirect check, exit
+        # nonzero if anything is broken. Doesn't scan pages or write the report.
+        findings = audit_redirects(skip_live=False)
+        critical = [f for f in findings if f.startswith('CRITICAL')]
+        for f in findings:
+            print(f)
+        if critical:
+            print(f'\n{len(critical)} redirect rule(s) broken.')
+            sys.exit(1)
+        print('All redirect rules verified live.')
+        sys.exit(0)
+
     html_files = sorted(
         f for f in os.listdir(PAGES_DIR)
         if f.endswith('.html') and f not in TEMPLATE_FILES
@@ -219,6 +385,33 @@ def main():
 
     sitemap_findings, sitemap_slugs = audit_sitemap()
     robots_findings = audit_robots()
+    skip_live = '--skip-live' in sys.argv
+    redirect_findings = audit_redirects(skip_live=skip_live)
+    broken_link_findings = audit_broken_links(skip_live=skip_live)
+
+    if '--check-critical' in sys.argv:
+        # Fast path for the pre-push hook: every check that runs for the full
+        # report, but only CRITICAL-severity findings matter (warnings/info
+        # need human judgment per this skill's own docs — not something a
+        # hook should block on). Runs on every push, not just when
+        # _redirects changed, because this is meant to catch anything
+        # slipping through, not just the one bug class that prompted it.
+        page_critical = [(r['file'], msg) for r in results for msg in r['critical']]
+        redirect_critical = [f for f in redirect_findings if f.startswith('CRITICAL')]
+        link_critical = [f for f in broken_link_findings if f.startswith('CRITICAL')]
+        all_critical = (
+            [f'{f}: {msg}' for f, msg in page_critical]
+            + redirect_critical
+            + link_critical
+            + [f for f in sitemap_findings]  # sitemap findings are always critical-severity
+        )
+        for f in all_critical:
+            print(f'CRITICAL: {f}' if not f.startswith('CRITICAL') else f)
+        if all_critical:
+            print(f'\n{len(all_critical)} critical finding(s) — see above. Full report: run without --check-critical.')
+            sys.exit(1)
+        print('No critical findings across pages, sitemap, robots.txt, or redirects.')
+        sys.exit(0)
 
     missing_from_sitemap = []
     for r in results:
@@ -231,9 +424,17 @@ def main():
         if slug not in sitemap_slugs and slug != 'index':
             missing_from_sitemap.append(r['file'])
 
-    total_critical = sum(len(r['critical']) for r in results)
-    total_warning = sum(len(r['warning']) for r in results)
-    total_info = sum(len(r['info']) for r in results)
+    redirect_critical = sum(1 for f in redirect_findings if f.startswith('CRITICAL'))
+    redirect_warning = sum(1 for f in redirect_findings if f.startswith('WARNING'))
+    redirect_info = sum(1 for f in redirect_findings if f.startswith('INFO'))
+
+    link_critical = sum(1 for f in broken_link_findings if f.startswith('CRITICAL'))
+    link_warning = sum(1 for f in broken_link_findings if f.startswith('WARNING'))
+    link_info = sum(1 for f in broken_link_findings if f.startswith('INFO'))
+
+    total_critical = sum(len(r['critical']) for r in results) + redirect_critical + link_critical
+    total_warning = sum(len(r['warning']) for r in results) + redirect_warning + link_warning
+    total_info = sum(len(r['info']) for r in results) + redirect_info + link_info
 
     # ---- Write full Markdown report ----
     lines = []
@@ -242,6 +443,28 @@ def main():
     lines.append(f'Pages scanned: {len(results)} ({sum(1 for r in results if r["business"] == "gym")} gym, '
                  f'{sum(1 for r in results if r["business"] == "wellness")} wellness)')
     lines.append(f'Findings: **{total_critical} critical**, **{total_warning} warning**, {total_info} info')
+    lines.append('')
+
+    oversized = sorted(
+        ((r['file'], r['size_kb']) for r in results if r['size_kb'] > 2000),
+        key=lambda x: -x[1]
+    )
+    lines.append('## Performance / Core Web Vitals risk')
+    lines.append('')
+    if oversized:
+        total_mb = sum(kb for _, kb in oversized) / 1024
+        lines.append(f'**{len(oversized)} of {len(results)} pages are over 2MB** ({round(total_mb, 1)}MB combined). '
+                     f'Google uses Core Web Vitals (LCP, INP, CLS) as a direct ranking factor. Pages this size, '
+                     f'especially with images inline as base64 rather than separately-cacheable files, are very '
+                     f'likely failing the "good" LCP threshold on mobile. This is a real ranking lever, not a '
+                     f'routine cleanup item — it just isn\'t something a hook can safely auto-block on, since '
+                     f'fixing it site-wide is an architecture decision (base64-inline vs. file-referenced images), '
+                     f'not a one-line fix.')
+        lines.append('')
+        for f, kb in oversized:
+            lines.append(f'- `{f}` — {kb}KB ({round(kb/1024, 1)}MB)')
+    else:
+        lines.append('- No pages over 2MB — no Core Web Vitals size risk currently detected')
     lines.append('')
 
     lines.append('## Site-wide')
@@ -255,6 +478,24 @@ def main():
         lines.append(f'- **CRITICAL**: {f}')
     for f in robots_findings:
         lines.append(f'- **WARNING**: {f}')
+    lines.append('')
+
+    lines.append('## Redirects (`_redirects`)' + (' — live-tested against ' + LIVE_DOMAIN if not skip_live else ' — static check only, live test skipped'))
+    lines.append('')
+    if redirect_findings:
+        for f in redirect_findings:
+            lines.append(f'- {f}')
+    else:
+        lines.append('- All checked redirect rules are correctly enforced')
+    lines.append('')
+
+    lines.append('## Internal links' + (' — every internal href live-tested against ' + LIVE_DOMAIN if not skip_live else ' — skipped, live test disabled'))
+    lines.append('')
+    if broken_link_findings:
+        for f in broken_link_findings:
+            lines.append(f'- {f}')
+    else:
+        lines.append('- Every internal link found across all pages resolves to a live 200')
     lines.append('')
 
     lines.append('## Per-page findings')
@@ -289,6 +530,22 @@ def main():
     print(f'Full report: {REPORT_PATH}')
     if missing_from_sitemap:
         print(f'Missing from sitemap: {", ".join(missing_from_sitemap)}')
+    if redirect_critical:
+        print(f'\n*** {redirect_critical} redirect rule(s) are NOT actually working — this is the exact bug class ***')
+        print('*** that stalled 41 pages out of Google\'s index for 13 days in Sept 2026. Fix before anything else. ***')
+        for f in redirect_findings:
+            if f.startswith('CRITICAL'):
+                print(f'  {f}')
+    if link_critical:
+        print(f'\n*** {link_critical} internal link(s) are broken (404 or worse) — a visitor or Googlebot ***')
+        print('*** following them hits a dead end. Fix before anything else. ***')
+        for f in broken_link_findings:
+            if f.startswith('CRITICAL'):
+                print(f'  {f}')
+    if oversized:
+        total_mb = sum(kb for _, kb in oversized) / 1024
+        print(f'\n*** {len(oversized)} pages ({round(total_mb, 1)}MB combined) are over 2MB — a real Core Web ***')
+        print('*** Vitals / Google ranking risk, not a routine warning. See report for the full list. ***')
     print()
     print('Top critical findings:')
     shown = 0
