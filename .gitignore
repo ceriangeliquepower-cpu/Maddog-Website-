@@ -3,3 +3,6 @@ raw-photos/
 __pycache__/
 *.pyc
 *.bak
+
+# Local Netlify folder
+.netlify
