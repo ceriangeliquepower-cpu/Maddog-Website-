@@ -1,7 +1,7 @@
 # SEO Audit Report — 2026-09-17
 
 Pages scanned: 53 (34 gym, 19 wellness)
-Findings: **1 critical**, **43 warning**, 17 info
+Findings: **0 critical**, **43 warning**, 18 info
 
 ## Performance / Core Web Vitals risk
 
@@ -13,11 +13,11 @@ Findings: **1 critical**, **43 warning**, 17 info
 
 ## Redirects (`_redirects`) — live-tested against https://www.maddogperformance.co.za
 
-- All checked redirect rules are correctly enforced
+- INFO: could not live-test /blog-genesis-athlete-recovery-ballito.html — <urlopen error _ssl.c:1063: The handshake operation timed out> (check network/domain)
 
 ## Internal links — every internal href live-tested against https://www.maddogperformance.co.za
 
-- CRITICAL: internal link to `/manifest.json` returns 404, not 200 — linked from: amanda.html, athletes.html, blog-amanda-kobus-coach-ballito.html, blog-ballito-community-raises-funds-st-lukes.html, blog-bjj-beginners-ballito.html (+48 more)
+- Every internal link found across all pages resolves to a live 200
 
 ## Per-page findings
 

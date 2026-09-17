@@ -334,6 +334,17 @@ def audit_broken_links(skip_live=False):
                 target = '/' + target.split('.co.za/', 1)[1]
             if not target.startswith('/'):
                 target = '/' + target
+            # A link to a file that already exists locally (manifest.json, an
+            # image, robots.txt, etc.) will be live the moment this deploy
+            # ships — checking it against the CURRENT live site would wrongly
+            # flag a brand-new file in the same commit as "broken" just
+            # because it isn't deployed yet. Only live-test targets that
+            # don't map to a literal local file (clean URLs relying on
+            # Netlify's own routing/pretty-URLs — those genuinely need a
+            # live check since that resolution can't be verified locally).
+            local_path = os.path.join(PAGES_DIR, target.lstrip('/'))
+            if os.path.isfile(local_path):
+                continue
             target_to_sources.setdefault(target, set()).add(filename)
 
     if skip_live or not target_to_sources:
