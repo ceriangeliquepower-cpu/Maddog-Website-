@@ -6,3 +6,12 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Images are content-hash named (a changed photo gets a new filename, never
+# the same name with different content) — safe to cache permanently. Fixes
+# a longstanding gap: every image was being served with max-age=0 (forces a
+# revalidation round-trip on every single load) ever since the base64->file
+# migration turned each photo into its own HTTP request. Invisible before
+# that migration (images were embedded, no separate requests to cache).
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
