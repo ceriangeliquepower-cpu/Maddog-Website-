@@ -483,7 +483,16 @@ function swapPhoto(slotId) {
     var file = e.target.files[0]; if (!file) return;
     var reader = new FileReader();
     reader.onload = function(ev) {
-      var dataUrl = ev.target.result;
+      /* Compress via canvas before embedding — target ≤200KB at quality 0.78 */
+      var raw = new Image();
+      raw.onload = function() {
+        var MAX = 1200;
+        var w = raw.width, h = raw.height;
+        if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; }
+        var canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(raw, 0, 0, w, h);
+        var dataUrl = canvas.toDataURL('image/jpeg', 0.78);
       window._photoStore[slotId] = dataUrl;
       var img  = document.getElementById(slotId + '-img');
       var slot = document.getElementById(slotId);
@@ -493,6 +502,8 @@ function swapPhoto(slotId) {
       }
       if (slot) slot.classList.add('loaded');
       enableReposition(slotId);
+      };
+      raw.src = ev.target.result;
     };
     reader.readAsDataURL(file);
   };
