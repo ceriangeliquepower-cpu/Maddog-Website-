@@ -101,6 +101,14 @@ def audit_one_page(path, business):
     if 'name="geo.region"' not in content:
         info.append('Missing geo.region meta tag')
 
+    # ---- Analytics (found missing on 2 live pages 2026-09-16 by manual check — now automated) ----
+    if 'gtag(' not in content and 'googletagmanager.com/gtag' not in content:
+        critical.append('Missing Google Analytics (GA4) tracking snippet — page will not appear in analytics/traffic data')
+
+    # ---- Web app manifest ----
+    if 'rel="manifest"' not in content:
+        warning.append('Missing <link rel="manifest"> — no web app manifest linked')
+
     # ---- LocalBusiness-family JSON-LD ----
     has_local_business = bool(re.search(
         r'"@type":\s*"(SportsActivityLocation|MedicalBusiness|ExerciseGym|LocalBusiness)"', content))
