@@ -1,18 +1,16 @@
-# SEO Audit Report — 2026-09-16
+# SEO Audit Report — 2026-09-17
 
 Pages scanned: 53 (34 gym, 19 wellness)
-Findings: **0 critical**, **53 warning**, 23 info
+Findings: **0 critical**, **51 warning**, 23 info
 
 ## Performance / Core Web Vitals risk
 
-**10 of 53 pages are over 2MB** (32.5MB combined). Google uses Core Web Vitals (LCP, INP, CLS) as a direct ranking factor. Pages this size, especially with images inline as base64 rather than separately-cacheable files, are very likely failing the "good" LCP threshold on mobile. This is a real ranking lever, not a routine cleanup item — it just isn't something a hook can safely auto-block on, since fixing it site-wide is an architecture decision (base64-inline vs. file-referenced images), not a one-line fix.
+**8 of 53 pages are over 2MB** (26.1MB combined). Google uses Core Web Vitals (LCP, INP, CLS) as a direct ranking factor. Pages this size, especially with images inline as base64 rather than separately-cacheable files, are very likely failing the "good" LCP threshold on mobile. This is a real ranking lever, not a routine cleanup item — it just isn't something a hook can safely auto-block on, since fixing it site-wide is an architecture decision (base64-inline vs. file-referenced images), not a one-line fix.
 
 - `index.html` — 4596.4KB (4.5MB)
 - `athletes.html` — 4161.3KB (4.1MB)
 - `training-kickboxing-ballito.html` — 3972.6KB (3.9MB)
 - `recovery.html` — 3818.6KB (3.7MB)
-- `wellness.html` — 3503.2KB (3.4MB)
-- `amanda.html` — 3067.3KB (3.0MB)
 - `events.html` — 2968.9KB (2.9MB)
 - `training.html` — 2935.8KB (2.9MB)
 - `training-womens-boxing-ballito.html` — 2227.7KB (2.2MB)
@@ -32,11 +30,10 @@ Findings: **0 critical**, **53 warning**, 23 info
 
 ## Per-page findings
 
-### amanda.html (gym, 3067.3KB)
+### amanda.html (gym, 148.8KB)
 *Title: Amanda 'Maddog' Lino | 2x EFC World Champion | Maddog*
 
 - **WARNING**: 1 of 26 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
-- **WARNING**: Page is 3067.3KB (3.0MB) — this is a real Core Web Vitals (LCP) risk, which is a confirmed Google ranking factor, not just a "nice to have" performance note. A page this size is very likely failing Google's "good" LCP threshold (<2.5s) on mobile. Base64-embedded images can't be cached separately from the HTML, so every visit re-downloads everything. See the aggregate "Performance / Core Web Vitals risk" section at the top of this report — this is not something to leave sitting as a routine warning.
 
 ### athletes.html (gym, 4161.3KB)
 *Title: Fight Team &amp; Members | Maddog | Ballito*
@@ -301,11 +298,10 @@ Findings: **0 critical**, **53 warning**, 23 info
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness.html (wellness, 3503.2KB)
+### wellness.html (wellness, 114.8KB)
 *Title: Wellness Clinic Ballito | IV Drip, Recovery &amp; Slimming*
 
 - **WARNING**: 11 of 38 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
-- **WARNING**: Page is 3503.2KB (3.4MB) — this is a real Core Web Vitals (LCP) risk, which is a confirmed Google ranking factor, not just a "nice to have" performance note. A page this size is very likely failing Google's "good" LCP threshold (<2.5s) on mobile. Base64-embedded images can't be cached separately from the HTML, so every visit re-downloads everything. See the aggregate "Performance / Core Web Vitals risk" section at the top of this report — this is not something to leave sitting as a routine warning.
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
 ## Clean pages (no findings)
