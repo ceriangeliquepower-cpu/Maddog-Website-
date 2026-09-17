@@ -1,6 +1,6 @@
 ---
 name: maddog-keyword-check
-description: Check how Maddog actually ranks in Google for its target search terms — organic position, AI Overview mentions, and Local Map Pack position — via live Google searches in the Browser pane, cross-referenced against real Search Console demand data. Use when the user asks "how do we rank for X", "check our keyword rankings", "run the keyword check", wants to add new keywords to track, or asks what people are actually searching for. Not for finding NEW keyword ideas from scratch (that's ordinary research) — this is for re-running the established process against the tracked list in reference/keyword-list.md.
+description: Check how Maddog actually ranks in Google for its target search terms — organic position, AI Overview mentions, and Local Map Pack position — via live Google searches in the Browser pane, cross-referenced against real Search Console demand data. Also covers extracting competitors' own target keywords (title/meta/headings/sitemap) directly from their sites — free, no Keyword Planner/Ahrefs access needed. Use when the user asks "how do we rank for X", "check our keyword rankings", "run the keyword check", "what keywords are competitors using", wants to add new keywords or competitors to track, or asks what people are actually searching for. Not for finding NEW keyword ideas from scratch (that's ordinary research) — this is for re-running the established process against the tracked list in reference/keyword-list.md and reference/competitors.md.
 ---
 
 # Maddog Keyword Rank Check
@@ -44,3 +44,20 @@ After presenting results, save them to memory (not just this chat) so the proces
 - If new terms were added to `reference/keyword-list.md`, mention that in the `project_keyword_candidate_list` memory pointer (that memory file should just point here now, not duplicate the list — this skill's reference file is the source of truth).
 
 Update the "Last full run" date at the top of `reference/keyword-list.md` too, so the list's own staleness is visible directly in the repo, not just in memory.
+
+## 6. Competitor keyword extraction (free — no Keyword Planner/Ahrefs needed)
+
+When the user wants to know what keywords a specific competitor is targeting, don't reach for Google Keyword Planner (it shows ideas/volume for your own account, not a competitor's actual targeting, and this project has had repeated access friction with it anyway — see [[feedback...]] in memory if relevant). Instead pull it directly from the competitor's own site, which is free and more accurate:
+
+1. Navigate to the competitor's homepage (or their most relevant service page) and run this in `javascript_tool`:
+   ```js
+   JSON.stringify({title: document.title, desc: document.querySelector('meta[name="description"]')?.content, h1: [...document.querySelectorAll('h1')].map(e=>e.textContent.trim()), h2: [...document.querySelectorAll('h2')].map(e=>e.textContent.trim())}, null, 1)
+   ```
+   This reveals exactly what keywords they deliberately chose to target — this same approach replaced repeated failed attempts to get into Google Keyword Planner for competitor research; it's free and gives real targeting data instead of volume estimates for an account that doesn't have any.
+2. Navigate to `<their-domain>/sitemap.xml` (or `/sitemap_index.xml`, `/wp-sitemap.xml` for WordPress, or a Wix-style sitemap index with nested sitemaps like `booking-services-sitemap.xml`) and read the URL list — page slugs reveal their full keyword-to-page mapping. If the top-level sitemap is an index, follow it one level down to the actual page/post/service sitemap to get real URLs (a bare index file with no URLs isn't useful on its own).
+3. For a site with many individually-named service pages (common on Wix wellness/spa sites), the URL slugs AND image `alt`/title attributes both carry keyword signal — e.g. Kico Life names ice bath pages by exact temperature (`ice-bath-ballito-5-c`, `-10-degrees`, `-12-degrees`) and NAD pages by dose/purpose, which is a real, copyable content-depth pattern.
+4. Note the **structural pattern**, not just the keyword list — it's usually more actionable: a single strong benefit-led page (Grit Factory) means their edge is messaging + reviews, beatable with content; a large page-per-service-variant site (Kico Life, CombatCoaching) means their edge is content depth, harder to beat without matching that depth; a franchise template site (F45, Fit24) means their edge is brand/domain authority, not location-specific content.
+
+Tracked competitors (by category) live in `reference/competitors.md` — check there first for what's already been pulled before re-fetching, and add newly-identified competitors there (anyone found beating Maddog on a tracked term during a rank check, per §2, belongs on this list).
+
+Save findings to the relevant project memory (e.g. `project_personal_training_competitor_audit`, or create a new one per category) the same way rank-check results get saved in §5 — this is exactly the kind of finding that's expensive to re-derive and cheap to look up if written down.

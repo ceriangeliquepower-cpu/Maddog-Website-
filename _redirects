@@ -116,5 +116,7 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /sync_eyebrow.py /404.html 404!
 /sync_seo.py /404.html 404!
 /add_photo_compression.py /404.html 404!
+/add_doctype.py /404.html 404!
+/add_main_landmark.py /404.html 404!
 /hooks/* /404.html 404!
 /.claude/* /404.html 404!
