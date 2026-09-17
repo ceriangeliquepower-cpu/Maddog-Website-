@@ -42,5 +42,17 @@
       "Bash(python fix_nav_logo.py)",
       "Bash(/c/Users/HP/AppData/Local/Python/bin/python.exe -c ' *)"
     ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"{\\\"hookSpecificOutput\\\":{\\\"hookEventName\\\":\\\"SessionStart\\\",\\\"additionalContext\\\":\\\"CLAUDE.md maintenance check (session start, Maddog project): before working on the users request, quickly verify CLAUDE.md status-bearing sections (Page Map page list/count, Outstanding Work, Content Gaps, Project intro facts) still match reality - real page count via ls *.html, recent git log for completed work, whether previously-flagged items are resolved. Update or remove whats stale, tag genuinely new items that come up this session. See CLAUDE.mds own Keep This File Honest section for which parts are status-bearing vs durable standards that do not need rechecking. Keep this brief unless something is clearly wrong - a quick check, not a full audit, every time.\\\"}}\""
+          }
+        ]
+      }
+    ]
   }
 }

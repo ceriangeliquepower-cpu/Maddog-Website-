@@ -78,14 +78,42 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /training/personal-training-ballito /training-personal-training-ballito.html 200
 
 # Block public access to internal editing working copies (still tracked in git for backup)
-/stripped/* /404.html 404
+/stripped/* /404.html 404!
 
-# Block public access to internal tooling/templates/reports — kept in git for backup
-# and workflow portability, but never meant to be live site content
-/blog-TEMPLATE.html /404.html 404
-/wellness-blog-TEMPLATE.html /404.html 404
-/optimize_photo.py /404.html 404
-/serve.py /404.html 404
-/serve.bat /404.html 404
-/seo-audit-report.md /404.html 404
-/.claude/* /404.html 404
+# Block public access to internal tooling/docs/scripts/config — kept in git for backup
+# and workflow portability, but never meant to be live site content.
+# IMPORTANT: every rule below needs the force flag (!) — see Hard-Won Rule #9.
+# Netlify serves a real file directly if one exists at that exact path, silently
+# skipping an unforced redirect — confirmed 2026-09-17 that several of these rules
+# had been added WITHOUT the flag and were doing nothing; every file below was
+# actually publicly downloadable (200) despite a rule appearing to block it.
+/blog-TEMPLATE.html /404.html 404!
+/wellness-blog-TEMPLATE.html /404.html 404!
+/CLAUDE.md /404.html 404!
+/GO_LIVE_CHECKLIST.md /404.html 404!
+/GO_LIVE_GUIDE.md /404.html 404!
+/MADDOG_CLAUDE_CODE_HANDOFF.md /404.html 404!
+/SESSION_HANDOFF.md /404.html 404!
+/Maddog-Website-Maintenance-Schedule.docx /404.html 404!
+/seo-audit-report.md /404.html 404!
+/_redirects.txt /404.html 404!
+/supabase-migration.sql /404.html 404!
+/supabase_insert_services.sql /404.html 404!
+/embed_logo.py /404.html 404!
+/extract_images.py /404.html 404!
+/fix_footer.ps1 /404.html 404!
+/fix_footer2.ps1 /404.html 404!
+/fix_logo_size.py /404.html 404!
+/fix_padding.ps1 /404.html 404!
+/nav_improvements.py /404.html 404!
+/optimize_photo.py /404.html 404!
+/remove_banner.ps1 /404.html 404!
+/remove_slots.ps1 /404.html 404!
+/restructure_coaches.py /404.html 404!
+/seo_round2.py /404.html 404!
+/serve.py /404.html 404!
+/serve.bat /404.html 404!
+/sync_eyebrow.py /404.html 404!
+/sync_seo.py /404.html 404!
+/hooks/* /404.html 404!
+/.claude/* /404.html 404!

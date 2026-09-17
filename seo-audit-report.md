@@ -1,7 +1,7 @@
 # SEO Audit Report — 2026-09-17
 
 Pages scanned: 53 (34 gym, 19 wellness)
-Findings: **0 critical**, **43 warning**, 18 info
+Findings: **0 critical**, **43 warning**, 17 info
 
 ## Performance / Core Web Vitals risk
 
@@ -11,271 +11,271 @@ Findings: **0 critical**, **43 warning**, 18 info
 
 - All pages present in sitemap.xml
 
-## Redirects (`_redirects`) — live-tested against https://www.maddogperformance.co.za
+## Redirects (`_redirects`) — static check only, live test skipped
 
-- INFO: could not live-test /blog-genesis-athlete-recovery-ballito.html — <urlopen error _ssl.c:1063: The handshake operation timed out> (check network/domain)
+- All checked redirect rules are correctly enforced
 
-## Internal links — every internal href live-tested against https://www.maddogperformance.co.za
+## Internal links — skipped, live test disabled
 
 - Every internal link found across all pages resolves to a live 200
 
 ## Per-page findings
 
-### amanda.html (gym, 146.6KB)
+### amanda.html (gym, 149.4KB)
 *Title: Amanda 'Maddog' Lino | 2x EFC World Champion | Maddog*
 
 - **WARNING**: 1 of 26 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### athletes.html (gym, 138.6KB)
+### athletes.html (gym, 141.2KB)
 *Title: Fight Team &amp; Members | Maddog | Ballito*
 
 - **WARNING**: 1 of 32 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-amanda-kobus-coach-ballito.html (gym, 57.8KB)
+### blog-amanda-kobus-coach-ballito.html (gym, 59.1KB)
 *Title: Amanda Kobus: Strength Coach and Nurse Practitioner | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-ballito-community-raises-funds-st-lukes.html (gym, 54.2KB)
+### blog-ballito-community-raises-funds-st-lukes.html (gym, 55.5KB)
 *Title: When Ballito Showed Up: R53,000 for St Luke’s | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-bjj-beginners-ballito.html (gym, 55.1KB)
+### blog-bjj-beginners-ballito.html (gym, 56.4KB)
 *Title: BJJ Classes for Beginners in Ballito KZN | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-cold-plunge-sauna-ballito.html (gym, 55.4KB)
+### blog-cold-plunge-sauna-ballito.html (gym, 56.7KB)
 *Title: Cold Plunge &amp; Sauna Recovery Ballito | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-efc-134-amanda-lino-title-defence.html (gym, 57.0KB)
+### blog-efc-134-amanda-lino-title-defence.html (gym, 58.3KB)
 *Title: Amanda Lino Defends EFC Flyweight Title at EFC 134 | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-efc-134-amanda-lino-vs-juliet-chukwu.html (gym, 54.8KB)
+### blog-efc-134-amanda-lino-vs-juliet-chukwu.html (gym, 56.1KB)
 *Title: EFC 134: Amanda Lino vs Juliet Chukwu | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-genesis-athlete-recovery-ballito.html (gym, 50.9KB)
+### blog-genesis-athlete-recovery-ballito.html (gym, 52.1KB)
 *Title: GENESIS Recovery for Athletes Ballito | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-iv-drip-therapy-ballito.html (gym, 53.7KB)
+### blog-iv-drip-therapy-ballito.html (gym, 55.0KB)
 *Title: IV Drip Therapy Ballito KZN | Maddog Performance*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-mma-training-ballito.html (gym, 54.3KB)
+### blog-mma-training-ballito.html (gym, 55.6KB)
 *Title: How to Start MMA Training Ballito | Maddog KZN*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-powerlifting-women-ballito.html (gym, 54.1KB)
+### blog-powerlifting-women-ballito.html (gym, 55.3KB)
 *Title: Powerlifting for Women Ballito KZN | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-robin-jj-williams-physio-ballito.html (gym, 59.3KB)
+### blog-robin-jj-williams-physio-ballito.html (gym, 60.7KB)
 *Title: Sports Physiotherapy Ballito | Robin JJ Williams | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-womens-self-defence-workshop-ballito.html (gym, 59.2KB)
+### blog-womens-self-defence-workshop-ballito.html (gym, 60.6KB)
 *Title: Women's Self-Defence Workshop Ballito | Maddog Safety Event*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-womens-self-defence-workshop-recap-ballito.html (gym, 35.0KB)
+### blog-womens-self-defence-workshop-recap-ballito.html (gym, 35.9KB)
 *Title: Women's Self-Defence Workshop Recap | Maddog Ballito*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### blog-youth-mma-training-ballito.html (gym, 43.9KB)
+### blog-youth-mma-training-ballito.html (gym, 44.8KB)
 *Title: Youth MMA, BJJ, Kickboxing &amp; Powerlifting Ballito | Maddog*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### booking.html (gym, 85.4KB)
+### booking.html (gym, 86.9KB)
 *Title: Book Online | Maddog Performance Institute | Ballito KZN*
 
 - INFO: Brand spelling matching /\bMADDOG\b/ found, but only inside what looks like a standalone logo/wordmark span (e.g. ">MADDOG<") — verify it is not body copy
 
-### coaches.html (gym, 112.3KB)
+### coaches.html (gym, 114.5KB)
 *Title: Coaching Team | Maddog Performance Institute | Ballito KZN*
 
 - **WARNING**: 1 of 11 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### contact.html (gym, 88.6KB)
+### contact.html (gym, 90.4KB)
 *Title: Book A Free Trial | Maddog Performance Institute*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### events.html (gym, 107.2KB)
+### events.html (gym, 109.5KB)
 *Title: Events &amp; Fight Results | Maddog | Ballito*
 
 - **WARNING**: 1 of 16 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### index.html (gym, 111.2KB)
+### index.html (gym, 113.4KB)
 *Title: MMA Gym Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 25 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### recovery.html (gym, 120.8KB)
+### recovery.html (gym, 123.3KB)
 *Title: Sports Recovery Suite Ballito | IV Drip Therapy | Maddog KZN*
 
 - **WARNING**: 1 of 22 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-bjj-ballito.html (gym, 71.1KB)
+### training-bjj-ballito.html (gym, 72.7KB)
 *Title: BJJ Classes Ballito | Brazilian Jiu-Jitsu | Maddog*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-bootcamp-ballito.html (gym, 72.7KB)
+### training-bootcamp-ballito.html (gym, 74.2KB)
 *Title: Bootcamp Classes Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-boxing-ballito.html (gym, 74.1KB)
+### training-boxing-ballito.html (gym, 75.7KB)
 *Title: Boxing Training Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-kickboxing-ballito.html (gym, 71.0KB)
+### training-kickboxing-ballito.html (gym, 72.5KB)
 *Title: Kickboxing Classes Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-kids-bjj-ballito.html (gym, 70.7KB)
+### training-kids-bjj-ballito.html (gym, 72.2KB)
 *Title: Kids BJJ Classes Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-kids-boxing-ballito.html (gym, 69.0KB)
+### training-kids-boxing-ballito.html (gym, 70.5KB)
 *Title: Kids Boxing Classes Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-mma-ballito.html (gym, 73.9KB)
+### training-mma-ballito.html (gym, 75.5KB)
 *Title: MMA Training Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-olympic-boxing-ballito.html (gym, 73.6KB)
+### training-olympic-boxing-ballito.html (gym, 75.2KB)
 *Title: Olympic Boxing Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-personal-training-ballito.html (gym, 80.7KB)
+### training-personal-training-ballito.html (gym, 82.3KB)
 *Title: Personal Training Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 7 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-powerlifting-ballito.html (gym, 72.1KB)
+### training-powerlifting-ballito.html (gym, 73.6KB)
 *Title: Powerlifting Training Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training-womens-boxing-ballito.html (gym, 69.6KB)
+### training-womens-boxing-ballito.html (gym, 71.1KB)
 *Title: Women's Boxing Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 5 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### training.html (gym, 72.1KB)
+### training.html (gym, 73.5KB)
 *Title: Training Ballito | MMA, BJJ, Boxing &amp; More | Maddog*
 
 - **WARNING**: 1 of 14 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### wellness-blog-genesis-longevity.html (wellness, 35.4KB)
+### wellness-blog-genesis-longevity.html (wellness, 36.3KB)
 *Title: GENESIS™ Longevity Programme Ballito | Maddog Wellness*
 
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-blog-womens-self-defence.html (wellness, 37.2KB)
+### wellness-blog-womens-self-defence.html (wellness, 38.1KB)
 *Title: Women's Wellness Day Ballito | Self-Defence &amp; Recovery*
 
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-blog-womens-wellness-day-recap.html (wellness, 30.9KB)
+### wellness-blog-womens-wellness-day-recap.html (wellness, 31.7KB)
 *Title: Women's Wellness Day Ballito: Event Recap | Maddog Wellness*
 
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-blog.html (wellness, 50.4KB)
+### wellness-blog.html (wellness, 51.5KB)
 *Title: Wellness Insights &amp; FAQ | Maddog Health &amp; Wellness*
 
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-body.html (wellness, 62.8KB)
+### wellness-body.html (wellness, 64.1KB)
 *Title: Slimming Clinic Ballito | InBody &amp; Peptide Therapy*
 
 - **WARNING**: 1 of 6 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-cold-plunge-ballito.html (wellness, 63.2KB)
+### wellness-cold-plunge-ballito.html (wellness, 64.5KB)
 *Title: Ice Bath Ballito | Cold Plunge Recovery Therapy*
 
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-contact.html (wellness, 35.7KB)
+### wellness-contact.html (wellness, 36.7KB)
 *Title: Contact Us | Maddog Health &amp; Wellness | Ballito KZN*
 
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-inbody-scan-ballito.html (wellness, 55.9KB)
+### wellness-inbody-scan-ballito.html (wellness, 57.1KB)
 *Title: InBody Scan Ballito | Body Composition Testing*
 
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-infrared-sauna-ballito.html (wellness, 63.1KB)
+### wellness-infrared-sauna-ballito.html (wellness, 64.4KB)
 *Title: Infrared Sauna Ballito | Recovery &amp; Wellness*
 
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-iv.html (wellness, 72.2KB)
+### wellness-iv.html (wellness, 73.6KB)
 *Title: IV Drip Therapy Ballito | Myers Cocktail, NAD+ &amp; More*
 
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-nad-iv-ballito.html (wellness, 68.0KB)
+### wellness-nad-iv-ballito.html (wellness, 69.4KB)
 *Title: NAD+ IV Therapy Ballito | Longevity &amp; Anti-Ageing*
 
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-personal-training-ballito.html (wellness, 72.3KB)
+### wellness-personal-training-ballito.html (wellness, 73.7KB)
 *Title: Strength &amp; Nutrition Coaching Ballito | Maddog Wellness*
 
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-physiotherapy-ballito.html (wellness, 70.8KB)
+### wellness-physiotherapy-ballito.html (wellness, 72.2KB)
 *Title: Sports Physiotherapy Ballito | Injury Assessment &amp; Rehab*
 
 - **WARNING**: 1 of 9 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-pricing.html (wellness, 92.1KB)
+### wellness-pricing.html (wellness, 93.8KB)
 *Title: Wellness Pricing Ballito | IV Therapy &amp; Recovery*
 
 - **WARNING**: 1 of 3 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness-recovery.html (wellness, 66.1KB)
+### wellness-recovery.html (wellness, 67.4KB)
 *Title: Contrast Therapy Ballito | Cold Plunge &amp; Infrared Sauna*
 
 - **WARNING**: 1 of 4 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 - INFO: "Maddog Performance Institute" appears on this page — checked, looks like a legitimate cross-business reference (event location, footer link, etc.), not a self-identity bug — verify if unsure
 
-### wellness.html (wellness, 113.4KB)
+### wellness.html (wellness, 115.4KB)
 *Title: Wellness Clinic Ballito | IV Drip, Recovery &amp; Slimming*
 
 - **WARNING**: 11 of 38 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)

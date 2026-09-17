@@ -71,36 +71,93 @@ These bugs have already been fixed. Do not revert them.
 
 ## Page Map
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Homepage |
-| `amanda.html` | Amanda Lino bio + fight record |
-| `athletes.html` | Fighter roster |
-| `coaches.html` | Coach profiles |
-| `training.html` | Class schedule + disciplines |
-| `recovery.html` | Recovery suite — IV therapy, sauna, cold plunge, peptides |
-| `events.html` | Events + blog index |
-| `contact.html` | Contact page |
-| `blog-*.html` (×5) | SEO blog articles, all linked from `events.html` |
+**53 live pages total** (last verified 2026-09-17 against the actual file listing — if this count doesn't match `ls *.html | grep -v TEMPLATE | wc -l`, this section has drifted again and needs re-syncing).
+
+**Gym site — core (8):** `index.html` (homepage) · `amanda.html` (bio + fight record) · `athletes.html` (fighter roster) · `coaches.html` (coach profiles) · `training.html` (discipline hub) · `recovery.html` (recovery suite) · `events.html` (events + blog index) · `contact.html` · `booking.html`
+
+**Gym site — training discipline pages (11, served at pretty `/training/...` URLs via `_redirects`):** `training-mma-ballito.html` · `training-bjj-ballito.html` · `training-kids-bjj-ballito.html` · `training-kickboxing-ballito.html` · `training-boxing-ballito.html` · `training-womens-boxing-ballito.html` · `training-kids-boxing-ballito.html` · `training-olympic-boxing-ballito.html` · `training-bootcamp-ballito.html` · `training-powerlifting-ballito.html` · `training-personal-training-ballito.html`
+
+**Gym site — blog posts (9, linked from `events.html`):** `blog-mma-training-ballito.html` · `blog-bjj-beginners-ballito.html` · `blog-youth-mma-training-ballito.html` · `blog-powerlifting-women-ballito.html` · `blog-cold-plunge-sauna-ballito.html` · `blog-amanda-kobus-coach-ballito.html` · `blog-robin-jj-williams-physio-ballito.html` · `blog-efc-134-amanda-lino-title-defence.html` · `blog-efc-134-amanda-lino-vs-juliet-chukwu.html` · `blog-womens-self-defence-workshop-ballito.html` · `blog-womens-self-defence-workshop-recap-ballito.html` · `blog-ballito-community-raises-funds-st-lukes.html` · `blog-genesis-athlete-recovery-ballito.html`
+
+**Wellness site — separate business, own site (see [[project_business_separation]] in memory), core (13):** `wellness.html` (homepage) · `wellness-iv.html` · `wellness-body.html` · `wellness-recovery.html` · `wellness-physiotherapy-ballito.html` · `wellness-inbody-scan-ballito.html` · `wellness-nad-iv-ballito.html` · `wellness-cold-plunge-ballito.html` · `wellness-infrared-sauna-ballito.html` · `wellness-pricing.html` · `wellness-personal-training-ballito.html` · `wellness-contact.html` · `wellness-blog.html` (index)
+
+**Wellness site — blog posts (6):** `wellness-blog-iv-therapy.html` · `wellness-blog-physiotherapy.html` · `wellness-blog-cold-plunge.html` · `wellness-blog-genesis-longevity.html` · `wellness-blog-womens-self-defence.html` · `wellness-blog-womens-wellness-day-recap.html`
+
+Full URL list (clean/pretty forms) is authoritative in `sitemap.xml` — cross-check there, not just this list, before assuming a page is missing or extra.
 
 ---
 
 ## Outstanding Work (Priority Order)
 
-1. **`pricing.html`** — New file. Full pricing for IV therapy, contrast therapy, athlete memberships, slimming clinic, peptide therapy (enquiry only). See `MADDOG_CLAUDE_CODE_HANDOFF.md` for complete price tables and exact copy.
-2. **`recovery.html` updates** — Add Slimming Clinic section + Aesthetic & Wellness IV section; populate contrast therapy prices (R80/R170/R250 post-training, R270/R350/R850 general); confirm athlete membership tiers are populated.
-3. **SEO Round 2** — AggregateRating schema, BreadcrumbList on blog pages, internal linking, `sitemap.xml` (missing blog URLs), Google Business Profile (not yet claimed).
-4. **DNS** — Point `maddogperformance.co.za` to Netlify (A record + CNAME).
+**Rewritten 2026-09-17 — the previous version of this list was entirely stale** (pricing.html was superseded by `wellness-pricing.html`, Slimming Clinic/contrast-therapy content is already live site-wide, AggregateRating schema is on 36 pages, BreadcrumbList is on every blog page, DNS has been live for a while). Verify against live state before trusting this list too, next time it's read — see the "Keep this file honest" section below.
+
+1. **Search Console indexing queue** — 41 pages were stuck "discovered, not indexed" due to the redirect bug (fixed & live 2026-09-16, see [[project_redirect_indexing_fix]] in memory). Submitting via Search Console: Inspect URL (top search bar) → Request Indexing, one quota-limited batch (~10/day) at a time. **10 done so far, 31 still outstanding** — full checklist below, check items off here as they're submitted so this list stays the source of truth (not a separate memory file):
+
+   **Still to submit (31):**
+   - [ ] `https://www.maddogperformance.co.za/wellness-cold-plunge-ballito`
+   - [ ] `https://www.maddogperformance.co.za/wellness-infrared-sauna-ballito`
+   - [ ] `https://www.maddogperformance.co.za/amanda`
+   - [ ] `https://www.maddogperformance.co.za/athletes`
+   - [ ] `https://www.maddogperformance.co.za/coaches`
+   - [ ] `https://www.maddogperformance.co.za/booking`
+   - [ ] `https://www.maddogperformance.co.za/recovery`
+   - [ ] `https://www.maddogperformance.co.za/training/bootcamp-ballito`
+   - [ ] `https://www.maddogperformance.co.za/training/kids-boxing-ballito`
+   - [ ] `https://www.maddogperformance.co.za/training/olympic-boxing-ballito`
+   - [ ] `https://www.maddogperformance.co.za/training/powerlifting-ballito`
+   - [ ] `https://www.maddogperformance.co.za/training/womens-boxing-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-amanda-kobus-coach-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-bjj-beginners-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-cold-plunge-sauna-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-iv-drip-therapy-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-mma-training-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-powerlifting-women-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-robin-jj-williams-physio-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-womens-self-defence-workshop-recap-ballito`
+   - [ ] `https://www.maddogperformance.co.za/blog-youth-mma-training-ballito`
+   - [ ] `https://www.maddogperformance.co.za/wellness-contact`
+   - [ ] `https://www.maddogperformance.co.za/wellness-inbody-scan-ballito`
+   - [ ] `https://www.maddogperformance.co.za/wellness-nad-iv-ballito`
+   - [ ] `https://www.maddogperformance.co.za/wellness-personal-training-ballito`
+   - [ ] `https://www.maddogperformance.co.za/wellness-pricing`
+   - [ ] `https://www.maddogperformance.co.za/wellness-recovery`
+   - [ ] `https://www.maddogperformance.co.za/wellness-blog`
+   - [ ] `https://www.maddogperformance.co.za/wellness-blog-iv-therapy`
+   - [ ] `https://www.maddogperformance.co.za/wellness-blog-physiotherapy`
+   - [ ] `https://www.maddogperformance.co.za/wellness-blog-womens-wellness-day-recap`
+
+   **Already submitted (10):** `/training`, `/training/personal-training-ballito`, `/training/mma-ballito`, `/training/bjj-ballito`, `/training/kickboxing-ballito`, `/training/boxing-ballito`, `/training/kids-bjj-ballito`, `/wellness-body`, `/wellness-iv`, `/wellness-physiotherapy-ballito`.
+
+   Resubmitting an already-done URL is harmless (Google's own message: doesn't change queue position), so if it's ever unclear which were done, just continue down the unchecked list rather than trying to figure out exactly where you left off.
+2. **Core Web Vitals — font-loading fix** — real PageSpeed data (2026-09-17) showed LCP of 10.2s on mobile even after the image-weight fix, caused by a render-blocking Google Fonts stylesheet. Fix built and verified locally across all 53 pages, not yet pushed — awaiting go-ahead.
+3. **E-E-A-T content pass** — credit named coaches (not just "Maddog Marketing") on posts where their specific expertise is the point; state credentials/issuing bodies in text, never raw ID numbers (see Content Gaps below).
+4. **Federation/affiliation content** (MMASA etc.) — awaiting client-confirmed details, see Content Gaps below. Specific backlink target already identified: MMA South Africa's affiliated-gyms directory (mma-sa.co.za/affiliated_gyms) lists KZN gyms but not Maddog — pursue getting listed there once affiliation is confirmed, see [[project_mmasa_affiliation_opportunity]] in memory.
+5. **Content-Security-Policy header** — deliberately not added yet; needs a careful resource-by-resource audit first given how much inline script/style and third-party embedding this site does. Other security headers already live.
+6. **Local SEO / backlinks** — site currently has 1 external backlink total. Client-side relationship work (asking sponsor/partner businesses to link back), not something fixable from the codebase.
+7. **Keyword ranking gaps identified (2026-09-17 live-search audit)** — see [[project_keyword_ranking_audit]] in memory for full results. Two actionable patterns: (a) **wellness GBP has far fewer reviews than the gym's GBP** and this is likely suppressing Local Map Pack visibility for sauna/cold-plunge/IV-drip/NAD/body-composition searches even where on-site content already ranks #1 organically — completing the wellness GBP (client doing manually, see [[project_wellness_gbp_incomplete]]) is probably the single highest-leverage fix available; (b) **bootcamp ballito / fitness bootcamp ballito** is a real content/backlink gap — Maddog has `training-bootcamp-ballito.html` but doesn't rank competitively against Fit24, F45, Ballito Fitness Village, HIITMANN, Grit Factory. Named competitors worth tracking: **Ringside Boxing Gym** (beats Maddog on pure boxing terms), **CombatCoaching.com** (new, beats Maddog on self-defence terms), **Grit Factory** (dominant on personal-training terms), **Kico Life / IVology / The IV Bar** (dominant on several wellness terms).
 
 ---
 
 ## Content Gaps (Awaiting Client)
 
 - Amanda's 6 remaining pro fight results (opponent, event, method, round, result)
-- Coach credentials: Lucky, Winston, Tristan (formal certs); Wren's SANC registration number
+- Coach credentials: Luckymore Hamadziripi, Coach Marcele, York Lawrence (formal certs, if not already on-site — verify against current `coaches.html` before asking the client again)
+- **Wren's SANC registration number — will NOT be published.** Explicit client decision (2026-09-17): raw registration/certification numbers are never to appear on the site — risk of the number being lifted and used to impersonate/duplicate the credential elsewhere. Bridge instead by stating the credential + issuing body in text only (e.g. "SANC-registered nurse") — the registration status itself is the trust signal Google/visitors need, not the number. This applies to any coach's future certification numbers too, not just Wren's.
+- **Federation/foundation affiliations (MMASA and others)** — client is confirming exact affiliation details themselves, to be added once provided. When ready: (1) add a real visible text mention of each affiliation (not just a logo — Google reads text, not images) with matching `alt` text on any badge/logo, (2) check whether the federation's own site/member-directory already lists Maddog back with a link — that external listing is worth more for authority than the claim living only on our own site.
 - Training prices: 18 slots currently show POA
 - Upcoming event venues + ticket links
 - Photos: all pages have click-to-upload slots ready
+- **New discipline in progress: Wrestling classes.** Client confirmed 2026-09-17 that Maddog is adding wrestling — no page/content exists yet (no `training-wrestling-ballito.html`). Target keywords already scoped in memory ([[project_keyword_candidate_list]]: wrestling ballito, wrestling classes ballito, wrestling gym near me, youth wrestling ballito, wrestling training ballito). Once client provides coach(es), schedule/pricing, and any credentials, build the page following the same pattern as the other 11 training-discipline pages, then run the full "After Adding Any New Page" workflow below (sitemap, redirects, SEO audit, GSC submission) and add it to the Page Map above.
+
+---
+
+## Keep This File Honest
+
+This file went stale for months (Page Map listed 8 pages when the site had 53; Outstanding Work listed 4 items that were all already done; the redirects filename was wrong) because updating it was never part of finishing a task — only code/content changes were. Don't repeat that.
+
+**Status-bearing sections that go stale** (re-check these after any substantial batch of work, not just when something happens to be noticed): Project intro (hosting/DNS facts), Page Map (page count + list), Outstanding Work, Content Gaps. **Not** status-bearing, safe to treat as durable: Design System, Hard-Won Technical Rules, Semantic HTML/SEO/Image/Accessibility/Performance/Crawlability/Mobile-First rules — those are standards, not a snapshot of current state, and don't need re-verifying just because time passed.
+
+**When to check:** after finishing any multi-page batch of work (a new page type, a site-wide fix, a completed Outstanding Work item) — before calling the batch done, ask "does anything in the status-bearing sections above need updating to match what just happened," the same way `sitemap.xml` and the SEO audit already get checked per the "After Adding Any New Page" section below.
 
 ---
 

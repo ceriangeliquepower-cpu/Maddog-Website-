@@ -13,6 +13,12 @@
       "runtimeExecutable": "C:\\Users\\HP\\AppData\\Local\\Python\\bin\\python.exe",
       "runtimeArgs": ["C:\\Users\\HP\\Desktop\\Maddog Web design pages\\serve.py"],
       "port": 3000
+    },
+    {
+      "name": "maddog-netlify-dev",
+      "runtimeExecutable": "netlify",
+      "runtimeArgs": ["dev", "--port", "8888"],
+      "port": 8888
     }
   ]
 }
