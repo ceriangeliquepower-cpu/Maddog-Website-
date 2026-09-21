@@ -21,15 +21,15 @@ Findings: **0 critical**, **45 warning**, 17 info
 
 ## Per-page findings
 
-### amanda.html (gym, 150.7KB)
+### amanda.html (gym, 150.0KB)
 *Title: Amanda 'Maddog' Lino | 2x EFC World Champion | Maddog*
 
-- **WARNING**: 1 of 26 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
+- **WARNING**: 1 of 28 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### athletes.html (gym, 142.7KB)
+### athletes.html (gym, 141.3KB)
 *Title: Fight Team &amp; Members | Maddog | Ballito*
 
-- **WARNING**: 1 of 32 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
+- **WARNING**: 1 of 31 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
 ### blog-amanda-kobus-coach-ballito.html (gym, 59.9KB)
 *Title: Amanda Kobus: Strength Coach and Nurse Practitioner | Maddog*
@@ -122,7 +122,7 @@ Findings: **0 critical**, **45 warning**, 17 info
 
 - **WARNING**: 1 of 16 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
 
-### index.html (gym, 115.0KB)
+### index.html (gym, 114.9KB)
 *Title: MMA Gym Ballito | Maddog Performance Institute*
 
 - **WARNING**: 1 of 25 <img> tags have empty/missing alt text (some empty alt may be intentionally decorative — verify)
