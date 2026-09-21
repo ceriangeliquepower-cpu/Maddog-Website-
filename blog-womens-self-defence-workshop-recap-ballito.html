@@ -22,7 +22,9 @@
 <meta property="og:title" content="Women's Self-Defence Workshop Recap | Maddog Ballito">
 <meta property="og:description" content="Recap: Maddog's Women's Self-Defence Workshop brought women of every age and background together in Ballito for a day of practical safety skills.">
 <meta property="og:url" content="https://www.maddogperformance.co.za/blog-womens-self-defence-workshop-recap-ballito">
+<meta property="og:image" content="https://www.maddogperformance.co.za/og-image.jpg">
 <meta property="og:site_name" content="Maddog Performance Institute">
+<meta property="og:locale" content="en_ZA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Women's Self-Defence Workshop Recap | Maddog Ballito">
 <meta name="twitter:description" content="Recap: Maddog's Women's Self-Defence Workshop brought women of every age and background together in Ballito for a day of practical safety skills.">
@@ -72,6 +74,11 @@
     "addressRegion": "KwaZulu-Natal",
     "postalCode": "4420",
     "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -29.5393,
+    "longitude": 31.2154
   },
   "openingHoursSpecification": [
     {
@@ -231,7 +238,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
       <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
-    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
+    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -423,6 +430,6 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 </a>
 
 <script>
-function toggleSiteNav(){var h=document.getElementById('siteNavHam'),m=document.getElementById('siteNavMob');h.classList.toggle('open');m.classList.toggle('open');}
+function toggleSiteNav(){var h=document.getElementById('siteNavHam'),m=document.getElementById('siteNavMob');h.classList.toggle('open');m.classList.toggle('open');h.setAttribute('aria-expanded',h.classList.contains('open')?'true':'false');}
 </script>
 </body></html>

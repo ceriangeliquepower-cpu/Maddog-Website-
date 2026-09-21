@@ -40,6 +40,8 @@
   "url": "https://www.maddogperformance.co.za",
   "telephone": "+27634421690",
   "email": "info@maddogperformance.co.za",
+  "image": "https://www.maddogperformance.co.za/og-image.jpg",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "22 Sandra Road, Balvista Centre",
@@ -48,6 +50,7 @@
     "postalCode": "4420",
     "addressCountry": "ZA"
   },
+  "geo": { "@type": "GeoCoordinates", "latitude": -29.5393, "longitude": 31.2154 },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -136,6 +139,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://www.maddogperformance.co.za/images/0ec15d9e34ba4719.jpg" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"></noscript>
@@ -236,7 +240,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .form-field textarea{resize:vertical;min-height:100px;line-height:1.5}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-submit{margin-top:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.form-note{font-size:10px;font-weight:300;color:var(--white-dim);opacity:.45;letter-spacing:.06em}
+.form-note{font-size:10px;font-weight:300;color:var(--white-dim);letter-spacing:.06em}
 .form-success{display:none;background:rgba(201,168,76,.1);border:1px solid var(--gold-dim);padding:16px 20px;margin-top:16px}
 .form-success p{font-size:16px;font-weight:400;color:var(--gold-light);letter-spacing:.04em}
 
@@ -264,7 +268,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .map-sec{padding:0;background:var(--black)}
 .map-wrap{position:relative;height:420px;background:var(--card);overflow:hidden}
 .map-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;background:linear-gradient(135deg,var(--card),var(--deep))}
-.map-placeholder p{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);opacity:.4;text-align:center;max-width:300px;line-height:1.6}
+.map-placeholder p{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--white-dim);text-align:center;max-width:300px;line-height:1.6}
 .map-placeholder .map-icon{font-size:48px;opacity:.15}
 .map-overlay{position:absolute;bottom:24px;left:24px;background:var(--black);border:1px solid var(--border);border-left:3px solid var(--gold);padding:20px 24px;max-width:280px;z-index:2}
 .map-overlay h4{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.05em;color:var(--gold);margin-bottom:6px}
@@ -301,7 +305,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* FOOTER */
 .f-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.15em;color:var(--gold)}
-.f-note{font-size:10px;font-weight:300;letter-spacing:.08em;color:var(--white-dim);opacity:.32}
+.f-note{font-size:10px;font-weight:300;letter-spacing:.08em;color:var(--white-dim)}
 
 /* SAVE BANNER */
 .save-banner{position:fixed;bottom:0;left:0;right:0;background:var(--gold);color:var(--black);padding:9px 20px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;z-index:9998;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
@@ -395,7 +399,7 @@ footer.site-footer *{box-sizing:border-box !important}
 .sf-social a{display:flex !important;align-items:center !important;justify-content:center !important;width:40px !important;height:40px !important;border:1px solid rgba(201,168,76,.4) !important;color:#C9A84C !important;transition:all .2s !important;text-decoration:none !important;flex-shrink:0 !important;background:transparent !important}
 .sf-social a:hover{background:#C9A84C !important;color:#080808 !important;border-color:#C9A84C !important}
 .sf-social svg{width:16px !important;height:16px !important;fill:currentColor !important}
-.sf-col h4{font-family:'Barlow Condensed',sans-serif !important;font-size:10px !important;font-weight:700 !important;letter-spacing:.35em !important;text-transform:uppercase !important;color:#C9A84C !important;margin:0 0 16px !important;padding:0 !important}
+.sf-col h3{font-family:'Barlow Condensed',sans-serif !important;font-size:10px !important;font-weight:700 !important;letter-spacing:.35em !important;text-transform:uppercase !important;color:#C9A84C !important;margin:0 0 16px !important;padding:0 !important}
 .sf-col a{display:block !important;font-family:'Barlow Condensed',sans-serif !important;font-size:14px !important;font-weight:300 !important;color:rgba(245,240,232,.65) !important;margin-bottom:10px !important;transition:color .2s !important;text-decoration:none !important}
 .sf-col a:hover{color:#C9A84C !important}
 .sf-bottom{max-width:1280px !important;margin:0 auto !important;padding:20px 48px !important;border-top:1px solid rgba(245,240,232,.08) !important;display:flex !important;justify-content:space-between !important;align-items:center !important}
@@ -537,7 +541,7 @@ html { -webkit-text-size-adjust: 100%; }
       <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
-    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
+    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -558,8 +562,11 @@ html { -webkit-text-size-adjust: 100%; }
 </div>
 <script>
 function toggleSiteNav(){
-  document.getElementById('siteNavHam').classList.toggle('open');
-  document.getElementById('siteNavMob').classList.toggle('snm-open');
+  var ham = document.getElementById('siteNavHam');
+  var mob = document.getElementById('siteNavMob');
+  ham.classList.toggle('open');
+  mob.classList.toggle('snm-open');
+  ham.setAttribute('aria-expanded', ham.classList.contains('open') ? 'true' : 'false');
 }
 
 function toggleFaq(el){
@@ -619,7 +626,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     </div>
     <div class="contact-facility-img">
       <div class="photo-slot loaded" id="facility-p">
-        <img loading="lazy" id="facility-p-img" alt="Maddog Performance Institute" src="https://www.maddogperformance.co.za/images/ffc69d684f95d2a5.png" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="798" width="1200" id="facility-p-img" fetchpriority="high" alt="Maddog Performance Institute" src="https://www.maddogperformance.co.za/images/0ec15d9e34ba4719.jpg" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         
       </div>
     </div>
@@ -904,7 +911,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <input type="hidden" name="from_name" value="Maddog Website">
         <input type="hidden" name="botcheck" value="">
         <div class="nl-form">
-          <input type="email" name="email" placeholder="your@email.com" required="">
+          <input type="email" name="email" aria-label="Email address" placeholder="your@email.com" required="">
           <button type="submit" id="nlSubmitBtn">Subscribe</button>
         </div>
         <div id="nlSuccess" style="display:none;margin-top:12px;font-size:15px;font-weight:600;color:var(--black);letter-spacing:.04em">✓ You're on the list — welcome to the Maddog community!</div>
@@ -1039,7 +1046,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
     </div>
     <div class="sf-col">
-      <h4>Disciplines</h4>
+      <h3>Disciplines</h3>
       <a href="training-mma-ballito.html">MMA</a>
       <a href="training-bjj-ballito.html">BJJ</a>
       <a href="training-boxing-ballito.html">Boxing</a>
@@ -1048,7 +1055,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <a href="training-powerlifting-ballito.html">Powerlifting</a>
     </div>
     <div class="sf-col">
-      <h4>About</h4>
+      <h3>About</h3>
       <a href="amanda.html">Amanda Lino</a>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
@@ -1056,7 +1063,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <a href="recovery.html">Recovery</a>
     </div>
     <div class="sf-col">
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <a href="tel:+27634421690">+27 63 442 1690</a>
       <a href="mailto:info@maddogperformance.co.za" style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:300;color:rgba(245,240,232,.6);text-decoration:none;margin-bottom:8px;transition:color .2s">info@maddogperformance.co.za</a>
       <a href="contact.html">22 Sandra Rd, Balvista Centre, Ballito</a>

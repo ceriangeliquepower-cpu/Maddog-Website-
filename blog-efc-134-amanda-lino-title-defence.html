@@ -75,6 +75,11 @@
     "postalCode": "4420",
     "addressCountry": "ZA"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -29.5393,
+    "longitude": 31.2154
+  },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -266,7 +271,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
       <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
-    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
+    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -469,8 +474,11 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 <script>
 
 function toggleSiteNav(){
-  document.getElementById('siteNavHam').classList.toggle('open');
-  document.getElementById('siteNavMob').classList.toggle('snm-open');
+  var ham = document.getElementById('siteNavHam');
+  var mob = document.getElementById('siteNavMob');
+  ham.classList.toggle('open');
+  mob.classList.toggle('snm-open');
+  ham.setAttribute('aria-expanded', ham.classList.contains('open') ? 'true' : 'false');
 }
 document.addEventListener('click',function(e){
   var h=document.getElementById('siteNavHam'),m=document.getElementById('siteNavMob');

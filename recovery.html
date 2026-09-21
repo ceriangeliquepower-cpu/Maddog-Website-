@@ -50,6 +50,13 @@
     "addressCountry": "ZA"
   },
   "medicalSpecialty": "PhysicalMedicine",
+  "priceRange": "$$",
+  "geo": { "@type": "GeoCoordinates", "latitude": -29.5393, "longitude": 31.2154 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "06:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "06:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "13:00" }
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Recovery Services",
@@ -283,7 +290,7 @@ nav:not(.site-nav){display:none!important}
 
 /* ── FOOTER ── */
 .f-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.15em;color:var(--gold)}
-.f-note{font-size:10px;font-weight:300;letter-spacing:.08em;color:var(--white-dim);opacity:.32}
+.f-note{font-size:10px;font-weight:300;letter-spacing:.08em;color:var(--white-dim)}
 
 /* ── EDIT BANNER ── */
 .edit-banner{position:fixed;bottom:0;left:0;right:0;background:var(--gold);color:var(--black);text-align:center;padding:9px 20px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;z-index:9999;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
@@ -712,7 +719,7 @@ footer.site-footer *{box-sizing:border-box !important}
 .sf-social a{display:flex !important;align-items:center !important;justify-content:center !important;width:40px !important;height:40px !important;border:1px solid rgba(201,168,76,.4) !important;color:#C9A84C !important;transition:all .2s !important;text-decoration:none !important;flex-shrink:0 !important;background:transparent !important}
 .sf-social a:hover{background:#C9A84C !important;color:#080808 !important;border-color:#C9A84C !important}
 .sf-social svg{width:16px !important;height:16px !important;fill:currentColor !important}
-.sf-col h4{font-family:'Barlow Condensed',sans-serif !important;font-size:10px !important;font-weight:700 !important;letter-spacing:.35em !important;text-transform:uppercase !important;color:#C9A84C !important;margin:0 0 16px !important;padding:0 !important}
+.sf-col h3{font-family:'Barlow Condensed',sans-serif !important;font-size:10px !important;font-weight:700 !important;letter-spacing:.35em !important;text-transform:uppercase !important;color:#C9A84C !important;margin:0 0 16px !important;padding:0 !important}
 .sf-col a{display:block !important;font-family:'Barlow Condensed',sans-serif !important;font-size:14px !important;font-weight:300 !important;color:rgba(245,240,232,.65) !important;margin-bottom:10px !important;transition:color .2s !important;text-decoration:none !important}
 .sf-col a:hover{color:#C9A84C !important}
 .sf-bottom{max-width:1280px !important;margin:0 auto !important;padding:20px 48px !important;border-top:1px solid rgba(245,240,232,.08) !important;display:flex !important;justify-content:space-between !important;align-items:center !important}
@@ -936,7 +943,7 @@ html { -webkit-text-size-adjust: 100%; }
       <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
-    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
+    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -957,8 +964,11 @@ html { -webkit-text-size-adjust: 100%; }
 </div>
 <script>
 function toggleSiteNav(){
-  document.getElementById('siteNavHam').classList.toggle('open');
-  document.getElementById('siteNavMob').classList.toggle('snm-open');
+  var ham = document.getElementById('siteNavHam');
+  var mob = document.getElementById('siteNavMob');
+  ham.classList.toggle('open');
+  mob.classList.toggle('snm-open');
+  ham.setAttribute('aria-expanded', ham.classList.contains('open') ? 'true' : 'false');
 }
 document.addEventListener('click',function(e){
   var h=document.getElementById('siteNavHam'),m=document.getElementById('siteNavMob');
@@ -1041,7 +1051,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
   <!-- HERO PHOTO -->
   <div class="hero-right loaded" id="heroRight">
-    <img id="heroRight-img" src="https://www.maddogperformance.co.za/images/5f4ff489795ded25.png" alt="Maddog Performance Institute recovery suite" fetchpriority="high" style="position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important;display:block!important;">
+    <img height="1400" width="931" id="heroRight-img" src="https://www.maddogperformance.co.za/images/5f4ff489795ded25.png" alt="Maddog Performance Institute recovery suite" fetchpriority="high" style="position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important;display:block!important;">
   </div>
 </section>
 
@@ -1082,7 +1092,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
             <h4>Amanda Wren Kobus · Registered Nurse Practitioner and Professional Strength Athlete</h4>
             <!-- MOBILE ONLY PHOTO — hidden on desktop -->
             <div class="photo-slot loaded safety-p-mobile" id="safety-p" style="width:100%;height:280px;margin:14px 0 18px;position:relative;overflow:hidden;">
-              <img loading="lazy" id="safety-p-img" src="https://www.maddogperformance.co.za/images/b0b042e9e1600eb3.jpg" alt="Amanda Wren Kobus, Registered Nurse Practitioner at Maddog Performance Institute" style="object-position: 50% 19.25%; transform: none; transform-origin: 50% 19.25%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+              <img height="1536" width="1024" loading="lazy" id="safety-p-img" src="https://www.maddogperformance.co.za/images/b0b042e9e1600eb3.jpg" alt="Amanda Wren Kobus, Registered Nurse Practitioner at Maddog Performance Institute" style="object-position: 50% 19.25%; transform: none; transform-origin: 50% 19.25%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             </div>
             <p>Practice Number: <span style="color:var(--gold)">1196763</span> &nbsp;·&nbsp; SANC Number: <span style="color:var(--gold)">14662043</span> &nbsp;·&nbsp; In-house clinician at Maddog Performance Institute, Ballito</p>
           </div>
@@ -1097,7 +1107,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <!-- DESKTOP ONLY PHOTO — hidden on mobile -->
       <div class="safety-photo safety-p-desktop">
         <div class="photo-slot loaded" id="safety-p-desk" style="height:100%">
-          <img loading="lazy" src="https://www.maddogperformance.co.za/images/b0b042e9e1600eb3.jpg" alt="Amanda Wren Kobus, Registered Nurse Practitioner at Maddog Performance Institute" style="object-position:50% 19.25%;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;">
+          <img height="1536" width="1024" loading="lazy" src="https://www.maddogperformance.co.za/images/b0b042e9e1600eb3.jpg" alt="Amanda Wren Kobus, Registered Nurse Practitioner at Maddog Performance Institute" style="object-position:50% 19.25%;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;">
         </div>
       </div>
     </div>
@@ -1114,7 +1124,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <div class="af-photo">
         <div class="photo-slot loaded" id="robin-recovery-p" style="height:100%;min-height:520px">
           
-          <img id="robin-recovery-p-img" src="https://www.maddogperformance.co.za/images/d899d4d45f4e934c.jpg" alt="Robin JJ Williams, Sports Physiotherapist at Maddog Performance Institute" width="600" height="520" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img loading="lazy" id="robin-recovery-p-img" src="https://www.maddogperformance.co.za/images/d899d4d45f4e934c.jpg" alt="Robin JJ Williams, Sports Physiotherapist at Maddog Performance Institute" width="600" height="520" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
           
           
         </div>
@@ -1172,7 +1182,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         </div>
         <p class="af-bio-preview">Dr. Deodat du Plessis is a performance focused medical doctor dedicated to elevating human potential. Integrating medicine with advanced training and nutrition strategies, she works with individuals committed to achieving the highest levels of health, physique and performance.</p>
         <div class="af-quote">"Medicine and performance are not separate disciplines — they are the same pursuit. My role is to bridge the gap between where your body is and what it is truly capable of."</div>
-        <p style="font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--white-dim);opacity:.55;margin-bottom:20px;line-height:1.8">MBChB (Stellenbosch) &nbsp;·&nbsp; DipObs (SA) &nbsp;·&nbsp; HPCSA MP0746045 &nbsp;·&nbsp; PR: 1183451</p>
+        <p style="font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--white-dim);margin-bottom:20px;line-height:1.8">MBChB (Stellenbosch) &nbsp;·&nbsp; DipObs (SA) &nbsp;·&nbsp; HPCSA MP0746045 &nbsp;·&nbsp; PR: 1183451</p>
         <div class="af-specs">
           <span class="spec-tag">Performance Medicine</span>
           <span class="spec-tag">Hormonal &amp; Metabolic</span>
@@ -1186,7 +1196,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <div class="af-photo">
         <div class="photo-slot loaded" id="doctor-p" style="height:100%;min-height:520px">
           
-          <img id="doctor-p-img" src="https://www.maddogperformance.co.za/images/3ac8c113f57e919c.jpg" alt="Specialist Doctor at Maddog Performance Institute" width="600" height="520" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img loading="lazy" id="doctor-p-img" src="https://www.maddogperformance.co.za/images/3ac8c113f57e919c.jpg" alt="Specialist Doctor at Maddog Performance Institute" width="600" height="520" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
           
           
         </div>
@@ -1212,17 +1222,17 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <div class="intro-photo-stack">
           <div class="photo-slot ps1 loaded" id="intro1" style="height:100%">
             
-            <img loading="lazy" id="intro1-img" src="https://www.maddogperformance.co.za/images/5852e518fa81bf4d.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1400" width="933" loading="lazy" id="intro1-img" src="https://www.maddogperformance.co.za/images/5852e518fa81bf4d.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
           <div class="photo-slot loaded" id="intro2" style="height:100%">
-            <img loading="lazy" id="intro2-img" src="https://www.maddogperformance.co.za/images/ae227c09114a7c96.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1400" width="1050" loading="lazy" id="intro2-img" src="https://www.maddogperformance.co.za/images/ae227c09114a7c96.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
           <div class="photo-slot loaded" id="intro3" style="height:100%">
-            <img loading="lazy" id="intro3-img" src="https://www.maddogperformance.co.za/images/843f0bcaeca7ab87.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1400" width="1050" loading="lazy" id="intro3-img" src="https://www.maddogperformance.co.za/images/843f0bcaeca7ab87.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
@@ -1242,7 +1252,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="iv-p" style="height:100%;min-height:440px">
             
-            <img loading="lazy" id="iv-p-img" src="https://www.maddogperformance.co.za/images/5f72f6e32b6d68ea.png" alt="Maddog Performance Institute" style="object-position: 18.66% 50%; transform: none; transform-origin: 18.66% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1400" width="1050" loading="lazy" id="iv-p-img" src="https://www.maddogperformance.co.za/images/5f72f6e32b6d68ea.png" alt="Maddog Performance Institute" style="object-position: 18.66% 50%; transform: none; transform-origin: 18.66% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
@@ -1275,7 +1285,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="sauna-p" style="height:100%;min-height:440px">
             
-            <img loading="lazy" id="sauna-p-img" src="https://www.maddogperformance.co.za/images/79c68070726148ff.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1400" width="1050" loading="lazy" id="sauna-p-img" src="https://www.maddogperformance.co.za/images/79c68070726148ff.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
@@ -1308,7 +1318,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="cp-p" style="height:100%;min-height:440px">
             
-            <img loading="lazy" id="cp-p-img" src="https://www.maddogperformance.co.za/images/545793f464e1b6c5.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="931" width="1400" loading="lazy" id="cp-p-img" src="https://www.maddogperformance.co.za/images/545793f464e1b6c5.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
@@ -1341,7 +1351,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="pep-p" style="height:100%;min-height:440px">
             
-            <img loading="lazy" id="pep-p-img" src="https://www.maddogperformance.co.za/images/843f0bcaeca7ab87.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1400" width="1050" loading="lazy" id="pep-p-img" src="https://www.maddogperformance.co.za/images/843f0bcaeca7ab87.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
@@ -1357,7 +1367,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
             <li>Ongoing monitoring and protocol adjustment</li>
             <li>Strictly for performance optimisation — not shortcuts</li>
           </ul>
-          <p style="font-size:11px;color:var(--white-dim);opacity:.5;margin-top:12px;font-style:italic">* Peptide protocols are available by consultation only. Contact us to discuss eligibility and pricing.</p>
+          <p style="font-size:11px;color:var(--white-dim);margin-top:12px;font-style:italic">* Peptide protocols are available by consultation only. Contact us to discuss eligibility and pricing.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
             <a href="wellness-pricing.html#assessment" class="btn btn-g btn-sm">Request Consultation</a>
             <a href="wellness-body.html" class="btn btn-o btn-sm">Learn More: Peptide Therapy →</a>
@@ -1375,7 +1385,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="slim-p" style="height:100%;min-height:480px">
             
-            <img loading="lazy" id="slim-p-img" src="https://www.maddogperformance.co.za/images/7e16d2bd59d9dff6.png" alt="Slimming Clinic Ballito" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1400" width="931" loading="lazy" id="slim-p-img" src="https://www.maddogperformance.co.za/images/7e16d2bd59d9dff6.png" alt="Slimming Clinic Ballito" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             
             
           </div>
@@ -1411,7 +1421,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <div class="mod-photo reveal visible">
           <div class="photo-slot loaded" id="aes-p" style="height:100%;min-height:480px">
             
-            <img loading="lazy" id="aes-p-img" alt="Aesthetic Wellness IV Therapy Ballito" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/f258ee600322a0db.jpg">
+            <img height="1448" width="1086" loading="lazy" id="aes-p-img" alt="Aesthetic Wellness IV Therapy Ballito" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/f258ee600322a0db.jpg">
             
             
           </div>
@@ -1503,32 +1513,32 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="gallery-mosaic reveal visible">
       <div class="photo-slot gm1 loaded" id="g1">
         
-        <img loading="lazy" id="g1-img" src="https://www.maddogperformance.co.za/images/79c68070726148ff.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1400" width="1050" loading="lazy" id="g1-img" src="https://www.maddogperformance.co.za/images/79c68070726148ff.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         
         
       </div>
       <div class="photo-slot gm2 loaded" id="g2">
-        <img loading="lazy" id="g2-img" src="https://www.maddogperformance.co.za/images/a050b631a802c1ab.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1400" width="1050" loading="lazy" id="g2-img" src="https://www.maddogperformance.co.za/images/a050b631a802c1ab.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         
         
       </div>
       <div class="photo-slot gm3 loaded" id="g3">
-        <img loading="lazy" id="g3-img" src="https://www.maddogperformance.co.za/images/5f4ff489795ded25.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1400" width="931" loading="lazy" id="g3-img" src="https://www.maddogperformance.co.za/images/5f4ff489795ded25.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         
         
       </div>
       <div class="photo-slot gm4 loaded" id="g4">
-        <img loading="lazy" id="g4-img" src="https://www.maddogperformance.co.za/images/dc0fe57dcffe9c84.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1448" width="1086" loading="lazy" id="g4-img" src="https://www.maddogperformance.co.za/images/dc0fe57dcffe9c84.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         
         
       </div>
       <div class="photo-slot gm5 loaded" id="g5">
-        <img loading="lazy" id="g5-img" src="https://www.maddogperformance.co.za/images/85252678d11a2777.png" alt="Maddog Performance Institute" style="object-position: 50% 72.12%; transform: none; transform-origin: 50% 72.12%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1050" width="1400" loading="lazy" id="g5-img" src="https://www.maddogperformance.co.za/images/85252678d11a2777.png" alt="Maddog Performance Institute" style="object-position: 50% 72.12%; transform: none; transform-origin: 50% 72.12%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         
         
       </div>
       <div class="photo-slot gm6 loaded" id="g6">
-        <img loading="lazy" id="g6-img" src="https://www.maddogperformance.co.za/images/7fc4e5954024c2d1.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1086" width="1448" loading="lazy" id="g6-img" src="https://www.maddogperformance.co.za/images/7fc4e5954024c2d1.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         
         
       </div>
@@ -1602,7 +1612,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       </div>
     </div>
     <div class="sf-col">
-      <h4>Disciplines</h4>
+      <h3>Disciplines</h3>
       <a href="training-mma-ballito.html">MMA</a>
       <a href="training-bjj-ballito.html">BJJ</a>
       <a href="training-boxing-ballito.html">Boxing</a>
@@ -1611,7 +1621,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <a href="training-powerlifting-ballito.html">Powerlifting</a>
     </div>
     <div class="sf-col">
-      <h4>About</h4>
+      <h3>About</h3>
       <a href="amanda.html">Amanda Lino</a>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
@@ -1619,7 +1629,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <a href="recovery.html">Recovery</a>
     </div>
     <div class="sf-col">
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <a href="tel:+27634421690">+27 63 442 1690</a>
       <a href="/cdn-cgi/l/email-protection#c2abaca4ad82afa3a6a6ada5b2a7b0a4adb0afa3aca1a7eca1adecb8a3"><span class="__cf_email__" data-cfemail="5e373038311e333f3a3a31392e3b2c38312c333f303d3b703d3170243f">[email&nbsp;protected]</span></a>
       <a href="contact.html">22 Sandra Rd, Balvista Centre, Ballito</a>

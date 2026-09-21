@@ -46,6 +46,7 @@
     "addressCountry": "ZA"
   },
   "memberOf": {
+    "@id": "https://www.maddogperformance.co.za/#gym",
     "@type": "SportsActivityLocation",
     "name": "Maddog Performance Institute",
     "url": "https://www.maddogperformance.co.za"
@@ -61,6 +62,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://www.maddogperformance.co.za/images/f21bfde09957759f.png" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"></noscript>
@@ -201,7 +203,7 @@ nav:not(.site-nav){display:none !important}
 .add-fighter-card{background:transparent;border:1px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:border-color .3s,background .3s;min-height:420px}
 .add-fighter-card:hover{border-color:var(--gold-dim);background:rgba(201,168,76,.03)}
 .add-fighter-card .add-icon{font-size:40px;opacity:.15}
-.add-fighter-card p{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--white-dim);opacity:.35}
+.add-fighter-card p{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--white-dim)}
 
 /* ── FIGHTER MODAL (edit overlay) ── */
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
@@ -260,7 +262,7 @@ nav:not(.site-nav){display:none !important}
 
 /* ── FOOTER ── */
 .f-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.15em;color:var(--gold)}
-.f-note{font-size:10px;font-weight:300;letter-spacing:.08em;color:var(--white-dim);opacity:.32}
+.f-note{font-size:10px;font-weight:300;letter-spacing:.08em;color:var(--white-dim)}
 
 /* ── EDIT BANNER ── */
 .edit-banner{position:fixed;bottom:0;left:0;right:0;background:var(--gold);color:var(--black);text-align:center;padding:9px 20px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;z-index:9999;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
@@ -491,7 +493,7 @@ blockquote, .pull-quote {
 .sponsor-name{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white);margin-top:4px}
 .sponsor-desc{font-size:11px;color:var(--white-dim);line-height:1.5;letter-spacing:.03em}
 .sponsor-link-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:auto;padding-top:8px}
-.sponsors-empty{font-size:13px;color:var(--white-dim);opacity:.5;text-align:center;padding:24px 0;display:none}
+.sponsors-empty{font-size:13px;color:var(--white-dim);text-align:center;padding:24px 0;display:none}
 @media(max-width:900px){.sponsors-grid{grid-template-columns:repeat(2,1fr)!important;gap:12px!important}}
 
 
@@ -516,7 +518,7 @@ blockquote, .pull-quote {
 .sponsor-desc{font-size:11px;font-weight:300;color:var(--white-dim);line-height:1.5;letter-spacing:.03em;padding:0 14px 10px}
 .sponsor-link,.sponsor-link-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding:10px 20px 20px;margin-top:auto;text-decoration:none;display:block}
 .sponsor-link:hover,.sponsor-link-label:hover{opacity:.7}
-.sponsors-note{margin-top:32px;text-align:center;font-size:12px;color:var(--white-dim);opacity:.5;letter-spacing:.08em}
+.sponsors-note{margin-top:32px;text-align:center;font-size:12px;color:var(--white-dim);letter-spacing:.08em}
 @media(max-width:768px){
   .member-grid{grid-template-columns:1fr!important}
   .members-header{grid-template-columns:1fr!important;gap:24px}
@@ -630,7 +632,7 @@ footer.site-footer *{box-sizing:border-box !important}
 .sf-social a{display:flex !important;align-items:center !important;justify-content:center !important;width:40px !important;height:40px !important;border:1px solid rgba(201,168,76,.4) !important;color:#C9A84C !important;transition:all .2s !important;text-decoration:none !important;flex-shrink:0 !important;background:transparent !important}
 .sf-social a:hover{background:#C9A84C !important;color:#080808 !important;border-color:#C9A84C !important}
 .sf-social svg{width:16px !important;height:16px !important;fill:currentColor !important}
-.sf-col h4{font-family:'Barlow Condensed',sans-serif !important;font-size:10px !important;font-weight:700 !important;letter-spacing:.35em !important;text-transform:uppercase !important;color:#C9A84C !important;margin:0 0 16px !important;padding:0 !important}
+.sf-col h3{font-family:'Barlow Condensed',sans-serif !important;font-size:10px !important;font-weight:700 !important;letter-spacing:.35em !important;text-transform:uppercase !important;color:#C9A84C !important;margin:0 0 16px !important;padding:0 !important}
 .sf-col a{display:block !important;font-family:'Barlow Condensed',sans-serif !important;font-size:14px !important;font-weight:300 !important;color:rgba(245,240,232,.65) !important;margin-bottom:10px !important;transition:color .2s !important;text-decoration:none !important}
 .sf-col a:hover{color:#C9A84C !important}
 .sf-bottom{max-width:1280px !important;margin:0 auto !important;padding:20px 48px !important;border-top:1px solid rgba(245,240,232,.08) !important;display:flex !important;justify-content:space-between !important;align-items:center !important}
@@ -817,7 +819,7 @@ html { -webkit-text-size-adjust: 100%; }
       <a href="wellness.html" class="snl-wellness">✦ Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
-    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu">
+    <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -838,8 +840,11 @@ html { -webkit-text-size-adjust: 100%; }
 </div>
 <script>
 function toggleSiteNav(){
-  document.getElementById('siteNavHam').classList.toggle('open');
-  document.getElementById('siteNavMob').classList.toggle('snm-open');
+  var ham = document.getElementById('siteNavHam');
+  var mob = document.getElementById('siteNavMob');
+  ham.classList.toggle('open');
+  mob.classList.toggle('snm-open');
+  ham.setAttribute('aria-expanded', ham.classList.contains('open') ? 'true' : 'false');
 }
 document.addEventListener('click',function(e){
   var h=document.getElementById('siteNavHam'),m=document.getElementById('siteNavMob');
@@ -858,7 +863,7 @@ document.addEventListener('click',function(e){
 
 <!-- NAV -->
 <nav id="topnav" style="background: rgba(8, 8, 8, 0.98);">
-  <a href="index.html" class="nav-logo" style="padding:4px 14px;display:flex;align-items:center;text-decoration:none"><img loading="lazy" src="https://www.maddogperformance.co.za/images/d84c6fcf7bb291d4.jpg" alt="Maddog Performance Institute" style="height:48px;width:auto;object-fit:contain"></a>
+  <a href="index.html" class="nav-logo" style="padding:4px 14px;display:flex;align-items:center;text-decoration:none"><img height="200" width="200" src="https://www.maddogperformance.co.za/images/52fe791c3180f9a2.jpg" alt="Maddog Performance Institute" style="height:48px;width:auto;object-fit:contain"></a>
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
     <li><a href="#">Training</a></li>
@@ -907,20 +912,20 @@ document.addEventListener('click',function(e){
     <!-- Hero mosaic — 3 photo slots -->
     <div class="hero-mosaic">
       <div class="photo-slot hm1 loaded" id="hm1">
-        <img loading="lazy" id="hm1-img" src="https://www.maddogperformance.co.za/images/f21bfde09957759f.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1400" width="989" id="hm1-img" fetchpriority="high" src="https://www.maddogperformance.co.za/images/f21bfde09957759f.png" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
         <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         
         
       </div>
       <div class="photo-slot loaded" id="hm2" style="height:100%">
-        <img loading="lazy" id="hm2-img" src="https://www.maddogperformance.co.za/images/bf30e21caf8b58b2.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1122" width="1200" id="hm2-img" src="https://www.maddogperformance.co.za/images/85b1fd6781dd9ec8.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
         <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         
       </div>
       <div class="photo-slot loaded" id="hm3" style="height:100%">
-        <img loading="lazy" id="hm3-img" src="https://www.maddogperformance.co.za/images/99c4317a7163d9a6.jpg" alt="Maddog Performance Institute" style="object-position: 50% 65.72%; transform: none; transform-origin: 50% 65.72%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1200" width="675" id="hm3-img" src="https://www.maddogperformance.co.za/images/9e9b22f6d176a5d9.jpg" alt="Maddog Performance Institute" style="object-position: 50% 65.72%; transform: none; transform-origin: 50% 65.72%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
         <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         
@@ -984,7 +989,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal visible" id="fc1">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f1p" style="height:100%">
-            <img loading="lazy" id="f1p-img" alt="Maddog Performance Institute" style="object-position: 50% 7%; transform: none; transform-origin: 50% 7%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/021b7f0c58819b45.jpg">
+            <img height="1200" width="731" loading="lazy" id="f1p-img" alt="Maddog Performance Institute" style="object-position: 50% 7%; transform: none; transform-origin: 50% 7%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/273e161ae53c1b77.jpg">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1007,7 +1012,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd1 visible" id="fc2">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f2p" style="height:100%">
-            <img loading="lazy" id="f2p-img" src="https://www.maddogperformance.co.za/images/943f582cd1d77494.jpg" alt="Maddog Performance Institute" style="object-position: 50% 58.37%; transform: none; transform-origin: 50% 58.37%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1570" width="1002" loading="lazy" id="f2p-img" src="https://www.maddogperformance.co.za/images/943f582cd1d77494.jpg" alt="Maddog Performance Institute" style="object-position: 50% 58.37%; transform: none; transform-origin: 50% 58.37%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1030,7 +1035,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd2 visible" id="fc3">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f3p" style="height:100%">
-            <img loading="lazy" id="f3p-img" src="https://www.maddogperformance.co.za/images/91fcac8ae5ea3916.jpg" alt="Maddog Performance Institute" style="object-position: 50% 25.96%; transform: none; transform-origin: 50% 25.96%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1600" width="926" loading="lazy" id="f3p-img" src="https://www.maddogperformance.co.za/images/91fcac8ae5ea3916.jpg" alt="Maddog Performance Institute" style="object-position: 50% 25.96%; transform: none; transform-origin: 50% 25.96%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1053,7 +1058,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd3 visible" id="fc4">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f4p" style="height:100%">
-            <img loading="lazy" id="f4p-img" src="https://www.maddogperformance.co.za/images/1481d03b85136e3d.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="853" width="1280" loading="lazy" id="f4p-img" src="https://www.maddogperformance.co.za/images/1481d03b85136e3d.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1077,7 +1082,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal visible" id="fc5">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f5p" style="height:100%">
-            <img loading="lazy" id="f5p-img" src="https://www.maddogperformance.co.za/images/2b579b937b065eb8.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%!important;height:100%!important;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
+            <img height="400" width="600" loading="lazy" id="f5p-img" src="https://www.maddogperformance.co.za/images/2b579b937b065eb8.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%!important;height:100%!important;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1100,7 +1105,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd1 visible" id="fc6">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f6p" style="height:100%">
-            <img loading="lazy" id="f6p-img" src="https://www.maddogperformance.co.za/images/f0637647730ddce9.jpg" alt="Maddog Performance Institute" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;">
+            <img height="720" width="1080" loading="lazy" id="f6p-img" src="https://www.maddogperformance.co.za/images/f0637647730ddce9.jpg" alt="Maddog Performance Institute" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1123,7 +1128,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd2 visible" id="fc7">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f7p" style="height:100%">
-            <img id="f7p-img" src="https://www.maddogperformance.co.za/images/2e9249fe209f377f.jpg" alt="Amanda Wren Kobus squatting at KwaZulu-Natal Powerlifting Federation" width="400" height="320" style="object-position: 50% 38.76%; transform: none; transform-origin: 50% 38.76%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img loading="lazy" id="f7p-img" src="https://www.maddogperformance.co.za/images/25ed850d65d30d30.jpg" alt="Amanda Wren Kobus squatting at KwaZulu-Natal Powerlifting Federation" width="400" height="320" style="object-position: 50% 38.76%; transform: none; transform-origin: 50% 38.76%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1147,8 +1152,8 @@ document.addEventListener('click',function(e){
       <!-- FIGHTER 8 — NATHAN LAWRENCE — TODO: confirm record, age, achievement; photo pending -->
       <div class="fighter-card reveal visible" id="fc8">
         <div class="fc-photo">
-          <div class="photo-slot loaded" id="f8p" style="height:100%;cursor:pointer" role="button" tabindex="0" aria-label="Add Nathan Lawrence's photo">
-            <img id="f8p-img" alt="Nathan Lawrence, MMA fighter at Maddog Performance Institute" style="object-position: 50% 14.67%; transform: none; transform-origin: 50% 14.67%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/a09fb9767fcedb0c.jpg">
+          <div class="photo-slot loaded" id="f8p" style="height:100%;cursor:pointer" role="button" tabindex="0" aria-label="Add photo for Nathan Lawrence">
+            <img loading="lazy" height="1600" width="931" id="f8p-img" alt="Nathan Lawrence, MMA fighter at Maddog Performance Institute" style="object-position: 50% 14.67%; transform: none; transform-origin: 50% 14.67%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/a09fb9767fcedb0c.jpg">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Add Photo</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1171,7 +1176,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal visible" id="fc9">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f9p" style="height:100%;cursor:pointer">
-            <img id="f9p-img" alt="Nicole Tome-Alves, MMA and Kickboxing fighter at Maddog Performance Institute" style="object-position: 50% 35.82%; transform: none; transform-origin: 50% 35.82%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/8cc1269a75633f51.jpg">
+            <img loading="lazy" height="1448" width="1086" id="f9p-img" alt="Nicole Tome-Alves, MMA and Kickboxing fighter at Maddog Performance Institute" style="object-position: 50% 35.82%; transform: none; transform-origin: 50% 35.82%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/8cc1269a75633f51.jpg">
             <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change Photo</span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1224,7 +1229,7 @@ document.addEventListener('click',function(e){
             <div class="member-card reveal visible" id="mc1">
         <div class="mc-footer">
           <div class="mc-avatar loaded" id="mp1">
-            <img loading="lazy" id="mp1-img" src="https://www.maddogperformance.co.za/images/23e74b2fc48b2b56.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
+            <img height="200" width="152" loading="lazy" id="mp1-img" src="https://www.maddogperformance.co.za/images/23e74b2fc48b2b56.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
             <div class="mc-avatar-hint">📸</div>
           </div>
           <div class="mc-meta">
@@ -1241,7 +1246,7 @@ document.addEventListener('click',function(e){
             <div class="member-card reveal visible rd1" id="mc2">
         <div class="mc-footer">
           <div class="mc-avatar loaded" id="mp2">
-            <img loading="lazy" id="mp2-img" src="https://www.maddogperformance.co.za/images/9d47b20b3249f301.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
+            <img height="200" width="153" loading="lazy" id="mp2-img" src="https://www.maddogperformance.co.za/images/9d47b20b3249f301.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
             <div class="mc-avatar-hint">📸</div>
           </div>
           <div class="mc-meta">
@@ -1258,7 +1263,7 @@ document.addEventListener('click',function(e){
             <div class="member-card reveal visible rd1" id="mc3">
         <div class="mc-footer">
           <div class="mc-avatar loaded" id="mp3">
-            <img loading="lazy" id="mp3-img" src="https://www.maddogperformance.co.za/images/3798b12d8d4a281d.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
+            <img height="200" width="151" loading="lazy" id="mp3-img" src="https://www.maddogperformance.co.za/images/3798b12d8d4a281d.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
             <div class="mc-avatar-hint">📸</div>
           </div>
           <div class="mc-meta">
@@ -1275,7 +1280,7 @@ document.addEventListener('click',function(e){
             <div class="member-card reveal visible rd1" id="mc4">
         <div class="mc-footer">
           <div class="mc-avatar loaded" id="mp4">
-            <img loading="lazy" id="mp4-img" src="https://www.maddogperformance.co.za/images/7a3fe1ee61b2f2d6.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
+            <img height="200" width="162" loading="lazy" id="mp4-img" src="https://www.maddogperformance.co.za/images/7a3fe1ee61b2f2d6.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
             <div class="mc-avatar-hint">📸</div>
           </div>
           <div class="mc-meta">
@@ -1292,7 +1297,7 @@ document.addEventListener('click',function(e){
             <div class="member-card reveal visible rd1" id="mc5">
         <div class="mc-footer">
           <div class="mc-avatar loaded" id="mp5">
-            <img loading="lazy" id="mp5-img" src="https://www.maddogperformance.co.za/images/9794f3e8f1e0fe40.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
+            <img height="133" width="200" loading="lazy" id="mp5-img" src="https://www.maddogperformance.co.za/images/9794f3e8f1e0fe40.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
             <div class="mc-avatar-hint">📸</div>
           </div>
           <div class="mc-meta">
@@ -1311,7 +1316,7 @@ document.addEventListener('click',function(e){
             <div class="member-card reveal visible rd1" id="mc6">
         <div class="mc-footer">
           <div class="mc-avatar loaded" id="mp6">
-            <img loading="lazy" id="mp6-img" src="https://www.maddogperformance.co.za/images/30bb02036f81cdf9.jpg" alt="Luke De Beer — Maddog Performance Institute" style="inset: 0px; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; display: block !important;">
+            <img height="423" width="567" loading="lazy" id="mp6-img" src="https://www.maddogperformance.co.za/images/30bb02036f81cdf9.jpg" alt="Luke De Beer — Maddog Performance Institute" style="inset: 0px; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; display: block !important;">
             <div class="mc-avatar-hint">📸</div>
           </div>
           <div class="mc-meta">
@@ -1328,7 +1333,7 @@ document.addEventListener('click',function(e){
             <div class="member-card reveal visible rd1" id="mc7">
         <div class="mc-footer">
           <div class="mc-avatar loaded" id="mp7">
-            <img loading="lazy" id="mp7-img" src="https://www.maddogperformance.co.za/images/5574dc94c71b11f8.jpg" alt="Yolanda Smith — Maddog Performance Institute" style="inset: 0px; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; display: block !important;">
+            <img height="933" width="1400" loading="lazy" id="mp7-img" src="https://www.maddogperformance.co.za/images/5574dc94c71b11f8.jpg" alt="Yolanda Smith — Maddog Performance Institute" style="inset: 0px; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; display: block !important;">
             <div class="mc-avatar-hint">📸</div>
           </div>
           <div class="mc-meta">
@@ -1345,7 +1350,7 @@ document.addEventListener('click',function(e){
             <div class="member-card reveal visible rd1" id="mc8">
         <div class="mc-footer">
           <div class="mc-avatar loaded" id="mp8">
-            <img loading="lazy" id="mp8-img" src="https://www.maddogperformance.co.za/images/c8fba2c0846aaf7b.jpg" alt="Lainz Mortzouris — Maddog Performance Institute" style="inset: 0px; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; display: block !important;">
+            <img height="933" width="1400" loading="lazy" id="mp8-img" src="https://www.maddogperformance.co.za/images/c8fba2c0846aaf7b.jpg" alt="Lainz Mortzouris — Maddog Performance Institute" style="inset: 0px; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; display: block !important;">
             <div class="mc-avatar-hint">📸</div>
           </div>
           <div class="mc-meta">
@@ -1386,7 +1391,7 @@ document.addEventListener('click',function(e){
           <!-- Mozambik -->
           <a href="https://www.mozambik.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Mozambik Restaurant">
             <div class="sponsor-logo-slot loaded" id="logo-mozambik" onclick="event.preventDefault();swapLogo('logo-mozambik')" title="Click to upload Mozambik logo">
-            <img loading="lazy" id="logo-mozambik-img" src="https://www.maddogperformance.co.za/images/a74f6b6c859b025e.png" alt="Mozambik Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="240" width="240" loading="lazy" id="logo-mozambik-img" src="https://www.maddogperformance.co.za/images/819e56f153af9b9f.png" alt="Mozambik Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1400,7 +1405,7 @@ document.addEventListener('click',function(e){
           <!-- Concha Cafe -->
           <a href="https://concha.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Concha Cafe">
             <div class="sponsor-logo-slot loaded" id="logo-concha" onclick="event.preventDefault();swapLogo('logo-concha')" title="Click to upload Concha Café &amp; Bakery logo">
-            <img loading="lazy" id="logo-concha-img" src="https://www.maddogperformance.co.za/images/858cae0ffcff39e1.jpg" alt="Concha Café &amp; Bakery Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="198" width="240" loading="lazy" id="logo-concha-img" src="https://www.maddogperformance.co.za/images/bcf4c7921d55cda0.jpg" alt="Concha Café &amp; Bakery Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1414,7 +1419,7 @@ document.addEventListener('click',function(e){
           <!-- Conchilla -->
           <a href="https://conchilla.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Conchilla Tapas Lounge">
             <div class="sponsor-logo-slot loaded" id="logo-conchilla" onclick="event.preventDefault();swapLogo('logo-conchilla')" title="Click to upload Conchilla logo">
-            <img loading="lazy" id="logo-conchilla-img" src="https://www.maddogperformance.co.za/images/68ce3937255174c3.jpg" alt="Conchilla Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="94" width="240" loading="lazy" id="logo-conchilla-img" src="https://www.maddogperformance.co.za/images/d58b4500f61dcf35.jpg" alt="Conchilla Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1442,7 +1447,7 @@ document.addEventListener('click',function(e){
           <!-- ScoutNet -->
           <a href="https://scoutnet.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="ScoutNet">
             <div class="sponsor-logo-slot loaded" id="logo-scoutnet" onclick="event.preventDefault();swapLogo('logo-scoutnet')" title="Click to upload ScoutNet logo">
-            <img loading="lazy" id="logo-scoutnet-img" src="https://www.maddogperformance.co.za/images/fca8a22bb94b18c3.png" alt="ScoutNet Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="122" width="240" loading="lazy" id="logo-scoutnet-img" src="https://www.maddogperformance.co.za/images/0caf766a7e451d50.png" alt="ScoutNet Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1456,7 +1461,7 @@ document.addEventListener('click',function(e){
           <!-- Ramessur -->
           <a href="#" class="sponsor-card" aria-label="Ramessur">
             <div class="sponsor-logo-slot loaded" id="logo-ramessur" onclick="event.preventDefault();swapLogo('logo-ramessur')" title="Click to upload Ramessur logo">
-            <img loading="lazy" id="logo-ramessur-img" src="https://www.maddogperformance.co.za/images/cfb6657a49d1ef24.jpg" alt="Ramessur Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="240" width="188" loading="lazy" id="logo-ramessur-img" src="https://www.maddogperformance.co.za/images/9ee863ce5ea260f7.jpg" alt="Ramessur Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1470,7 +1475,7 @@ document.addEventListener('click',function(e){
           <!-- Coco de Mer -->
           <a href="https://cocodemer.co.za/" target="_blank" rel="noopener" class="sponsor-card" aria-label="Coco de Mer">
             <div class="sponsor-logo-slot loaded" id="logo-coco" onclick="event.preventDefault();swapLogo('logo-coco')" title="Click to upload Coco de Mer logo">
-            <img loading="lazy" id="logo-coco-img" src="https://www.maddogperformance.co.za/images/f6cfbba8ede76346.jpg" alt="Coco de Mer Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="111" width="240" loading="lazy" id="logo-coco-img" src="https://www.maddogperformance.co.za/images/7b3631fe4995af10.jpg" alt="Coco de Mer Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1484,7 +1489,7 @@ document.addEventListener('click',function(e){
           <!-- ATeam -->
           <a href="#" class="sponsor-card" aria-label="ATeam">
             <div class="sponsor-logo-slot loaded" id="logo-ateam" onclick="event.preventDefault();swapLogo('logo-ateam')" title="Click to upload ATeam logo">
-            <img loading="lazy" id="logo-ateam-img" src="https://www.maddogperformance.co.za/images/bb3328d5d45e388f.jpg" alt="ATeam Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="186" width="240" loading="lazy" id="logo-ateam-img" src="https://www.maddogperformance.co.za/images/6b5b4a7f7e3f12b6.jpg" alt="ATeam Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1536,7 +1541,7 @@ document.addEventListener('click',function(e){
       </div>
     </div>
     <div class="sf-col">
-      <h4>Disciplines</h4>
+      <h3>Disciplines</h3>
       <a href="training-mma-ballito.html">MMA</a>
       <a href="training-bjj-ballito.html">BJJ</a>
       <a href="training-boxing-ballito.html">Boxing</a>
@@ -1545,7 +1550,7 @@ document.addEventListener('click',function(e){
       <a href="training-powerlifting-ballito.html">Powerlifting</a>
     </div>
     <div class="sf-col">
-      <h4>About</h4>
+      <h3>About</h3>
       <a href="amanda.html">Amanda Lino</a>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
@@ -1553,7 +1558,7 @@ document.addEventListener('click',function(e){
       <a href="recovery.html">Recovery</a>
     </div>
     <div class="sf-col">
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <a href="tel:+27634421690">+27 63 442 1690</a>
       <a href="/cdn-cgi/l/email-protection#c2abaca4ad82afa3a6a6ada5b2a7b0a4adb0afa3aca1a7eca1adecb8a3"><span class="__cf_email__" data-cfemail="5e373038311e333f3a3a31392e3b2c38312c333f303d3b703d3170243f">[email&nbsp;protected]</span></a>
       <a href="contact.html">22 Sandra Rd, Balvista Centre, Ballito</a>
@@ -1635,7 +1640,7 @@ document.addEventListener('click',function(e){
         <div class="form-submit" style="margin-top:20px">
           <button type="submit" class="btn btn-g" id="spSubmitBtn">Submit Sponsorship Enquiry</button>
         </div>
-        <p style="font-size:10px;font-weight:300;color:var(--white-dim);opacity:.5;margin-top:12px;letter-spacing:.06em">We will respond within 48 hours. A confirmation email will be sent to the address provided.</p>
+        <p style="font-size:10px;font-weight:300;color:var(--white-dim);margin-top:12px;letter-spacing:.06em">We will respond within 48 hours. A confirmation email will be sent to the address provided.</p>
       </form>
     </div>
 
