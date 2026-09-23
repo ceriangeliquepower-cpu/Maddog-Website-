@@ -98,31 +98,9 @@ Full URL list (clean/pretty forms) is authoritative in `sitemap.xml` — cross-c
 
 **Rewritten 2026-09-17, item 2 + items 9-11 updated 2026-09-21 after a full site audit closed out most of what item 2 used to list as open** (color contrast, heading order, `<main>` landmark, image delivery, hero preload coverage, JSON-LD gaps, several accessibility gaps — see item 2 and items 10-11 for what's still genuinely open vs. done). Verify against live state before trusting this list too, next time it's read — see the "Keep this file honest" section below.
 
-1. **Search Console indexing queue** — 41 pages were stuck "discovered, not indexed" due to the redirect bug (fixed & live 2026-09-16, see [[project_redirect_indexing_fix]] in memory). Submitting via Search Console: Inspect URL (top search bar) → Request Indexing, one quota-limited batch (~10/day) at a time. **10 done so far, 31 still outstanding** — full checklist below, check items off here as they're submitted so this list stays the source of truth (not a separate memory file):
+1. **Search Console indexing queue** — 41 pages were stuck "discovered, not indexed" due to the redirect bug (fixed & live 2026-09-16, see [[project_redirect_indexing_fix]] in memory). **Checked the real Search Console indexing report directly on 2026-09-21** (not just counting submissions) — confirmed this is genuinely resolving, not stuck: 42 pages indexed at that point, 32 not indexed, of which 29 were the real tracked "Discovered – currently not indexed" issue (validation started exactly 16/09/2026, the day the fix went live — the other 3 "not indexed" were `.html` duplicate URLs correctly deferring to their clean-URL canonical, not a problem). Submitting via Search Console: Inspect URL (top search bar) → Request Indexing, one quota-limited batch (~10/day) at a time. **22 done so far, 9 still outstanding** — full checklist below, check items off here as they're submitted so this list stays the source of truth (not a separate memory file):
 
-   **Still to submit (31):**
-   - [ ] `https://www.maddogperformance.co.za/wellness-cold-plunge-ballito`
-   - [ ] `https://www.maddogperformance.co.za/wellness-infrared-sauna-ballito`
-   - [ ] `https://www.maddogperformance.co.za/amanda`
-   - [ ] `https://www.maddogperformance.co.za/athletes`
-   - [ ] `https://www.maddogperformance.co.za/coaches`
-   - [ ] `https://www.maddogperformance.co.za/booking`
-   - [ ] `https://www.maddogperformance.co.za/recovery`
-   - [ ] `https://www.maddogperformance.co.za/training/bootcamp-ballito`
-   - [ ] `https://www.maddogperformance.co.za/training/kids-boxing-ballito`
-   - [ ] `https://www.maddogperformance.co.za/training/olympic-boxing-ballito`
-   - [ ] `https://www.maddogperformance.co.za/training/powerlifting-ballito`
-   - [ ] `https://www.maddogperformance.co.za/training/womens-boxing-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-amanda-kobus-coach-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-bjj-beginners-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-cold-plunge-sauna-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-iv-drip-therapy-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-mma-training-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-powerlifting-women-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-robin-jj-williams-physio-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-womens-self-defence-workshop-recap-ballito`
-   - [ ] `https://www.maddogperformance.co.za/blog-youth-mma-training-ballito`
-   - [ ] `https://www.maddogperformance.co.za/wellness-contact`
+   **Still to submit (9):**
    - [ ] `https://www.maddogperformance.co.za/wellness-inbody-scan-ballito`
    - [ ] `https://www.maddogperformance.co.za/wellness-nad-iv-ballito`
    - [ ] `https://www.maddogperformance.co.za/wellness-personal-training-ballito`
@@ -133,7 +111,7 @@ Full URL list (clean/pretty forms) is authoritative in `sitemap.xml` — cross-c
    - [ ] `https://www.maddogperformance.co.za/wellness-blog-physiotherapy`
    - [ ] `https://www.maddogperformance.co.za/wellness-blog-womens-wellness-day-recap`
 
-   **Already submitted (10):** `/training`, `/training/personal-training-ballito`, `/training/mma-ballito`, `/training/bjj-ballito`, `/training/kickboxing-ballito`, `/training/boxing-ballito`, `/training/kids-bjj-ballito`, `/wellness-body`, `/wellness-iv`, `/wellness-physiotherapy-ballito`.
+   **Already submitted (22):** `/training`, `/training/personal-training-ballito`, `/training/mma-ballito`, `/training/bjj-ballito`, `/training/kickboxing-ballito`, `/training/boxing-ballito`, `/training/kids-bjj-ballito`, `/wellness-body`, `/wellness-iv`, `/wellness-physiotherapy-ballito`, `/amanda`, `/athletes`, `/coaches`, `/booking`, `/recovery`, `/wellness-cold-plunge-ballito`, `/wellness-infrared-sauna-ballito`, `/training/bootcamp-ballito`, `/training/kids-boxing-ballito`, `/training/olympic-boxing-ballito`, `/training/powerlifting-ballito` (11 submitted 2026-09-21), `/training/womens-boxing-ballito`, `/blog-amanda-kobus-coach-ballito`, `/blog-bjj-beginners-ballito`, `/blog-cold-plunge-sauna-ballito`, `/blog-iv-drip-therapy-ballito`, `/blog-mma-training-ballito`, `/blog-powerlifting-women-ballito`, `/blog-robin-jj-williams-physio-ballito`, `/blog-womens-self-defence-workshop-recap-ballito`, `/blog-youth-mma-training-ballito`, `/wellness-contact` (11 more submitted 2026-09-23). Only the wellness pages/blog posts remain — one more day's quota should clear the list.
 
    Resubmitting an already-done URL is harmless (Google's own message: doesn't change queue position), so if it's ever unclear which were done, just continue down the unchecked list rather than trying to figure out exactly where you left off.
 2. **Core Web Vitals — mobile LCP, major batch fixed & pushed 2026-09-21, not yet re-measured.** Font-loading fix pushed 2026-09-17 took mobile LCP from 10.2s → 5.0s. On 2026-09-21, a full audit + fix pass closed out nearly everything that was previously listed here as open:
