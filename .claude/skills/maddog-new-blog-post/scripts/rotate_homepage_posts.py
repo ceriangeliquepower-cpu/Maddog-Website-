@@ -28,6 +28,7 @@ Usage:
     Add --dry-run to preview the change without writing anything.
 """
 import argparse
+from PIL import Image
 import os
 import re
 import sys
@@ -50,7 +51,8 @@ def html_escape_text(text):
 
 
 def extract_card(content, img_id, search_from=0):
-    img_re = re.compile(rf'<img loading="lazy" id="{img_id}-img"[^>]*?>', re.DOTALL)
+    # Attribute order varies (a site-wide pass put width/height first), so match the id anywhere in the tag.
+    img_re = re.compile(rf'<img\b[^>]*\bid="{img_id}-img"[^>]*>', re.DOTALL)
     m = img_re.search(content, search_from)
     if not m:
         raise ValueError(f'Could not find the {img_id}-img <img> tag. Stopping without writing anything.')
@@ -58,30 +60,61 @@ def extract_card(content, img_id, search_from=0):
     src = extract(r'src="([^"]*)"', img_tag, flags=re.DOTALL, label=f'{img_id} src')
     alt_match = re.search(r'alt="([^"]*)"', img_tag, re.DOTALL)
     alt = alt_match.group(1) if alt_match else ''
+    w_match = re.search(r'\bwidth="(\d+)"', img_tag)
+    h_match = re.search(r'\bheight="(\d+)"', img_tag)
+    style_match = re.search(r'\bstyle="([^"]*)"', img_tag)
 
     after = content[m.end():]
     cat = extract(r'<div class="nc-cat">(.*?)</div>', after, label=f'{img_id} nc-cat')
     title = extract(r'<div class="nc-title">(.*?)</div>', after, flags=re.DOTALL, label=f'{img_id} nc-title')
     text = extract(r'<p class="nc-text">(.*?)</p>', after, flags=re.DOTALL, label=f'{img_id} nc-text')
-    href = extract(r'<a href="([^"]*)" class="blog-read-more">Read More</a>', after, label=f'{img_id} href')
+    # Link text is descriptive per post (accessibility fix), not a fixed "Read More".
+    link_m = re.search(r'<a href="([^"]*)" class="blog-read-more">(.*?)</a>', after, re.DOTALL)
+    if not link_m:
+        raise ValueError(f'Could not find the {img_id} read-more link. Stopping without writing anything.')
+    href, link_text = link_m.group(1), link_m.group(2)
 
-    return {'src': src, 'alt': alt, 'cat': cat, 'title': title, 'text': text, 'href': href, 'tag_end': m.end()}
+    return {'src': src, 'alt': alt, 'cat': cat, 'title': title, 'text': text, 'href': href,
+            'link_text': link_text,
+            'width': w_match.group(1) if w_match else None,
+            'height': h_match.group(1) if h_match else None,
+            'style': style_match.group(1) if style_match else None,
+            'tag_end': m.end()}
 
 
-def build_card(comment, img_id, img_src, alt, cat, title, text, href):
+SITE_ORIGIN = 'https://www.maddogperformance.co.za/'
+
+
+def full_image_url(src):
+    """Site convention: every <img src> is a full https://www.maddogperformance.co.za/... URL."""
+    if src.startswith(('http://', 'https://', 'data:')):
+        return src
+    return SITE_ORIGIN + src.lstrip('/')
+
+
+def local_image_path(src):
+    if src.startswith(SITE_ORIGIN):
+        return src[len(SITE_ORIGIN):]
+    return src.lstrip('/')
+
+
+def build_card(comment, img_id, img_src, alt, cat, title, text, href, link_text,
+               width=None, height=None, style=None):
+    dims = f'height="{height}" width="{width}" ' if width and height else ''
+    style_attr = f' style="{style}"' if style else ''
     return (
         f'\n      <!-- {comment} -->\n'
         f'      <div class="blog-card">\n'
         f'        <div class="nc-img">\n'
         f'          <div class="photo-slot loaded" id="{img_id}">\n'
-        f'            <img loading="lazy" id="{img_id}-img" src="{img_src}" alt="{alt}">\n'
+        f'            <img {dims}loading="lazy" id="{img_id}-img"{style_attr} src="{full_image_url(img_src)}" alt="{alt}">\n'
         f'          </div>\n'
         f'        </div>\n'
         f'        <div class="nc-body">\n'
         f'          <div class="nc-cat">{cat}</div>\n'
         f'          <div class="nc-title">{title}</div>\n'
         f'          <p class="nc-text">{text}</p>\n'
-        f'          <a href="{href}" class="blog-read-more">Read More</a>\n'
+        f'          <a href="{href}" class="blog-read-more">{link_text}</a>\n'
         f'        </div>\n'
         f'      </div>\n'
     )
@@ -93,6 +126,8 @@ def main():
     parser.add_argument('--new-title', required=True)
     parser.add_argument('--new-text', required=True, help='Short teaser paragraph (nc-text)')
     parser.add_argument('--new-href', required=True, help='e.g. blog-new-slug-ballito.html')
+    parser.add_argument('--new-link-text', required=True,
+                        help='Descriptive read-more link text, e.g. "Women\'s Boxing Beginners Guide" (never generic "Read More")')
     parser.add_argument('--new-image', required=True, help='e.g. images/abcdef1234567890.jpg (relative to project root)')
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--index-file', default=DEFAULT_INDEX_PATH,
@@ -120,10 +155,17 @@ def main():
     new_cat_esc = args.new_cat
     new_alt = html_escape_text(re.sub(r'<[^>]+>', '', args.new_title))
 
+    new_img_local = os.path.join(os.path.dirname(os.path.abspath(INDEX_PATH)), local_image_path(args.new_image))
+    if not os.path.isfile(new_img_local):
+        raise ValueError(f'New photo file not found: {new_img_local}')
+    new_w, new_h = Image.open(new_img_local).size
+
     card1 = build_card('Blog Post 1 — UPDATE CONTENT when a newer blog is published',
-                        'blog1', args.new_image, new_alt, new_cat_esc, new_title_esc, new_text_esc, args.new_href)
+                        'blog1', args.new_image, new_alt, new_cat_esc, new_title_esc, new_text_esc, args.new_href,
+                        html_escape_text(args.new_link_text), new_w, new_h, None)
     card2 = build_card('Blog Post 2 — UPDATE CONTENT when a newer blog is published',
-                        'blog2', blog1['src'], blog1['alt'], blog1['cat'], blog1['title'], blog1['text'], blog1['href'])
+                        'blog2', blog1['src'], blog1['alt'], blog1['cat'], blog1['title'], blog1['text'], blog1['href'],
+                        blog1['link_text'], blog1['width'], blog1['height'], blog1['style'])
 
     # ---- 3. Replace the whole two-card block ----
     boundary_re = re.compile(r'<!-- Blog Post 1.*?</div>\s*</div>\s*</div>\s*</section>', re.DOTALL)

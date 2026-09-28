@@ -139,9 +139,11 @@ py .claude/skills/maddog-new-blog-post/scripts/rotate_homepage_posts.py \
   --new-title "FULL TITLE" \
   --new-text "One to two sentence teaser for the homepage card." \
   --new-href blog-[slug]-ballito.html \
+  --new-link-text "Short Descriptive Link Text" \
   --new-image images/HASH.jpg
 ```
 
+- `--new-link-text` is required: homepage cards use descriptive link text (e.g. "Self-Defence Workshop Recap"), never a generic "Read More" (accessibility/SEO rule).
 - Same `--new-image` as §6 (the `--type hero` output) — one photo, reused across the blog post, the featured slot, and this card.
 - Behavior: slot 1's current post shifts down into slot 2; whatever was in slot 2 is dropped from the homepage (not deleted — it's still on `events.html`'s grid and in `sitemap.xml`, it just stops being one of the two promoted here); the new post takes slot 1.
 - Prints `DROPPED FROM HOMEPAGE:`, `SHIFTED TO SLOT 2:`, and `NEW SLOT 1:` — check all three.

@@ -321,6 +321,15 @@ def audit_broken_links(skip_live=False):
     findings = []
     html_files = sorted(f for f in os.listdir(PAGES_DIR) if f.endswith('.html') and f not in TEMPLATE_FILES)
 
+    # Pages that exist locally but aren't on the deployed branch yet (new in this push).
+    try:
+        import subprocess
+        deployed = set(subprocess.run(['git', 'ls-tree', '-r', '--name-only', 'origin/main'],
+                                      cwd=PAGES_DIR, capture_output=True, text=True, timeout=20).stdout.split('\n'))
+        unpushed_pages = {f for f in html_files if deployed and f not in deployed}
+    except Exception:
+        unpushed_pages = set()
+
     target_to_sources = {}
     for filename in html_files:
         path = os.path.join(PAGES_DIR, filename)
@@ -344,6 +353,13 @@ def audit_broken_links(skip_live=False):
             # live check since that resolution can't be verified locally).
             local_path = os.path.join(PAGES_DIR, target.lstrip('/'))
             if os.path.isfile(local_path):
+                continue
+            # Same logic for a brand-new PAGE linked by its clean URL (e.g. its own
+            # canonical/breadcrumb `/blog-new-post`): if `blog-new-post.html` is new
+            # in this push (not yet on origin/main), it can't be live yet, so a 404
+            # now is expected. Pages already on origin/main are still live-tested.
+            clean = target.lstrip('/').split('#')[0]
+            if clean and '.' not in clean and clean + '.html' in unpushed_pages:
                 continue
             target_to_sources.setdefault(target, set()).add(filename)
 

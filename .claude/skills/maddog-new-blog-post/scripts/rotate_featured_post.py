@@ -66,6 +66,23 @@ def estimate_read_minutes(blog_path):
     return max(3, round(words / 200))
 
 
+SITE_ORIGIN = 'https://www.maddogperformance.co.za/'
+
+
+def local_image_path(src):
+    """Map an <img src> (full site URL or relative images/... path) to a path relative to the pages dir."""
+    if src.startswith(SITE_ORIGIN):
+        return src[len(SITE_ORIGIN):]
+    return src.lstrip('/')
+
+
+def full_image_url(src):
+    """Site convention: every <img src> is a full https://www.maddogperformance.co.za/... URL."""
+    if src.startswith('http://') or src.startswith('https://') or src.startswith('data:'):
+        return src
+    return SITE_ORIGIN + src.lstrip('/')
+
+
 def main():
     parser = argparse.ArgumentParser(description='Rotate the featured post on events.html.')
     parser.add_argument('--new-tag', required=True)
@@ -96,7 +113,8 @@ def main():
     old_href = extract(r'<a href="([^"]*)" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>',
                         content, label='featured article link')
 
-    img_match = re.search(r'<img id="featPhoto-img"[^>]*?>', content, re.DOTALL)
+    # Attribute order varies (a site-wide pass put width/height before id), so match id anywhere in the tag.
+    img_match = re.search(r'<img\b[^>]*\bid="featPhoto-img"[^>]*>', content, re.DOTALL)
     if not img_match:
         raise ValueError('Could not find the featured photo <img> tag. Stopping without writing anything.')
     old_img_tag = img_match.group(0)
@@ -113,7 +131,7 @@ def main():
         img_bytes = base64.b64decode(b64data)
         old_w, old_h = Image.open(io.BytesIO(img_bytes)).size
     else:
-        old_image_path = os.path.join(PAGES_DIR, old_img_src)
+        old_image_path = os.path.join(PAGES_DIR, local_image_path(old_img_src))
         if not os.path.isfile(old_image_path):
             raise ValueError(f'Featured photo file not found: {old_image_path}')
         old_w, old_h = Image.open(old_image_path).size
@@ -188,8 +206,14 @@ def main():
     new_content = re.sub(r'<a href="[^"]*" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>',
                           f'<a href="{args.new_href}" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>',
                           new_content, count=1)
-    new_content = re.sub(r'<img id="featPhoto-img"[^>]*?>',
-                          f'<img id="featPhoto-img" src="{args.new_image}" alt="{new_title_esc}">',
+    # Keep width/height (CLS) and fetchpriority (LCP) on the featured photo; use the full-URL src convention.
+    new_img_local = os.path.join(PAGES_DIR, local_image_path(args.new_image))
+    if not os.path.isfile(new_img_local):
+        raise ValueError(f'New featured photo file not found: {new_img_local}')
+    new_w, new_h = Image.open(new_img_local).size
+    new_src = full_image_url(args.new_image)
+    new_content = re.sub(r'<img\b[^>]*\bid="featPhoto-img"[^>]*>',
+                          lambda m: f'<img height="{new_h}" width="{new_w}" id="featPhoto-img" fetchpriority="high" src="{new_src}" alt="{new_title_esc}">',
                           new_content, count=1, flags=re.DOTALL)
 
     print(f'DEMOTED: "{old_title}" -> new grid card id="{new_card_id}" ({old_w}x{old_h}, {bc_date})')
