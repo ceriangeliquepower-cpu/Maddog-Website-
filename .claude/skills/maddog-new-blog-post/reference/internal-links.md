@@ -19,6 +19,6 @@ Use these as the default choice when picking the 2+ internal links required in e
 | Amanda Lino / fights / EFC | `amanda.html`, `athletes.html` |
 | Coaching / coach profiles | `coaches.html`, `amanda.html` |
 | Community / events / fundraisers | `events.html`, `contact.html` |
-| General / doesn't fit a category above | `training.html`, `booking.html` |
+| General / doesn't fit a category above | `training.html`, `contact.html` (not `booking.html` — on hold behind a Coming Soon overlay) |
 
 If a post genuinely spans two disciplines (e.g. a "strength for grapplers" post), it's fine to pull one link from each relevant row rather than sticking to a single row.

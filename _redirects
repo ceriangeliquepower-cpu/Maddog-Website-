@@ -23,7 +23,10 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /coaches.html /coaches 301!
 /events.html /events 301!
 /contact.html /contact 301!
-/booking.html /booking 301!
+# Booking page ON HOLD (2026-10-01): temporary 302 to WhatsApp. To re-launch booking, restore
+# "/booking.html /booking 301!", delete these two lines, re-add /booking to sitemap.xml.
+/booking.html https://wa.me/27634421690 302!
+/booking https://wa.me/27634421690 302!
 /recovery.html /recovery 301!
 /training.html /training 301!
 /blog-amanda-kobus-coach-ballito.html /blog-amanda-kobus-coach-ballito 301!

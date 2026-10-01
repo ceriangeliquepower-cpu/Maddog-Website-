@@ -475,4 +475,44 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
 function toggleWNav(){var h=document.getElementById('wNavHam'),m=document.getElementById('wMobMenu');h.classList.toggle('open');m.classList.toggle('open');h.setAttribute('aria-expanded',h.classList.contains('open'));}
 document.addEventListener('click',function(e){var h=document.getElementById('wNavHam'),m=document.getElementById('wMobMenu');if(m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){m.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');}});
 </script>
+<!-- Lead tracking (GA4 events): WhatsApp, phone, email, Bookem/Fresha bookings and form submissions. No personal data is sent. -->
+<script>
+(function () {
+  function send(name, params) {
+    if (typeof gtag !== 'function') return;
+    params = params || {};
+    params.page_path = location.pathname;
+    params.transport_type = 'beacon';
+    gtag('event', name, params);
+  }
+  function whereOnPage(el) {
+    if (el.closest('.wa-float, .wa-btn')) return 'floating_button';
+    if (el.closest('nav, .site-nav, .site-nav-mobile, .snm, header')) return 'menu';
+    if (el.closest('footer')) return 'footer';
+    return 'page';
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var info = { link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80), link_location: whereOnPage(a) };
+    if (/wa\.me|whatsapp\.com/i.test(href)) send('whatsapp_click', info);
+    else if (/^tel:/i.test(href)) send('phone_click', info);
+    else if (/^mailto:/i.test(href)) send('email_click', info);
+    else if (/bookem\.com/i.test(href)) { info.booking_platform = 'bookem'; send('booking_click', info); }
+    else if (/fresha\.com/i.test(href)) { info.booking_platform = 'fresha'; send('booking_click', info); }
+  }, true);
+  document.addEventListener('focusin', function (e) {
+    var f = e.target.closest ? e.target.closest('form') : null;
+    if (f && !f.getAttribute('data-ga-started')) {
+      f.setAttribute('data-ga-started', '1');
+      send('form_start', { form_id: f.id || f.getAttribute('name') || 'form' });
+    }
+  });
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    send('form_submit', { form_id: f.id || f.getAttribute('name') || 'form' });
+  }, true);
+})();
+</script>
 </body></html>

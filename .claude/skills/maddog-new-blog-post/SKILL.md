@@ -49,11 +49,15 @@ The template marks fields with `BLOG_*` uppercase placeholders. Replace all of t
 | `BLOG_FILENAME` | the slug from §1, no `.html` extension in URLs used inside JSON-LD/canonical (site strips it via Netlify redirects — but the **file itself** is still saved as `.html`; only the URL strings inside `<link rel=canonical>`, OG/Twitter `og:url`, and JSON-LD `@id`/`item`/`mainEntityOfPage` use the extension-less form, matching `sitemap.xml`'s pattern) |
 | `BLOG_DATE_ISO` | today's date as `YYYY-MM-DD`, used for both `datePublished` and `dateModified` |
 | `BLOG_CATEGORY` (hero tag) | the category from §1 |
-| `BLOG_FULL_TITLE` (`<h1>`) | can be slightly longer/more natural than the `<title>` tag version |
-| Breadcrumb JSON-LD `position:3` | `name` = the H1 title, `item` = full canonical URL (extension-less) |
-| Hero meta line | month + year (e.g. "August 2026") and an honest read-time estimate: word count of the article body ÷ 200, rounded, minimum 3 min |
+| `BLOG_FULL_TITLE` | the H1 — can be slightly longer/more natural than the `<title>` tag version. Also fills the Article JSON-LD `headline` and Breadcrumb `position:3` `name` (same token, one replace) |
+| `BLOG_MONTH_YEAR` | hero meta line date, e.g. "October 2026" (sits inside `<time datetime="BLOG_DATE_ISO">`) |
+| `BLOG_READ_MIN` | honest read-time: word count of the article body ÷ 200, rounded, minimum 3 |
+| `BLOG_HERO_IMAGE` | the hash filename from §4b, e.g. `e8f56b6e3945721c.jpg` (the template already prefixes the full `https://www.maddogperformance.co.za/images/` URL) |
+| `BLOG_HERO_ALT` | descriptive alt text — use curly apostrophes (’), never straight ones, inside attributes (CLAUDE.md Rule #14) |
+| `BLOG_HERO_WIDTH` / `BLOG_HERO_HEIGHT` | the real pixel dimensions `optimize_photo.py` reports |
+| `INTRO_PARAGRAPH`, `SECTION_HEADING_*`, `SUB_SECTION_HEADING`, `PARAGRAPH_TEXT`, `LINK_TEXT` | body skeleton — replaced wholesale by the user's content (§4) |
 
-Also add a **LocalBusiness JSON-LD block** — the template does not currently ship one, but CLAUDE.md requires it on every page. Insert the block from `reference/localbusiness-jsonld.json` as a third `<script type="application/ld+json">` alongside the Article and BreadcrumbList blocks already in the template.
+The template (refreshed 2026-10-01 from the newest live post) **already ships** the `<main>` landmark, the `SportsActivityLocation` LocalBusiness JSON-LD block, extension-less canonical/OG URLs, the `.pull-quote` CSS, and a plain file-based hero `<img>` — nothing to add there. After filling it in, `grep -n "BLOG_\|SECTION_HEADING\|PARAGRAPH_TEXT\|LINK_TEXT\|INTRO_PARAGRAPH"` on the new file must return nothing.
 
 ## 4. Article body
 
@@ -63,11 +67,11 @@ Replace the placeholder `<h2>SECTION_HEADING_1</h2>` block with the user's actua
 - `<p>` for paragraphs, `<ul>` for bullet lists (template's `<ul>` styling is already bullet-icon based, don't add manual bullet characters)
 - `.pull-quote` div for a standout quote if the content has one worth pulling out (optional, not required)
 - `.internal-link` class on any inline link to another page on the site — include **at least 2** internal links somewhere in the article body or CTA (site rule: every page must link to 2+ others). See `reference/internal-links.md` for a ready mapping of topic → good link targets rather than picking arbitrary pages each time.
-- Leave the existing `.article-cta` block at the end as-is unless the topic calls for a different CTA (e.g. linking to `recovery.html` instead of `booking.html` for a recovery-topic post).
+- The template ends with a generic `.article-cta-box` ("Your First Class Is Free" → `contact.html` + `training.html`). Tailor its heading/text/second button to the topic (e.g. the matching discipline page, or `recovery.html` for a recovery post). **Never link a CTA to `booking.html`** — that page is on hold behind a "Coming Soon" overlay.
 
 ## 4b. Hero photo
 
-Do **not** use the template's click-to-upload `.photo-slot` / `swapPhoto()` pattern — that live-photo-editing mechanism was removed site-wide (see commit "Remove live photo editing site-wide"). Use a plain file-based image instead, produced by the project's `optimize_photo.py` script — never embed base64, and never hand-copy a phone photo straight into `images/` unresized.
+The template's hero is already a plain file-based `<img id="blogHero-img">` with `BLOG_HERO_*` placeholders — the old click-to-upload `.photo-slot` / `swapPhoto()` pattern was removed site-wide and is no longer in the template; never reintroduce it. Fill the image placeholders with a photo produced by the project's `optimize_photo.py` script — never embed base64, and never hand-copy a phone photo straight into `images/` unresized.
 
 **Workflow:**
 
@@ -83,8 +87,10 @@ Do **not** use the template's click-to-upload `.photo-slot` / `swapPhoto()` patt
 **Resulting markup:**
 
 ```html
-<img src="images/HASH.jpg" alt="DESCRIPTIVE ALT TEXT" width="WIDTH" height="HEIGHT" style="width:100%;height:100%;object-fit:cover">
+<img id="blogHero-img" src="https://www.maddogperformance.co.za/images/HASH.jpg" alt="DESCRIPTIVE ALT TEXT" width="WIDTH" height="HEIGHT" style="object-position:center 50%">
 ```
+
+(The `.blog-page-hero img` CSS already applies `object-fit:cover` and full sizing. Tune the `object-position` Y% per photo — see "Check the crop" below.)
 
 Use the actual `width`/`height` the script reports (from its "Dimensions:" line) — don't guess or reuse a placeholder value, mismatched dimensions cause layout shift.
 

@@ -270,7 +270,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
       <a href="contact.html">Contact</a>
       <a href="wellness.html" class="snl-wellness">&#10022; Wellness</a>
     </div>
-    <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
+    <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" target="_blank" rel="noopener">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -288,7 +288,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
   <a href="wellness.html" class="snm-wellness">&#10022; Wellness &amp; Recovery</a>
-  <a href="booking.html" class="snm-cta">Book Online</a>
+  <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="snm-cta" target="_blank" rel="noopener">Book Online</a>
 </div>
 <!-- BLOG HERO PHOTO -->
 <main id="main-content">
@@ -411,7 +411,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed',s
       <p class="cta-label">Ready to train?</p>
       <h3 class="cta-title">Join Maddog Performance Institute</h3>
       <p class="cta-sub">Ballito&rsquo;s premier fight gym and performance centre. Beginner or elite &mdash; there&rsquo;s a place for you here.</p>
-      <a href="booking.html" class="btn btn-g" style="padding:9px 18px;font-size:10px">Book Free Trial</a>
+      <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="btn btn-g" style="padding:9px 18px;font-size:10px" target="_blank" rel="noopener">Book Free Trial</a>
     </div>
 
   </div>
@@ -847,4 +847,44 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
 .edit-banner button{background:#080808!important;color:var(--gold,#C9A84C)!important;border:1px solid rgba(201,168,76,.4)!important;padding:5px 13px!important;font-size:9px!important;font-weight:700!important;letter-spacing:.13em!important;text-transform:uppercase!important;cursor:pointer!important;font-family:'Barlow Condensed',sans-serif!important}
 </style>
 
+<!-- Lead tracking (GA4 events): WhatsApp, phone, email, Bookem/Fresha bookings and form submissions. No personal data is sent. -->
+<script>
+(function () {
+  function send(name, params) {
+    if (typeof gtag !== 'function') return;
+    params = params || {};
+    params.page_path = location.pathname;
+    params.transport_type = 'beacon';
+    gtag('event', name, params);
+  }
+  function whereOnPage(el) {
+    if (el.closest('.wa-float, .wa-btn')) return 'floating_button';
+    if (el.closest('nav, .site-nav, .site-nav-mobile, .snm, header')) return 'menu';
+    if (el.closest('footer')) return 'footer';
+    return 'page';
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var info = { link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80), link_location: whereOnPage(a) };
+    if (/wa\.me|whatsapp\.com/i.test(href)) send('whatsapp_click', info);
+    else if (/^tel:/i.test(href)) send('phone_click', info);
+    else if (/^mailto:/i.test(href)) send('email_click', info);
+    else if (/bookem\.com/i.test(href)) { info.booking_platform = 'bookem'; send('booking_click', info); }
+    else if (/fresha\.com/i.test(href)) { info.booking_platform = 'fresha'; send('booking_click', info); }
+  }, true);
+  document.addEventListener('focusin', function (e) {
+    var f = e.target.closest ? e.target.closest('form') : null;
+    if (f && !f.getAttribute('data-ga-started')) {
+      f.setAttribute('data-ga-started', '1');
+      send('form_start', { form_id: f.id || f.getAttribute('name') || 'form' });
+    }
+  });
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    send('form_submit', { form_id: f.id || f.getAttribute('name') || 'form' });
+  }, true);
+})();
+</script>
 </body></html>

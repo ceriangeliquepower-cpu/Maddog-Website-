@@ -1256,6 +1256,46 @@ async function submitNl(e){
   <button onclick="savePage()" style="background:#F7F4EF;color:#1C1814;border:none;padding:7px 18px;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;font-family:'Barlow Condensed',sans-serif">Save Page</button>
   <button onclick="document.getElementById('w-save-banner').style.display='none'" style="background:transparent;color:#F7F4EF;border:1px solid rgba(247,244,239,.4);padding:7px 12px;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;font-family:'Barlow Condensed',sans-serif">Dismiss</button>
 </div>
+<!-- Lead tracking (GA4 events): WhatsApp, phone, email, Bookem/Fresha bookings and form submissions. No personal data is sent. -->
+<script>
+(function () {
+  function send(name, params) {
+    if (typeof gtag !== 'function') return;
+    params = params || {};
+    params.page_path = location.pathname;
+    params.transport_type = 'beacon';
+    gtag('event', name, params);
+  }
+  function whereOnPage(el) {
+    if (el.closest('.wa-float, .wa-btn')) return 'floating_button';
+    if (el.closest('nav, .site-nav, .site-nav-mobile, .snm, header')) return 'menu';
+    if (el.closest('footer')) return 'footer';
+    return 'page';
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var info = { link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80), link_location: whereOnPage(a) };
+    if (/wa\.me|whatsapp\.com/i.test(href)) send('whatsapp_click', info);
+    else if (/^tel:/i.test(href)) send('phone_click', info);
+    else if (/^mailto:/i.test(href)) send('email_click', info);
+    else if (/bookem\.com/i.test(href)) { info.booking_platform = 'bookem'; send('booking_click', info); }
+    else if (/fresha\.com/i.test(href)) { info.booking_platform = 'fresha'; send('booking_click', info); }
+  }, true);
+  document.addEventListener('focusin', function (e) {
+    var f = e.target.closest ? e.target.closest('form') : null;
+    if (f && !f.getAttribute('data-ga-started')) {
+      f.setAttribute('data-ga-started', '1');
+      send('form_start', { form_id: f.id || f.getAttribute('name') || 'form' });
+    }
+  });
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    send('form_submit', { form_id: f.id || f.getAttribute('name') || 'form' });
+  }, true);
+})();
+</script>
 </body>
 </html>
 

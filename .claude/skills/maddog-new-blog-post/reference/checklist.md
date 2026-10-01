@@ -16,7 +16,10 @@ Run through this before telling the user the post is ready. It's the blog-specif
 - [ ] `robots` = `index, follow`, geo tags present
 - [ ] Article JSON-LD: `headline`, `description`, `datePublished`, `dateModified`, `mainEntityOfPage`, `image` all filled in (not template placeholders)
 - [ ] BreadcrumbList JSON-LD: position 3 has the real title and real URL
-- [ ] LocalBusiness (`SportsActivityLocation`) JSON-LD block added — template doesn't ship one by default, see `reference/localbusiness-jsonld.json`
+- [ ] LocalBusiness (`SportsActivityLocation`) JSON-LD block present (the template ships it since 2026-10-01 — just confirm it survived editing)
+- [ ] No placeholders left: `grep -n "BLOG_\|SECTION_HEADING\|PARAGRAPH_TEXT\|LINK_TEXT\|INTRO_PARAGRAPH"` on the new file returns nothing
+- [ ] No CTA or link points to `booking.html` (on hold behind a Coming Soon overlay)
+- [ ] Lead-tracking script present exactly once (`grep -c "Lead tracking (GA4 events)"` = 1) — the template ships it; see CLAUDE.md Hard-Won Rule #17
 
 ## Semantic HTML / headings
 - [ ] Exactly one `<h1>` (the hero title)

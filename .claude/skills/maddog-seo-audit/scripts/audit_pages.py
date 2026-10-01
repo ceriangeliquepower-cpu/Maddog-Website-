@@ -271,6 +271,21 @@ def audit_redirects(skip_live=False):
     opener = urllib.request.build_opener(_NoRedirect())
     to_live_check = []
 
+    # Rules that aren't on the deployed branch yet (added in this push) can't be live
+    # yet, so live-testing them pre-deploy would always fail and block every push that
+    # adds a redirect. They still get the static force-flag check below; the live test
+    # happens after the deploy (re-run this audit then).
+    deployed_rules = None
+    try:
+        import subprocess
+        out = subprocess.run(['git', 'show', 'origin/main:_redirects'], cwd=PAGES_DIR,
+                             capture_output=True, text=True, timeout=20)
+        if out.returncode == 0:
+            deployed_rules = {' '.join(l.split()[:3]) for l in out.stdout.splitlines()
+                              if l.strip() and not l.strip().startswith('#')}
+    except Exception:
+        deployed_rules = None
+
     for line in lines:
         line = line.strip()
         if not line or line.startswith('#'):
@@ -293,6 +308,13 @@ def audit_redirects(skip_live=False):
                 f'Add "!" (e.g. "{code}!") or this redirect does nothing live.'
             )
             continue  # already known-broken, no need to also live-test it
+
+        if deployed_rules is not None and f'{source} {dest} {code}' not in deployed_rules:
+            findings.append(
+                f'INFO: `{source} {dest} {code}` is new (not on origin/main yet) — live test skipped; '
+                f're-run this audit after the deploy to confirm it fires.'
+            )
+            continue
 
         if not skip_live:
             to_live_check.append((source, dest, code))

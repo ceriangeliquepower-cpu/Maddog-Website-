@@ -355,7 +355,7 @@ footer.site-footer *{box-sizing:border-box !important}
       <a href="contact.html">Contact</a>
       <a href="wellness.html" class="snl-wellness">✦ Wellness</a>
     </div>
-    <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="booking.html">Book Online</a></div>
+    <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" target="_blank" rel="noopener">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -383,7 +383,7 @@ footer.site-footer *{box-sizing:border-box !important}
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
   <a href="wellness.html" class="snm-wellness">✦ Wellness &amp; Recovery</a>
-  <a href="booking.html" class="snm-cta">Book Online</a>
+  <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="snm-cta" target="_blank" rel="noopener">Book Online</a>
 </div>
 
 <!-- BREADCRUMB -->
@@ -402,7 +402,7 @@ footer.site-footer *{box-sizing:border-box !important}
       <h1 class="page-h1">Training At<br><em>Maddog.</em></h1>
       <p class="page-sub">Seven disciplines. One world-champion coaching team. Whether you want to compete, get fit, or perform at the highest level of your professional life — Maddog has a programme built for you.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px">
-        <a href="booking.html?cat=training" class="btn btn-g">Book a Class Online</a>
+        <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="btn btn-g" target="_blank" rel="noopener">Book a Class Online</a>
         <a href="#schedule" class="btn btn-o">View Class Schedule</a>
       </div>
     </div>
@@ -649,7 +649,7 @@ footer.site-footer *{box-sizing:border-box !important}
     <h2 class="sec-h" style="text-align:center">Your First Class<br><em>Is Free.</em></h2>
     <p class="cta-sub">No experience needed. No commitment required. Just show up, train hard, and see why Maddog is the KZN North Coast's most credible performance facility.</p>
     <div class="cta-btns">
-      <a href="booking.html?cat=training" class="btn btn-g">Book a Class Online</a>
+      <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="btn btn-g" target="_blank" rel="noopener">Book a Class Online</a>
       <a href="recovery.html" class="btn btn-o">Explore Recovery Suite</a>
       <a href="amanda.html" class="btn btn-o">Meet Amanda</a>
     </div>
@@ -1013,4 +1013,44 @@ function savePage(fname) {
 }
 </script>
 
+<!-- Lead tracking (GA4 events): WhatsApp, phone, email, Bookem/Fresha bookings and form submissions. No personal data is sent. -->
+<script>
+(function () {
+  function send(name, params) {
+    if (typeof gtag !== 'function') return;
+    params = params || {};
+    params.page_path = location.pathname;
+    params.transport_type = 'beacon';
+    gtag('event', name, params);
+  }
+  function whereOnPage(el) {
+    if (el.closest('.wa-float, .wa-btn')) return 'floating_button';
+    if (el.closest('nav, .site-nav, .site-nav-mobile, .snm, header')) return 'menu';
+    if (el.closest('footer')) return 'footer';
+    return 'page';
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var info = { link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80), link_location: whereOnPage(a) };
+    if (/wa\.me|whatsapp\.com/i.test(href)) send('whatsapp_click', info);
+    else if (/^tel:/i.test(href)) send('phone_click', info);
+    else if (/^mailto:/i.test(href)) send('email_click', info);
+    else if (/bookem\.com/i.test(href)) { info.booking_platform = 'bookem'; send('booking_click', info); }
+    else if (/fresha\.com/i.test(href)) { info.booking_platform = 'fresha'; send('booking_click', info); }
+  }, true);
+  document.addEventListener('focusin', function (e) {
+    var f = e.target.closest ? e.target.closest('form') : null;
+    if (f && !f.getAttribute('data-ga-started')) {
+      f.setAttribute('data-ga-started', '1');
+      send('form_start', { form_id: f.id || f.getAttribute('name') || 'form' });
+    }
+  });
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    send('form_submit', { form_id: f.id || f.getAttribute('name') || 'form' });
+  }, true);
+})();
+</script>
 </body></html>
