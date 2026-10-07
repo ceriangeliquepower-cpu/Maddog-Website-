@@ -57,6 +57,7 @@
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "BJJ Ballito", "url": "https://www.maddogperformance.co.za/training/bjj-ballito", "description": "Brazilian Jiu-Jitsu classes in Gi and No-Gi formats, coached by BJJ Black Belt York Lawrence." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kids BJJ Ballito", "url": "https://www.maddogperformance.co.za/training/kids-bjj-ballito", "description": "Kids BJJ for ages 5-14, building confidence, discipline and real self-defence skills." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kickboxing Ballito", "url": "https://www.maddogperformance.co.za/training/kickboxing-ballito", "description": "Stand-up striking built on real competitive MMA experience. All levels welcome." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wrestling Ballito", "url": "https://www.maddogperformance.co.za/training/wrestling-ballito", "description": "Wrestling classes on Mondays and Wednesdays from 6pm to 7:30pm, coached by 12-time SA Wrestling Champion Philip Lemmer." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boxing Ballito", "url": "https://www.maddogperformance.co.za/training/boxing-ballito", "description": "Boxing Fitness and a competitive/elite pathway coached by Marcele, 20+ years in the sport." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Powerlifting Ballito", "url": "https://www.maddogperformance.co.za/training/powerlifting-ballito", "description": "Squat, bench press and deadlift coaching with periodised programming and competition preparation." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Personal Training Ballito", "url": "https://www.maddogperformance.co.za/training/personal-training-ballito", "description": "Semi-private personal training, 2 to 5 people per session, with 1-on-1 sessions available on request." } }
@@ -325,7 +326,8 @@ footer.site-footer *{box-sizing:border-box !important}
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>/* Training hub: Personal Training (first card) spans 2 columns so 11 cards leave no gap (3-col: PT double + 1, then 3 full rows; 2-col: PT full row) */.hub-card-span{grid-column:span 2;flex-direction:row}.hub-card-span .hub-card-photo{width:50%;height:auto;min-height:260px;flex-shrink:0}.hub-card-span .hub-card-body{justify-content:center}.hub-card-span .hub-card-desc{flex:0 0 auto}@media(max-width:1024px){.hub-card-span{grid-column:1/-1}}@media(max-width:640px){.hub-card-span{grid-column:auto;flex-direction:column}.hub-card-span .hub-card-photo{width:100%;height:220px;min-height:0}}</style>
+</head>
 <body>
 <!-- ══ SITE NAV ══ -->
 <nav class="site-nav" id="siteNav">
@@ -337,17 +339,17 @@ footer.site-footer *{box-sizing:border-box !important}
       <a href="amanda.html">Amanda</a>
       <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
       <div class="nav-has-dropdown"><a href="training.html" class="active">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu">
+        <a href="training-personal-training-ballito.html">Personal Training</a>
         <a href="training-mma-ballito.html">MMA</a>
         <a href="training-bjj-ballito.html">BJJ</a>
         <a href="training-kids-bjj-ballito.html">Kids BJJ</a>
         <a href="training-kickboxing-ballito.html">Kickboxing</a>
+        <a href="training-wrestling-ballito.html">Wrestling</a>
         <a href="training-boxing-ballito.html">Boxing</a>
         <a href="training-womens-boxing-ballito.html">Women's Boxing</a>
         <a href="training-kids-boxing-ballito.html">Kids Boxing</a>
         <a href="training-olympic-boxing-ballito.html">Olympic Boxing</a>
-        <a href="training-bootcamp-ballito.html">Bootcamp</a>
         <a href="training-powerlifting-ballito.html">Powerlifting</a>
-        <a href="training-personal-training-ballito.html">Personal Training</a>
       </div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
@@ -367,17 +369,17 @@ footer.site-footer *{box-sizing:border-box !important}
   <a href="recovery.html">Recovery</a>
   <a href="wellness-pricing.html" class="snm-sub">↳ Pricelist</a>
   <a href="training.html" class="active">Training</a>
+  <a href="training-personal-training-ballito.html" class="snm-sub">↳ Personal Training</a>
   <a href="training-mma-ballito.html" class="snm-sub">↳ MMA</a>
   <a href="training-bjj-ballito.html" class="snm-sub">↳ BJJ</a>
   <a href="training-kids-bjj-ballito.html" class="snm-sub">↳ Kids BJJ</a>
   <a href="training-kickboxing-ballito.html" class="snm-sub">↳ Kickboxing</a>
+  <a href="training-wrestling-ballito.html" class="snm-sub">↳ Wrestling</a>
   <a href="training-boxing-ballito.html" class="snm-sub">↳ Boxing</a>
   <a href="training-womens-boxing-ballito.html" class="snm-sub">↳ Women's Boxing</a>
   <a href="training-kids-boxing-ballito.html" class="snm-sub">↳ Kids Boxing</a>
   <a href="training-olympic-boxing-ballito.html" class="snm-sub">↳ Olympic Boxing</a>
-  <a href="training-bootcamp-ballito.html" class="snm-sub">↳ Bootcamp</a>
   <a href="training-powerlifting-ballito.html" class="snm-sub">↳ Powerlifting</a>
-  <a href="training-personal-training-ballito.html" class="snm-sub">↳ Personal Training</a>
   <a href="coaches.html">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
@@ -451,6 +453,16 @@ footer.site-footer *{box-sizing:border-box !important}
   <div class="si">
     <div class="hub-grid">
 
+      <a href="training-personal-training-ballito.html" class="hub-card hub-card-span">
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="hub-pt-p"><img height="1050" width="1400" loading="lazy" id="hub-pt-p-img" alt="Personal Training at Maddog Performance Institute" style="object-position: 50% 0%; transform: none; transform-origin: 50% 0%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/003f029019b96207.jpg"><div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+        <div class="hub-card-body">
+          <div class="hub-card-tag">Fully Personalised</div>
+          <div class="hub-card-title">Personal Training</div>
+          <div class="hub-card-desc">Semi-private personal training in small groups of 2 to 5, each on your own programme, with private 1-on-1 sessions on request. Train with qualified personal trainers Tristan Botha or Amanda “Maddog” Lino, with a custom programme in the Maddog training app. From R1,800 per month.</div>
+          <span class="hub-card-link">Learn More →</span>
+        </div>
+      </a>
+
       <a href="training-mma-ballito.html" class="hub-card">
         <div class="hub-card-photo"><div class="photo-slot loaded" id="hub-mma-p"><img height="900" width="1200" loading="lazy" id="hub-mma-p-img" src="https://www.maddogperformance.co.za/images/6d575bd3d32c890a.jpg" alt="MMA training at Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
@@ -487,6 +499,16 @@ footer.site-footer *{box-sizing:border-box !important}
           <div class="hub-card-tag">Stand-Up Striking</div>
           <div class="hub-card-title">Kickboxing</div>
           <div class="hub-card-desc">Real striking built on competitive MMA experience — for kids and adults, all levels welcome.</div>
+          <span class="hub-card-link">Learn More →</span>
+        </div>
+      </a>
+
+      <a href="training-wrestling-ballito.html" class="hub-card">
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="hub-wrestling-p"><img height="602" width="900" loading="lazy" id="hub-wrestling-p-img" src="https://www.maddogperformance.co.za/images/5c87fdfa495e4674.jpg" alt="Wrestling class at Maddog Performance Institute in Ballito, coached by Philip Lemmer" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 40%"><div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+        <div class="hub-card-body">
+          <div class="hub-card-tag">Grappling</div>
+          <div class="hub-card-title">Wrestling</div>
+          <div class="hub-card-desc">Takedowns, balance and control, coached by 12-time SA Wrestling Champion Philip Lemmer.</div>
           <span class="hub-card-link">Learn More →</span>
         </div>
       </a>
@@ -531,16 +553,6 @@ footer.site-footer *{box-sizing:border-box !important}
         </div>
       </a>
 
-      <a href="training-bootcamp-ballito.html" class="hub-card">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="hub-bootcamp-p"><img height="1500" width="1000" loading="lazy" id="hub-bootcamp-p-img" src="https://www.maddogperformance.co.za/images/9bccb49c82990043.jpg" alt="Bootcamp class at Maddog Performance Institute" style="object-position: 50% 25.82%; transform: none; transform-origin: 50% 25.82%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
-        <div class="hub-card-body">
-          <div class="hub-card-tag">Group Fitness</div>
-          <div class="hub-card-title">Bootcamp</div>
-          <div class="hub-card-desc">Group strength and conditioning, three mornings a week, coached by Amanda Wren Kobus.</div>
-          <span class="hub-card-link">Learn More →</span>
-        </div>
-      </a>
-
       <a href="training-powerlifting-ballito.html" class="hub-card">
         <div class="hub-card-photo"><div class="photo-slot loaded" id="hub-powerlifting-p"><img height="800" width="1200" loading="lazy" id="hub-powerlifting-p-img" src="https://www.maddogperformance.co.za/images/25ed850d65d30d30.jpg" alt="Powerlifting training at Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
@@ -551,15 +563,7 @@ footer.site-footer *{box-sizing:border-box !important}
         </div>
       </a>
 
-      <a href="training-personal-training-ballito.html" class="hub-card">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="hub-pt-p"><img height="1050" width="1400" loading="lazy" id="hub-pt-p-img" alt="Personal Training at Maddog Performance Institute" style="object-position: 50% 0%; transform: none; transform-origin: 50% 0%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/003f029019b96207.jpg"><div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change</span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
-        <div class="hub-card-body">
-          <div class="hub-card-tag">Fully Personalised</div>
-          <div class="hub-card-title">Personal Training</div>
-          <div class="hub-card-desc">A medically assessed, precisely programmed performance system for busy professionals.</div>
-          <span class="hub-card-link">Learn More →</span>
-        </div>
-      </a>
+
 
     </div>
   </div>
@@ -575,11 +579,11 @@ footer.site-footer *{box-sizing:border-box !important}
           <!-- MONDAY -->
           <div class="sched-day">
             <div class="sched-day-name">Monday</div>
-          <div class="sched-class"><div class="sched-time">08:00</div><div class="sched-name">Bootcamp</div><div class="sched-level">All Levels</div></div>
           <div class="sched-class"><div class="sched-time">10:00</div><div class="sched-name">MMA Pro</div><div class="sched-level">Pro / Fight Team</div></div>
           <div class="sched-class"><div class="sched-time">16:00</div><div class="sched-name">Kids BJJ</div><div class="sched-level">Kids</div></div>
           <div class="sched-class"><div class="sched-time">17:00</div><div class="sched-name">Kickboxing</div><div class="sched-level">All Levels</div></div>
           <div class="sched-class"><div class="sched-time">18:00</div><div class="sched-name">BJJ</div><div class="sched-level">All Levels</div></div>
+          <div class="sched-class"><div class="sched-time">18:00</div><div class="sched-name">Wrestling</div><div class="sched-level">All Levels · 6:00pm–7:30pm</div></div>
 
           </div>
 
@@ -599,11 +603,11 @@ footer.site-footer *{box-sizing:border-box !important}
           <!-- WEDNESDAY -->
           <div class="sched-day">
             <div class="sched-day-name">Wednesday</div>
-          <div class="sched-class"><div class="sched-time">08:00</div><div class="sched-name">Bootcamp</div><div class="sched-level">All Levels</div></div>
           <div class="sched-class"><div class="sched-time">10:00</div><div class="sched-name">MMA Pro</div><div class="sched-level">Pro / Fight Team</div></div>
           <div class="sched-class"><div class="sched-time">16:00</div><div class="sched-name">Kids BJJ</div><div class="sched-level">Kids</div></div>
           <div class="sched-class"><div class="sched-time">17:00</div><div class="sched-name">Kickboxing</div><div class="sched-level">All Levels</div></div>
           <div class="sched-class"><div class="sched-time">18:00</div><div class="sched-name">BJJ</div><div class="sched-level">All Levels</div></div>
+          <div class="sched-class"><div class="sched-time">18:00</div><div class="sched-name">Wrestling</div><div class="sched-level">All Levels · 6:00pm–7:30pm</div></div>
 
           </div>
 
@@ -623,7 +627,6 @@ footer.site-footer *{box-sizing:border-box !important}
           <!-- FRIDAY -->
           <div class="sched-day">
             <div class="sched-day-name">Friday</div>
-          <div class="sched-class"><div class="sched-time">08:00</div><div class="sched-name">Bootcamp</div><div class="sched-level">All Levels</div></div>
           <div class="sched-class"><div class="sched-time">10:00</div><div class="sched-name">MMA Pro</div><div class="sched-level">Pro / Fight Team</div></div>
           <div class="sched-class"><div class="sched-time">15:00</div><div class="sched-name">Kids Boxing</div><div class="sched-level">Ages 9–13</div></div>
           <div class="sched-class"><div class="sched-time">16:00</div><div class="sched-name">Olympic Program</div><div class="sched-level">Elite / Professional · 4:00pm–6:00pm</div></div>

@@ -352,6 +352,19 @@ def audit_broken_links(skip_live=False):
     except Exception:
         unpushed_pages = set()
 
+    # Pretty URLs served by a local `_redirects` 200 rewrite (e.g. `/training/wrestling-ballito`
+    # -> `/training-wrestling-ballito.html`): if the rewrite's target page is new in this push,
+    # its pretty URL can't be live yet either.
+    rewrite_targets = {}
+    try:
+        with open(os.path.join(PAGES_DIR, '_redirects'), encoding='utf-8') as rf:
+            for line in rf:
+                parts = line.split()
+                if len(parts) >= 3 and not parts[0].startswith('#') and parts[2].rstrip('!') == '200':
+                    rewrite_targets[parts[0].rstrip('/')] = parts[1].lstrip('/')
+    except Exception:
+        pass
+
     target_to_sources = {}
     for filename in html_files:
         path = os.path.join(PAGES_DIR, filename)
@@ -382,6 +395,8 @@ def audit_broken_links(skip_live=False):
             # now is expected. Pages already on origin/main are still live-tested.
             clean = target.lstrip('/').split('#')[0]
             if clean and '.' not in clean and clean + '.html' in unpushed_pages:
+                continue
+            if rewrite_targets.get('/' + clean.rstrip('/')) in unpushed_pages:
                 continue
             target_to_sources.setdefault(target, set()).add(filename)
 

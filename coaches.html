@@ -41,20 +41,88 @@
   "telephone": "+27634421690",
   "image": "https://www.maddogperformance.co.za/og-image.jpg",
   "priceRange": "$$",
-  "geo": { "@type": "GeoCoordinates", "latitude": -29.5393, "longitude": 31.2154 },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -29.5393,
+    "longitude": 31.2154
+  },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "06:00", "closes": "20:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "06:00", "closes": "18:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "13:00" }
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "06:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Friday"
+      ],
+      "opens": "06:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "13:00"
+    }
   ],
-  "address": {"@type":"PostalAddress","streetAddress":"22 Sandra Road, Balvista Centre","addressLocality":"Ballito","addressRegion":"KwaZulu-Natal","postalCode":"4420","addressCountry":"ZA"},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "22 Sandra Road, Balvista Centre",
+    "addressLocality": "Ballito",
+    "addressRegion": "KwaZulu-Natal",
+    "postalCode": "4420",
+    "addressCountry": "ZA"
+  },
   "employee": [
-    {"@type":"Person","name":"Amanda Lino","jobTitle":"Head Coach and Founder","description":"2x EFC World Champion, IMMAF World Champion, Africa's first female double-division MMA champion. BJJ Purple Belt, Brown Belt in MMA &amp; Kickboxing. MMA, Kickboxing &amp; Self Defense Instructor. KZN &amp; SA Youth Coach."},
-    {"@type":"Person","name":"Amanda Wren Kobus","jobTitle":"Strength and Conditioning Coach / Nurse Practitioner"},
-    {"@type":"Person","name":"Luckymore Hamadziripi","jobTitle":"MMA and Kickboxing Coach"},
-    {"@type":"Person","name":"Coach Marcele","jobTitle":"Boxing Coach and High-Performance Trainer","description":"More than two decades of involvement in boxing, from amateur development through elite and professional fighters. Head Chairman, KZN Professional Boxing Trainers and Managers Association."},
-    {"@type":"Person","name":"Tristan","jobTitle":"Personal Trainer"},
-    {"@type":"Person","name":"Robin JJ Williams","jobTitle":"Sports Physiotherapist","description":"A decade in professional sport. Teams: Stormers, Zebre Parma, The Sharks, SA Rugby U18 and U20. Currently completing MSc at UCT in concussion prevention in adolescent rugby."}
+    {
+      "@type": "Person",
+      "name": "Amanda Lino",
+      "jobTitle": "Head Coach and Founder",
+      "description": "2x EFC World Champion, IMMAF World Champion, Africa's first female double-division MMA champion. BJJ Purple Belt, Brown Belt in MMA &amp; Kickboxing. MMA, Kickboxing &amp; Self Defense Instructor. KZN &amp; SA Youth Coach."
+    },
+    {
+      "@type": "Person",
+      "name": "Amanda Wren Kobus",
+      "jobTitle": "Strength and Conditioning Coach / Nurse Practitioner"
+    },
+    {
+      "@type": "Person",
+      "name": "Luckymore Hamadziripi",
+      "jobTitle": "MMA and Kickboxing Coach"
+    },
+    {
+      "@type": "Person",
+      "name": "Coach Marcele",
+      "jobTitle": "Boxing Coach and High-Performance Trainer",
+      "description": "More than two decades of involvement in boxing, from amateur development through elite and professional fighters. Head Chairman, KZN Professional Boxing Trainers and Managers Association."
+    },
+    {
+      "@type": "Person",
+      "name": "Tristan",
+      "jobTitle": "Personal Trainer"
+    },
+    {
+      "@type": "Person",
+      "name": "Robin JJ Williams",
+      "jobTitle": "Sports Physiotherapist",
+      "description": "A decade in professional sport. Teams: Stormers, Zebre Parma, The Sharks, SA Rugby U18 and U20. Currently completing MSc at UCT in concussion prevention in adolescent rugby."
+    },
+    {
+      "@type": "Person",
+      "name": "Philip Lemmer",
+      "jobTitle": "Wrestling Coach",
+      "description": "12-time South African Wrestling Champion, 10 years as a professional rugby player and 12 years as a professional rugby coach; forwards coach at The Sharks; B.Ed (University of Johannesburg); World Rugby Level 3 coach."
+    }
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -769,7 +837,8 @@ html { -webkit-text-size-adjust: 100%; }
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>/* Coaches: 5th coach card spans both columns (photo left, details right) so the 2-column grid has no gap */.coach-card-wide{grid-column:1/-1;flex-direction:row!important}.coach-card-wide .cc-photo{width:42%;height:auto!important;min-height:400px;flex-shrink:0}.coach-card-wide .cc-body{display:flex;flex-direction:column;justify-content:center}.coach-card-wide .cc-wide-right{flex:1;min-width:0;display:flex;flex-direction:column}@media(max-width:768px){.coach-card-wide{flex-direction:column!important}.coach-card-wide .cc-photo{width:100%;min-height:0;height:340px!important}}</style>
+</head>
 <body data-pid="coaches">
 <!-- ══ SITE NAV ══ -->
 <nav class="site-nav" id="siteNav">
@@ -780,7 +849,7 @@ html { -webkit-text-size-adjust: 100%; }
       <a href="index.html">Home</a>
       <a href="amanda.html">Amanda</a>
       <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
-      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="training-mma-ballito.html">MMA</a><a href="training-bjj-ballito.html">BJJ</a><a href="training-kids-bjj-ballito.html">Kids BJJ</a><a href="training-kickboxing-ballito.html">Kickboxing</a><a href="training-boxing-ballito.html">Boxing</a><a href="training-womens-boxing-ballito.html">Women's Boxing</a><a href="training-kids-boxing-ballito.html">Kids Boxing</a><a href="training-olympic-boxing-ballito.html">Olympic Boxing</a><a href="training-bootcamp-ballito.html">Bootcamp</a><a href="training-powerlifting-ballito.html">Powerlifting</a><a href="training-personal-training-ballito.html">Personal Training</a></div></div>
+      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="training-personal-training-ballito.html">Personal Training</a><a href="training-mma-ballito.html">MMA</a><a href="training-bjj-ballito.html">BJJ</a><a href="training-kids-bjj-ballito.html">Kids BJJ</a><a href="training-kickboxing-ballito.html">Kickboxing</a><a href="training-wrestling-ballito.html">Wrestling</a><a href="training-boxing-ballito.html">Boxing</a><a href="training-womens-boxing-ballito.html">Women's Boxing</a><a href="training-kids-boxing-ballito.html">Kids Boxing</a><a href="training-olympic-boxing-ballito.html">Olympic Boxing</a><a href="training-powerlifting-ballito.html">Powerlifting</a></div></div>
       <a href="coaches.html" class="active">Coaches</a>
       <a href="athletes.html">Athletes</a>
       <a href="events.html">Events</a>
@@ -799,7 +868,7 @@ html { -webkit-text-size-adjust: 100%; }
   <a href="recovery.html">Recovery</a>
   <a href="wellness-pricing.html" class="snm-sub">↳ Pricelist</a>
   <a href="training.html">Training</a>
-  <a href="training-mma-ballito.html" class="snm-sub">↳ MMA</a><a href="training-bjj-ballito.html" class="snm-sub">↳ BJJ</a><a href="training-kids-bjj-ballito.html" class="snm-sub">↳ Kids BJJ</a><a href="training-kickboxing-ballito.html" class="snm-sub">↳ Kickboxing</a><a href="training-boxing-ballito.html" class="snm-sub">↳ Boxing</a><a href="training-womens-boxing-ballito.html" class="snm-sub">↳ Women's Boxing</a><a href="training-kids-boxing-ballito.html" class="snm-sub">↳ Kids Boxing</a><a href="training-olympic-boxing-ballito.html" class="snm-sub">↳ Olympic Boxing</a><a href="training-bootcamp-ballito.html" class="snm-sub">↳ Bootcamp</a><a href="training-powerlifting-ballito.html" class="snm-sub">↳ Powerlifting</a><a href="training-personal-training-ballito.html" class="snm-sub">↳ Personal Training</a>
+  <a href="training-personal-training-ballito.html" class="snm-sub">↳ Personal Training</a><a href="training-mma-ballito.html" class="snm-sub">↳ MMA</a><a href="training-bjj-ballito.html" class="snm-sub">↳ BJJ</a><a href="training-kids-bjj-ballito.html" class="snm-sub">↳ Kids BJJ</a><a href="training-kickboxing-ballito.html" class="snm-sub">↳ Kickboxing</a><a href="training-wrestling-ballito.html" class="snm-sub">↳ Wrestling</a><a href="training-boxing-ballito.html" class="snm-sub">↳ Boxing</a><a href="training-womens-boxing-ballito.html" class="snm-sub">↳ Women's Boxing</a><a href="training-kids-boxing-ballito.html" class="snm-sub">↳ Kids Boxing</a><a href="training-olympic-boxing-ballito.html" class="snm-sub">↳ Olympic Boxing</a><a href="training-powerlifting-ballito.html" class="snm-sub">↳ Powerlifting</a>
   <a href="coaches.html" class="active">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
@@ -1200,6 +1269,45 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
           </div>
         </div>
         <button class="cc-expand" id="c6btn" onclick="toggleCoachBio('c6bio','c6btn')">Read Full Bio</button>
+      </div>
+
+      <!-- ── PHILIP LEMMER — Wrestling ── -->
+      <div class="coach-card coach-card-wide" id="coach7">
+        <div class="cc-photo">
+          <div class="photo-slot loaded" id="c7-p" style="height:100%">
+            <img height="1419" width="1108" loading="lazy" id="c7-p-img" src="https://www.maddogperformance.co.za/images/f01f1bfc89903341.jpg" alt="Philip Lemmer, wrestling coach at Maddog Performance Institute in Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 5%">
+          </div>
+          <div class="cc-badge">
+            <div class="cc-badge-disc">Wrestling Coach</div>
+            <div class="cc-badge-name">Philip Lemmer</div>
+          </div>
+        </div>
+        <div class="cc-wide-right">
+        <div class="cc-body">
+          <div class="cc-title">Wrestling Coach</div>
+          <div class="cc-years">12× SA Wrestling Champion · Professional Rugby Coach</div>
+          <ul class="cc-creds">
+            <li>12-time South African Wrestling Champion</li>
+            <li>10 years as a professional rugby player</li>
+            <li>12 years as a professional rugby coach — the Lions and The Sharks</li>
+            <li>B.Ed teaching degree, University of Johannesburg</li>
+            <li>World Rugby Level 3 coach</li>
+          </ul>
+          <div class="cc-specs">
+            <span class="cc-spec">Wrestling</span>
+            <span class="cc-spec">Wrestling for Rugby</span>
+            <span class="cc-spec">Wrestling for MMA</span>
+            <span class="cc-spec">Takedowns &amp; Control</span>
+            <span class="cc-spec">Youth Development</span>
+          </div>
+          <div class="cc-quote">“You need 100% balance in contact.” — Philip Lemmer</div>
+          <div class="cc-bio-full" id="c7bio">
+            <p>Philip Lemmer is a passionate wrestling coach dedicated to developing young athletes, using the sport to build character, discipline and resilience. A 12-time South African Wrestling Champion, he spent 10 years as a professional rugby player and has coached professional rugby for 12 years.</p>
+            <p>A former prop, Philip has been forwards and scrum coach at the Lions, where he also worked as collisions and rucking coach, using his wrestling background to teach players balance and control in contact. He is currently forwards coach at The Sharks. He is equally committed to helping young players reach their dreams and goals, guiding the next generation toward success on and off the field. <a href="training-wrestling-ballito.html" style="color:var(--gold)">See wrestling classes at Maddog</a>.</p>
+          </div>
+        </div>
+        <button class="cc-expand" id="c7btn" onclick="toggleCoachBio('c7bio','c7btn')">Read Full Bio</button>
+        </div>
       </div>
 
   </div>
