@@ -33,6 +33,9 @@ ROBOTS_PATH = os.path.join(PAGES_DIR, 'robots.txt')
 REDIRECTS_PATH = os.path.join(PAGES_DIR, '_redirects')
 REPORT_PATH = os.path.join(PAGES_DIR, 'seo-audit-report.md')
 LIVE_DOMAIN = 'https://www.maddogperformance.co.za'
+# The site sits behind Cloudflare (since 2026-10-08), which blocks Python's default "Python-urllib" user agent
+# with a 403 - so every live request identifies itself as a normal browser-style client.
+USER_AGENT = 'Mozilla/5.0 (compatible; MaddogSEOAudit/1.0; +https://www.maddogperformance.co.za)'
 
 TEMPLATE_FILES = {'blog-TEMPLATE.html', 'wellness-blog-TEMPLATE.html'}
 GYM_NAME = 'Maddog Performance Institute'
@@ -233,7 +236,7 @@ def _live_check_one(opener, source, dest, code):
     """One rule's live HTTP check, run in a worker thread. Returns a finding
     string, or None if the rule is working correctly."""
     try:
-        req = urllib.request.Request(LIVE_DOMAIN + source, method='HEAD')
+        req = urllib.request.Request(LIVE_DOMAIN + source, method='HEAD', headers={'User-Agent': USER_AGENT})
         resp = opener.open(req, timeout=10)
         return (f'CRITICAL: `{source} {dest} {code}` is not firing on the live site — '
                 f'requesting {LIVE_DOMAIN}{source} returned {resp.status} instead of a redirect.')
@@ -408,7 +411,7 @@ def audit_broken_links(skip_live=False):
 
     def _check(target):
         try:
-            req = urllib.request.Request(LIVE_DOMAIN + target, method='HEAD')
+            req = urllib.request.Request(LIVE_DOMAIN + target, method='HEAD', headers={'User-Agent': USER_AGENT})
             resp = opener.open(req, timeout=10)
             return target, resp.status
         except urllib.error.HTTPError as e:
