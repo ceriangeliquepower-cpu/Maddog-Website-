@@ -15,3 +15,10 @@
 # that migration (images were embedded, no separate requests to cache).
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Fonts are hosted on the site itself (since 2026-10-08, replacing Google Fonts) and never change under the
+# same filename - safe to cache permanently. If a font is ever updated, give the file a new name.
+# Access-Control-Allow-Origin lets pages opened locally (file://) and any preview load them too.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *

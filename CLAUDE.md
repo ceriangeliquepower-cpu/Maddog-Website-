@@ -20,7 +20,7 @@ This is a **zero-build, zero-dependency** static site. There is no npm, no bundl
 
 **Images are file references, not base64** (migrated 2026-09-17) — every `<img src>` points to `/images/<content-hash>.{jpg,png}`, PIL-compressed before upload. This section used to say base64-embedded; that was the original architecture but is no longer true and this note replaces the stale claim per the "Keep This File Honest" section below. Images are served with long-lived immutable caching (`Cache-Control: max-age=31536000, immutable` in `_headers`, added 2026-09-17) since content-hash filenames never change under the same name — see Image Optimisation Rules.
 
-**Fonts** load from Google Fonts CDN (Bebas Neue + Barlow Condensed). This is the only external dependency.
+**Fonts are hosted on the site itself** (`/fonts/*.woff2`, since 2026-10-08; this line used to say Google Fonts CDN). Bebas Neue + Barlow Condensed (300/400/500/600/700 + 300 italic), plus Cormorant Garamond and Playfair Display (variable files) on the pages that use them. Each page has, where the Google Fonts links used to be: two `<link rel="preload" as="font" crossorigin>` (Bebas Neue 400 + Barlow Condensed 300, the above-the-fold fonts) and one inline `<style>/* Fonts hosted on this site … */@font-face{…font-display:swap…}</style>` covering only the families that page uses (full `https://www.maddogperformance.co.za/fonts/…` URLs, like images). `_headers` gives `/fonts/*` a 1-year immutable cache + `Access-Control-Allow-Origin: *`. **New pages must copy this block from an existing page; never re-add a Google Fonts link** (it brings the page jumping back, see the 2026-10-08 batch). If a font file ever changes, give it a new filename.
 
 **Photo upload slots** use a browser-side `swapPhoto(slotId)` + `FileReader` API pattern — clicking a `.photo-slot` element opens a file picker, compresses the image, and injects a new base64 `src` into the slot's `<img>`. The `.loaded` class is toggled to reveal the uploaded image and hide the placeholder overlay.
 
@@ -183,6 +183,16 @@ User's own list. Work these in order unless the user says otherwise; tick off he
     - **Follow-up: re-inspect `/amanda` in GSC ~2026-10-08.** If still "Discovered – currently not indexed" after 2–3 weeks despite the request + external links, investigate further before changing the page. Once indexed, ranking for her name is a separate, harder job (needs those external links).
 
 ---
+
+## Batch Pushed 2026-10-08 — Self-Hosted Fonts, Fixes Page Jumping (log kept for reference)
+
+**✅ PUSHED 2026-10-08 WITHOUT the on-hold privacy edits** (57 tracked pages staged as HEAD + font transform only; the 2 unpushed privacy pages already have the new font block locally). User approved after side-by-side before/after screenshots (`Digital Health Dashboard/font-check/`, <1% pixel difference = only the moving ticker strips). All 59 HTML files changed (the 56 live ones also carry the on-hold privacy hunks — strip them at push time: apply the same font transform to each file's HEAD version and stage that via `git hash-object` + `git update-index`; the transform script is `fontswap.py`/`fonts_apply.py` in the session scratchpad, logic described below).
+
+- [x] **Page jumping (CLS) fixed by hosting the fonts on the site.** Diagnosis 2026-10-08: the dashboard's PageSpeed run showed 14 of the 15 jumping pages are blog posts (CLS 0.11–0.37; other pages < 0.1); PageSpeed's `layout-shifts` audit named the cause: the blog headline `h1.bh-title` / `.article-wrap` moving when the Google Fonts woff2 files arrived (async `media=print onload` stylesheet = fonts discovered late, text first painted in the fallback font, which wraps to an extra line).
+  - **Change:** 11 woff2 files in new `fonts/` folder (latin subset from Google Fonts, OFL-licensed, 292 KB total; each page only downloads the faces it uses); on every page the 5 Google Fonts tags (2 preconnects, preload-as-style, async stylesheet, `<noscript>` fallback) replaced by 2 font preloads + an inline `@font-face` block (`font-display:swap`); `_headers` `/fonts/*` immutable cache + CORS.
+  - **Measured locally** (Edge, phone size, slow-4G throttling, empty cache, 3 runs each): before 0.134 / 0.187–0.214 / 0.011–0.017 / 0.064–0.07 (Amanda Kobus blog / women's boxing blog / IV blog / homepage) → after **0.000 on all**. With fonts deliberately delayed 1.2 s, `swap` still shifts (~0.1), while `font-display:optional` stays 0 but then shows the headline in Arial for that page view (screenshot checked) — rejected to keep the brand fonts. Structure check: 0 nesting differences vs HEAD on all 59 files; lead tracking still once per page; wellness (Playfair/Cormorant) checked visually.
+  - Removes 2 third-party connections (fonts.googleapis.com + fonts.gstatic.com) per page; fonts now come from Cloudflare JNB.
+  - **After push:** check `/fonts/bebas-neue-400.woff2` = 200 with the long cache header; run the dashboard "Fetch figures" (PageSpeed, 34 pages) — expect the jumping list to drop from 15 pages; re-run `cls_why`-style check on a blog if any remain. No GSC re-indexing needed.
 
 ## Batch Pushed 2026-10-08 — Broken Email Link + Class-Page Icons (log kept for reference)
 
@@ -538,7 +548,7 @@ Every page must also include **LocalBusiness JSON-LD** structured data. Minimum 
 ## Performance Best Practices
 
 - **No render-blocking scripts** — all `<script>` tags go before `</body>`, never in `<head>` (except inline critical CSS).
-- **Google Fonts** — use `rel="preconnect"` to `https://fonts.googleapis.com` and `https://fonts.gstatic.com`.
+- **Fonts** — self-hosted and preloaded (see Architecture). No Google Fonts links or preconnects (removed 2026-10-08).
 - **CSS animations** — use `will-change` only on actively animating elements (`.cred-scroll`). Remove after animation ends if possible.
 - **JS ticker** — driven by CSS animation only, no `requestAnimationFrame` cloning loop (already fixed — do not revert).
 - **savePage()** — uses `showSaveFilePicker` + Blob (not `encodeURIComponent` data URI) to avoid memory issues with large files.
