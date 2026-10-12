@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 ﻿<html lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
+<!-- Google tag (gtag.js): its script loads just after the page has appeared, so it doesn't slow the first view -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-PR35V75DZH');
+  gtag('config', 'G-PR35V75DZH');window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);},1500);});
 </script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -281,6 +280,7 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
 .edit-banner{position:fixed!important;bottom:0!important;left:0!important;right:0!important;background:var(--gold,#C9A84C)!important;color:#080808!important;padding:9px 20px!important;font-size:10px!important;font-weight:700!important;letter-spacing:.18em!important;text-transform:uppercase!important;z-index:9999!important;display:flex!important;justify-content:center!important;align-items:center!important;gap:16px!important;flex-wrap:wrap!important}
 .edit-banner button{background:#080808!important;color:var(--gold,#C9A84C)!important;border:1px solid rgba(201,168,76,.4)!important;padding:5px 13px!important;font-size:9px!important;font-weight:700!important;letter-spacing:.13em!important;text-transform:uppercase!important;cursor:pointer!important;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif!important}
 </style>
+<style>/* Author line: same height before and after the web font loads (prevents layout shift) */@media(max-width:600px){.bh-meta{gap:4px 12px}.bh-meta .bh-author{flex-basis:100%}.bh-meta .bh-author+.bh-dot{display:none}}</style>
 </head>
 <body>
 <nav class="site-nav" id="siteNav">
@@ -322,7 +322,7 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
 <main id="main-content">
 <section class="blog-page-hero">
   <div class="photo-slot blog-hero-slot loaded" id="blogHero" style="cursor:pointer">
-    <img height="853" width="1280" id="blogHero-img" src="https://www.maddogperformance.co.za/images/f3ad308759a9a73c.jpg" alt="Blog Hero Photo" style="object-position: 50% 38.95%; transform: none; transform-origin: 50% 38.95%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+    <img height="853" width="1280" id="blogHero-img" src="https://www.maddogperformance.co.za/images/f3ad308759a9a73c.jpg" srcset="https://www.maddogperformance.co.za/images/e23e771d92ebc2ac.webp 480w, https://www.maddogperformance.co.za/images/aaf854f429280b35.webp 720w, https://www.maddogperformance.co.za/images/105ebb2cb1c93571.webp 960w, https://www.maddogperformance.co.za/images/34663e2ccd405f49.webp 1280w" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 100vw, 1280px" alt="Blog Hero Photo" style="object-position: 50% 38.95%; transform: none; transform-origin: 50% 38.95%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
     
   </div>
 </section>

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 ﻿<html lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
+<!-- Google tag (gtag.js): its script loads just after the page has appeared, so it doesn't slow the first view -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-PR35V75DZH');
+  gtag('config', 'G-PR35V75DZH');window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);},1500);});
 </script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -267,6 +266,7 @@ body{min-height:100vh}
 footer.site-footer{margin-top:auto!important}
 section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{flex-shrink:0}
 </style>
+<style>/* Author line: same height before and after the web font loads (prevents layout shift) */@media(max-width:600px){.bh-meta{gap:4px 12px}.bh-meta .bh-author{flex-basis:100%}.bh-meta .bh-author+.bh-dot{display:none}}</style>
 </head>
 <body>
 
@@ -311,7 +311,7 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
 <main id="main-content">
 <section class="blog-page-hero">
   <div class="photo-slot blog-hero-slot loaded" id="blogHero" style="cursor:pointer">
-    <img id="blogHero-img" src="https://www.maddogperformance.co.za/images/25ed850d65d30d30.jpg" alt="Amanda Wren Kobus competing at KwaZulu-Natal Powerlifting Federation" width="1200" height="260" style="object-position: 50% 20%; transform: none; transform-origin: 50% 20%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+    <img id="blogHero-img" src="https://www.maddogperformance.co.za/images/25ed850d65d30d30.jpg" srcset="https://www.maddogperformance.co.za/images/314e74452bb2dd1a.webp 480w, https://www.maddogperformance.co.za/images/b4a867985d01aee2.webp 720w, https://www.maddogperformance.co.za/images/6bc2833c09a63b89.webp 960w, https://www.maddogperformance.co.za/images/822d9a701d4ecfda.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 100vw, 1280px" alt="Amanda Wren Kobus competing at KwaZulu-Natal Powerlifting Federation" width="1200" height="260" style="object-position: 50% 20%; transform: none; transform-origin: 50% 20%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
     
     
   </div>

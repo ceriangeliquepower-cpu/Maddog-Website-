@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH"></script>
+<!-- Google tag (gtag.js): its script loads just after the page has appeared, so it doesn't slow the first view -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-PR35V75DZH');
+  gtag('config', 'G-PR35V75DZH');window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);},1500);});
 </script>
 <meta charset="UTF-8">
 <!-- BLOG TEMPLATE (refreshed 2026-10-01 from the newest live post). Duplicate this file, then replace every BLOG_* / *_TEXT / SECTION_* placeholder. Never hand-retype the nav or head. -->
@@ -227,6 +226,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow Condensed','
 .site-nav-logo:hover{opacity:.75!important}
 .site-nav-logo img{height:44px!important;width:auto!important;display:block!important}
 </style>
+<style>/* Author line: same height before and after the web font loads (prevents layout shift) */@media(max-width:600px){.bh-meta{gap:4px 12px}.bh-meta .bh-author{flex-basis:100%}.bh-meta .bh-author+.bh-dot{display:none}}</style>
 </head>
 <body>
 <nav class="site-nav" id="siteNav">
