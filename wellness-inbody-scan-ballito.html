@@ -305,6 +305,7 @@ body::before{display:none}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
 </style>
+<style>/* Photo-slot editor labels live in CSS so search engines don't read them as page text */.slot-icon::before,.slot-label::before{content:attr(data-t)}</style>
 </head>
 <body>
 
@@ -374,7 +375,7 @@ body::before{display:none}
       <div class="page-hero-photo" style="height:480px;position:relative">
         <div class="photo-slot loaded" style="height: 100%; cursor: pointer;" id="ws0">
           <img height="1200" width="799" fetchpriority="high" id="ws0-img" alt="InBody body composition scan at Maddog Performance Health and Wellness Ballito" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/ba141fdbfee26fdf.jpg" srcset="https://www.maddogperformance.co.za/images/2201b4426c1b98b4.webp 480w, https://www.maddogperformance.co.za/images/f4d5e86ad357df6f.webp 720w, https://www.maddogperformance.co.za/images/4c7e678b63787b6f.webp 799w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 93vw, 358px">
-          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label">Clinic Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label" data-t="Clinic Photo"></span></div>
         </div>
       </div>
     </div>
@@ -424,7 +425,7 @@ body::before{display:none}
       <div class="service-visual">
         <div class="photo-slot loaded" style="height: 420px; cursor: pointer;" id="ws1">
           <img loading="lazy" height="1200" width="560" id="ws1-img" alt="InBody scan results and body composition analysis at Maddog Performance Health and Wellness" style="object-position: 50% 36.84%; transform: none; transform-origin: 50% 36.84%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/c5c796d860637fdf.jpg">
-          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label">InBody Scan Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label" data-t="InBody Scan Photo"></span></div>
         </div>
       </div>
     </div>

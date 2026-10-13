@@ -295,6 +295,7 @@ body::before{display:none}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
 </style>
+<style>/* Photo-slot editor labels live in CSS so search engines don't read them as page text */.slot-icon::before,.slot-label::before{content:attr(data-t)}</style>
 </head>
 <body>
 
@@ -362,7 +363,7 @@ body::before{display:none}
       <div class="page-hero-photo" style="height:480px;position:relative">
         <div class="photo-slot loaded" style="height: 100%; cursor: pointer;" id="pt-hero-p">
           <img height="1200" width="799" fetchpriority="high" id="pt-hero-p-img" alt="Personal training session at Maddog Performance Institute, Ballito" style="object-position: 50% 76.75%; transform: none; transform-origin: 50% 76.75%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/e60cba0b0d6e9aa3.jpg" srcset="https://www.maddogperformance.co.za/images/f564a053422a70b7.webp 480w, https://www.maddogperformance.co.za/images/e294a39cef51a13e.webp 720w, https://www.maddogperformance.co.za/images/e7ff79c6c054f508.webp 799w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 93vw, 358px">
-          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label">Training Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label" data-t="Training Photo"></span></div>
         </div>
       </div>
     </div>
@@ -407,7 +408,7 @@ body::before{display:none}
       <div class="service-visual">
         <div class="photo-slot loaded" id="pt-training-p" style="cursor: pointer;">
           <img loading="lazy" height="1200" width="799" id="pt-training-p-img" alt="Semi-private personal training session at Maddog Performance Institute" style="object-position: 50% 36.1%; transform: none; transform-origin: 50% 36.1%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/ef583cf6bf907e70.jpg">
-          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label">Training Session Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label" data-t="Training Session Photo"></span></div>
         </div>
       </div>
     </div>
@@ -436,7 +437,7 @@ body::before{display:none}
       <div class="service-visual">
         <div class="photo-slot loaded" id="pt-app-p" style="cursor: pointer;">
           <img loading="lazy" height="900" width="1200" id="pt-app-p-img" alt="Maddog Performance Institute online training programme app" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/7dc72aaaf724d6d6.jpg">
-          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label">Training App Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label" data-t="Training App Photo"></span></div>
         </div>
       </div>
     </div>
@@ -463,7 +464,7 @@ body::before{display:none}
       <div class="service-visual">
         <div class="photo-slot loaded" id="pt-nutrition-p" style="cursor: pointer;">
           <img loading="lazy" height="1200" width="799" id="pt-nutrition-p-img" alt="Nutrition assessment and Slimming Clinic referral at Maddog Health &amp; Wellness" style="object-position: 50% 58.43%; transform: none; transform-origin: 50% 58.43%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/9d77150723b13512.jpg">
-          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label">Nutrition Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label" data-t="Nutrition Photo"></span></div>
         </div>
       </div>
     </div>
@@ -530,7 +531,7 @@ body::before{display:none}
       <div class="service-visual">
         <div class="photo-slot loaded" id="pt-stage-p" style="cursor: pointer;">
           <img loading="lazy" height="799" width="1200" id="pt-stage-p-img" alt="Strength training session at Maddog Performance Institute" style="object-position: 74.35% 50%; transform: none; transform-origin: 74.35% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/7f8ca4182e6cdb23.jpg">
-          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label">Training Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label" data-t="Training Photo"></span></div>
         </div>
       </div>
     </div>
@@ -545,7 +546,7 @@ body::before{display:none}
     <div class="doctor-inner" style="margin-top:36px">
       <div class="photo-slot doctor-photo loaded" id="pt-coach-p" style="cursor: pointer;">
         <img loading="lazy" height="1200" width="872" id="pt-coach-p-img" alt="Tristan Botha, Personal Trainer at Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/7f12529c44a83c61.jpg">
-        <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label">Coach Photo</span></div>
+        <div class="slot-overlay"><span class="slot-icon"><svg width="32" height="28" viewBox="0 0 32 28" fill="none"><path d="M12 4l2.5-4h3L20 4h5a2 2 0 012 2v17a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2h9zm4 16a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path></svg></span><span class="slot-label" data-t="Coach Photo"></span></div>
       </div>
       <div>
         <p style="font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:16px">Personal Trainer · Maddog Performance Institute</p>
@@ -567,7 +568,7 @@ body::before{display:none}
       <div>
         <p style="font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:16px">Personal Trainer &amp; Registered Nurse Practitioner · Maddog Performance Institute</p>
         <p class="body-p">Amanda Wren Kobus is a Proteas-selected Master 1 athlete and KZN's strongest Master 1 competitor — currently ranked South Africa's third-strongest master athlete. She's Director of the KwaZulu-Natal Powerlifting Association and a certified Coach and Referee under the South African Powerlifting Federation. Her clinical background as a Registered Nurse Practitioner informs every training prescription, including nutritional guidance built directly into her coaching.</p>
-        <p class="body-p">A mother of three and NPC Worldwide bodybuilding titleholder, Amanda brings a deep understanding of the female body and the mindset required to build strength around life's responsibilities. See her full profile on the <a href="coaches.html" style="color:var(--gold);text-decoration:underline">coaches page</a>, or her <a href="training-powerlifting-ballito.html" style="color:var(--gold);text-decoration:underline">powerlifting programme</a>.</p>
+        <p class="body-p">A mother of three and NPC Worldwide bodybuilding titleholder, Amanda brings a deep understanding of the female body and the mindset required to build strength around life's responsibilities. See her full profile on the <a href="coaches.html" style="color:var(--gold);text-decoration:underline">coaches page</a>, or her <a href="/training/powerlifting-ballito" style="color:var(--gold);text-decoration:underline">powerlifting programme</a>.</p>
       </div>
     </div>
   </div>
@@ -685,7 +686,7 @@ body::before{display:none}
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">I'd rather train inside a performance gym environment — is that available? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes. If you'd prefer personal training inside our MMA and strength-sports facility instead of this standalone wellness studio, Tristan Botha also coaches <a href="training-personal-training-ballito.html">personal training at Maddog Performance Institute</a> — same coach, different setting.</div>
+        <div class="faq-a">Yes. If you'd prefer personal training inside our MMA and strength-sports facility instead of this standalone wellness studio, Tristan Botha also coaches <a href="/training/personal-training-ballito">personal training at Maddog Performance Institute</a> — same coach, different setting.</div>
       </div>
     </div>
   </div>

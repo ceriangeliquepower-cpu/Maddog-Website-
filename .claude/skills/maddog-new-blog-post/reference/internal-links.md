@@ -4,21 +4,23 @@ Use these as the default choice when picking the 2+ internal links required in e
 
 | Category / topic | Good link targets |
 |---|---|
-| MMA | `training-mma-ballito.html`, `coaches.html` |
-| BJJ (adult) | `training-bjj-ballito.html`, `coaches.html` |
-| BJJ (kids) | `training-kids-bjj-ballito.html`, `training-bjj-ballito.html` |
-| Kickboxing | `training-kickboxing-ballito.html`, `coaches.html` |
-| Boxing (adult) | `training-boxing-ballito.html`, `training-olympic-boxing-ballito.html` |
-| Boxing (women's) | `training-womens-boxing-ballito.html`, `training-boxing-ballito.html` |
-| Boxing (kids) | `training-kids-boxing-ballito.html`, `training-boxing-ballito.html` |
-| Powerlifting | `training-powerlifting-ballito.html`, `training-personal-training-ballito.html` |
-| Personal Training | `training-personal-training-ballito.html`, `coaches.html` |
+| MMA | `/training/mma-ballito`, `coaches.html` |
+| BJJ (adult) | `/training/bjj-ballito`, `coaches.html` |
+| BJJ (kids) | `/training/kids-bjj-ballito`, `/training/bjj-ballito` |
+| Kickboxing | `/training/kickboxing-ballito`, `coaches.html` |
+| Boxing (adult) | `/training/boxing-ballito`, `/training/olympic-boxing-ballito` |
+| Boxing (women's) | `/training/womens-boxing-ballito`, `/training/boxing-ballito` |
+| Boxing (kids) | `/training/kids-boxing-ballito`, `/training/boxing-ballito` |
+| Powerlifting | `/training/powerlifting-ballito`, `/training/personal-training-ballito` |
+| Personal Training | `/training/personal-training-ballito`, `coaches.html` |
 | Bootcamp | `training-bootcamp-ballito.html`, `training.html` |
 | Recovery / IV / cold plunge / sauna | `recovery.html`, `wellness-pricing.html` |
-| Youth & Family | `training-kids-bjj-ballito.html`, `training-kids-boxing-ballito.html` |
+| Youth & Family | `/training/kids-bjj-ballito`, `/training/kids-boxing-ballito` |
 | Amanda Lino / fights / EFC | `amanda.html`, `athletes.html` |
 | Coaching / coach profiles | `coaches.html`, `amanda.html` |
 | Community / events / fundraisers | `events.html`, `contact.html` |
 | General / doesn't fit a category above | `training.html`, `contact.html` (not `booking.html` — on hold behind a Coming Soon overlay) |
 
 If a post genuinely spans two disciplines (e.g. a "strength for grapplers" post), it's fine to pull one link from each relevant row rather than sticking to a single row.
+
+> **Class pages (since 2026-10-13):** always link with the official absolute address, e.g. `/training/mma-ballito`, never `training-mma-ballito.html`. The class pages live in the `training/` folder.

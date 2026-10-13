@@ -381,7 +381,8 @@ footer.site-footer *{box-sizing:border-box !important}
 .gc{display:none!important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
-</style></head>
+</style><style>/* Photo-slot editor labels live in CSS so search engines don't read them as page text */.slot-icon::before,.slot-label::before{content:attr(data-t)}</style>
+</head>
 <body>
 <!-- ══ SITE NAV ══ -->
 <nav class="site-nav" id="siteNav">
@@ -393,17 +394,17 @@ footer.site-footer *{box-sizing:border-box !important}
       <a href="amanda.html">Amanda</a>
       <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
       <div class="nav-has-dropdown"><a href="training.html" class="active">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu">
-        <a href="training-personal-training-ballito.html">Personal Training</a>
-        <a href="training-mma-ballito.html">MMA</a>
-        <a href="training-bjj-ballito.html">BJJ</a>
-        <a href="training-kids-bjj-ballito.html">Kids BJJ</a>
-        <a href="training-kickboxing-ballito.html">Kickboxing</a>
-        <a href="training-wrestling-ballito.html">Wrestling</a>
-        <a href="training-boxing-ballito.html">Boxing</a>
-        <a href="training-womens-boxing-ballito.html">Women's Boxing</a>
-        <a href="training-kids-boxing-ballito.html">Kids Boxing</a>
-        <a href="training-olympic-boxing-ballito.html">Olympic Boxing</a>
-        <a href="training-powerlifting-ballito.html">Powerlifting</a>
+        <a href="/training/personal-training-ballito">Personal Training</a>
+        <a href="/training/mma-ballito">MMA</a>
+        <a href="/training/bjj-ballito">BJJ</a>
+        <a href="/training/kids-bjj-ballito">Kids BJJ</a>
+        <a href="/training/kickboxing-ballito">Kickboxing</a>
+        <a href="/training/wrestling-ballito">Wrestling</a>
+        <a href="/training/boxing-ballito">Boxing</a>
+        <a href="/training/womens-boxing-ballito">Women's Boxing</a>
+        <a href="/training/kids-boxing-ballito">Kids Boxing</a>
+        <a href="/training/olympic-boxing-ballito">Olympic Boxing</a>
+        <a href="/training/powerlifting-ballito">Powerlifting</a>
       </div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
@@ -423,17 +424,17 @@ footer.site-footer *{box-sizing:border-box !important}
   <a href="recovery.html">Recovery</a>
   <a href="wellness-pricing.html" class="snm-sub">↳ Pricelist</a>
   <a href="training.html" class="active">Training</a>
-  <a href="training-personal-training-ballito.html" class="snm-sub">↳ Personal Training</a>
-  <a href="training-mma-ballito.html" class="snm-sub">↳ MMA</a>
-  <a href="training-bjj-ballito.html" class="snm-sub">↳ BJJ</a>
-  <a href="training-kids-bjj-ballito.html" class="snm-sub">↳ Kids BJJ</a>
-  <a href="training-kickboxing-ballito.html" class="snm-sub">↳ Kickboxing</a>
-  <a href="training-wrestling-ballito.html" class="snm-sub">↳ Wrestling</a>
-  <a href="training-boxing-ballito.html" class="snm-sub">↳ Boxing</a>
-  <a href="training-womens-boxing-ballito.html" class="snm-sub">↳ Women's Boxing</a>
-  <a href="training-kids-boxing-ballito.html" class="snm-sub">↳ Kids Boxing</a>
-  <a href="training-olympic-boxing-ballito.html" class="snm-sub">↳ Olympic Boxing</a>
-  <a href="training-powerlifting-ballito.html" class="snm-sub">↳ Powerlifting</a>
+  <a href="/training/personal-training-ballito" class="snm-sub">↳ Personal Training</a>
+  <a href="/training/mma-ballito" class="snm-sub">↳ MMA</a>
+  <a href="/training/bjj-ballito" class="snm-sub">↳ BJJ</a>
+  <a href="/training/kids-bjj-ballito" class="snm-sub">↳ Kids BJJ</a>
+  <a href="/training/kickboxing-ballito" class="snm-sub">↳ Kickboxing</a>
+  <a href="/training/wrestling-ballito" class="snm-sub">↳ Wrestling</a>
+  <a href="/training/boxing-ballito" class="snm-sub">↳ Boxing</a>
+  <a href="/training/womens-boxing-ballito" class="snm-sub">↳ Women's Boxing</a>
+  <a href="/training/kids-boxing-ballito" class="snm-sub">↳ Kids Boxing</a>
+  <a href="/training/olympic-boxing-ballito" class="snm-sub">↳ Olympic Boxing</a>
+  <a href="/training/powerlifting-ballito" class="snm-sub">↳ Powerlifting</a>
   <a href="coaches.html">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
@@ -465,7 +466,7 @@ footer.site-footer *{box-sizing:border-box !important}
     <div class="page-hero-img">
       <div class="photo-slot loaded" id="bc-hero-p">
         <img height="854" width="1280" id="bc-hero-p-img" alt="Bootcamp class at Maddog Performance Institute in Ballito" src="https://www.maddogperformance.co.za/images/a90da850740f3842.jpg" srcset="https://www.maddogperformance.co.za/images/c7d8b00374d1fe23.webp 480w, https://www.maddogperformance.co.za/images/97366373e3960926.webp 720w, https://www.maddogperformance.co.za/images/da0cc9c291910afe.webp 960w, https://www.maddogperformance.co.za/images/27af65deb9a1528a.webp 1280w" sizes="(max-width: 600px) 167vw, (max-width: 1024px) 90vw, 689px" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" fetchpriority="high">
-        <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change Photo</span></div>
+        <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
         <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
       </div>
     </div>
@@ -497,7 +498,7 @@ footer.site-footer *{box-sizing:border-box !important}
       <div class="disc-photo">
         <div class="photo-slot loaded" id="bc-p" style="height:100%;min-height:480px">
           <img loading="lazy" height="1500" width="1000" id="bc-p-img" src="https://www.maddogperformance.co.za/images/9bccb49c82990043.jpg" alt="Bootcamp training at Maddog Performance Institute">
-          <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
       </div>
@@ -593,7 +594,7 @@ footer.site-footer *{box-sizing:border-box !important}
       <div class="disc-photo">
         <div class="photo-slot loaded" id="bc-wren-p" style="height:100%;min-height:480px">
           <img height="800" width="1200" loading="lazy" id="bc-wren-p-img" src="https://www.maddogperformance.co.za/images/25ed850d65d30d30.jpg" alt="Amanda Wren Kobus, Registered Nurse and Strength &amp; Conditioning Coach at Maddog Performance Institute">
-          <div class="slot-overlay"><span class="slot-icon">📷</span><span class="slot-label">Click to Change Photo</span></div>
+          <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
       </div>
@@ -676,11 +677,11 @@ footer.site-footer *{box-sizing:border-box !important}
     <div class="sec-label">Keep Exploring</div>
     <h2 class="sec-h">Related <em>Training.</em></h2>
     <div class="related-grid">
-      <a href="training-powerlifting-ballito.html" class="related-card">
+      <a href="/training/powerlifting-ballito" class="related-card">
         <div class="related-tag">Strength Focus</div>
         <div class="related-title">Powerlifting in Ballito</div>
       </a>
-      <a href="training-personal-training-ballito.html" class="related-card">
+      <a href="/training/personal-training-ballito" class="related-card">
         <div class="related-tag">Semi-Private Coaching</div>
         <div class="related-title">Personal Training at Maddog</div>
       </a>
@@ -731,10 +732,10 @@ footer.site-footer *{box-sizing:border-box !important}
     </div>
     <div class="sf-col">
       <h3>Disciplines</h3>
-      <a href="training-powerlifting-ballito.html">Powerlifting</a>
-      <a href="training-personal-training-ballito.html">Personal Training</a>
-      <a href="training-mma-ballito.html">MMA</a>
-      <a href="training-boxing-ballito.html">Boxing</a>
+      <a href="/training/powerlifting-ballito">Powerlifting</a>
+      <a href="/training/personal-training-ballito">Personal Training</a>
+      <a href="/training/mma-ballito">MMA</a>
+      <a href="/training/boxing-ballito">Boxing</a>
     </div>
     <div class="sf-col">
       <h3>About</h3>

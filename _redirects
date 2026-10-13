@@ -69,22 +69,44 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /wellness-personal-training-ballito.html /wellness-personal-training-ballito 301!
 
 # Training discipline pages — serve flat files at their pretty /training/... URLs
-/training/mma-ballito /training-mma-ballito.html 200
-/training/bjj-ballito /training-bjj-ballito.html 200
-/training/kids-bjj-ballito /training-kids-bjj-ballito.html 200
-/training/kickboxing-ballito /training-kickboxing-ballito.html 200
-/training/wrestling-ballito /training-wrestling-ballito.html 200
-/training/boxing-ballito /training-boxing-ballito.html 200
-/training/womens-boxing-ballito /training-womens-boxing-ballito.html 200
-/training/kids-boxing-ballito /training-kids-boxing-ballito.html 200
-/training/olympic-boxing-ballito /training-olympic-boxing-ballito.html 200
+/training-mma-ballito.html /training/mma-ballito 301!
+/training-mma-ballito /training/mma-ballito 301!
+/training/mma-ballito.html /training/mma-ballito 301!
+/training-bjj-ballito.html /training/bjj-ballito 301!
+/training-bjj-ballito /training/bjj-ballito 301!
+/training/bjj-ballito.html /training/bjj-ballito 301!
+/training-kids-bjj-ballito.html /training/kids-bjj-ballito 301!
+/training-kids-bjj-ballito /training/kids-bjj-ballito 301!
+/training/kids-bjj-ballito.html /training/kids-bjj-ballito 301!
+/training-kickboxing-ballito.html /training/kickboxing-ballito 301!
+/training-kickboxing-ballito /training/kickboxing-ballito 301!
+/training/kickboxing-ballito.html /training/kickboxing-ballito 301!
+/training-wrestling-ballito.html /training/wrestling-ballito 301!
+/training-wrestling-ballito /training/wrestling-ballito 301!
+/training/wrestling-ballito.html /training/wrestling-ballito 301!
+/training-boxing-ballito.html /training/boxing-ballito 301!
+/training-boxing-ballito /training/boxing-ballito 301!
+/training/boxing-ballito.html /training/boxing-ballito 301!
+/training-womens-boxing-ballito.html /training/womens-boxing-ballito 301!
+/training-womens-boxing-ballito /training/womens-boxing-ballito 301!
+/training/womens-boxing-ballito.html /training/womens-boxing-ballito 301!
+/training-kids-boxing-ballito.html /training/kids-boxing-ballito 301!
+/training-kids-boxing-ballito /training/kids-boxing-ballito 301!
+/training/kids-boxing-ballito.html /training/kids-boxing-ballito 301!
+/training-olympic-boxing-ballito.html /training/olympic-boxing-ballito 301!
+/training-olympic-boxing-ballito /training/olympic-boxing-ballito 301!
+/training/olympic-boxing-ballito.html /training/olympic-boxing-ballito 301!
 # Bootcamp discontinued 2026-10-07 — page kept in the repo for a possible relaunch; all three URLs 301 to the Training hub.
 # To relaunch: replace these three lines with "/training/bootcamp-ballito /training-bootcamp-ballito.html 200", re-add it to sitemap.xml and the menus.
 /training/bootcamp-ballito /training 301!
 /training-bootcamp-ballito.html /training 301!
 /training-bootcamp-ballito /training 301!
-/training/powerlifting-ballito /training-powerlifting-ballito.html 200
-/training/personal-training-ballito /training-personal-training-ballito.html 200
+/training-powerlifting-ballito.html /training/powerlifting-ballito 301!
+/training-powerlifting-ballito /training/powerlifting-ballito 301!
+/training/powerlifting-ballito.html /training/powerlifting-ballito 301!
+/training-personal-training-ballito.html /training/personal-training-ballito 301!
+/training-personal-training-ballito /training/personal-training-ballito 301!
+/training/personal-training-ballito.html /training/personal-training-ballito 301!
 
 # Block public access to internal editing working copies (still tracked in git for backup)
 /stripped/* /404.html 404!

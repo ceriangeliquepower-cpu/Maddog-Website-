@@ -262,6 +262,7 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
 .edit-banner{display:none!important}
 </style>
 <style>/* Author line: same height before and after the web font loads (prevents layout shift) */@media(max-width:600px){.bh-meta{gap:4px 12px}.bh-meta .bh-author{flex-basis:100%}.bh-meta .bh-author+.bh-dot{display:none}}</style>
+<style>/* Photo-slot editor labels live in CSS so search engines don't read them as page text */.slot-icon::before,.slot-label::before{content:attr(data-t)}</style>
 </head>
 <body>
 <nav class="site-nav" id="siteNav">
@@ -272,7 +273,7 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
       <a href="index.html" class="active">Home</a>
       <a href="amanda.html">Amanda</a>
       <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
-      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="training-personal-training-ballito.html">Personal Training</a><a href="training-mma-ballito.html">MMA</a><a href="training-bjj-ballito.html">BJJ</a><a href="training-kids-bjj-ballito.html">Kids BJJ</a><a href="training-kickboxing-ballito.html">Kickboxing</a><a href="training-wrestling-ballito.html">Wrestling</a><a href="training-boxing-ballito.html">Boxing</a><a href="training-womens-boxing-ballito.html">Women's Boxing</a><a href="training-kids-boxing-ballito.html">Kids Boxing</a><a href="training-olympic-boxing-ballito.html">Olympic Boxing</a><a href="training-powerlifting-ballito.html">Powerlifting</a></div></div>
+      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">&#9660;</span></a><div class="nav-drop-menu"><a href="/training/personal-training-ballito">Personal Training</a><a href="/training/mma-ballito">MMA</a><a href="/training/bjj-ballito">BJJ</a><a href="/training/kids-bjj-ballito">Kids BJJ</a><a href="/training/kickboxing-ballito">Kickboxing</a><a href="/training/wrestling-ballito">Wrestling</a><a href="/training/boxing-ballito">Boxing</a><a href="/training/womens-boxing-ballito">Women's Boxing</a><a href="/training/kids-boxing-ballito">Kids Boxing</a><a href="/training/olympic-boxing-ballito">Olympic Boxing</a><a href="/training/powerlifting-ballito">Powerlifting</a></div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
       <a href="events.html">Events</a>
@@ -291,7 +292,7 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
   <a href="recovery.html">Recovery</a>
   <a href="wellness-pricing.html" class="snm-sub">&#8627; Pricelist</a>
   <a href="training.html">Training</a>
-  <a href="training-personal-training-ballito.html" class="snm-sub">&#8627; Personal Training</a><a href="training-mma-ballito.html" class="snm-sub">&#8627; MMA</a><a href="training-bjj-ballito.html" class="snm-sub">&#8627; BJJ</a><a href="training-kids-bjj-ballito.html" class="snm-sub">&#8627; Kids BJJ</a><a href="training-kickboxing-ballito.html" class="snm-sub">&#8627; Kickboxing</a><a href="training-wrestling-ballito.html" class="snm-sub">&#8627; Wrestling</a><a href="training-boxing-ballito.html" class="snm-sub">&#8627; Boxing</a><a href="training-womens-boxing-ballito.html" class="snm-sub">&#8627; Women's Boxing</a><a href="training-kids-boxing-ballito.html" class="snm-sub">&#8627; Kids Boxing</a><a href="training-olympic-boxing-ballito.html" class="snm-sub">&#8627; Olympic Boxing</a><a href="training-powerlifting-ballito.html" class="snm-sub">&#8627; Powerlifting</a>
+  <a href="/training/personal-training-ballito" class="snm-sub">&#8627; Personal Training</a><a href="/training/mma-ballito" class="snm-sub">&#8627; MMA</a><a href="/training/bjj-ballito" class="snm-sub">&#8627; BJJ</a><a href="/training/kids-bjj-ballito" class="snm-sub">&#8627; Kids BJJ</a><a href="/training/kickboxing-ballito" class="snm-sub">&#8627; Kickboxing</a><a href="/training/wrestling-ballito" class="snm-sub">&#8627; Wrestling</a><a href="/training/boxing-ballito" class="snm-sub">&#8627; Boxing</a><a href="/training/womens-boxing-ballito" class="snm-sub">&#8627; Women's Boxing</a><a href="/training/kids-boxing-ballito" class="snm-sub">&#8627; Kids Boxing</a><a href="/training/olympic-boxing-ballito" class="snm-sub">&#8627; Olympic Boxing</a><a href="/training/powerlifting-ballito" class="snm-sub">&#8627; Powerlifting</a>
   <a href="coaches.html">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
@@ -304,8 +305,8 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
 <section class="blog-page-hero">
   <div class="photo-slot blog-hero-slot loaded" id="blogHero" style="cursor:pointer">
     <div class="hero-blur-bg" style="position:absolute;inset:0;background-image:url('images/4515533a96a857d5.jpg');background-size:cover;background-position:center;filter:blur(30px) brightness(.65);transform:scale(1.15);z-index:0"></div>
-    <img height="1024" width="1536" id="blogHero-img" src="https://www.maddogperformance.co.za/images/842f51a7ca738ea9.jpg" srcset="https://www.maddogperformance.co.za/images/8e28df1f8c0f0c9a.webp 480w, https://www.maddogperformance.co.za/images/ea68177165b7cf31.webp 720w, https://www.maddogperformance.co.za/images/5458feb787e4e49b.webp 960w, https://www.maddogperformance.co.za/images/947109aca51ec953.webp 1536w" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 100vw, 1280px" alt="GENESIS recovery programme for Maddog athletes hero photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;display:block">
-    <div class="slot-overlay"><span class="slot-icon">📸</span><span class="slot-label">Hero Photo</span></div>
+    <img height="1024" width="1536" id="blogHero-img" src="https://www.maddogperformance.co.za/images/842f51a7ca738ea9.jpg" srcset="https://www.maddogperformance.co.za/images/8e28df1f8c0f0c9a.webp 480w, https://www.maddogperformance.co.za/images/619ebfc25b471bd5.webp 720w, https://www.maddogperformance.co.za/images/a6932f6ecbd722bf.webp 960w, https://www.maddogperformance.co.za/images/947109aca51ec953.webp 1536w" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 100vw, 1280px" alt="GENESIS recovery programme for Maddog athletes hero photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;display:block">
+    <div class="slot-overlay"><span class="slot-icon" data-t="📸"></span><span class="slot-label" data-t="Hero Photo"></span></div>
     <div class="slot-hint">Click to upload</div>
   </div>
 </section>
@@ -419,12 +420,12 @@ section,article,.article-wrap,.blog-hero,.cred-strip,.blog-page-hero,.wa-float{f
     </div>
     <div class="sf-col">
       <h4>Disciplines</h4>
-      <a href="training-mma-ballito.html">MMA</a>
-      <a href="training-bjj-ballito.html">BJJ</a>
-      <a href="training-boxing-ballito.html">Boxing</a>
-      <a href="training-kickboxing-ballito.html">Kickboxing</a>
-      <a href="training-personal-training-ballito.html">Personal Training</a>
-      <a href="training-powerlifting-ballito.html">Powerlifting</a>
+      <a href="/training/mma-ballito">MMA</a>
+      <a href="/training/bjj-ballito">BJJ</a>
+      <a href="/training/boxing-ballito">Boxing</a>
+      <a href="/training/kickboxing-ballito">Kickboxing</a>
+      <a href="/training/personal-training-ballito">Personal Training</a>
+      <a href="/training/powerlifting-ballito">Powerlifting</a>
     </div>
     <div class="sf-col">
       <h4>About</h4>

@@ -43,6 +43,17 @@ WELLNESS_NAME = 'Maddog Performance Health & Wellness'
 BAD_BRAND_PATTERNS = [r'\bMad\s+Dog\b', r'\bMadDog\b', r'\bMADDOG\b']
 
 
+def list_pages():
+    """Every live page: top-level .html files plus the class pages in training/ (since 2026-10-13 they are real
+    files at their official address, e.g. training/mma-ballito.html -> /training/mma-ballito). Names are relative
+    paths with forward slashes (as git and the sitemap see them)."""
+    pages = [f for f in os.listdir(PAGES_DIR) if f.endswith('.html') and f not in TEMPLATE_FILES]
+    sub = os.path.join(PAGES_DIR, 'training')
+    if os.path.isdir(sub):
+        pages += ['training/' + f for f in os.listdir(sub) if f.endswith('.html')]
+    return sorted(pages)
+
+
 def classify(filename):
     return 'wellness' if filename.startswith('wellness') else 'gym'
 
@@ -63,7 +74,7 @@ def count(pattern, content, flags=0):
 
 
 def audit_one_page(path, business):
-    filename = os.path.basename(path)
+    filename = os.path.relpath(path, PAGES_DIR).replace(os.sep, '/')  # e.g. training/mma-ballito.html
     with open(path, 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -344,7 +355,7 @@ def audit_broken_links(skip_live=False):
     legitimate link may legitimately go through a 301) and flags anything
     that doesn't end in a 200."""
     findings = []
-    html_files = sorted(f for f in os.listdir(PAGES_DIR) if f.endswith('.html') and f not in TEMPLATE_FILES)
+    html_files = list_pages()
 
     # Pages that exist locally but aren't on the deployed branch yet (new in this push).
     try:
@@ -447,10 +458,7 @@ def main():
         print('All redirect rules verified live.')
         sys.exit(0)
 
-    html_files = sorted(
-        f for f in os.listdir(PAGES_DIR)
-        if f.endswith('.html') and f not in TEMPLATE_FILES
-    )
+    html_files = list_pages()
 
     results = []
     for filename in html_files:
