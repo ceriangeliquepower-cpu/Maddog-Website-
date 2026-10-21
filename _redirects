@@ -23,8 +23,8 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /coaches.html /coaches 301!
 /events.html /events 301!
 /contact.html /contact 301!
-# Booking page ON HOLD (2026-10-01): temporary 302 to WhatsApp. To re-launch booking, restore
-# "/booking.html /booking 301!", delete these two lines, re-add /booking to sitemap.xml.
+# Old booking page DELETED (2026-10-21) - replaced by the new trial booking system (separate app).
+# Both old addresses still go to WhatsApp. 302 (temporary) on purpose, so /booking can later point to the new trial page.
 /booking.html https://wa.me/27634421690 302!
 /booking https://wa.me/27634421690 302!
 /recovery.html /recovery 301!
@@ -55,6 +55,8 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /wellness-recovery.html /wellness-recovery 301!
 /wellness-pricing.html /wellness-pricing 301!
 /wellness-contact.html /wellness-contact 301!
+/privacy-policy.html /privacy-policy 301!
+/wellness-privacy-policy.html /wellness-privacy-policy 301!
 /wellness-blog.html /wellness-blog 301!
 /wellness-blog-womens-self-defence.html /wellness-blog-womens-self-defence 301!
 /wellness-blog-cold-plunge.html /wellness-blog-cold-plunge 301!
