@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<!-- Google tag (gtag.js): its script loads just after the page has appeared, so it doesn't slow the first view -->
+<!-- Google tag (gtag.js): its script loads on the visitor's first scroll/tap/key, or 5 s after the page has loaded, so it never slows the page on phones -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-PR35V75DZH');window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);},1500);});
+  gtag('config', 'G-PR35V75DZH');(function(){var done=0;function L(){if(done)return;done=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);}['scroll','pointerdown','touchstart','keydown'].forEach(function(e){window.addEventListener(e,L,{once:true,passive:true});});window.addEventListener('load',function(){setTimeout(L,5000);});})();
 </script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="https://www.maddogperformance.co.za/favicon.ico">
@@ -14,6 +14,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.maddogperformance.co.za/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
 <title>Personal Trainer Ballito | Female PT &amp; Studio | Maddog</title>
 <meta name="description" content="Personal training in Ballito with Tristan Botha and female personal trainer Amanda Lino (10+ years’ experience). 1-on-1 and semi-private. Free consultation.">
 <link rel="canonical" href="https://www.maddogperformance.co.za/training/personal-training-ballito">
@@ -80,16 +82,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Do I need gym experience to start personal training?", "acceptedAnswer": { "@type": "Answer", "text": "No. Every programme starts from an assessment of where you are right now, whether that's your first time in a gym or you're returning after time off. Tristan builds the plan around your actual starting point." } },
-    { "@type": "Question", "name": "How is personal training different from a group class?", "acceptedAnswer": { "@type": "Answer", "text": "Sessions are small and semi-private — 2 to 5 people, each on their own programme, with programming, pacing and technique correction built around the individual rather than a fixed routine shared by a large class." } },
-    { "@type": "Question", "name": "Can I book a private 1-on-1 session?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. While standard sessions are semi-private (2–5 people), fully private 1-on-1 training is available on request — just get in touch and we'll work with you to find a time and set up sessions privately." } },
-    { "@type": "Question", "name": "Is there a female personal trainer at Maddog?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Amanda \"Maddog\" Lino is a qualified personal trainer with more than 10 years of personal training experience. She trains both men and women, works with many female clients in their 40s, and writes personalised programmes for her online clients — alongside being a 2x EFC World Champion and IMMAF World Champion." } },
-    { "@type": "Question", "name": "Is there a class specifically for women going through perimenopause or menopause?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tristan runs a dedicated semi-private women's class at 9am, built around strength training for this life stage — supporting muscle mass, bone density and overall strength as hormone levels change. It runs on the same pricing as our standard semi-private sessions. Prefer a female coach? You can also choose to train with Amanda “Maddog” Lino, who works with many female clients in their 40s." } },
-    { "@type": "Question", "name": "What does a personal training session include?", "acceptedAnswer": { "@type": "Answer", "text": "A structured session built around your goals — strength, fat loss, conditioning or general fitness — with hands-on coaching, technique correction, and a plan that progresses week to week." } },
-    { "@type": "Question", "name": "How do you track my progress?", "acceptedAnswer": { "@type": "Answer", "text": "Every package includes a custom app programme, so your sessions, plan and progress are tracked in one place. Tristan reviews and adjusts your plan as you improve, so the programme keeps moving with you rather than staying static." } },
-    { "@type": "Question", "name": "Can I combine personal training with other classes at Maddog?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many members pair personal training sessions with MMA, BJJ, Kickboxing or Boxing classes as part of their broader training week." } },
-    { "@type": "Question", "name": "How much does personal training cost?", "acceptedAnswer": { "@type": "Answer", "text": "Personal training starts from R1,800 per month for 2 sessions a week, up to R4,200 per month for 5 sessions a week, each including a custom app program, plus a R200 drop-in rate for single sessions." } },
-    { "@type": "Question", "name": "What is the Transformation Challenge?", "acceptedAnswer": { "@type": "Answer", "text": "Our Transformation Challenge is a structured personal training programme currently running at Maddog. Full results and client stories will be published here once the current round concludes." } }
+    {
+      "@type": "Question",
+      "name": "Do I need gym experience to start personal training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Every programme starts from an assessment of where you are right now, whether that's your first time in a gym or you're returning after time off. Tristan builds the plan around your actual starting point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is personal training different from a group class?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sessions are small and semi-private — 2 to 5 people, each on their own programme, with programming, pacing and technique correction built around the individual rather than a fixed routine shared by a large class."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I book a private 1-on-1 session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. While standard sessions are semi-private (2–5 people), fully private 1-on-1 training is available on request — just get in touch and we'll work with you to find a time and set up sessions privately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a female personal trainer at Maddog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Amanda \"Maddog\" Lino is a qualified personal trainer with more than 10 years of personal training experience. She trains both men and women, works with many female clients in their 40s, and writes personalised programmes for her online clients — alongside being a 2x EFC World Champion and IMMAF World Champion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a class specifically for women going through perimenopause or menopause?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tristan runs a dedicated semi-private women's class at 9am, built around strength training for this life stage — supporting muscle mass, bone density and overall strength as hormone levels change. It runs on the same pricing as our standard semi-private sessions. Prefer a female coach? You can also choose to train with Amanda “Maddog” Lino, who works with many female clients in their 40s."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a personal training session include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A structured session built around your goals — strength, fat loss, conditioning or general fitness — with hands-on coaching, technique correction, and a plan that progresses week to week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you track my progress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every package includes a custom app programme, so your sessions, plan and progress are tracked in one place. Tristan reviews and adjusts your plan as you improve, so the programme keeps moving with you rather than staying static."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I combine personal training with other classes at Maddog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Many members pair personal training sessions with MMA, BJJ, Kickboxing or Boxing classes as part of their broader training week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does personal training cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Personal training starts from R1,800 per month for 2 sessions a week, up to R4,200 per month for 5 sessions a week, each including a custom app program, plus a R200 drop-in rate for single sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do your personal trainers offer nutrition coaching?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our personal trainers can add nutrition coaching to your training programme, with guidance on eating to support your goals, whether that is building strength, losing fat or having more energy for your sessions. Ask about it at your free consultation."
+      }
+    }
   ]
 }
 </script>
@@ -400,6 +472,44 @@ footer.site-footer *{box-sizing:border-box !important}
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
 </style><style>/* Photo-slot editor labels live in CSS so search engines don't read them as page text */.slot-icon::before,.slot-label::before{content:attr(data-t)}</style>
+<style id="premium-cards">/* Premium cards (Nov 2026): rounded, soft gold gradient, depth, lift + gold glow on hover; compact on phones */
+.benefit-card,.related-card,.disc-price-card,.rc-price,.hub-card{border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(160deg,rgba(201,168,76,.09) 0%,rgba(255,255,255,.02) 38%,rgba(255,255,255,0) 70%),var(--card,#161616);border:1px solid rgba(201,168,76,.18);box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 12px 32px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s,background .35s}
+.benefit-card::before,.related-card::before,.disc-price-card::before,.rc-price::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.7),transparent);opacity:.55;transition:opacity .35s}
+.benefit-card:hover,.related-card:hover,.disc-price-card:hover,.rc-price:hover,.hub-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.75);background:linear-gradient(160deg,rgba(201,168,76,.16) 0%,rgba(201,168,76,.04) 45%,rgba(255,255,255,0) 75%),var(--card,#161616);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 18px 44px rgba(0,0,0,.55),0 0 0 1px rgba(201,168,76,.25),0 10px 40px rgba(201,168,76,.22)}
+.benefit-card:hover::before,.related-card:hover::before,.disc-price-card:hover::before,.rc-price:hover::before{opacity:1}
+.rc-price.best{border-color:rgba(201,168,76,.8);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 14px 38px rgba(0,0,0,.5),0 0 32px rgba(201,168,76,.18)}
+.disc-price-grid{gap:12px!important}
+.hub-card .hub-card-photo{border-radius:14px 14px 0 0;overflow:hidden}
+@media(hover:none){.benefit-card:hover,.related-card:hover,.disc-price-card:hover,.rc-price:hover,.hub-card:hover{transform:none}}
+@media(max-width:640px){
+.benefit-card,.related-card{padding:18px 16px!important;border-radius:12px}
+.benefit-title{font-size:20px!important}
+.benefit-text{font-size:14px!important;line-height:1.6!important}
+.rc-price{padding:16px 16px!important;border-radius:12px}
+.rc-price-val{font-size:30px!important}
+.rc-price-tier{font-size:10px!important;margin-bottom:6px!important}
+.rc-price-sub{font-size:11px!important;margin-bottom:8px!important}
+.rc-price p,.rc-price li{font-size:13px!important}
+.rc-price li{padding:3px 0 3px 16px!important}
+.rc-price li::before{top:11px!important}
+.rc-grid3,.rc-grid4,.rc-grid2{gap:10px!important;margin-top:18px!important}
+.rc-grid4.rc-stats{grid-template-columns:1fr 1fr!important}
+.rc-stat{font-size:32px!important}
+.disc-price-card{border-radius:12px}
+.rc-sub-h{font-size:24px!important;margin-top:28px!important}
+}
+</style>
+<style id="pt-gallery-6">/* Nov 2026: 6 studio photos, 3 per row (2 on tablets, 1 on phones) */.gallery-grid{grid-template-columns:repeat(3,1fr)}.gallery-photo{height:300px}@media(max-width:1024px){.gallery-grid{grid-template-columns:1fr 1fr}.gallery-photo{height:260px}}@media(max-width:640px){.gallery-grid{grid-template-columns:1fr}.gallery-photo{height:240px}}</style>
+<style id="gold-3d-heading">/* Metallic 3D gold headings (Nov 2026), like the Maddog Instagram designs. Text stays real text; no extra download */
+.page-h1,.hero-h1,.hero-name,.sec-h,.sec-title{text-shadow:0 2px 0 rgba(0,0,0,.45),0 10px 28px rgba(0,0,0,.65)}
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{color:#D9B65C}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{background:linear-gradient(180deg,#FBEFC2 0%,#EBCB72 26%,#C9A84C 50%,#A07C2C 74%,#E2C068 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;-webkit-box-decoration-break:clone;box-decoration-break:clone;filter:drop-shadow(0 2px 0 rgba(70,48,8,.95)) drop-shadow(0 8px 18px rgba(201,168,76,.22))}
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{padding:.24em 0 .2em;margin:-.24em 0 -.2em}/* room for the gold paint so letter tops/bottoms are never cut off; layout unchanged */
+}
+</style>
+<style id="readability">/* Pre-launch audit (Nov 2026): readable text + same look on iPhone/Android */html{-webkit-text-size-adjust:100%;text-size-adjust:100%}html body .sf-bottom p,html body .sf-bottom p a{color:rgba(245,240,232,.62)!important}html body .snm-sub{color:rgba(245,240,232,.72)!important}html body .snm-sub:hover{color:#c9a84c!important}html body .hours-time.closed{color:rgba(245,240,232,.55)}html body .btn-wa{background:#0E7A3E!important}html body .btn-wa:hover{background:#0B6633!important}html body .rloss,html body .loss-badge{color:#ff9b9b!important}html body .email-sub{color:rgba(8,8,8,.82)!important}html body .nl-left p{color:rgba(8,8,8,.8)!important}html body .pull-quote p{font-weight:300!important}</style>
+<style id="link-colour">.internal-link{color:var(--gold);text-decoration:underline;text-underline-offset:3px}</style>
 </head>
 <body>
 <!-- ══ SITE NAV ══ -->
@@ -410,7 +520,7 @@ footer.site-footer *{box-sizing:border-box !important}
   <div class="site-nav-links">
       <a href="/">Home</a>
       <a href="/amanda">Amanda</a>
-      <div class="nav-has-dropdown"><a href="/recovery">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/wellness-pricing">Pricelist</a></div></div>
+      <div class="nav-has-dropdown"><a href="/recovery">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/recovery">Contrast Therapy</a><a href="/recovery/cold-plunge-ballito">Ice Bath</a><a href="/recovery/infrared-sauna-ballito">Infrared Sauna</a><a href="/recovery/physiotherapy-ballito">Physiotherapy</a><a href="/training/personal-training-ballito#nutrition">PT &amp; Nutrition</a><a href="/recovery#pricing">Pricelist</a></div></div>
       <div class="nav-has-dropdown"><a href="/training" class="active">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu">
         <a href="/training/personal-training-ballito">Personal Training</a>
         <a href="/training/mma-ballito">MMA</a>
@@ -422,13 +532,12 @@ footer.site-footer *{box-sizing:border-box !important}
         <a href="/training/womens-boxing-ballito">Women's Boxing</a>
         <a href="/training/kids-boxing-ballito">Kids Boxing</a>
         <a href="/training/olympic-boxing-ballito">Olympic Boxing</a>
-        <a href="/training/powerlifting-ballito">Powerlifting</a>
+      <a href="/training/rebounding-ballito">Rebounding</a>
       </div></div>
       <a href="/coaches">Coaches</a>
       <a href="/athletes">Athletes</a>
       <a href="/events">Events</a>
       <a href="/contact">Contact</a>
-      <a href="/wellness" class="snl-wellness">✦ Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" target="_blank" rel="noopener">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
@@ -440,7 +549,12 @@ footer.site-footer *{box-sizing:border-box !important}
   <a href="/">Home</a>
   <a href="/amanda">Amanda</a>
   <a href="/recovery">Recovery</a>
-  <a href="/wellness-pricing" class="snm-sub">↳ Pricelist</a>
+  <a href="/recovery" class="snm-sub">↳ Contrast Therapy</a>
+  <a href="/recovery/cold-plunge-ballito" class="snm-sub">↳ Ice Bath</a>
+  <a href="/recovery/infrared-sauna-ballito" class="snm-sub">↳ Infrared Sauna</a>
+  <a href="/recovery/physiotherapy-ballito" class="snm-sub">↳ Physiotherapy</a>
+  <a href="/training/personal-training-ballito#nutrition" class="snm-sub">↳ PT &amp; Nutrition</a>
+  <a href="/recovery#pricing" class="snm-sub">↳ Pricelist</a>
   <a href="/training" class="active">Training</a>
   <a href="/training/personal-training-ballito" class="snm-sub">↳ Personal Training</a>
   <a href="/training/mma-ballito" class="snm-sub">↳ MMA</a>
@@ -452,12 +566,11 @@ footer.site-footer *{box-sizing:border-box !important}
   <a href="/training/womens-boxing-ballito" class="snm-sub">↳ Women's Boxing</a>
   <a href="/training/kids-boxing-ballito" class="snm-sub">↳ Kids Boxing</a>
   <a href="/training/olympic-boxing-ballito" class="snm-sub">↳ Olympic Boxing</a>
-  <a href="/training/powerlifting-ballito" class="snm-sub">↳ Powerlifting</a>
+  <a href="/training/rebounding-ballito" class="snm-sub">↳ Rebounding</a>
   <a href="/coaches">Coaches</a>
   <a href="/athletes">Athletes</a>
   <a href="/events">Events</a>
   <a href="/contact">Contact</a>
-  <a href="/wellness" class="snm-wellness">✦ Wellness &amp; Recovery</a>
   <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="snm-cta" target="_blank" rel="noopener">Book Online</a>
 </div>
 
@@ -573,7 +686,7 @@ footer.site-footer *{box-sizing:border-box !important}
     <h2 class="sec-h">Strength Training<br><em>After 40.</em></h2>
     <p class="body-p" style="max-width:700px">Muscle mass doesn't stay constant with age — research shows adults typically lose a meaningful percentage of muscle mass per decade after 30, and that loss accelerates from your 40s onward. The same applies to bone density: as we age, bones naturally become less dense, raising the risk of fracture and osteoporosis later in life.</p>
     <p class="body-p" style="max-width:700px;margin-top:16px">The research is consistent on what works against both: resistance training. Structured strength work is one of the most effective ways to preserve muscle, protect bone density, and maintain the strength and mobility that make everyday life easier — for men and women alike. It's not about training like you're 20 again. It's about training smart for where your body is now.</p>
-    <ul class="disc-list" style="max-width:700px">
+    <ul class="who-list" style="max-width:700px">
       <li>Preserves and rebuilds muscle mass lost naturally with age</li>
       <li>Supports bone density and helps protect against age-related bone loss</li>
       <li>Improves everyday strength, balance and mobility</li>
@@ -594,7 +707,7 @@ footer.site-footer *{box-sizing:border-box !important}
     <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot loaded" style="height:100%;min-height:480px">
-          <img height="973" width="800" loading="lazy" src="https://www.maddogperformance.co.za/images/b8051987c903059e.jpg" alt="Amanda “Maddog” Lino with a personal training client at Maddog Performance Institute, Ballito" style="object-position:center 30%">
+          <img height="973" width="800" loading="lazy" src="https://www.maddogperformance.co.za/images/b8051987c903059e.jpg" srcset="/images/51faa92dcd91471b.webp 480w, /images/a1b27cf944ef77df.webp 800w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 95vw, 552px" alt="Amanda “Maddog” Lino with a personal training client at Maddog Performance Institute, Ballito" style="object-position:center 30%">
         </div>
       </div>
       <div class="disc-text">
@@ -661,7 +774,7 @@ footer.site-footer *{box-sizing:border-box !important}
         <a href="/contact" class="btn btn-g">Book a Free Consultation</a>
       </div>
       <div class="pt-photo photo-slot loaded" id="pt-steps-p">
-        <img height="1600" width="924" loading="lazy" id="pt-steps-p-img" src="https://www.maddogperformance.co.za/images/f34e637e7d2d0b93.jpg" alt="Personal training coaching session at Maddog Performance Institute" style="object-position: 50% 24.65%; transform: none; transform-origin: 50% 24.65%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1600" width="924" loading="lazy" id="pt-steps-p-img" src="https://www.maddogperformance.co.za/images/f34e637e7d2d0b93.jpg" srcset="/images/442b0839651b8be2.webp 480w, /images/ae71ebb89e22f974.webp 800w, /images/3ca54c5a148dcefd.webp 924w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 528px" alt="Personal training coaching session at Maddog Performance Institute" style="object-position: 50% 24.65%; transform: none; transform-origin: 50% 24.65%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
         <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
       </div>
@@ -675,7 +788,7 @@ footer.site-footer *{box-sizing:border-box !important}
     <div class="disc-grid reverse">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="pt-tristan-p" style="height:100%;min-height:480px">
-          <img height="900" width="1200" loading="lazy" id="pt-tristan-p-img" src="https://www.maddogperformance.co.za/images/af98ead5f5fe8554.jpg" alt="Tristan Botha, Personal Trainer at Maddog Performance Institute, coaching a client">
+          <img height="900" width="1200" loading="lazy" id="pt-tristan-p-img" src="https://www.maddogperformance.co.za/images/af98ead5f5fe8554.jpg" srcset="/images/c1f1bbe14269a089.webp 480w, /images/56fd47912b168507.webp 800w, /images/0bb5295445b756fa.webp 1200w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 95vw, 552px" alt="Tristan Botha, Personal Trainer at Maddog Performance Institute, coaching a client">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
@@ -702,12 +815,12 @@ footer.site-footer *{box-sizing:border-box !important}
 </section>
 
 <!-- ══════════ SECOND COACH — AMANDA ══════════ -->
-<section class="disc-block" id="coach-amanda" style="background:var(--black)">
+<section class="disc-block" id="coach-amanda" style="background:var(--deep)">
   <div style="max-width:1200px;margin:0 auto;padding:0 48px">
     <div class="disc-grid">
       <div class="disc-photo">
         <div class="photo-slot loaded" id="pt-amanda-p" style="height:100%;min-height:480px">
-          <img height="1100" width="900" loading="lazy" id="pt-amanda-p-img" src="https://www.maddogperformance.co.za/images/9dcf497b61a13d23.jpg" alt="Amanda 'Maddog' Lino, Personal Trainer and Head Coach at Maddog Performance Institute" style="object-position:center top">
+          <img height="1100" width="900" loading="lazy" id="pt-amanda-p-img" src="https://www.maddogperformance.co.za/images/9dcf497b61a13d23.jpg" srcset="/images/174662733048e2c9.webp 480w, /images/8404f289e6716ae4.webp 800w, /images/4abd4f3b191518a5.webp 900w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 95vw, 552px" alt="Amanda 'Maddog' Lino, Personal Trainer and Head Coach at Maddog Performance Institute" style="object-position:center top">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
@@ -731,7 +844,7 @@ footer.site-footer *{box-sizing:border-box !important}
           <span class="dkw">Online Programming</span>
         </div>
         <a href="/amanda" class="btn btn-o" style="margin-top:24px">Meet Amanda Lino</a>
-        <div style="margin-top:20px;display:flex;gap:22px;flex-wrap:wrap;font-size:13px;font-weight:600;letter-spacing:.08em"><a href="https://www.instagram.com/amanda_maddog_lino/" target="_blank" rel="noopener me" style="color:var(--gold);padding:12px 0;display:inline-block;text-decoration:none;border-bottom:1px solid var(--gold-dim)">Instagram: @amanda_maddog_lino</a><a href="https://www.facebook.com/Maddoglino/" target="_blank" rel="noopener me" style="color:var(--gold);padding:12px 0;display:inline-block;text-decoration:none;border-bottom:1px solid var(--gold-dim)">Facebook: Amanda “Maddog” Lino</a></div>
+        <div style="margin-top:20px;display:flex;gap:24px;flex-wrap:wrap"><a href="https://www.instagram.com/amanda_maddog_lino/" target="_blank" rel="noopener me" style="color:var(--gold);min-height:44px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.06em"><span style="width:38px;height:38px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(201,168,76,.45);border-radius:50%"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Instagram: </span>@amanda_maddog_lino</a><a href="https://www.facebook.com/Maddoglino/" target="_blank" rel="noopener me" style="color:var(--gold);min-height:44px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.06em"><span style="width:38px;height:38px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(201,168,76,.45);border-radius:50%"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg></span><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Facebook: </span>Amanda “Maddog” Lino</a></div>
       </div>
     </div>
   </div>
@@ -746,14 +859,42 @@ footer.site-footer *{box-sizing:border-box !important}
     <div class="gallery-grid">
       <div class="gallery-photo">
         <div class="photo-slot loaded" id="pt-gallery1-p">
-          <img height="800" width="1200" loading="lazy" id="pt-gallery1-p-img" src="https://www.maddogperformance.co.za/images/15515b848b4bcf0b.jpg" alt="Training session at the Maddog Performance Institute facility" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img height="900" width="1200" loading="lazy" id="pt-gallery1-p-img" src="/images/1e03340cfa4307f2.jpg" srcset="/images/6b3352e05de2cdb1.webp 480w, /images/ccda404183522c22.webp 800w, /images/515a0ec16d6319e1.webp 1200w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 47vw, 357px" alt="The brown personal training studio at Maddog with the Maddog mural, power rack and dumbbells" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
       </div>
       <div class="gallery-photo">
         <div class="photo-slot loaded" id="pt-gallery2-p">
-          <img height="1200" width="679" loading="lazy" id="pt-gallery2-p-img" src="https://www.maddogperformance.co.za/images/1867a9c7e072be16.jpg" alt="Tristan Botha coaching a client at Maddog Performance Institute" style="object-position: 50% 41.9%; transform: none; transform-origin: 50% 41.9%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img height="900" width="1200" loading="lazy" id="pt-gallery2-p-img" src="/images/db36c560ecb34588.jpg" srcset="/images/bc0091ef2e8e1e02.webp 480w, /images/8a90143c40d57f86.webp 800w, /images/d1b8221f3caf2495.webp 1200w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 47vw, 357px" alt="Wide view of the brown personal training studio at Maddog Performance Institute, Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%">
+          <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
+          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+        </div>
+      </div>
+      <div class="gallery-photo">
+        <div class="photo-slot loaded" id="pt-gallery3-p">
+          <img height="900" width="1200" loading="lazy" id="pt-gallery3-p-img" src="/images/f004c38fc5368507.jpg" srcset="/images/06bf8c0a49566135.webp 480w, /images/0be8b6c25979c44e.webp 800w, /images/9f04c8c68df6704b.webp 1200w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 47vw, 357px" alt="Counter and lounge area in the brown personal training studio at Maddog, Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%">
+          <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
+          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+        </div>
+      </div>
+      <div class="gallery-photo">
+        <div class="photo-slot loaded" id="pt-gallery4-p">
+          <img height="900" width="1200" loading="lazy" id="pt-gallery4-p-img" src="/images/af5354be9427fea6.jpg" srcset="/images/a8def9b5bdc53d17.webp 480w, /images/2c28e2bdaea5fe26.webp 800w, /images/ca49bdad763497a2.webp 1200w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 47vw, 357px" alt="The pink personal training studio at Maddog with the Welcome to the Jungle mural" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%">
+          <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
+          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+        </div>
+      </div>
+      <div class="gallery-photo">
+        <div class="photo-slot loaded" id="pt-gallery5-p">
+          <img height="900" width="1200" loading="lazy" id="pt-gallery5-p-img" src="/images/f2aaa1fc59a4d887.jpg" srcset="/images/14937cfcd4740063.webp 480w, /images/b25f8a033d8e3fad.webp 800w, /images/7da789e880e6b42a.webp 1200w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 47vw, 357px" alt="Power racks and the pink mural in the pink personal training studio at Maddog, Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%">
+          <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
+          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
+        </div>
+      </div>
+      <div class="gallery-photo">
+        <div class="photo-slot loaded" id="pt-gallery6-p">
+          <img height="900" width="1200" loading="lazy" id="pt-gallery6-p-img" src="/images/9071d83c863611e2.jpg" srcset="/images/70349180c2390dc7.webp 480w, /images/6938d0fd6dd41f08.webp 800w, /images/82be882c1e7ec536.webp 1200w" sizes="(max-width: 600px) 89vw, (max-width: 1024px) 47vw, 357px" alt="Dumbbells and power racks in the pink personal training studio at Maddog Performance Institute" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
@@ -762,16 +903,20 @@ footer.site-footer *{box-sizing:border-box !important}
   </div>
 </section>
 
-<!-- TRANSFORMATION CHALLENGE -->
-<section class="disc-block" id="transformation-challenge">
-  <div class="si" style="text-align:center;max-width:820px">
-    <div class="sec-label" style="justify-content:center">Currently Running</div>
-    <h2 class="sec-h">Transformation<br><em>Challenge.</em></h2>
-    <p class="body-p">Our Transformation Challenge is a structured personal training programme currently underway at Maddog — built to deliver real, measurable results within a set timeframe, coached and tracked every step of the way.</p>
-    <div class="challenge-box">
-      <p>Results and client transformations from the current round will be published here once it concludes. In the meantime, ask us about joining the next intake.</p>
-      <a href="/contact" class="btn btn-g">Enquire About the Challenge</a>
-    </div>
+<!-- NUTRITION -->
+<section class="disc-block" id="nutrition" style="background:var(--deep)">
+  <div class="si">
+    <div class="sec-label">Nutrition Coaching</div>
+    <h2 class="sec-h">Nutrition That Supports<br><em>Your Training.</em></h2>
+    <p class="body-p" style="max-width:760px">Training is only half the work. Our personal trainers can add nutrition coaching to your programme, so what you eat supports the effort you put in, whether your goal is building strength, losing fat, or having more energy for your sessions and your day.</p>
+    <ul class="who-list" style="max-width:760px;margin-bottom:24px">
+      <li>Nutrition coaching from your personal trainer, alongside your training programme</li>
+      <li>Built around your own goals: strength, fat loss, energy or performance</li>
+      <li>Practical guidance you can follow in everyday life</li>
+      <li>Ask about it at your free consultation</li>
+    </ul>
+    <p class="body-p" style="max-width:760px">Pair your training with recovery too: our <a href="/recovery" style="color:var(--gold)">ice bath, infrared sauna and contrast therapy</a> and <a href="/recovery/physiotherapy-ballito" style="color:var(--gold)">sports physiotherapy with Robin JJ Williams</a> are all under the same roof.</p>
+    <a href="/contact" class="btn btn-g" style="margin-top:20px">Book Your Free Consultation</a>
   </div>
 </section>
 
@@ -843,8 +988,8 @@ footer.site-footer *{box-sizing:border-box !important}
         <div class="faq-a">Personal training starts from R1,800 per month for 2 sessions a week, up to R4,200 per month for 5 — each package includes a custom app program, plus a R200 drop-in rate for a single session. Your first consultation is free.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">What is the Transformation Challenge?</div>
-        <div class="faq-a">Our Transformation Challenge is a structured personal training programme currently running at Maddog. Full results and client stories will be published here once the current round concludes.</div>
+        <div class="faq-q">Do your personal trainers offer nutrition coaching?</div>
+        <div class="faq-a">Yes. Our personal trainers can add nutrition coaching to your training programme, with guidance on eating to support your goals, whether that is building strength, losing fat or having more energy for your sessions. Ask about it at your free consultation.</div>
       </div>
     </div>
   </div>
@@ -856,9 +1001,9 @@ footer.site-footer *{box-sizing:border-box !important}
     <div class="sec-label">Keep Exploring</div>
     <h2 class="sec-h">Related <em>Training.</em></h2>
     <div class="related-grid">
-      <a href="/training/powerlifting-ballito" class="related-card">
-        <div class="related-tag">Strength Focus</div>
-        <div class="related-title">Powerlifting in Ballito</div>
+      <a href="/recovery" class="related-card">
+        <div class="related-tag">Recover Smarter</div>
+        <div class="related-title">Ice Bath &amp; Sauna in Ballito</div>
       </a>
       <a href="/training" class="related-card">
         <div class="related-tag">Explore All Disciplines</div>
@@ -868,9 +1013,9 @@ footer.site-footer *{box-sizing:border-box !important}
         <div class="related-tag">Meet the Team</div>
         <div class="related-title">Our Coaching Staff</div>
       </a>
-      <a href="/wellness-personal-training-ballito" class="related-card">
-        <div class="related-tag">Nutrition &amp; Wellness</div>
-        <div class="related-title">Training Meets Nutrition</div>
+      <a href="/recovery/physiotherapy-ballito" class="related-card">
+        <div class="related-tag">Robin JJ Williams</div>
+        <div class="related-title">Sports Physiotherapy in Ballito</div>
       </a>
     </div>
   </div>
@@ -920,7 +1065,7 @@ footer.site-footer *{box-sizing:border-box !important}
       <a href="/training/boxing-ballito">Boxing</a>
       <a href="/training/kickboxing-ballito">Kickboxing</a>
       <a href="/training/personal-training-ballito">Personal Training</a>
-      <a href="/training/powerlifting-ballito">Powerlifting</a>
+      <a href="/training/rebounding-ballito">Rebounding</a>
     </div>
     <div class="sf-col">
       <h3>About</h3>
@@ -994,7 +1139,7 @@ function swapPhoto(slotId) {
       window._photoStore[slotId] = dataUrl;
       var img  = document.getElementById(slotId + '-img');
       var slot = document.getElementById(slotId);
-      if (img) { img.setAttribute('src', dataUrl); img.src = dataUrl; }
+      if (img) { img.removeAttribute('srcset');img.removeAttribute('sizes');img.setAttribute('src', dataUrl); img.src = dataUrl; }
       if (slot) slot.classList.add('loaded');
       enableReposition(slotId);
       var banner = document.getElementById('eb');

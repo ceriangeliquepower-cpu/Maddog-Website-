@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<!-- Google tag (gtag.js): its script loads just after the page has appeared, so it doesn't slow the first view -->
+<!-- Google tag (gtag.js): its script loads on the visitor's first scroll/tap/key, or 5 s after the page has loaded, so it never slows the page on phones -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-PR35V75DZH');window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);},1500);});
+  gtag('config', 'G-PR35V75DZH');(function(){var done=0;function L(){if(done)return;done=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);}['scroll','pointerdown','touchstart','keydown'].forEach(function(e){window.addEventListener(e,L,{once:true,passive:true});});window.addEventListener('load',function(){setTimeout(L,5000);});})();
 </script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,19 +14,21 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
 <title>Gym in Ballito | Maddog Performance Institute</title>
-<meta name="description" content="Ballito’s world-champion led gym on the KZN North Coast: personal training, MMA, BJJ, boxing, kickboxing, wrestling and powerlifting. Your first class is free.">
+<meta name="description" content="World-champion led gym in Ballito: personal training, MMA, BJJ, boxing, kickboxing and wrestling, plus an ice bath, sauna and physio. Your first class is free.">
 <link rel="canonical" href="https://www.maddogperformance.co.za/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gym in Ballito | Maddog Performance Institute">
-<meta property="og:description" content="Ballito’s world-champion led gym on the KZN North Coast: personal training, MMA, BJJ, boxing, kickboxing, wrestling and powerlifting. Your first class is free.">
+<meta property="og:description" content="World-champion led gym in Ballito: personal training, MMA, BJJ, boxing, kickboxing and wrestling, plus an ice bath, sauna and physio. Your first class is free.">
 <meta property="og:url" content="https://www.maddogperformance.co.za/">
 <meta property="og:site_name" content="Maddog Performance Institute">
 <meta property="og:image" content="https://www.maddogperformance.co.za/og-image.jpg">
 <meta property="og:locale" content="en_ZA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gym in Ballito | Maddog Performance Institute">
-<meta name="twitter:description" content="Ballito’s world-champion led gym on the KZN North Coast: personal training, MMA, BJJ, boxing, kickboxing, wrestling and powerlifting. Your first class is free.">
+<meta name="twitter:description" content="World-champion led gym in Ballito: personal training, MMA, BJJ, boxing, kickboxing and wrestling, plus an ice bath, sauna and physio. Your first class is free.">
 <meta name="twitter:image" content="https://www.maddogperformance.co.za/og-image.jpg">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="ZA-KZN">
@@ -40,7 +42,7 @@
       "@id": "https://www.maddogperformance.co.za/#gym",
       "name": "Maddog Performance Institute",
       "url": "https://www.maddogperformance.co.za",
-      "description": "World-champion led MMA, BJJ, Boxing, Kickboxing, Powerlifting and Personal Training in Ballito, KZN North Coast",
+      "description": "World-champion led MMA, BJJ, Boxing, Kickboxing, Wrestling and Personal Training in Ballito, KZN North Coast, with a recovery suite and sports physiotherapy",
       "telephone": "+27634421690",
       "email": "info@maddogperformance.co.za",
       "image": "https://www.maddogperformance.co.za/og-image.jpg",
@@ -127,7 +129,7 @@
         "Brazilian Jiu-Jitsu",
         "Boxing",
         "Kickboxing",
-        "Powerlifting"
+        "Rebounding"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -169,14 +171,6 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Powerlifting",
-              "url": "https://www.maddogperformance.co.za/training/powerlifting-ballito"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
               "name": "Personal Training",
               "url": "https://www.maddogperformance.co.za/training/personal-training-ballito"
             }
@@ -185,7 +179,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Sports Recovery Suite",
+              "name": "Recovery Suite: Ice Bath, Infrared Sauna & Sports Physiotherapy",
               "url": "https://www.maddogperformance.co.za/recovery"
             }
           },
@@ -195,6 +189,14 @@
               "@type": "Service",
               "name": "Wrestling",
               "url": "https://www.maddogperformance.co.za/training/wrestling-ballito"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Rebounding",
+              "url": "https://www.maddogperformance.co.za/training/rebounding-ballito"
             }
           }
         ]
@@ -730,6 +732,46 @@ html { -webkit-text-size-adjust: 100%; }
 .photo-slot{cursor:default!important}
 </style><style>/* Homepage: featured discipline card (Personal Training) spans the full row (photo left, text right) */.hub-card-wide{grid-column:1/-1;flex-direction:row}.hub-card-wide .hub-card-photo{width:40%;height:auto;min-height:260px;flex-shrink:0}.hub-card-wide .hub-card-body{justify-content:center;padding:32px 40px}.hub-card-wide .hub-card-desc{flex:0 0 auto}@media(max-width:640px){.hub-card-wide{flex-direction:column}.hub-card-wide .hub-card-photo{width:100%;height:220px;min-height:0}.hub-card-wide .hub-card-body{padding:22px 24px 26px}}</style>
 <style>/* Photo-slot editor labels live in CSS so search engines don't read them as page text */.slot-icon::before,.slot-label::before{content:attr(data-t)}</style>
+<style id="premium-cards">/* Premium cards (Nov 2026): rounded, soft gold gradient, depth, lift + gold glow on hover; compact on phones */
+.benefit-card,.related-card,.disc-price-card,.rc-price,.hub-card{border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(160deg,rgba(201,168,76,.09) 0%,rgba(255,255,255,.02) 38%,rgba(255,255,255,0) 70%),var(--card,#161616);border:1px solid rgba(201,168,76,.18);box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 12px 32px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s,background .35s}
+.benefit-card::before,.related-card::before,.disc-price-card::before,.rc-price::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.7),transparent);opacity:.55;transition:opacity .35s}
+.benefit-card:hover,.related-card:hover,.disc-price-card:hover,.rc-price:hover,.hub-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.75);background:linear-gradient(160deg,rgba(201,168,76,.16) 0%,rgba(201,168,76,.04) 45%,rgba(255,255,255,0) 75%),var(--card,#161616);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 18px 44px rgba(0,0,0,.55),0 0 0 1px rgba(201,168,76,.25),0 10px 40px rgba(201,168,76,.22)}
+.benefit-card:hover::before,.related-card:hover::before,.disc-price-card:hover::before,.rc-price:hover::before{opacity:1}
+.rc-price.best{border-color:rgba(201,168,76,.8);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 14px 38px rgba(0,0,0,.5),0 0 32px rgba(201,168,76,.18)}
+.disc-price-grid{gap:12px!important}
+.hub-card .hub-card-photo{border-radius:14px 14px 0 0;overflow:hidden}
+@media(hover:none){.benefit-card:hover,.related-card:hover,.disc-price-card:hover,.rc-price:hover,.hub-card:hover{transform:none}}
+@media(max-width:640px){
+.benefit-card,.related-card{padding:18px 16px!important;border-radius:12px}
+.benefit-title{font-size:20px!important}
+.benefit-text{font-size:14px!important;line-height:1.6!important}
+.rc-price{padding:16px 16px!important;border-radius:12px}
+.rc-price-val{font-size:30px!important}
+.rc-price-tier{font-size:10px!important;margin-bottom:6px!important}
+.rc-price-sub{font-size:11px!important;margin-bottom:8px!important}
+.rc-price p,.rc-price li{font-size:13px!important}
+.rc-price li{padding:3px 0 3px 16px!important}
+.rc-price li::before{top:11px!important}
+.rc-grid3,.rc-grid4,.rc-grid2{gap:10px!important;margin-top:18px!important}
+.rc-grid4.rc-stats{grid-template-columns:1fr 1fr!important}
+.rc-stat{font-size:32px!important}
+.disc-price-card{border-radius:12px}
+.rc-sub-h{font-size:24px!important;margin-top:28px!important}
+}
+</style>
+<style id="hero-fit">/* Nov 2026: on short laptop screens the hero grows instead of cutting off the buttons */@media(min-width:1025px){.hero{height:auto!important;max-height:none!important;min-height:max(580px,100svh)!important}}</style>
+<style id="mobile-align">/* Nov 2026 (user): on phones every homepage section lines up the same way (left), and text blocks use the full width */@media(max-width:768px){main .sec-label,main .sec-title,main h2{text-align:left!important;justify-content:flex-start!important}main .sec-title + p,main .sec-label + .sec-title + p,main .si > p{text-align:left!important;margin-left:0!important;margin-right:0!important}main div[style*="text-align:center"]{text-align:left!important}main .mod-text{padding:32px 20px!important;border-right:none!important}main .amanda-text-col{padding:32px 20px!important}}</style>
+<style id="gold-3d-heading">/* Metallic 3D gold headings (Nov 2026), like the Maddog Instagram designs. Text stays real text; no extra download */
+.page-h1,.hero-h1,.hero-name,.sec-h,.sec-title{text-shadow:0 2px 0 rgba(0,0,0,.45),0 10px 28px rgba(0,0,0,.65)}
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{color:#D9B65C}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{background:linear-gradient(180deg,#FBEFC2 0%,#EBCB72 26%,#C9A84C 50%,#A07C2C 74%,#E2C068 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;-webkit-box-decoration-break:clone;box-decoration-break:clone;filter:drop-shadow(0 2px 0 rgba(70,48,8,.95)) drop-shadow(0 8px 18px rgba(201,168,76,.22))}
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{padding:.24em 0 .2em;margin:-.24em 0 -.2em}/* room for the gold paint so letter tops/bottoms are never cut off; layout unchanged */
+}
+</style>
+<style id="facility-studio">/* Facility = 6 photos of the whole facility, 3 x 2 (Nov 2026) */.facility .facility-photos{grid-template-columns:repeat(3,1fr)!important;grid-template-rows:repeat(2,240px)!important}.facility .facility-photos .photo-slot{height:100%!important}@media(max-width:768px){.facility .facility-photos{grid-template-columns:1fr 1fr!important;grid-template-rows:repeat(3,170px)!important}}@media(max-width:480px){.facility .facility-photos{grid-template-columns:1fr 1fr!important;grid-template-rows:repeat(3,130px)!important}}</style>
+<style id="mobile-pt-gap">/* phones: smaller black gap between the running strip and Personal Training (was 124px) */@media(max-width:768px){html body .pt-spacer{height:12px!important}html body .pt-section .pt-grid{margin-top:0!important}}</style>
+<style id="readability">/* Pre-launch audit (Nov 2026): readable text + same look on iPhone/Android */html{-webkit-text-size-adjust:100%;text-size-adjust:100%}html body .sf-bottom p,html body .sf-bottom p a{color:rgba(245,240,232,.62)!important}html body .snm-sub{color:rgba(245,240,232,.72)!important}html body .snm-sub:hover{color:#c9a84c!important}html body .hours-time.closed{color:rgba(245,240,232,.55)}html body .btn-wa{background:#0E7A3E!important}html body .btn-wa:hover{background:#0B6633!important}html body .rloss,html body .loss-badge{color:#ff9b9b!important}html body .email-sub{color:rgba(8,8,8,.82)!important}html body .nl-left p{color:rgba(8,8,8,.8)!important}html body .pull-quote p{font-weight:300!important}</style>
 </head>
 <body data-pid="home">
 <!-- ══ SITE NAV ══ -->
@@ -740,13 +782,12 @@ html { -webkit-text-size-adjust: 100%; }
   <div class="site-nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="amanda.html">Amanda</a>
-      <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a><a href="wellness.html" style="color:#8BAFC7;border-top:1px solid rgba(201,168,76,.15);margin-top:4px;padding-top:10px">✦ Health &amp; Wellness Clinic</a></div></div>
-      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/training/personal-training-ballito">Personal Training</a><a href="/training/mma-ballito">MMA</a><a href="/training/bjj-ballito">BJJ</a><a href="/training/kids-bjj-ballito">Kids BJJ</a><a href="/training/kickboxing-ballito">Kickboxing</a><a href="/training/wrestling-ballito">Wrestling</a><a href="/training/boxing-ballito">Boxing</a><a href="/training/womens-boxing-ballito">Women's Boxing</a><a href="/training/kids-boxing-ballito">Kids Boxing</a><a href="/training/olympic-boxing-ballito">Olympic Boxing</a><a href="/training/powerlifting-ballito">Powerlifting</a></div></div>
+      <div class="nav-has-dropdown"><a href="/recovery">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/recovery">Contrast Therapy</a><a href="/recovery/cold-plunge-ballito">Ice Bath</a><a href="/recovery/infrared-sauna-ballito">Infrared Sauna</a><a href="/recovery/physiotherapy-ballito">Physiotherapy</a><a href="/training/personal-training-ballito#nutrition">PT &amp; Nutrition</a><a href="/recovery#pricing">Pricelist</a></div></div>
+      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/training/personal-training-ballito">Personal Training</a><a href="/training/mma-ballito">MMA</a><a href="/training/bjj-ballito">BJJ</a><a href="/training/kids-bjj-ballito">Kids BJJ</a><a href="/training/kickboxing-ballito">Kickboxing</a><a href="/training/wrestling-ballito">Wrestling</a><a href="/training/boxing-ballito">Boxing</a><a href="/training/womens-boxing-ballito">Women's Boxing</a><a href="/training/kids-boxing-ballito">Kids Boxing</a><a href="/training/olympic-boxing-ballito">Olympic Boxing</a><a href="/training/rebounding-ballito">Rebounding</a></div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
-      <a href="wellness.html" class="snl-wellness">✦ Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" target="_blank" rel="noopener">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
@@ -757,15 +798,20 @@ html { -webkit-text-size-adjust: 100%; }
 <div class="site-nav-mobile" id="siteNavMob">
   <a href="index.html" class="active">Home</a>
   <a href="amanda.html">Amanda</a>
-  <a href="recovery.html">Recovery</a>
-  <a href="wellness-pricing.html" class="snm-sub">↳ Pricelist</a>
+  <a href="/recovery">Recovery</a>
+  <a href="/recovery" class="snm-sub">↳ Contrast Therapy</a>
+  <a href="/recovery/cold-plunge-ballito" class="snm-sub">↳ Ice Bath</a>
+  <a href="/recovery/infrared-sauna-ballito" class="snm-sub">↳ Infrared Sauna</a>
+  <a href="/recovery/physiotherapy-ballito" class="snm-sub">↳ Physiotherapy</a>
+  <a href="/training/personal-training-ballito#nutrition" class="snm-sub">↳ PT &amp; Nutrition</a>
+  <a href="/recovery#pricing" class="snm-sub">↳ Pricelist</a>
   <a href="training.html">Training</a>
-  <a href="/training/personal-training-ballito" class="snm-sub">↳ Personal Training</a><a href="/training/mma-ballito" class="snm-sub">↳ MMA</a><a href="/training/bjj-ballito" class="snm-sub">↳ BJJ</a><a href="/training/kids-bjj-ballito" class="snm-sub">↳ Kids BJJ</a><a href="/training/kickboxing-ballito" class="snm-sub">↳ Kickboxing</a><a href="/training/wrestling-ballito" class="snm-sub">↳ Wrestling</a><a href="/training/boxing-ballito" class="snm-sub">↳ Boxing</a><a href="/training/womens-boxing-ballito" class="snm-sub">↳ Women's Boxing</a><a href="/training/kids-boxing-ballito" class="snm-sub">↳ Kids Boxing</a><a href="/training/olympic-boxing-ballito" class="snm-sub">↳ Olympic Boxing</a><a href="/training/powerlifting-ballito" class="snm-sub">↳ Powerlifting</a>
+  <a href="/training/personal-training-ballito" class="snm-sub">↳ Personal Training</a><a href="/training/mma-ballito" class="snm-sub">↳ MMA</a><a href="/training/bjj-ballito" class="snm-sub">↳ BJJ</a><a href="/training/kids-bjj-ballito" class="snm-sub">↳ Kids BJJ</a><a href="/training/kickboxing-ballito" class="snm-sub">↳ Kickboxing</a><a href="/training/wrestling-ballito" class="snm-sub">↳ Wrestling</a><a href="/training/boxing-ballito" class="snm-sub">↳ Boxing</a><a href="/training/womens-boxing-ballito" class="snm-sub">↳ Women's Boxing</a><a href="/training/kids-boxing-ballito" class="snm-sub">↳ Kids Boxing</a><a href="/training/olympic-boxing-ballito" class="snm-sub">↳ Olympic Boxing</a>
+  <a href="/training/rebounding-ballito" class="snm-sub">↳ Rebounding</a>
   <a href="coaches.html">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
-  <a href="wellness.html" class="snm-wellness">✦ Wellness &amp; Recovery</a>
   <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="snm-cta" target="_blank" rel="noopener">Book Online</a>
 </div>
 <script>
@@ -794,7 +840,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
   <div class="hero-left">
     <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Maddog Performance Institute · Ballito</div>
     <h1 class="hero-h1">Ballito’s Only World-Champion Led<br><em>Performance &amp; Recovery Gym.</em></h1>
-    <p class="hero-sub">World-champion led training in MMA, BJJ, Boxing, Kickboxing, Powerlifting &amp; Personal Training. Based in Ballito — built for serious athletes and complete beginners alike.</p>
+    <p class="hero-sub">World-champion led training in MMA, BJJ, Boxing, Kickboxing, Wrestling &amp; Personal Training. Based in Ballito — built for serious athletes and complete beginners alike.</p>
     <div class="hero-btns">
       <a href="/training/personal-training-ballito" class="btn btn-g">Personal Training</a>
       <a href="training.html" class="btn btn-o">Explore Disciplines</a>
@@ -813,20 +859,20 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="cred-item">2× EFC World Champion</div>
     <div class="cred-item">IMMAF World Champion</div>
     <div class="cred-item">World-Class Coaching · Ballito</div>
-    <div class="cred-item">MMA · BJJ · Boxing · Kickboxing · Powerlifting</div>
+    <div class="cred-item">MMA · BJJ · Boxing · Kickboxing · Wrestling</div>
     <div class="cred-item">KZN North Coast</div>
     <div class="cred-item">Beginners Welcome</div>
     <div class="cred-item">First Class Free</div>
     <div class="cred-item">2× EFC World Champion</div>
     <div class="cred-item">IMMAF World Champion</div>
     <div class="cred-item">World-Class Coaching · Ballito</div>
-    <div class="cred-item">MMA · BJJ · Boxing · Kickboxing · Powerlifting</div>
+    <div class="cred-item">MMA · BJJ · Boxing · Kickboxing · Wrestling</div>
     <div class="cred-item">KZN North Coast</div>
     <div class="cred-item">Beginners Welcome</div>
     <div class="cred-item">First Class Free</div>
   </div>
 </div>
-<div style="height:48px;background:var(--black)"></div>
+<div class="pt-spacer" style="height:48px;background:var(--black)"></div>
 
 <!-- ── PERSONAL TRAINING ── -->
 <section class="pt-section">
@@ -847,7 +893,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <a href="/training/personal-training-ballito" class="btn btn-o" style="margin-left:10px">Personal Training →</a>
       </div>
       <div class="pt-photo photo-slot loaded" id="ptPhoto">
-        <img height="931" width="1400" loading="lazy" id="ptPhoto-img" src="https://www.maddogperformance.co.za/images/412123c4cb7e2c6e.jpg" alt="Personal training session at Maddog Performance Institute" style="position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;display:block!important;z-index:1;">
+        <img height="931" width="1400" loading="lazy" id="ptPhoto-img" src="https://www.maddogperformance.co.za/images/412123c4cb7e2c6e.jpg" srcset="/images/9fdb93e63ac7c6b5.webp 480w, /images/22bad7d1ab4abd66.webp 800w, /images/22dc33a47f24df96.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 532px" alt="Personal training session at Maddog Performance Institute" style="position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;display:block!important;z-index:1;">
         <div class="pt-photo-overlay">
           <span>📸</span>
           <span>Click to upload photo</span>
@@ -863,33 +909,33 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="who-grid">
       <div class="who-text-col">
         <div class="sec-label">Who We Are</div>
-        <h2 class="sec-title">Not Just a Gym.<br>A Performance Institute.</h2>
+        <h2 class="sec-title">Not Just a Gym.<br><em>A Performance Institute.</em></h2>
         <p>Maddog Performance Institute is the KZN North Coast’s premier MMA, combat sports and performance training facility. Founded by 2× EFC World Champion Amanda “Maddog” Lino, every session is held to world-champion standards.</p>
         <p>Whether you’re stepping into a gym for the first time or preparing for your next fight, we meet you where you are — and push you further than you thought possible.</p>
         <div class="who-stats">
           <div><div class="ws-num">2×</div><div class="ws-label">EFC World Champion</div></div>
-          <div><div class="ws-num">6</div><div class="ws-label">Disciplines Offered</div></div>
+          <div><div class="ws-num">7</div><div class="ws-label">Disciplines Offered</div></div>
           <div><div class="ws-num">10+</div><div class="ws-label">Years Coaching</div></div>
           </div>
       </div>
       <div class="who-photos">
         <div class="photo-slot wp1 loaded" id="wp1" style="height:100%">
-          <img height="1400" width="1050" loading="lazy" id="wp1-img" src="https://www.maddogperformance.co.za/images/a219ee3f73ca1c5c.jpg" alt="MMA training at Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 336px; height: 448px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
+          <img height="1200" width="900" loading="lazy" id="wp1-img" src="/images/ce29676b4162fbaf.jpg" srcset="/images/13fc2d6ea9d6a732.webp 480w, /images/7241310082889443.webp 800w, /images/b932372841f64a2c.webp 900w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 252px" alt="Rebounding class with instructor Thalia De Beer at Maddog Performance Institute, Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 40%">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
         <div class="photo-slot loaded" id="wp2" style="height:100%">
-          <img height="1400" width="931" loading="lazy" id="wp2-img" src="https://www.maddogperformance.co.za/images/45a4345943967f7f.jpg" alt="BJJ training at Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 252px; height: 378.6px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
+          <img height="1400" width="931" loading="lazy" id="wp2-img" src="https://www.maddogperformance.co.za/images/45a4345943967f7f.jpg" srcset="/images/e1cac14130c3f65c.webp 480w, /images/2e6c50c7c1fa4899.webp 798w" sizes="(max-width: 600px) 65vw, (max-width: 1024px) 33vw, 252px" alt="BJJ training at Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 252px; height: 378.6px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
         <div class="photo-slot loaded" id="wp3" style="height:100%">
-          <img height="536" width="800" loading="lazy" id="wp3-img" src="https://www.maddogperformance.co.za/images/2e301ddfcb9ab5f1.jpg" alt="Kickboxing training at Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
+          <img height="536" width="800" loading="lazy" id="wp3-img" src="https://www.maddogperformance.co.za/images/2e301ddfcb9ab5f1.jpg" srcset="/images/caa10a38e19eb390.webp 480w, /images/f1872d81a2da159e.webp 800w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 252px" alt="Kickboxing training at Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
         <div class="photo-slot wp4 loaded" id="wp4" style="height:100%">
-          <img height="1500" width="1000" loading="lazy" id="wp4-img" src="https://www.maddogperformance.co.za/images/9bccb49c82990043.jpg" alt="Strength training at Maddog Performance Institute" style="display:block!important;width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
+          <img height="900" width="1200" loading="lazy" id="wp4-img" src="/images/fc396301406e4c77.jpg" srcset="/images/10eef4fa751c8760.webp 480w, /images/f43901e158e8f252.webp 800w, /images/a131edb65e9c855f.webp 1200w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 252px" alt="The Maddog coaching team in front of the Maddog wall at Maddog Performance Institute, Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 45%">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
@@ -902,7 +948,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 <section class="pillars">
   <div class="si">
     <div class="sec-label" style="text-align:center">What We Stand For</div>
-    <h2 class="sec-title" style="text-align:center">The Maddog Standard.</h2>
+    <h2 class="sec-title" style="text-align:center">The Maddog <em>Standard.</em></h2>
     <div class="pillar-grid">
       <div class="pillar" data-num="01">
         <span class="pillar-icon">🥊</span>
@@ -935,7 +981,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="amanda-grid">
       <div class="amanda-photo-col">
         <div class="photo-slot loaded" id="amandaHome">
-          <img height="1600" width="1201" loading="lazy" id="amandaHome-img" src="https://www.maddogperformance.co.za/images/c225b247befbdf10.jpg" alt="Amanda Lino, 2x EFC World Champion and Head Coach at Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 552px; height: 735.4px; transform: translate(calc(-50% + 0px), calc(-50% - 29.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
+          <img height="1600" width="1201" loading="lazy" id="amandaHome-img" src="https://www.maddogperformance.co.za/images/c225b247befbdf10.jpg" srcset="/images/94d3912967aba79c.webp 480w, /images/a2c4ac74252b63c8.webp 800w, /images/2a892e6abe473fda.webp 901w" sizes="(max-width: 600px) 142vw, (max-width: 1024px) 72vw, 552px" alt="Amanda Lino, 2x EFC World Champion and Head Coach at Maddog Performance Institute" style="transform-origin: center center; z-index: 1; width: 552px; height: 735.4px; transform: translate(calc(-50% + 0px), calc(-50% - 29.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         </div>
@@ -962,30 +1008,30 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="facility-header">
       <div class="facility-text">
         <div class="sec-label">The Facility</div>
-        <h2 class="sec-title">Train Hard, Recover Smarter,<br>Perform Better.</h2>
+        <h2 class="sec-title">Train Hard, Recover Smarter,<br><em>Perform Better.</em></h2>
         <p>State-of-the-art training equipment, dedicated mat areas, a fully equipped gym, and a premium recovery centre — all under one roof in Ballito. Come join us at 22 Sandra Road, Balvista Centre, Ballito.</p>
       </div>
       <div class="facility-features">
         <div class="ff-item">Full-size MMA &amp; BJJ mats</div>
         <div class="ff-item">Boxing &amp; Kickboxing ring</div>
         <div class="ff-item">Strength &amp; conditioning gym</div>
-        <div class="ff-item">Recovery &amp; wellness suite</div>
+        <div class="ff-item">Recovery suite: ice bath, sauna &amp; physio</div>
         <div class="ff-item">22 Sandra Road, Balvista Centre, Ballito</div>
       </div>
     </div>
-    <div class="facility-photos" style="display:grid!important;grid-template-columns:repeat(3,1fr)!important;grid-template-rows:repeat(2,200px)!important;gap:6px!important;width:100%!important;"><div class="photo-slot loaded" id="fac1" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="1086" width="1448" loading="lazy" id="fac1-img" src="https://www.maddogperformance.co.za/images/cdacfad3b11257c4.jpg" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 1.1px), calc(-50% - 10.2px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac2" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="931" width="1400" loading="lazy" id="fac2-img" src="https://www.maddogperformance.co.za/images/9550470522286454.jpg" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 242.3px; transform: translate(calc(-50% + 1.1px), calc(-50% - 20.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac3" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="1050" width="1400" loading="lazy" id="fac3-img" src="https://www.maddogperformance.co.za/images/e91bbdbd1a6b0bc0.jpg" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac4" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="1050" width="1400" loading="lazy" id="fac4-img" src="https://www.maddogperformance.co.za/images/8d62424f1e881b0a.jpg" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac5" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="1050" width="1400" loading="lazy" id="fac5-img" src="https://www.maddogperformance.co.za/images/84fd259bb53b62c3.jpg" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac6" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="1050" width="1400" loading="lazy" id="fac6-img" src="https://www.maddogperformance.co.za/images/92990ad524a9e7f0.jpg" alt="Maddog Facility" style="transform-origin: center center; z-index: 1; width: 364px; height: 273px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+    <div class="facility-photos" style="display:grid!important;gap:6px!important;width:100%!important;"><div class="photo-slot loaded" id="fac1" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="900" width="1200" loading="lazy" id="fac1-img" src="/images/c1c0130b0b9ef9c9.jpg" srcset="/images/a6520d08ea3171a6.webp 480w, /images/b458f8e09d85abf0.webp 800w, /images/2baca7d2ba592866.webp 1200w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 364px" alt="Boxing ring and heavy bags at Maddog Performance Institute in Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac2" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="900" width="1200" loading="lazy" id="fac2-img" src="https://www.maddogperformance.co.za/images/8d62424f1e881b0a.jpg" srcset="/images/9948c9e7c5fbf868.webp 480w, /images/d2321a40d359f149.webp 800w, /images/3c9f0d56c6f2ebcf.webp 1200w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 364px" alt="Matted grappling area for BJJ, MMA and wrestling at Maddog Performance Institute" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac3" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="900" width="1200" loading="lazy" id="fac3-img" src="https://www.maddogperformance.co.za/images/84fd259bb53b62c3.jpg" srcset="/images/651260e5f52bca70.webp 480w, /images/c362c5665107c279.webp 800w, /images/afe0a696d0adcb83.webp 1200w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 364px" alt="Main training hall with heavy bags and mats at Maddog Performance Institute" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac4" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="900" width="1200" loading="lazy" id="fac4-img" src="/images/1e03340cfa4307f2.jpg" srcset="/images/6b3352e05de2cdb1.webp 480w, /images/ccda404183522c22.webp 800w, /images/515a0ec16d6319e1.webp 1200w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 364px" alt="The brown personal training studio at Maddog with the Maddog mural, power rack and dumbbells" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac5" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="900" width="1200" loading="lazy" id="fac5-img" src="/images/f2aaa1fc59a4d887.jpg" srcset="/images/14937cfcd4740063.webp 480w, /images/b25f8a033d8e3fad.webp 800w, /images/7da789e880e6b42a.webp 1200w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 364px" alt="The pink personal training studio at Maddog with power racks and the pink mural" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div><div class="photo-slot loaded" id="fac6" style="position:relative;overflow:hidden;height:200px;display:block;"><img height="900" width="1200" loading="lazy" id="fac6-img" src="https://www.maddogperformance.co.za/images/92990ad524a9e7f0.jpg" srcset="/images/334e716985d0fe95.webp 480w, /images/74dd4ced1d8865c3.webp 800w, /images/45930573977baf13.webp 1200w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 46vw, 364px" alt="Power racks and Olympic weight plates at Maddog Performance Institute" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
   </div>
 </section>
 <!-- ── DISCIPLINES ── -->
 <section class="disciplines-sec">
   <div class="si">
     <div class="sec-label" style="text-align:center">Explore Training</div>
-    <h2 class="sec-title" style="text-align:center">Seven Disciplines.<br>One World-Champion Team.</h2>
+    <h2 class="sec-title" style="text-align:center">Seven Disciplines.<br><em>One World-Champion Team.</em></h2>
     <p style="max-width:640px;margin:0 auto;text-align:center;font-size:15px;font-weight:300;color:var(--white-dim);line-height:1.75">From your first class to fight camp preparation, every discipline at Maddog is coached to world-champion standards.</p>
     <div class="hub-grid">
 
       <a href="/training/personal-training-ballito" class="hub-card hub-card-wide">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="homePt"><img height="1050" width="1400" loading="lazy" id="homePt-img" src="https://www.maddogperformance.co.za/images/003f029019b96207.jpg" alt="Personal training session at Maddog Performance Institute in Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 30%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="homePt"><img height="1050" width="1400" loading="lazy" id="homePt-img" src="https://www.maddogperformance.co.za/images/003f029019b96207.jpg" srcset="/images/71e398752537a48d.webp 480w, /images/61cd3094f3770cec.webp 800w, /images/7688967df3fefe80.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 37vw, 441px" alt="Personal training session at Maddog Performance Institute in Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 30%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
           <div class="hub-card-tag">Fully Personalised</div>
           <div class="hub-card-title">Personal Training</div>
@@ -995,7 +1041,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       </a>
 
       <a href="/training/mma-ballito" class="hub-card">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeMma"><img height="900" width="1200" loading="lazy" id="homeMma-img" src="https://www.maddogperformance.co.za/images/6d575bd3d32c890a.jpg" alt="MMA training session at Maddog Performance Institute in Ballito" style="transform-origin: center center; z-index: 1; width: 351px; height: 263.3px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeMma"><img height="900" width="1200" loading="lazy" id="homeMma-img" src="https://www.maddogperformance.co.za/images/6d575bd3d32c890a.jpg" srcset="/images/5d878e2039175e2b.webp 480w, /images/9cf57cd3103a847e.webp 800w, /images/768dffd7b1d786cd.webp 1200w" sizes="(max-width: 600px) 90vw, (max-width: 1024px) 46vw, 351px" alt="MMA training session at Maddog Performance Institute in Ballito" style="transform-origin: center center; z-index: 1; width: 351px; height: 263.3px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
           <div class="hub-card-tag">Mixed Martial Arts</div>
           <div class="hub-card-title">MMA</div>
@@ -1005,7 +1051,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       </a>
 
       <a href="/training/bjj-ballito" class="hub-card">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeBjj"><img height="799" width="1200" loading="lazy" id="homeBjj-img" src="https://www.maddogperformance.co.za/images/f06886e898cc3a42.jpg" alt="Brazilian Jiu-Jitsu class at Maddog Performance Institute in Ballito"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeBjj"><img height="799" width="1200" loading="lazy" id="homeBjj-img" src="https://www.maddogperformance.co.za/images/f06886e898cc3a42.jpg" srcset="/images/1d376bf9067f9314.webp 480w, /images/bf7b3e56e00c3949.webp 800w, /images/2e2c818ef2eb1c90.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 351px" alt="Brazilian Jiu-Jitsu class at Maddog Performance Institute in Ballito"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
           <div class="hub-card-tag">Brazilian Jiu-Jitsu</div>
           <div class="hub-card-title">BJJ</div>
@@ -1015,7 +1061,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       </a>
 
       <a href="/training/kickboxing-ballito" class="hub-card">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeKickboxing"><img height="1050" width="1400" loading="lazy" id="homeKickboxing-img" src="https://www.maddogperformance.co.za/images/31951a3daab6483b.jpg" alt="Kickboxing class at Maddog Performance Institute in Ballito" style="transform-origin: center center; z-index: 1; width: 351px; height: 263.3px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeKickboxing"><img height="1050" width="1400" loading="lazy" id="homeKickboxing-img" src="https://www.maddogperformance.co.za/images/31951a3daab6483b.jpg" srcset="/images/0f189bf5c47cb9d8.webp 480w, /images/e2def96d8fe4e76b.webp 800w, /images/0e9525a468db1de1.webp 1200w" sizes="(max-width: 600px) 90vw, (max-width: 1024px) 46vw, 351px" alt="Kickboxing class at Maddog Performance Institute in Ballito" style="transform-origin: center center; z-index: 1; width: 351px; height: 263.3px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
           <div class="hub-card-tag">Stand-Up Striking</div>
           <div class="hub-card-title">Kickboxing</div>
@@ -1025,7 +1071,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       </a>
 
       <a href="/training/boxing-ballito" class="hub-card">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeBoxing"><img height="1600" width="957" loading="lazy" id="homeBoxing-img" src="https://www.maddogperformance.co.za/images/8103c384b3594a14.jpg" alt="Boxing training at Maddog Performance Institute in Ballito" style="transform-origin: center center; z-index: 1; width: 351px; height: 586.8px; transform: translate(calc(-50% - 2.6px), calc(-50% + 90.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeBoxing"><img height="1600" width="957" loading="lazy" id="homeBoxing-img" src="https://www.maddogperformance.co.za/images/8103c384b3594a14.jpg" srcset="/images/655cd9b97c15daa1.webp 480w, /images/d02400b97ce4c0b6.webp 718w" sizes="(max-width: 600px) 90vw, (max-width: 1024px) 46vw, 351px" alt="Boxing training at Maddog Performance Institute in Ballito" style="transform-origin: center center; z-index: 1; width: 351px; height: 586.8px; transform: translate(calc(-50% - 2.6px), calc(-50% + 90.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
           <div class="hub-card-tag">Fitness &amp; Competitive</div>
           <div class="hub-card-title">Boxing</div>
@@ -1034,23 +1080,33 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         </div>
       </a>
 
-      <a href="/training/powerlifting-ballito" class="hub-card">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="homePowerlifting"><img height="1448" width="1086" loading="lazy" id="homePowerlifting-img" src="https://www.maddogperformance.co.za/images/8eafd21bf0ce0660.jpg" alt="Powerlifting training at Maddog Performance Institute in Ballito" style="transform-origin: center center; z-index: 1; width: 351px; height: 468px; transform: translate(calc(-50% + 0px), calc(-50% - 7.7px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+      <a href="/recovery" class="hub-card">
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeRecovery"><img height="800" width="1200" loading="lazy" id="homeRecovery-img" src="https://www.maddogperformance.co.za/images/ff6ff49b4e3aa7f1.jpg" srcset="/images/d36e5a19a80f2d60.webp 480w, /images/10b399edfb20fd31.webp 800w, /images/7bf281cb9f115b25.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 351px" alt="Ice bath and infrared sauna recovery suite at Maddog Performance Institute in Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 40%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
-          <div class="hub-card-tag">Strength Sport</div>
-          <div class="hub-card-title">Powerlifting</div>
-          <div class="hub-card-desc">Squat, bench press and deadlift coaching under a certified SA Powerlifting Federation coach.</div>
-          <span class="hub-card-link">Powerlifting Coaching in Ballito →</span>
+          <div class="hub-card-tag">Recovery &amp; Physio</div>
+          <div class="hub-card-title">Recovery</div>
+          <div class="hub-card-desc">Ice bath, infrared sauna and contrast therapy, plus sports physiotherapy with Robin JJ Williams. Open to everyone.</div>
+          <span class="hub-card-link">Recovery &amp; Physio in Ballito →</span>
         </div>
       </a>
 
       <a href="/training/wrestling-ballito" class="hub-card">
-        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeWrestling"><img height="602" width="900" loading="lazy" id="homeWrestling-img" src="https://www.maddogperformance.co.za/images/5c87fdfa495e4674.jpg" alt="Wrestling class at Maddog Performance Institute in Ballito, coached by Philip Lemmer" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 40%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
+        <div class="hub-card-photo"><div class="photo-slot loaded" id="homeWrestling"><img height="602" width="900" loading="lazy" id="homeWrestling-img" src="https://www.maddogperformance.co.za/images/5c87fdfa495e4674.jpg" srcset="/images/d83413b32ba3cfb5.webp 480w, /images/65d742aa16e2684b.webp 800w, /images/b6641eaa7db42150.webp 900w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 351px" alt="Wrestling class at Maddog Performance Institute in Ballito, coached by Philip Lemmer" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 40%"><div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div><div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div></div></div>
         <div class="hub-card-body">
           <div class="hub-card-tag">New · Grappling</div>
           <div class="hub-card-title">Wrestling</div>
           <div class="hub-card-desc">Takedowns, balance and control, coached by 12-time SA Wrestling Champion Philip Lemmer.</div>
           <span class="hub-card-link">Wrestling Classes in Ballito →</span>
+        </div>
+      </a>
+
+      <a href="/training/rebounding-ballito" class="hub-card hub-card-wide">
+        <div class="hub-card-photo"><img height="900" width="1200" loading="lazy" src="/images/75ce0a1d74090d17.jpg" srcset="/images/83652703f65d3e59.webp 480w, /images/2b57da15eea82f14.webp 800w, /images/ca03eaa6ee06e2dd.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 37vw, 441px" alt="Rebounding class on mini-trampolines at Maddog Performance Institute in Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 50%"></div>
+        <div class="hub-card-body">
+          <div class="hub-card-tag">New · Low-Impact Cardio</div>
+          <div class="hub-card-title">Rebounding</div>
+          <div class="hub-card-desc">A fun, full-body mini-trampoline workout set to music, coached by Thalia De Beer. Wednesdays at 9am. Your first class is free.</div>
+          <span class="hub-card-link">Rebounding Classes in Ballito →</span>
         </div>
       </a>
 
@@ -1065,54 +1121,27 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
   </div>
 </section>
 
-<!-- ── CORPORATE TEAM BUILDING & RECOVERY ── -->
-<div class="mod-block" style="background:var(--black)">
-  <div class="si">
-    <div class="mod-grid">
-      <div class="mod-photo reveal visible">
-        <div class="photo-slot loaded" id="corpPhoto" style="height:100%;min-height:440px">
-          <img height="2100" width="1400" loading="lazy" id="corpPhoto-img" src="https://www.maddogperformance.co.za/images/5b075596562cf59a.jpg" alt="Corporate Team Building" style="transform-origin: center center; z-index: 1; width: 552px; height: 828px; transform: translate(calc(-50% + 1.8px), calc(-50% + 27.4px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
-          <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
-          <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
-        </div>
-      </div>
-      <div class="mod-text reveal rd1 visible" style="background:var(--card)">
-        <div class="sec-label">Corporate Wellness</div>
-        <h2 class="sec-title">Corporate Team Building<br><em>&amp; Recovery.</em></h2>
-        <p style="font-size:15px;font-weight:300;color:var(--white-dim);line-height:1.75;margin:14px 0 20px">Build stronger, healthier, and more connected teams through structured training and recovery experiences designed for performance and wellbeing.</p>
-        <ul class="mod-list">
-          <li>Small private group sessions (5–10 employees)</li>
-          <li>Team-focused training experiences</li>
-          <li>Recovery sessions including sauna, ice bath, and wellness protocols</li>
-          <li>Customised corporate packages available</li>
-        </ul>
-        <a href="wellness-pricing.html#assessment" class="btn btn-g">Enquire Now</a>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ── RECOVERY SUITE ── -->
-<div class="mod-block" style="background:var(--deep)">
+<div class="mod-block" style="background:var(--black)">
   <div class="si">
     <div class="mod-grid rev">
       <div class="mod-photo reveal visible">
         <div class="photo-slot loaded" id="recoverySuitePhoto" style="height:100%;min-height:440px;background:var(--card)">
-          <img height="1446" width="1087" loading="lazy" id="recoverySuitePhoto-img" src="https://www.maddogperformance.co.za/images/73f028e94ef46321.jpg" alt="Maddog Recovery Suite" style="transform-origin: center center; z-index: 1; width: 552px; height: 734.3px; transform: translate(calc(-50% + 0px), calc(-50% + 0px)); position: absolute !important; inset: 50% auto auto 50% !important; max-width: none !important; object-fit: fill !important; display: block !important; transition: none !important;">
+          <img height="1200" width="900" loading="lazy" id="recoverySuitePhoto-img" src="https://www.maddogperformance.co.za/images/c56bbe62d71b80fa.jpg" srcset="/images/b4d056cd9414f108.webp 480w, /images/785f999921262f7b.webp 800w, /images/a0698fdccbc8c3b0.webp 900w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 552px" alt="Client relaxing in the infrared sauna at Maddog Performance Institute, Ballito" style="position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;object-position:50% 45%">
           <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
           <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           
         </div>
       </div>
-      <div class="mod-text reveal rd1 visible" style="background:var(--deep)">
+      <div class="mod-text reveal rd1 visible" style="background:var(--card)">
         <div class="sec-label">Recovery Suite</div>
         <h2 class="sec-title">Train Hard. Recover<br><em>Smarter.</em></h2>
-        <p style="font-size:15px;font-weight:300;color:var(--white-dim);line-height:1.75;margin:14px 0 20px">Recovery is where performance is built. Maddog's Recovery Suite offers infrared sauna, ice bath contrast therapy, IV drip therapy, and advanced wellness protocols — all under one roof in Ballito, designed for athletes and everyday performers alike.</p>
+        <p style="font-size:15px;font-weight:300;color:var(--white-dim);line-height:1.75;margin:14px 0 20px">Recovery is where performance is built. Maddog's Recovery Suite offers an infrared sauna, an ice bath and contrast therapy, plus sports physiotherapy with Robin JJ Williams and personal training with nutrition coaching, all under one roof in Ballito. Open to everyone, booking required.</p>
         <ul class="mod-list">
           <li>Infrared sauna &amp; ice bath contrast therapy</li>
-          <li>IV drip therapy &amp; NAD+ protocols</li>
-          <li>Slimming clinic &amp; body composition tracking</li>
-          <li>Peptide therapy available via consultation</li>
+          <li>Sports physiotherapy with Robin JJ Williams</li>
+          <li>Personal training &amp; nutrition coaching</li>
+          <li>Open to everyone: no gym membership needed</li>
         </ul>
         <a href="recovery.html" class="btn btn-g">Explore Recovery Suite</a>
       </div>
@@ -1124,45 +1153,11 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
 
 
-<!-- ── TESTIMONIALS ── -->
-<section class="testimonials">
-  <div class="si">
-    <div class="sec-label" style="text-align:center">What Members Say</div>
-    <h2 class="sec-title" style="text-align:center">Real Results. Real People.</h2>
-    <div class="testi-grid">
-          <div class="testi-card">
-            <span class="testi-stars">★★★★★</span>
-            <p class="testi-text">"I started training with Wren in February 2025, and over the past year she has truly transformed both my mindset and my body. After years of struggling with my weight and constant yo-yo cycles, I've finally found balance — not just physically, but mentally too. Wren doesn't just help you change your body. She changes the way you think, and that's where the real transformation happens."</p>
-            <div class="testi-rule"></div>
-            <div class="testi-name">Angela Dick</div>
-            <div class="testi-role">Personal Training · 2025</div>
-          </div>
-          <div class="testi-card">
-            <span class="testi-stars">★★★★★</span>
-            <p class="testi-text">"In just six months with Wren, Kate and I have gone from dreading workouts to genuinely looking forward to each session. What once felt intimidating has become something we truly enjoy. Even though we each have different strengths and abilities, Wren always meets us where we are. Because of her, we are stronger and more motivated than ever."</p>
-            <div class="testi-rule"></div>
-            <div class="testi-name">Amy &amp; Kate</div>
-            <div class="testi-role">Personal Training · 2025</div>
-          </div>
-          <div class="testi-card">
-            <span class="testi-stars">★★★★★</span>
-            <p class="testi-text">"Wren is an awesome personal trainer. She always makes sure your form is correct and that you're training safely and effectively. She's attentive and motivating. You're guaranteed to see results if you put in the effort."</p>
-            <div class="testi-rule"></div>
-            <div class="testi-name">Daniela</div>
-            <div class="testi-role">Personal Training · Ballito</div>
-          </div>
-        </div>
-        <div style="text-align:center;margin-top:36px">
-          <a href="athletes.html" class="btn btn-o">Read More Member Stories →</a>
-        </div>
-  </div>
-</section>
-
 <!-- ── AFFILIATIONS ── -->
 <section class="pillars" id="affiliations" style="padding:48px 0">
   <div class="si">
     <div class="sec-label" style="text-align:center">Affiliations &amp; Accreditation</div>
-    <h2 class="sec-title" style="text-align:center">Recognised Affiliations.<br>Locally &amp; Internationally.</h2>
+    <h2 class="sec-title" style="text-align:center">Recognised Affiliations.<br><em>Locally &amp; Internationally.</em></h2>
     <p class="pillar-text" style="font-size:15px;max-width:680px;margin:14px auto 0;text-align:center">Maddog Performance Institute is affiliated with the recognised governing bodies and lineages for the combat sports we teach — so the gradings, belts and competition pathways our athletes earn are recognised in South Africa and internationally.</p>
     <ul class="pillar-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));list-style:none;padding:0">
       <li class="pillar" style="border-left-color:var(--gold)">
@@ -1217,23 +1212,24 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 <section class="blog">
   <div class="si">
     <div class="sec-label">From The Gym</div>
-    <h2 class="sec-title">Latest from<br>Maddog.</h2>
+    <h2 class="sec-title">Latest from<br><em>Maddog.</em></h2>
     <div class="blog-grid">
 
+      
       
       
       <!-- Blog Post 1 — UPDATE CONTENT when a newer blog is published -->
       <div class="blog-card">
         <div class="nc-img">
           <div class="photo-slot loaded" id="blog1">
-            <img height="800" width="1200" loading="lazy" id="blog1-img" style="object-position:center 10%" src="https://www.maddogperformance.co.za/images/12512acbeb656d63.jpg" alt="Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito">
+            <img height="900" width="1200" loading="lazy" id="blog1-img" src="/images/1e463ed69169018c.jpg" srcset="/images/20abfa96ce9d98ca.webp 480w, /images/6c0cb0f8405e24c1.webp 800w, /images/a0b94956b84a59bf.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 551px" alt="Rebounding Benefits: What the Research Says">
           </div>
         </div>
         <div class="nc-body">
-          <div class="nc-cat">Boxing · Women’s Boxing</div>
-          <div class="nc-title">Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito</div>
-          <p class="nc-text">Nervous about your first boxing class? Here’s what really happens in Maddog’s women-only, no-contact beginner sessions.</p>
-          <a href="blog-womens-boxing-beginners-first-class-ballito.html" class="blog-read-more">Women’s Boxing Beginners Guide</a>
+          <div class="nc-cat">Training · Rebounding</div>
+          <div class="nc-title">Rebounding Benefits: What the Research Says</div>
+          <p class="nc-text">What studies show about mini-trampoline workouts for cardio, joints, balance and mood, and how to try it in Ballito.</p>
+          <a href="blog-rebounding-benefits-ballito.html" class="blog-read-more">Rebounding Benefits Explained</a>
         </div>
       </div>
 
@@ -1241,14 +1237,14 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <div class="blog-card">
         <div class="nc-img">
           <div class="photo-slot loaded" id="blog2">
-            <img height="1200" width="1600" loading="lazy" id="blog2-img" style="object-position:center 85%" src="https://www.maddogperformance.co.za/images/c8fc51d922dd10fe.jpg" alt="Women’s Self-Defence Workshop in Ballito: A Powerful Day of Skills, Connection and Confidence">
+            <img height="800" width="1200" loading="lazy" id="blog2-img" style="object-position:center 10%" src="https://www.maddogperformance.co.za/images/12512acbeb656d63.jpg" srcset="/images/f787e9581a2df2df.webp 480w, /images/4f6497bb42f9e413.webp 800w, /images/71e2e227ca06cb99.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 551px" alt="Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito">
           </div>
         </div>
         <div class="nc-body">
-          <div class="nc-cat">Women's Safety</div>
-          <div class="nc-title">Women's Self-Defence Workshop in Ballito: A Powerful Day of Skills, Connection and Confidence</div>
-          <p class="nc-text">25 women came together in Ballito for a day of practical self-defence, situational awareness and first-aid training. Here's how it went.</p>
-          <a href="blog-womens-self-defence-workshop-recap-ballito.html" class="blog-read-more">Self-Defence Workshop Recap</a>
+          <div class="nc-cat">Boxing · Women’s Boxing</div>
+          <div class="nc-title">Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito</div>
+          <p class="nc-text">Nervous about your first boxing class? Here’s what really happens in Maddog’s women-only, no-contact beginner sessions.</p>
+          <a href="blog-womens-boxing-beginners-first-class-ballito.html" class="blog-read-more">Women’s Boxing Beginners Guide</a>
         </div>
       </div>
     </div>
@@ -1295,7 +1291,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
   <div class="sf-main">
     <div class="sf-brand">
       <span class="sf-logo">Maddog Performance Institute</span>
-      <p>World Champion led, training in MMA, BJJ, Boxing, Kickboxing, Powerlifting and Personal Training with full Recovery facility in KZN North Coast.</p>
+      <p>World Champion led, training in MMA, BJJ, Boxing, Kickboxing, Wrestling and Personal Training with full Recovery facility in KZN North Coast.</p>
       <div class="sf-social">
         <a href="https://www.instagram.com/maddogperformanceinstitute?igsh=MXIxOHF2a20yeWptZg==" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
@@ -1318,7 +1314,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <a href="/training/boxing-ballito">Boxing</a>
       <a href="/training/kickboxing-ballito">Kickboxing</a>
       <a href="/training/personal-training-ballito">Personal Training</a>
-      <a href="/training/powerlifting-ballito">Powerlifting</a>
+      <a href="/training/rebounding-ballito">Rebounding</a>
     </div>
     <div class="sf-col">
       <h3>About</h3>
@@ -1398,7 +1394,7 @@ function swapPhoto(slotId) {
       var img  = document.getElementById(slotId + '-img');
       var slot = document.getElementById(slotId);
       if (img) {
-        img.setAttribute('src', dataUrl);
+        img.removeAttribute('srcset');img.removeAttribute('sizes');img.setAttribute('src', dataUrl);
         img.src = dataUrl;
       }
       if (slot) slot.classList.add('loaded');
@@ -1723,14 +1719,7 @@ var BLOG_POSTS = [
     text: "Most people assume everyone inside an MMA gym is preparing for competition. The truth is very different &#8212; and the reasons to train at Maddog&#8217;s fight gym in Ballito go far beyond the cage.",
     href: "blog-mma-training-ballito.html"
   },
-  {
-    date: "2026-04-12",
-    dateLabel: "April 2026",
-    cat: "Recovery",
-    title: "IV Drip Therapy Benefits for Recovery, Performance, and Wellness in Ballito, KZN",
-    text: "IV therapy delivers essential nutrients, vitamins, and hydration directly into the bloodstream &#8212; bypassing the digestive system for near-immediate bioavailability.",
-    href: "blog-iv-drip-therapy-ballito.html"
-  },
+
   {
     date: "2026-04-10",
     dateLabel: "April 2026",
@@ -1739,14 +1728,7 @@ var BLOG_POSTS = [
     text: "BJJ is one of the most beginner-friendly martial arts available &#8212; provided the gym and coaching environment are right. Here is what to expect at Maddog.",
     href: "blog-bjj-beginners-ballito.html"
   },
-  {
-    date: "2026-04-08",
-    dateLabel: "April 2026",
-    cat: "Strength Training",
-    title: "What Are the Benefits of Powerlifting for Women? Strength Training in Ballito, KZN",
-    text: "Women who powerlift do not just get stronger. They fundamentally change their relationship with their body, their confidence, and their capacity to perform under pressure.",
-    href: "blog-powerlifting-women-ballito.html"
-  },
+
   {
     date: "2026-04-05",
     dateLabel: "April 2026",

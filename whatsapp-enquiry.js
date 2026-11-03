@@ -8,8 +8,8 @@
   var NUMBER = '27634421690';
   var SUPABASE = 'https://mthjfihctiluqllpegnr.supabase.co/rest/v1/leads';
   var KEY = 'sb_publishable_VjcQHDkyEWXohoVwpDxhMw_Tu6fZBO9'; // public key (the same one the contact form uses)
-  var INTERESTS = ['Free trial class', 'MMA', 'BJJ', 'Kickboxing', 'Boxing', 'Women’s Boxing', 'Wrestling', 'Kids classes',
-    'Personal training', 'Strength & Powerlifting', 'Recovery (sauna & ice bath)', 'Wellness centre', 'Something else'];
+  var INTERESTS = ['Free trial class', 'MMA', 'BJJ', 'Kickboxing', 'Boxing', 'Women’s Boxing', 'Wrestling', 'Rebounding', 'Kids classes',
+    'Personal training', 'Recovery (sauna & ice bath)', 'Physiotherapy', 'Something else'];
 
   var css = '' +
     '.wae-back{box-sizing:border-box;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:16px;padding-top:max(16px,env(safe-area-inset-top));padding-bottom:max(16px,env(safe-area-inset-bottom))}' +

@@ -48,9 +48,11 @@ def list_pages():
     files at their official address, e.g. training/mma-ballito.html -> /training/mma-ballito). Names are relative
     paths with forward slashes (as git and the sitemap see them)."""
     pages = [f for f in os.listdir(PAGES_DIR) if f.endswith('.html') and f not in TEMPLATE_FILES]
-    sub = os.path.join(PAGES_DIR, 'training')
-    if os.path.isdir(sub):
-        pages += ['training/' + f for f in os.listdir(sub) if f.endswith('.html')]
+    # recovery/ added 2026-11-02: ice bath, sauna and physio pages moved from the closed wellness site
+    for folder in ('training', 'recovery'):
+        sub = os.path.join(PAGES_DIR, folder)
+        if os.path.isdir(sub):
+            pages += [folder + '/' + f for f in os.listdir(sub) if f.endswith('.html')]
     return sorted(pages)
 
 

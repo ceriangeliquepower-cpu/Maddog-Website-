@@ -11,9 +11,9 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /meet-the-team /coaches 301
 /meet-the-team/ /coaches 301
 
-# Redirect old pricing page to wellness pricing
-/pricing /wellness-pricing 301
-/pricing.html /wellness-pricing 301
+# Redirect old pricing page to the recovery prices (wellness pricing page removed Nov 2026)
+/pricing /recovery 301!
+/pricing.html /recovery 301!
 
 # Gym site — canonicalize .html requests to their clean URLs
 # (every page's <link rel="canonical"> already declares the clean form;
@@ -29,46 +29,75 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /booking https://wa.me/27634421690 302!
 /recovery.html /recovery 301!
 /training.html /training 301!
-/blog-amanda-kobus-coach-ballito.html /blog-amanda-kobus-coach-ballito 301!
 /blog-ballito-community-raises-funds-st-lukes.html /blog-ballito-community-raises-funds-st-lukes 301!
 /blog-bjj-beginners-ballito.html /blog-bjj-beginners-ballito 301!
 /blog-cold-plunge-sauna-ballito.html /blog-cold-plunge-sauna-ballito 301!
 /blog-efc-134-amanda-lino-title-defence.html /blog-efc-134-amanda-lino-title-defence 301!
 /blog-efc-134-amanda-lino-vs-juliet-chukwu.html /blog-efc-134-amanda-lino-vs-juliet-chukwu 301!
-/blog-genesis-athlete-recovery-ballito.html /blog-genesis-athlete-recovery-ballito 301!
-/blog-iv-drip-therapy-ballito.html /blog-iv-drip-therapy-ballito 301!
 /blog-mma-training-ballito.html /blog-mma-training-ballito 301!
-/blog-powerlifting-women-ballito.html /blog-powerlifting-women-ballito 301!
 /blog-robin-jj-williams-physio-ballito.html /blog-robin-jj-williams-physio-ballito 301!
 /blog-womens-self-defence-workshop-ballito.html /blog-womens-self-defence-workshop-ballito 301!
 /blog-womens-self-defence-workshop-recap-ballito.html /blog-womens-self-defence-workshop-recap-ballito 301!
 /blog-womens-boxing-beginners-first-class-ballito.html /blog-womens-boxing-beginners-first-class-ballito 301!
 /blog-youth-mma-training-ballito.html /blog-youth-mma-training-ballito 301!
 
-# Wellness microsite — canonicalize .html requests to their clean URLs
-# (Netlify's Pretty URLs already rewrites every internal link to the clean form;
-# these close the duplicate-URL gap for anyone requesting the .html path directly)
-/wellness.html /wellness 301!
-/wellness-blog-womens-wellness-day-recap.html /wellness-blog-womens-wellness-day-recap 301!
-/wellness-iv.html /wellness-iv 301!
-/wellness-body.html /wellness-body 301!
-/wellness-recovery.html /wellness-recovery 301!
-/wellness-pricing.html /wellness-pricing 301!
-/wellness-contact.html /wellness-contact 301!
+# Wellness site CLOSED (2 Nov 2026): sauna, ice bath and physio moved to /recovery/...; IV, NAD+, InBody, body, GENESIS,
+# Amanda Wren Kobus and powerlifting removed. Every old address 301s straight to its closest live page (one step, no chains).
+# Never delete these: old links, bookmarks and Google results keep working.
 /privacy-policy.html /privacy-policy 301!
-/wellness-privacy-policy.html /wellness-privacy-policy 301!
-/wellness-blog.html /wellness-blog 301!
-/wellness-blog-womens-self-defence.html /wellness-blog-womens-self-defence 301!
-/wellness-blog-cold-plunge.html /wellness-blog-cold-plunge 301!
-/wellness-blog-iv-therapy.html /wellness-blog-iv-therapy 301!
-/wellness-blog-physiotherapy.html /wellness-blog-physiotherapy 301!
-/wellness-blog-genesis-longevity.html /wellness-blog-genesis-longevity 301!
-/wellness-physiotherapy-ballito.html /wellness-physiotherapy-ballito 301!
-/wellness-inbody-scan-ballito.html /wellness-inbody-scan-ballito 301!
-/wellness-nad-iv-ballito.html /wellness-nad-iv-ballito 301!
-/wellness-cold-plunge-ballito.html /wellness-cold-plunge-ballito 301!
-/wellness-infrared-sauna-ballito.html /wellness-infrared-sauna-ballito 301!
-/wellness-personal-training-ballito.html /wellness-personal-training-ballito 301!
+/wellness /recovery 301!
+/wellness.html /recovery 301!
+/wellness-recovery /recovery 301!
+/wellness-recovery.html /recovery 301!
+/wellness-iv /recovery 301!
+/wellness-iv.html /recovery 301!
+/wellness-nad-iv-ballito /recovery 301!
+/wellness-nad-iv-ballito.html /recovery 301!
+/wellness-body /recovery 301!
+/wellness-body.html /recovery 301!
+/wellness-inbody-scan-ballito /recovery 301!
+/wellness-inbody-scan-ballito.html /recovery 301!
+/wellness-pricing /recovery 301!
+/wellness-pricing.html /recovery 301!
+/wellness-cold-plunge-ballito /recovery/cold-plunge-ballito 301!
+/wellness-cold-plunge-ballito.html /recovery/cold-plunge-ballito 301!
+/wellness-infrared-sauna-ballito /recovery/infrared-sauna-ballito 301!
+/wellness-infrared-sauna-ballito.html /recovery/infrared-sauna-ballito 301!
+/wellness-physiotherapy-ballito /recovery/physiotherapy-ballito 301!
+/wellness-physiotherapy-ballito.html /recovery/physiotherapy-ballito 301!
+/wellness-personal-training-ballito /training/personal-training-ballito 301!
+/wellness-personal-training-ballito.html /training/personal-training-ballito 301!
+/wellness-contact /contact 301!
+/wellness-contact.html /contact 301!
+/wellness-privacy-policy /privacy-policy 301!
+/wellness-privacy-policy.html /privacy-policy 301!
+/wellness-blog /events 301!
+/wellness-blog.html /events 301!
+/wellness-blog-cold-plunge /blog-cold-plunge-sauna-ballito 301!
+/wellness-blog-cold-plunge.html /blog-cold-plunge-sauna-ballito 301!
+/wellness-blog-physiotherapy /blog-robin-jj-williams-physio-ballito 301!
+/wellness-blog-physiotherapy.html /blog-robin-jj-williams-physio-ballito 301!
+/wellness-blog-womens-self-defence /blog-womens-self-defence-workshop-ballito 301!
+/wellness-blog-womens-self-defence.html /blog-womens-self-defence-workshop-ballito 301!
+/wellness-blog-womens-wellness-day-recap /blog-womens-self-defence-workshop-recap-ballito 301!
+/wellness-blog-womens-wellness-day-recap.html /blog-womens-self-defence-workshop-recap-ballito 301!
+/wellness-blog-iv-therapy /recovery 301!
+/wellness-blog-iv-therapy.html /recovery 301!
+/wellness-blog-genesis-longevity /recovery 301!
+/wellness-blog-genesis-longevity.html /recovery 301!
+/blog-iv-drip-therapy-ballito /recovery 301!
+/blog-iv-drip-therapy-ballito.html /recovery 301!
+/blog-genesis-athlete-recovery-ballito /recovery 301!
+/blog-genesis-athlete-recovery-ballito.html /recovery 301!
+/blog-amanda-kobus-coach-ballito /coaches 301!
+/blog-amanda-kobus-coach-ballito.html /coaches 301!
+/blog-powerlifting-women-ballito /training/personal-training-ballito 301!
+/blog-powerlifting-women-ballito.html /training/personal-training-ballito 301!
+
+# Recovery pages (moved from the wellness site 2 Nov 2026) — real files in recovery/, canonicalise .html
+/recovery/cold-plunge-ballito.html /recovery/cold-plunge-ballito 301!
+/recovery/infrared-sauna-ballito.html /recovery/infrared-sauna-ballito 301!
+/recovery/physiotherapy-ballito.html /recovery/physiotherapy-ballito 301!
 
 # Training discipline pages — serve flat files at their pretty /training/... URLs
 /training-mma-ballito.html /training/mma-ballito 301!
@@ -103,9 +132,15 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /training/bootcamp-ballito /training 301!
 /training-bootcamp-ballito.html /training 301!
 /training-bootcamp-ballito /training 301!
-/training-powerlifting-ballito.html /training/powerlifting-ballito 301!
-/training-powerlifting-ballito /training/powerlifting-ballito 301!
-/training/powerlifting-ballito.html /training/powerlifting-ballito 301!
+/training-rebounding-ballito.html /training/rebounding-ballito 301!
+/training-rebounding-ballito /training/rebounding-ballito 301!
+/training/rebounding-ballito.html /training/rebounding-ballito 301!
+/blog-rebounding-benefits-ballito.html /blog-rebounding-benefits-ballito 301!
+# Powerlifting discontinued 2 Nov 2026 — all its addresses go to Personal Training
+/training/powerlifting-ballito /training/personal-training-ballito 301!
+/training-powerlifting-ballito.html /training/personal-training-ballito 301!
+/training-powerlifting-ballito /training/personal-training-ballito 301!
+/training/powerlifting-ballito.html /training/personal-training-ballito 301!
 /training-personal-training-ballito.html /training/personal-training-ballito 301!
 /training-personal-training-ballito /training/personal-training-ballito 301!
 /training/personal-training-ballito.html /training/personal-training-ballito 301!
@@ -121,7 +156,6 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 # had been added WITHOUT the flag and were doing nothing; every file below was
 # actually publicly downloadable (200) despite a rule appearing to block it.
 /blog-TEMPLATE.html /404.html 404!
-/wellness-blog-TEMPLATE.html /404.html 404!
 /CLAUDE.md /404.html 404!
 /GO_LIVE_CHECKLIST.md /404.html 404!
 /GO_LIVE_GUIDE.md /404.html 404!

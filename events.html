@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<!-- Google tag (gtag.js): its script loads just after the page has appeared, so it doesn't slow the first view -->
+<!-- Google tag (gtag.js): its script loads on the visitor's first scroll/tap/key, or 5 s after the page has loaded, so it never slows the page on phones -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-PR35V75DZH');window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);},1500);});
+  gtag('config', 'G-PR35V75DZH');(function(){var done=0;function L(){if(done)return;done=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);}['scroll','pointerdown','touchstart','keydown'].forEach(function(e){window.addEventListener(e,L,{once:true,passive:true});});window.addEventListener('load',function(){setTimeout(L,5000);});})();
 </script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,6 +14,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
 <title>Events &amp; Fight Results | Maddog | Ballito</title>
 <meta name="description" content="Fight results, upcoming events, training tips and fighter spotlights from Maddog Performance Institute — Ballito's premier MMA gym on the KZN North Coast.">
 <link rel="canonical" href="https://www.maddogperformance.co.za/events">
@@ -920,6 +922,16 @@ html { -webkit-text-size-adjust: 100%; }
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
 </style><style>/* Photo-slot editor labels live in CSS so search engines don't read them as page text */.slot-icon::before,.slot-label::before{content:attr(data-t)}</style>
+<style id="hero-spacing">/* Nov 2026: more space between the menu and the page heading */.page-hero{padding-top:150px!important}@media(max-width:1024px){.page-hero{padding-top:120px!important}}</style>
+<style id="gold-3d-heading">/* Metallic 3D gold headings (Nov 2026), like the Maddog Instagram designs. Text stays real text; no extra download */
+.page-h1,.hero-h1,.hero-name,.sec-h,.sec-title{text-shadow:0 2px 0 rgba(0,0,0,.45),0 10px 28px rgba(0,0,0,.65)}
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{color:#D9B65C}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{background:linear-gradient(180deg,#FBEFC2 0%,#EBCB72 26%,#C9A84C 50%,#A07C2C 74%,#E2C068 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;-webkit-box-decoration-break:clone;box-decoration-break:clone;filter:drop-shadow(0 2px 0 rgba(70,48,8,.95)) drop-shadow(0 8px 18px rgba(201,168,76,.22))}
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{padding:.24em 0 .2em;margin:-.24em 0 -.2em}/* room for the gold paint so letter tops/bottoms are never cut off; layout unchanged */
+}
+</style>
+<style id="readability">/* Pre-launch audit (Nov 2026): readable text + same look on iPhone/Android */html{-webkit-text-size-adjust:100%;text-size-adjust:100%}html body .sf-bottom p,html body .sf-bottom p a{color:rgba(245,240,232,.62)!important}html body .snm-sub{color:rgba(245,240,232,.72)!important}html body .snm-sub:hover{color:#c9a84c!important}html body .hours-time.closed{color:rgba(245,240,232,.55)}html body .btn-wa{background:#0E7A3E!important}html body .btn-wa:hover{background:#0B6633!important}html body .rloss,html body .loss-badge{color:#ff9b9b!important}html body .email-sub{color:rgba(8,8,8,.82)!important}html body .nl-left p{color:rgba(8,8,8,.8)!important}html body .pull-quote p{font-weight:300!important}</style>
 </head>
 <body data-pid="events">
 <!-- EDIT BANNER -->
@@ -932,13 +944,12 @@ html { -webkit-text-size-adjust: 100%; }
   <div class="site-nav-links">
       <a href="index.html">Home</a>
       <a href="amanda.html">Amanda</a>
-      <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
-      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/training/personal-training-ballito">Personal Training</a><a href="/training/mma-ballito">MMA</a><a href="/training/bjj-ballito">BJJ</a><a href="/training/kids-bjj-ballito">Kids BJJ</a><a href="/training/kickboxing-ballito">Kickboxing</a><a href="/training/wrestling-ballito">Wrestling</a><a href="/training/boxing-ballito">Boxing</a><a href="/training/womens-boxing-ballito">Women's Boxing</a><a href="/training/kids-boxing-ballito">Kids Boxing</a><a href="/training/olympic-boxing-ballito">Olympic Boxing</a><a href="/training/powerlifting-ballito">Powerlifting</a></div></div>
+      <div class="nav-has-dropdown"><a href="/recovery">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/recovery">Contrast Therapy</a><a href="/recovery/cold-plunge-ballito">Ice Bath</a><a href="/recovery/infrared-sauna-ballito">Infrared Sauna</a><a href="/recovery/physiotherapy-ballito">Physiotherapy</a><a href="/training/personal-training-ballito#nutrition">PT &amp; Nutrition</a><a href="/recovery#pricing">Pricelist</a></div></div>
+      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/training/personal-training-ballito">Personal Training</a><a href="/training/mma-ballito">MMA</a><a href="/training/bjj-ballito">BJJ</a><a href="/training/kids-bjj-ballito">Kids BJJ</a><a href="/training/kickboxing-ballito">Kickboxing</a><a href="/training/wrestling-ballito">Wrestling</a><a href="/training/boxing-ballito">Boxing</a><a href="/training/womens-boxing-ballito">Women's Boxing</a><a href="/training/kids-boxing-ballito">Kids Boxing</a><a href="/training/olympic-boxing-ballito">Olympic Boxing</a><a href="/training/rebounding-ballito">Rebounding</a></div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html">Athletes</a>
       <a href="events.html" class="active">Events</a>
       <a href="contact.html">Contact</a>
-      <a href="wellness.html" class="snl-wellness">✦ Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" target="_blank" rel="noopener">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
@@ -949,15 +960,20 @@ html { -webkit-text-size-adjust: 100%; }
 <div class="site-nav-mobile" id="siteNavMob">
   <a href="index.html">Home</a>
   <a href="amanda.html">Amanda</a>
-  <a href="recovery.html">Recovery</a>
-  <a href="wellness-pricing.html" class="snm-sub">↳ Pricelist</a>
+  <a href="/recovery">Recovery</a>
+  <a href="/recovery" class="snm-sub">↳ Contrast Therapy</a>
+  <a href="/recovery/cold-plunge-ballito" class="snm-sub">↳ Ice Bath</a>
+  <a href="/recovery/infrared-sauna-ballito" class="snm-sub">↳ Infrared Sauna</a>
+  <a href="/recovery/physiotherapy-ballito" class="snm-sub">↳ Physiotherapy</a>
+  <a href="/training/personal-training-ballito#nutrition" class="snm-sub">↳ PT &amp; Nutrition</a>
+  <a href="/recovery#pricing" class="snm-sub">↳ Pricelist</a>
   <a href="training.html">Training</a>
-  <a href="/training/personal-training-ballito" class="snm-sub">↳ Personal Training</a><a href="/training/mma-ballito" class="snm-sub">↳ MMA</a><a href="/training/bjj-ballito" class="snm-sub">↳ BJJ</a><a href="/training/kids-bjj-ballito" class="snm-sub">↳ Kids BJJ</a><a href="/training/kickboxing-ballito" class="snm-sub">↳ Kickboxing</a><a href="/training/wrestling-ballito" class="snm-sub">↳ Wrestling</a><a href="/training/boxing-ballito" class="snm-sub">↳ Boxing</a><a href="/training/womens-boxing-ballito" class="snm-sub">↳ Women's Boxing</a><a href="/training/kids-boxing-ballito" class="snm-sub">↳ Kids Boxing</a><a href="/training/olympic-boxing-ballito" class="snm-sub">↳ Olympic Boxing</a><a href="/training/powerlifting-ballito" class="snm-sub">↳ Powerlifting</a>
+  <a href="/training/personal-training-ballito" class="snm-sub">↳ Personal Training</a><a href="/training/mma-ballito" class="snm-sub">↳ MMA</a><a href="/training/bjj-ballito" class="snm-sub">↳ BJJ</a><a href="/training/kids-bjj-ballito" class="snm-sub">↳ Kids BJJ</a><a href="/training/kickboxing-ballito" class="snm-sub">↳ Kickboxing</a><a href="/training/wrestling-ballito" class="snm-sub">↳ Wrestling</a><a href="/training/boxing-ballito" class="snm-sub">↳ Boxing</a><a href="/training/womens-boxing-ballito" class="snm-sub">↳ Women's Boxing</a><a href="/training/kids-boxing-ballito" class="snm-sub">↳ Kids Boxing</a><a href="/training/olympic-boxing-ballito" class="snm-sub">↳ Olympic Boxing</a>
+  <a href="/training/rebounding-ballito" class="snm-sub">↳ Rebounding</a>
   <a href="coaches.html">Coaches</a>
   <a href="athletes.html">Athletes</a>
   <a href="events.html" class="active">Events</a>
   <a href="contact.html">Contact</a>
-  <a href="wellness.html" class="snm-wellness">✦ Wellness &amp; Recovery</a>
   <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="snm-cta" target="_blank" rel="noopener">Book Online</a>
 </div>
 <script>
@@ -996,15 +1012,15 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div>
       <div class="hero-featured">
         <div class="photo-slot loaded" id="featPhoto" style="height:100%">
-          <img height="800" width="1200" id="featPhoto-img" fetchpriority="high" style="object-position:center 10%" src="https://www.maddogperformance.co.za/images/12512acbeb656d63.jpg" alt="Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito">
+          <img height="900" width="1200" id="featPhoto-img" fetchpriority="high" src="/images/1e463ed69169018c.jpg" srcset="/images/20abfa96ce9d98ca.webp 480w, /images/6c0cb0f8405e24c1.webp 800w, /images/a0b94956b84a59bf.webp 1200w" sizes="(max-width: 600px) 85vw, (max-width: 1024px) 93vw, 512px" alt="Rebounding Benefits: What the Research Says About Mini-Trampoline Workouts">
         </div>
       </div>
       <div class="hero-feat-body">
-        <span class="hf-tag">Boxing · Women’s Boxing</span>
-        <div class="hf-title">Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito</div>
-        <div class="hf-date"><time datetime="2026-09-26">26 September 2026</time> · Maddog Performance Institute</div>
-        <p class="hf-excerpt">Nervous about your first boxing class? Here’s exactly what happens in Maddog’s women-only, no-contact beginner sessions — what to wear, whether you’ll spar, and how boxing builds fitness and confidence.</p>
-        <a href="blog-womens-boxing-beginners-first-class-ballito.html" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>
+        <span class="hf-tag">Training · Rebounding</span>
+        <div class="hf-title">Rebounding Benefits: What the Research Says About Mini-Trampoline Workouts</div>
+        <div class="hf-date"><time datetime="2026-10-14">14 October 2026</time> · Maddog Performance Institute</div>
+        <p class="hf-excerpt">Rebounding looks like play, but researchers have measured what it does for your heart, joints, balance and mood. Here is what the studies say, and what they don’t.</p>
+        <a href="blog-rebounding-benefits-ballito.html" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>
       </div>
     </div>
   </div>
@@ -1018,14 +1034,14 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="cred-item">Training Tips · Amanda's Column</div>
     <div class="cred-item">Fighter Spotlights · Ballito</div>
     <div class="cred-item">Nutrition &amp; Recovery Guides</div>
-    <div class="cred-item">Junior Academy Updates</div>
+    <div class="cred-item">Kids Class Updates</div>
     <div class="cred-item">Maddog Performance Institute · Events</div>
     <div class="cred-item">Fight News · KZN</div>
     <div class="cred-item">EFC · PFC · Amateur Results</div>
     <div class="cred-item">Training Tips · Amanda's Column</div>
     <div class="cred-item">Fighter Spotlights · Ballito</div>
     <div class="cred-item">Nutrition &amp; Recovery Guides</div>
-    <div class="cred-item">Junior Academy Updates</div>
+    <div class="cred-item">Kids Class Updates</div>
     <div class="cred-item">Maddog Performance Institute · Events</div>
   </div>
 </div>
@@ -1044,7 +1060,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     <div class="blog-featured">
       <div class="bf-photo">
         <div class="photo-slot loaded" id="bf1" style="height:100%;min-height:400px">
-          <img height="799" width="1200" loading="lazy" id="bf1-img" src="https://www.maddogperformance.co.za/images/5474be786b8ed1aa.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img height="799" width="1200" loading="lazy" id="bf1-img" src="https://www.maddogperformance.co.za/images/5474be786b8ed1aa.jpg" srcset="/images/5f3efb0377bae298.webp 480w, /images/8e2e536db041e2d2.webp 800w, /images/d1a5ea4b699dec42.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 552px" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
           
           
         </div>
@@ -1060,6 +1076,20 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
     <!-- BLOG GRID -->
     <div class="blog-grid" id="blogGrid" style="margin-top:6px">
+      <!-- POST: rotated from featured, 2026-09-26 -->
+      <div class="blog-card" id="bp-womens-boxing-beginners-first-class">
+        <div class="bc-img"><img src="https://www.maddogperformance.co.za/images/12512acbeb656d63.jpg" srcset="/images/f787e9581a2df2df.webp 480w, /images/4f6497bb42f9e413.webp 800w, /images/71e2e227ca06cb99.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;object-position:center 10%" loading="lazy"></div>
+        <div class="bc-body">
+          <span class="bc-tag">Boxing · Women’s Boxing</span>
+          <div class="bc-title">Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito</div>
+          <p class="bc-excerpt">Nervous about your first boxing class? Here’s exactly what happens in Maddog’s women-only, no-contact beginner sessions — what to wear, whether you’ll spar, and how boxing builds fitness and confidence.</p>
+          <div class="bc-date">September 2026 · 7 min read</div>
+          <div class="bc-edit-row">
+            <a href="blog-womens-boxing-beginners-first-class-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>
+          </div>
+        </div>
+      </div>
+
       <!-- POST: rotated from featured, 2026-08-31 -->
       <div class="blog-card" id="bp-womens-self-defence-workshop-recap">
         <div class="bc-img"><img src="https://www.maddogperformance.co.za/images/c8fc51d922dd10fe.jpg" srcset="https://www.maddogperformance.co.za/images/6f5fc5913f936223.webp 480w, https://www.maddogperformance.co.za/images/715eed80d362f5bd.webp 720w, https://www.maddogperformance.co.za/images/a9866433c8920864.webp 960w, https://www.maddogperformance.co.za/images/f3873f7f461efd59.webp 1200w" sizes="(max-width: 600px) 90vw, (max-width: 1024px) 95vw, 540px" alt="Women’s Self-Defence Workshop in Ballito: A Powerful Day of Skills, Connection and Confidence" width="1200" height="900" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
@@ -1074,28 +1104,10 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         </div>
       </div>
 
-      <!-- POST GENESIS RECOVERY -->
-      <div class="blog-card" id="bp-genesis">
-        <div class="bc-img"><div class="photo-slot loaded" id="bp-genesis-p" style="height:100%;cursor:pointer">
-          <div style="position:absolute;inset:0;background-image:url('images/4515533a96a857d5.jpg');background-size:cover;background-position:center;filter:blur(20px) brightness(.65);transform:scale(1.15);z-index:0"></div>
-          <img loading="lazy" height="1024" width="1536" id="bp-genesis-p-img" src="https://www.maddogperformance.co.za/images/842f51a7ca738ea9.jpg" alt="GENESIS neuro-metabolic performance restoration protocol" style="position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:contain!important;z-index:1;display:block!important">
-          <div class="slot-overlay"><span class="slot-icon" data-t="📸"></span><span class="slot-label" data-t="Photo"></span></div>
-          <div class="slot-hint">Click to upload</div>
-        </div></div>
-        <div class="bc-body">
-          <span class="bc-tag">Performance &amp; Recovery</span>
-          <div class="bc-title">Inside GENESIS™: The Recovery Programme Behind Maddog's Athletes</div>
-          <p class="bc-excerpt">NAD+ and peptide therapy for clinical recovery, built by our own nurse practitioner and strength coach, Sister Wren Kobus.</p>
-          <div class="bc-date">August 2026 · 7 min read</div>
-          <div class="bc-edit-row">
-            <a href="blog-genesis-athlete-recovery-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>
-          </div>
-        </div>
-      </div>
 
       <!-- POST: rotated from featured, 2026-08-22 -->
       <div class="blog-card" id="bp-womens-self-defence-workshop">
-        <div class="bc-img"><img src="https://www.maddogperformance.co.za/images/89e5f9168fce7023.jpg" alt="Women's Self-Defence Workshop in Ballito: Real Skills, Real Confidence, Real Protection" width="1448" height="1086" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+        <div class="bc-img"><img src="https://www.maddogperformance.co.za/images/89e5f9168fce7023.jpg" srcset="/images/12c53cb8e76f1ad4.webp 480w, /images/f030215f3d39f3b7.webp 800w, /images/eb90b56cb75ff93d.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Women's Self-Defence Workshop in Ballito: Real Skills, Real Confidence, Real Protection" width="1448" height="1086" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
         <div class="bc-body">
           <span class="bc-tag">Women's Safety</span>
           <div class="bc-title">Women's Self-Defence Workshop in Ballito: Real Skills, Real Confidence, Real Protection</div>
@@ -1109,7 +1121,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 <!-- POST PRE-FIGHT EFC134 -->
       <div class="blog-card" id="bp-efc134-prefight">
         <div class="bc-img"><div class="photo-slot loaded" id="bp-efc134-prefight-p" style="height:100%">
-          <img height="896" width="1280" loading="lazy" id="bp-efc134-prefight-p-img" src="https://www.maddogperformance.co.za/images/ad55bde686b5c44e.jpg" alt="EFC 134 pre-fight preview Amanda Maddog Lino vs Juliet Chukwu" style="object-position: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img height="896" width="1280" loading="lazy" id="bp-efc134-prefight-p-img" src="https://www.maddogperformance.co.za/images/ad55bde686b5c44e.jpg" srcset="/images/521b160b46949d90.webp 480w, /images/c1edc3a2f7db7631.webp 800w, /images/657adf95444f128e.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="EFC 134 pre-fight preview Amanda Maddog Lino vs Juliet Chukwu" style="object-position: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Fight Preview</span>
@@ -1123,27 +1135,11 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       </div>
 
       <!-- POST 7 -->
-      <div class="blog-card" id="bp7">
-        <div class="bc-img"><div class="photo-slot loaded" id="bp7-p" style="height:100%">
-          <img loading="lazy" id="bp7-p-img" src="https://www.maddogperformance.co.za/images/4c39c10da4f045a1.jpg" alt="Amanda Kobus Strength Coach Ballito" width="400" height="240" style="object-position: 50% 17.37%; transform: none; transform-origin: 50% 17.37%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          
-          
-        </div></div>
-        <div class="bc-body">
-          <span class="bc-tag">Coach Spotlight</span>
-          <div class="bc-title">Meet Amanda Kobus: The Coach Bringing Clinical Precision and Competitive Fire to Your Training</div>
-          <p class="bc-excerpt">Registered Nurse Practitioner, NPC Worldwide champion, and competitive powerlifter — Amanda Kobus is Maddog's in-house clinician and one of the most uniquely qualified coaches on the KZN North Coast.</p>
-          <div class="bc-date">May 2026 · 10 min read</div>
-          <div class="bc-edit-row">
-            <a href="blog-amanda-kobus-coach-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>
-          </div>
-        </div>
-      </div>
 
       <!-- POST 8 -->
       <div class="blog-card" id="bp8">
         <div class="bc-img"><div class="photo-slot loaded" id="bp8-p" style="height:100%">
-          <img loading="lazy" id="bp8-p-img" src="https://www.maddogperformance.co.za/images/0640f15de5db083d.jpg" alt="Robin JJ Williams Sports Physiotherapist Ballito" width="400" height="240" style="object-position: 50% 32.1%; transform: none; transform-origin: 50% 32.1%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img loading="lazy" id="bp8-p-img" src="https://www.maddogperformance.co.za/images/0640f15de5db083d.jpg" srcset="/images/300999a4a9a665e1.webp 480w, /images/c48f368a234ae5b3.webp 800w, /images/0bdeb8171a08e200.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Robin JJ Williams Sports Physiotherapist Ballito" width="400" height="240" style="object-position: 50% 32.1%; transform: none; transform-origin: 50% 32.1%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
           
           
         </div></div>
@@ -1160,14 +1156,14 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
       <div class="blog-card" id="bp6">
         <div class="bc-img"><div class="photo-slot loaded" id="bp6-p" style="height:100%">
-          <img loading="lazy" id="bp6-p-img" alt="Youth MMA and BJJ training at Maddog Performance Institute Ballito" width="400" height="260" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/3f80aaf56aaf7ae4.jpg">
+          <img loading="lazy" id="bp6-p-img" alt="Youth MMA and BJJ training at Maddog Performance Institute Ballito" width="400" height="260" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/3f80aaf56aaf7ae4.jpg" srcset="/images/937e6a6b65d019b3.webp 480w, /images/d53cc4b14bcf45c8.webp 800w, /images/f616d64b6f01c17e.webp 1170w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px">
           
           
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Youth &amp; Family</span>
-          <div class="bc-title">Why Youth Training in MMA, BJJ, Kickboxing &amp; Powerlifting Could Be the Best Decision You Make for Your Child</div>
-          <p class="bc-excerpt">MMA, BJJ, kickboxing and powerlifting don't just build fit kids — they build disciplined, confident, resilient young people. Here's why more Ballito parents are choosing combat sports for their children.</p>
+          <div class="bc-title">Why Youth Training in MMA, BJJ &amp; Kickboxing Could Be the Best Decision You Make for Your Child</div>
+          <p class="bc-excerpt">MMA, BJJ and kickboxing don't just build fit kids — they build disciplined, confident, resilient young people. Here's why more Ballito parents are choosing combat sports for their children.</p>
           <div class="bc-date">May 2026 · 14 min read</div>
           <div class="bc-edit-row">
             <a href="blog-youth-mma-training-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>          </div>
@@ -1177,7 +1173,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <!-- POST 1 -->
       <div class="blog-card" id="bp1">
         <div class="bc-img"><div class="photo-slot loaded" id="bp1-p" style="height:100%">
-          <img height="931" width="1400" loading="lazy" id="bp1-p-img" src="https://www.maddogperformance.co.za/images/545793f464e1b6c5.png" alt="Maddog Performance Institute" style="object-position: 50% 62.05%; transform: none; transform-origin: 50% 62.05%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img height="931" width="1400" loading="lazy" id="bp1-p-img" src="https://www.maddogperformance.co.za/images/545793f464e1b6c5.png" srcset="/images/bb656d847956cd6e.webp 480w, /images/cd20a8acce287f3f.webp 800w, /images/f8c19039c1af9bc8.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Maddog Performance Institute" style="object-position: 50% 62.05%; transform: none; transform-origin: 50% 62.05%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
           
           
         </div></div>
@@ -1194,7 +1190,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <!-- POST 2 -->
       <div class="blog-card" id="bp2">
         <div class="bc-img"><div class="photo-slot loaded" id="bp2-p" style="height:100%">
-          <img height="1066" width="1600" loading="lazy" id="bp2-p-img" src="https://www.maddogperformance.co.za/images/348067df150a3dfd.jpg" alt="Maddog Performance Institute" style="object-position: 50% 62.56%; transform: none; transform-origin: 50% 62.56%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img height="1066" width="1600" loading="lazy" id="bp2-p-img" src="https://www.maddogperformance.co.za/images/348067df150a3dfd.jpg" srcset="/images/3e7684ac9709916e.webp 480w, /images/8825eb262fc5fc7d.webp 800w, /images/2567f0c3d218f13d.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Maddog Performance Institute" style="object-position: 50% 62.56%; transform: none; transform-origin: 50% 62.56%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
           
           
         </div></div>
@@ -1209,43 +1205,13 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       </div>
 
       <!-- POST 3 -->
-      <div class="blog-card" id="bp3">
-        <div class="bc-img"><div class="photo-slot loaded" id="bp3-p" style="height:100%">
-          <img height="1600" width="1200" loading="lazy" id="bp3-p-img" src="https://www.maddogperformance.co.za/images/ef82af0ac7dac176.jpg" alt="Maddog Performance Institute" style="object-position: 50% 34.39%; transform: none; transform-origin: 50% 34.39%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          
-          
-        </div></div>
-        <div class="bc-body">
-          <span class="bc-tag">Strength Training</span>
-          <div class="bc-title">What Are the Benefits of Powerlifting for Women? Strength Training in Ballito, KZN</div>
-          <p class="bc-excerpt">For too long, the weight room was treated as male territory. That model is outdated — and the women training at Maddog on the KZN North Coast increasingly know it. Here is why powerlifting deserves a central place in your programme.</p>
-          <div class="bc-date">April 2026 · 10 min read</div>
-          <div class="bc-edit-row">
-            <a href="blog-powerlifting-women-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>          </div>
-        </div>
-      </div>
 
       <!-- POST 4 -->
-      <div class="blog-card" id="bp4">
-        <div class="bc-img"><div class="photo-slot loaded" id="bp4-p" style="height:100%">
-          <img height="1086" width="1448" loading="lazy" id="bp4-p-img" src="https://www.maddogperformance.co.za/images/cdacfad3b11257c4.jpg" alt="Maddog Performance Institute" style="object-position: 50% 61.98%; transform: none; transform-origin: 50% 61.98%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-          
-          
-        </div></div>
-        <div class="bc-body">
-          <span class="bc-tag">Recovery</span>
-          <div class="bc-title">IV Drip Therapy Benefits for Recovery, Performance, and Wellness in Ballito, KZN</div>
-          <p class="bc-excerpt">For decades, IV nutrient therapy was reserved for hospitals and elite performance teams. Now it is available at Maddog in Ballito — and the difference it makes to recovery, energy, and performance is measurable and immediate.</p>
-          <div class="bc-date">April 2026 · 8 min read</div>
-          <div class="bc-edit-row">
-            <a href="blog-iv-drip-therapy-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>          </div>
-        </div>
-      </div>
 
       <!-- POST 5 -->
       <div class="blog-card" id="bp5">
         <div class="bc-img"><div class="photo-slot loaded" id="bp5-p" style="height:100%">
-          <img height="759" width="1170" loading="lazy" id="bp5-p-img" src="https://www.maddogperformance.co.za/images/780cd872b4dade89.jpg" alt="Maddog Performance Institute" style="object-position: 50% 13.09%; transform: none; transform-origin: 50% 13.09%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img height="759" width="1170" loading="lazy" id="bp5-p-img" src="https://www.maddogperformance.co.za/images/780cd872b4dade89.jpg" srcset="/images/a32fd83adec28c01.webp 480w, /images/2587638e7f280ce0.webp 800w, /images/e6e891d01d077778.webp 1170w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Maddog Performance Institute" style="object-position: 50% 13.09%; transform: none; transform-origin: 50% 13.09%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
           
           
         </div></div>
@@ -1262,7 +1228,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <!-- POST COMMUNITY ST LUKES -->
       <div class="blog-card" id="bp-community-stlukes">
         <div class="bc-img"><div class="photo-slot loaded" id="bp-community-stlukes-p" style="height:100%">
-          <img height="1200" width="916" loading="lazy" id="bp-community-stlukes-p-img" src="https://www.maddogperformance.co.za/images/7a58fc4e5a377d74.jpg" alt="Ballito community fundraiser for St Luke's Home of Healing" style="object-position: 50% 33.15%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+          <img height="1200" width="916" loading="lazy" id="bp-community-stlukes-p-img" src="https://www.maddogperformance.co.za/images/7a58fc4e5a377d74.jpg" srcset="/images/b7d0f1319302eef0.webp 480w, /images/d4b2b82b028657b6.webp 800w, /images/9ef4901a818793c7.webp 916w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Ballito community fundraiser for St Luke's Home of Healing" style="object-position: 50% 33.15%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         </div></div>
         <div class="bc-body">
           <span class="bc-tag">Community</span>
@@ -1290,40 +1256,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
     <div class="event-list" id="eventList">
 
-      <!-- EVENT 1 — 24 & 25 Oct: fundraiser -->
-      <div class="event-card" id="ev-oct24">
-        <div class="ec-date-block">
-          <div class="ec-day" style="font-size:30px;line-height:1">24 &amp;<br>28</div>
-          <div class="ec-month">Oct</div>
-        </div>
-        <div class="ec-body">
-          <div class="ec-tag">Fundraiser · Rebounding</div>
-          <div class="ec-title">Rebounding Fundraiser for Tereza</div>
-          <div class="ec-meta">📍 Maddog Performance Institute, Ballito &nbsp;·&nbsp; <time datetime="2026-10-24T11:00">Saturday 24</time> &amp; <time datetime="2026-10-28T11:00">Wednesday 28 October 2026</time> &nbsp;·&nbsp; 11:00 (45 minutes) &nbsp;·&nbsp; R150 per class</div>
-          <div class="ec-meta">Raising funds for Tereza’s cancer treatment during Breast Cancer Awareness Month.</div>
-        </div>
-        <div class="ec-actions">
-          <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20more%20info%20about%20the%20Rebounding%20fundraiser%20for%20Tereza%20on%2024%20or%2028%20October." target="_blank" rel="noopener" class="btn btn-g btn-sm">More Info</a>
-        </div>
-      </div>
-
-      <!-- EVENT 2 — 31 Oct -->
-      <div class="event-card" id="ev-oct31">
-        <div class="ec-date-block">
-          <div class="ec-day">31</div>
-          <div class="ec-month">Oct</div>
-        </div>
-        <div class="ec-body">
-          <div class="ec-tag">MMA</div>
-          <div class="ec-title">Heat City by Pro-Action</div>
-          <div class="ec-meta">📍 Umhlanga, KZN &nbsp;·&nbsp; 31 October 2026</div>
-        </div>
-        <div class="ec-actions">
-          <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20more%20info%20about%20Heat%20City%20by%20Pro-Action%20on%2031%20October." target="_blank" rel="noopener" class="btn btn-g btn-sm">More Info</a>
-        </div>
-      </div>
-
-      <!-- EVENT 3 — 14 Nov -->
+      <!-- EVENT 1 — 14 Nov -->
       <div class="event-card" id="ev-nov14">
         <div class="ec-date-block">
           <div class="ec-day">14</div>
@@ -1336,6 +1269,22 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         </div>
         <div class="ec-actions">
           <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20more%20info%20about%20Lights%20Out%20on%2014%20November." target="_blank" rel="noopener" class="btn btn-g btn-sm">More Info</a>
+        </div>
+      </div>
+
+      <!-- EVENT 2 — 3 Dec: Maddog Fight Night -->
+      <div class="event-card" id="ev-dec03">
+        <div class="ec-date-block">
+          <div class="ec-day">03</div>
+          <div class="ec-month">Dec</div>
+        </div>
+        <div class="ec-body">
+          <div class="ec-tag">Fight Night</div>
+          <div class="ec-title">Maddog Fight Night</div>
+          <div class="ec-meta">📍 Mozambik, Balvista Centre, Ballito &nbsp;·&nbsp; <time datetime="2026-12-03">3 December 2026</time></div>
+        </div>
+        <div class="ec-actions">
+          <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20more%20info%20about%20Maddog%20Fight%20Night%20on%203%20December." target="_blank" rel="noopener" class="btn btn-g btn-sm">More Info</a>
         </div>
       </div>
 
@@ -1474,7 +1423,7 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
       <a href="/training/boxing-ballito">Boxing</a>
       <a href="/training/kickboxing-ballito">Kickboxing</a>
       <a href="/training/personal-training-ballito">Personal Training</a>
-      <a href="/training/powerlifting-ballito">Powerlifting</a>
+      <a href="/training/rebounding-ballito">Rebounding</a>
     </div>
     <div class="sf-col">
       <h3>About</h3>
@@ -1553,7 +1502,7 @@ function swapPhoto(slotId) {
       var img  = document.getElementById(slotId + '-img');
       var slot = document.getElementById(slotId);
       if (img) {
-        img.setAttribute('src', dataUrl);
+        img.removeAttribute('srcset');img.removeAttribute('sizes');img.setAttribute('src', dataUrl);
         img.src = dataUrl;
       }
       if (slot) slot.classList.add('loaded');

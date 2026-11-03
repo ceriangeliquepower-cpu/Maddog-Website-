@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<!-- Google tag (gtag.js): its script loads just after the page has appeared, so it doesn't slow the first view -->
+<!-- Google tag (gtag.js): its script loads on the visitor's first scroll/tap/key, or 5 s after the page has loaded, so it never slows the page on phones -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-PR35V75DZH');window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);},1500);});
+  gtag('config', 'G-PR35V75DZH');(function(){var done=0;function L(){if(done)return;done=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PR35V75DZH';document.head.appendChild(s);}['scroll','pointerdown','touchstart','keydown'].forEach(function(e){window.addEventListener(e,L,{once:true,passive:true});});window.addEventListener('load',function(){setTimeout(L,5000);});})();
 </script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,6 +14,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
 <title>Fight Team &amp; Members | Maddog | Ballito</title>
 <meta name="description" content="Meet the Maddog fight team and member community. IMMAF, MFC, VERSUS and amateur fighters trained under 2x EFC World Champion Amanda Lino. MMA gym Ballito, KZN.">
 <link rel="canonical" href="https://www.maddogperformance.co.za/athletes">
@@ -798,6 +800,18 @@ html { -webkit-text-size-adjust: 100%; }
 [role="button"].photo-slot{cursor:default!important}
 .photo-slot{cursor:default!important}
 </style><style>/* Photo-slot editor labels live in CSS so search engines don't read them as page text */.slot-icon::before,.slot-label::before{content:attr(data-t)}</style>
+<style>/* 8 fighter cards (Nov 2026, Amanda Wren Kobus removed): 4 columns on computers = 2 full rows, no gap */@media(min-width:1025px){.fighter-grid{grid-template-columns:repeat(4,1fr)!important;gap:16px}}</style>
+<style id="hero-spacing">/* Nov 2026: on phones/tablets the heading sat against the menu */@media(max-width:1024px){html body section.hero{padding-top:120px!important}}</style>
+<style id="gold-3d-heading">/* Metallic 3D gold headings (Nov 2026), like the Maddog Instagram designs. Text stays real text; no extra download */
+.page-h1,.hero-h1,.hero-name,.sec-h,.sec-title{text-shadow:0 2px 0 rgba(0,0,0,.45),0 10px 28px rgba(0,0,0,.65)}
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{color:#D9B65C}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{background:linear-gradient(180deg,#FBEFC2 0%,#EBCB72 26%,#C9A84C 50%,#A07C2C 74%,#E2C068 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;-webkit-box-decoration-break:clone;box-decoration-break:clone;filter:drop-shadow(0 2px 0 rgba(70,48,8,.95)) drop-shadow(0 8px 18px rgba(201,168,76,.22))}
+.page-h1 em,.hero-h1 em,.hero-name span,.sec-h em,.sec-title em{padding:.24em 0 .2em;margin:-.24em 0 -.2em}/* room for the gold paint so letter tops/bottoms are never cut off; layout unchanged */
+}
+</style>
+<style id="form-fonts">/* form controls use the site font, not the browser default */button,select,option,input,textarea{font-family:inherit}</style>
+<style id="readability">/* Pre-launch audit (Nov 2026): readable text + same look on iPhone/Android */html{-webkit-text-size-adjust:100%;text-size-adjust:100%}html body .sf-bottom p,html body .sf-bottom p a{color:rgba(245,240,232,.62)!important}html body .snm-sub{color:rgba(245,240,232,.72)!important}html body .snm-sub:hover{color:#c9a84c!important}html body .hours-time.closed{color:rgba(245,240,232,.55)}html body .btn-wa{background:#0E7A3E!important}html body .btn-wa:hover{background:#0B6633!important}html body .rloss,html body .loss-badge{color:#ff9b9b!important}html body .email-sub{color:rgba(8,8,8,.82)!important}html body .nl-left p{color:rgba(8,8,8,.8)!important}html body .pull-quote p{font-weight:300!important}</style>
 </head>
 <body data-pid="athletes">
 <!-- ══ SITE NAV ══ -->
@@ -808,13 +822,12 @@ html { -webkit-text-size-adjust: 100%; }
   <div class="site-nav-links">
       <a href="index.html">Home</a>
       <a href="amanda.html">Amanda</a>
-      <div class="nav-has-dropdown"><a href="recovery.html">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="wellness-pricing.html">Pricelist</a></div></div>
-      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/training/personal-training-ballito">Personal Training</a><a href="/training/mma-ballito">MMA</a><a href="/training/bjj-ballito">BJJ</a><a href="/training/kids-bjj-ballito">Kids BJJ</a><a href="/training/kickboxing-ballito">Kickboxing</a><a href="/training/wrestling-ballito">Wrestling</a><a href="/training/boxing-ballito">Boxing</a><a href="/training/womens-boxing-ballito">Women's Boxing</a><a href="/training/kids-boxing-ballito">Kids Boxing</a><a href="/training/olympic-boxing-ballito">Olympic Boxing</a><a href="/training/powerlifting-ballito">Powerlifting</a></div></div>
+      <div class="nav-has-dropdown"><a href="/recovery">Recovery <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/recovery">Contrast Therapy</a><a href="/recovery/cold-plunge-ballito">Ice Bath</a><a href="/recovery/infrared-sauna-ballito">Infrared Sauna</a><a href="/recovery/physiotherapy-ballito">Physiotherapy</a><a href="/training/personal-training-ballito#nutrition">PT &amp; Nutrition</a><a href="/recovery#pricing">Pricelist</a></div></div>
+      <div class="nav-has-dropdown"><a href="training.html">Training <span class="nav-drop-chevron">▼</span></a><div class="nav-drop-menu"><a href="/training/personal-training-ballito">Personal Training</a><a href="/training/mma-ballito">MMA</a><a href="/training/bjj-ballito">BJJ</a><a href="/training/kids-bjj-ballito">Kids BJJ</a><a href="/training/kickboxing-ballito">Kickboxing</a><a href="/training/wrestling-ballito">Wrestling</a><a href="/training/boxing-ballito">Boxing</a><a href="/training/womens-boxing-ballito">Women's Boxing</a><a href="/training/kids-boxing-ballito">Kids Boxing</a><a href="/training/olympic-boxing-ballito">Olympic Boxing</a><a href="/training/rebounding-ballito">Rebounding</a></div></div>
       <a href="coaches.html">Coaches</a>
       <a href="athletes.html" class="active">Athletes</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
-      <a href="wellness.html" class="snl-wellness">✦ Wellness</a>
     </div>
     <div class="site-nav-cta"><img src="https://www.maddogperformance.co.za/images/c0dd2def0f0bace6.png" alt="" width="28" height="20" style="height:20px;width:auto;display:inline-block;vertical-align:middle;margin-right:8px;opacity:.85;"><a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" target="_blank" rel="noopener">Book Online</a></div>
     <button class="site-nav-hamburger" id="siteNavHam" onclick="toggleSiteNav()" aria-label="Menu" aria-expanded="false">
@@ -825,15 +838,20 @@ html { -webkit-text-size-adjust: 100%; }
 <div class="site-nav-mobile" id="siteNavMob">
   <a href="index.html">Home</a>
   <a href="amanda.html">Amanda</a>
-  <a href="recovery.html">Recovery</a>
-  <a href="wellness-pricing.html" class="snm-sub">↳ Pricelist</a>
+  <a href="/recovery">Recovery</a>
+  <a href="/recovery" class="snm-sub">↳ Contrast Therapy</a>
+  <a href="/recovery/cold-plunge-ballito" class="snm-sub">↳ Ice Bath</a>
+  <a href="/recovery/infrared-sauna-ballito" class="snm-sub">↳ Infrared Sauna</a>
+  <a href="/recovery/physiotherapy-ballito" class="snm-sub">↳ Physiotherapy</a>
+  <a href="/training/personal-training-ballito#nutrition" class="snm-sub">↳ PT &amp; Nutrition</a>
+  <a href="/recovery#pricing" class="snm-sub">↳ Pricelist</a>
   <a href="training.html">Training</a>
-  <a href="/training/personal-training-ballito" class="snm-sub">↳ Personal Training</a><a href="/training/mma-ballito" class="snm-sub">↳ MMA</a><a href="/training/bjj-ballito" class="snm-sub">↳ BJJ</a><a href="/training/kids-bjj-ballito" class="snm-sub">↳ Kids BJJ</a><a href="/training/kickboxing-ballito" class="snm-sub">↳ Kickboxing</a><a href="/training/wrestling-ballito" class="snm-sub">↳ Wrestling</a><a href="/training/boxing-ballito" class="snm-sub">↳ Boxing</a><a href="/training/womens-boxing-ballito" class="snm-sub">↳ Women's Boxing</a><a href="/training/kids-boxing-ballito" class="snm-sub">↳ Kids Boxing</a><a href="/training/olympic-boxing-ballito" class="snm-sub">↳ Olympic Boxing</a><a href="/training/powerlifting-ballito" class="snm-sub">↳ Powerlifting</a>
+  <a href="/training/personal-training-ballito" class="snm-sub">↳ Personal Training</a><a href="/training/mma-ballito" class="snm-sub">↳ MMA</a><a href="/training/bjj-ballito" class="snm-sub">↳ BJJ</a><a href="/training/kids-bjj-ballito" class="snm-sub">↳ Kids BJJ</a><a href="/training/kickboxing-ballito" class="snm-sub">↳ Kickboxing</a><a href="/training/wrestling-ballito" class="snm-sub">↳ Wrestling</a><a href="/training/boxing-ballito" class="snm-sub">↳ Boxing</a><a href="/training/womens-boxing-ballito" class="snm-sub">↳ Women's Boxing</a><a href="/training/kids-boxing-ballito" class="snm-sub">↳ Kids Boxing</a><a href="/training/olympic-boxing-ballito" class="snm-sub">↳ Olympic Boxing</a>
+  <a href="/training/rebounding-ballito" class="snm-sub">↳ Rebounding</a>
   <a href="coaches.html">Coaches</a>
   <a href="athletes.html" class="active">Athletes</a>
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
-  <a href="wellness.html" class="snm-wellness">✦ Wellness &amp; Recovery</a>
   <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20to%20book%20a%20session%20at%20Maddog%20Performance%20Institute" class="snm-cta" target="_blank" rel="noopener">Book Online</a>
 </div>
 <script>
@@ -890,13 +908,13 @@ document.addEventListener('click',function(e){
         
       </div>
       <div class="photo-slot loaded" id="hm2" style="height:100%">
-        <img height="1122" width="1200" id="hm2-img" src="https://www.maddogperformance.co.za/images/85b1fd6781dd9ec8.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1122" width="1200" id="hm2-img" src="https://www.maddogperformance.co.za/images/85b1fd6781dd9ec8.jpg" srcset="/images/6b9632db66284fe1.webp 480w, /images/18758a848448d5bf.webp 800w, /images/7b16f6d3e460bdfb.webp 1200w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 31vw, 253px" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
         <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         
       </div>
       <div class="photo-slot loaded" id="hm3" style="height:100%">
-        <img height="1200" width="675" id="hm3-img" src="https://www.maddogperformance.co.za/images/9e9b22f6d176a5d9.jpg" alt="Maddog Performance Institute" style="object-position: 50% 65.72%; transform: none; transform-origin: 50% 65.72%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+        <img height="1200" width="675" id="hm3-img" src="https://www.maddogperformance.co.za/images/9e9b22f6d176a5d9.jpg" srcset="/images/7a27575ce90d2e32.webp 480w, /images/1c96f93f5efedd46.webp 675w" sizes="(max-width: 600px) 43vw, (max-width: 1024px) 31vw, 253px" alt="Maddog Performance Institute" style="object-position: 50% 65.72%; transform: none; transform-origin: 50% 65.72%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
         <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
         <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
         
@@ -949,7 +967,7 @@ document.addEventListener('click',function(e){
       </div>
       <div class="reveal rd2 visible" style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
         <p class="body-p">Competing across EFC, IMMAF, MFC, VERSUS, and amateur circuits throughout South Africa. Representing Ballito on stages that matter. Maddog is affiliated with IMMAF and MMA South Africa (MMASA), SAKA for kickboxing, Boxing South Africa for boxing, and the Carlson Gracie and Marcus Soares Brazilian Jiu-Jitsu lineages. <a href="index.html#affiliations" style="color:var(--gold)">See all Maddog affiliations</a>.</p>
-        <a href="wellness-pricing.html#assessment" class="btn btn-o btn-sm">Join The Fight Team</a>
+        <a href="contact.html" class="btn btn-o btn-sm">Join The Fight Team</a>
       </div>
     </div>
 
@@ -960,7 +978,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal visible" id="fc1">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f1p" style="height:100%">
-            <img height="1200" width="731" loading="lazy" id="f1p-img" alt="Maddog Performance Institute" style="object-position: 50% 7%; transform: none; transform-origin: 50% 7%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/273e161ae53c1b77.jpg">
+            <img height="1200" width="731" loading="lazy" id="f1p-img" alt="Maddog Performance Institute" style="object-position: 50% 7%; transform: none; transform-origin: 50% 7%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/273e161ae53c1b77.jpg" srcset="/images/afb8cd908182d439.webp 480w, /images/767f98fd4e6dae84.webp 731w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 263px">
             <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -983,7 +1001,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd1 visible" id="fc2">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f2p" style="height:100%">
-            <img height="1570" width="1002" loading="lazy" id="f2p-img" src="https://www.maddogperformance.co.za/images/943f582cd1d77494.jpg" alt="Maddog Performance Institute" style="object-position: 50% 58.37%; transform: none; transform-origin: 50% 58.37%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1570" width="1002" loading="lazy" id="f2p-img" src="https://www.maddogperformance.co.za/images/943f582cd1d77494.jpg" srcset="/images/595ab7eea532fc4c.webp 480w, /images/af31eed4fe11b15f.webp 800w, /images/129d389824315a11.webp 1002w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 263px" alt="Maddog Performance Institute" style="object-position: 50% 58.37%; transform: none; transform-origin: 50% 58.37%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1006,7 +1024,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd2 visible" id="fc3">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f3p" style="height:100%">
-            <img height="1600" width="926" loading="lazy" id="f3p-img" src="https://www.maddogperformance.co.za/images/91fcac8ae5ea3916.jpg" alt="Maddog Performance Institute" style="object-position: 50% 25.96%; transform: none; transform-origin: 50% 25.96%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="1600" width="926" loading="lazy" id="f3p-img" src="https://www.maddogperformance.co.za/images/91fcac8ae5ea3916.jpg" srcset="/images/03152b3c802e08dd.webp 480w, /images/ba4470b9d0c81e94.webp 800w, /images/ecce949517d7dfea.webp 926w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 263px" alt="Maddog Performance Institute" style="object-position: 50% 25.96%; transform: none; transform-origin: 50% 25.96%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1029,7 +1047,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd3 visible" id="fc4">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f4p" style="height:100%">
-            <img height="853" width="1280" loading="lazy" id="f4p-img" src="https://www.maddogperformance.co.za/images/1481d03b85136e3d.jpg" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
+            <img height="853" width="1280" loading="lazy" id="f4p-img" src="https://www.maddogperformance.co.za/images/1481d03b85136e3d.jpg" srcset="/images/05eb5cdfde1cb007.webp 480w, /images/7e5abf7f09cdec8f.webp 800w, /images/0873ec7c885b9730.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 263px" alt="Maddog Performance Institute" style="object-position: 50% 50%; transform: none; transform-origin: 50% 50%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
             <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1053,7 +1071,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal visible" id="fc5">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f5p" style="height:100%">
-            <img height="400" width="600" loading="lazy" id="f5p-img" src="https://www.maddogperformance.co.za/images/2b579b937b065eb8.jpg" alt="Maddog Performance Institute" style="display:block!important;width:100%!important;height:100%!important;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
+            <img height="400" width="600" loading="lazy" id="f5p-img" src="https://www.maddogperformance.co.za/images/2b579b937b065eb8.jpg" srcset="/images/8ec38865ebc83f8c.webp 480w, /images/33a8e8c41fb5eab8.webp 600w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 263px" alt="Maddog Performance Institute" style="display:block!important;width:100%!important;height:100%!important;object-fit:cover;object-position:center top;position:absolute!important;top:0;left:0;bottom:0;right:0;z-index:1;">
             <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1076,7 +1094,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal rd1 visible" id="fc6">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f6p" style="height:100%">
-            <img height="720" width="1080" loading="lazy" id="f6p-img" src="https://www.maddogperformance.co.za/images/f0637647730ddce9.jpg" alt="Maddog Performance Institute" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;">
+            <img height="720" width="1080" loading="lazy" id="f6p-img" src="https://www.maddogperformance.co.za/images/f0637647730ddce9.jpg" srcset="/images/94665f5d6baf88d5.webp 480w, /images/ad28d4c85748250f.webp 800w, /images/16c77418f853afdd.webp 1080w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 263px" alt="Maddog Performance Institute" style="inset: 0px; object-fit: cover; object-position: center center; z-index: 1; position: absolute !important; width: 100% !important; height: 100% !important; display: block !important;">
             <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1095,36 +1113,11 @@ document.addEventListener('click',function(e){
         </div>
       </div>
 
-      <!-- FIGHTER 7 — AMANDA WREN KOBUS -->
-      <div class="fighter-card reveal rd2 visible" id="fc7">
-        <div class="fc-photo">
-          <div class="photo-slot loaded" id="f7p" style="height:100%">
-            <img loading="lazy" id="f7p-img" src="https://www.maddogperformance.co.za/images/25ed850d65d30d30.jpg" alt="Amanda Wren Kobus squatting at KwaZulu-Natal Powerlifting Federation" width="400" height="320" style="object-position: 50% 38.76%; transform: none; transform-origin: 50% 38.76%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;">
-            <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change"></span></div>
-            <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
-          </div>
-          <div class="fc-discipline" id="f7-disc">Powerlifting</div>
-        </div>
-        <div class="fc-body">
-          <div class="fc-name">Amanda Wren Kobus</div>
-          <div class="fc-nickname">KZNPLF Master 1</div>
-          <div style="font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:6px">2025 IPF Rankings</div>
-          <div class="fc-meta">
-            <div class="fc-meta-item"><div class="fc-meta-val wins">139.97kg</div><div class="fc-meta-lbl">Squat</div></div>
-            <div class="fc-meta-item"><div class="fc-meta-val">62.50kg</div><div class="fc-meta-lbl">Bench</div></div>
-            <div class="fc-meta-item"><div class="fc-meta-val">152.49kg</div><div class="fc-meta-lbl">Deadlift</div></div>
-          </div>
-          <div class="fc-weight">Powerlifting · KZN</div>
-          <div class="fc-achievement" style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:6px 0 4px;display:flex;align-items:center;gap:6px"><span style="font-size:6px">◆</span> Proteas-Selected · KZNPLF Master 1 Record Holder</div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white-dim);border-top:1px solid rgba(201,168,76,.15);padding-top:10px;margin-top:6px">IPF Total &nbsp;<span style="color:var(--gold);font-size:15px">354.96kg</span></div>
-        </div>
-      </div>
-
       <!-- FIGHTER 8 — NATHAN LAWRENCE — TODO: confirm record, age, achievement; photo pending -->
       <div class="fighter-card reveal visible" id="fc8">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f8p" style="height:100%;cursor:pointer" role="button" tabindex="0" aria-label="Add photo for Nathan Lawrence">
-            <img loading="lazy" height="1600" width="931" id="f8p-img" alt="Nathan Lawrence, MMA fighter at Maddog Performance Institute" style="object-position: 50% 14.67%; transform: none; transform-origin: 50% 14.67%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/a09fb9767fcedb0c.jpg">
+            <img loading="lazy" height="1600" width="931" id="f8p-img" alt="Nathan Lawrence, MMA fighter at Maddog Performance Institute" style="object-position: 50% 14.67%; transform: none; transform-origin: 50% 14.67%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/a09fb9767fcedb0c.jpg" srcset="/images/1bb93dbfd9aff360.webp 480w, /images/e2e498459f5cf6a8.webp 800w, /images/886a16e035612b38.webp 931w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 263px">
             <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Add Photo"></span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1147,7 +1140,7 @@ document.addEventListener('click',function(e){
       <div class="fighter-card reveal visible" id="fc9">
         <div class="fc-photo">
           <div class="photo-slot loaded" id="f9p" style="height:100%;cursor:pointer">
-            <img loading="lazy" height="1448" width="1086" id="f9p-img" alt="Nicole Tome-Alves, MMA and Kickboxing fighter at Maddog Performance Institute" style="object-position: 50% 35.82%; transform: none; transform-origin: 50% 35.82%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/8cc1269a75633f51.jpg">
+            <img loading="lazy" height="1448" width="1086" id="f9p-img" alt="Nicole Tome-Alves, MMA and Kickboxing fighter at Maddog Performance Institute" style="object-position: 50% 35.82%; transform: none; transform-origin: 50% 35.82%; position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: none !important;" src="https://www.maddogperformance.co.za/images/8cc1269a75633f51.jpg" srcset="/images/f688a417af9d0e96.webp 480w, /images/844f98594bcfac6c.webp 800w, /images/5534b82dadd95826.webp 1086w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 45vw, 263px">
             <div class="slot-overlay"><span class="slot-icon" data-t="📷"></span><span class="slot-label" data-t="Click to Change Photo"></span></div>
             <div class="gc tl"></div><div class="gc tr"></div><div class="gc bl"></div><div class="gc br"></div>
           </div>
@@ -1192,95 +1185,10 @@ document.addEventListener('click',function(e){
       </div>
     </div>
 
-    <!-- MEMBER GRID — 6 cards + add button -->
+    <!-- MEMBER GRID -->
     <div class="member-grid" id="memberGrid">
 
-      <!-- MEMBER 1 -->
-            <!-- MEMBER 1 -->
-            <div class="member-card reveal visible" id="mc1">
-        <div class="mc-footer">
-          <div class="mc-avatar loaded" id="mp1">
-            <img height="200" width="152" loading="lazy" id="mp1-img" src="https://www.maddogperformance.co.za/images/23e74b2fc48b2b56.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
-            <div class="mc-avatar-hint">📸</div>
-          </div>
-          <div class="mc-meta">
-            <div class="mc-name">Terry Van Houten</div>
-            <div class="mc-duration">Personal Training · S&amp;C</div>
-          </div>
-        </div>
-        <p class="mc-testimonial">Wren is an incredible trainer who truly delivers results! She is dynamic, motivating, and knows exactly how to push you to be your best while still making every session enjoyable. Her energy is contagious, and she creates a positive, supportive environment that keeps you coming back. If you’re looking for someone who will challenge you and help you grow stronger and fitter, she’s the one.</p>
-        <button class="mc-read-more" onclick="toggleReadMore(this)">Read More ▼</button>
-      </div>
-
-      <!-- MEMBER 2 -->
-            <!-- MEMBER 2 -->
-            <div class="member-card reveal visible rd1" id="mc2">
-        <div class="mc-footer">
-          <div class="mc-avatar loaded" id="mp2">
-            <img height="200" width="153" loading="lazy" id="mp2-img" src="https://www.maddogperformance.co.za/images/9d47b20b3249f301.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
-            <div class="mc-avatar-hint">📸</div>
-          </div>
-          <div class="mc-meta">
-            <div class="mc-name">Angela Dick</div>
-            <div class="mc-duration">Training Since · February 2025</div>
-          </div>
-        </div>
-        <p class="mc-testimonial">I started working with Wren in February 2025, and over the past year she has truly transformed both my mindset and my body. After years of struggling with my weight and constant yo-yo cycles, I’ve finally found balance — not just physically, but mentally too. For the first time, I feel like I’m able to maintain a healthy, sustainable lifestyle, and that’s entirely thanks to Wren. Her approach goes far beyond training. Her knowledge of nutrition is exceptional, and the way she teaches makes everything feel achievable and realistic. She leads with genuine care, patience, and understanding. Wren doesn’t just help you change your body — she changes the way you think, and that’s where the real transformation happens. I’m incredibly grateful for her guidance and would recommend her to anyone looking for lasting results.</p>
-        <button class="mc-read-more" onclick="toggleReadMore(this)">Read More ▼</button>
-      </div>
-
-      <!-- MEMBER 3 -->
-            <!-- MEMBER 3 -->
-            <div class="member-card reveal visible rd1" id="mc3">
-        <div class="mc-footer">
-          <div class="mc-avatar loaded" id="mp3">
-            <img height="200" width="151" loading="lazy" id="mp3-img" src="https://www.maddogperformance.co.za/images/3798b12d8d4a281d.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
-            <div class="mc-avatar-hint">📸</div>
-          </div>
-          <div class="mc-meta">
-            <div class="mc-name">Amy &amp; Kate</div>
-            <div class="mc-duration">Training Since · 2025</div>
-          </div>
-        </div>
-        <p class="mc-testimonial">In just six months with Wren, Kate and I have gone from dreading workouts to genuinely looking forward to each session. What once felt intimidating has become something we truly enjoy. We’ve achieved physical goals we never thought possible at the start, and that journey has been even more rewarding because we’ve been able to do it together. Even though we each have different strengths and abilities, Wren always meets us where we are — making sure we’re giving our best individually and reminding us to measure progress against ourselves, not each other. Wren’s knowledge, encouragement, and support have made all the difference. She knows exactly when to challenge us and when to lift us up, and because of Wren, we are stronger and more motivated than ever!</p>
-        <button class="mc-read-more" onclick="toggleReadMore(this)">Read More ▼</button>
-      </div>
-
-      <!-- MEMBER 4 -->
-            <!-- MEMBER 4 -->
-            <div class="member-card reveal visible rd1" id="mc4">
-        <div class="mc-footer">
-          <div class="mc-avatar loaded" id="mp4">
-            <img height="200" width="162" loading="lazy" id="mp4-img" src="https://www.maddogperformance.co.za/images/7a3fe1ee61b2f2d6.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
-            <div class="mc-avatar-hint">📸</div>
-          </div>
-          <div class="mc-meta">
-            <div class="mc-name">Anonymous</div>
-            <div class="mc-duration">Couple Sessions · Training Since 2024</div>
-          </div>
-        </div>
-        <p class="mc-testimonial">Training with Wren is an invigorating experience — whether you have never trained formally before or are athletically inclined, Wren is able to comprehensively assess your fitness level by harnessing her extraordinary expertise across medical, pharmaceutical, military, and powerlifting environments. Whether the goal is to lose weight, improve lean muscle mass, tone physique, or simply get stronger, Wren tailors her skillset to reach and sustain your goals. Her eating plans are based on an individual’s dietary preferences and body composition, and she is able to offer unique recovery methods from customised IV treatments to B vitamin injections. After a year of training with Wren, we are committed to continue our journey with her guidance — having seen sustained improvements beyond the initial gains achieved within the first few months. Wren’s training approach is holistic in a healthy and enjoyable manner that leaves you motivated and committed to keep going. Results are inevitable.</p>
-        <button class="mc-read-more" onclick="toggleReadMore(this)">Read More ▼</button>
-      </div>
-
-      <!-- MEMBER 5 -->
-            <!-- MEMBER 5 -->
-            <div class="member-card reveal visible rd1" id="mc5">
-        <div class="mc-footer">
-          <div class="mc-avatar loaded" id="mp5">
-            <img height="133" width="200" loading="lazy" id="mp5-img" src="https://www.maddogperformance.co.za/images/9794f3e8f1e0fe40.jpg" alt="Maddog Performance Institute" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top;">
-            <div class="mc-avatar-hint">📸</div>
-          </div>
-          <div class="mc-meta">
-            <div class="mc-name">Daniela</div>
-            <div class="mc-duration">Personal Training</div>
-          </div>
-        </div>
-        <p class="mc-testimonial">Wren is an awesome personal trainer. She always makes sure your form is correct and that you’re training safely and effectively. She’s attentive and motivating. You’re guaranteed to see results if you put in the effort.</p>
-        <button class="mc-read-more" onclick="toggleReadMore(this)">Read More ▼</button>
-      </div>
-
-      <!-- MEMBER 6 -->
+<!-- MEMBER 6 -->
       
       <!-- MEMBER 6 — Luke De Beer -->
             <!-- MEMBER 6 -->
@@ -1362,7 +1270,7 @@ document.addEventListener('click',function(e){
           <!-- Mozambik -->
           <a href="https://www.mozambik.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Mozambik Restaurant">
             <div class="sponsor-logo-slot loaded" id="logo-mozambik" onclick="event.preventDefault();swapLogo('logo-mozambik')" title="Click to upload Mozambik logo">
-            <img height="240" width="240" loading="lazy" id="logo-mozambik-img" src="https://www.maddogperformance.co.za/images/819e56f153af9b9f.png" alt="Mozambik Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="240" width="240" loading="lazy" id="logo-mozambik-img" src="https://www.maddogperformance.co.za/images/819e56f153af9b9f.png" srcset="/images/980129b2e559f0f5.webp 240w" sizes="(max-width: 600px) 42vw, (max-width: 1024px) 46vw, 264px" alt="Mozambik Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1376,7 +1284,7 @@ document.addEventListener('click',function(e){
           <!-- Concha Cafe -->
           <a href="https://concha.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Concha Cafe">
             <div class="sponsor-logo-slot loaded" id="logo-concha" onclick="event.preventDefault();swapLogo('logo-concha')" title="Click to upload Concha Café &amp; Bakery logo">
-            <img height="198" width="240" loading="lazy" id="logo-concha-img" src="https://www.maddogperformance.co.za/images/bcf4c7921d55cda0.jpg" alt="Concha Café &amp; Bakery Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="198" width="240" loading="lazy" id="logo-concha-img" src="https://www.maddogperformance.co.za/images/bcf4c7921d55cda0.jpg" srcset="/images/02d589b9bdbc8cc1.webp 240w" sizes="(max-width: 600px) 42vw, (max-width: 1024px) 46vw, 264px" alt="Concha Café &amp; Bakery Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1390,7 +1298,7 @@ document.addEventListener('click',function(e){
           <!-- Conchilla -->
           <a href="https://conchilla.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="Conchilla Tapas Lounge">
             <div class="sponsor-logo-slot loaded" id="logo-conchilla" onclick="event.preventDefault();swapLogo('logo-conchilla')" title="Click to upload Conchilla logo">
-            <img height="94" width="240" loading="lazy" id="logo-conchilla-img" src="https://www.maddogperformance.co.za/images/d58b4500f61dcf35.jpg" alt="Conchilla Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="94" width="240" loading="lazy" id="logo-conchilla-img" src="https://www.maddogperformance.co.za/images/d58b4500f61dcf35.jpg" srcset="/images/0d456551be434036.webp 240w" sizes="(max-width: 600px) 42vw, (max-width: 1024px) 46vw, 264px" alt="Conchilla Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1418,7 +1326,7 @@ document.addEventListener('click',function(e){
           <!-- ScoutNet -->
           <a href="https://scoutnet.co.za/" target="_blank" rel="noopener noreferrer" class="sponsor-card" aria-label="ScoutNet">
             <div class="sponsor-logo-slot loaded" id="logo-scoutnet" onclick="event.preventDefault();swapLogo('logo-scoutnet')" title="Click to upload ScoutNet logo">
-            <img height="122" width="240" loading="lazy" id="logo-scoutnet-img" src="https://www.maddogperformance.co.za/images/0caf766a7e451d50.png" alt="ScoutNet Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="122" width="240" loading="lazy" id="logo-scoutnet-img" src="https://www.maddogperformance.co.za/images/0caf766a7e451d50.png" srcset="/images/4ea8422ddd73eea4.webp 240w" sizes="(max-width: 600px) 42vw, (max-width: 1024px) 46vw, 264px" alt="ScoutNet Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1432,7 +1340,7 @@ document.addEventListener('click',function(e){
           <!-- Ramessur -->
           <a href="#" class="sponsor-card" aria-label="Ramessur">
             <div class="sponsor-logo-slot loaded" id="logo-ramessur" onclick="event.preventDefault();swapLogo('logo-ramessur')" title="Click to upload Ramessur logo">
-            <img height="240" width="188" loading="lazy" id="logo-ramessur-img" src="https://www.maddogperformance.co.za/images/9ee863ce5ea260f7.jpg" alt="Ramessur Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="240" width="188" loading="lazy" id="logo-ramessur-img" src="https://www.maddogperformance.co.za/images/9ee863ce5ea260f7.jpg" srcset="/images/be59606076770315.webp 188w" sizes="(max-width: 600px) 42vw, (max-width: 1024px) 46vw, 264px" alt="Ramessur Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1446,7 +1354,7 @@ document.addEventListener('click',function(e){
           <!-- Coco de Mer -->
           <a href="https://cocodemer.co.za/" target="_blank" rel="noopener" class="sponsor-card" aria-label="Coco de Mer">
             <div class="sponsor-logo-slot loaded" id="logo-coco" onclick="event.preventDefault();swapLogo('logo-coco')" title="Click to upload Coco de Mer logo">
-            <img height="111" width="240" loading="lazy" id="logo-coco-img" src="https://www.maddogperformance.co.za/images/7b3631fe4995af10.jpg" alt="Coco de Mer Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="111" width="240" loading="lazy" id="logo-coco-img" src="https://www.maddogperformance.co.za/images/7b3631fe4995af10.jpg" srcset="/images/b0ff85110f1b09db.webp 240w" sizes="(max-width: 600px) 42vw, (max-width: 1024px) 46vw, 264px" alt="Coco de Mer Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1460,7 +1368,7 @@ document.addEventListener('click',function(e){
           <!-- ATeam -->
           <a href="#" class="sponsor-card" aria-label="ATeam">
             <div class="sponsor-logo-slot loaded" id="logo-ateam" onclick="event.preventDefault();swapLogo('logo-ateam')" title="Click to upload ATeam logo">
-            <img height="186" width="240" loading="lazy" id="logo-ateam-img" src="https://www.maddogperformance.co.za/images/6b5b4a7f7e3f12b6.jpg" alt="ATeam Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
+            <img height="186" width="240" loading="lazy" id="logo-ateam-img" src="https://www.maddogperformance.co.za/images/6b5b4a7f7e3f12b6.jpg" srcset="/images/e53c28a304a07a44.webp 240w" sizes="(max-width: 600px) 42vw, (max-width: 1024px) 46vw, 264px" alt="ATeam Logo" style="display: block; width: 100%; height: 100%; object-fit: contain; padding: 6px;">
             <div class="logo-hint">
               <span style="font-size:20px;opacity:.3">🖼</span>
               <span style="font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim)">Upload Logo</span>
@@ -1518,7 +1426,7 @@ document.addEventListener('click',function(e){
       <a href="/training/boxing-ballito">Boxing</a>
       <a href="/training/kickboxing-ballito">Kickboxing</a>
       <a href="/training/personal-training-ballito">Personal Training</a>
-      <a href="/training/powerlifting-ballito">Powerlifting</a>
+      <a href="/training/rebounding-ballito">Rebounding</a>
     </div>
     <div class="sf-col">
       <h3>About</h3>
@@ -1713,7 +1621,7 @@ function swapPhoto(slotId) {
       var img  = document.getElementById(slotId + '-img');
       var slot = document.getElementById(slotId);
       if (img) {
-        img.setAttribute('src', dataUrl);
+        img.removeAttribute('srcset');img.removeAttribute('sizes');img.setAttribute('src', dataUrl);
         img.src = dataUrl;
       }
       if (slot) slot.classList.add('loaded');
