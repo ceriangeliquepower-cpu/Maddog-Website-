@@ -132,7 +132,9 @@ Full URL list (clean/pretty forms) is authoritative in `sitemap.xml` — cross-c
 - [x] **2026-10-21 batch (commit b62a53f) — SUBMITTED 2026-10-21 by the user:** `/training/boxing-ballito`, `/training/bjj-ballito`, `/blog-mma-training-ballito`, `/blog-powerlifting-women-ballito`, `/training`, `/training/mma-ballito`, `/training/kickboxing-ballito`, `/training/womens-boxing-ballito`, `/blog-bjj-beginners-ballito`, `/events`, `/wellness`
 - [x] `https://www.maddogperformance.co.za/privacy-policy` — 2026-10-21 batch — **INDEXED (user, 2026-10-26)**
 - [x] `https://www.maddogperformance.co.za/wellness-privacy-policy` — 2026-10-21 batch — **Requested 2026-10-26** (was "URL is not on Google" — new page, low priority; fine if Google never indexes it)
-- [ ] **Re-check ~2026-11-11:** `/blog-mma-training-ballito` + `/blog-powerlifting-women-ballito` still "Crawled – currently not indexed" on 2026-10-26 (refreshed 21 Oct, re-requested; live checks OK: 200, index/follow, canonical, sitemap). If still not indexed: link MMA page → MMA blog and Powerlifting page → women's powerlifting blog; then check overlap with the class pages.
+- [x] **2026-11-03 push (commit 28e7029), day 1 — submitted by the user 2026-11-03:** sitemap resubmitted; `/recovery`, `/recovery/cold-plunge-ballito`, `/recovery/infrared-sauna-ballito`, `/recovery/physiotherapy-ballito`, `/training/rebounding-ballito`, `/blog-rebounding-benefits-ballito`, `/`, `/training`, `/training/personal-training-ballito`, `/coaches`
+- [x] **2026-11-03 push, day 2 — SUBMITTED by the user by 2026-11-06:** `/amanda`, `/events`, `/training/mma-ballito`, `/training/bjj-ballito`, `/training/kids-boxing-ballito`, `/blog-youth-mma-training-ballito`, `/blog-robin-jj-williams-physio-ballito`
+- [ ] **Re-check ~2026-11-11:** `/blog-mma-training-ballito` (the powerlifting blog was deleted 3 Nov and now 301s to the PT page — ignore it) — both were still "Crawled – currently not indexed" on 2026-10-26 (refreshed 21 Oct, re-requested; live checks OK: 200, index/follow, canonical, sitemap). If still not indexed: link MMA page → MMA blog and Powerlifting page → women's powerlifting blog; then check overlap with the class pages.
 
 ---
 
@@ -195,9 +197,15 @@ User's own list. Work these in order unless the user says otherwise; tick off he
 
 ---
 
+## Batch Pushed 2026-11-10 — WhatsApp Pop-Up "Tap Send" Reminder
+
+**✅ PUSHED 2026-11-10 (user: "Push both now") — website + CRM.** Why: a CRM lead came in from the website WhatsApp form but no WhatsApp message arrived. The form saves the lead BEFORE WhatsApp opens; the visitor must still tap Send (or WhatsApp Web wasn't signed in / pop-up blocked / no WhatsApp).
+- [ ] `whatsapp-enquiry.js`: after "Continue to WhatsApp" the pop-up now shows "Almost done, [name]: your message is typed in WhatsApp. **Tap Send in WhatsApp** so it reaches us", a green "WhatsApp didn't open? Tap here" button (re-opens WhatsApp; a `<button>`, not a wa.me link, so it isn't counted as an extra whatsapp_click), "Done", and a call line 063 442 1690. The screen stays when they come back from WhatsApp. Tested locally (saving switched off): lead saved once, WhatsApp opens, retry works, Done closes; computer + phone screenshots fine. Only this one file changes on the website.
+- [ ] **CRM (`Desktop\maddog-control-centre`, separate app, Cloudflare Pages):** `src/crm/data.js` source label `whatsapp_site` → "Website WhatsApp button (message not confirmed)". Not committed/pushed.
+
 ## Batch Pushed 2026-11-03 (after commit 28e7029) — Instagram in the Homepage Schema
 
-**✅ PUSHED 2026-11-03 (user: "push it").**
+**✅ PUSHED 2026-11-03 (commit 6a41586, user: "push it"). Live-verified: homepage 200, sameAs present, all JSON-LD parses, lead tracking once.**
 - [x] `index.html`: Instagram added to the homepage business schema (`#gym` SportsActivityLocation `"sameAs": ["https://www.instagram.com/maddogperformanceinstitute"]`), so Google can show Instagram in the business's "Profiles" row (it showed only TikTok, YouTube, Facebook). User: Instagram only, nothing else. JSON-LD checked.
 
 ## Batch PUSHED 2026-11-03 (commit 28e7029) — Wellness Closed, Recovery Moved to the Main Site, Rebounding, Photos, Pre-Launch Audit Fixes

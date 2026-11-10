@@ -2,6 +2,8 @@
    Every "chat on WhatsApp" link to Maddog's number first opens a short form (name, mobile, email optional, what
    they're interested in, message optional). On "Continue to WhatsApp" the details are saved as a website lead
    (type 'whatsapp' -> a New enquiry in the Admin Dashboard) and WhatsApp opens with their message typed in.
+   10 Nov 2026: the form then shows "Almost done — tap Send in WhatsApp" with a "WhatsApp didn't open?" button,
+   because the lead is saved before they send (some never press Send).
    Self-contained: no libraries. Include once per page: <script src="/whatsapp-enquiry.js" defer></script> */
 (function () {
   'use strict';
@@ -31,6 +33,9 @@
     '.wae-go svg{width:22px;height:22px;fill:#fff}' +
     '.wae-small{font-size:12.5px;color:rgba(245,240,232,.55);margin:12px 0 0;line-height:1.45}' +
     '.wae-small a{color:#C9A84C}' +
+    '.wae p.wae-sub strong{color:#F5F0E8}' +
+    '.wae-done{margin-top:10px;width:100%;border:1px solid rgba(245,240,232,.25);background:none;color:#F5F0E8;font-family:"Bebas Neue",sans-serif;font-size:18px;letter-spacing:.08em;padding:11px 16px;cursor:pointer}' +
+    '.wae-done:hover{border-color:#C9A84C}' +
     '.wae-trap{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}' +
     '@media(max-width:420px){.wae-row{grid-template-columns:1fr;gap:0}.wae{padding:22px 16px 18px}.wae h2{font-size:26px}}';
 
@@ -108,10 +113,31 @@
       } catch (e) { /* never block WhatsApp */ }
       try { if (window.gtag) window.gtag('event', 'generate_lead', { method: 'whatsapp_form' }); } catch (e) { /* analytics optional */ }
     }
-    close();
-    // Phones: open WhatsApp in the same tab (the app takes over); computers: a new tab for WhatsApp Web / Desktop
+    // The lead is saved, but the message only reaches Maddog once they tap Send in WhatsApp: say so, and keep a
+    // button in case WhatsApp didn't open (pop-up blocked, WhatsApp Web not signed in). It stays when they come back.
+    done(url, v('first_name'));
+    openWhatsApp(url);
+  }
+
+  // Phones: open WhatsApp in the same tab (the app takes over); computers: a new tab for WhatsApp Web / Desktop
+  function openWhatsApp(url) {
     if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) window.location.href = url;
     else window.open(url, '_blank', 'noopener');
+  }
+
+  function done(url, name) {
+    var box = back.querySelector('.wae');
+    box.innerHTML =
+      '<button type="button" class="wae-x" aria-label="Close">×</button>' +
+      '<h2 id="wae-title">Almost done, ' + esc(name) + '</h2>' +
+      '<p class="wae-sub">Your message is typed in WhatsApp. <strong>Tap Send in WhatsApp</strong> so it reaches us.</p>' +
+      '<button type="button" class="wae-go wae-again">' + WA_ICON + 'WhatsApp didn’t open? Tap here</button>' +
+      '<button type="button" class="wae-done">Done</button>' +
+      '<p class="wae-small">No WhatsApp? We have your number and will contact you, or call us on <a href="tel:+27634421690">063 442 1690</a>.</p>';
+    box.querySelector('.wae-x').addEventListener('click', close);
+    box.querySelector('.wae-done').addEventListener('click', close);
+    box.querySelector('.wae-again').addEventListener('click', function () { openWhatsApp(url); });
+    box.querySelector('.wae-again').focus();
   }
 
   function init() {
