@@ -197,6 +197,10 @@ User's own list. Work these in order unless the user says otherwise; tick off he
 
 ---
 
+## Batch Pushed 2026-11-11 — PT Drop-In R200 → R225
+
+**✅ PUSHED 2026-11-11 (user: "Push both") — website + CRM.** User 2026-11-11: personal training drop-in is now **R225 per session**. Changed: `training/personal-training-ballito.html` (price card, visible FAQ, FAQ JSON-LD), `recovery.html` PT & nutrition list ("or R225 per drop-in session") + scratchpad `rs/build.py` (so a rebuild keeps it). CRM `src/crm/catalog.js` `pt_drop` 200 → 225 (separate app; not committed). No other page, JSON-LD offer or priceRange mentioned R200. User to update the gym GBP PT product if it shows the drop-in price.
+
 ## Batch Pushed 2026-11-10 — WhatsApp Pop-Up "Tap Send" Reminder
 
 **✅ PUSHED 2026-11-10 (user: "Push both now") — website + CRM.** Why: a CRM lead came in from the website WhatsApp form but no WhatsApp message arrived. The form saves the lead BEFORE WhatsApp opens; the visitor must still tap Send (or WhatsApp Web wasn't signed in / pop-up blocked / no WhatsApp).
