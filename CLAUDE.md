@@ -197,6 +197,10 @@ User's own list. Work these in order unless the user says otherwise; tick off he
 
 ---
 
+## Fix Pushed 2026-11-13 — Menu Restored After the Nav-Fit Mistake
+
+**✅ PUSHED 2026-11-13 (user: "Push").** The pushed `<style id="nav-fit">` (commit 551a090) used `.site-nav-links a`, which ALSO hit the dropdown items (`.nav-drop-menu a`, same specificity, later in the page) → dropdowns lost their 13px/20px padding and squashed with a scroll bar, and the top menu spacing changed on screens ≤1280px. User (photo): "the entire nav bar is wrong… needs to remain the way it was". Fix: `nav-fit` on all 37 files now ONLY shrinks the gold button on 769–1280px (`.site-nav-cta a{padding:10px 16px;letter-spacing:.08em}` → 145px, the old "Book Online" was 140px). Verified vs the pre-change pages (commit 98fee92) on all 35 sitemap pages at 1440/1366/1280/1100/1024: every menu word and every dropdown item identical in size, padding, letter-spacing, font and height; menu group only shifts sideways by up to 19px on big screens because the button text is longer. At 1024/1100 the button still runs past the right edge exactly as it did before today (pre-existing). **Lesson: never style `.site-nav-links a` — it includes the dropdown links; target `.site-nav-cta a` or `.site-nav-links > a` only, and test with the dropdowns OPEN at every width.**
+
 ## Batch Pushed 2026-11-13 — Free-Trial Booking Page Linked Site-Wide
 
 **✅ PUSHED 2026-11-13 (user: "yes push") — website, trial app, CRM + live class list.** Trial booking app: `https://book.maddogperformance.co.za/trial?src=website_button` (covers every class incl. kids, PT semi-private + one-on-one, Rebounding; the CRM records source `website_button` = "Website: Book a free trial button"). **User decisions 2026-11-13:** menu label "Book a Free Trial"; PT "Book a Free Consultation" also → the trial page; SAME tab (no target/rel); Kids Boxing ages 5–12 is correct (the app said 9–13).
