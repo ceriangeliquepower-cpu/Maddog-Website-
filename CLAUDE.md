@@ -197,6 +197,16 @@ User's own list. Work these in order unless the user says otherwise; tick off he
 
 ---
 
+## Batch Pushed 2026-11-13 — Free-Trial Booking Page Linked Site-Wide
+
+**✅ PUSHED 2026-11-13 (user: "yes push") — website, trial app, CRM + live class list.** Trial booking app: `https://book.maddogperformance.co.za/trial?src=website_button` (covers every class incl. kids, PT semi-private + one-on-one, Rebounding; the CRM records source `website_button` = "Website: Book a free trial button"). **User decisions 2026-11-13:** menu label "Book a Free Trial"; PT "Book a Free Consultation" also → the trial page; SAME tab (no target/rel); Kids Boxing ages 5–12 is correct (the app said 9–13).
+- [ ] Scratchpad `trial_links.py`: 129 buttons on 37 files → the trial page, same tab: menu "Book Online" (desktop + phone `.snm-cta`) → "Book a Free Trial"; contact "Book Online Now →" → "Book a Free Trial →"; "Book Your Trial Now" (contact), every "Book Your Free … Trial", "Book Your Child's Free Trial", "Book Your Free Class", "Book a Class Online", "Book a Free Trial Class", "Book Free Trial", "Book a Free First Class", "Book Your Free Trial (on WhatsApp)", "Book Your Rebounding Class", "Book a Free Consultation" / "Book Your Free Consultation" (PT + homepage). NOT changed: floating WhatsApp, "WhatsApp Us" buttons, Fresha/Bookem, events More Info, Olympic Boxing "Enquire" buttons, the 2 self-defence workshop blogs' body ("Book Your Spot" — only their menu changed).
+- [ ] **Lead tracking on every page:** new line → clicks to `book.maddogperformance.co.za` = `booking_click` with `booking_platform: 'trial_page'` (Hard-Won Rule #17c). Tested: fires with link_location menu. Same-tab clicks before Google Analytics has loaded may not be counted — the CRM's `website_button` source is the real count.
+- [ ] `<style id="nav-fit">` on all pages: 769–1280px menu spacing tighter (links 9px padding, CTA 10px 16px, inner padding 24px, gap 12px) — the menu CTA ran off-screen at 1024px (it already did live with "Book Online"); now fits at 1024/1100/1280.
+- [ ] `_redirects`: `/booking` + `/booking.html` 302! → the trial page (short link for Instagram/flyers/GBP).
+- [ ] **Apps (separate repos, not committed):** client portal `src/content/packages.js` + `timetable.js`, CRM `src/crm/catalog.js` (5 spots): Kids Boxing ages 9–13 → 5–12. **Live database `crm_class_times` (3 Kids Boxing rows, `level` = "Ages 9–13") still to update → "Ages 5–12" — needs the go-ahead (it changes the live trial page immediately).**
+- New pages must use the trial link for trial buttons and include the nav-fit style.
+
 ## Batch Pushed 2026-11-11 — PT Drop-In R200 → R225
 
 **✅ PUSHED 2026-11-11 (user: "Push both") — website + CRM.** User 2026-11-11: personal training drop-in is now **R225 per session**. Changed: `training/personal-training-ballito.html` (price card, visible FAQ, FAQ JSON-LD), `recovery.html` PT & nutrition list ("or R225 per drop-in session") + scratchpad `rs/build.py` (so a rebuild keeps it). CRM `src/crm/catalog.js` `pt_drop` 200 → 225 (separate app; not committed). No other page, JSON-LD offer or priceRange mentioned R200. User to update the gym GBP PT product if it shows the drop-in price.

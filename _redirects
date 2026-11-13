@@ -24,9 +24,9 @@ https://maddogperformance.co.za/* https://www.maddogperformance.co.za/:splat 301
 /events.html /events 301!
 /contact.html /contact 301!
 # Old booking page DELETED (2026-10-21) - replaced by the new trial booking system (separate app).
-# Both old addresses still go to WhatsApp. 302 (temporary) on purpose, so /booking can later point to the new trial page.
-/booking.html https://wa.me/27634421690 302!
-/booking https://wa.me/27634421690 302!
+# 2026-11-13: both addresses now go to the free-trial booking page (short link for Instagram, flyers, Google). 302 kept (temporary).
+/booking.html https://book.maddogperformance.co.za/trial?src=website_button 302!
+/booking https://book.maddogperformance.co.za/trial?src=website_button 302!
 /recovery.html /recovery 301!
 /training.html /training 301!
 /blog-ballito-community-raises-funds-st-lukes.html /blog-ballito-community-raises-funds-st-lukes 301!
