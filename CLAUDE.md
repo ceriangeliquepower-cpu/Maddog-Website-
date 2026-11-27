@@ -134,6 +134,7 @@ Full URL list (clean/pretty forms) is authoritative in `sitemap.xml` — cross-c
 - [x] `https://www.maddogperformance.co.za/wellness-privacy-policy` — 2026-10-21 batch — **Requested 2026-10-26** (was "URL is not on Google" — new page, low priority; fine if Google never indexes it)
 - [x] **2026-11-03 push (commit 28e7029), day 1 — submitted by the user 2026-11-03:** sitemap resubmitted; `/recovery`, `/recovery/cold-plunge-ballito`, `/recovery/infrared-sauna-ballito`, `/recovery/physiotherapy-ballito`, `/training/rebounding-ballito`, `/blog-rebounding-benefits-ballito`, `/`, `/training`, `/training/personal-training-ballito`, `/coaches`
 - [x] **2026-11-03 push, day 2 — SUBMITTED by the user by 2026-11-06:** `/amanda`, `/events`, `/training/mma-ballito`, `/training/bjj-ballito`, `/training/kids-boxing-ballito`, `/blog-youth-mma-training-ballito`, `/blog-robin-jj-williams-physio-ballito`
+- [x] **2026-11-27 push (commit c8c2fb3) — SUBMITTED by the user 2026-11-27:** `/blog-maddog-fight-night-ballito`, `/blog-bounce-for-tereza-fundraiser-ballito`, `/events`, `/`
 - [ ] **Re-check ~2026-11-11:** `/blog-mma-training-ballito` (the powerlifting blog was deleted 3 Nov and now 301s to the PT page — ignore it) — both were still "Crawled – currently not indexed" on 2026-10-26 (refreshed 21 Oct, re-requested; live checks OK: 200, index/follow, canonical, sitemap). If still not indexed: link MMA page → MMA blog and Powerlifting page → women's powerlifting blog; then check overlap with the class pages.
 
 ---
@@ -196,6 +197,15 @@ User's own list. Work these in order unless the user says otherwise; tick off he
     - **Follow-up: re-inspect `/amanda` in GSC ~2026-10-08.** If still "Discovered – currently not indexed" after 2–3 weeks despite the request + external links, investigate further before changing the page. Once indexed, ranking for her name is a separate, harder job (needs those external links).
 
 ---
+
+## Batch Pushed 2026-11-27 — MMA Blog Re-aimed at Beginners
+
+**✅ PUSHED 2026-11-27 (user: "Push it").** Why: `/blog-mma-training-ballito` still "Crawled – currently not indexed" on 27 Nov (since Oct); it competed with the MMA class page for "MMA training Ballito" (and the 21 Oct prices section made it more alike). User approved:
+- [ ] Blog: title "MMA for Beginners: How to Start and What to Expect | Maddog" (og/twitter too); description "New to MMA? A guide for complete beginners: what a first MMA class looks like, five steps to get started, the gear you need and how to train safely at Maddog." (158); H1/Article headline "MMA for Beginners: How to Start MMA Training in Ballito and What to Expect"; breadcrumb "MMA for Beginners"; step H2 "How to Start MMA: A Step-by-Step Guide for Beginners"; the "MMA at Maddog: Your Coach, Class Times and Prices" section (times, prices, combine tiers, IMMAF line) replaced by a short "Ready to Try Your First MMA Class?" paragraph linking to the class page for times/prices; dateModified 2026-11-27. Address unchanged.
+- [ ] `training/mma-ballito.html`: first FAQ answer ends "New to MMA? Read our MMA for beginners guide." (link visible; plain text in JSON-LD); related card title → "MMA for Beginners: How to Start"; `.internal-link` gold style added.
+- [ ] `events.html`: card title = new H1; button "Read Full Article" → "Read the MMA Beginners Guide".
+- [ ] `sitemap.xml` lastmod 2026-11-27 for the blog + MMA page.
+- After push: GSC Request Indexing `/blog-mma-training-ballito` + `/training/mma-ballito`. If still not indexed ~4–6 weeks later: merge the beginner tips into the MMA class page and 301 the blog there.
 
 ## Batch Pushed 2026-11-27 — Blogs: Maddog Fight Night + Bounce for Tereza, Events + Homepage Updates
 
