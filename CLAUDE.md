@@ -136,6 +136,8 @@ Full URL list (clean/pretty forms) is authoritative in `sitemap.xml` — cross-c
 - [x] **2026-11-03 push, day 2 — SUBMITTED by the user by 2026-11-06:** `/amanda`, `/events`, `/training/mma-ballito`, `/training/bjj-ballito`, `/training/kids-boxing-ballito`, `/blog-youth-mma-training-ballito`, `/blog-robin-jj-williams-physio-ballito`
 - [x] **2026-11-27 push (commit c8c2fb3) — SUBMITTED by the user 2026-11-27:** `/blog-maddog-fight-night-ballito`, `/blog-bounce-for-tereza-fundraiser-ballito`, `/events`, `/`
 - [x] **2026-11-27 MMA blog push (98f66a5) — SUBMITTED by the user 2026-11-27:** `/blog-mma-training-ballito`, `/training/mma-ballito`. Re-check the blog early Jan 2027; if still not indexed → merge into the MMA page + 301.
+- [x] **2026-11-27 physio/athletes push (b651bbe) — SUBMITTED by the user 2026-11-27:** `/recovery/physiotherapy-ballito`, `/athletes`.
+- [ ] **Re-run the class-search + position check ~2026-12-21** (dashboard `scripts/position-study.mjs`): MMA share on the class page, "sports injury ballito" position, average position after the old wellness searches fade.
 - [ ] **Re-check ~2026-11-11:** `/blog-mma-training-ballito` (the powerlifting blog was deleted 3 Nov and now 301s to the PT page — ignore it) — both were still "Crawled – currently not indexed" on 2026-10-26 (refreshed 21 Oct, re-requested; live checks OK: 200, index/follow, canonical, sitemap). If still not indexed: link MMA page → MMA blog and Powerlifting page → women's powerlifting blog; then check overlap with the class pages.
 
 ---
@@ -199,6 +201,16 @@ User's own list. Work these in order unless the user says otherwise; tick off he
     - **Follow-up: re-inspect `/amanda` in GSC ~2026-10-08.** If still "Discovered – currently not indexed" after 2–3 weeks despite the request + external links, investigate further before changing the page. Once indexed, ranking for her name is a separate, harder job (needs those external links).
 
 ---
+
+## Batch Pushed 2026-11-27 (evening) — "Formerly Warriors Gym" (AI check fix)
+
+**✅ PUSHED 2026-11-27 (user: "Push it").** Why: Nov AI check — Claude kept naming "Warriors Gym" (Courier article Oct 2025 + an old listing at Balvista Centre with Amanda's 083 580 0502) instead of Maddog. **User confirmed 2026-11-27: Warriors Gym was the gym's old name; rebranded to Maddog Performance Institute in 2026; Amanda's number unchanged.**
+- [ ] `index.html`: "Not Just a Gym" first paragraph + "Formerly known as Warriors Gym, we rebranded as Maddog Performance Institute in 2026: same head coach, same fight team, new name."; `#gym` JSON-LD `"alternateName": ["Warriors Gym", "Warriors Gymnasium"]`.
+- [ ] `amanda.html`: Coaching & Mentorship + "She founded her gym as Warriors Gym and rebranded it as Maddog Performance Institute in 2026, where she is head coach today."; Person JSON-LD description "…founder of Maddog Performance Institute (formerly Warriors Gym)…".
+- [ ] `athletes.html`: fight-team paragraph + "Our fight team competed as Warriors Gym before the gym rebranded to Maddog Performance Institute in 2026."
+- [ ] `sitemap.xml` lastmod 2026-11-27 for `/`, `/amanda`, `/athletes`.
+- Off-site (user/Amanda): Fresha description "Maddog Social Wellness Club" → gym wording + remove closed services (IV, doctor/nurse, skin lightening); Google Maps "Warriors Gym Ballito" → mark closed / duplicate; Courier story on Fight Night. Re-run Claude AI check with a fresh chat per question, memory off.
+- After push: GSC Request Indexing `/`, `/amanda`, `/athletes`.
 
 ## Batch Pushed 2026-11-27 (later) — Sports Injury Physio + Athletes → MMA Link
 
