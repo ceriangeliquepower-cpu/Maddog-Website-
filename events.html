@@ -1011,17 +1011,17 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
     </div>
     <!-- Featured post preview -->
     <div>
-      <div class="hero-featured">
+      <div class="hero-featured" style="background:#000">
         <div class="photo-slot loaded" id="featPhoto" style="height:100%">
-          <img height="900" width="1200" id="featPhoto-img" fetchpriority="high" src="/images/1e463ed69169018c.jpg" srcset="/images/20abfa96ce9d98ca.webp 480w, /images/6c0cb0f8405e24c1.webp 800w, /images/a0b94956b84a59bf.webp 1200w" sizes="(max-width: 600px) 85vw, (max-width: 1024px) 93vw, 512px" alt="Rebounding Benefits: What the Research Says About Mini-Trampoline Workouts">
+          <img height="628" width="1200" id="featPhoto-img" fetchpriority="high" src="/images/ae770da926863ecd.jpg" srcset="/images/ccedc94343bae1dd.webp 480w, /images/c4771a3e9fd3f516.webp 800w, /images/5dc247fe41d219fd.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 460px, 512px" alt="Maddog Fight Night poster: Thursday 3 December 2026 at Mozambik, Balvista Centre, Ballito" style="object-fit:contain">
         </div>
       </div>
       <div class="hero-feat-body">
-        <span class="hf-tag">Training · Rebounding</span>
-        <div class="hf-title">Rebounding Benefits: What the Research Says About Mini-Trampoline Workouts</div>
-        <div class="hf-date"><time datetime="2026-10-14">14 October 2026</time> · Maddog Performance Institute</div>
-        <p class="hf-excerpt">Rebounding looks like play, but researchers have measured what it does for your heart, joints, balance and mood. Here is what the studies say, and what they don’t.</p>
-        <a href="blog-rebounding-benefits-ballito.html" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>
+        <span class="hf-tag">Events · Fight Night</span>
+        <div class="hf-title">Maddog Fight Night: Where Champions Begin on the KZN North Coast</div>
+        <div class="hf-date"><time datetime="2026-11-27">27 November 2026</time> · Maddog Performance Institute</div>
+        <p class="hf-excerpt">Thursday 3 December at Mozambik Ballito: 13 amateur MMA, kickboxing and boxing bouts, hosted by Amanda “Maddog” Lino, raising funds to help young fighters compete internationally.</p>
+        <a href="blog-maddog-fight-night-ballito.html" class="btn btn-o btn-sm" style="margin-top:14px">Read Article</a>
       </div>
     </div>
   </div>
@@ -1077,6 +1077,34 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
     <!-- BLOG GRID -->
     <div class="blog-grid" id="blogGrid" style="margin-top:6px">
+      <!-- POST: added to the grid (not featured), 2026-11-27 -->
+      <div class="blog-card" id="bp-bounce-for-tereza">
+        <div class="bc-img"><img src="/images/48161883a3d010ff.jpg" srcset="/images/2ba2c0c34515aa4d.webp 480w, /images/ac931e14e09903a5.webp 800w, /images/812bbd168f50dd2d.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Women in pink tutus at the Bounce rebounding fundraiser for Tereza at Maddog Performance Institute, Ballito" width="1200" height="900" style="width:100%;height:100%;object-fit:cover;object-position:center 0%" loading="lazy"></div>
+        <div class="bc-body">
+          <span class="bc-tag">Community · Rebounding</span>
+          <div class="bc-title">Ballito Bounces for Tereza at Maddog Performance Institute</div>
+          <p class="bc-excerpt">Two full Bounce fundraiser classes on 24 and 28 October, led by Thalia De Beer and endorsed by CANSA, brought Ballito together to support Tereza through breast cancer.</p>
+          <div class="bc-date">November 2026 · 4 min read</div>
+          <div class="bc-edit-row">
+            <a href="blog-bounce-for-tereza-fundraiser-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST: rotated from featured, 2026-11-27 -->
+      <div class="blog-card" id="bp-rebounding-benefits">
+        <div class="bc-img"><img src="/images/1e463ed69169018c.jpg" srcset="/images/20abfa96ce9d98ca.webp 480w, /images/6c0cb0f8405e24c1.webp 800w, /images/a0b94956b84a59bf.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Rebounding Benefits: What the Research Says About Mini-Trampoline Workouts" width="1200" height="900" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+        <div class="bc-body">
+          <span class="bc-tag">Training · Rebounding</span>
+          <div class="bc-title">Rebounding Benefits: What the Research Says About Mini-Trampoline Workouts</div>
+          <p class="bc-excerpt">Rebounding looks like play, but researchers have measured what it does for your heart, joints, balance and mood. Here is what the studies say, and what they don’t.</p>
+          <div class="bc-date">October 2026 · 5 min read</div>
+          <div class="bc-edit-row">
+            <a href="blog-rebounding-benefits-ballito.html" class="btn btn-o btn-sm">Read Full Article</a>
+          </div>
+        </div>
+      </div>
+
       <!-- POST: rotated from featured, 2026-09-26 -->
       <div class="blog-card" id="bp-womens-boxing-beginners-first-class">
         <div class="bc-img"><img src="https://www.maddogperformance.co.za/images/12512acbeb656d63.jpg" srcset="/images/f787e9581a2df2df.webp 480w, /images/4f6497bb42f9e413.webp 800w, /images/71e2e227ca06cb99.webp 1200w" sizes="(max-width: 600px) 87vw, (max-width: 1024px) 93vw, 541px" alt="Women’s Boxing for Beginners: What to Expect From Your First Class in Ballito" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;object-position:center 10%" loading="lazy"></div>
@@ -1257,22 +1285,6 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
 
     <div class="event-list" id="eventList">
 
-      <!-- EVENT 1 — 14 Nov -->
-      <div class="event-card" id="ev-nov14">
-        <div class="ec-date-block">
-          <div class="ec-day">14</div>
-          <div class="ec-month">Nov</div>
-        </div>
-        <div class="ec-body">
-          <div class="ec-tag">MMA</div>
-          <div class="ec-title">Lights Out</div>
-          <div class="ec-meta">📍 Durban, KZN &nbsp;·&nbsp; 14 November 2026</div>
-        </div>
-        <div class="ec-actions">
-          <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20more%20info%20about%20Lights%20Out%20on%2014%20November." target="_blank" rel="noopener" class="btn btn-g btn-sm">More Info</a>
-        </div>
-      </div>
-
       <!-- EVENT 2 — 3 Dec: Maddog Fight Night -->
       <div class="event-card" id="ev-dec03">
         <div class="ec-date-block">
@@ -1285,7 +1297,23 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
           <div class="ec-meta">📍 Mozambik, Balvista Centre, Ballito &nbsp;·&nbsp; <time datetime="2026-12-03">3 December 2026</time></div>
         </div>
         <div class="ec-actions">
-          <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20more%20info%20about%20Maddog%20Fight%20Night%20on%203%20December." target="_blank" rel="noopener" class="btn btn-g btn-sm">More Info</a>
+          <a href="blog-maddog-fight-night-ballito.html" class="btn btn-g btn-sm">More Info</a>
+        </div>
+      </div>
+
+      <!-- EVENT — 5 Dec: Excilite Ultimate Fighter, Kimberley -->
+      <div class="event-card" id="ev-dec05">
+        <div class="ec-date-block">
+          <div class="ec-day">05</div>
+          <div class="ec-month">Dec</div>
+        </div>
+        <div class="ec-body">
+          <div class="ec-tag">Fight Event</div>
+          <div class="ec-title">Excilite Ultimate Fighter</div>
+          <div class="ec-meta">📍 Kimberley &nbsp;·&nbsp; <time datetime="2026-12-05">5 December 2026</time></div>
+        </div>
+        <div class="ec-actions">
+          <a href="https://wa.me/27634421690?text=Hi%2C%20I%27d%20like%20more%20info%20about%20Excilite%20Ultimate%20Fighter%20in%20Kimberley%20on%205%20December." target="_blank" rel="noopener" class="btn btn-g btn-sm">More Info</a>
         </div>
       </div>
 
@@ -1302,66 +1330,83 @@ document.getElementById('siteNavMob').addEventListener('click',function(e){if(e.
         <h2 class="sec-h">Latest <em>Results.</em></h2>
       </div>
       <div class="">
-        <p class="body-p">Maddog fight team results updated after every event. Click any field to edit — add new results after each competition.</p>      </div>
+        <p class="body-p">Maddog fight team results, updated after every event.</p>      </div>
     </div>
 
     <div class="result-list" id="resultList">
 
       <div class="result-card" id="rc1">
           <div class="rc-fighter home">
-            <div class="rc-name winner">Travis Andrews</div>
+            <div class="rc-name">Joshua Barnes</div>
             <div class="rc-detail">Maddog Performance Institute</div>
-            <span class="win-badge">WIN</span>
+            <span class="loss-badge">LOSS</span>
           </div>
           <div class="rc-centre">
-            <div class="rc-result">W · SUB</div>
-            <div class="rc-method">Illegal Submission · R1 2:15</div>
-            <div class="rc-event">Lights Out · 27 June 2026</div>
+            <div class="rc-result">LOSS</div>
+            <div class="rc-method">Youth A</div>
+            <div class="rc-event">Lights Out 04 · <time datetime="2026-11-14">14 November 2026</time></div>
           </div>
           <div class="rc-fighter opp">
-            <div class="rc-name">O'Neil Naicker</div>
-            <div class="rc-detail">Opponent</div>
-            <span class="loss-badge">LOSS</span>
+            <div class="rc-name winner">Keegan Sime</div>
+            <div class="rc-detail">Garage Boys</div>
+            <span class="win-badge">WIN</span>
           </div>
         </div>
 
       <div class="result-card" id="rc2">
           <div class="rc-fighter home">
-            <div class="rc-name winner">Blaise Khors</div>
+            <div class="rc-name">Travis Andrews</div>
             <div class="rc-detail">Maddog Performance Institute</div>
-            <span class="win-badge">WIN</span>
+            <span class="loss-badge">LOSS</span>
           </div>
           <div class="rc-centre">
-            <div class="rc-result">W · TKO</div>
-            <div class="rc-method">TKO · R2 1:13</div>
-            <div class="rc-event">Lights Out · 27 June 2026</div>
+            <div class="rc-result">LOSS</div>
+            <div class="rc-method">Youth C</div>
+            <div class="rc-event">Lights Out 04 · <time datetime="2026-11-14">14 November 2026</time></div>
           </div>
           <div class="rc-fighter opp">
-            <div class="rc-name">Troy Muller</div>
-            <div class="rc-detail">Opponent</div>
-            <span class="loss-badge">LOSS</span>
+            <div class="rc-name winner">Kayden Austin</div>
+            <div class="rc-detail">Bushido</div>
+            <span class="win-badge">WIN</span>
           </div>
         </div>
 
       <div class="result-card" id="rc3">
+          <div class="rc-fighter home">
+            <div class="rc-name">Luckymore Hamadziripi</div>
+            <div class="rc-detail">Maddog Performance Institute</div>
+            <span class="loss-badge">LOSS</span>
+          </div>
+          <div class="rc-centre">
+            <div class="rc-result">LOSS</div>
+            <div class="rc-method">Bantamweight Title Fight</div>
+            <div class="rc-event">Lights Out 04 · <time datetime="2026-11-14">14 November 2026</time></div>
+          </div>
+          <div class="rc-fighter opp">
+            <div class="rc-name winner">Etienne Koen</div>
+            <div class="rc-detail">ProAction</div>
+            <span class="win-badge">WIN</span>
+          </div>
+        </div>
+
+      <div class="result-card" id="rc4">
           <div class="rc-fighter home">
             <div class="rc-name winner">Nicole Tome Alves</div>
             <div class="rc-detail">Maddog Performance Institute</div>
             <span class="win-badge">WIN</span>
           </div>
           <div class="rc-centre">
-            <div class="rc-result">W · DEC</div>
-            <div class="rc-method">Split Decision</div>
-            <div class="rc-event">Lights Out · 27 June 2026</div>
+            <div class="rc-result">WIN</div>
+            <div class="rc-method">Flyweight Title Fight</div>
+            <div class="rc-event">Lights Out 04 · <time datetime="2026-11-14">14 November 2026</time></div>
           </div>
           <div class="rc-fighter opp">
             <div class="rc-name">Linda Baraza</div>
-            <div class="rc-detail">Opponent</div>
+            <div class="rc-detail">Silverback MMA</div>
             <span class="loss-badge">LOSS</span>
           </div>
         </div>
 
-      
     </div>
   </div>
 </section>
